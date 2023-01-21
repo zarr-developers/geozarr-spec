@@ -1,10 +1,15 @@
-# Readme - GeoZarr-Spec
+# GeoZarr-Spec
 
-GeoZarr Spec aims to provides a geospatial extension to the Zarr specification (v2). Zarr specifies a protocol and format used for storing Zarr arrays, while the present extension defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). 
+GeoZarr Spec aims to provides a geospatial extension to the Zarr specification. Zarr specifies a protocol and format used for storing Zarr arrays, while the present extension defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). 
 
 ## Status
 
-This specification is an early draft deveveloped in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
+This specification was first deveveloped in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
+
+**Update 2023-01-20** - This spec is transitioning to community-based development in anticipation of submission as an OGC standard. It has been moved to the `zarr-developers` GitHub organization. Brianna Pagan ([@briannapagan](https://github.com/briannapagan])) has volunteered to coordinate the community development process.
+Feedback from users and implementers will be solicited from the community and incorporated into future drafts.
+Information about how to get involved in this process will be announced soon/
+
 
 ## Changelog
 
