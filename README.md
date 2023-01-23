@@ -4,7 +4,7 @@ GeoZarr Spec aims to provides a geospatial extension to the Zarr specification (
 
 ## Status
 
-This specification is an early draft deveveloped in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
+This specification is an early draft created initially by the [European Space Agency](https://esa.int) under the [General Support Technology Programme].
 
 ## Changelog
 
