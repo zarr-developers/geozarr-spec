@@ -4,7 +4,7 @@ GeoZarr Spec aims to provides a geospatial extension to the Zarr specification (
 
 ## Status
 
-This specification is an early draft created initially by the [European Space Agency](https://esa.int) under the [General Support Technology Programme].
+This specification is an early draft created initially by [Spacebel](https://www.spacebel.com/) for the [European Space Agency](https://esa.int) under the [General Support Technology Programme](http://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/About_the_General_Support_Technology_Programme_GSTP).
 
 ## Changelog
 
@@ -44,4 +44,4 @@ OpenLayers extension prototype: https://github.com/spacebel/geozarr-openlayers
 
 (CC BY 4.0) : Content in this repository is licensed under a Creative Commons Attribution 4.0 International  license. Licensees may copy, distribute, display, perform and make derivative works and remixes based on it only if they give the author or licensor the credits (attribution). You can find the complete text of this license at http://creativecommons.org/licenses/by/4.0/.
 
-GeoZarr was deveveloped in the frame of an European Space Agency (ESA) GSTP by Spacebel and ConstellR.
+GeoZarr was created initially by [Spacebel](https://www.spacebel.com/) for the [European Space Agency](https://esa.int) under the [General Support Technology Programme](http://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/About_the_General_Support_Technology_Programme_GSTP).
