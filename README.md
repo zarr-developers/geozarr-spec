@@ -6,7 +6,7 @@ GeoZarr Spec aims to provide a geospatial extension to the Zarr specification. Z
 
 This specification early drafts (<=v0.4) were created initially by [Spacebel](https://www.spacebel.com/) for the [European Space Agency](https://esa.int) under the [General Support Technology Programme](http://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/About_the_General_Support_Technology_Programme_GSTP).
 
-**Update 2023-01-20** - This spec is transitioning to community-based development in anticipation of submission as an OGC standard. It has been moved to the `zarr-developers` GitHub organization. Brianna Pagan ([@briannapagan](https://github.com/briannapagan])) has volunteered to coordinate the community development process.
+**Update 2023-01-20** - This spec is transitioning to community-based development in anticipation of submission as an OGC standard. It has been moved to the `zarr-developers` GitHub organization. Brianna Pagan ([@briannapagan](https://github.com/briannapagan)) has volunteered to coordinate the community development process.
 Feedback from users and implementers will be solicited from the community and incorporated into future drafts.
 Information about how to get involved in this process will be announced soon/
 
