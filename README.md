@@ -2,6 +2,15 @@
 
 GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in the form of a _zarr convention_. Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). See this draft [Zarr Enhanvement Proposal](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca) for further detail of the Zarr Convention process.
 
+## Scope
+
+* Easy compatibility with popular mapping and data analysis tools like GDAL, Xarray, ArcGIS, and QGIS.
+* Combining different types of geospatial data, like satellite images, elevation maps, and weather models.
+* Creating and displaying geospatial data in web browsers without complex workarounds
+* Helping users discover, access, and retrieve the data they need, including subsets or different arrangements of the data
+* Supporting advanced geospatial features for more accurate data representation and analysis.
+* Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages.
+
 ## Status
 
 This specification early drafts (<=v0.4) were created initially by [Spacebel](https://www.spacebel.com/) for the [European Space Agency](https://esa.int) under the [General Support Technology Programme](http://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/About_the_General_Support_Technology_Programme_GSTP).
