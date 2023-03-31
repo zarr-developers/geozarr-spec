@@ -1,6 +1,6 @@
 # GeoZarr-Spec
 
-GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in the form of a _zarr convention_. Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). See this draft [Zarr Enhanvement Proposal](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca) for further detail of the Zarr Convention process.
+GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in the form of a _zarr convention_. Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). See this draft [Zarr Enhancement Proposal](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca) for further detail of the Zarr Convention process.
 
 ## Scope
 
