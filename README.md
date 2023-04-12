@@ -13,7 +13,7 @@ GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in
 
 ## Deliverable
 
-The geozarr-spec is a community effort to establish conventions for geospatial use cases in the cloud-native ZARR binary carrier. It is built from the existing conventions and implementation patterns. 
+The geozarr-spec is a community effort to establish conventions for geospatial use cases in the cloud-native ZARR binary carrier. It is built from existing data standards, conventions, and implementation patterns. The outcome of this work will be an implementable set of conventions. Next steps for formalization of a normative version of the conventions will be refined as the work progresses. Some key considerations follow.
 
 * A ZARR Convention according to the draft described in [Zarr Enhancement Proposal 0004](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca). 
 * An OGC standard that describes the GeoZarr-spec convention. ([See two track standards process here for requirements of a full vs community standard](https://docs.opengeospatial.org/pol/05-020r27/05-020r27.html#the-two-track-standards-process-characteristics))
