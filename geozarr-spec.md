@@ -30,7 +30,7 @@ GeoZarr DataArray variable MUST include the attribute **\_ARRAY_DIMENSIONS which
     
 ### GeoZarr Coordinates
 
-GeoZarr Coordinates variable is a one dimensional **Zarr Array** that **indexes a dimension** of a GeoZarr DataArray (e.g latitude, longitude, time, wavelength).
+GeoZarr Coordinates variable is either a one dimensional **Zarr Array** or an **Auxiliary variable** containing a **grid_mapping** which includes a **GeoTransform**. In both cases, the coordinates **index a dimension** of a GeoZarr DataArray (e.g latitude, longitude, time, wavelength).
 
 GeoZarr Coordinates variable MUST include the attribute **\_ARRAY_DIMENSIONS equal to the Zarr array name** (e.g. latitude for the latitude Zarr Array).
 
@@ -74,6 +74,13 @@ The following standard names are recommended to describe coordinates variables f
 ### Coordinate Reference System
 
 The **grid_mapping** CF variable defined by DataArray variable defines  the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the Auxliary variable that holds all the CF attribute describing the CRS. 
+
+In GeoZarr, the grid_mapping Auxiliary variable can contain a **GeoTransform**. A GeoTransform is a space delimited list of 6 values: "X_offset X0 X1 Y_offset Y0 Y1 " `X_offset` and `Y_offset` are the grid origin. `X0` and `Y0` are the grid spacing per column. `X1` and `Y1` are the grid spacing per row. If `X0 = Y1 = 0`, the grid is axis aligned. In GeoZarr, coordinates are always always aligned with a cell center and it is left to a data user to decide if values are constant across a cell or valid only at the precise cell cetner. The following equations can be used to create derive georeferenced cell centers. 
+
+```
+X_georeference = X0 * column + X1 * row + X_offset
+Y_georeference = Y0 * column + Y1 * row + Y_offset
+```
 
 ### Other CF Properties
 
