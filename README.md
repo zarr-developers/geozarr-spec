@@ -13,11 +13,11 @@ GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in
 
 ## Deliverable
 
-* A ZARR Convention according to the draft described in [Zarr Enhancement Proposal 0004](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca) to be formatted as an OGC standard.
-* An OGC standard that describes the GeoZarr-spec convention as a full OGC standard. ([See two track standards process here for requirements of a full standard](https://docs.opengeospatial.org/pol/05-020r27/05-020r27.html#the-two-track-standards-process-characteristics))
-* Contribution of any extension that is best housed in the CF-Convention.* 
+The geozarr-spec is a community effort to establish conventions for geospatial use cases in the cloud-native ZARR binary carrier. It is built from the existing conventions and implementation patterns. 
 
-> `* Likely to Appendix I, CF Data Model rather than the NetCDF-CF convention which is focused on the NetCDF data model specifically.`
+* A ZARR Convention according to the draft described in [Zarr Enhancement Proposal 0004](https://github.com/zarr-developers/zeps/pull/28/files?short_path=53e442a#diff-53e442aa938ca18ba1a94f845f264c5df0e4650f8f6abda856c3cd819f70abca). 
+* An OGC standard that describes the GeoZarr-spec convention. ([See two track standards process here for requirements of a full vs community standard](https://docs.opengeospatial.org/pol/05-020r27/05-020r27.html#the-two-track-standards-process-characteristics))
+* Contribution of any extension that is best housed in the CF-Convention.
 
 ## Status
 
