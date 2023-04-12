@@ -1,0 +1,184 @@
+:Title: OGC GeoZarr Standards Working Group Charter
+:titletext: {Title}
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc:
+:toc-placement!:
+:toclevels: 4
+:numbered:
+:sectanchors:
+:source-highlighter: pygments
+
+<<<
+[cols = ">",frame = "none",grid = "none"]
+|===
+|{set:cellbgcolor:#FFFFFF}
+|[big]*Open Geospatial Consortium*
+|Submission Date: 2023-05-01
+|Approval Date: 
+|Internal reference number of this OGC(R) document: 23-xxx
+|Category: OGC(R) Standards Working Group Charter
+|Authors: xxx
+|===
+
+[cols = "^", frame = "none"]
+|===
+|[big]*{titletext}*
+|===
+
+[cols = "^", frame = "none", grid = "none"]
+|===
+|*Copyright notice*
+|Copyright (C) 2021 Open Geospatial Consortium
+|To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
+|===
+
+<<<
+
+To: OGC members & interested parties
+
+A new OGC Standards Working Group (SWG) is being formed. The OGC members listed below have proposed the OGC GeoZarr SWG.  The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
+
+The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter. Technical discussions may occur no sooner than the SWG's first meeting.
+
+This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:
+
+* You must be an employee of an OGC member organization or an individual
+member of OGC;
+
+* The OGC member must have signed the OGC Membership agreement;
+
+* You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
+
+* You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.
+
+Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
+
+Non-OGC members who wish to participate may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG: the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG’s page.
+
+Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization; we encourage your feedback.
+
+== Purpose of the Standards Working Group
+
+The GeoZarr Standard Working Group (SWG) is chartered to develop a Zarr encoding for geospatial gridded data in the form of Zarr conventions (based on the approach described in the draft Zarr Enhancement Proposal 4).  Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). The GeoZarr SWG will also work on improving the CF conventions if necessary, particularly for alternative CRS encoding if relevant.
+
+
+
+== Business Value Proposition
+
+TBD
+
+== Scope of Work
+
+The objective of the GeoZarr is to develop a versatile and accessible geospatial data standard that caters to various needs in the geospatial domain. The scope of GeoZarr conventions includes:
+
+1. Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, and QGIS, enabling seamless integration into existing workflows.
+2. Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
+3. Supporting multidimensional data, such as hyperspectral and altitude information, to address diverse geospatial data requirements.
+4. Providing valuable geospatial data descriptions that extend beyond 2D representations, enabling better understanding and analysis of complex geospatial phenomena.
+5. Simplifying the creation and display of geospatial data in web browsers without the need for complex workarounds, making geospatial information more accessible to users.
+6. Assisting users in discovering, accessing, and retrieving the data they need, including subsets or different arrangements of the data, to enhance the utility and adaptability of geospatial data.
+7. Incorporating advanced geospatial features to enable more accurate data representation and analysis, improving the quality and precision of geospatial information.
+8. Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
+
+Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including:
+
+* Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
+* Multiple resolutions of the data, possibly leveraging multiscale drafts
+* Data subsets that are only available at certain resolutions
+* Multiple projections
+* Multi-dimensional optimizations (rechunking)
+* Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
+* Encoding of time series that have not been normalized
+* Accessing the symbology of the corresponding data
+
+=== Statement of relationship of planned work to the current OGC standards baseline
+
+
+
+
+=== What is Out of Scope?
+
+
+=== Specific Existing Work Used as Starting Point
+
+
+=== Is This a Persistent SWG
+
+[x] YES
+
+[ ] NO
+
+=== When can the SWG be Inactivated
+
+The SWG can be inactivated once the SWG identifies no new tasks for the SWG and there are no open Change Requests.
+
+== Description of deliverables
+
+=== Initial Deliverables
+
+The following deliverables will be the initial results of work of the SWG.
+
+* 
+
+The targeted start date for this SWG is 
+
+=== Additional SWG Tasks
+
+No specific additional tasks are currently planned for the SWG.
+
+== IPR Policy for this SWG
+
+[ ] RAND-Royalty Free
+
+[ ] RAND for fee
+
+== Anticipated Audience / Participants
+
+This SWG will develop a Standard for general use in the geospatial community and suitable for data exchange beyond this community. Geospatial data providers and software implementers will be interested in assisting with the development of this Standard as well as the output of the SWG.
+
+== Domain Working Group Endorsement
+
+This draft charter has been presented to and endorsed by the xxx DWG.
+
+== Other informative information about the work of this SWG
+
+=== Collaboration
+
+All work in the Standards Working Group will be public and the SWG solicits contributions and feedback from OGC members and non-OGC members to the extent that is supported by the OGC Technical Committee Policies and Procedures.
+
+The OGC GeoZarr SWG will collaborate on Standard development using a public GitHub repository and a Gitter channel. Development of the Standard will include the use of Issues and other project tools in GitHub.
+
+=== Similar or Applicable Standards Work (OGC and Elsewhere)
+
+x
+
+=== Details of first meeting
+
+The first meeting of the SWG will occur within four weeks of approval of the SWG charter.
+
+=== Projected on-going meeting schedule
+
+The work of this SWG will be carried out primarily on GitHub and via email, web conferences / calls, and at face-to-face sessions at OGC Member Meetings as agreed to by the SWG members. The web conferences / calls will be scheduled as needed and posted to the OGC portal. Voting on OGC GeoZarr Conventions content will be limited to SWG members only.
+
+=== Supporters of this Charter
+
+The following people support this proposal and are committed to the Charter and projected meeting schedule. These members are known as SWG Founding or Charter members. The charter members agree to the SoW and IPR terms as defined in this charter. The charter members have voting rights beginning the day the SWG is officially formed. Charter Members are shown on the public SWG page.
+
+|===
+|Name |Organization
+
+|xxx |company
+
+|===
+
+=== Conveners
+
+xxx
+
+[bibliography]
+== References
+
+- [[[gj,1]]] IETF: IETF RFC 7946, The GeoJSON Format, 2016
+
