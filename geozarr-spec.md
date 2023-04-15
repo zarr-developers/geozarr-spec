@@ -75,7 +75,7 @@ The following standard names are recommended to describe coordinates variables f
 
 The **grid_mapping** CF variable defined by DataArray variable defines  the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the Auxliary variable that holds all the CF attribute describing the CRS. 
 
-In GeoZarr, the grid_mapping variable can contain a **GeoTransform** attribute. A GeoTransform is a space delimited list of 6 values: "X_offset X0 X1 Y_offset Y0 Y1 " `X_offset` and `Y_offset` are the grid origin. `X0` and `Y0` are the grid spacing per column. `X1` and `Y1` are the grid spacing per row. If `X0 = Y1 = 0`, the grid is axis aligned. In GeoZarr, coordinates are always always aligned with a cell center and it is left to a data user to decide if values are constant across a cell or valid only at the precise cell cetner. The following equations can be used to create derive georeferenced cell centers. 
+In GeoZarr, the grid_mapping variable can contain a **GeoTransform** attribute. A GeoTransform is a vector of six double precision digits: [X_offset, X0, X1, Y_offset, Y0, Y1] `X_offset` and `Y_offset` are the grid origin. `X0` and `Y0` are the grid spacing per column. `X1` and `Y1` are the grid spacing per row. If `X0 = Y1 = 0`, the grid is axis aligned. In GeoZarr, coordinates are always always aligned with a cell center and it is left to a data user to decide if values are constant across a cell or valid only at the precise cell cetner. The following equations can be used to create derive georeferenced cell centers. 
 
 ```
 X_georeference = X0 * column + X1 * row + X_offset
