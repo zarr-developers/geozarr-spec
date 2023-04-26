@@ -10,7 +10,7 @@ GeoZarr Spec aims to provide a geospatial extension to the Zarr specification in
 * Helping users discover, access, and retrieve the data they need, including subsets or different arrangements of the data
 * Supporting advanced geospatial features for more accurate data representation and analysis.
 * Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages.
-
+* Supporting serverless, cloud-native data analytics patterns on geospatial datacubes, including timeseries analysis.
 ## Deliverable
 
 The geozarr-spec is a community effort to establish conventions for geospatial use cases in the cloud-native ZARR binary carrier. It is built from existing data standards, conventions, and implementation patterns. The outcome of this work will be an implementable set of conventions. Next steps for formalization of a normative version of the conventions will be refined as the work progresses. Some key considerations follow.
