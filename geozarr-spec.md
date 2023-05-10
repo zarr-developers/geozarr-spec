@@ -6,7 +6,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 
 ## Status
 
-This specification is an early draft deveveloped in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
+This specification is an early draft developed in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
 
 [Change Log](https://github.com/christophenoel/geozarr-spec/wiki)
 
@@ -192,8 +192,8 @@ The wavelength SHOULD be represented as a dimension.
 
 ### Time Series
 
-For level 3+ products, time should be represented as a dimension. 
-When the scene temporal instances are not sharing a common coordinate grid , it is recommended to project (interpolate) the scenes in a standard geometry.
+For level 3+ products, time SHOULD be represented as a dimension. 
+When the scene temporal instances are not sharing a common coordinate grid , it is RECOMMENDED to project (interpolate) the scenes in a standard geometry.
 
 ## License
 
