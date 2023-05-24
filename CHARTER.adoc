@@ -98,7 +98,7 @@ As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attrib
 
 
 === What is Out of Scope?
-In early conversations around creating a draft GeoZarr specification, concerns arose multiple times around the CF encoding of CRS which may pose issues, see https://github.com/zarr-developers/geozarr-spec/issues/20. While these concerns will be discussed and suggestions created for potentially updating CF conventions, if resolutions cannot be made with the GeoZarr specification, we consider out of scope waiting on any subsequent updates to CF convetions to reflect these suggestions. 
+In early conversations around creating a draft GeoZarr specification, concerns arose multiple times around the CF encoding of CRS which may pose issues, see https://github.com/zarr-developers/geozarr-spec/issues/20. While these concerns will be discussed and suggestions created for potentially updating CF conventions, if resolutions cannot be made with the GeoZarr specification, we consider out of scope waiting on any subsequent updates to CF conventions to reflect these suggestions. 
 
 === Specific Existing Work Used as Starting Point
 * GeoZarr draft specification: https://github.com/zarr-developers/geozarr-spec/ 
