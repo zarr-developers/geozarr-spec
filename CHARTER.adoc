@@ -61,7 +61,7 @@ Please feel free to forward this announcement to any other appropriate lists. Th
 
 == Purpose of the Standards Working Group
 
-The GeoZarr Standard Working Group (SWG) is chartered to develop a Zarr encoding for geospatial gridded data in the form of Zarr conventions (based on the approach described in the draft Zarr Enhancement Proposal 4).  Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). The GeoZarr SWG will also work on improving the CF conventions if necessary, particularly for alternative CRS encoding if relevant.
+The GeoZarr Standard Working Group (SWG) is chartered to develop a Zarr encoding for geospatial gridded data in the form of Zarr conventions (based on the approach described in the draft Zarr Enhancement Proposal 4).  Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). The GeoZarr SWG will also work on improving the Climate and Forecast (CF) conventions if necessary, particularly for alternative coordinate reference system (CRS) encoding if relevant.
 
 
 
@@ -94,15 +94,14 @@ Specifically, the convention should provide guidance to standardize the approach
 * Accessing the symbology of the corresponding data
 
 === Statement of relationship of planned work to the current OGC standards baseline
-
-
+As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
 
 
 === What is Out of Scope?
-
+In early conversations around creating a draft GeoZarr specification, concerns arose multiple times around the CF encoding of CRS which may pose issues, see https://github.com/zarr-developers/geozarr-spec/issues/20. While these concerns will be discussed and suggestions created for potentially updating CF conventions, if resolutions cannot be made with the GeoZarr specification, we consider out of scope waiting on any subsequent updates to CF convetions to reflect these suggestions. 
 
 === Specific Existing Work Used as Starting Point
-
+* GeoZarr draft specification: https://github.com/zarr-developers/geozarr-spec/ 
 
 === Is This a Persistent SWG
 
@@ -115,12 +114,17 @@ Specifically, the convention should provide guidance to standardize the approach
 The SWG can be inactivated once the SWG identifies no new tasks for the SWG and there are no open Change Requests.
 
 == Description of deliverables
+The GeoZarr SWG will deliver a candidate Standard and associated developer resources.
+
+The SWG expects to have a candidate Standard ready for OGC Architecture Board (OAB) review and public comment within nine months of creation of the SWG. Because example implementations will be developed at the same time the candidate Standard is formalized, reference implementations that fully use GeoParquet should be documented at the same time the candidate Standard goes to vote.
 
 === Initial Deliverables
 
 The following deliverables will be the initial results of work of the SWG.
 
-* 
+* OGC GeoZarr Standard
+
+* GeoZarr developer resources
 
 The targeted start date for this SWG is 
 
@@ -130,7 +134,7 @@ No specific additional tasks are currently planned for the SWG.
 
 == IPR Policy for this SWG
 
-[ ] RAND-Royalty Free
+[x] RAND-Royalty Free
 
 [ ] RAND for fee
 
@@ -140,7 +144,7 @@ This SWG will develop a Standard for general use in the geospatial community and
 
 == Domain Working Group Endorsement
 
-This draft charter has been presented to and endorsed by the xxx DWG.
+The SWG convenors will discuss the charter with potentially interested Domain Working Groups (DWGs) at the first opportunity.
 
 == Other informative information about the work of this SWG
 
@@ -152,7 +156,11 @@ The OGC GeoZarr SWG will collaborate on Standard development using a public GitH
 
 === Similar or Applicable Standards Work (OGC and Elsewhere)
 
-x
+* The OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html) in June 2022.
+
+The XCube project has potential synergies with the GeoZarr specification as it already relies and complies with CF conventions: 
+* xcube Dataset Convention: https://github.com/dcs4cop/xcube/blob/master/docs/source/cubespec.md
+* xcube Multi-Resolution Datasets: https://github.com/dcs4cop/xcube/blob/master/docs/source/mldatasets.md
 
 === Details of first meeting
 
@@ -169,6 +177,8 @@ The following people support this proposal and are committed to the Charter and 
 |===
 |Name |Organization
 
+|Christophe Noel | Spacebel
+|Brianna R. Pagán | NASA GES DISC
 |xxx |company
 
 |===
