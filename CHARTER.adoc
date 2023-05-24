@@ -19,7 +19,7 @@
 |Approval Date: 
 |Internal reference number of this OGC(R) document: 23-xxx
 |Category: OGC(R) Standards Working Group Charter
-|Authors: xxx
+|Authors: Christophe Noel, Brianna R. Pagán
 |===
 
 [cols = "^", frame = "none"]
@@ -181,7 +181,6 @@ The following people support this proposal and are committed to the Charter and 
 
 |Christophe Noel | Spacebel
 |Brianna R. Pagán | NASA GES DISC
-|xxx |company
 
 |===
 
