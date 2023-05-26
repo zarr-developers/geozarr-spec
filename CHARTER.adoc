@@ -94,7 +94,7 @@ Specifically, the convention should provide guidance to standardize the approach
 * Accessing the symbology of the corresponding data
 
 === Statement of relationship of planned work to the current OGC standards baseline
-As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
+As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard and the OGC netCDF SWG. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
 
 
 === What is Out of Scope?
