@@ -82,7 +82,7 @@ The objectives of GeoZarr conventions includes:
 5. Mixing Data: Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
 8. Flexibilty: Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
 
-Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including:
+Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including, for example:
 
 * Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
 * Multiple resolutions of the data, possibly leveraging multiscale drafts
