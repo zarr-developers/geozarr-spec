@@ -158,6 +158,8 @@ The OGC GeoZarr SWG will collaborate on Standard development using a public GitH
 
 * The OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html) in June 2022.
 
+* This SWG is closely related to the newly announced [Geodatacube SWG](https://www.ogc.org/press-release/ogc-forms-new-geodatacube-standards-working-group/). Essentially, GeoZarr will define a standard for a serverless datacube. Therefore, close coordination between these SWGs seems needed.
+
 The XCube project has potential synergies with the GeoZarr specification as it already relies and complies with CF conventions: 
 
 * xcube Dataset Convention: https://github.com/dcs4cop/xcube/blob/master/docs/source/cubespec.md
