@@ -184,7 +184,7 @@ The following people support this proposal and are committed to the Charter and 
 |Christophe Noel | Spacebel
 |Brianna R. Pagán | NASA GES DISC
 |Alexey N. Shiklomanov | NASA Goddard Space Flight Center
-
+|Tyler A. Erickson | Vorgeo
 |===
 
 === Conveners
