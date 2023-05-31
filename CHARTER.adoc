@@ -116,7 +116,7 @@ The SWG can be inactivated once the SWG identifies no new tasks for the SWG and 
 == Description of deliverables
 The GeoZarr SWG will deliver a candidate Standard and associated developer resources.
 
-The SWG expects to have a candidate Standard ready for OGC Architecture Board (OAB) review and public comment within nine months of creation of the SWG. Because example implementations will be developed at the same time the candidate Standard is formalized, reference implementations that fully use GeoParquet should be documented at the same time the candidate Standard goes to vote.
+The SWG expects to have a candidate Standard ready for OGC Architecture Board (OAB) review and public comment within nine months of creation of the SWG. Because example implementations will be developed at the same time the candidate Standard is formalized, reference implementations that fully use GeoZarr should be documented at the same time the candidate Standard goes to vote.
 
 === Initial Deliverables
 
@@ -185,6 +185,7 @@ The following people support this proposal and are committed to the Charter and 
 |Brianna R. Pagán | NASA GES DISC
 |Alexey N. Shiklomanov | NASA Goddard Space Flight Center
 |Tyler A. Erickson | Vorgeo
+|David Blodgett | U.S. Geological Survey
 |===
 
 === Conveners
