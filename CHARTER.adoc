@@ -78,7 +78,7 @@ The objectives of GeoZarr conventions includes:
 1. Compatibility: Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, and QGIS, enabling seamless integration into existing workflows.
 2. Visualisation: Simplifying the creation and display of geospatial data in web browsers without the need for complex workarounds, making geospatial information more accessible to users.
 3. Dimensions: Supporting multidimensional data, such as hyperspectral and altitude information, to address diverse geospatial data requirements.
-4. Data Discovery: Providing metadata for discovering, accessing, and retrieving the data, including subsets or different arrangements of the data.
+4. Data Discovery: Providing metadata for discovering, accessing, and retrieving the data, including composite products made of multiple data arrays.
 5. Mixing Data: Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
 8. Flexibilty: Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
 
