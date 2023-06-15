@@ -67,7 +67,7 @@ The GeoZarr Standard Working Group (SWG) is chartered to develop a Zarr encoding
 
 == Business Value Proposition
 
-In the geospatial world, new cloud native data formats are emerging. Zarr is a generic data format for n-dimensional arrays that enables access to data in compressed chunks of the original array and has become increasingly popular to use for geospatial purposes. In June 2022, the OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html). The purpose of this charter is to adopt a more explicit GeoZarr as an OGC Standard which would provide guidance to standardize the approach for encoding various aspects of geospatial data in zarrs.
+In the geospatial world, new cloud-native data formats are emerging. Zarr is a generic data format for n-dimensional arrays that enables access to data in compressed chunks of the original array and has become increasingly popular to use for geospatial purposes. In June 2022, the OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html). The purpose of this charter is to adopt a more explicit GeoZarr as an OGC Standard which would provide guidance to standardize the approach for encoding various aspects of geospatial data in zarrs.
 
 == Scope of Work
 
