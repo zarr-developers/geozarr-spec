@@ -95,7 +95,9 @@ Specifically, the convention should provide guidance to standardize the approach
 
 === Statement of relationship of planned work to the current OGC standards baseline
 As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard and the OGC netCDF SWG. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
+There are strong connections to other OGC raster / array container standards, specifically NetCDF, HDF5, and GeoTiff. The GeoZarr SWG should seek to leverage existing metadata conventions wherever possible.
 
+As a chunked storage format, there is potentially a strong connection to the `OGC API - Tiles` standard. Map tiles could essentially be mapped 1:1 to an appropriately defined multiscale Zarr array.
 
 === What is Out of Scope?
 In early conversations around creating a draft GeoZarr specification, concerns arose multiple times around the CF encoding of CRS which may pose issues, see https://github.com/zarr-developers/geozarr-spec/issues/20. While these concerns will be discussed and suggestions created for potentially updating CF conventions, if resolutions cannot be made with the GeoZarr specification, we consider out of scope waiting on any subsequent updates to CF conventions to reflect these suggestions. 
