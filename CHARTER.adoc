@@ -198,4 +198,5 @@ xxx
 == References
 
 - [[[gj,1]]] IETF: IETF RFC 7946, The GeoJSON Format, 2016
+[[[gj,2]]] Zarr Enhancement Proposal 4 preparation, https://github.com/zarr-developers/zeps/pull/28
 
