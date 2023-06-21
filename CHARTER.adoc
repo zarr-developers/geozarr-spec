@@ -87,7 +87,7 @@ Specifically, the convention should provide guidance to standardize the approach
 * Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
 * Multiple resolutions of the data, possibly leveraging multiscale drafts
 * Data subsets that are only available at certain resolutions
-* Multiple projections
+* Multiple projections (subgroups, individual zarr stores, ...)
 * Multi-dimensional optimizations (rechunking)
 * Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
 * Encoding of time series that have not been normalized
