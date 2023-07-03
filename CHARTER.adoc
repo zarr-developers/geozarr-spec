@@ -73,6 +73,8 @@ In the geospatial world, new cloud-native data formats are emerging. Zarr is a g
 
 The goal of the GeoZarr specification is to establish flexible and inclusive conventions for the Zarr cloud-native format, specifically designed to meet the diverse requirements within the geospatial domain. These conventions aim to provide a clear and standardized framework for organizing and describing data, ensuring unambiguous representation. 
 
+In addition to the encoding geospatial data and metadata using Zarr, the specification will aim to to provide a multidimensional alternative to the two-dimensional Cloud-Optimized GeoTiff format which has gained popularity due to its serverless capabilities. These capabilities allow for inherent support of traditionally server-based functions, including visualization (similar to OGC API Maps), data subset access (analogous to OGC API Coverages), and symbology (equivalent to OGC API Styles). These aspects are planned to be incorporated as optional profiles (e.g. conformance classes).
+
 The objectives of GeoZarr conventions includes:
 
 1. Compatibility: Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, and QGIS, enabling seamless integration into existing workflows.
