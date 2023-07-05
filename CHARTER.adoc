@@ -88,13 +88,12 @@ Specifically, the convention should provide guidance to standardize the approach
 * Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
 * Multiple resolutions of the data, possibly leveraging multiscale drafts
 * Data subsets that are only available at certain resolutions
-* Multiple projections (subgroups, individual zarr stores, ...)
 * Multi-dimensional optimizations (spatial chunking scheme, temporal chunking scheme)
 * Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
 * Encoding of time series that have not been normalized
 * Accessing the symbology of the corresponding data
 
-Part of the effort of this working group is to determine what should be kept as a part of the GeoZarr core requirements, and what aspects of geospatial data should be kept as seperate conformance classes, which may or may not be applicable to specific sub-domains of the geospatial community. 
+Part of the effort of this working group is to determine what should be kept as a part of the GeoZarr core requirements, and what aspects of geospatial data should be kept as separate conformance classes, which may or may not be applicable to specific sub-domains of the geospatial community. 
 
 === Statement of relationship of planned work to the current OGC standards baseline
 As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard and the OGC netCDF SWG. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
