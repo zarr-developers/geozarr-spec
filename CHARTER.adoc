@@ -77,14 +77,13 @@ In addition to the encoding geospatial data and metadata using Zarr, the specifi
 
 The objectives of GeoZarr conventions includes:
 
-1. Compatibility: Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, and QGIS, enabling seamless integration into existing workflows.
-2. Visualisation: Simplifying the creation and display of geospatial data in web browsers without the need for complex workarounds, making geospatial information more accessible to users.
-3. Dimensions: Supporting multidimensional data, such as hyperspectral and altitude information, to address diverse geospatial data requirements.
-4. Data Discovery: Providing metadata for discovering, accessing, and retrieving the data, including composite products made of multiple data arrays.
-5. Mixing Data: Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
-8. Flexibilty: Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
+1. Compatibility: Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, QGIS, and other visualisation tools, enabling seamless integration into existing workflows.
+2. Dimensions: Supporting multidimensional data, such as hyperspectral and altitude information, to address diverse geospatial data requirements.
+3. Data Discovery: Providing metadata for discovering, accessing, and retrieving the data, including composite products made of multiple data arrays.
+4. Mixing Data: Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
+5. Flexibilty: Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
 
-Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including, for example:
+Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including, for example the following list of potential conformance classes:
 
 * Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
 * Multiple resolutions of the data, possibly leveraging multiscale drafts
@@ -94,6 +93,8 @@ Specifically, the convention should provide guidance to standardize the approach
 * Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
 * Encoding of time series that have not been normalized
 * Accessing the symbology of the corresponding data
+
+Part of the effort of this working group is to determine what should be kept as a part of the GeoZarr core requirements, and what aspects of geospatial data should be kept as seperate conformance classes, which may or may not be applicable to specific sub-domains of the geospatial community. 
 
 === Statement of relationship of planned work to the current OGC standards baseline
 As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard and the OGC netCDF SWG. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
