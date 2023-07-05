@@ -86,7 +86,7 @@ The objectives of GeoZarr conventions includes:
 Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including, for example the following list of potential conformance classes:
 
 * Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
-* Multiple resolutions of the data, possibly leveraging multiscale drafts
+* Multiple resolutions of the data, possibly leveraging multiscale array representations
 * Data subsets that are only available at certain resolutions
 * Multi-dimensional optimizations (spatial chunking scheme, temporal chunking scheme)
 * Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
