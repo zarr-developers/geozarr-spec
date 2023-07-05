@@ -90,7 +90,6 @@ Specifically, the convention should provide guidance to standardize the approach
 * Data subsets that are only available at certain resolutions
 * Multi-dimensional optimizations (spatial chunking scheme, temporal chunking scheme)
 * Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
-* Encoding of time series that have not been normalized
 * Accessing the symbology of the corresponding data
 
 Part of the effort of this working group is to determine what should be kept as a part of the GeoZarr core requirements, and what aspects of geospatial data should be kept as separate conformance classes, which may or may not be applicable to specific sub-domains of the geospatial community. 
