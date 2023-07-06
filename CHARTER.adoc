@@ -167,7 +167,7 @@ The OGC GeoZarr SWG will collaborate on Standard development using a public GitH
 
 * xcube Dataset Convention: https://github.com/dcs4cop/xcube/blob/master/docs/source/cubespec.md
 
-* xcube Multi-Resolution Datasets: https://github.com/dcs4cop/xcube/blob/master/docs/source/mldatasets.md
+  * xcube Multi-Resolution Datasets: https://github.com/dcs4cop/xcube/blob/master/docs/source/mldatasets.md
 
 === Details of first meeting
 
