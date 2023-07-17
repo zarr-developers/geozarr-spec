@@ -129,7 +129,7 @@ The following deliverables will be the initial results of work of the SWG.
 
 * GeoZarr developer resources
 
-The targeted start date for this SWG is 
+The targeted start date for this SWG immediately upon approval of the SWG charter. 
 
 === Additional SWG Tasks
 
