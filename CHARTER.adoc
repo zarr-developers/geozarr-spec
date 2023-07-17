@@ -1,0 +1,203 @@
+:Title: OGC GeoZarr Standards Working Group Charter
+:titletext: {Title}
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc:
+:toc-placement!:
+:toclevels: 4
+:numbered:
+:sectanchors:
+:source-highlighter: pygments
+
+<<<
+[cols = ">",frame = "none",grid = "none"]
+|===
+|{set:cellbgcolor:#FFFFFF}
+|[big]*Open Geospatial Consortium*
+|Submission Date: 2023-05-01
+|Approval Date: 
+|Internal reference number of this OGC(R) document: 23-xxx
+|Category: OGC(R) Standards Working Group Charter
+|Authors: Christophe Noel, Brianna R. Pagán
+|===
+
+[cols = "^", frame = "none"]
+|===
+|[big]*{titletext}*
+|===
+
+[cols = "^", frame = "none", grid = "none"]
+|===
+|*Copyright notice*
+|Copyright (C) 2021 Open Geospatial Consortium
+|To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
+|===
+
+<<<
+
+To: OGC members & interested parties
+
+A new OGC Standards Working Group (SWG) is being formed. The OGC members listed below have proposed the OGC GeoZarr SWG.  The SWG proposal provided in this document meets the requirements of the OGC Technical Committee (TC) Policies and Procedures.
+
+The SWG name, statement of purpose, scope, list of deliverables, audience, and language specified in the proposal will constitute the SWG's official charter. Technical discussions may occur no sooner than the SWG's first meeting.
+
+This SWG will operate under the OGC IPR Policy. The eligibility requirements for becoming a participant in the SWG at the first meeting (see details below) are that:
+
+* You must be an employee of an OGC member organization or an individual
+member of OGC;
+
+* The OGC member must have signed the OGC Membership agreement;
+
+* You must notify the SWG chair of your intent to participate to the first meeting. Members may do so by logging onto the OGC Portal and navigating to the Observer page and clicking on the link for the SWG they wish to join and;
+
+* You must attend meetings of the SWG. The first meeting of this SWG is at the time and date fixed below. Attendance may be by teleconference.
+
+Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
+
+Non-OGC members who wish to participate may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG: the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG’s page.
+
+Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization; we encourage your feedback.
+
+== Purpose of the Standards Working Group
+
+The GeoZarr Standard Working Group (SWG) is chartered to develop a Zarr encoding for geospatial gridded data in the form of Zarr conventions (based on the approach described in the draft Zarr Enhancement Proposal 4).  Zarr specifies a protocol and format used for storing Zarr arrays, while GeoZarr defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). If appropriate, the GeoZarr SWG may also contribute to the Climate and Forecast (CF) conventions (e.g. alternative CRS encoding) by proposing changes based on the [CF community governance process](https://cfconventions.org/governance.html).
+
+
+
+== Business Value Proposition
+
+In the geospatial world, new cloud-native data formats are emerging. Zarr is a generic data format for n-dimensional arrays that enables access to data in compressed chunks of the original array and has become increasingly popular to use for geospatial purposes. Zarr facilitates portability and interoperability on both object stores and hard disks. In June 2022, the OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html). The purpose of this charter is to adopt a more explicit GeoZarr as an OGC Standard which would provide guidance to standardize the approach for encoding various aspects of geospatial data in zarrs.
+
+== Scope of Work
+
+The goal of the GeoZarr specification is to establish flexible and inclusive conventions for the Zarr cloud-native format, specifically designed to meet the diverse requirements within the geospatial domain. These conventions aim to provide a clear and standardized framework for organizing and describing data, ensuring unambiguous representation. 
+
+In addition to the encoding geospatial data and metadata using Zarr, the specification will aim to to provide a multidimensional alternative to the two-dimensional Cloud-Optimized GeoTiff format which has gained popularity due to its serverless capabilities. These capabilities allow for inherent support of traditionally server-based functions, including visualization (similar to OGC API Maps), data subset access (analogous to OGC API Coverages), and symbology (equivalent to OGC API Styles). These aspects are planned to be incorporated as optional profiles (e.g. conformance classes).
+
+The objectives of GeoZarr conventions includes:
+
+1. Compatibility: Ensuring easy compatibility with popular mapping and data analysis tools such as GDAL, Xarray, ArcGIS, QGIS, and other visualisation tools, enabling seamless integration into existing workflows.
+2. Dimensions: Supporting multidimensional data, such as hyperspectral and altitude information, to address diverse geospatial data requirements.
+3. Data Discovery: Providing metadata for discovering, accessing, and retrieving the data, including composite products made of multiple data arrays.
+4. Mixing Data: Facilitating the combination of different types of geospatial data, including satellite images, elevation maps, and weather models, to create comprehensive and informative datasets.
+5. Flexibilty: Allowing scientists and researchers to work with diverse data types and projections in their preferred software and programming languages, promoting flexibility and adaptability in geospatial data processing and analysis.
+
+Specifically, the convention should provide guidance to standardize the approach for encoding various aspects of geospatial data, including, for example the following list of potential conformance classes:
+
+* Multiple related variables with heterogeneous coordinates (e.g., children or linked datasets)
+* Multiple resolutions of the data, possibly leveraging multiscale array representations
+* Data subsets that are only available at certain resolutions
+* Multi-dimensional optimizations (spatial chunking scheme, temporal chunking scheme)
+* Supporting typical Earth observation (EO) products (for example, how to encode multispectral bands)
+* Accessing the symbology of the corresponding data
+
+Part of the effort of this working group is to determine what should be kept as a part of the GeoZarr core requirements, and what aspects of geospatial data should be kept as separate conformance classes, which may or may not be applicable to specific sub-domains of the geospatial community. 
+
+=== Statement of relationship of planned work to the current OGC standards baseline
+As the existing draft GeoZarr metadata utilizes Climate and Forecast (CF) attributes, there is an expected relationship with the OGC CF-netCDF Data Model Extension Standard and the OGC netCDF SWG. If necessary, any adjustments or enhancements required for the GeoZarr specification will be considered as a proposal to improve CF conventions as well.
+There are strong connections to other OGC raster / array container standards, specifically NetCDF, HDF5, and GeoTiff. The GeoZarr SWG should seek to leverage existing metadata conventions wherever possible.
+
+As a chunked storage format, there is potentially a strong connection to the `OGC API - Tiles` standard. Map tiles could essentially be mapped 1:1 to an appropriately defined multiscale Zarr array.
+
+=== What is Out of Scope?
+In early conversations around creating a draft GeoZarr specification, concerns arose multiple times around the CF encoding of CRS which may pose issues, see https://github.com/zarr-developers/geozarr-spec/issues/20. While these concerns will be discussed and suggestions created for potentially updating CF conventions, if resolutions cannot be made with the GeoZarr specification, we consider out of scope waiting on any subsequent updates to CF conventions to reflect these suggestions. 
+
+=== Specific Existing Work Used as Starting Point
+* GeoZarr draft specification: https://github.com/zarr-developers/geozarr-spec/ 
+
+=== Is This a Persistent SWG
+
+[x] YES
+
+[ ] NO
+
+=== When can the SWG be Inactivated
+
+The SWG can be inactivated once the SWG identifies no new tasks for the SWG and there are no open Change Requests.
+
+== Description of deliverables
+The GeoZarr SWG will deliver a candidate Standard and associated developer resources.
+
+The SWG expects to have a candidate Standard ready for OGC Architecture Board (OAB) review and public comment within nine months of creation of the SWG. Because example implementations will be developed at the same time the candidate Standard is formalized, reference implementations that fully use GeoZarr should be documented at the same time the candidate Standard goes to vote.
+
+=== Initial Deliverables
+
+The following deliverables will be the initial results of work of the SWG.
+
+* OGC GeoZarr Standard
+
+* GeoZarr developer resources
+
+The targeted start date for this SWG immediately upon approval of the SWG charter. 
+
+=== Additional SWG Tasks
+
+No specific additional tasks are currently planned for the SWG.
+
+== IPR Policy for this SWG
+
+[x] RAND-Royalty Free
+
+[ ] RAND for fee
+
+== Anticipated Audience / Participants
+
+This SWG will develop a Standard for general use in the geospatial community and suitable for data exchange beyond this community. Geospatial data providers and software implementers will be interested in assisting with the development of this Standard as well as the output of the SWG.
+
+== Domain Working Group Endorsement
+
+The SWG convenors will discuss the charter with potentially interested Domain Working Groups (DWGs) at the first opportunity.
+
+== Other informative information about the work of this SWG
+
+=== Collaboration
+
+All work in the Standards Working Group will be public and the SWG solicits contributions and feedback from OGC members and non-OGC members to the extent that is supported by the OGC Technical Committee Policies and Procedures.
+
+The OGC GeoZarr SWG will collaborate on Standard development using a public GitHub repository and a Gitter channel. Development of the Standard will include the use of Issues and other project tools in GitHub.
+
+=== Similar or Applicable Standards Work (OGC and Elsewhere)
+
+* The OGC endorsed a community standard of Zarr V2.0 (https://zarr.readthedocs.io/en/stable/spec/v2.html) in June 2022.
+
+* This SWG is closely related to the newly announced [Geodatacube SWG](https://www.ogc.org/press-release/ogc-forms-new-geodatacube-standards-working-group/). Essentially, Geodatacube will specify a server API while GeoZarr can define a standard Cloud-native format for a serverless datacube. Therefore, close coordination between these SWGs seems needed.
+
+* The XCube project has potential synergies with the GeoZarr specification as it already relies and complies with CF conventions: 
+
+  * xcube Dataset Convention: https://github.com/dcs4cop/xcube/blob/master/docs/source/cubespec.md
+
+  * xcube Multi-Resolution Datasets: https://github.com/dcs4cop/xcube/blob/master/docs/source/mldatasets.md
+
+=== Details of first meeting
+
+The first meeting of the SWG will occur within four weeks of approval of the SWG charter.
+
+=== Projected on-going meeting schedule
+
+The work of this SWG will be carried out primarily on GitHub and via email, web conferences / calls, and at face-to-face sessions at OGC Member Meetings as agreed to by the SWG members. The web conferences / calls will be scheduled as needed and posted to the OGC portal. Voting on OGC GeoZarr Conventions content will be limited to SWG members only.
+
+=== Supporters of this Charter
+
+The following people support this proposal and are committed to the Charter and projected meeting schedule. These members are known as SWG Founding or Charter members. The charter members agree to the SoW and IPR terms as defined in this charter. The charter members have voting rights beginning the day the SWG is officially formed. Charter Members are shown on the public SWG page.
+
+|===
+|Name |Organization
+
+|Christophe Noel | Spacebel
+|Brianna R. Pagán | NASA GES DISC
+|Alexey N. Shiklomanov | NASA Goddard Space Flight Center
+|Tyler A. Erickson | VorGeo
+|David Blodgett | U.S. Geological Survey
+|===
+
+=== Conveners
+
+xxx
+
+[bibliography]
+== References
+
+- [[[gj,1]]] IETF: IETF RFC 7946, The GeoJSON Format, 2016
+[[[gj,2]]] Zarr Enhancement Proposal 4 preparation, https://github.com/zarr-developers/zeps/pull/28
+
