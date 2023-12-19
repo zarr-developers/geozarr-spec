@@ -16,8 +16,8 @@
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2023-05-01
-|Approval Date: 
-|Internal reference number of this OGC(R) document: 23-xxx
+|Approval Date: 2023-12-04
+|Internal reference number of this OGC(R) document: 23-046
 |Category: OGC(R) Standards Working Group Charter
 |Authors: Christophe Noel, Brianna R. Pagán
 |===
@@ -30,7 +30,7 @@
 [cols = "^", frame = "none", grid = "none"]
 |===
 |*Copyright notice*
-|Copyright (C) 2021 Open Geospatial Consortium
+|Copyright (C) 2023 Open Geospatial Consortium
 |To obtain additional rights of use, visit http://www.opengeospatial.org/legal/
 |===
 
