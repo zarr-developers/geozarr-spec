@@ -6,7 +6,7 @@ The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL 
 
 ## Status
 
-This specification is an early draft developed in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of useable products.
+This specification is an early draft developed in the frame of an European Space Agency (ESA) GSTP. Through the optional General Support Technology Programme (GSTP) ESA, Participating States and Industry work together to convert promising engineering concepts into a broad spectrum of usable products.
 
 [Change Log](https://github.com/christophenoel/geozarr-spec/wiki)
 
@@ -44,12 +44,12 @@ GeoZarr Auxiliary variable MUST include the attribute **\_ARRAY_DIMENSIONS set a
 
 GeoZarr Dataset is a root **Zarr Group** which contains a **set of DataArray variables** (observed data), **Coordinates variables**, Auxiliary variables, and optionally children Datasets (located in children Zarr Groups). Dataset MUST contain a **consistent** set of data for which the DataArray variables have aligned dimensions, and share the same coordinates grid using a common spatial projection.
 
-If multiple Array Variables share heterogenous dimensions or coordinates, a primary homogeneous set of variables MUST be located at root level, and the other sets declared in children datasets.
+If multiple Array Variables share heterogeneous dimensions or coordinates, a primary homogeneous set of variables MUST be located at root level, and the other sets declared in children datasets.
 
 
 ## GeoZarr Metadata
 
-GeoZarr Arrays and Coordinates Variables MUST include [Climate and Forecast (CF)](http://cfconventions.org/) attributes (in the .attrs ojbect). The variables MUST include at least:
+GeoZarr Arrays and Coordinates Variables MUST include [Climate and Forecast (CF)](http://cfconventions.org/) attributes (in the .attrs object). The variables MUST include at least:
 
 * standard_name for all variables
 * grid_mapping (coordinates reference system) for all array variables
