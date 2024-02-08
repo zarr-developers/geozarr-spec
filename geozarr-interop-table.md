@@ -8,7 +8,7 @@
 | NetCDF Python | ？ | ✅ |  |  |  |  |
 | NCO | ✅ | ✅ |  |  |  |  |
 | Panoply | n/a | 🚫 |  |  |  |  |
-| Xarray | ✅ |  |  |  |  |  |
+| Xarray | ✅ | ✅ |  |  |  |  |
 
 ## GeoZarr Tool Interoperability (current spec)
 
