@@ -94,7 +94,7 @@ A GeoZarr Dataset variable might includes multiscales for a set of DataArray var
 
 * Multiscale group name is the zoom level (e.g. '0').
 * Multiscale group contains all DataArrays generated for this specific zoom level.
-* Zoom level strategy is based on the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r2/17-083r2.html). 
+* Zoom level strategy is based on the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2. 
 * Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the latitude and longitude dimensions.
 
 ### Multiscales Metadata
@@ -120,7 +120,7 @@ Within the Tile Matrix Set
 
 #### Tile Matrix Set Limits
 Tile Matrix Sets may describe a larger spatial extent and more resolutions than used in the given dataset.
-In that case, users MAY specify [Tile Matrix Set Limits](https://docs.ogc.org/is/17-083r2/17-083r2.html#13) as specified in the OGC standard to define the minimum and a maximum limits of the indices for each TileMatrix that contains actual data.
+In that case, users MAY specify [Tile Matrix Set Limits](https://docs.ogc.org/is/17-083r4/17-083r4.html#toc21) as specified in the OGC standard to define the minimum and a maximum limits of the indices for each TileMatrix that contains actual data.
 
 If used, Tile Matrix Set Limits
 * MUST list all included zoom levels
@@ -164,7 +164,7 @@ Resampling Method specifies which resampling method was used to generate multisc
 +{
 +  "multiscales":
 -       { 
--           "tile_matrix_set": "http://schemas.opengis.net/tms/1.0/json/examples/WebMercatorQuad.json",
+-           "tile_matrix_set": "https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/WebMercatorQuad.json.json",
 -           "resampling_method": "nearest",
 -       }
 +}
@@ -178,50 +178,42 @@ Resampling Method specifies which resampling method was used to generate multisc
 +  "multiscales":
 -       { 
 -           "tile_matrix_set": {
--               "type": "TileMatrixSetType",
+-               "id": "WebMercatorQuad",
 -               "title": "Google Maps Compatible for the World",
--               "identifier": "WebMercatorQuad",
--               "boundingBox": {
--                   "type": "BoundingBoxType",
--                   "crs": "http://www.opengis.net/def/crs/EPSG/0/3857",
--                   "lowerCorner": [
--                       -20037508.3427892,
--                       -20037508.3427892
--                   ],
--                   "upperCorner": [
--                       20037508.3427892,
--                       20037508.3427892
--                   ]
--                   },
--               "supportedCRS": "http://www.opengis.net/def/crs/EPSG/0/3857",
+-               "uri": "http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad",
+-               "crs": "http://www.opengis.net/def/crs/EPSG/0/3857",
+-               "orderedAxes": [
+-                   "X",
+-                   "Y"
+-               ],
 -               "wellKnownScaleSet": "http://www.opengis.net/def/wkss/OGC/1.0/GoogleMapsCompatible",
--               "tileMatrix": [
--                   {
--                       "type": "TileMatrixType",
--                       "identifier": "0",
--                       "scaleDenominator": 559082264.028717,
--                       "topLeftCorner": [
--                           -20037508.3427892,
--                           20037508.3427892
--                       ],
--                       "tileWidth": 256,
--                       "tileHeight": 256,
--                       "matrixWidth": 1,
--                       "matrixHeight": 1
--                   },
--                   {
--                       "type": "TileMatrixType",
--                       "identifier": "1",
--                       "scaleDenominator": 279541132.014358,
--                       "topLeftCorner": [
--                           -20037508.3427892,
--                           20037508.3427892
--                       ],
--                       "tileWidth": 256,
--                       "tileHeight": 256,
--                       "matrixWidth": 2,
--                       "matrixHeight": 2
--                   },
+-               "tileMatrices": [
+-               {
+-               "id": "0",
+-               "scaleDenominator": 559082264.028717,
+-               "cellSize": 156543.033928041,
+-               "pointOfOrigin": [
+-                   -20037508.3427892,
+-                   20037508.3427892
+-               ],
+-               "tileWidth": 256,
+-               "tileHeight": 256,
+-               "matrixWidth": 1,
+-               "matrixHeight": 1
+-               },
+-               {
+-               "id": "1",
+-               "scaleDenominator": 279541132.014358,
+-               "cellSize": 78271.5169640204,
+-               "pointOfOrigin": [
+-                   -20037508.3427892,
+-                   20037508.3427892
+-               ],
+-               "tileWidth": 256,
+-               "tileHeight": 256,
+-               "matrixWidth": 2,
+-               "matrixHeight": 2
+-               },
 -           }
 -           "resampling_method": "nearest",
 -       }
