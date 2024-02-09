@@ -89,45 +89,43 @@ A GeoZarr Dataset variable might includes multiscales for a set of DataArray var
 
 ### Multiscales Encoding 
 
- Multiscales MUST be encoded in children groups. Data at all scales MUST use the same coordinate reference system.
+ Multiscales MUST be encoded in children groups. Data at all scales MUST use the same coordinate reference system and must follow ONE common zoom level strategy. The zoom level strategy is modelled in close alignment to the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2 and the [Tiled Asset STAC extension](https://github.com/stac-extensions/tiled-assets). Each zoom level is described by a Matrix defining the number, layout, origen and pixel size of included tiles. These tiles MUST correspond to the chunk layout along the `lat` and `lon` dimension of the DataArray within a given group.
  
-
-* Multiscale group name is the zoom level (e.g. '0').
-* Multiscale group contains all DataArrays generated for this specific zoom level.
-* Zoom level strategy is based on the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2. 
+* Multiscale group name is the zoom level identifier (e.g. '0').
+* Multiscale group contains all DataArrays generated for this specific zoom level. 
 * Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the latitude and longitude dimensions.
 
 ### Multiscales Metadata
 
-
-Each DataArray MUST define the 'multiscales' metadata attribute which includes the following fields:
-* tile_matrix_set
-* tile_matrix_set_limits (optional)
-* reampling_method
+If implemented, each DataArray MUST define the 'multiscales' metadata attribute which includes the following fields:
+* `tile_matrix_set`
+* `tile_matrix_set_limits` (optional)
+* `resampling_method`
 
 
 #### Tile Matrix Set
 Tile Matrix Set can be: 
 * the name of a well know tile matrix set. Well known Tile Matrix Sets are listed [here](https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/).
-* the URI of a JSON document describing the Matrix following the OGC standard.
-* a JSON object describing the Matrix following the OGC standard.
+* the URI of a JSON document describing the Tile Matrix Set following the OGC standard.
+* a JSON object describing the Tile Matrix Set following the OGC standard (CamelCase!).
 
 Within the Tile Matrix Set
 * the Tile Matrix identifier for each zoom level MUST be the relative path to the Zarr group which holds the DataArray variable 
 * zoom levels MUST be provided from lowest to highest resolutions
 * the `supportedCRS` attribute of the Tile Matrix Set MUST match the crs information defined under **grid_mapping**.
+* the tile layout for each Matrix MUST correspond to the chunk layout along the `lat` and `lon` dimension of the corresponding group.
 
 
 #### Tile Matrix Set Limits
 Tile Matrix Sets may describe a larger spatial extent and more resolutions than used in the given dataset.
-In that case, users MAY specify [Tile Matrix Set Limits](https://docs.ogc.org/is/17-083r4/17-083r4.html#toc21) as specified in the OGC standard to define the minimum and a maximum limits of the indices for each TileMatrix that contains actual data.
+In that case, users MAY specify [Tile Matrix Set Limits](https://docs.ogc.org/is/17-083r4/17-083r4.html#toc21) as described in the OGC standard to define the minimum and a maximum limits of the indices for each TileMatrix that contains actual data. However, the notation for tile matrix set does not the JSON encoding as described in the OGC standard but follows the STAC Tile Asset encoding for better readability.
 
 If used, Tile Matrix Set Limits
 * MUST list all included zoom levels
-* MAY list the min and max rows and columns for each zoom level. If omitted, it is assumed that the entire spatial extent is covered.
+* MAY list the min and max rows and columns for each zoom level. If omitted, it is assumed that the entire spatial extent is covered (resulting in higher chunk count of the DataArray).
 
 #### Resampling Method
-Resampling Method specifies which resampling method was used to generate multiscales. It MUST be one of the following strings
+Resampling Method specifies which resampling method is used for generating multiscales. It MUST be one of the following string values. Resampling method MUST be the same across all zoom levels:
 * nearest
 * bilinear
 * cubic
@@ -227,19 +225,21 @@ Resampling Method specifies which resampling method was used to generate multisc
 +  "multiscales":
 -       { 
 -           "tile_matrix_set": "WebMercatorQuad",
-+           "tile_matrix_limits: [{
--               “tileMatrix”: “3”,
-+                “minTileRow”: 4,
-+                “maxTileRow”: 5,
-+                “minTileCol”: 2,
-+                “maxTileCol”: 2
--            },{
--                “tileMatrix”: “4”,
-+                “minTileRow”: 8,
-+                “maxTileRow”: 9,
-+                “minTileCol”: 4,
-+                “maxTileCol”: 4
--            }]
++           "tile_matrix_limits: {
+-                "0": {},
+-                "1": {
++                    "min_tile_col": 0,
++                    "max_tile_col": 0,
++                    "min_tile_row": 0,
++                    "max_tile_row": 0
+-                },
+-                "2": {
++                    "min_tile_col": 1,
++                    "max_tile_col": 1,
++                    "min_tile_row": 2,
++                    "max_tile_row": 2
+-                }
+-        },
 -           "resampling_method": "nearest",
 -       }
 +}
