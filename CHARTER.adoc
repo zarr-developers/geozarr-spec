@@ -16,7 +16,7 @@
 |{set:cellbgcolor:#FFFFFF}
 |[big]*Open Geospatial Consortium*
 |Submission Date: 2023-05-01
-|Approval Date: 2023-12-04
+|Approval Date: 2023-12-04
 |Internal reference number of this OGC(R) document: 23-046
 |Category: OGC(R) Standards Working Group Charter
 |Authors: Christophe Noel, Brianna R. Pagán
