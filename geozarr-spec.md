@@ -162,7 +162,7 @@ Resampling Method specifies which resampling method is used for generating multi
 +{
 +  "multiscales":
 -       { 
--           "tile_matrix_set": "https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/WebMercatorQuad.json.json",
+-           "tile_matrix_set": "https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/WebMercatorQuad.json",
 -           "resampling_method": "nearest",
 -       }
 +}
