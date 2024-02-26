@@ -89,11 +89,11 @@ A GeoZarr Dataset variable might includes multiscales for a set of DataArray var
 
 ### Multiscales Encoding 
 
- Multiscales MUST be encoded in children groups. Data at all scales MUST use the same coordinate reference system and must follow ONE common zoom level strategy. The zoom level strategy is modelled in close alignment to the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2 and the [Tiled Asset STAC extension](https://github.com/stac-extensions/tiled-assets). Each zoom level is described by a Matrix defining the number, layout, origin and pixel size of included tiles. These tiles MUST correspond to the chunk layout along the `lat` and `lon` dimension of the DataArray within a given group.
+ Multiscales MUST be encoded in children groups. Data at all scales MUST use the same coordinate reference system and must follow ONE common zoom level strategy. The zoom level strategy is modelled in close alignment to the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2 and the [Tiled Asset STAC extension](https://github.com/stac-extensions/tiled-assets). Each zoom level is described by a Matrix defining the number, layout, origin and pixel size of included tiles. These tiles MUST correspond to the chunk layout along the two spatial dimensions listed in `_ARRAY_DIMENSIONS` of a given group.
  
 * Multiscale group name is the zoom level identifier (e.g. '0').
 * Multiscale group contains all DataArrays generated for this specific zoom level. 
-* Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the latitude and longitude dimensions.
+* Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the two spatial dimensions listed in `_ARRAY_DIMENSIONS`.
 
 ### Multiscales Metadata
 
@@ -113,7 +113,7 @@ Within the Tile Matrix Set
 * the Tile Matrix identifier for each zoom level MUST be the relative path to the Zarr group which holds the DataArray variable 
 * zoom levels MUST be provided from lowest to highest resolutions
 * the `supportedCRS` attribute of the Tile Matrix Set MUST match the crs information defined under **grid_mapping**.
-* the tile layout for each Matrix MUST correspond to the chunk layout along the `lat` and `lon` dimension of the corresponding group.
+* the tile layout for each Matrix MUST correspond to the chunk layout along the two spatial dimensions listed in `_ARRAY_DIMENSIONS` of the corresponding group.
 
 
 #### Tile Matrix Set Limits
