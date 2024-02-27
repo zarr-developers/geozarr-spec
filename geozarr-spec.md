@@ -73,7 +73,7 @@ The following standard names are recommended to describe coordinates variables f
 
 ### Coordinate Reference System
 
-The **grid_mapping** CF variable defined by DataArray variable defines the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the Auxliary variable that holds all the CF attribute describing the CRS. 
+The **grid_mapping** CF variable defined by the DataArray variable defines the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the auxiliary variable that holds all the CF attributes describing the CRS. 
 
 ### Other CF Properties
 
