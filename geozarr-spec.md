@@ -85,7 +85,7 @@ All other CF conventions are recommended, in particular the attributes below:
 
 ## Multiscales
 
-A GeoZarr Dataset variable might includes multiscales for a set of DataArray variables.  Also known as "overviews", multiscales provides resampled copies of the original data at a coarser resolution. Multiscales of the original data thus always hold less detail. Common use cases for multiscales are fast rendering for visualization purposes and analyzing data at multiple resolution. 
+A GeoZarr Dataset variable might include multiscales for a set of DataArray variables.  Also known as "overviews", multiscales provide resampled copies of the original data at a coarser resolution. Multiscales of the original data thus always hold less detail. Common use cases for multiscales are fast rendering for visualization purposes and analyzing data at multiple resolutions. 
 
 ### Multiscales Encoding 
 
