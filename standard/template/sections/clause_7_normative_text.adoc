@@ -1,38 +1,126 @@
-== Clause containing normative material
+== GeoZarr format requirements
 
-Paragraph
+TIP: This is a very preliminary draft
 
-=== Requirement Class A or Requirement A Example
+A GeoZarr data format is a regular Zarr hierarchy that represents geospatial phenomena such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
-Paragraph – intro text for the requirement class.
+In GeoZarr, a Dataset defines primary object in the hierarchy (which should be referenced as an asset within a STAC item). This facilitates the interpretation of geospatial data by clients, such as web maps, and supports advanced capabilities such as pyramiding. The Dataset encompasses the structure and encoding of data variables, coordinates, affine transformation descriptions, tiling, and reduced-resolution subfiles.
 
-Use the following table for Requirements Classes.
+The specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
 
-include::../requirements/requirements_class.adoc[]
+TIP: a terminology might be relevant but probably provided in a earlier section.
 
-==== Requirement 1
+=== Underlying GeoZarr Requirements
 
-Paragraph - intro text for the requirement.
+This section addresses the core GeoZarr Requirements Class applicable to all GeoZarr instances.
 
-Use the following table for Requirements, number sequentially.
+==== Requirement Class GeoZarr
 
-include::../requirements/requirement001.adoc[]
+TIP: This section should define the requirements for a Zarr 'instance' (a hierarchy).
 
-Dictionary tables for requirements can be added as necessary. Modify the following example as needed.
+===== Structure
 
-[width="90%",options="header"]
+GeoZarr consist in any Zarr tree structure (including a single Zarr array) ...
+
+===== Attributes
+
+TIP: Define how (where) is encoded the metadata
+
+
+
+==== Requirement Class GeoZarr Dataset
+
+TIP: This section should define requirements for a Dataset group
+
+A GeoZarr may include Dataset Groups which consists in n-D variables observed by a sensor (temperature, humidity, elevation). These variables are defined by geospatial coordinates and optional extra dimensions (time, altitude, etc.).
+
+
+[width="90%",cols="2,6"]
 |===
-|Names |Definition |Data types and values |Multiplicity and use
-|name 1 |definition of name 1 |float |One or more (mandatory)
-|name 2 |definition of name 2 |character string type, not empty |Zero or one (optional)
-|name 3 |definition of name 3 |GML:: Point PropertyType |One (mandatory)
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
+| A {set:cellbgcolor:#EEEEEE} | Any Dataset must be stored as a Zarr group {set:cellbgcolor:#FFFFFF}
+| B {set:cellbgcolor:#EEEEEE} | The Dataset must include children Zarr arrays for each data variable and for each coordinate {set:cellbgcolor:#FFFFFF}
+| C {set:cellbgcolor:#EEEEEE} | The Dataset group must include the property `conformsTo` set to the Dataset requirement class  {set:cellbgcolor:#FFFFFF}
+| D {set:cellbgcolor:#EEEEEE} | TBD {set:cellbgcolor:#FFFFFF}
 |===
 
+NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also a property for a index of variables.
 
-==== Requirement 2
 
-Paragraph - intro text for the requirement.
+===== Data Variables
 
-Use the following table for Requirements, number sequentially.
+TIP: Defines the requirements for the variables in a dataset (how to specify dimensions and relationship with the coordinates sibling)
 
-include::../requirements/requirement002.adoc[]
+TBD: Variables hold the data values of the observed geospatial phenomena. A variable has a name, type,any dimension, attributes and values.
+
+TBD: can/should a data variable have dimensions which are not coordinates
+
+===== Coordinates
+
+TIP: Defines the requirement for the data coordinates and reference to the requirement classes for the different encoding of data coordinate.
+
+=== Coordinate
+
+TIP: describe the types and encoding of different types of coordinate
+
+==== Coordinate Types
+
+TIP: Defines what are the requirement in GeoZarr related to latitude, longitude, time, etc. metadata such as does it impose to use CF standard names for qualifying the coordinate (or another convention from GDAL)
+
+==== Coordinate Encodings
+
+TIP: Which encoding does it support (do we impose/recommend to always have 2D array ?).
+
+Proposed encoding:
+- 2D array (the nominal encoding applied by xarray)
+- origin/offset:
+- COARDS :
+
+===== Requirements Class CoordinateArray
+
+===== Requirements Class CoordinateOriginOffset
+
+TIP: It is not supported yet in the model, but this seems relevant to be added.
+
+===== Requirements Class CoordinateVector
+
+TIP: please add the definition
+
+==== Coordinates Reference System Encodings
+
+TIP: any consideration with projections and affine transformations ?
+
+=== Tiling and Pyramiding
+
+TIP: equivalent to GeoTiff (https://docs.ogc.org/is/21-026/21-026.html). GeoZarr should specify if and how tiling might be applied for three-dimensional and higher-dimensional data (for example, order of dimensions might be critical)
+
+==== Requirements Class Tiling
+
+Tiling is a strategy for optimising chunking in GeoZarr. With tiling, access to a specific area or two-dimensional bounding box is much quicker, as the relevant data is stored closer together in the file, reducing the number of bytes that need to be read compared to the strips approach.
+
+==== Requirements Class Pyramiding
+
+Pyramiding is useful when the client wants to quickly render an image of the entire area or a large portion of the area represented in the file. Instead of downloading every pixel, the software can request a smaller, pre-created, lower-resolution version.
+
+
+==== Requirement
+
+=== Referencing in STAC
+
+TIP: might be useful to describe or provide extension for referencing GeoZarr assets (e.g. dataset) in STAC Items.
+
+== Annex B: Mappings with other formats
+
+TIP: Provides the mappings for information purpose to show how GEoZarr preserve information from any data source.
+
+To ensure interoperability with most client and mapping tools, GeoZarr enforces a set of requirements, including conventions from CF and GDAL.
+
+To maximize compatibility with various source formats, GeoZarr preserves as much metadata and structure as possible from these formats.
+
+NOTE: In particular, if relevant information which cannot be encoded in GeoZarr is identified, the specification might be extended.
+
+
+=== Mappings with CF
+
+=== Mappings with GDAL
+
