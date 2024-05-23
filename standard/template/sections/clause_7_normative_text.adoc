@@ -102,6 +102,10 @@ Tiling is a strategy for optimising chunking in GeoZarr. With tiling, access to 
 
 Pyramiding is useful when the client wants to quickly render an image of the entire area or a large portion of the area represented in the file. Instead of downloading every pixel, the software can request a smaller, pre-created, lower-resolution version.
 
+==== Requirements Class Map Rendering
+
+TIP: in addition to traditional 2D formats, some conventions might be needed to faciltiate the rendering of time series or N-D arrays on map tools. For example, how the bands / layers of the array are referenced, etc.
+
 
 ==== Requirement
 
