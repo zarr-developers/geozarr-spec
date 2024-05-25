@@ -22,15 +22,32 @@ TIP: This section should define the requirements for a Zarr 'instance' (a hierar
 
 GeoZarr consist in any Zarr tree structure (including a single Zarr array) ...
 
+===== Variables
+
+A variable represents an array of values of the same type and a represented in Zarr arrays. 
+
 ===== Attributes
 
 TIP: Define how (where) is encoded the metadata
 
+GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. The informaiton might be about the variables, the coordinates, the spatio-temporal asset, or any purpose.
 
+====
 
-==== Requirement Class GeoZarr Dataset
+==== Requirement Class GeoZarr Gridded Dataset
 
 TIP: This section should define requirements for a Dataset group
+
+===== Gridded Dataset Overview
+
+GeoZarr defines flexible conventions that allow encoding most content from any source format. This includes any information that can be expressed as a property or JSON object, geospatial arrays (raster) or non-geospatial arrays, and the entire hierarchical structure in groups.
+
+A generic geospatial data client (such as a mapping tool) may not be able to utilize all specific information of a given format. GeoZarr places special emphasis on Gridded Dataset which might be discovered, interpreted and displayed on a map. Gridded Dataset which refers to a structured format of spatial data represented as a matrix of cells or pixels, organized in a regular grid. Each cell holds a value representing a specific geographic area. Gridded Datasets includes 2D Rasters, Raster Time Series, Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.)
+
+A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables with coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
+
+
+===== Gridded Dataset Structure
 
 A GeoZarr may include Dataset Groups which consists in n-D variables observed by a sensor (temperature, humidity, elevation). These variables are defined by geospatial coordinates and optional extra dimensions (time, altitude, etc.).
 
@@ -51,7 +68,7 @@ NOTE: We may require or recommend that a Dataset is restricted to a single data 
 
 TIP: Defines the requirements for the variables in a dataset (how to specify dimensions and relationship with the coordinates sibling)
 
-TBD: Variables hold the data values of the observed geospatial phenomena. A variable has a name, type,any dimension, attributes and values.
+A Data Variable holds the data values of the observed geospatial phenomena. A variable has a name, type,any dimension, attributes and values.
 
 TBD: can/should a data variable have dimensions which are not coordinates
 
