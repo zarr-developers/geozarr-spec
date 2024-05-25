@@ -2,13 +2,19 @@
 
 TIP: This is a very preliminary draft
 
-A GeoZarr data format is a regular Zarr hierarchy that represents geospatial phenomena such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
+A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
-In GeoZarr, a Dataset defines primary object in the hierarchy (which should be referenced as an asset within a STAC item). This facilitates the interpretation of geospatial data by clients, such as web maps, and supports advanced capabilities such as pyramiding. The Dataset encompasses the structure and encoding of data variables, coordinates, affine transformation descriptions, tiling, and reduced-resolution subfiles.
+The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, and a coverage is one special kind of feature which stands for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain” . 
 
-The specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
+GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is primarily used in geospatial data and geographic information systems (GIS). It is a type of *grid coverage* that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
 
-TIP: a terminology might be relevant but probably provided in a earlier section.
+The base terminology in the scope of this specification includes the following terms:
+- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a *Rectified Grid Coverage*
+- A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a Rectified Grid Coverage
+- A *GeoZarr Auxiliary Variable* is the array (might be empty) and attributes that define other type of information
+- A *GeoZarr Gridded Dataset* (or Dataset) is a set of GeoZarr Variables which define one or more Rectivfed Grid Coverages (thus including their values, coordinates and ancillary data and metadata).
+
+A Dataset (referenced as an asset in a STAC item) facilitates the disocovery and handling of the coverages by clients, such as web maps, and supports advanced capabilities such as pyramiding. However,GeoZarr also flexible and adaptable enough to accommodate other types of information: the specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
 
 === Underlying GeoZarr Requirements
 
