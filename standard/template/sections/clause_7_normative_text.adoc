@@ -32,8 +32,6 @@ TIP: Define how (where) is encoded the metadata
 
 GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. The informaiton might be about the variables, the coordinates, the spatio-temporal asset, or any purpose.
 
-====
-
 ==== Requirement Class GeoZarr Gridded Dataset
 
 TIP: This section should define requirements for a Dataset group
