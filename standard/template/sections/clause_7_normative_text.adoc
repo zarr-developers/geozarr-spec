@@ -1,6 +1,6 @@
 == GeoZarr format requirements
 
-TIP: This is a very preliminary draft
+TIP: This is a very preliminary draft. The content is essentially for showing the purpose of the proposed sections, but the focus should be on the table of contents.
 
 A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
