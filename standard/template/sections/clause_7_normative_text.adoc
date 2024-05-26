@@ -137,16 +137,6 @@ classDiagram
 
 A GeoZarr may include Dataset Groups which consists in n-D variables observed by a sensor (temperature, humidity, elevation). These variables are defined by geospatial coordinates and optional extra dimensions (time, altitude, etc.).
 
-
-[width="90%",cols="2,6"]
-|===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
-| A {set:cellbgcolor:#EEEEEE} | A Gridded Dataset must be stored as a Zarr group {set:cellbgcolor:#FFFFFF}
-| B {set:cellbgcolor:#EEEEEE} | The Dataset must include children Zarr arrays for each data variable and for each coordinate {set:cellbgcolor:#FFFFFF}
-| C {set:cellbgcolor:#EEEEEE} | The Dataset group must include the property `conformsTo` set to the Dataset requirement class  {set:cellbgcolor:#FFFFFF}
-| D {set:cellbgcolor:#EEEEEE} | TBD {set:cellbgcolor:#FFFFFF}
-|===
-
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
@@ -154,6 +144,36 @@ A GeoZarr may include Dataset Groups which consists in n-D variables observed by
 | B {set:cellbgcolor:#EEEEEE} | The Zarr group must include the property `conformsTo` set to the Dataset requirement class.
 | C {set:cellbgcolor:#EEEEEE} | Coordinates, attributes, and any additional information must be represented in the Zarr group or children Zarr objects (see furhter equirements)
 |===
+
+**Hierarchy of Zarr Elements**
+
+```mermaid
+classDiagram
+    class ZarrGroup {
+        +attrs (attributes)
+    }
+    class ZarrArray {
+        +attrs (attributes)
+    }
+    
+    ZarrGroup <|-- Dataset : maps to
+    ZarrArray <|-- Coordinate : maps to
+    ZarrArray <|-- DataVariable : maps to
+
+    class Dataset {
+    }
+    class Coordinate {
+    }
+    class DataVariable {
+    }
+
+    Dataset --> ZarrGroup
+    ZarrGroup --> "1..*" ZarrArray : contains
+    Coordinate --> ZarrArray
+    DataVariable --> ZarrArray
+```
+
+INFO: a coordinate is not necessary a list of positions (labelled coordinates) but might be encoded in different ways further defined.
 
 NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also a property for a index of variables.
 
