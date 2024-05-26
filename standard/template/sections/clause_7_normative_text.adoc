@@ -108,6 +108,37 @@ A generic geospatial data client (such as a mapping tool) may not be able to uti
 
 A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables sharing the same coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
 
+**GeoZarr Gridded Dataset Abstract Representation**
+
+```plantuml
+@startuml
+package "GeoZarr Gridded Dataset" {
+    class "Dataset" as dataset {
+        +attributes
+    }
+    class "Data Variable" as dataVariable {
+        +values
+        +attributes
+    }
+    class "Coordinate Variable" as coordinateVariable {
+        +coordinates
+        +attributes
+    }
+    class "Auxiliary Variable" as auxiliaryVariable {
+        +data
+        +attributes
+    }
+
+    dataset --> "1..*" dataVariable : includes
+    dataset --> "1..*" coordinateVariable : includes
+    dataset --> "0..*" auxiliaryVariable : includes
+
+    coordinateVariable --> "defines" dataVariable : coordinates
+
+}
+@enduml
+``
+
 
 ===== Gridded Dataset Structure
 
