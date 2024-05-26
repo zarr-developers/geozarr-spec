@@ -11,6 +11,7 @@ The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as 
 GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is primarily used in geospatial data and geographic information systems (GIS). It is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
 
 The base terminology in the scope of this specification includes the following terms:
+
 - A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information
 - A *GeoZarr Data Variable* is the arrray and attributes that define the values of a *Rectified Grid Coverage*
 - A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a Rectified Grid Coverage
