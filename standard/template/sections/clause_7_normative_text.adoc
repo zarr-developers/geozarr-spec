@@ -107,38 +107,31 @@ GeoZarr defines flexible conventions that allow encoding most content from any s
 A generic geospatial data client (such as a mapping tool) may not be able to utilize all specific information of a given format. GeoZarr places special emphasis on Gridded Dataset which might be discovered, interpreted and displayed on a map. Gridded Dataset which refers to a structured format of spatial data represented as a matrix of cells or pixels, organized in a regular grid. Each cell holds a value representing a specific geographic area. Gridded Datasets includes 2D Rasters, Raster Time Series, Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.)
 
 A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables sharing the same coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
+**Figure 1: GeoZarr Gridded Dataset Abstract Representation**
 
-**GeoZarr Gridded Dataset Abstract Representation**
-
-```plantuml
-@startuml
-package "GeoZarr Gridded Dataset" {
-    class "Dataset" as dataset {
+```mermaid
+classDiagram
+    class Dataset {
         +attributes
     }
-    class "Data Variable" as dataVariable {
+    class DataVariable {
         +values
         +attributes
     }
-    class "Coordinate Variable" as coordinateVariable {
+    class CoordinateVariable {
         +coordinates
         +attributes
     }
-    class "Auxiliary Variable" as auxiliaryVariable {
+    class AuxiliaryVariable {
         +data
         +attributes
     }
 
-    dataset --> "1..*" dataVariable : includes
-    dataset --> "1..*" coordinateVariable : includes
-    dataset --> "0..*" auxiliaryVariable : includes
-
-    coordinateVariable --> "defines" dataVariable : coordinates
-
-}
-@enduml
-``
-
+    Dataset --> "1..*" DataVariable : includes
+    Dataset --> "1..*" CoordinateVariable : includes
+    Dataset --> "0..*" AuxiliaryVariable : includes
+    CoordinateVariable --> DataVariable : coordinates
+```
 
 ===== Gridded Dataset Structure
 
