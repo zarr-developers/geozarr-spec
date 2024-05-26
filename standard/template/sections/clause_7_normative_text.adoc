@@ -173,6 +173,30 @@ classDiagram
     DataVariable --> ZarrArray
 ```
 
+Below is a representation of a Zarr structure for an abstract Dataset with a single data variable.
+
+```
+GeoZarr_Dataset/
+├── .zgroup
+├── attrs.json
+├── data_variable/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+├── latitude/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+├── longitude/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+└── time/
+    ├── .zarray
+    ├── attrs.json
+    └── data (chunks)
+```
+
 INFO: a coordinate is not necessary a list of positions (labelled coordinates) but might be encoded in different ways further defined.
 
 NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also a property for a index of variables.
