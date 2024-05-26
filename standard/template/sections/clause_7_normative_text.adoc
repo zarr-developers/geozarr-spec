@@ -4,6 +4,8 @@ TIP: This is a very preliminary draft
 
 A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
+=== Overview and Definitions 
+
 The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, and a coverage is one special kind of feature which stands for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain” . 
 
 GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is primarily used in geospatial data and geographic information systems (GIS). It is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
@@ -25,13 +27,47 @@ This section addresses the core GeoZarr Requirements Class applicable to all Geo
 
 TIP: This section should define the requirements for a Zarr 'instance' (a hierarchy).
 
+The base requirement class is designed to be flexible, facilitating conversion from any data source. Most source datasets might be encoded in GeoZarr, and additional conformance classes define specific types of assets in GeoZarr to facilitate standard interpretation by clients.
+
+[[req_geozarr-core]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/geozarr-core {set:cellbgcolor:#FFFFFF}
+|Target type | Zarr Encoder
+|Dependency | TBD
+|===
+
 ===== Structure
 
 GeoZarr consist in any Zarr tree structure (including a single Zarr array) ...
 
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/root
+| A {set:cellbgcolor:#EEEEEE} | A GeoZarr instance (or GeoZarr) may consist of any Zarr tree structure.
+| B {set:cellbgcolor:#EEEEEE} | The GeoZarr root must always be a Zarr group.
+| C {set:cellbgcolor:#EEEEEE} | The root group must include the property `conformsTo` set to the GeoZarr requirement class.
+| D {set:cellbgcolor:#EEEEEE} | The GeoZarr instance may have any number of levels in the hierarchy of groups.
+|===
+
+A GeoZarr instance must:
+- Consist of any Zarr tree structure.
+- Have a root that is always a Zarr group.
+- Include the property `conformsTo` in the root group, set to the GeoZarr requirement class.
+- Allow any number of levels in the hierarchy of groups.
+
+
 ===== Variables
 
-A variable represents an array of values of the same type and a represented in Zarr arrays. 
+A variable represent an array of values of the same type in Zarr arrays. A variable can describe the values of a coverage, their coordinates, or any auxiliary data (any value or array of values describing information useful complementing the coverage variables). Those different types of varaibles are defined further in the specification.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/variable
+| A {set:cellbgcolor:#EEEEEE} | A variable represents an array of values of the same type and is represented in Zarr arrays.
+|===
+
 
 ===== Attributes
 
@@ -39,9 +75,30 @@ TIP: Define how (where) is encoded the metadata
 
 GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. The informaiton might be about the variables, the coordinates, the spatio-temporal asset, or any purpose.
 
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/attributes
+| A {set:cellbgcolor:#EEEEEE} | GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy.
+|===
+
+GeoZarr attributes must:
+- Be used to store ancillary data or metadata at any level of the hierarchy.
+- Include information about variables, coordinates, spatio-temporal assets, or any other relevant purpose.
+
+
 ==== Requirement Class GeoZarr Gridded Dataset
 
 TIP: This section should define requirements for a Dataset group
+
+[[req_geozarr-dataset]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/geozarr-dataset {set:cellbgcolor:#FFFFFF}
+|Target type | Zarr Encoder
+|Dependency | TBD
+|===
+
 
 ===== Gridded Dataset Overview
 
@@ -49,7 +106,7 @@ GeoZarr defines flexible conventions that allow encoding most content from any s
 
 A generic geospatial data client (such as a mapping tool) may not be able to utilize all specific information of a given format. GeoZarr places special emphasis on Gridded Dataset which might be discovered, interpreted and displayed on a map. Gridded Dataset which refers to a structured format of spatial data represented as a matrix of cells or pixels, organized in a regular grid. Each cell holds a value representing a specific geographic area. Gridded Datasets includes 2D Rasters, Raster Time Series, Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.)
 
-A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables with coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
+A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables sharing the same coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
 
 
 ===== Gridded Dataset Structure
@@ -60,10 +117,18 @@ A GeoZarr may include Dataset Groups which consists in n-D variables observed by
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
-| A {set:cellbgcolor:#EEEEEE} | Any Dataset must be stored as a Zarr group {set:cellbgcolor:#FFFFFF}
+| A {set:cellbgcolor:#EEEEEE} | A Gridded Dataset must be stored as a Zarr group {set:cellbgcolor:#FFFFFF}
 | B {set:cellbgcolor:#EEEEEE} | The Dataset must include children Zarr arrays for each data variable and for each coordinate {set:cellbgcolor:#FFFFFF}
 | C {set:cellbgcolor:#EEEEEE} | The Dataset group must include the property `conformsTo` set to the Dataset requirement class  {set:cellbgcolor:#FFFFFF}
 | D {set:cellbgcolor:#EEEEEE} | TBD {set:cellbgcolor:#FFFFFF}
+|===
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
+| A {set:cellbgcolor:#EEEEEE} | A Gridded Dataset must be represented by a Zarr group.
+| B {set:cellbgcolor:#EEEEEE} | The Zarr group must include the property `conformsTo` set to the Dataset requirement class.
+| C {set:cellbgcolor:#EEEEEE} | Coordinates, attributes, and any additional information must be represented in the Zarr group or children Zarr objects (see furhter equirements)
 |===
 
 NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also a property for a index of variables.
@@ -77,9 +142,44 @@ A Data Variable holds the data values of the observed geospatial phenomena. A va
 
 TBD: can/should a data variable have dimensions which are not coordinates
 
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/data-variable
+| A {set:cellbgcolor:#EEEEEE} | Each data variable (values of a rectified grid coverage) must be stored as a child Zarr array within the dataset group.
+| B {set:cellbgcolor:#EEEEEE} | The child Zarr array must include the attribute `_ARRAY_DIMENSIONS` which lists the dimension names.
+| C {set:cellbgcolor:#EEEEEE} | For each dimension listed in `_ARRAY_DIMENSIONS`, there must be a corresponding coordinate variable in the dataset group.
+|===
+
+Each data variable must:
+- Be stored as a child Zarr array within the dataset group.
+- Include the attribute `_ARRAY_DIMENSIONS` listing the dimension names.
+- Have a corresponding coordinate variable for each dimension listed in `_ARRAY_DIMENSIONS` within the dataset group.
+
+
 ===== Coordinates
 
 TIP: Defines the requirement for the data coordinates and reference to the requirement classes for the different encoding of data coordinate.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable (representing the positions of one dimension of a data variable) must be represented in a child Zarr array within the dataset group.
+| B {set:cellbgcolor:#EEEEEE} | The Zarr array variables must be named with the same name as the dimension of the data variable they represent.
+|===
+
+Each coordinate variable must:
+- Be represented in a child Zarr array within the dataset group.
+- Be named with the same name as the dimension of the data variable it represents.
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable must include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+|===
+
+Each coordinate variable should:
+- Include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+
 
 === Coordinate
 
@@ -98,19 +198,51 @@ Proposed encoding:
 - origin/offset:
 - COARDS :
 
-===== Requirements Class CoordinateArray
+===== Requirements Class LabelledCoordinates
+
+[[req_geozarr-coordinate-labelled]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-labelled {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset Coordinate
+|Dependency | TBD
+|===
+
 
 ===== Requirements Class CoordinateOriginOffset
 
 TIP: It is not supported yet in the model, but this seems relevant to be added.
 
+[[req_geozarr-coordinate-oo]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-oo {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset Coordinate
+|Dependency | TBD
+|===
+
+
 ===== Requirements Class CoordinateVector
 
 TIP: please add the definition
 
+[[req_geozarr-coordinate-vector]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-vector {set:cellbgcolor:#FFFFFF}
+|Target type | TBD
+|Dependency | TBD
+|===
+
+
 ==== Coordinates Reference System Encodings
 
 TIP: any consideration with projections and affine transformations ?
+
+
 
 === Tiling and Pyramiding
 
@@ -118,11 +250,31 @@ TIP: equivalent to GeoTiff (https://docs.ogc.org/is/21-026/21-026.html). GeoZarr
 
 ==== Requirements Class Tiling
 
+[[req_geozarr-tiling]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/tiling {set:cellbgcolor:#FFFFFF}
+|Target type | Gridded Dataset
+|Dependency | TBD
+|===
+
+
 Tiling is a strategy for optimising chunking in GeoZarr. With tiling, access to a specific area or two-dimensional bounding box is much quicker, as the relevant data is stored closer together in the file, reducing the number of bytes that need to be read compared to the strips approach.
 
 ==== Requirements Class Pyramiding
 
 Pyramiding is useful when the client wants to quickly render an image of the entire area or a large portion of the area represented in the file. Instead of downloading every pixel, the software can request a smaller, pre-created, lower-resolution version.
+
+[[req_geozarr-coordinate-pyramiding]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-piramidiing {set:cellbgcolor:#FFFFFF}
+|Target type | Gridded Dataset
+|Dependency | TBD
+|===
+
 
 ==== Requirements Class Map Rendering
 
