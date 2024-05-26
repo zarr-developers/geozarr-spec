@@ -146,6 +146,19 @@ A GeoZarr may include Dataset Groups which consists in n-D variables observed by
 | C {set:cellbgcolor:#EEEEEE} | Coordinates, attributes, and any additional information must be represented in the Zarr group or children Zarr objects (see furhter equirements)
 |===
 
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable must include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+|===
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/data-variable-coordinates
+| A {set:cellbgcolor:#EEEEEE} | Data Variables (coverages) in a dataset should share a common set of coordinates and coordinate reference system.
+|===
+
+
 **Hierarchy of Zarr Elements**
 
 ```mermaid
@@ -292,6 +305,27 @@ TIP: It is not supported yet in the model, but this seems relevant to be added.
 |Dependency | TBD
 |===
 
+To accurately represent the spatial dimensions of the dataset, each coordinate type origin offset must be defined in a child Zarr array within the dataset. This array must contain the triplet of values: origin, offset, and end, to describe the coordinate's range and intervals. Additionally, the coordinate variable must include a CF standard name in the `standard_name` property, specifically for latitude or longitude.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | A coordinate type origin offset should be represented in a child Zarr array of the dataset.
+| B {set:cellbgcolor:#EEEEEE} | The coordinate variable must define in the array the triplet of values: origin, offset, end.
+| C {set:cellbgcolor:#EEEEEE} | The coordinate variable must provide a standard name (CF) for latitude or longitude in the `standard_name` property.
+|===
+
+ To enhance clarity and interoperability, it is recommended that each coordinate variable link to the `grid_mapping` variable, which describes the CRS applicable to this coordinate.
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | The coordinate variable should link to the `grid_mapping` variable defined to describe the CRS that applies to this coordinate.
+|===
+
+The coordinate variable should:
+- Link to the `grid_mapping` variable defined to describe the CRS that applies to this coordinate.
+
 
 ===== Requirements Class CoordinateVector
 
@@ -311,6 +345,26 @@ TIP: please add the definition
 
 TIP: any consideration with projections and affine transformations ?
 
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/data-variable-coordinates
+| A {set:cellbgcolor:#EEEEEE} | The coordinate reference system (CRS) must be indicated for each data variable (coverage).
+| B {set:cellbgcolor:#EEEEEE} | The CRS should be represented in a child Zarr array of the dataset (auxiliary variable).
+| C {set:cellbgcolor:#EEEEEE} | The CRS variable name should be referenced in the data variable (coverage) in the `grid_mapping` property.
+| D {set:cellbgcolor:#EEEEEE} | The CRS should be described in the attributes of the CRS variable using CF conventions properties.
+|===
+
+Each data variable (coverage) must:
+- Indicate the coordinate reference system used.
+- Reference the CRS variable name in the `grid_mapping` property.
+
+The CRS should:
+- Be represented in a child Zarr array of the dataset (auxiliary variable).
+- Be described in the attributes of the CRS variable using CF conventions properties.
+
+While it is recommended that all coverages in a dataset share the same set of coordinates and coordinate reference system to ensure consistency and ease of use, explicitly indicating the coordinate reference system for each data variable is necessary to avoid any ambiguity and to support interoperability when integrating data from diverse sources.
+
+TBD explain the grid_mapping and required properties
 
 
 === Tiling and Pyramiding
