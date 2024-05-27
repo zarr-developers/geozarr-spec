@@ -1,19 +1,19 @@
 == GeoZarr format requirements
 
-TIP: This is a very preliminary draft. The content is essentially for showing the purpose of the proposed sections, but the focus should be on the table of contents.
+TIP: This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections. The main focus should be on the table of contents.
 
 A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
 === Overview and Definitions 
 
-The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, and a coverage is one special kind of feature which stands for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain” . 
+The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, with coverage being a special type for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a "feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain". 
 
-GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is primarily used in geospatial data and geographic information systems (GIS). It is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
+GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
 
 The base terminology in the scope of this specification includes the following terms:
 
-- A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information
-- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a *Rectified Grid Coverage*
+- A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information.
+- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a Rectified Grid Coverage
 - A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a Rectified Grid Coverage
 - A *GeoZarr Auxiliary Variable* is the array (might be empty) and attributes that define other type of information
 - A *GeoZarr Gridded Dataset* (or Dataset) is a set of GeoZarr Variables which define one or more Rectivfed Grid Coverages (thus including their values, coordinates and ancillary data and metadata).
@@ -412,16 +412,26 @@ TIP: might be useful to describe or provide extension for referencing GeoZarr as
 
 == Annex B: Mappings with other formats
 
-TIP: Provides the mappings for information purpose to show how GEoZarr preserve information from any data source.
-
-To ensure interoperability with most client and mapping tools, GeoZarr enforces a set of requirements, including conventions from CF and GDAL.
+TIP: Provides the mappings for information purpose to show how source formats can preserve information from any data source.
 
 To maximize compatibility with various source formats, GeoZarr preserves as much metadata and structure as possible from these formats.
 
 NOTE: In particular, if relevant information which cannot be encoded in GeoZarr is identified, the specification might be extended.
 
-
 === Mappings with CF
 
-=== Mappings with GDAL
+
+=== Mappings with GeoTiff
+
+To map a GeoTIFF to the GeoZarr structure, we need to carefully translate the data arrays, coordinate variables, and metadata (such as the CRS) into the appropriate GeoZarr elements. 
+
+GeoZarr is structured as a single GeoZarr dataset at the root, encapsulating all necessary components to represent the geospatial data and metadata effectively.
+
+- GeoTIFF Data Array to GeoZarr Data Variable: In the case of a single band, the data variable represents a 2D raster with latitude and longitude dimensions. If there are multiple bands, they might be mapped to positions within a band dimension, with coordinates providing the wavelength and standard names indicating the units of measure for those coordinates.
+- GeoTIFF Coordinates to GeoZarr Coordinate Variables: Latitude and longitude coordinates are extracted and stored as GeoZarr Coordinate Variables.
+- GeoTIFF Metadata to GeoZarr Attributes: Metadata from the GeoTIFF (such as CRS and transform) are stored in the attributes of the GeoZarr Data Varaible. The CRS is translated to an auxiliary variable, referenced from the GeoZarr Data Variable in the grid_mapping attribute.
+- GeoZarr Dataset Group for Organizing: All the data variables and coordinate variables are organized within a GeoZarr Dataset Group, ensuring a coherent structure. This group is the root of the GeoZarr hierarchy, making it a self-contained and self-describing dataset.
+
+
+=== Mappings with GDAL entities
 
