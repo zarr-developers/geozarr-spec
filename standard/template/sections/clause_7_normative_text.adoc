@@ -256,22 +256,26 @@ Each coordinate variable should:
 
 === Coordinate
 
-TIP: describe the types and encoding of different types of coordinate
 
 ==== Coordinate Types
 
 TIP: Defines what are the requirement in GeoZarr related to latitude, longitude, time, etc. metadata such as does it impose to use CF standard names for qualifying the coordinate (or another convention from GDAL)
 
-==== Coordinate Encodings
+==== Geospatial Coordinate Encodings
 
-TIP: Which encoding does it support (do we impose/recommend to always have 2D array ?).
+There are multiple types of encoding for coordinates, each serving different purposes and applications in geospatial data processing. Some common examples include:
+
+* Geospatial Control Points (labeled Coordinates) : each data point or grid cell is explicitly assigned a coordinate value, which can be used to directly map and reference spatial data. 
+* Affine Transforms (Coordinate Origin and Step):  this involves defining a starting point (origin) and a regular interval (step) between points. This method is commonly used in grid-based data where the position of each cell is calculated based on its distance from the origin.
 
 Proposed encoding:
 - 2D array (the nominal encoding applied by xarray)
 - origin/offset:
 - COARDS :
 
-===== Requirements Class LabelledCoordinates
+===== Requirements Class Geospatial_Control_Points
+
+Geospatial Control Points (GCPs), also known as Labeled Coordinates, are specific geographic locations with known coordinates. These points serve as reference markers to accurately align and georeference spatial data in mapping and GIS applications, ensuring that the data corresponds correctly to real-world locations.
 
 [[req_geozarr-coordinate-labelled]]
 [cols="1,4",width="90%"]
