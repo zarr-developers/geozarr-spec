@@ -13,22 +13,26 @@ GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF
 The base terminology in the scope of this specification includes the following terms:
 
 - A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information.
-- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a Rectified Grid Coverage
-- A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a Rectified Grid Coverage
+- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a n-D coverage (i.e. a Rectified Grid Coverage)
+- A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a n-D coverage
 - A *GeoZarr Auxiliary Variable* is the array (might be empty) and attributes that define other type of information
-- A *GeoZarr Gridded Dataset* (or Dataset) is a set of GeoZarr Variables which define one or more Rectivfed Grid Coverages (thus including their values, coordinates and ancillary data and metadata).
+- A *GeoZarr Dataset* is a self-describing collection of n-D coverages defined by a set of values, coordinates and attributes (similar to a NetCDF dataset).
 
-A Dataset (referenced as an asset in a STAC item) facilitates the disocovery and handling of the coverages by clients, such as web maps, and supports advanced capabilities such as pyramiding. However,GeoZarr also flexible and adaptable enough to accommodate other types of information: the specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
+Unlike some popular geospatial data formats, GeoZarr is not limited to 2D rasters and extends to multiple dimensions, including time, altitude, wavelength, and others. Additionally, the order of these dimensions is not fixed, allowing for optimizations in data analysis.
+
+A Dataset (referenced as an asset in a STAC item) facilitates the discovery and handling of the coverages by clients, such as web maps, and supports advanced capabilities such as pyramiding. However,GeoZarr also flexible and adaptable enough to accommodate other types of information: the specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
 
 === Underlying GeoZarr Requirements
 
-This section addresses the core GeoZarr Requirements Class applicable to all GeoZarr instances.
+The requirement class GeoZarr Core is mandatory for all GeoZarr instances and must be specified at the root level with the `conformsTo` attribute.
 
-==== Requirement Class GeoZarr
+Some requirement classes are optional and define specific type of assets to facilitate standard interpretation by clients, such as a the requirement class Dataset. These optional requirement classes must be specified at the appropriate level within the hierarchy, using the conformsTo property to indicate adherence to the respective requirement class.
 
-TIP: This section should define the requirements for a Zarr 'instance' (a hierarchy).
+TIP: maybe list possible requirements classes and purpose
 
-The base requirement class is designed to be flexible, facilitating conversion from any data source. Most source datasets might be encoded in GeoZarr, and additional conformance classes define specific types of assets in GeoZarr to facilitate standard interpretation by clients.
+==== Requirement Class GeoZarr Core
+
+The base requirement class is designed to be flexible, facilitating conversion from any data source and support most source formats..
 
 [[req_geozarr-core]]
 [cols="1,4",width="90%"]
@@ -87,7 +91,7 @@ GeoZarr attributes must:
 - Include information about variables, coordinates, spatio-temporal assets, or any other relevant purpose.
 
 
-==== Requirement Class GeoZarr Gridded Dataset
+==== Requirement Class GeoZarr Dataset
 
 TIP: This section should define requirements for a Dataset group
 
@@ -101,7 +105,7 @@ TIP: This section should define requirements for a Dataset group
 |===
 
 
-===== Gridded Dataset Overview
+===== Dataset Overview
 
 GeoZarr defines flexible conventions that allow encoding most content from any source format. This includes any information that can be expressed as a property or JSON object, geospatial arrays (raster) or non-geospatial arrays, and the entire hierarchical structure in groups.
 
