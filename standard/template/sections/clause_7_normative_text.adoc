@@ -26,7 +26,7 @@ A Dataset (referenced as an asset in a STAC item) facilitates the discovery and 
 
 The requirement class GeoZarr Core is mandatory for all GeoZarr instances and must be specified at the root level with the `conformsTo` attribute.
 
-Some requirement classes are optional and define specific type of assets to facilitate standard interpretation by clients, such as a the requirement class Dataset. These optional requirement classes must be specified at the appropriate level within the hierarchy, using the conformsTo property to indicate adherence to the respective requirement class.
+Some requirement classes are optional and define specific type of assets to facilitate standard interpretation by clients, such as a the requirement class Dataset. These optional requirement classes must be specified at the appropriate level within the hierarchy, using the conformsTo attribute to indicate adherence to the respective requirement class.
 
 TIP: maybe list possible requirements classes and purpose
 
@@ -45,55 +45,40 @@ The base requirement class is designed to be flexible, facilitating conversion f
 
 ===== Structure
 
-GeoZarr consist in any Zarr tree structure (including a single Zarr array) ...
+A GeoZarr instance must consist of any Zarr tree structure with a root that is always a Zarr group, include the attribute conformsTo set to the GeoZarr requirement class in the root group, and allow any number of hierarchical levels within the groups.
 
 [width="90%",cols="2,6"]
 |===
-|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/root
-| A {set:cellbgcolor:#EEEEEE} | A GeoZarr instance (or GeoZarr) may consist of any Zarr tree structure.
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/structure
+| A {set:cellbgcolor:#EEEEEE} | A GeoZarr instance (or GeoZarr) must consist of a Zarr tree structure.
 | B {set:cellbgcolor:#EEEEEE} | The GeoZarr root must always be a Zarr group.
-| C {set:cellbgcolor:#EEEEEE} | The root group must include the property `conformsTo` set to the GeoZarr requirement class.
-| D {set:cellbgcolor:#EEEEEE} | The GeoZarr instance may have any number of levels in the hierarchy of groups.
+| C {set:cellbgcolor:#EEEEEE} | The root group must include the attribute `conformsTo` set to the GeoZarr requirement class.
+| D {set:cellbgcolor:#EEEEEE} | The GeoZarr instance may have any number of levels within the hierarchy.
 |===
-
-A GeoZarr instance must:
-- Consist of any Zarr tree structure.
-- Have a root that is always a Zarr group.
-- Include the property `conformsTo` in the root group, set to the GeoZarr requirement class.
-- Allow any number of levels in the hierarchy of groups.
-
 
 ===== Variables
 
-A variable represent an array of values of the same type in Zarr arrays. A variable can describe the values of a coverage, their coordinates, or any auxiliary data (any value or array of values describing information useful complementing the coverage variables). Those different types of varaibles are defined further in the specification.
+A variable represents an array of values of the same type in a Zarr array. A variable can describe coverage values, their coordinates, or any auxiliary data (i.e., additional information to the coverage). These different types of variables are defined further in the specification.
 
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/variable
-| A {set:cellbgcolor:#EEEEEE} | A variable represents an array of values of the same type and is represented in Zarr arrays.
+| A {set:cellbgcolor:#EEEEEE} | A variable represents an array of values of the same type and is stored in Zarr arrays.
 |===
 
 
 ===== Attributes
 
-TIP: Define how (where) is encoded the metadata
-
-GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. The informaiton might be about the variables, the coordinates, the spatio-temporal asset, or any purpose.
+GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. This information can pertain to variables, coordinates, spatio-temporal assets, or any other relevant purpose.
 
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/attributes
 | A {set:cellbgcolor:#EEEEEE} | GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy.
+| B {set:cellbgcolor:#EEEEEE} | GeoZarr attributes must be encoded as Zarr attributes.
 |===
 
-GeoZarr attributes must:
-- Be used to store ancillary data or metadata at any level of the hierarchy.
-- Include information about variables, coordinates, spatio-temporal assets, or any other relevant purpose.
-
-
 ==== Requirement Class GeoZarr Dataset
-
-TIP: This section should define requirements for a Dataset group
 
 [[req_geozarr-dataset]]
 [cols="1,4",width="90%"]
@@ -104,15 +89,17 @@ TIP: This section should define requirements for a Dataset group
 |Dependency | TBD
 |===
 
+===== Notion of Dataset
 
-===== Dataset Overview
+GeoZarr defines flexible conventions to encode content from various source formats, including geospatial arrays (raster), non-geospatial arrays, and hierarchical structures.
 
-GeoZarr defines flexible conventions that allow encoding most content from any source format. This includes any information that can be expressed as a property or JSON object, geospatial arrays (raster) or non-geospatial arrays, and the entire hierarchical structure in groups.
+GeoZarr emphasizes Rectified Grid Coverages, which can be easily discovered, interpreted, and displayed on a map. A coverage is spatial data organized in a regular grid, where each cell holds a value representing a specific geographic area. Examples include 2D Rasters, Raster Time Series, and Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.).
 
-A generic geospatial data client (such as a mapping tool) may not be able to utilize all specific information of a given format. GeoZarr places special emphasis on Gridded Dataset which might be discovered, interpreted and displayed on a map. Gridded Dataset which refers to a structured format of spatial data represented as a matrix of cells or pixels, organized in a regular grid. Each cell holds a value representing a specific geographic area. Gridded Datasets includes 2D Rasters, Raster Time Series, Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.)
+A GeoZarr Dataset, consists of a collection of coverage defined by data variables, their common coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
 
-A GeoZarr Gridded Dataset, or simply Dataset, consists of data variables sharing the same coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
-**Figure 1: GeoZarr Gridded Dataset Abstract Representation**
+The purpose of a GeoZarr Dataset is to maximize compatibility and facilitate the seamless mapping of diverse source formats into a standardized, easily interpretable structure.
+
+**Figure 1: GeoZarr Dataset Abstract Representation**
 
 ```mermaid
 classDiagram
@@ -138,15 +125,15 @@ classDiagram
     CoordinateVariable --> DataVariable : coordinates
 ```
 
-===== Gridded Dataset Structure
+===== Dataset Structure
 
 A GeoZarr may include Dataset Groups which consists in n-D variables observed by a sensor (temperature, humidity, elevation). These variables are defined by geospatial coordinates and optional extra dimensions (time, altitude, etc.).
 
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
-| A {set:cellbgcolor:#EEEEEE} | A Gridded Dataset must be represented by a Zarr group.
-| B {set:cellbgcolor:#EEEEEE} | The Zarr group must include the property `conformsTo` set to the Dataset requirement class.
+| A {set:cellbgcolor:#EEEEEE} | A Dataset must be represented by a Zarr group.
+| B {set:cellbgcolor:#EEEEEE} | The Zarr group must include the attribute `conformsTo` set to the Dataset requirement class.
 | C {set:cellbgcolor:#EEEEEE} | Coordinates, attributes, and any additional information must be represented in the Zarr group or children Zarr objects (see furhter equirements)
 |===
 
@@ -217,7 +204,7 @@ GeoZarr_Dataset/
 
 INFO: a coordinate is not necessary a list of positions (labelled coordinates) but might be encoded in different ways further defined.
 
-NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also a property for a index of variables.
+NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also an attribute for a index of variables.
 
 
 ===== Data Variables
@@ -309,14 +296,14 @@ TIP: It is not supported yet in the model, but this seems relevant to be added.
 |Dependency | TBD
 |===
 
-To accurately represent the spatial dimensions of the dataset, each coordinate type origin offset must be defined in a child Zarr array within the dataset. This array must contain the triplet of values: origin, offset, and end, to describe the coordinate's range and intervals. Additionally, the coordinate variable must include a CF standard name in the `standard_name` property, specifically for latitude or longitude.
+To accurately represent the spatial dimensions of the dataset, each coordinate type origin offset must be defined in a child Zarr array within the dataset. This array must contain the triplet of values: origin, offset, and end, to describe the coordinate's range and intervals. Additionally, the coordinate variable must include a CF standard name in the `standard_name` attribute, specifically for latitude or longitude.
 
 [width="90%",cols="2,6"]
 |===
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/coordinate-variable
 | A {set:cellbgcolor:#EEEEEE} | A coordinate type origin offset should be represented in a child Zarr array of the dataset.
 | B {set:cellbgcolor:#EEEEEE} | The coordinate variable must define in the array the triplet of values: origin, offset, end.
-| C {set:cellbgcolor:#EEEEEE} | The coordinate variable must provide a standard name (CF) for latitude or longitude in the `standard_name` property.
+| C {set:cellbgcolor:#EEEEEE} | The coordinate variable must provide a standard name (CF) for latitude or longitude in the `standard_name` attribute.
 |===
 
  To enhance clarity and interoperability, it is recommended that each coordinate variable link to the `grid_mapping` variable, which describes the CRS applicable to this coordinate.
@@ -354,13 +341,13 @@ TIP: any consideration with projections and affine transformations ?
 |*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/data-variable-coordinates
 | A {set:cellbgcolor:#EEEEEE} | The coordinate reference system (CRS) must be indicated for each data variable (coverage).
 | B {set:cellbgcolor:#EEEEEE} | The CRS should be represented in a child Zarr array of the dataset (auxiliary variable).
-| C {set:cellbgcolor:#EEEEEE} | The CRS variable name should be referenced in the data variable (coverage) in the `grid_mapping` property.
+| C {set:cellbgcolor:#EEEEEE} | The CRS variable name should be referenced in the data variable (coverage) in the `grid_mapping` attribute.
 | D {set:cellbgcolor:#EEEEEE} | The CRS should be described in the attributes of the CRS variable using CF conventions properties.
 |===
 
 Each data variable (coverage) must:
 - Indicate the coordinate reference system used.
-- Reference the CRS variable name in the `grid_mapping` property.
+- Reference the CRS variable name in the `grid_mapping` attribute.
 
 The CRS should:
 - Be represented in a child Zarr array of the dataset (auxiliary variable).
@@ -382,7 +369,7 @@ TIP: equivalent to GeoTiff (https://docs.ogc.org/is/21-026/21-026.html). GeoZarr
 |===
 2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoZarr/1.0/req/tiling {set:cellbgcolor:#FFFFFF}
-|Target type | Gridded Dataset
+|Target type | Dataset
 |Dependency | TBD
 |===
 
@@ -398,7 +385,7 @@ Pyramiding is useful when the client wants to quickly render an image of the ent
 |===
 2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
 2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-piramidiing {set:cellbgcolor:#FFFFFF}
-|Target type | Gridded Dataset
+|Target type | Dataset
 |Dependency | TBD
 |===
 
