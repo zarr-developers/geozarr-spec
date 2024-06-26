@@ -1,38 +1,432 @@
-== Clause containing normative material
+== GeoZarr format requirements
 
-Paragraph
+TIP: This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections. The main focus should be on the table of contents.
 
-=== Requirement Class A or Requirement A Example
+A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
 
-Paragraph – intro text for the requirement class.
+=== Overview and Definitions 
 
-Use the following table for Requirements Classes.
+The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, with coverage being a special type for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a "feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain". 
 
-include::../requirements/requirements_class.adoc[]
+GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
 
-==== Requirement 1
+The base terminology in the scope of this specification includes the following terms:
 
-Paragraph - intro text for the requirement.
+- A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information.
+- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a n-D coverage (i.e. a Rectified Grid Coverage)
+- A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a n-D coverage
+- A *GeoZarr Auxiliary Variable* is the array (might be empty) and attributes that define other type of information
+- A *GeoZarr Dataset* is a self-describing collection of n-D coverages defined by a set of values, coordinates and attributes (similar to a NetCDF dataset).
 
-Use the following table for Requirements, number sequentially.
+Unlike some popular geospatial data formats, GeoZarr is not limited to 2D rasters and extends to multiple dimensions, including time, altitude, wavelength, and others. Additionally, the order of these dimensions is not fixed, allowing for optimizations in data analysis.
 
-include::../requirements/requirement001.adoc[]
+A Dataset (referenced as an asset in a STAC item) facilitates the discovery and handling of the coverages by clients, such as web maps, and supports advanced capabilities such as pyramiding. However,GeoZarr also flexible and adaptable enough to accommodate other types of information: the specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.
 
-Dictionary tables for requirements can be added as necessary. Modify the following example as needed.
+=== Underlying GeoZarr Requirements
 
-[width="90%",options="header"]
+The requirement class GeoZarr Core is mandatory for all GeoZarr instances and must be specified at the root level with the `conformsTo` attribute.
+
+Some requirement classes are optional and define specific type of assets to facilitate standard interpretation by clients, such as a the requirement class Dataset. These optional requirement classes must be specified at the appropriate level within the hierarchy, using the conformsTo attribute to indicate adherence to the respective requirement class.
+
+TIP: maybe list possible requirements classes and purpose
+
+==== Requirement Class GeoZarr Core
+
+The base requirement class is designed to be flexible, facilitating conversion from any data source and support most source formats..
+
+[[req_geozarr-core]]
+[cols="1,4",width="90%"]
 |===
-|Names |Definition |Data types and values |Multiplicity and use
-|name 1 |definition of name 1 |float |One or more (mandatory)
-|name 2 |definition of name 2 |character string type, not empty |Zero or one (optional)
-|name 3 |definition of name 3 |GML:: Point PropertyType |One (mandatory)
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/geozarr-core {set:cellbgcolor:#FFFFFF}
+|Target type | Zarr Encoder
+|Dependency | TBD
+|===
+
+===== Structure
+
+A GeoZarr instance must consist of any Zarr tree structure with a root that is always a Zarr group, include the attribute conformsTo set to the GeoZarr requirement class in the root group, and allow any number of hierarchical levels within the groups.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/structure
+| A {set:cellbgcolor:#EEEEEE} | A GeoZarr instance (or GeoZarr) must consist of a Zarr tree structure.
+| B {set:cellbgcolor:#EEEEEE} | The GeoZarr root must always be a Zarr group.
+| C {set:cellbgcolor:#EEEEEE} | The root group must include the attribute `conformsTo` set to the GeoZarr requirement class.
+| D {set:cellbgcolor:#EEEEEE} | The GeoZarr instance may have any number of levels within the hierarchy.
+|===
+
+===== Variables
+
+A variable represents an array of values of the same type in a Zarr array. A variable can describe coverage values, their coordinates, or any auxiliary data (i.e., additional information to the coverage). These different types of variables are defined further in the specification.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/variable
+| A {set:cellbgcolor:#EEEEEE} | A variable represents an array of values of the same type and is stored in Zarr arrays.
 |===
 
 
-==== Requirement 2
+===== Attributes
 
-Paragraph - intro text for the requirement.
+GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy. This information can pertain to variables, coordinates, spatio-temporal assets, or any other relevant purpose.
 
-Use the following table for Requirements, number sequentially.
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr/attributes
+| A {set:cellbgcolor:#EEEEEE} | GeoZarr attributes are used to store ancillary data or metadata at any level of the hierarchy.
+| B {set:cellbgcolor:#EEEEEE} | GeoZarr attributes must be encoded as Zarr attributes.
+|===
 
-include::../requirements/requirement002.adoc[]
+==== Requirement Class GeoZarr Dataset
+
+[[req_geozarr-dataset]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/geozarr-dataset {set:cellbgcolor:#FFFFFF}
+|Target type | Zarr Encoder
+|Dependency | TBD
+|===
+
+===== Notion of Dataset
+
+GeoZarr defines flexible conventions to encode content from various source formats, including geospatial arrays (raster), non-geospatial arrays, and hierarchical structures.
+
+GeoZarr emphasizes Rectified Grid Coverages, which can be easily discovered, interpreted, and displayed on a map. A coverage is spatial data organized in a regular grid, where each cell holds a value representing a specific geographic area. Examples include 2D Rasters, Raster Time Series, and Geo-Datacubes (with dimensions like time, light spectrum, altitude, etc.).
+
+A GeoZarr Dataset, consists of a collection of coverage defined by data variables, their common coordinates, and some attributes which together form a self describing dataset and represent a geospatial phenomenon in the data hierarchy.  GeoZarr defines the structure and necessary metadata for understanding this dataset, such as an index of available variables, the projection used, and the coordinates describing the dimensions of these variables.
+
+The purpose of a GeoZarr Dataset is to maximize compatibility and facilitate the seamless mapping of diverse source formats into a standardized, easily interpretable structure.
+
+**Figure 1: GeoZarr Dataset Abstract Representation**
+
+```mermaid
+classDiagram
+    class Dataset {
+        +attributes
+    }
+    class DataVariable {
+        +values
+        +attributes
+    }
+    class CoordinateVariable {
+        +coordinates
+        +attributes
+    }
+    class AuxiliaryVariable {
+        +data
+        +attributes
+    }
+
+    Dataset --> "1..*" DataVariable : includes
+    Dataset --> "1..*" CoordinateVariable : includes
+    Dataset --> "0..*" AuxiliaryVariable : includes
+    CoordinateVariable --> DataVariable : coordinates
+```
+
+===== Dataset Structure
+
+A GeoZarr may include Dataset Groups which consists in n-D variables observed by a sensor (temperature, humidity, elevation). These variables are defined by geospatial coordinates and optional extra dimensions (time, altitude, etc.).
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/group
+| A {set:cellbgcolor:#EEEEEE} | A Dataset must be represented by a Zarr group.
+| B {set:cellbgcolor:#EEEEEE} | The Zarr group must include the attribute `conformsTo` set to the Dataset requirement class.
+| C {set:cellbgcolor:#EEEEEE} | Coordinates, attributes, and any additional information must be represented in the Zarr group or children Zarr objects (see furhter equirements)
+|===
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable must include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+|===
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/data-variable-coordinates
+| A {set:cellbgcolor:#EEEEEE} | Data Variables (coverages) in a dataset should share a common set of coordinates and coordinate reference system.
+|===
+
+
+**Hierarchy of Zarr Elements**
+
+```mermaid
+classDiagram
+    class ZarrGroup {
+        +attrs (attributes)
+    }
+    class ZarrArray {
+        +attrs (attributes)
+    }
+    
+    ZarrGroup <|-- Dataset : maps to
+    ZarrArray <|-- Coordinate : maps to
+    ZarrArray <|-- DataVariable : maps to
+
+    class Dataset {
+    }
+    class Coordinate {
+    }
+    class DataVariable {
+    }
+
+    Dataset --> ZarrGroup
+    ZarrGroup --> "1..*" ZarrArray : contains
+    Coordinate --> ZarrArray
+    DataVariable --> ZarrArray
+```
+
+Below is a representation of a Zarr structure for an abstract Dataset with a single data variable.
+
+```
+GeoZarr_Dataset/
+├── .zgroup
+├── attrs.json
+├── data_variable/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+├── latitude/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+├── longitude/
+│   ├── .zarray
+│   ├── attrs.json
+│   └── data (chunks)
+└── time/
+    ├── .zarray
+    ├── attrs.json
+    └── data (chunks)
+```
+
+INFO: a coordinate is not necessary a list of positions (labelled coordinates) but might be encoded in different ways further defined.
+
+NOTE: We may require or recommend that a Dataset is restricted to a single data variable or to variable with consistent coordinates (otherwise the group is a mess). We might specify also an attribute for a index of variables.
+
+
+===== Data Variables
+
+TIP: Defines the requirements for the variables in a dataset (how to specify dimensions and relationship with the coordinates sibling)
+
+A Data Variable holds the data values of the observed geospatial phenomena. A variable has a name, type,any dimension, attributes and values.
+
+TBD: can/should a data variable have dimensions which are not coordinates
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/data-variable
+| A {set:cellbgcolor:#EEEEEE} | Each data variable (values of a rectified grid coverage) must be stored as a child Zarr array within the dataset group.
+| B {set:cellbgcolor:#EEEEEE} | The child Zarr array must include the attribute `_ARRAY_DIMENSIONS` which lists the dimension names.
+| C {set:cellbgcolor:#EEEEEE} | For each dimension listed in `_ARRAY_DIMENSIONS`, there must be a corresponding coordinate variable in the dataset group.
+|===
+
+Each data variable must:
+- Be stored as a child Zarr array within the dataset group.
+- Include the attribute `_ARRAY_DIMENSIONS` listing the dimension names.
+- Have a corresponding coordinate variable for each dimension listed in `_ARRAY_DIMENSIONS` within the dataset group.
+
+
+===== Coordinates
+
+TIP: Defines the requirement for the data coordinates and reference to the requirement classes for the different encoding of data coordinate.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable (representing the positions of one dimension of a data variable) must be represented in a child Zarr array within the dataset group.
+| B {set:cellbgcolor:#EEEEEE} | The Zarr array variables must be named with the same name as the dimension of the data variable they represent.
+|===
+
+Each coordinate variable must:
+- Be represented in a child Zarr array within the dataset group.
+- Be named with the same name as the dimension of the data variable it represents.
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | Each coordinate variable must include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+|===
+
+Each coordinate variable should:
+- Include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
+
+
+=== Coordinate
+
+
+==== Coordinate Types
+
+TIP: Defines what are the requirement in GeoZarr related to latitude, longitude, time, etc. metadata such as does it impose to use CF standard names for qualifying the coordinate (or another convention from GDAL)
+
+==== Geospatial Coordinate Encodings
+
+There are multiple types of encoding for coordinates, each serving different purposes and applications in geospatial data processing. Some common examples include:
+
+* Geospatial Control Points (labeled Coordinates) : each data point or grid cell is explicitly assigned a coordinate value, which can be used to directly map and reference spatial data. 
+* Affine Transforms (Coordinate Origin and Step):  this involves defining a starting point (origin) and a regular interval (step) between points. This method is commonly used in grid-based data where the position of each cell is calculated based on its distance from the origin.
+
+Proposed encoding:
+- 2D array (the nominal encoding applied by xarray)
+- origin/offset:
+- COARDS :
+
+===== Requirements Class Geospatial_Control_Points
+
+Geospatial Control Points (GCPs), also known as Labeled Coordinates, are specific geographic locations with known coordinates. These points serve as reference markers to accurately align and georeference spatial data in mapping and GIS applications, ensuring that the data corresponds correctly to real-world locations.
+
+[[req_geozarr-coordinate-labelled]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-labelled {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset Coordinate
+|Dependency | TBD
+|===
+
+
+===== Requirements Class CoordinateOriginOffset
+
+TIP: It is not supported yet in the model, but this seems relevant to be added.
+
+[[req_geozarr-coordinate-oo]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-oo {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset Coordinate
+|Dependency | TBD
+|===
+
+To accurately represent the spatial dimensions of the dataset, each coordinate type origin offset must be defined in a child Zarr array within the dataset. This array must contain the triplet of values: origin, offset, and end, to describe the coordinate's range and intervals. Additionally, the coordinate variable must include a CF standard name in the `standard_name` attribute, specifically for latitude or longitude.
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | A coordinate type origin offset should be represented in a child Zarr array of the dataset.
+| B {set:cellbgcolor:#EEEEEE} | The coordinate variable must define in the array the triplet of values: origin, offset, end.
+| C {set:cellbgcolor:#EEEEEE} | The coordinate variable must provide a standard name (CF) for latitude or longitude in the `standard_name` attribute.
+|===
+
+ To enhance clarity and interoperability, it is recommended that each coordinate variable link to the `grid_mapping` variable, which describes the CRS applicable to this coordinate.
+
+[width="90%",cols="2,6"]
+|===
+|*Recommendation {counter:rec-id}* {set:cellbgcolor:#CACCCE}|/rec/geozarr-dataset/coordinate-variable
+| A {set:cellbgcolor:#EEEEEE} | The coordinate variable should link to the `grid_mapping` variable defined to describe the CRS that applies to this coordinate.
+|===
+
+The coordinate variable should:
+- Link to the `grid_mapping` variable defined to describe the CRS that applies to this coordinate.
+
+
+===== Requirements Class CoordinateVector
+
+TIP: please add the definition
+
+[[req_geozarr-coordinate-vector]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-vector {set:cellbgcolor:#FFFFFF}
+|Target type | TBD
+|Dependency | TBD
+|===
+
+
+==== Coordinates Reference System Encodings
+
+TIP: any consideration with projections and affine transformations ?
+
+[width="90%",cols="2,6"]
+|===
+|*Requirement {counter:req-id}* {set:cellbgcolor:#CACCCE}|/req/geozarr-dataset/data-variable-coordinates
+| A {set:cellbgcolor:#EEEEEE} | The coordinate reference system (CRS) must be indicated for each data variable (coverage).
+| B {set:cellbgcolor:#EEEEEE} | The CRS should be represented in a child Zarr array of the dataset (auxiliary variable).
+| C {set:cellbgcolor:#EEEEEE} | The CRS variable name should be referenced in the data variable (coverage) in the `grid_mapping` attribute.
+| D {set:cellbgcolor:#EEEEEE} | The CRS should be described in the attributes of the CRS variable using CF conventions properties.
+|===
+
+Each data variable (coverage) must:
+- Indicate the coordinate reference system used.
+- Reference the CRS variable name in the `grid_mapping` attribute.
+
+The CRS should:
+- Be represented in a child Zarr array of the dataset (auxiliary variable).
+- Be described in the attributes of the CRS variable using CF conventions properties.
+
+While it is recommended that all coverages in a dataset share the same set of coordinates and coordinate reference system to ensure consistency and ease of use, explicitly indicating the coordinate reference system for each data variable is necessary to avoid any ambiguity and to support interoperability when integrating data from diverse sources.
+
+TBD explain the grid_mapping and required properties
+
+
+=== Tiling and Pyramiding
+
+TIP: equivalent to GeoTiff (https://docs.ogc.org/is/21-026/21-026.html). GeoZarr should specify if and how tiling might be applied for three-dimensional and higher-dimensional data (for example, order of dimensions might be critical)
+
+==== Requirements Class Tiling
+
+[[req_geozarr-tiling]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/tiling {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset
+|Dependency | TBD
+|===
+
+
+Tiling is a strategy for optimising chunking in GeoZarr. With tiling, access to a specific area or two-dimensional bounding box is much quicker, as the relevant data is stored closer together in the file, reducing the number of bytes that need to be read compared to the strips approach.
+
+==== Requirements Class Pyramiding
+
+Pyramiding is useful when the client wants to quickly render an image of the entire area or a large portion of the area represented in the file. Instead of downloading every pixel, the software can request a smaller, pre-created, lower-resolution version.
+
+[[req_geozarr-coordinate-pyramiding]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-piramidiing {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset
+|Dependency | TBD
+|===
+
+
+==== Requirements Class Map Rendering
+
+TIP: in addition to traditional 2D formats, some conventions might be needed to faciltiate the rendering of time series or N-D arrays on map tools. For example, how the bands / layers of the array are referenced, etc.
+
+
+==== Requirement
+
+=== Referencing in STAC
+
+TIP: might be useful to describe or provide extension for referencing GeoZarr assets (e.g. dataset) in STAC Items.
+
+== Annex B: Mappings with other formats
+
+TIP: Provides the mappings for information purpose to show how source formats can preserve information from any data source.
+
+To maximize compatibility with various source formats, GeoZarr preserves as much metadata and structure as possible from these formats.
+
+NOTE: In particular, if relevant information which cannot be encoded in GeoZarr is identified, the specification might be extended.
+
+=== Mappings with CF
+
+
+=== Mappings with GeoTiff
+
+To map a GeoTIFF to the GeoZarr structure, we need to carefully translate the data arrays, coordinate variables, and metadata (such as the CRS) into the appropriate GeoZarr elements. 
+
+GeoZarr is structured as a single GeoZarr dataset at the root, encapsulating all necessary components to represent the geospatial data and metadata effectively.
+
+- GeoTIFF Data Array to GeoZarr Data Variable: In the case of a single band, the data variable represents a 2D raster with latitude and longitude dimensions. If there are multiple bands, they might be mapped to positions within a band dimension, with coordinates providing the wavelength and standard names indicating the units of measure for those coordinates.
+- GeoTIFF Coordinates to GeoZarr Coordinate Variables: Latitude and longitude coordinates are extracted and stored as GeoZarr Coordinate Variables.
+- GeoTIFF Metadata to GeoZarr Attributes: Metadata from the GeoTIFF (such as CRS and transform) are stored in the attributes of the GeoZarr Data Varaible. The CRS is translated to an auxiliary variable, referenced from the GeoZarr Data Variable in the grid_mapping attribute.
+- GeoZarr Dataset Group for Organizing: All the data variables and coordinate variables are organized within a GeoZarr Dataset Group, ensuring a coherent structure. This group is the root of the GeoZarr hierarchy, making it a self-contained and self-describing dataset.
+
+
+=== Mappings with GDAL entities
+
