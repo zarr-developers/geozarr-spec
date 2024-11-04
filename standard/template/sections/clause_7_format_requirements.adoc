@@ -1,0 +1,23 @@
+== GeoZarr format requirements
+
+TIP: This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections. The main focus should be on the table of contents.
+
+include::clause_7a_format_overview.adoc[]
+
+=== Underlying GeoZarr Requirements
+
+The requirement class GeoZarr Core is mandatory for all GeoZarr instances and must be specified at the root level with the `conformsTo` attribute.
+
+Some requirement classes are optional and define specific type of assets to facilitate standard interpretation by clients, such as a the requirement class Dataset. These optional requirement classes must be specified at the appropriate level within the hierarchy, using the conformsTo attribute to indicate adherence to the respective requirement class.
+
+TIP: maybe list possible requirements classes and purpose
+
+include::clause_7b_format_core.adoc[]
+
+include::clause_7c_format_coordinates.adoc[]
+
+include::clause_7d_format_pyramiding.adoc[]
+
+include::clause_7e_format_dataset_types.adoc[]
+
+include::clause_7_annex_mapping.adoc.adoc[]

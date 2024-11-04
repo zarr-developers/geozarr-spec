@@ -1,0 +1,37 @@
+
+=== Tiling and Pyramiding
+
+TIP: equivalent to GeoTiff (https://docs.ogc.org/is/21-026/21-026.html). GeoZarr should specify if and how tiling might be applied for three-dimensional and higher-dimensional data (for example, order of dimensions might be critical)
+
+==== Requirements Class Tiling
+
+[[req_geozarr-tiling]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/tiling {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset
+|Dependency | TBD
+|===
+
+
+Tiling is a strategy for optimising chunking in GeoZarr. With tiling, access to a specific area or two-dimensional bounding box is much quicker, as the relevant data is stored closer together in the file, reducing the number of bytes that need to be read compared to the strips approach.
+
+==== Requirements Class Pyramiding
+
+Pyramiding is useful when the client wants to quickly render an image of the entire area or a large portion of the area represented in the file. Instead of downloading every pixel, the software can request a smaller, pre-created, lower-resolution version.
+
+[[req_geozarr-coordinate-pyramiding]]
+[cols="1,4",width="90%"]
+|===
+2+|*Requirements Class* {set:cellbgcolor:#CACCCE}
+2+|http://www.opengis.net/spec/GeoZarr/1.0/req/coordinate-piramidiing {set:cellbgcolor:#FFFFFF}
+|Target type | Dataset
+|Dependency | TBD
+|===
+
+
+==== Requirements Class Map Rendering
+
+TIP: in addition to traditional 2D formats, some conventions might be needed to faciltiate the rendering of time series or N-D arrays on map tools. For example, how the bands / layers of the array are referenced, etc.
+
