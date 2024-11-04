@@ -30,7 +30,7 @@ GeoZarr DataArray variable MUST include the attribute **\_ARRAY_DIMENSIONS which
     
 ### GeoZarr Coordinates
 
-GeoZarr Coordinates variable is a one dimensional **Zarr Array** that **indexes a dimension** of a GeoZarr DataArray (e.g latitude, longitude, time, wavelength).
+GeoZarr Coordinates variable is either a one dimensional **Zarr Array** or an empty **Zarr Array** containing a **grid_mapping** which includes a **GeoTransform**. In both cases, the coordinates **index a dimension** of a GeoZarr DataArray (e.g latitude, longitude, time, wavelength).
 
 GeoZarr Coordinates variable MUST include the attribute **\_ARRAY_DIMENSIONS equal to the Zarr array name** (e.g. latitude for the latitude Zarr Array).
 
@@ -74,6 +74,13 @@ The following standard names are recommended to describe coordinates variables f
 ### Coordinate Reference System
 
 The **grid_mapping** CF variable defined by the DataArray variable defines the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the auxiliary variable that holds all the CF attributes describing the CRS. 
+
+In GeoZarr, the grid_mapping variable can contain a **GeoTransform** attribute [adopted from the GDAL Raster Data Model](https://gdal.org/user/raster_data_model.html#affine-geotransform). A GeoTransform is six values: `"X_offset X0 X1 Y_offset Y0 Y1 "` encoded as a space seperated string to ensure interoperability with existing software. `X_offset` and `Y_offset` are the grid origin. `X0` and `Y0` are the grid spacing per column. `X1` and `Y1` are the grid spacing per row. In the case of north up, axis aligned images, `X1 = Y0 = 0` and `X0` is pixel width, `Y1` is pixel height, and `X_offset, Y_offset)` is the top left corner of the top left pixel of the raster. The following equations can be used to derive georeferenced cell centers for rows and columns starting at zero. 
+
+```
+X_georeference = X_offset + (row + 0.5) * X1 + (column + 0.5) * X0
+Y_georeference = Y_offset + (row + 0.5) * Y1 + (column + 0.5) * Y0 
+```
 
 ### Other CF Properties
 
