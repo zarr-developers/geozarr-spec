@@ -73,7 +73,7 @@ The following standard names are recommended to describe coordinates variables f
 
 ### Coordinate Reference System
 
-The **grid_mapping** CF variable defined by DataArray variable defines  the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the Auxliary variable that holds all the CF attribute describing the CRS. 
+The **grid_mapping** CF variable defined by the DataArray variable defines the coordinate reference system (CRS) used for the horizontal spatial coordinate values. The grid_mapping value indicates the auxiliary variable that holds all the CF attributes describing the CRS. 
 
 ### Other CF Properties
 
@@ -85,44 +85,167 @@ All other CF conventions are recommended, in particular the attributes below:
 
 ## Multiscales
 
-A GeoZarr Dataset variable might includes multiscales for a set of DataArray variables.  Also known as overviews, multiscales provides download-scaled versions of the original image and represent zoomed out version of the image for fast visualisation purposes. A zoomed out version of the original image thus holds much less detail.
+A GeoZarr Dataset variable might include multiscales for a set of DataArray variables.  Also known as "overviews", multiscales provide resampled copies of the original data at a coarser resolution. Multiscales of the original data thus always hold less detail. Common use cases for multiscales are fast rendering for visualization purposes and analyzing data at multiple resolutions. 
 
 ### Multiscales Encoding 
 
- Multiscales MUST be encoded in children groups.
+ Multiscales MUST be encoded in children groups. Data at all scales MUST use the same coordinate reference system and must follow ONE common zoom level strategy. The zoom level strategy is modelled in close alignment to the [OGC Two Dimensional Tile Matrix Set](https://docs.ogc.org/is/17-083r4/17-083r4.html) version 2 and the [Tiled Asset STAC extension](https://github.com/stac-extensions/tiled-assets). Each zoom level is described by a Matrix defining the number, layout, origin and pixel size of included tiles. These tiles MUST correspond to the chunk layout along the two spatial dimensions listed in `_ARRAY_DIMENSIONS` of a given group.
  
-* Multiscale group name is the zoom level (e.g. '0').
-* Multiscale group contains all DataArrays generated for this specific zoom level.
-* Zoom level  strategy is based on defacto standard level 0 as 256x256 pixels covering the entire world, and scale doubled on each level as per https://wiki.openstreetmap.org/wiki/Zoom_levels. 
-* Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the latittude and longitude dimensions.
+* Multiscale group name is the zoom level identifier (e.g. '0').
+* Multiscale group contains all DataArrays generated for this specific zoom level. 
+* Multiscale chunking is RECOMMENDED to be 256 pixels or 512 pixels for the two spatial dimensions listed in `_ARRAY_DIMENSIONS`.
 
 ### Multiscales Metadata
 
-Each DataArray MUST define the 'multiscales' metadata attribute that provides the multiscales group path :
+If implemented, each DataArray MUST define the 'multiscales' metadata attribute which includes the following fields:
+* `tile_matrix_set`
+* `tile_matrix_set_limits` (optional)
+* `resampling_method`
 
-* Path MUST be the relative path to the Zarr group which holds the DataArray variable 
-* Zoom levels MUST be provided from lowest to highest resolutions
-* First level path MUST reference to itself or can be omitted.
-* If the optional 'crs' attribute is missing, then the downscaled version is assumed to be non-projected (and can be displayed using a "pseudo plate-carree" projection).
+
+#### Tile Matrix Set
+Tile Matrix Set can be: 
+* the name of a well know tile matrix set. Well known Tile Matrix Sets are listed [here](https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/).
+* the URI of a JSON document describing the Tile Matrix Set following the OGC standard.
+* a JSON object describing the Tile Matrix Set following the OGC standard (CamelCase!).
+
+Within the Tile Matrix Set
+* the Tile Matrix identifier for each zoom level MUST be the relative path to the Zarr group which holds the DataArray variable 
+* zoom levels MUST be provided from lowest to highest resolutions
+* the `supportedCRS` attribute of the Tile Matrix Set MUST match the crs information defined under **grid_mapping**.
+* the tile layout for each Matrix MUST correspond to the chunk layout along the two spatial dimensions listed in `_ARRAY_DIMENSIONS` of the corresponding group.
+
+
+#### Tile Matrix Set Limits
+Tile Matrix Sets may describe a larger spatial extent and more resolutions than used in the given dataset.
+In that case, users MAY specify [Tile Matrix Set Limits](https://docs.ogc.org/is/17-083r4/17-083r4.html#toc21) as described in the OGC standard to define the minimum and a maximum limits of the indices for each TileMatrix that contains actual data. However, the notation for tile matrix set does not the JSON encoding as described in the OGC standard but follows the STAC Tile Asset encoding for better readability.
+
+If used, Tile Matrix Set Limits
+* MUST list all included zoom levels
+* MAY list the min and max rows and columns for each zoom level. If omitted, it is assumed that the entire spatial extent is covered (resulting in higher chunk count of the DataArray).
+
+#### Resampling Method
+Resampling Method specifies which resampling method is used for generating multiscales. It MUST be one of the following string values. Resampling method MUST be the same across all zoom levels:
+* nearest
+* bilinear
+* cubic
+* cubic_spline
+* lanczos
+* average
+* mode
+* gauss
+* max
+* min
+* med
+* q1
+* q3
+* sum
+* rms
+
+### Multiscale examples
+#### Using Well Known Name reference
 
 ```diff
 (mandatory items in red, optional items in green)
 +{
-+  "multiscales": [
--    {
--      "name": "example",
--      "datasets": [
--        {"path": "0", "level": "0", 
-+         "crs": "EPSG:3857"},
--        {"path": "1", "level": "1",
--        {"path": "2", "level": "2"},
--        {"path": ".", "level": "3"}
--      ],
-+      "type": "gaussian",
--    }
-+  ]
++  "multiscales":
+-       { 
+-           "tile_matrix_set": "WebMercatorQuad",
+-           "resampling_method": "nearest",
+-       }
 +}
 ```
+#### Using a URI
+
+```diff
+(mandatory items in red, optional items in green)
++{
++  "multiscales":
+-       { 
+-           "tile_matrix_set": "https://schemas.opengis.net/tms/2.0/json/examples/tilematrixset/WebMercatorQuad.json",
+-           "resampling_method": "nearest",
+-       }
++}
+```
+
+#### Using a JSON object
+
+```diff
+(mandatory items in red, optional items in green)
++{
++  "multiscales":
+-       { 
+-           "tile_matrix_set": {
+-               "id": "WebMercatorQuad",
+-               "title": "Google Maps Compatible for the World",
+-               "uri": "http://www.opengis.net/def/tilematrixset/OGC/1.0/WebMercatorQuad",
+-               "crs": "http://www.opengis.net/def/crs/EPSG/0/3857",
+-               "orderedAxes": [
+-                   "X",
+-                   "Y"
+-               ],
+-               "wellKnownScaleSet": "http://www.opengis.net/def/wkss/OGC/1.0/GoogleMapsCompatible",
+-               "tileMatrices": [
+-               {
+-               "id": "0",
+-               "scaleDenominator": 559082264.028717,
+-               "cellSize": 156543.033928041,
+-               "pointOfOrigin": [
+-                   -20037508.3427892,
+-                   20037508.3427892
+-               ],
+-               "tileWidth": 256,
+-               "tileHeight": 256,
+-               "matrixWidth": 1,
+-               "matrixHeight": 1
+-               },
+-               {
+-               "id": "1",
+-               "scaleDenominator": 279541132.014358,
+-               "cellSize": 78271.5169640204,
+-               "pointOfOrigin": [
+-                   -20037508.3427892,
+-                   20037508.3427892
+-               ],
+-               "tileWidth": 256,
+-               "tileHeight": 256,
+-               "matrixWidth": 2,
+-               "matrixHeight": 2
+-               },
+-           }
+-           "resampling_method": "nearest",
+-       }
++}
+```
+#### Setting limits
+
+```diff
+(mandatory items in red, optional items in green)
++{
++  "multiscales":
+-       { 
+-           "tile_matrix_set": "WebMercatorQuad",
++           "tile_matrix_limits: {
+-                "0": {},
+-                "1": {
++                    "min_tile_col": 0,
++                    "max_tile_col": 0,
++                    "min_tile_row": 0,
++                    "max_tile_row": 0
+-                },
+-                "2": {
++                    "min_tile_col": 1,
++                    "max_tile_col": 1,
++                    "min_tile_row": 2,
++                    "max_tile_row": 2
+-                }
+-        },
+-           "resampling_method": "nearest",
+-       }
++}
+```
+
+
 ## Portrayals and Symbology
 
 A GeoZarr Dataset variable might define a set of visual portrayals of the geospatial data and define an adequate symbology. The symbology model is based on a simplified schema based on OGC Symbology Encoding Implementation Specification https://www.ogc.org/standards/symbol.
