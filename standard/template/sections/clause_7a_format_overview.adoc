@@ -1,0 +1,19 @@
+A GeoZarr data format is a regular Zarr hierarchy that represents geospatial coverages such as granules, scenes series, mosaics or any spatio temporal asset (as per STAC specification).
+
+=== Overview and Definitions 
+
+The OGC Abstract Topic 6 [OGC 07-011] standard defines all geographic object as a feature, with coverage being a special type for any digital geospatial information representing space and time varying phenomena. The ISO 19123 standard provides a formal definition for coverages: a "feature acting as a function that returns values from its range for any direct position within its spatiotemporal domain". 
+
+GeoZarr, like many array-oriented geospatial data formats (e.g., NetCDF, GeoTIFF), primarily supports *Rectified Grid Coverages*. Rectified Grid Coverage is a type of grid coverage that aligns with a coordinate reference system, ensuring that each cell or grid point corresponds precisely to a specific geographic location. 
+
+The base terminology in the scope of this specification includes the following terms:
+
+- A *GeoZarr Instance* (or GeoZarr) is a hierarchy of objects including attributes and arrays describing geospatial information.
+- A *GeoZarr Data Variable* is the arrray and attributes that define the values of a n-D coverage (i.e. a Rectified Grid Coverage)
+- A *GeoZarr Coordinate Variable* is the array (might be empty) and attributes  that define a coordinate dimension of a n-D coverage
+- A *GeoZarr Auxiliary Variable* is the array (might be empty) and attributes that define other type of information
+- A *GeoZarr Dataset* is a self-describing collection of n-D coverages defined by a set of values, coordinates and attributes (similar to a NetCDF dataset).
+
+Unlike some popular geospatial data formats, GeoZarr is not limited to 2D rasters and extends to multiple dimensions, including time, altitude, wavelength, and others. Additionally, the order of these dimensions is not fixed, allowing for optimizations in data analysis.
+
+A Dataset (referenced as an asset in a STAC item) facilitates the discovery and handling of the coverages by clients, such as web maps, and supports advanced capabilities such as pyramiding. However,GeoZarr also flexible and adaptable enough to accommodate other types of information: the specification aim to ensure that a transformation to GeoZarr from a source format can be reverted back to the original format.

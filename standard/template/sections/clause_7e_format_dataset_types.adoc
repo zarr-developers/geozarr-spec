@@ -1,0 +1,45 @@
+== Supported Dataset Types
+
+TIP: To be done
+
+
+This section outlines the specific dataset types supported within this specification, along with additional requirements for each type. Each dataset type has requirements related to data format, metadata, and any unique processing needs.
+
+=== 1. 2D Raster RGB Data
+
+- **Description**: Two-dimensional raster images with RGB channels, primarily for visualisation.
+- **Data Format**: Supported formats include `GeoTIFF` and `PNG`.
+- **Resolution Requirements**: Minimum resolution of 10m per pixel.
+- **Metadata Requirements**:
+- RGB Channel Mapping.
+- Spatial reference and bounding box.
+- **Additional Processing**:
+- Multiscale overview generation to support fast rendering at various zoom levels.
+
+=== 2. 2D Multispectral Data
+
+- **Description**: Multiband data that includes spectral information beyond RGB, useful for environmental and remote sensing applications.
+- **Data Format**: Supported formats include `NetCDF` and `GeoTIFF` with multiple bands.
+- **Band Information**:
+- Supported bands, such as Blue, Green, Red, NIR.
+- Wavelength range or specifications per band.
+- **Metadata Requirements**:
+- Spectral resolution and sensor-specific information.
+- Spatial reference, bounding box, and temporal extent if time-indexed.
+- **Additional Processing**:
+- Generation of multiscale overviews.
+- Band normalization or calibration to standardize across datasets.
+
+=== 3. 3D Time Series
+
+- **Description**: Multidimensional datasets incorporating spatial (X, Y) and temporal (Z) dimensions for tracking changes over time.
+- **Data Format**: Supported formats include `Zarr` and `NetCDF`.
+- **Temporal Resolution**: Required intervals, such as daily, weekly, or monthly.
+- **Metadata Requirements**:
+- Temporal indexing, ideally in ISO 8601 format.
+- Spatial reference and bounding box.
+- Data provenance, if applicable.
+- **Additional Processing**:
+- Support for multiscale pyramids to enable fast access and visualization over time.
+- Aggregation or summarization of data for efficient handling.
+

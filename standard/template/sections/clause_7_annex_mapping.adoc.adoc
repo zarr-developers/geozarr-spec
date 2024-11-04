@@ -254,7 +254,7 @@ Each coordinate variable should:
 - Include the Climate and Forecast (CF) standard name in the `standard_name` attribute of the Zarr array.
 
 
-=== Coordinate
+=== Coordinates
 
 
 ==== Coordinate Types
