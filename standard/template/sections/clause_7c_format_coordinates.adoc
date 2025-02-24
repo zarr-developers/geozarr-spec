@@ -16,6 +16,7 @@ There are multiple types of encoding for coordinates, each serving different pur
 * Affine Transforms (Coordinate Origin and Step):  this involves defining a starting point (origin) and a regular interval (step) between points. This method is commonly used in grid-based data where the position of each cell is calculated based on its distance from the origin.
 
 Proposed encoding:
+
 - 2D array (the nominal encoding applied by xarray)
 - origin/offset:
 - COARDS :
