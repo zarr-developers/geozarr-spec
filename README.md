@@ -2,6 +2,11 @@
 
 GeoZarr Spec aims to provide a geospatial extension to the Zarr specification. Zarr specifies a protocol and format used for storing Zarr arrays, while the present extension defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). 
 
+# Meetings Information
+The GeoZarr SWG meets monthly with an agenda and notes kept [here](https://hackmd.io/@briannapagan/geozarr-spec-swg).
+
+To receive updates about meetings and current efforts, join the Google group by navigating to [https://groups.google.com/u/2/g/geozarr](https://groups.google.com/u/2/g/geozarr) and click "Join this group". 
+
 ## Status
 
 This specification early drafts (<=v0.4) were created initially by [Spacebel](https://www.spacebel.com/) for the [European Space Agency](https://esa.int) under the [General Support Technology Programme](http://www.esa.int/Enabling_Support/Space_Engineering_Technology/Shaping_the_Future/About_the_General_Support_Technology_Programme_GSTP).
