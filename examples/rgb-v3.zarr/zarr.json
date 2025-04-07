@@ -1,0 +1,6 @@
+{
+    "extensions": [],
+    "metadata_encoding": "https://purl.org/zarr/spec/protocol/core/3.0",
+    "metadata_key_suffix": ".json",
+    "zarr_format": "https://purl.org/zarr/spec/protocol/core/3.0"
+}
