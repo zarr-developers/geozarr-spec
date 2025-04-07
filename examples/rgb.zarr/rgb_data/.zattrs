@@ -1,0 +1,14 @@
+{
+    "AREA_OR_POINT": "Point",
+    "TIFFTAG_RESOLUTIONUNIT": "1 (unitless)",
+    "TIFFTAG_XRESOLUTION": 1,
+    "TIFFTAG_YRESOLUTION": 1,
+    "_ARRAY_DIMENSIONS": [
+        "band",
+        "y",
+        "x"
+    ],
+    "grid_mapping": "spatial_ref",
+    "standard_name": "surface_reflectance",
+    "units": "1"
+}

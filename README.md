@@ -1,5 +1,5 @@
 # GeoZarr-Spec
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zarr-developers/geozarr-spec.git/cnl-examples?urlpath=%2Fdoc%2Ftree%2Fexamples%2Fnotebook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/zarr-developers/geozarr-spec.git/cnl-examples?urlpath=%2Fdoc%2Ftree%2Fexamples%2Fgeozarr.ipynb)
 
 GeoZarr Spec aims to provide a geospatial extension to the Zarr specification. Zarr specifies a protocol and format used for storing Zarr arrays, while the present extension defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). 
 
