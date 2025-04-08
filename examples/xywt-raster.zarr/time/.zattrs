@@ -1,0 +1,9 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "time"
+    ],
+    "calendar": "proleptic_gregorian",
+    "long_name": "time of observation",
+    "standard_name": "time",
+    "units": "days since 2020-01-01 00:00:00"
+}

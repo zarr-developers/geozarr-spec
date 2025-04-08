@@ -1,0 +1,8 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "band"
+    ],
+    "long_name": "spectral wavelength",
+    "standard_name": "radiation_wavelength",
+    "units": "micrometre"
+}

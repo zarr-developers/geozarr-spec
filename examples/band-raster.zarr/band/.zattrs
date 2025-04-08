@@ -1,0 +1,7 @@
+{
+    "_ARRAY_DIMENSIONS": [
+        "band"
+    ],
+    "long_name": "sensor band identifier",
+    "standard_name": "sensor_band_identifier"
+}

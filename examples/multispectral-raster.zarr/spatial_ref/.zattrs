@@ -1,0 +1,19 @@
+{
+    "GeoTransform": "319281.23 12.5 0 5639331.75 0 -12.5",
+    "_ARRAY_DIMENSIONS": [],
+    "crs_wkt": "PROJCS[\"WGS 84 / UTM zone 30N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-3],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32630\"]]",
+    "false_easting": 500000.0,
+    "false_northing": 0.0,
+    "geographic_crs_name": "WGS 84",
+    "grid_mapping_name": "transverse_mercator",
+    "horizontal_datum_name": "World Geodetic System 1984",
+    "inverse_flattening": 298.257223563,
+    "latitude_of_projection_origin": 0.0,
+    "longitude_of_central_meridian": -3.0,
+    "prime_meridian_name": "Greenwich",
+    "projected_crs_name": "WGS 84 / UTM zone 30N",
+    "reference_ellipsoid_name": "WGS 84",
+    "scale_factor_at_central_meridian": 0.9996,
+    "semi_major_axis": 6378137.0,
+    "semi_minor_axis": 6356752.314245179
+}

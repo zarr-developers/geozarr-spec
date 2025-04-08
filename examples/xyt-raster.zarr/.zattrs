@@ -1,0 +1,7 @@
+{
+    "Conventions": "CF-1.8",
+    "profile": [
+        "time-series-raster",
+        "scalar-raster"
+    ]
+}

@@ -1,0 +1,11 @@
+{
+    "AREA_OR_POINT": "Point",
+    "_ARRAY_DIMENSIONS": [
+        "wavelength",
+        "y",
+        "x"
+    ],
+    "grid_mapping": "spatial_ref",
+    "standard_name": "surface_reflectance",
+    "units": "1"
+}

@@ -1,0 +1,11 @@
+{
+    "AREA_OR_POINT": "Point",
+    "_ARRAY_DIMENSIONS": [
+        "time",
+        "y",
+        "x"
+    ],
+    "grid_mapping": "spatial_ref",
+    "standard_name": "air_temperature",
+    "units": "K"
+}
