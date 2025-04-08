@@ -5,8 +5,8 @@ dependencies:
   - python=3.11
   - ipykernel
   - jupyterlab
-  - xarray
-  - zarr
+  - xarray>=v2025.03.1
+  - zarr>=3
   - s3fs
   - dask
   - numpy
