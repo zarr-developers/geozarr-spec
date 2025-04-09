@@ -1,10 +1,17 @@
 {
-    "chunks": [],
-    "compressor": null,
-    "dtype": "<i8",
-    "fill_value": null,
-    "filters": null,
-    "order": "C",
-    "shape": [],
-    "zarr_format": 2
+  "shape": [],
+  "chunks": [],
+  "fill_value": null,
+  "order": "C",
+  "filters": null,
+  "dimension_separator": ".",
+  "compressor": {
+    "id": "blosc",
+    "cname": "lz4",
+    "clevel": 5,
+    "shuffle": 1,
+    "blocksize": 0
+  },
+  "zarr_format": 2,
+  "dtype": "<i8"
 }
