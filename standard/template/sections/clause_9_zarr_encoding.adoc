@@ -9,8 +9,8 @@ include::clause_9_zarr_encoding_core.adoc[]
 
 include::clause_9_zarr_encoding_overviews.adoc[]
 
-include::clause_9_zarr_encoding_geotransform.adoc[]
+//include::clause_9_zarr_encoding_geotransform.adoc[]
 
-include::clause_9_zarr_encoding_stac.adoc[]
+//include::clause_9_zarr_encoding_stac.adoc[]
 
 
