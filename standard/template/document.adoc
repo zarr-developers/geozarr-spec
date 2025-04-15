@@ -41,9 +41,13 @@ include::sections/clause_5_conventions.adoc[]
 
 include::sections/clause_6_informative_text.adoc[]
 
-include::sections/clause_7_normative_text.adoc[]
+include::sections/clause_7_unified_data_model.adoc[]
 
-include::sections/clause_8_media_types.adoc[]
+include::sections/clause_8_conformance.adoc[]
+
+include::sections/clause_9_zarr_encoding.adoc[]
+
+include::sections/clause_10_geotiff_encoding.adoc[]
 
 ////
 add or remove annexes after "A" as necessary

@@ -1,0 +1,34 @@
+name: generate
+
+on:
+  push:
+    branches: [ spec_unified_data_model, main ]
+  pull_request:
+    paths-ignore:
+      - .gitlab-ci.yml
+      - .github/workflows/create_swg_report.yml
+  workflow_dispatch:
+
+jobs:
+  test-linux:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ github.token }}
+          submodules: true
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.fontist
+          key: fontist-${{ runner.os }}
+          restore-keys: fontist-${{ runner.os }}
+
+      - uses: actions-mn/setup@main
+
+      - run: metanorma site generate --agree-to-terms
