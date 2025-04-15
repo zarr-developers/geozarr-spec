@@ -1,4 +1,6 @@
-== Conformance
+[obligation==informative]
+
+== GeoZarr Conformance Classes
 
 Datasets can include many different types of data includes rasters, combinations—such as time, height, or wavelength—and can use either a projected or geographic coordinate system.
 

@@ -2,8 +2,8 @@
 metanorma:
   source:
     files:
-      - standard/template/document.adoc
+      - standard/template/geozarr-spec.adoc
 
   collection:
     organization: "OGC"
-    name: "OGC API - Processes"
+    name: "OGC GeoZarr Specification"

@@ -10,18 +10,18 @@
 :received-date: 2029-03-30
 :issued-date: 2029-03-30
 :published-date: 2029-03-30
-:fullname: Editor One
-:fullname_2: Editor Two
-:docsubtype: Interface
+:fullname: Christophe Noël
+:fullname_2: Brianna Pagán
+:docsubtype: Format
 :keywords: ogcdoc, OGC document, API, openapi, html
 :submitting-organizations: Organization One; Organization Two
 :mn-document-class: ogc
 :mn-output-extensions: xml,html,doc,pdf
 :local-cache-only:
 :data-uri-image:
-:pdf-uri: ./document.pdf
-:xml-uri: ./document.xml
-:doc-uri: ./document.doc
+:pdf-uri: ./geozarr-spec.pdf
+:xml-uri: ./geozarr-spec.xml
+:doc-uri: ./geozarr-spec.doc
 :edition: 1.0
 
 ////
