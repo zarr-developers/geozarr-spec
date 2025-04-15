@@ -1,0 +1,16 @@
+== Unified Data Model Encoding for Zarr
+
+This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.
+
+TIP: This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.
+
+
+include::clause_9_zarr_encoding_core.adoc[]
+
+include::clause_9_zarr_encoding_overviews.adoc[]
+
+include::clause_9_zarr_encoding_geotransform.adoc[]
+
+include::clause_9_zarr_encoding_stac.adoc[]
+
+
