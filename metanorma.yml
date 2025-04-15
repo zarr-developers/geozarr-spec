@@ -1,0 +1,9 @@
+---
+metanorma:
+  source:
+    files:
+      - standard/template/document.adoc
+
+  collection:
+    organization: "OGC"
+    name: "OGC API - Processes"
