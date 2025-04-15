@@ -1444,9 +1444,9 @@ pre.sourcecode .nt {
 
     
     
-    <span>Editor One <span class="roletag">Editor</span></span>
+    <span>Christophe Noël <span class="roletag">Editor</span></span>
     
-    <span>Editor Two <span class="roletag">Editor</span></span>
+    <span>Brianna Pagán <span class="roletag">Editor</span></span>
     
     
   </div>
@@ -1468,13 +1468,13 @@ pre.sourcecode .nt {
     
       <span class="label">Additional Formats: </span>
       
-      <span class="value"><a href="./document.xml"><i class="far fa-file-code"></i>XML</a></span>
+      <span class="value"><a href="./geozarr-spec.xml"><i class="far fa-file-code"></i>XML</a></span>
       
       
-      <span class="value"><a href="./document.pdf"><i class="far fa-file-pdf"></i>PDF</a></span>
+      <span class="value"><a href="./geozarr-spec.pdf"><i class="far fa-file-pdf"></i>PDF</a></span>
       
       
-      <span class="value"><a href="./document.doc"><i class="far fa-file-word"></i>DOC</a></span>
+      <span class="value"><a href="./geozarr-spec.doc"><i class="far fa-file-word"></i>DOC</a></span>
       
       </div>
     
@@ -1560,11 +1560,11 @@ pre.sourcecode .nt {
 </div>
 
 <nav>
-  <div id="toc"><h1 class="IntroTitle"><a class="anchor" href="#_bb8bc6ed-f15a-4888-894a-541e6f7f9c10"></a><a class="header" href="#_bb8bc6ed-f15a-4888-894a-541e6f7f9c10">Contents</a></h1><ul><li class="h1"><a href="#_abstract">      
+  <div id="toc"><h1 class="IntroTitle"><a class="anchor" href="#_a29441c9-fabd-467d-804d-06a8c2a63904"></a><a class="header" href="#_a29441c9-fabd-467d-804d-06a8c2a63904">Contents</a></h1><ul><li class="h1"><a href="#_abstract">      
   
   I.  Abstract
 </a></li>
-<li class="h1"><a href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d">      
+<li class="h1"><a href="#_2db61d01-ea30-4cad-95bd-f3d6d5540c0a">      
   
   II.  Keywords
 </a></li>
@@ -1576,7 +1576,7 @@ pre.sourcecode .nt {
   
   IV.  Security considerations
 </a></li>
-<li class="h1"><a href="#_1e57be44-5180-4129-981e-1f17714c1524">      
+<li class="h1"><a href="#_404f732a-8106-48df-b834-6ec5f9657288">      
   
   V.  Submitting Organizations
 </a></li>
@@ -1604,7 +1604,7 @@ pre.sourcecode .nt {
   
   2.  Conformance
 </a></li>
-<li class="h1"><a href="#_025f9832-4d49-4805-ac58-b2a140d3ccaa">      3.  Normative references</a></li>
+<li class="h1"><a href="#_d9b93a9e-998c-4c5b-9fbb-7af3b74138f6">      3.  Normative references</a></li>
 <li class="h1"><a href="#_terms_and_definitions">      
   
   4.  Terms and definitions
@@ -1657,41 +1657,45 @@ pre.sourcecode .nt {
   
   7.6.  Interoperability Considerations
 </a></li>
+<li class="h1"><a href="#_geozarr_conformance_classes">      
+  
+  8.  GeoZarr Conformance Classes
+</a></li>
 <li class="h1"><a href="#_unified_data_model_encoding_for_zarr">      
   
-  8.  Unified Data Model Encoding for Zarr
+  9.  Unified Data Model Encoding for Zarr
 </a></li>
 <li class="h2"><a href="#_hierarchical_structure">      
   
-  8.1.  Hierarchical Structure
+  9.1.  Hierarchical Structure
 </a></li>
 <li class="h2"><a href="#_dimensions">      
   
-  8.2.  Dimensions
+  9.2.  Dimensions
 </a></li>
 <li class="h2"><a href="#_coordinate_variables">      
   
-  8.3.  Coordinate Variables
+  9.3.  Coordinate Variables
 </a></li>
 <li class="h2"><a href="#_data_variables">      
   
-  8.4.  Data Variables
+  9.4.  Data Variables
 </a></li>
 <li class="h2"><a href="#_global_metadata">      
   
-  8.5.  Global Metadata
+  9.5.  Global Metadata
 </a></li>
 <li class="h2"><a href="#_variables_metadata">      
   
-  8.6.  Variables Metadata
+  9.6.  Variables Metadata
 </a></li>
 <li class="h2"><a href="#_encoding_of_multiscale_overviews_in_zarr">      
   
-  8.7.  Encoding of Multiscale Overviews in Zarr
+  9.7.  Encoding of Multiscale Overviews in Zarr
 </a></li>
 <li class="h1"><a href="#_unified_data_model_encoding_for_geotiff">      
   
-  9.  Unified Data Model Encoding for GeoTiff
+  10.  Unified Data Model Encoding for GeoTiff
 </a></li>
 <li class="h1"><a href="#_conformance_class_abstract_test_suite_normative">      
   
@@ -1709,7 +1713,7 @@ pre.sourcecode .nt {
   
   Annex C (informative) Revision History
 </a></li>
-<li class="h1"><a href="#_c79bda6c-8141-4485-9478-3e5de031ab08">      Bibliography</a></li></ul></div>
+<li class="h1"><a href="#_60de842a-b4c5-443c-a4ce-02df94ffda62">      Bibliography</a></li></ul></div>
 
 </nav>
 
@@ -1722,8 +1726,8 @@ pre.sourcecode .nt {
 
 
 
-</div><br /><br /><div id="_abstract"><h1 class="AbstractTitle" id="_6e6b7851-289e-47ed-8cbd-6aaed82befd3"><a class="anchor" href="#_abstract"></a><a class="header" href="#_abstract">I.  Abstract</a></h1><p id="_ea8b918b-259f-ad32-41cd-bf6720709423">&#x3c;Insert Abstract Text here&#x3e;</p></div><div class="Section3" id="_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d"><h1 class="IntroTitle" id="_0aacf16c-3767-4517-aaed-58e7cb7feef5"><a class="anchor" href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d"></a><a class="header" href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d">II.  Keywords</a></h1><p>The following are keywords to be used by search engines and document catalogues.</p><p>ogcdoc, OGC document, API, openapi, html</p></div><br /><div id="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"><h1 class="ForewordTitle" id="_d59ddba8-02c3-46c7-84fa-0bb5029929e2"><a class="anchor" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"></a><a class="header" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3">III.  Preface</a></h1><div id="_b54ab49b-0988-938f-ab2d-38e2ffda33ce" class="Note"><p><span class="note_label">NOTE:  </span>Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.</p></div><p id="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p><p id="_25f6b7a1-8657-2655-9eff-47df179631e0">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p></div><div class="Section3" id="_security_considerations"><h1 class="IntroTitle" id="_a6daa718-9c5c-4c33-8570-20a70547977e"><a class="anchor" href="#_security_considerations"></a><a class="header" href="#_security_considerations">IV.  Security considerations</a></h1><p id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae">No security considerations have been made for this Standard.</p></div><div class="Section3" id="_1e57be44-5180-4129-981e-1f17714c1524"><h1 class="IntroTitle" id="_a3743347-ea4a-483e-aaae-3b35c693cca4"><a class="anchor" href="#_1e57be44-5180-4129-981e-1f17714c1524"></a><a class="header" href="#_1e57be44-5180-4129-981e-1f17714c1524">V.  Submitting Organizations</a></h1><p>The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><ul><li>Organization One</li>
-<li>Organization Two</li></ul></div></div><div class="Section3" id="_submitters"><h1 class="IntroTitle" id="_7dbf5d60-1d68-4890-aea9-ff0deee12e1a"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">VI.  Submitters</a></h1><h1 id="_5636485c-5192-4a44-9577-a591b1dc567e"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">Submitters</a></h1><p id="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9">All questions regarding this submission should be directed to the editor or the submitters:</p><table id="_7c862f68-dc17-1a57-b670-05344091cf61" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Name</b></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Affiliation</b></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><div class="Section3" id="_contributors"><h1 class="IntroTitle" id="_1a21885b-504f-4074-bf49-d4970ca08343"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">VII.  Contributors</a></h1><h1 id="_54adbabb-b69f-4a41-9d82-f793c7e232e2"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">Contributors</a></h1><p id="_621c4f5b-26a9-89f7-0840-938819089a27">Additional contributors to this Standard include the following:</p><p id="_45f943af-cadd-6488-bff5-c1c1376f2096">Individual name(s), Organization</p></div><div id="_scope"><h1 id="_a316f553-23d5-4775-b0a8-ad6dfce92db6"><a class="anchor" href="#_scope"></a><a class="header" href="#_scope">1.  Scope</a></h1><div id="_19759895-aabd-4232-a497-4ca4b6a23eb3" class="Note"><p><span class="note_label">NOTE:  </span>Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.</p></div></div><div id="_conformance"><h1 id="_004f71bf-a746-4167-8c5e-7598d16d33b8"><a class="anchor" href="#_conformance"></a><a class="header" href="#_conformance">2.  Conformance</a></h1><p id="_12e50e71-32c9-4841-9afc-c19b6e3ab821">This standard defines XXXX.</p><p id="_b116691a-08b1-0620-ae3d-86e5f3a8a421">Requirements for N standardization target types are considered:</p><div class="ul_wrap"><ul id="_7e05e339-83a3-d931-6767-a7c123e12b74"><li><p id="_1bd63b7e-eb98-ad43-1de4-c21d99d60ac2">AAAA</p>
+</div><br /><br /><div id="_abstract"><h1 class="AbstractTitle" id="_b68af074-4015-43e7-aae5-8c0d1dd7e375"><a class="anchor" href="#_abstract"></a><a class="header" href="#_abstract">I.  Abstract</a></h1><p id="_ea8b918b-259f-ad32-41cd-bf6720709423">&#x3c;Insert Abstract Text here&#x3e;</p></div><div class="Section3" id="_2db61d01-ea30-4cad-95bd-f3d6d5540c0a"><h1 class="IntroTitle" id="_e26a339a-7d91-4322-9830-d627df83544e"><a class="anchor" href="#_2db61d01-ea30-4cad-95bd-f3d6d5540c0a"></a><a class="header" href="#_2db61d01-ea30-4cad-95bd-f3d6d5540c0a">II.  Keywords</a></h1><p>The following are keywords to be used by search engines and document catalogues.</p><p>ogcdoc, OGC document, API, openapi, html</p></div><br /><div id="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"><h1 class="ForewordTitle" id="_b801bf85-91b8-4230-8879-b6015dd3bce8"><a class="anchor" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"></a><a class="header" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3">III.  Preface</a></h1><div id="_b54ab49b-0988-938f-ab2d-38e2ffda33ce" class="Note"><p><span class="note_label">NOTE:  </span>Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.</p></div><p id="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p><p id="_25f6b7a1-8657-2655-9eff-47df179631e0">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p></div><div class="Section3" id="_security_considerations"><h1 class="IntroTitle" id="_62d91ba2-733e-483d-bb18-cb4d93fc3059"><a class="anchor" href="#_security_considerations"></a><a class="header" href="#_security_considerations">IV.  Security considerations</a></h1><p id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae">No security considerations have been made for this Standard.</p></div><div class="Section3" id="_404f732a-8106-48df-b834-6ec5f9657288"><h1 class="IntroTitle" id="_9baaf115-71a2-4638-b5a3-bfb91d0557b3"><a class="anchor" href="#_404f732a-8106-48df-b834-6ec5f9657288"></a><a class="header" href="#_404f732a-8106-48df-b834-6ec5f9657288">V.  Submitting Organizations</a></h1><p>The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><ul><li>Organization One</li>
+<li>Organization Two</li></ul></div></div><div class="Section3" id="_submitters"><h1 class="IntroTitle" id="_d3390182-58c7-4954-b0de-2097a99fa640"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">VI.  Submitters</a></h1><h1 id="_bf16fd6a-77fc-4c8e-9ccf-d9847344a900"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">Submitters</a></h1><p id="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9">All questions regarding this submission should be directed to the editor or the submitters:</p><table id="_7c862f68-dc17-1a57-b670-05344091cf61" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Name</b></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Affiliation</b></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><div class="Section3" id="_contributors"><h1 class="IntroTitle" id="_7b6ba2cc-15d7-4952-9e68-f6b79c4938d6"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">VII.  Contributors</a></h1><h1 id="_2cc25b94-e963-4b7b-aecd-fbb7ad8930bb"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">Contributors</a></h1><p id="_621c4f5b-26a9-89f7-0840-938819089a27">Additional contributors to this Standard include the following:</p><p id="_45f943af-cadd-6488-bff5-c1c1376f2096">Individual name(s), Organization</p></div><div id="_scope"><h1 id="_0caf2241-0084-4371-92a2-ee4deab5f77d"><a class="anchor" href="#_scope"></a><a class="header" href="#_scope">1.  Scope</a></h1><div id="_19759895-aabd-4232-a497-4ca4b6a23eb3" class="Note"><p><span class="note_label">NOTE:  </span>Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.</p></div></div><div id="_conformance"><h1 id="_de1026c9-c06b-478f-83a4-96c1967f6c5d"><a class="anchor" href="#_conformance"></a><a class="header" href="#_conformance">2.  Conformance</a></h1><p id="_12e50e71-32c9-4841-9afc-c19b6e3ab821">This standard defines XXXX.</p><p id="_b116691a-08b1-0620-ae3d-86e5f3a8a421">Requirements for N standardization target types are considered:</p><div class="ul_wrap"><ul id="_7e05e339-83a3-d931-6767-a7c123e12b74"><li><p id="_1bd63b7e-eb98-ad43-1de4-c21d99d60ac2">AAAA</p>
 </li>
 <li><p id="_b6bc9b8a-bd3e-ce9e-7522-1f98d4945205">BBBB</p>
 </li>
@@ -1731,7 +1735,7 @@ pre.sourcecode .nt {
 </li>
 <li><p id="_0b67bb92-65e2-2183-4a16-11664b0f122f">Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).</p>
 </li>
-</ul></div><p id="_595f6be4-4135-af56-59ba-b377f03b0a65">All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.</p></div><div><h1 id="_025f9832-4d49-4805-ac58-b2a140d3ccaa">3.  Normative references</h1>
+</ul></div><p id="_595f6be4-4135-af56-59ba-b377f03b0a65">All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.</p></div><div><h1 id="_d9b93a9e-998c-4c5b-9fbb-7af3b74138f6">3.  Normative references</h1>
 <p id="_307b20e2-9e40-db56-abbf-2822ab2941cc">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
 
 
@@ -1740,28 +1744,7 @@ pre.sourcecode .nt {
 
 <p id="Smith81" class="NormRef"><i>Identification of Common Molecular Subsequences</i>.
 Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195–197 (1981)</p>
-<p id="May06" class="NormRef"><i>ZIB Structure Prediction Pipeline: Composing a Complex Biological Workflow through Web Services</i>.
-May, P., Ehrlich, H.C., Steinke, T. In: Nagel, W.E., Walter,
-W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128, pp. 1148–1158. Springer,
-Heidelberg (2006)</p>
-<p id="Grid" class="NormRef"><i>The Grid: Blueprint for a New Computing Infrastructure.</i>,
-Foster, I., Kesselman, C.. Morgan Kaufmann, San Francisco (1999).</p>
-<p id="Czajkowski01" class="NormRef"><i>Grid Information Services for Distributed Resource Sharing.</i>
-Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C. In: 10th IEEE International Symposium on High
-Performance Distributed Computing, pp. 181–184. IEEE Press, New York (2001)</p>
-<p id="Foster02" class="NormRef"><i>The Physiology of the Grid: an Open Grid Services Architecture for Distributed Systems Integration.</i>
-Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Forum (2002)</p>
-<p id="NCBI" class="NormRef"><i>National Center for Biotechnology Information</i>, <a href="http://www.ncbi.nlm.nih.gov">http://www.ncbi.nlm.nih.gov</a></p>
-<p id="ISO19101-1" class="NormRef">ISO: ISO 19101-1:2014, <i>Geographic information — Reference model — Part 1: Fundamentals</i>. International Organization for Standardization, Geneva (2014). <a href="https://www.iso.org/standard/59164.html">https://www.iso.org/standard/59164.html</a>.</p>
-<p id="ISO19115-1" class="NormRef">ISO: ISO 19115-1:2014, <i>Geographic information — Metadata — Part 1: Fundamentals</i>. International Organization for Standardization, Geneva (2014). <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a>.</p>
-<p id="ISO19157" class="NormRef">ISO: ISO 19157:2013, <i>Geographic information  — Data quality</i>. International Organization for Standardization, Geneva (2013). <a href="https://www.iso.org/standard/32575.html">https://www.iso.org/standard/32575.html</a>.</p>
-<p id="ISO19139" class="NormRef">ISO: ISO 19139:2007, <i>Geographic information — Metadata — XML schema implementation</i>. ISO (2007).</p>
-<p id="ISO19115-3" class="NormRef">ISO: ISO 19115-3, <i>Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts</i>. International Organization for Standardization, Geneva <a href="https://www.iso.org/standard/80874.html">https://www.iso.org/standard/80874.html</a>.</p>
-<p id="OGC15-097" class="NormRef">Joan Masó, Lucy Bastin: OGC 15-097r1, <i>OGC® Geospatial User Feedback Standard: Conceptual Model</i>. Open Geospatial Consortium (2016). <a href="http://www.opengis.net/doc/IS/guf-conceptual/1.0.0">http://www.opengis.net/doc/IS/guf-conceptual/1.0.0</a>.</p>
-<p id="OGC12-019" class="NormRef">Gerhard Gröger, Thomas H. Kolbe, Claus Nagel, Karl-Heinz Häfele: OGC 12-019, <i>OGC City Geography Markup Language (CityGML) Encoding Standard</i>. Open Geospatial Consortium (2012). <a href="http://www.opengis.net/spec/citygml/2.0">http://www.opengis.net/spec/citygml/2.0</a>.</p>
-<p id="OGC14-005r3" class="NormRef">Jiyeong Lee, Ki-Joune Li, Sisi Zlatanova, Thomas H. Kolbe, Claus Nagel, Thomas Becker: OGC 14-005r3, <i>OGC® IndoorGML</i>. Open Geospatial Consortium (2014). <a href="http://www.opengis.net/doc/IS/indoorgml/1.0.0">http://www.opengis.net/doc/IS/indoorgml/1.0.0</a>.</p>
-<p id="OGC06121r9" class="NormRef">Arliss Whiteside, Jim Greenwood: OGC 06-121r9, <i>OGC Web Service Common Implementation Specification</i>. Open Geospatial Consortium (2010). <a href="https://portal.ogc.org/files/?artifact_id=38867">https://portal.ogc.org/files/?artifact_id=38867</a>.</p>
-</div><div id="_terms_and_definitions"><h1 id="_847812f2-7597-4e83-be3a-0250cc3abc8d"><a class="anchor" href="#_terms_and_definitions"></a><a class="header" href="#_terms_and_definitions">4.  Terms and definitions</a></h1>
+</div><div id="_terms_and_definitions"><h1 id="_ed289f3a-bf2e-4bb7-a230-700d82becc2a"><a class="anchor" href="#_terms_and_definitions"></a><a class="header" href="#_terms_and_definitions">4.  Terms and definitions</a></h1>
 <p id="_7fe04b5b-db41-5d9b-ebe1-463b3a0c16c9">This document uses the terms defined in <a href="https://portal.ogc.org/public_ogc/directives/directives.php">OGC Policy Directive 49</a>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this document and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.</p>
 
 <p id="_e0235fe8-8273-26b4-faeb-a580ad58929f">This document also uses terms defined in the OGC Standard for Modular specifications (<a href="https://portal.opengeospatial.org/files/?artifact_id=34762">OGC 08-131r3</a>), also known as the ‘ModSpec’. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.</p>
@@ -1772,7 +1755,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_ccf3e63b-6acc-0cd0-687c-fd7f951288d6">For the purposes of this document, the following additional terms and definitions apply.</p>
 
-<div id="term-example-term"><h2 class="TermNum" style="text-align:left;" id="_5bda7f42-3554-4015-a47b-6a4494026ce1"><a class="anchor" href="#term-example-term"></a><a class="header" href="#term-example-term">4.1. <b>example term</b></a></h2></div>
+<div id="term-example-term"><h2 class="TermNum" style="text-align:left;" id="_a0cd6a21-9067-4bc8-a2eb-5e5c7bcb5301"><a class="anchor" href="#term-example-term"></a><a class="header" href="#term-example-term">4.1. <b>example term</b></a></h2></div>
 <p id="_06db0da1-214c-7f57-bd34-fd4f77edb6ed">term used for exemplary purposes</p>
 
 
@@ -1781,20 +1764,20 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 
  <div id="_dba7a326-d460-4fd2-c200-c18e257c490b" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>An example note.</p></div><p class="SourceTitle" style="text-align:center;">Example</p><div id="_6e5e388f-3384-3fe0-1387-5c648e5561e6" class="example"><p id="_2d45db5a-97c4-2358-7890-3aa696c4b809">Here’s an example of an example term.</p>
-</div><p>[<b>SOURCE:</b> <a href="#ISO19101-1">ISO 19101-1:2014</a>]</p>
-</div><div id="_conventions"><h1 id="_fbd5fa19-28b6-45f1-968f-354bf2f6888e"><a class="anchor" href="#_conventions"></a><a class="header" href="#_conventions">5.  Conventions</a></h1><p id="_f287e0a4-ca0e-ef98-6e01-5d09472b62aa">This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.</p><div id="_identifiers"><h2 id="_85a7fae7-b549-443c-bf60-e4b0ef0dc737"><a class="anchor" href="#_identifiers"></a><a class="header" href="#_identifiers">5.1.  Identifiers</a></h2>
+</div><p>[<b>SOURCE:</b> ]</p>
+</div><div id="_conventions"><h1 id="_89d53a0f-5f5f-4e50-8fcd-c007a1288514"><a class="anchor" href="#_conventions"></a><a class="header" href="#_conventions">5.  Conventions</a></h1><p id="_f287e0a4-ca0e-ef98-6e01-5d09472b62aa">This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.</p><div id="_identifiers"><h2 id="_77361171-4b64-4fdd-b14a-c0aba76e5f8a"><a class="anchor" href="#_identifiers"></a><a class="header" href="#_identifiers">5.1.  Identifiers</a></h2>
 
 <p id="_34025c5d-dda4-c61f-5774-94f51d938b80">The normative provisions in this standard are denoted by the URI</p>
 
 <p id="_f0191874-4eeb-2c92-18f2-f1367cf61a60"><tt><a href="http://www.opengis.net/spec/{standard}/{m.n}">http://www.opengis.net/spec/{standard}/{m.n}</a></tt></p>
 
 <p id="_52250454-5ac3-4fce-7c83-eb454adf6103">All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
-</div></div><div id="_clauses_not_containing_normative_material"><h1 id="_1337b323-0bcf-45b5-bfaf-c85beedec5fc"><a class="anchor" href="#_clauses_not_containing_normative_material"></a><a class="header" href="#_clauses_not_containing_normative_material">6.  Clauses not containing normative material</a></h1><p id="_6f5c8cdc-826f-564e-03f0-7b929261119c">Paragraph</p><div id="_clauses_not_containing_normative_material_sub_clause_1"><h2 id="_591e9d27-d186-4346-950d-2eef2ebc8cfc"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_1"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_1">6.1.  Clauses not containing normative material sub-clause 1</a></h2>
+</div></div><div id="_clauses_not_containing_normative_material"><h1 id="_d25540dd-8b20-4f53-8dd8-220af9e605c3"><a class="anchor" href="#_clauses_not_containing_normative_material"></a><a class="header" href="#_clauses_not_containing_normative_material">6.  Clauses not containing normative material</a></h1><p id="_6f5c8cdc-826f-564e-03f0-7b929261119c">Paragraph</p><div id="_clauses_not_containing_normative_material_sub_clause_1"><h2 id="_ee8339c0-268f-4a92-bee6-d67df50315c2"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_1"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_1">6.1.  Clauses not containing normative material sub-clause 1</a></h2>
 
 <p id="_99f22d46-0d65-7e82-4ecc-93498c6ea8b6">Paragraph</p>
-</div><div id="_clauses_not_containing_normative_material_sub_clause_2"><h2 id="_ebd4c916-6c5d-4b97-ae36-6257438dd481"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_2"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_2">6.2.  Clauses not containing normative material sub-clause 2</a></h2>
+</div><div id="_clauses_not_containing_normative_material_sub_clause_2"><h2 id="_9b6b28a0-fae7-46e2-98e3-3a087eab9a38"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_2"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_2">6.2.  Clauses not containing normative material sub-clause 2</a></h2>
 
-</div></div><div id="_unified_data_model"><h1 id="_78ef8316-616d-4ac6-aa7d-14e6ad1862ee"><a class="anchor" href="#_unified_data_model"></a><a class="header" href="#_unified_data_model">7.  Unified Data Model</a></h1><div id="_scope_and_purpose"><h2 id="_71db0923-1f6e-442d-9f85-5fc0a952f173"><a class="anchor" href="#_scope_and_purpose"></a><a class="header" href="#_scope_and_purpose">7.1.  Scope and Purpose</a></h2>
+</div></div><div id="_unified_data_model"><h1 id="_880c4f9e-040d-4fb0-98bc-59fc677d2891"><a class="anchor" href="#_unified_data_model"></a><a class="header" href="#_unified_data_model">7.  Unified Data Model</a></h1><div id="_scope_and_purpose"><h2 id="_d8539cde-b55f-4245-8a9d-9190eed0b7dc"><a class="anchor" href="#_scope_and_purpose"></a><a class="header" href="#_scope_and_purpose">7.1.  Scope and Purpose</a></h2>
 
 <p id="_dc8c1099-e018-dcdd-581d-b44eabf32c50">This Standard defines a unified data model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems..</p>
 
@@ -1817,7 +1800,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <p id="_bc2fbadd-eba2-7505-02f6-a2c532f091c2">The unified model is format-agnostic and describes the abstract structure of resources independently of the physical encoding. It does not redefine the semantics of the CDM or CF conventions, but introduces integration and extension points required to support tiled multiscale data, geospatial referencing, and metadata for discovery.</p>
 
 <p id="_93a4f216-7f7a-6fb5-ae57-93c3eab4079b">This clause specifies the logical composition of the unified model, the external standards it leverages, and the conformance points that facilitate harmonised implementation within the GeoZarr framework.</p>
-</div><div id="_foundational_model_and_standards_reuse"><h2 id="_06d3b1ac-e1df-49b5-be57-8f822644c661"><a class="anchor" href="#_foundational_model_and_standards_reuse"></a><a class="header" href="#_foundational_model_and_standards_reuse">7.2.  Foundational Model and Standards Reuse</a></h2>
+</div><div id="_foundational_model_and_standards_reuse"><h2 id="_309c2e00-5f90-489d-b0a6-28a1a61d8790"><a class="anchor" href="#_foundational_model_and_standards_reuse"></a><a class="header" href="#_foundational_model_and_standards_reuse">7.2.  Foundational Model and Standards Reuse</a></h2>
 
 <p id="_500c9b27-22b1-fed6-9b30-3905bc6c020b">The unified data model described in this Standard is derived from established community specifications to maximise interoperability and to enable the reuse of mature tools and practices. The model is grounded in the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, which together provide a robust framework for representing scientific and geospatial datasets.</p>
 
@@ -1871,7 +1854,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_6ec3d862-56e9-b88b-8ccf-66c83b85c668">These extensions are integrated in a modular fashion and do not alter the core semantics of the CDM or CF structures. Implementations may selectively adopt these extensions based on their application requirements.</p>
 </div>
-</div><div id="_model_extension_points"><h2 id="_95c45e8d-c45a-479f-90ad-d8825fab3be9"><a class="anchor" href="#_model_extension_points"></a><a class="header" href="#_model_extension_points">7.3.  Model Extension Points</a></h2>
+</div><div id="_model_extension_points"><h2 id="_6a7540fe-0299-4cb1-8b13-a0d3f2983b5a"><a class="anchor" href="#_model_extension_points"></a><a class="header" href="#_model_extension_points">7.3.  Model Extension Points</a></h2>
 
 <p id="_ee29ad42-b9f1-d78f-4b9c-c96b95d00928">The unified data model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.</p>
 
@@ -1926,7 +1909,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_3d8ae417-bb8d-3126-35ae-ed6e142b7b60">Each extension point is specified independently. Implementations may advertise support for one or more extensions by declaring conformance to corresponding extension modules. This modularity facilitates incremental adoption, promotes reuse, and enhances interoperability across varied implementation environments.</p>
 </div>
-</div><div id="_unified_model_structure"><h2 id="_e0439caf-3360-4329-b8a6-7df38669aeb6"><a class="anchor" href="#_unified_model_structure"></a><a class="header" href="#_unified_model_structure">7.4.  Unified Model Structure</a></h2>
+</div><div id="_unified_model_structure"><h2 id="_71bf0a3e-a903-4f29-ade5-07ee3f738d05"><a class="anchor" href="#_unified_model_structure"></a><a class="header" href="#_unified_model_structure">7.4.  Unified Model Structure</a></h2>
 
 <p id="_e65124f4-061d-6f01-538f-ef9027d9ff62">This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.</p>
 
@@ -2055,7 +2038,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <p id="_7ea176e3-abd3-a443-9e37-ee158719913b">The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
 </div>
 </div>
-</div><div id="_conformance_and_extensibility"><h2 id="_8248768f-ff61-4994-9756-1a9f6b9a929b"><a class="anchor" href="#_conformance_and_extensibility"></a><a class="header" href="#_conformance_and_extensibility">7.5.  Conformance and Extensibility</a></h2>
+</div><div id="_conformance_and_extensibility"><h2 id="_f7e258a9-68a4-4b90-aaf6-fe06889abab9"><a class="anchor" href="#_conformance_and_extensibility"></a><a class="header" href="#_conformance_and_extensibility">7.5.  Conformance and Extensibility</a></h2>
 
 <p id="_326130a2-ac5f-9c33-1853-be6527695dd3">The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.</p>
 
@@ -2114,7 +2097,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_b4881244-5be9-74ae-d3a5-78f67c86e87e">This extensibility framework supports both minimum-viable use and high-fidelity metadata integration, enabling incremental adoption across the geospatial and scientific data communities.</p>
 </div>
-</div><div id="_interoperability_considerations"><h2 id="_52367e14-a3a8-4920-8d56-33698db6186c"><a class="anchor" href="#_interoperability_considerations"></a><a class="header" href="#_interoperability_considerations">7.6.  Interoperability Considerations</a></h2>
+</div><div id="_interoperability_considerations"><h2 id="_a4dab675-4aa4-40d7-ba89-29da9f2e1a56"><a class="anchor" href="#_interoperability_considerations"></a><a class="header" href="#_interoperability_considerations">7.6.  Interoperability Considerations</a></h2>
 
 <p id="_89623f2a-7f1b-bec7-2c06-e885d8fab05e">Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.</p>
 
@@ -2175,8 +2158,9 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_4f44424c-a17a-15ef-4ef6-643bb9d4ab07">Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.</p>
 </div>
-</div></div><div id="_unified_data_model_encoding_for_zarr"><h1 id="_eaa57f7a-84e8-499d-8b52-6f2a6e1cc1c6"><a class="anchor" href="#_unified_data_model_encoding_for_zarr"></a><a class="header" href="#_unified_data_model_encoding_for_zarr">8.  Unified Data Model Encoding for Zarr</a></h1><p id="_9e58c294-0d0b-a221-0182-7685b25a61c2">This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.</p><div id="_98538104-ab6f-7940-21bb-7803f15c6d01" class="Admonition Tip"><p id="_3f7c5921-02f7-0d8e-1496-a26096b25298">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
-</div><div id="_hierarchical_structure"><h2 id="_ba33bf20-c9c3-47bc-a46f-81f4b65fe523"><a class="anchor" href="#_hierarchical_structure"></a><a class="header" href="#_hierarchical_structure">8.1.  Hierarchical Structure</a></h2>
+</div></div><div id="_geozarr_conformance_classes"><h1 id="_ddb58a2b-fdc1-4292-b804-a9044369a6b2"><a class="anchor" href="#_geozarr_conformance_classes"></a><a class="header" href="#_geozarr_conformance_classes">8.  GeoZarr Conformance Classes</a></h1><p id="_8b1b6467-5df1-eb0a-55c4-2d24fb3e4a47">Datasets can include many different types of data includes rasters, combinations—such as time, height, or wavelength—and can use either a projected or geographic coordinate system.</p><p id="_ee60b656-000b-7525-73f8-c802b8d99f72">This Standard identifies conformance classes rg r offer clear, testable building blocks as a standardised approach for representing different data types when converting to the GeoZarr Unified Data Model (e.g. for encoding RGB bands from a GeoTIFF source).</p><div id="_56c15146-550a-936b-2005-ab741c2e49d7" class="Admonition Tip"><p id="_28ff77b6-18b3-42ec-062d-01a29f958039">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
+</div></div><div id="_unified_data_model_encoding_for_zarr"><h1 id="_3393bd50-7c70-47f9-8367-26fbdd55c9e9"><a class="anchor" href="#_unified_data_model_encoding_for_zarr"></a><a class="header" href="#_unified_data_model_encoding_for_zarr">9.  Unified Data Model Encoding for Zarr</a></h1><p id="_9e58c294-0d0b-a221-0182-7685b25a61c2">This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.</p><div id="_98538104-ab6f-7940-21bb-7803f15c6d01" class="Admonition Tip"><p id="_3f7c5921-02f7-0d8e-1496-a26096b25298">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
+</div><div id="_hierarchical_structure"><h2 id="_12074d28-3fee-4362-859c-6cbe5728e314"><a class="anchor" href="#_hierarchical_structure"></a><a class="header" href="#_hierarchical_structure">9.1.  Hierarchical Structure</a></h2>
 
 <p id="_ef63c86e-fa40-ffbb-38b9-60308bba78f5">A dataset conforming to the unified data model is represented as a hierarchical structure of groups, variables (arrays), dimensions, and metadata. The dataset is rooted in a <b>top-level group</b>, which may contain:</p>
 
@@ -2193,7 +2177,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <p class="TableTitle" style="text-align:center;">Table 2</p><table id="_41052269-a448-0b09-a25a-63ccda1a6251" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Model Element</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2 Encoding</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3 Encoding</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Root Dataset</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Directory with <tt>.zgroup</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Directory with <tt>zarr.json</tt>, with <tt>node_type: group</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Child Group</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>.zgroup</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>zarr.json</tt>, with <tt>node_type: group</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Array</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>.zarray</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>zarr.json</tt>, with <tt>node_type: array</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Metadata Key</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>.zattrs</tt> file</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>attributes</tt> field in <tt>zarr.json</tt></td></tr></tbody></table>
 
 <p id="_7df6b9ee-38d8-7bd2-ee9a-a5b4714de8dc">Zarr v3 requires <tt>zarr_format: 3</tt> and stores all metadata (including user-defined attributes) in the <tt>zarr.json</tt> document. Each node includes a <tt>node_type</tt> field: either <tt>"group"</tt> or <tt>"array"</tt>.</p>
-</div><div id="_dimensions"><h2 id="_0ecd8b79-1c62-4f15-a5dc-5135693eed9c"><a class="anchor" href="#_dimensions"></a><a class="header" href="#_dimensions">8.2.  Dimensions</a></h2>
+</div><div id="_dimensions"><h2 id="_4afa28e2-9e99-4311-8bc8-c3c026f95508"><a class="anchor" href="#_dimensions"></a><a class="header" href="#_dimensions">9.2.  Dimensions</a></h2>
 
 <p id="_0dc6ff51-875a-ac2f-6ff5-48a8ccd89a9a">Dimensions define the axes along which variables are indexed.</p>
 
@@ -2207,7 +2191,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p class="collapsible active"> </p><pre id="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br />  </span><span class="err">...</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 1</p>
 
-</div><div id="_coordinate_variables"><h2 id="_18fc23e2-2851-492a-ac15-2d4a6c8bb192"><a class="anchor" href="#_coordinate_variables"></a><a class="header" href="#_coordinate_variables">8.3.  Coordinate Variables</a></h2>
+</div><div id="_coordinate_variables"><h2 id="_448c1ac3-fbed-41c8-8888-fd96ef97f48a"><a class="anchor" href="#_coordinate_variables"></a><a class="header" href="#_coordinate_variables">9.3.  Coordinate Variables</a></h2>
 
 <p id="_d078d906-aaf5-76c2-d1e8-2178d873d260">Coordinate variables (excluding GeoTransform Coordinates) define the geospatial or temporal context of data. They are represented as named arrays with metadata attributes.</p>
 
@@ -2219,7 +2203,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p class="collapsible active"> </p><pre id="_40d1d34d-d784-de34-e5dc-86c11c8adc9b" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />      </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br />    </span><span class="p">}</span><span class="w"><br />  </span><span class="p">},</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 2</p>
 
-</div><div id="_data_variables"><h2 id="_dea4a5df-9b51-427c-8538-aded9e25e160"><a class="anchor" href="#_data_variables"></a><a class="header" href="#_data_variables">8.4.  Data Variables</a></h2>
+</div><div id="_data_variables"><h2 id="_de1e85b5-3e03-4863-91b2-65d56146583d"><a class="anchor" href="#_data_variables"></a><a class="header" href="#_data_variables">9.4.  Data Variables</a></h2>
 
 <p id="_9d3ec338-3160-3c11-3e36-9c10fbda0706">Data variables represent measured or derived quantities. They are stored as multidimensional arrays with metadata attributes.</p>
 
@@ -2229,7 +2213,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p class="collapsible active"> </p><pre id="_91fc8eec-485a-dd7b-2d73-648d378f4f75" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 3</p>
 
-</div><div id="_global_metadata"><h2 id="_a7634f55-03ef-43a7-9a41-186b25bfaa7d"><a class="anchor" href="#_global_metadata"></a><a class="header" href="#_global_metadata">8.5.  Global Metadata</a></h2>
+</div><div id="_global_metadata"><h2 id="_89119319-a818-4e08-bec0-0aeb3b4f551b"><a class="anchor" href="#_global_metadata"></a><a class="header" href="#_global_metadata">9.5.  Global Metadata</a></h2>
 
 <p id="_bbdf3ca6-1917-1240-e06b-e1b22a6a5bfb">Metadata associated with the dataset as a whole is stored at the root group level.</p>
 
@@ -2239,7 +2223,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p class="collapsible active"> </p><pre id="_e1c1bba0-4ea9-f085-d369-74f948b76056" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 4</p>
 
-</div><div id="_variables_metadata"><h2 id="_64f5088f-0751-4108-bb87-f28a8b6bc07f"><a class="anchor" href="#_variables_metadata"></a><a class="header" href="#_variables_metadata">8.6.  Variables Metadata</a></h2>
+</div><div id="_variables_metadata"><h2 id="_f72cae48-5f05-46ea-bd06-93179e685b70"><a class="anchor" href="#_variables_metadata"></a><a class="header" href="#_variables_metadata">9.6.  Variables Metadata</a></h2>
 
 <p id="_f6bf4240-9d67-95ec-9bb7-6151a648bc64">All metadata attributes (for groups, coordinates variables and data variables) are recommended to conform to CF naming and typing conventions. Supported attributes include:</p>
 
@@ -2258,13 +2242,13 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <li><p id="_71718072-1f67-7c44-fea2-9b02800d9f7e">Values shall conform to JSON-compatible types (string, number, boolean, array)</p>
 </li>
 </ul></div>
-</div><div id="_encoding_of_multiscale_overviews_in_zarr"><h2 id="_7c3c8dbe-e578-421d-ab85-0910013d612c"><a class="anchor" href="#_encoding_of_multiscale_overviews_in_zarr"></a><a class="header" href="#_encoding_of_multiscale_overviews_in_zarr">8.7.  Encoding of Multiscale Overviews in Zarr</a></h2>
+</div><div id="_encoding_of_multiscale_overviews_in_zarr"><h2 id="_a3281d56-a469-44b3-8afe-d7d662f06346"><a class="anchor" href="#_encoding_of_multiscale_overviews_in_zarr"></a><a class="header" href="#_encoding_of_multiscale_overviews_in_zarr">9.7.  Encoding of Multiscale Overviews in Zarr</a></h2>
 
 <p id="_d5681e6a-7f66-ca2f-faec-0c38dde2baee">This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.</p>
 
 <p id="_1f1c7063-39f4-86d5-0059-3ea25ae86043">Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.</p>
 
-<div id="_hierarchical_layout"><h3><a class="anchor" href="#_hierarchical_layout"></a><a class="header" href="#_hierarchical_layout">8.7.1.  Hierarchical Layout</a></h3>
+<div id="_hierarchical_layout"><h3><a class="anchor" href="#_hierarchical_layout"></a><a class="header" href="#_hierarchical_layout">9.7.1.  Hierarchical Layout</a></h3>
 
 <p id="_4f5d6f60-52b5-6e99-8856-4752d207be01">Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., <tt>"0"</tt>, <tt>"1"</tt>, <tt>"2"</tt>). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.</p>
 
@@ -2273,7 +2257,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <p id="_13763d2a-1571-c95e-e17a-a5ab137e8c9e">Each multiscale group MUST define chunking (tiling) along the spatial dimensions (<tt>X</tt>, <tt>Y</tt>, or <tt>lon</tt>, <tt>lat</tt>). Recommended chunk sizes are 256×256 or 512×512.</p>
 </div>
 
-<div id="_metadata_encoding"><h3><a class="anchor" href="#_metadata_encoding"></a><a class="header" href="#_metadata_encoding">8.7.2.  Metadata Encoding</a></h3>
+<div id="_metadata_encoding"><h3><a class="anchor" href="#_metadata_encoding"></a><a class="header" href="#_metadata_encoding">9.7.2.  Metadata Encoding</a></h3>
 
 <p id="_70b613e7-cba4-a87d-bcfb-ac839f3328f4">Multiscale metadata SHALL be defined using a <tt>multiscales</tt> attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:</p>
 
@@ -2285,20 +2269,20 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 </li>
 </ul></div>
 
-<div id="_zarr_v2_encoding_example_zattrs"><h4><a class="anchor" href="#_zarr_v2_encoding_example_zattrs"></a><a class="header" href="#_zarr_v2_encoding_example_zattrs">8.7.2.1.  Zarr v2 Encoding Example (<tt>.zattrs</tt>)</a></h4>
+<div id="_zarr_v2_encoding_example_zattrs"><h4><a class="anchor" href="#_zarr_v2_encoding_example_zattrs"></a><a class="header" href="#_zarr_v2_encoding_example_zattrs">9.7.2.1.  Zarr v2 Encoding Example (<tt>.zattrs</tt>)</a></h4>
 
 <p class="collapsible active"> </p><pre id="_3e82b336-dcb8-7825-fb6b-8def6817c89a" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 5</p>
 
 </div>
 
-<div id="_zarr_v3_encoding_example_zarr_json"><h4><a class="anchor" href="#_zarr_v3_encoding_example_zarr_json"></a><a class="header" href="#_zarr_v3_encoding_example_zarr_json">8.7.2.2.  Zarr v3 Encoding Example (<tt>zarr.json</tt>)</a></h4>
+<div id="_zarr_v3_encoding_example_zarr_json"><h4><a class="anchor" href="#_zarr_v3_encoding_example_zarr_json"></a><a class="header" href="#_zarr_v3_encoding_example_zarr_json">9.7.2.2.  Zarr v3 Encoding Example (<tt>zarr.json</tt>)</a></h4>
 
 <p class="collapsible active"> </p><pre id="_5187204a-c507-ea53-6b7d-e9871c9d55f2" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />      </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br />      </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br />    </span><span class="p">}</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 6</p>
 
 </div>
 </div>
 
-<div id="_tile_matrix_set_representation"><h3><a class="anchor" href="#_tile_matrix_set_representation"></a><a class="header" href="#_tile_matrix_set_representation">8.7.3.  Tile Matrix Set Representation</a></h3>
+<div id="_tile_matrix_set_representation"><h3><a class="anchor" href="#_tile_matrix_set_representation"></a><a class="header" href="#_tile_matrix_set_representation">9.7.3.  Tile Matrix Set Representation</a></h3>
 
 <p id="_a9254166-a570-f92e-3180-3f5d54b3f826">The <tt>tile_matrix_set</tt> member MAY take one of the following forms:</p>
 
@@ -2313,7 +2297,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 <p id="_857e74dd-a3d0-a720-024c-66304c477bcf">Zoom level identifiers in the tile matrix set MUST match the names of the child groups. The spatial reference system declared in <tt>supportedCRS</tt> MUST match the one declared in the corresponding <tt>grid_mapping</tt> of the data variables.</p>
 </div>
 
-<div id="_chunk_layout_alignment"><h3><a class="anchor" href="#_chunk_layout_alignment"></a><a class="header" href="#_chunk_layout_alignment">8.7.4.  Chunk Layout Alignment</a></h3>
+<div id="_chunk_layout_alignment"><h3><a class="anchor" href="#_chunk_layout_alignment"></a><a class="header" href="#_chunk_layout_alignment">9.7.4.  Chunk Layout Alignment</a></h3>
 
 <p id="_8a0f5705-4e88-3612-3e31-7be02d526807">At each zoom level, chunking SHALL match the tile layout defined by the TileMatrix:</p>
 
@@ -2326,7 +2310,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 </ul></div>
 </div>
 
-<div id="_tile_matrix_set_limits"><h3><a class="anchor" href="#_tile_matrix_set_limits"></a><a class="header" href="#_tile_matrix_set_limits">8.7.5.  Tile Matrix Set Limits</a></h3>
+<div id="_tile_matrix_set_limits"><h3><a class="anchor" href="#_tile_matrix_set_limits"></a><a class="header" href="#_tile_matrix_set_limits">9.7.5.  Tile Matrix Set Limits</a></h3>
 
 <p id="_08188fe9-cb3e-51f5-35a9-b1f26fc68923">The <tt>tile_matrix_set_limits</tt> object MAY define the extent of actual data coverage for each zoom level. This follows the style of the STAC tiled-assets extension rather than the full OGC JSON encoding.</p>
 
@@ -2336,7 +2320,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 </div>
 
-<div id="_resampling_method"><h3><a class="anchor" href="#_resampling_method"></a><a class="header" href="#_resampling_method">8.7.6.  Resampling Method</a></h3>
+<div id="_resampling_method"><h3><a class="anchor" href="#_resampling_method"></a><a class="header" href="#_resampling_method">9.7.6.  Resampling Method</a></h3>
 
 <p id="_3c169246-fa31-e6d3-ae55-e961e30dcf9e">The <tt>resampling_method</tt> MUST indicate the method used for downsampling across zoom levels. The value MUST be one of:</p>
 
@@ -2344,8 +2328,8 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 
 <p id="_acd0d9d5-1c69-4f1f-febe-d4e799a63da7">The same method MUST apply across all levels.</p>
 </div>
-</div></div><div id="_unified_data_model_encoding_for_geotiff"><h1 id="_f4fa7ec9-2492-46a0-8414-66cd6e8dbecf"><a class="anchor" href="#_unified_data_model_encoding_for_geotiff"></a><a class="header" href="#_unified_data_model_encoding_for_geotiff">9.  Unified Data Model Encoding for GeoTiff</a></h1><div id="_53755368-53d9-ef2a-a05f-c7feeb0331a9" class="Admonition Tip"><p id="_6ce171a7-3f92-7485-27cb-4a2cf9ca6d71">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
-</div></div><br /><div id="_conformance_class_abstract_test_suite_normative" class="Section3"><h1 class="Annex" id="_86d515ca-be87-4601-91af-9138c2afb794"><a class="anchor" href="#_conformance_class_abstract_test_suite_normative"></a><a class="header" href="#_conformance_class_abstract_test_suite_normative"><b>Annex A</b><br />(informative)<br /><b>Conformance Class Abstract Test Suite (Normative)</b></a></h1><div id="_49fa4119-ff23-ba00-2b10-7c6008e83cc9" class="Note"><p><span class="note_label">NOTE:  </span>Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)</p></div><div id="_conformance_class_a"><h2 id="_c2274c56-c6fa-4353-9b83-70ce8e7f85d2"><a class="anchor" href="#_conformance_class_a"></a><a class="header" href="#_conformance_class_a">A.1.  Conformance Class A</a></h2>
+</div></div><div id="_unified_data_model_encoding_for_geotiff"><h1 id="_274401ad-2cd5-4297-adcb-df4109d5531f"><a class="anchor" href="#_unified_data_model_encoding_for_geotiff"></a><a class="header" href="#_unified_data_model_encoding_for_geotiff">10.  Unified Data Model Encoding for GeoTiff</a></h1><div id="_53755368-53d9-ef2a-a05f-c7feeb0331a9" class="Admonition Tip"><p id="_6ce171a7-3f92-7485-27cb-4a2cf9ca6d71">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
+</div></div><br /><div id="_conformance_class_abstract_test_suite_normative" class="Section3"><h1 class="Annex" id="_c6cf97d2-2c7d-42bb-ab87-0b675ba3667b"><a class="anchor" href="#_conformance_class_abstract_test_suite_normative"></a><a class="header" href="#_conformance_class_abstract_test_suite_normative"><b>Annex A</b><br />(informative)<br /><b>Conformance Class Abstract Test Suite (Normative)</b></a></h1><div id="_49fa4119-ff23-ba00-2b10-7c6008e83cc9" class="Note"><p><span class="note_label">NOTE:  </span>Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)</p></div><div id="_conformance_class_a"><h2 id="_9b1380dd-b952-4374-be06-985c2bd4a80a"><a class="anchor" href="#_conformance_class_a"></a><a class="header" href="#_conformance_class_a">A.1.  Conformance Class A</a></h2>
 
 <p class="SourceTitle" style="text-align:center;">Example</p><div id="ats_example1" class="example"><div class="figdl"><dl id="_15f5af59-2acb-8c62-5214-bd022c8135d7"><dt><p>label</p></dt><dd><p id="_2911e33b-d582-a069-a4d1-a0018ea97641"><a href="http://www.opengis.net/spec/name-of-standard/1.0/conf/example1">http://www.opengis.net/spec/name-of-standard/1.0/conf/example1</a></p>
 </dd><dt><p>subject</p></dt><dd><p id="_f7086c49-3cee-5475-32ca-aad3c9fad854">Requirements Class “example1”</p>
@@ -2383,7 +2367,7 @@ Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Fo
 </ol></div>
 </td></tr></tbody></table>
 </div>
-</div></div><br /><div id="_title" class="Section3"><h1 class="Annex" id="_de07a439-48af-4543-b767-a3f6f2cc7ce4"><a class="anchor" href="#_title"></a><a class="header" href="#_title"><b>Annex B</b><br />(informative)<br /><b>Title</b></a></h1><div id="_9c04cf83-97ee-5129-1540-d560e28d0909" class="Note"><p><span class="note_label">NOTE:  </span>Place other Annex material in sequential annexes beginning with “B” and leave final two annexes for the Revision History and Bibliography</p></div></div><br /><div id="_revision_history" class="Section3"><h1 class="Annex" id="_ec16f2c7-5825-4fd2-9a65-ae17b73d71b1"><a class="anchor" href="#_revision_history"></a><a class="header" href="#_revision_history"><b>Annex C</b><br />(informative)<br /><b>Revision History</b></a></h1><p class="TableTitle" style="text-align:center;">Table C.1</p><table id="_5afe311c-d3e8-fb9a-9455-6031fbbc3118" class="MsoISOTable" style="border-width:1px;border-spacing:0;width:90%;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Date</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Release</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Editor</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Primary clauses modified</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">2016-04-28</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">0.1</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">G. Editor</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">all</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">initial version</td></tr></tbody></table></div><br /><div><h1 class="Section3" id="_c79bda6c-8141-4485-9478-3e5de031ab08">Bibliography</h1>
+</div></div><br /><div id="_title" class="Section3"><h1 class="Annex" id="_09a32a9f-e9e7-4fb1-9812-57d4aacd7a24"><a class="anchor" href="#_title"></a><a class="header" href="#_title"><b>Annex B</b><br />(informative)<br /><b>Title</b></a></h1><div id="_9c04cf83-97ee-5129-1540-d560e28d0909" class="Note"><p><span class="note_label">NOTE:  </span>Place other Annex material in sequential annexes beginning with “B” and leave final two annexes for the Revision History and Bibliography</p></div></div><br /><div id="_revision_history" class="Section3"><h1 class="Annex" id="_aa9622cc-17a6-4cbe-bda8-8c1443094f70"><a class="anchor" href="#_revision_history"></a><a class="header" href="#_revision_history"><b>Annex C</b><br />(informative)<br /><b>Revision History</b></a></h1><p class="TableTitle" style="text-align:center;">Table C.1</p><table id="_5afe311c-d3e8-fb9a-9455-6031fbbc3118" class="MsoISOTable" style="border-width:1px;border-spacing:0;width:90%;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Date</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Release</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Editor</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Primary clauses modified</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">2016-04-28</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">0.1</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">G. Editor</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">all</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">initial version</td></tr></tbody></table></div><br /><div><h1 class="Section3" id="_60de842a-b4c5-443c-a4ce-02df94ffda62">Bibliography</h1>
 
 <div id="_3759b87c-ca5a-511b-57d2-cef257dc301a" class="Note"><p><span class="note_label">NOTE:  </span>The TC has approved Springer LNCS as the official document citation type.</p><p id="_4b95e711-c35f-134f-4850-3e819a15ddb0">Springer LNCS is widely used in technical and computer science journals and other publications</p><p id="_91991dd8-2854-d4d4-c3b7-71e34448cc8e">– Actual References:</p><p id="_a19eddb1-f343-b2d8-fb7c-28a962268999">[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)</p></div><p id="OGC2015" class="Biblio">[1]  <i>OGC: OGC Testbed 12 Annex B: Architecture</i> (2015).</p>
 

@@ -1,4 +1,4 @@
-<html><head><title>/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.err.html errors</title>
+<html><head><title>/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.err.html errors</title>
 <meta charset="UTF-8"/>
 <style> pre { white-space: pre-wrap; }
 thead th { font-weight: bold; background-color: aqua; }
@@ -7,12 +7,14 @@ thead th { font-weight: bold; background-color: aqua; }
 .severity2 { }
 .severity3 { font-style: italic; color: grey; }
 </style>
-</head><body><h1>/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.err.html errors</h1>
+</head><body><h1>/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.err.html errors</h1>
 <ul><li><p><b><a href="#Document_Attributes">Document Attributes</a></b>: Severity 2: <b>2</b> errors</p></li>
 
-<li><p><b><a href="#AsciiDoc_Input">AsciiDoc Input</a></b>: Severity 1: <b>1</b> errors</p></li>
+<li><p><b><a href="#AsciiDoc_Input">AsciiDoc Input</a></b>: Severity 1: <b>2</b> errors</p></li>
 
-<li><p><b><a href="#Relaton">Relaton</a></b>: Severity 3: <b>26</b> errors</p></li>
+<li><p><b><a href="#Crossreferences">Crossreferences</a></b>: Severity 2: <b>1</b> errors</p></li>
+
+<li><p><b><a href="#Relaton">Relaton</a></b>: Severity 3: <b>4</b> errors</p></li>
 
 <li><p><b><a href="#Anchors">Anchors</a></b>: Severity 1: <b>3</b> errors</p></li>
 
@@ -20,7 +22,7 @@ thead th { font-weight: bold; background-color: aqua; }
 
 <li><p><b><a href="#Requirements">Requirements</a></b>: Severity 2: <b>4</b> errors</p></li>
 
-<li><p><b><a href="#Metanorma_XML_Syntax">Metanorma XML Syntax</a></b>: Severity 2: <b>89</b> errors</p></li>
+<li><p><b><a href="#Metanorma_XML_Syntax">Metanorma XML Syntax</a></b>: Severity 2: <b>54</b> errors</p></li>
 </ul>
 <h2 id="Document_Attributes">Document Attributes</h2>
 <table border="1">
@@ -29,7 +31,7 @@ thead th { font-weight: bold; background-color: aqua; }
 <tbody>
 <tr class="severity2">
 <td></td><th><code>--</code></th>
-<td>'Interface' is not a permitted subtype of Standard:​ reverting to 'implementation'</td><td><pre></pre></td><td>2</td></tr>
+<td>'Format' is not a permitted subtype of Standard:​ reverting to 'implementation'</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
 <td></td><th><code>--</code></th>
 <td>draft is not an allowed status for standard</td><td><pre></pre></td><td>2</td></tr>
@@ -40,9 +42,22 @@ thead th { font-weight: bold; background-color: aqua; }
 <th width="30%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
 <tbody>
 <tr class="severity1">
-<td></td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#Bibliography'>Bibliography</a></code></th>
+<td></td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#Bibliography'>Bibliography</a></code></th>
 <td>no anchor on reference, markup may be malformed: seehttps://​www.​metanorma.org/​author/topics/​sections/​bibliography/ ,https://​www.​metanorma.org/​author/iso/​topics/​markup/​#bibliographies
-: For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]</td><td><pre>#&lt;Asciidoctor::List@10601180 {context: :ulist, style: nil, items: 1}&gt;</pre></td><td>1</td></tr>
+: For citations in the text please use square brackets and consecutive numbers: [1], [2], [3]</td><td><pre>#&lt;Asciidoctor::List@2720 {context: :ulist, style: nil, items: 1}&gt;</pre></td><td>1</td></tr>
+<tr class="severity1">
+<td></td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_references'>_​references</a></code></th>
+<td>no anchor on reference, markup may be malformed: seehttps://​www.​metanorma.org/​author/topics/​sections/​bibliography/ ,https://​www.​metanorma.org/​author/iso/​topics/​markup/​#bibliographies
+: TBD</td><td><pre>#&lt;Asciidoctor::List@2700 {context: :ulist, style: &quot;bibliography&quot;, items: 2}&gt;</pre></td><td>1</td></tr>
+</tbody></table>
+<h2 id="Crossreferences">Crossreferences</h2>
+<table border="1">
+<thead><th width="5%">Line</th><th width="20%">ID</th>
+<th width="30%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
+<tbody>
+<tr class="severity2">
+<td>000113</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_example_term'>_example_​term</a></code></th>
+<td>ISO19101-1 does not have a corresponding anchor ID in the bibliography!</td><td><pre>&lt;origin bibitemid=&quot;ISO19101-1&quot; type=&quot;inline&quot; citeas=&quot;&quot;/&gt;</pre></td><td>2</td></tr>
 </tbody></table>
 <h2 id="Relaton">Relaton</h2>
 <table border="1">
@@ -50,83 +65,17 @@ thead th { font-weight: bold; background-color: aqua; }
 <th width="30%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
 <tbody>
 <tr class="severity3">
-<td></td><th><code>--</code></th>
-<td>Downloaded index from <code>https://​raw.​githubusercontent.com/​relaton/​relaton-data-iso/main/​index-v1.zip</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>--</code></th>
-<td>Downloaded index from <code>https://​raw.​githubusercontent.com/​relaton/​relaton-data-ogc/main/​index-v1.zip</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>Grid Information Services for Distributed Resource Sharing</code></th>
-<td><code>Grid Information Services for Distributed Resource Sharing</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>Grid Information Services for Distributed Resource Sharing</code></th>
-<td><code>Grid Information Services for Distributed Resource Sharing</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19101-1:2014</code></th>
-<td>Found: <code>ISO 19101-1:2014</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19115-1:2014</code></th>
-<td>Found: <code>ISO 19115-1:2014</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19115-3</code></th>
-<td>Found: <code>ISO 19115-3:2023</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19139:2007</code></th>
-<td>Not found.</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19139:2007</code></th>
-<td>TIP: If you wish to cite all document parts for the reference, use <code>ISO 19139 (all parts)</code>.</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ISO 19157:2013</code></th>
-<td>Found: <code>ISO 19157:2013</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
 <td></td><th><code>Identification of Common Molecular Subsequences</code></th>
 <td><code>Identification of Common Molecular Subsequences</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
 <tr class="severity3">
 <td></td><th><code>Identification of Common Molecular Subsequences</code></th>
 <td><code>Identification of Common Molecular Subsequences</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
 <tr class="severity3">
-<td></td><th><code>NCBI</code></th>
-<td><code>NCBI</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>NCBI</code></th>
-<td><code>NCBI</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGC 06-121r9</code></th>
-<td>Found: <code>06-121r9</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGC 12-019</code></th>
-<td>Found: <code>12-019</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGC 14-005r3</code></th>
-<td>Found: <code>14-005r3</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>OGC 15-097</code></th>
-<td>Found: <code>15-097r1</code></td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
 <td></td><th><code>OGCTB12</code></th>
 <td><code>OGCTB12</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
 <tr class="severity3">
 <td></td><th><code>OGCTB12</code></th>
 <td><code>OGCTB12</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>The Grid</code></th>
-<td><code>The Grid</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>The Grid</code></th>
-<td><code>The Grid</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>The Physiology of the Grid</code></th>
-<td><code>The Physiology of the Grid</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>The Physiology of the Grid</code></th>
-<td><code>The Physiology of the Grid</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ZIB Structure Prediction Pipeline</code></th>
-<td><code>ZIB Structure Prediction Pipeline</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
-<tr class="severity3">
-<td></td><th><code>ZIB Structure Prediction Pipeline</code></th>
-<td><code>ZIB Structure Prediction Pipeline</code> does not have a recognised prefix</td><td><pre></pre></td><td>3</td></tr>
 </tbody></table>
 <h2 id="Anchors">Anchors</h2>
 <table border="1">
@@ -134,13 +83,13 @@ thead th { font-weight: bold; background-color: aqua; }
 <th width="30%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
 <tbody>
 <tr class="severity1">
-<td>000790</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_a5c2011b-080b-de57-753c-94b804e5f324'>_a5c2011b-080b-de57-753c-94b804e5f324</a></code></th>
+<td>000103</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_a5c2011b-080b-de57-753c-94b804e5f324'>_a5c2011b-080b-de57-753c-94b804e5f324</a></code></th>
 <td>Crossreference target OGC06-121r9 is undefined</td><td><pre>&lt;xref target=&quot;OGC06-121r9&quot;/&gt;</pre></td><td>1</td></tr>
 <tr class="severity1">
-<td>001631</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_e41cd559-a387-2ad3-192f-23320f6dbcdd'>_e41cd559-a387-2ad3-192f-23320f6dbcdd</a></code></th>
+<td>000944</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_e41cd559-a387-2ad3-192f-23320f6dbcdd'>_e41cd559-a387-2ad3-192f-23320f6dbcdd</a></code></th>
 <td>Crossreference target ats_core_​api-definition-success is undefined</td><td><pre>&lt;xref target=&quot;ats_core_api-definition-success&quot;&gt;/conf/core/api-definition-success&lt;/xref&gt;</pre></td><td>1</td></tr>
 <tr class="severity1">
-<td>001650</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_43dca150-0694-867b-7e2e-1511056bc805'>_43dca150-0694-867b-7e2e-1511056bc805</a></code></th>
+<td>000963</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_43dca150-0694-867b-7e2e-1511056bc805'>_43dca150-0694-867b-7e2e-1511056bc805</a></code></th>
 <td>Crossreference target rfc2818 is undefined</td><td><pre>&lt;xref target=&quot;rfc2818&quot;&gt;HTTP over TLS&lt;/xref&gt;</pre></td><td>1</td></tr>
 </tbody></table>
 <h2 id="Style">Style</h2>
@@ -161,146 +110,146 @@ thead th { font-weight: bold; background-color: aqua; }
 <td></td><th><code>--</code></th>
 <td>Scope must be followed by Conformance</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000046</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_7c862f68-dc17-1a57-b670-05344091cf61'>_7c862f68-dc17-1a57-b670-05344091cf61</a></code></th>
+<td>000046</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_7c862f68-dc17-1a57-b670-05344091cf61'>_7c862f68-dc17-1a57-b670-05344091cf61</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_7c862f68-dc17-1a57-b670-05344091cf61&quot; unnumbered=&quot;true&quot;&gt; &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt; &lt;strong&gt;Name&lt;/strong&gt; &lt;/td&gt;
 &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt; &lt;strong&gt;Affiliation&lt;/strong&gt; &lt;/td&gt;
 &lt;/tr&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;/&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;/&gt; &lt;/tr&gt; &lt;/tbody&gt;
 &lt;/table&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000810</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_conventions'>_​conventions</a></code></th>
+<td>000123</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_conventions'>_​conventions</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_conventions&quot; obligation=&quot;normative&quot;&gt;
 &lt;title&gt;Conventions&lt;/title&gt;
 &lt;p id=&quot;_f287e0a4-ca0e-ef98-6e01-5d09472b62aa&quot;&gt;This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.&lt;/p&gt;
 
 &lt;clause id=&quot;_identifiers&quot; obligation=&quot;normative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000824</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_clauses_not_containing_normative_material'>_clauses_​not_​containing_​normative_​material</a></code></th>
+<td>000137</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_clauses_not_containing_normative_material'>_clauses_​not_​containing_​normative_​material</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_clauses_not_containing_normative_material&quot; obligation=&quot;informative&quot;&gt;
 &lt;title&gt;Clauses not containing normative material&lt;/title&gt;
 &lt;p id=&quot;_6f5c8cdc-826f-564e-03f0-7b929261119c&quot;&gt;Paragraph&lt;/p&gt;
 
 &lt;clause id=&quot;_clauses_not_containing_normative_material_sub_clause_1&quot; obligation=&quot;informative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000865</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_foundational_model_and_standards_reuse'>_​foundational_model_​and_​standards_reuse</a></code></th>
+<td>000178</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_foundational_model_and_standards_reuse'>_​foundational_model_​and_​standards_reuse</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_foundational_model_and_standards_reuse&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Foundational Model and Standards Reuse&lt;/title&gt;
 &lt;p id=&quot;_500c9b27-22b1-fed6-9b30-3905bc6c020b&quot;&gt;The unified data model described in this Standard is derived from established community specifications to maximise interoperability and to enable the reuse of mature tools and practices. The model is grounded in the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, which together provide a robust framework for representing scientific and geospatial datasets.&lt;/p&gt;
 
 &lt;clause id=&quot;_common_data_model_cdm&quot; obligation=&quot;=informative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000921</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_model_extension_points'>_model_​extension_​points</a></code></th>
+<td>000234</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_model_extension_points'>_model_​extension_​points</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_model_extension_points&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Model Extension Points&lt;/title&gt;
 &lt;p id=&quot;_ee29ad42-b9f1-d78f-4b9c-c96b95d00928&quot;&gt;The unified data model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.&lt;/p&gt;
 
 &lt;p id=&quot;_1e91e917-bcaf-a91b-4041-890575445f5c&quot;&gt;Each extension is defined as an independent module. Implementation of any given extension does not necessitate support for others.&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>000978</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_unified_model_structure'>_unified_​model_​structure</a></code></th>
+<td>000291</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_unified_model_structure'>_unified_​model_​structure</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_unified_model_structure&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Unified Model Structure&lt;/title&gt;
 &lt;p id=&quot;_e65124f4-061d-6f01-538f-ef9027d9ff62&quot;&gt;This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.&lt;/p&gt;
 
 &lt;p id=&quot;_c6100eca-2d33-f721-69b7-92a5197dbf5c&quot;&gt;The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001034</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_overviews'>_​overviews</a></code></th>
+<td>000347</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_overviews'>_​overviews</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_overviews&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Overviews&lt;/title&gt;
 &lt;p id=&quot;_d34a669f-e756-09a7-e700-e606e74f6411&quot;&gt;The &lt;strong&gt;Overviews&lt;/strong&gt; construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.&lt;/p&gt;
 
 &lt;clause id=&quot;_purpose&quot; obligation=&quot;=informative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001082</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_1ed7bb94-b28a-513f-ec11-f53c1ac833e7'>_1ed7bb94-b28a-513f-ec11-f53c1ac833e7</a></code></th>
+<td>000395</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_1ed7bb94-b28a-513f-ec11-f53c1ac833e7'>_1ed7bb94-b28a-513f-ec11-f53c1ac833e7</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_1ed7bb94-b28a-513f-ec11-f53c1ac833e7&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;25%&quot;/&gt; &lt;col width=&quot;75%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Element&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Definition&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt; &lt;tt&gt;OverviewSet&lt;/tt&gt; &lt;/td&gt;
 &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;A logical grouping of variables at multiple zoom levels associated with a single base variable.&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001135</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_conformance_and_extensibility'>_​conformance_and_​extensibility</a></code></th>
+<td>000448</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_conformance_and_extensibility'>_​conformance_and_​extensibility</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_conformance_and_extensibility&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Conformance and Extensibility&lt;/title&gt;
 &lt;p id=&quot;_326130a2-ac5f-9c33-1853-be6527695dd3&quot;&gt;The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.&lt;/p&gt;
 
 &lt;clause id=&quot;_core_conformance&quot; obligation=&quot;=informative&quot;&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001196</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_interoperability_considerations'>_​interoperability_​considerations</a></code></th>
+<td>000509</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_interoperability_considerations'>_​interoperability_​considerations</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_interoperability_considerations&quot; obligation=&quot;=informative&quot;&gt;
 &lt;title&gt;Interoperability Considerations&lt;/title&gt;
 &lt;p id=&quot;_89623f2a-7f1b-bec7-2c06-e885d8fab05e&quot;&gt;Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.&lt;/p&gt;
 
 &lt;p id=&quot;_b72e4ae8-9e5f-fc2a-2114-bad354892529&quot;&gt;This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001269</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_unified_data_model_encoding_for_zarr'>_unified_​data_model_​encoding_​for_zarr</a></code></th>
+<td>000582</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_unified_data_model_encoding_for_zarr'>_unified_​data_model_​encoding_​for_zarr</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_unified_data_model_encoding_for_zarr&quot; obligation=&quot;normative&quot;&gt;
 &lt;title&gt;Unified Data Model Encoding for Zarr&lt;/title&gt;
 &lt;p id=&quot;_9e58c294-0d0b-a221-0182-7685b25a61c2&quot;&gt;This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.&lt;/p&gt;
 
 &lt;admonition id=&quot;_98538104-ab6f-7940-21bb-7803f15c6d01&quot; type=&quot;tip&quot;&gt; &lt;p id=&quot;_3f7c5921-02f7-0d8e-1496-a26096b25298&quot;&gt;This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001289</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_41052269-a448-0b09-a25a-63ccda1a6251'>_41052269-a448-0b09-a25a-63ccda1a6251</a></code></th>
+<td>000602</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_41052269-a448-0b09-a25a-63ccda1a6251'>_41052269-a448-0b09-a25a-63ccda1a6251</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_41052269-a448-0b09-a25a-63ccda1a6251&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;20%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Model Element&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v2 Encoding&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v3 Encoding&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;Root Dataset&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001339</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_fcad79ad-bf58-fb65-0403-ce5c98bde858'>_fcad79ad-bf58-fb65-0403-ce5c98bde858</a></code></th>
+<td>000652</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_fcad79ad-bf58-fb65-0403-ce5c98bde858'>_fcad79ad-bf58-fb65-0403-ce5c98bde858</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_fcad79ad-bf58-fb65-0403-ce5c98bde858&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;20%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Feature&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v2&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v3&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;Storage&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001382</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_5cde49c8-a94b-371a-f316-23c95b7cdc63'>_5cde49c8-a94b-371a-f316-23c95b7cdc63</a></code></th>
+<td>000695</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_5cde49c8-a94b-371a-f316-23c95b7cdc63'>_5cde49c8-a94b-371a-f316-23c95b7cdc63</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_5cde49c8-a94b-371a-f316-23c95b7cdc63&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;20%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Feature&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v2&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v3&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;Storage&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001414</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_8eb57a2d-03ee-93a6-857b-333d7c86e48e'>_8eb57a2d-03ee-93a6-857b-333d7c86e48e</a></code></th>
+<td>000727</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_8eb57a2d-03ee-93a6-857b-333d7c86e48e'>_8eb57a2d-03ee-93a6-857b-333d7c86e48e</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_8eb57a2d-03ee-93a6-857b-333d7c86e48e&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;20%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Field&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v2&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v3&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;Location&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001466</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_encoding_of_multiscale_overviews_in_zarr'>_encoding_​of_​multiscale_​overviews_in_​zarr</a></code></th>
+<td>000779</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_encoding_of_multiscale_overviews_in_zarr'>_encoding_​of_​multiscale_​overviews_in_​zarr</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_encoding_of_multiscale_overviews_in_zarr&quot; obligation=&quot;normative&quot;&gt;
 &lt;title&gt;Encoding of Multiscale Overviews in Zarr&lt;/title&gt;
 &lt;p id=&quot;_d5681e6a-7f66-ca2f-faec-0c38dde2baee&quot;&gt;This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.&lt;/p&gt;
 
 &lt;p id=&quot;_1f1c7063-39f4-86d5-0059-3ea25ae86043&quot;&gt;Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001476</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_db45978a-5ab2-e7ee-6f32-5208a1750099'>_db45978a-5ab2-e7ee-6f32-5208a1750099</a></code></th>
+<td>000789</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_db45978a-5ab2-e7ee-6f32-5208a1750099'>_db45978a-5ab2-e7ee-6f32-5208a1750099</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_db45978a-5ab2-e7ee-6f32-5208a1750099&quot;&gt; &lt;colgroup&gt; &lt;col width=&quot;20%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;col width=&quot;40%&quot;/&gt; &lt;/colgroup&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Structure&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v2&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zarr v3&lt;/th&gt;
 &lt;/tr&gt; &lt;/thead&gt;
 &lt;tbody&gt; &lt;tr&gt; &lt;td valign=&quot;middle&quot; align=&quot;left&quot;&gt;Zoom level groups&lt;/td&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001495</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_metadata_encoding'>_metadata_​encoding</a></code></th>
+<td>000808</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_metadata_encoding'>_metadata_​encoding</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_metadata_encoding&quot; obligation=&quot;normative&quot;&gt;
 &lt;title&gt;Metadata Encoding&lt;/title&gt;
 &lt;p id=&quot;_70b613e7-cba4-a87d-bcfb-ac839f3328f4&quot;&gt;Multiscale metadata SHALL be defined using a &lt;tt&gt;multiscales&lt;/tt&gt; attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:&lt;/p&gt;
 
 &lt;ul id=&quot;_3aa5cdd6-aa6c-9a4c-36f9-fc99b5946bad&quot;&gt; &lt;li&gt; &lt;p id=&quot;_b8d49e31-7444-b9e0-811b-afa013267dc0&quot;&gt; &lt;tt&gt;tile_matrix_set&lt;/tt&gt; – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2&lt;/p&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001595</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_conformance_class_abstract_test_suite_normative'>_​conformance_class_​abstract_​test_suite_​normative</a></code></th>
+<td>000908</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_conformance_class_abstract_test_suite_normative'>_​conformance_class_​abstract_​test_suite_​normative</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;annex id=&quot;_conformance_class_abstract_test_suite_normative&quot; obligation=&quot;informative&quot;&gt;
 &lt;title&gt;Conformance Class Abstract Test Suite (Normative)&lt;/title&gt;
 &lt;note id=&quot;_49fa4119-ff23-ba00-2b10-7c6008e83cc9&quot;&gt; &lt;p id=&quot;_2f41c6a6-7963-8015-59ca-d74fafa8ae41&quot;&gt;Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)&lt;/p&gt;
 &lt;/note&gt;
 </pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001600</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_conformance_class_a'>_​conformance_class_​a</a></code></th>
+<td>000913</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_conformance_class_a'>_​conformance_class_​a</a></code></th>
 <td>Hanging paragraph in clause</td><td><pre>&lt;clause id=&quot;_conformance_class_a&quot; obligation=&quot;informative&quot;&gt;
 &lt;title&gt;Conformance Class A&lt;/title&gt;
 &lt;example id=&quot;ats_example1&quot;&gt; &lt;dl id=&quot;_15f5af59-2acb-8c62-5214-bd022c8135d7&quot; metadata=&quot;true&quot;&gt; &lt;dt&gt;label&lt;/dt&gt;
 &lt;dd&gt; &lt;p id=&quot;_2911e33b-d582-a069-a4d1-a0018ea97641&quot;&gt; &lt;link target=&quot;http://www.opengis.net/spec/name-of-standard/1.0/conf/example1&quot;/&gt; &lt;/p&gt;
 &lt;/dd&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001664</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#_5afe311c-d3e8-fb9a-9455-6031fbbc3118'>_5afe311c-d3e8-fb9a-9455-6031fbbc3118</a></code></th>
+<td>000977</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#_5afe311c-d3e8-fb9a-9455-6031fbbc3118'>_5afe311c-d3e8-fb9a-9455-6031fbbc3118</a></code></th>
 <td>Table should have title</td><td><pre>&lt;table id=&quot;_5afe311c-d3e8-fb9a-9455-6031fbbc3118&quot; width=&quot;90%&quot;&gt; &lt;thead&gt; &lt;tr&gt; &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Date&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Release&lt;/th&gt;
 &lt;th valign=&quot;middle&quot; align=&quot;left&quot;&gt;Editor&lt;/th&gt;
@@ -313,7 +262,7 @@ thead th { font-weight: bold; background-color: aqua; }
 <th width="30%">Message</th><th width="40%">Context</th><th width="5%">Severity</th></thead>
 <tbody>
 <tr class="severity2">
-<td>001616</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th>
+<td>000929</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th>
 <td>Conformance test ats_core_​api-definition-op has no corresponding Conformance class
 </td><td><pre>&lt;requirement id=&quot;ats_core_api-definition-op&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;subject&gt;/req/req-class-a/req-name-1&lt;/subject&gt; &lt;classification&gt; &lt;tag&gt;label&lt;/tag&gt; &lt;value&gt;/conf/core/api-definition-op&lt;/value&gt; &lt;/classification&gt; &lt;component class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_4e900c1f-4736-c517-b011-fcd72a1de669&quot;&gt;Validate that the API Definition document can be retrieved from the expected location.&lt;/p&gt;
 &lt;/component&gt;
@@ -321,7 +270,7 @@ thead th { font-weight: bold; background-color: aqua; }
 &lt;component exclude=&quot;false&quot; class=&quot;test method&quot;&gt; &lt;component exclude=&quot;false&quot; class=&quot;step&quot;&gt; &lt;p id=&quot;_611abb6a-639f-882e-b311-a8312aa18ce6&quot;&gt;Construct a path for the API Definition document that ends with &lt;tt&gt;/api&lt;/tt&gt;.&lt;/p&gt;
 &lt;/component&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001616</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th>
+<td>000929</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#ats_core_api-definition-op'>ats_core_​api-definition-op</a></code></th>
 <td>Conformance test ats_core_​api-definition-op has no corresponding Requirement
 </td><td><pre>&lt;requirement id=&quot;ats_core_api-definition-op&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;subject&gt;/req/req-class-a/req-name-1&lt;/subject&gt; &lt;classification&gt; &lt;tag&gt;label&lt;/tag&gt; &lt;value&gt;/conf/core/api-definition-op&lt;/value&gt; &lt;/classification&gt; &lt;component class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_4e900c1f-4736-c517-b011-fcd72a1de669&quot;&gt;Validate that the API Definition document can be retrieved from the expected location.&lt;/p&gt;
 &lt;/component&gt;
@@ -329,7 +278,7 @@ thead th { font-weight: bold; background-color: aqua; }
 &lt;component exclude=&quot;false&quot; class=&quot;test method&quot;&gt; &lt;component exclude=&quot;false&quot; class=&quot;step&quot;&gt; &lt;p id=&quot;_611abb6a-639f-882e-b311-a8312aa18ce6&quot;&gt;Construct a path for the API Definition document that ends with &lt;tt&gt;/api&lt;/tt&gt;.&lt;/p&gt;
 &lt;/component&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001637</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#ats_core_http'>ats_core_​http</a></code></th>
+<td>000950</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#ats_core_http'>ats_core_​http</a></code></th>
 <td>Conformance test ats_core_​http has no corresponding Conformance class
 </td><td><pre>&lt;requirement id=&quot;ats_core_http&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;subject&gt;/req/req-class-a/req-name-2&lt;/subject&gt; &lt;classification&gt; &lt;tag&gt;label&lt;/tag&gt; &lt;value&gt;/conf/core/http&lt;/value&gt; &lt;/classification&gt; &lt;component class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_5e167688-cb2f-249d-25e2-99340b057b85&quot;&gt;Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.&lt;/p&gt;
 &lt;/component&gt;
@@ -337,7 +286,7 @@ thead th { font-weight: bold; background-color: aqua; }
 &lt;component exclude=&quot;false&quot; class=&quot;test method&quot;&gt; &lt;component exclude=&quot;false&quot; class=&quot;step&quot;&gt; &lt;p id=&quot;_cdd509dd-71ee-f05d-a1d7-363218c4a3ee&quot;&gt;All compliance tests SHALL be configured to use the HTTP 1.1 protocol exclusively.&lt;/p&gt;
 &lt;/component&gt;</pre></td><td>2</td></tr>
 <tr class="severity2">
-<td>001637</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/document.html#ats_core_http'>ats_core_​http</a></code></th>
+<td>000950</td><th><code><a href='/home/runner/work/geozarr-spec/geozarr-spec/_site/documents/standard/template/geozarr-spec.html#ats_core_http'>ats_core_​http</a></code></th>
 <td>Conformance test ats_core_​http has no corresponding Requirement
 </td><td><pre>&lt;requirement id=&quot;ats_core_http&quot; model=&quot;ogc&quot; type=&quot;abstracttest&quot;&gt; &lt;subject&gt;/req/req-class-a/req-name-2&lt;/subject&gt; &lt;classification&gt; &lt;tag&gt;label&lt;/tag&gt; &lt;value&gt;/conf/core/http&lt;/value&gt; &lt;/classification&gt; &lt;component class=&quot;test-purpose&quot;&gt; &lt;p id=&quot;_5e167688-cb2f-249d-25e2-99340b057b85&quot;&gt;Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.&lt;/p&gt;
 &lt;/component&gt;
@@ -395,6 +344,9 @@ thead th { font-weight: bold; background-color: aqua; }
 <tr class="severity2">
 <td></td><th><code>XML Line 000136:133</code></th>
 <td>IDREF "OGC06-121r9" without matching ID</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
+<td></td><th><code>XML Line 000153:123</code></th>
+<td>IDREF "ISO19101-1" without matching ID</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
 <td></td><th><code>XML Line 000184:60</code></th>
 <td>value of attribute "obligation" is invalid; must be equal to "informative" or "normative"</td><td><pre></pre></td><td>2</td></tr>
@@ -492,6 +444,9 @@ thead th { font-weight: bold; background-color: aqua; }
 <td></td><th><code>XML Line 000589:68</code></th>
 <td>value of attribute "obligation" is invalid; must be equal to "informative" or "normative"</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
+<td></td><th><code>XML Line 000606:69</code></th>
+<td>value of attribute "obligation" is invalid; must be equal to "informative" or "normative"</td><td><pre></pre></td><td>2</td></tr>
+<tr class="severity2">
 <td></td><th><code>XML Line 000955:91</code></th>
 <td>attribute "metadata" not allowed here; expected attribute "columns", "keep-lines-together", "keep-with-next", "key", "multilingual-rendering" or "tag"</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
@@ -504,118 +459,7 @@ thead th { font-weight: bold; background-color: aqua; }
 <td></td><th><code>XML Line 001017:71</code></th>
 <td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
 <tr class="severity2">
-<td></td><th><code>XML Line 001019:69</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001023:68</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001025:76</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001028:72</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001030:131</code></th>
-<td>element "link" missing required attribute "target"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001030:68</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001069:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001072:22</code></th>
-<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001087:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001092:18</code></th>
-<td>text not allowed here; expected the element end-tag or element "city", "country", "formattedPlace", "region" or "uri"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001132:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001143:22</code></th>
-<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001158:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001165:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001172:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001179:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001189:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001197:18</code></th>
-<td>text not allowed here; expected the element end-tag or element "city", "country", "formattedPlace", "region" or "uri"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001234:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001243:22</code></th>
-<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001258:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001265:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001272:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001279:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001289:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001297:18</code></th>
-<td>text not allowed here; expected the element end-tag or element "city", "country", "formattedPlace", "region" or "uri"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001340:22</code></th>
-<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001355:41</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001399:65</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001404:26</code></th>
-<td>character content of element "stage" invalid; must be equal to "approved", "candidate", "deprecated", "draft", "legacy",​ "oab-review", "public-ref", "published", "rescinded", "retired", "rfc", "swg-draft", "tc-vote" or "work-item-draft"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001419:45</code></th>
-<td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001424:22</code></th>
-<td>text not allowed here; expected the element end-tag or element "city", "country", "formattedPlace", "region" or "uri"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001428:18</code></th>
-<td>text not allowed here; expected the element end-tag or element "city", "country", "formattedPlace", "region" or "uri"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001471:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001530:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001608:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001651:61</code></th>
-<td>attribute "format" not allowed here; expected attribute "language", "locale" or "script"</td><td><pre></pre></td><td>2</td></tr>
-<tr class="severity2">
-<td></td><th><code>XML Line 001665:51</code></th>
+<td></td><th><code>XML Line 001030:51</code></th>
 <td>found attribute "format",​ but no attributes allowed here</td><td><pre></pre></td><td>2</td></tr>
 </tbody></table>
 </body></html>

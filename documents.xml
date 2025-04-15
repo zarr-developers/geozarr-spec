@@ -1,10 +1,10 @@
-<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>OGC API - Processes</title><contributor><role type='author'/><organization><name>OGC</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>OGC GeoZarr Specification</title><contributor><role type='author'/><organization><name>OGC</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
   <title format="text/plain" language="en">OGC (add title text)</title>
-  <uri type="xml">documents/standard/template/document.xml</uri>
-  <uri type="pdf">documents/standard/template/document.pdf</uri>
-  <uri type="doc">documents/standard/template/document.doc</uri>
-  <uri type="html">documents/standard/template/document.html</uri>
-  <uri type="rxl">documents/standard/template/document.rxl</uri>
+  <uri type="xml">documents/standard/template/geozarr-spec.xml</uri>
+  <uri type="pdf">documents/standard/template/geozarr-spec.pdf</uri>
+  <uri type="doc">documents/standard/template/geozarr-spec.doc</uri>
+  <uri type="html">documents/standard/template/geozarr-spec.html</uri>
+  <uri type="rxl">documents/standard/template/geozarr-spec.rxl</uri>
   <docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier>
   <docidentifier type="ogc-internal" primary="true">YY-999</docidentifier>
   <docnumber>YY-999</docnumber>
@@ -33,7 +33,7 @@
     <role type="editor"/>
     <person>
       <name>
-        <completename>Editor One</completename>
+        <completename>Christophe Noël</completename>
       </name>
     </person>
   </contributor>
@@ -41,7 +41,7 @@
     <role type="editor"/>
     <person>
       <name>
-        <completename>Editor Two</completename>
+        <completename>Brianna Pagán</completename>
       </name>
     </person>
   </contributor>
