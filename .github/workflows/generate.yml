@@ -23,11 +23,12 @@ jobs:
           token: ${{ github.token }}
           submodules: true
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: ~/.fontist
           key: fontist-${{ runner.os }}
           restore-keys: fontist-${{ runner.os }}
+
 
       - uses: actions-mn/setup@main
 
