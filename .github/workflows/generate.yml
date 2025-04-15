@@ -18,12 +18,12 @@ jobs:
     runs-on: ubuntu-latest
     container: docker://metanorma/mn
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/cache@v3
         with:
           token: ${{ secrets.METANORMA_CI_PAT_TOKEN || github.token }}
           submodules: true
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         with:
           path: /config/fonts
           key: fontist-docker
