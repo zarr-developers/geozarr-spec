@@ -42,7 +42,7 @@ jobs:
       - run: |
           curl -L --retry 3 https://raw.githubusercontent.com/metanorma/ci/refs/heads/main/gemfile-to-bundle-add.sh | bash
 
-      - uses: actions-mn/cli/site-gen@main
+      - uses: actions-mn/cli/collection@main
         with:
           agree-to-terms: true
 
