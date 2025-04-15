@@ -2,7 +2,7 @@ name: generate
 
 on:
   push:
-    branches: [ spec_unified_data_model, main ]
+    branches: [ main ]
   pull_request:
     paths-ignore:
       - .gitlab-ci.yml
