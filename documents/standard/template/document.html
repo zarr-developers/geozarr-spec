@@ -1,0 +1,2615 @@
+
+<!DOCTYPE html>
+<html lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><style>
+  <!--
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  border: 0;
+  font-size: 100%; }
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  vertical-align: baseline; }
+
+html, body, div, span, applet, object, iframe,
+p, blockquote,
+a, abbr, acronym, address, big, cite,
+del, dfn, em, img, ins, q, s,
+small, strike, strong, sub, sup, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  font-family: "Overpass",sans-serif; }
+
+code, pre, tt, kbd, samp {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none; }
+
+code *, pre *, tt *, kbd *, samp * {
+  font-family: "Space Mono",monospace !important;
+  font-variant-ligatures: none; }
+
+p code, dt code, li code, label code, legend code, caption code, th code, td code,
+p tt, dt tt, li tt, label tt, legend tt, caption tt, th tt, td tt,
+p kbd, dt kbd, li kbd, label kbd, legend kbd, caption kbd, th kbd, td kbd,
+p samp, dt samp, li samp, label samp, legend samp, caption samp, th samp, td samp {
+  font-size: 0.8em; }
+
+sub, sup {
+  font-size: 0.75em; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Overpass",sans-serif; }
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: "Overpass",sans-serif; }
+
+blockquote, q {
+  quotes: none; }
+  blockquote::before, blockquote::after, q::before, q::after {
+    content: '';
+    content: none; }
+
+.h2Annex {
+  font-family: "Overpass",sans-serif; }
+
+dl {
+  display: grid;
+  grid-template-columns: max-content auto; }
+  dl dt p, dl dd p {
+    margin-top: 0; }
+  dl dt {
+    grid-column-start: 1; }
+  dl dd {
+    grid-column-start: 2; }
+
+b, strong {
+  font-weight: bold; }
+
+div.document-stage-band, div.document-type-band {
+  background-color: #333333; }
+
+a.FootnoteRef + a.FootnoteRef::before {
+  content: ", ";
+  vertical-align: super; }
+
+a.TableFootnoteRef + a.TableFootnoteRef::before {
+  content: ", ";
+  vertical-align: super; }
+
+a.TableFootnoteRef, span.TableFootnoteRef,
+a.FootnoteRef, span.FootnoteRef {
+  vertical-align: super; }
+
+.addition {
+  color: blue; }
+
+.deletion {
+  color: red;
+  text-decoration: line-through; }
+
+ruby {
+  ruby-position: over;
+  -webkit-ruby-position: before; }
+
+ruby ruby {
+  ruby-position: under;
+  -webkit-ruby-position: after; }
+
+/* code highlighting with line numbers */
+table.rouge-line-table td.rouge-gutter {
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  padding-right: 1em; }
+
+table.rouge-line-table td.rouge-code {
+  -moz-user-select: all;
+  -ms-user-select: all;
+  -webkit-user-select: all;
+  user-select: all; }
+
+table.rouge-line-table,
+table.rouge-line-table th,
+table.rouge-line-table td {
+  width: auto;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: 100%; }
+
+table.rouge-line-table pre {
+  margin: 0;
+  padding: 0;
+  overflow-x: visible;
+  font-size: 100%; }
+
+/* header § links */
+a.header {
+  color: inherit;
+  text-decoration: none; }
+
+a.header:hover {
+  color: #a53221 !important;
+  background: inherit;
+  box-shadow: none; }
+
+a.header:visited {
+  color: inherit;
+  text-decoration: none; }
+
+a.anchor {
+  position: absolute;
+  z-index: 1001;
+  width: 1.5ex;
+  margin-left: -1.5ex;
+  display: block;
+  text-decoration: none !important;
+  visibility: hidden;
+  text-align: center;
+  font-weight: 400; }
+
+a.anchor::before {
+  content: "\00A7";
+  font-size: .85em;
+  display: block;
+  padding-top: .1em; }
+
+a.anchor:hover {
+  color: #a53221;
+  background: inherit;
+  box-shadow: none; }
+
+h1 > a.anchor:hover,
+h2 > a.anchor:hover,
+h3 > a.anchor:hover,
+h4 > a.anchor:hover,
+h5 > a.anchor:hover,
+h6 > a.anchor:hover,
+.inline-header > a.anchor:hover,
+h1:hover > a.anchor,
+h2:hover > a.anchor,
+h3:hover > a.anchor,
+h4:hover > a.anchor,
+h5:hover > a.anchor,
+h6:hover > a.anchor,
+.inline-header:hover > a.anchor {
+  visibility: visible; }
+
+/* collapsible snippets: collapsible before hidable */
+.hidable {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out; }
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 3px 0;
+  margin: 0;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px; }
+
+.active, .collapsible:hover {
+  background-color: #555; }
+
+.collapsible:after {
+  content: '\25bc';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 12px;
+  margin-right: 12px; }
+
+.active:after {
+  content: "\25b2"; }
+
+/* collapsible: */
+.collapsible + .hidable {
+  margin-top: 0; }
+
+.collapsible:not(.active) + .hidable {
+  overflow: hidden;
+  padding: 0; }
+
+#standard-band {
+  background-color: #3D9970; }
+
+#standard {
+  border-bottom: solid 3px #3D9970; }
+
+#draft-standard-band {
+  background-color: #3D9970; }
+
+#draft-standard {
+  border-bottom: solid 3px #3D9970; }
+
+#abstract-specification-topic-band {
+  background-color: #3D9970; }
+
+#abstract-specification-topic {
+  border-bottom: solid 3px #3D9970; }
+
+#reference-model-band {
+  background-color: #3D9970; }
+
+#reference-model {
+  border-bottom: solid 3px #3D9970; }
+
+#best-practice-band {
+  background-color: #39CCCC; }
+
+#best-practice {
+  border-bottom: solid 3px #39CCCC; }
+
+#discussion-paper-band {
+  background-color: #39CCCC; }
+
+#discussion-paper {
+  border-bottom: solid 3px #39CCCC; }
+
+#white-paper-band {
+  background-color: #39CCCC; }
+
+#white-paper {
+  border-bottom: solid 3px #39CCCC; }
+
+#technical-paper-band {
+  background-color: #39CCCC; }
+
+#technical-paper {
+  border-bottom: solid 3px #39CCCC; }
+
+#engineering-report-band {
+  background-color: #39CCCC; }
+
+#engineering-report {
+  border-bottom: solid 3px #39CCCC; }
+
+#release-notes-band {
+  background-color: #FFDC00; }
+
+#release-notes {
+  border-bottom: solid 3px #FFDC00; }
+
+#user-guide-band {
+  background-color: #FFDC00; }
+
+#user-guide {
+  border-bottom: solid 3px #FFDC00; }
+
+#community-practice-band {
+  background-color: #FF851B; }
+
+#community-practice {
+  border-bottom: solid 3px #FF851B; }
+
+#community-standard-band {
+  background-color: #FF851B; }
+
+#community-standard {
+  border-bottom: solid 3px #FF851B; }
+
+#other-band {
+  background-color: #0074D9; }
+
+#other {
+  border-bottom: solid 3px #0074D9; }
+
+#policy-band {
+  background-color: #0074D9; }
+
+#policy {
+  border-bottom: solid 3px #0074D9; }
+
+#change-request-supporting-document-band {
+  background-color: #0074D9; }
+
+#change-request-supporting-document {
+  border-bottom: solid 3px #0074D9; }
+
+#test-suite-band {
+  background-color: #001F3F; }
+
+#test-suite {
+  border-bottom: solid 3px #001F3F; }
+
+#candidate-band {
+  background-color: #8B9EB7; }
+
+#candidate {
+  border-bottom: solid 3px #8B9EB7; }
+
+#working-draft-band {
+  background-color: #8B9EB7; }
+
+#working-draft {
+  border-bottom: solid 3px #8B9EB7; }
+
+#proposal-band {
+  background-color: #8B9EB7; }
+
+#proposal {
+  border-bottom: solid 3px #8B9EB7; }
+
+#oab-review-band {
+  background-color: #8B9EB7; }
+
+#oab-review {
+  border-bottom: solid 3px #8B9EB7; }
+
+#committee-draft-band {
+  background-color: #8B9EB7; }
+
+#committee-draft {
+  border-bottom: solid 3px #8B9EB7; }
+
+#swg-draft-band {
+  background-color: #8B9EB7; }
+
+#swg-draft {
+  border-bottom: solid 3px #8B9EB7; }
+
+#public-rfc-band {
+  background-color: #48a0e7; }
+
+#public-rfc {
+  border-bottom: solid 3px #48a0e7; }
+
+#tc-vote-band {
+  background-color: #fd06fd; }
+
+#tc-vote {
+  border-bottom: solid 3px #fd06fd; }
+
+#published-band {
+  background-color: #9abd48; }
+
+#published {
+  border-bottom: solid 3px #9abd48; }
+
+#deprecated-band {
+  background-color: #7e0d13; }
+
+#deprecated {
+  border-bottom: solid 3px #7e0d13; }
+
+#retired-band {
+  background-color: #7e0d13; }
+
+#retired {
+  border-bottom: solid 3px #7e0d13; }
+
+#legacy-band {
+  background-color: #7e0d13; }
+
+#legacy {
+  border-bottom: solid 3px #7e0d13; }
+
+#rescinded-band {
+  background-color: #7e0d13; }
+
+#rescinded {
+  border-bottom: solid 3px #7e0d13; }
+
+.coverpage-maturity, .coverpage-stage {
+  font-family: "Overpass",sans-serif;
+  font-weight: 400;
+  font-size: 1.3em;
+  margin: 0 0 2em 0;
+  text-transform: uppercase; }
+
+.icon-svg {
+  width: 100%;
+  color: #5ecf86; }
+
+.wrapper-top {
+  background: #00335b;
+  background: linear-gradient(130deg, #00335b 45%, #f1f8ff 100%);
+  color: #ffffff;
+  padding: 5em 0;
+  width: 100%; }
+
+.wrapper-top-bottom {
+  width: 0;
+  height: 0;
+  border-top: 100px solid #00335b;
+  border-right: 100px solid transparent;
+  position: absolute; }
+
+.document-type-band {
+  top: 260px; }
+
+.document-stage-band > :first-child {
+  height: 240px; }
+
+.coverpage-metadata {
+  margin-top: 35px;
+  padding-top: 15px;
+  margin-right: 25px;
+  border-top: solid 1px white; }
+
+.coverpage-metadata,
+.coverpage-alt-formats {
+  font-size: 12px;
+  font-family: "Overpass",sans-serif;
+  margin-left: 1em;
+  text-align: left; }
+  .coverpage-metadata span,
+  .coverpage-alt-formats span {
+    display: block;
+    text-align: left; }
+    .coverpage-metadata span a,
+    .coverpage-alt-formats span a {
+      color: white; }
+      .coverpage-metadata span a:hover,
+      .coverpage-alt-formats span a:hover {
+        text-decoration: underline;
+        background: none;
+        box-shadow: none !important;
+        font-weight: 400; }
+  .coverpage-metadata .value,
+  .coverpage-alt-formats .value {
+    font-size: 15px;
+    margin-bottom: 15px; }
+  .coverpage-metadata .label,
+  .coverpage-alt-formats .label {
+    font-size: 12px;
+    padding: 0; }
+
+.coverpage-alt-formats span {
+  display: inline;
+  text-align: left; }
+  .coverpage-alt-formats span a {
+    padding-right: 5px; }
+
+.coverpage-title {
+  padding-bottom: 0.5em;
+  font-family: "Overpass",sans-serif;
+  font-weight: 100;
+  padding-left: 1em;
+  padding-right: 1em; }
+  .coverpage-title span {
+    font-family: "Overpass",sans-serif;
+    font-size: 1.8em;
+    line-height: 1; }
+
+.docstage-box table {
+  width: auto; }
+
+.docstage-box th {
+  background-color: #93c0d6; }
+
+.docstage-box td {
+  vertical-align: top;
+  background-color: #daeef3;
+  padding: 0.5em;
+  border: 0; }
+
+.docstage-box th:first-child {
+  border-radius: 1em 0 0 0; }
+
+.docstage-box th:last-child {
+  border-radius: 0 1em 0 0; }
+
+.docstage-box tr:first-child {
+  border-radius: 0 0 0 1em; }
+
+.docstage-box tr:last-child {
+  border-radius: 0 1em 0 0; }
+
+.docstage-box tr:last-child > td:first-child {
+  border-radius: 0 0 0 1em; }
+
+.docstage-box tr:last-child > td:last-child {
+  border-radius: 0 0 1em 0; }
+
+.WordSection11 {
+  padding: 0 2em 0 3em; }
+
+.info-section {
+  padding: 0 2em 0 5em; }
+
+.prefatory-section {
+  padding: 0 3em 0 6em; }
+
+.zzSTDTitle1, .MsoCommentText {
+  display: none; }
+
+.coverpage {
+  text-align: center;
+  padding-left: 1.5em; }
+
+.coverpage-logo span, .coverpage-tc-name span {
+  font-family: "Overpass",sans-serif;
+  text-transform: none;
+  font-weight: 300;
+  margin-left: 1em; }
+
+.coverpage-logo img {
+  width: 500px;
+  height: auto; }
+
+.coverpage-tc-name {
+  font-size: 1.2em;
+  line-height: 1.2em;
+  margin: 0.25em 0; }
+
+.copyright {
+  padding: 1em;
+  font-size: 0.9em;
+  text-align: left; }
+
+/* Document Identity */
+.coverpage-doc-identity {
+  font-size: 2em;
+  line-height: 2em; }
+
+.coverpage-title .title-second {
+  display: none; }
+
+.coverpage-stage-block {
+  font-family: "Overpass",sans-serif;
+  font-weight: 600;
+  font-size: 1.25em;
+  margin: 2em 0em 2em 0em;
+  text-transform: uppercase; }
+
+.authors {
+  margin-top: 2em; }
+  .authors span {
+    display: block;
+    line-height: 2; }
+  .authors span.roletag {
+    display: inline-block;
+    font-size: 12px;
+    color: #00335b;
+    background-color: white;
+    padding: 2px 5px;
+    margin-left: 7px;
+    border-radius: 5px; }
+
+/* Draft Warning */
+.coverpage-warning {
+  border: #f36f36 solid 2px;
+  color: #f36f36 !important;
+  margin: 1em 2em;
+  color: #2e81c2;
+  padding: 2em 1em 1em 1em;
+  border-radius: 25px; }
+  .coverpage-warning h1 {
+    font-family: "Overpass",sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 1.2em; }
+
+@media print {
+  .document-info, .copyright {
+    page-break-before: always; }
+  .coverpage {
+    height: 23cm; }
+  .info-section {
+    display: none; }
+  .wrapper-top {
+    top: 0;
+    padding-top: 4cm;
+    padding-bottom: 4cm; }
+  .wrapper-top-bottom {
+    margin-top: -5px;
+    display: none; } }
+
+/* For Requirement Test anchors */
+p.RecommendationTitle:hover > a.anchor,
+p.RecommendationTitle > a.anchor:hover,
+p.RecommendationTestTitle:hover > a.anchor,
+p.RecommendationTestTitle > a.anchor:hover {
+  visibility: visible; }
+
+table a.anchor {
+  margin-left: -2em; }
+
+body {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #00335b;
+  background-color: #f6f8fa; }
+  body main {
+    margin: 0 3em 0 6em; }
+  @media screen and (min-width: 768px) {
+    body {
+      padding-left: 360px; } }
+  @media print {
+    body {
+      padding-left: 0; } }
+dl {
+  grid-template-columns: minmax(0, 1fr) 93%; }
+  dl pre {
+    overflow-x: scroll; }
+
+#toc ul, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  #toc ul li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul li a {
+    padding: 5px 10px; }
+  #toc ul a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a {
+    color: #00335b;
+    text-decoration: none;
+    display: block; }
+    #toc ul a:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) ul a:hover {
+      box-shadow: none;
+      color: white; }
+
+#toc .h2, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h2 {
+  padding-left: 30px; }
+
+#toc .h3, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h3 {
+  padding-left: 50px; }
+
+#toc .h4, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h4 {
+  padding-left: 70px; }
+
+#toc .h5, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h5 {
+  padding-left: 90px; }
+
+#toc .h6, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .h6 {
+  padding-left: 110px; }
+
+#toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+  background: #00335b;
+  box-shadow: inset -5px 0px 10px -5px #00335b !important; }
+  #toc .toc-active a, #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+    color: white; }
+
+@media print {
+  #toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+    background: white;
+    box-shadow: none !important; }
+  #toc .toc-active a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active a {
+    color: #00335b; }
+  #toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+    color: black; } }
+
+#toc li a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li a {
+  font-size: 14px; }
+
+#toc li::before, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li::before {
+  content: " ";
+  display: none; }
+
+#toc .toc-active, #toc li:hover, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) .toc-active, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover {
+  font-weight: 600; }
+
+#toc li:hover a, #toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) li:hover a {
+  background: none;
+  box-shadow: none; }
+
+#toc > ul :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 100%; }
+
+@media screen and (min-width: 768px) {
+  nav {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 323px;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0 0 0 30px;
+    background-color: #f1f8ff; } }
+
+@media print {
+  nav {
+    position: relative;
+    width: auto;
+    font-size: 0.9em;
+    overflow: auto;
+    padding: 0;
+    margin-right: 0;
+    background-color: white; } }
+
+@media screen and (min-width: 768px) {
+  nav {
+    margin-right: 30px; } }
+
+@media screen and (min-width: 768px) {
+  #toggle {
+    position: fixed;
+    height: 100%;
+    width: 30px;
+    background-color: #00335b;
+    color: white !important;
+    cursor: pointer;
+    z-index: 100; }
+    #toggle span {
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%); } }
+
+@media screen and (max-width: 768px) {
+  #toggle {
+    display: none; } }
+
+@media print {
+  #toggle {
+    display: none; } }
+
+.rule {
+  width: 100%;
+  height: 1px;
+  background-color: #00335b;
+  margin: 2em 0; }
+  @media screen and (min-width: 768px) {
+    .rule.toc {
+      display: none; } }
+@media screen and (min-width: 768px) {
+  h1.toc-contents {
+    margin-top: 1em; }
+  ul#toc-list, ul#toc-list > :is(.h1, .h2, .h3, .h4, .h5, .h6) {
+    padding: 0;
+    margin: 0; } }
+
+#toc-list ul {
+  margin-bottom: 0.25em; }
+
+#toc-list li {
+  list-style-type: none; }
+
+.figure {
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow: auto; }
+  .figure .FigureTitle, .figure .figure-title {
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center; }
+  .figure > img, .figure > svg {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+    height: auto; }
+
+table div.figure {
+  padding: 0;
+  margin: 0; }
+
+.document-stage-band {
+  left: 0;
+  top: 0;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 101;
+  box-shadow: -5px 0px 10px #1d1d1d; }
+  .document-stage-band > :first-child {
+    position: relative;
+    width: 25px;
+    font-weight: 300;
+    height: 160px;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
+    margin-left: 6px;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0; }
+  @media print {
+    .document-stage-band {
+      display: none; } }
+.document-type-band {
+  left: 0;
+  top: 180px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  z-index: 102; }
+  .document-type-band > :first-child {
+    position: relative;
+    width: 25px;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin: 0;
+    margin-left: 6px;
+    writing-mode: tb-rl;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    white-space: nowrap;
+    display: block;
+    bottom: 0; }
+  @media print {
+    .document-type-band {
+      display: none; } }
+  .document-type-band .document-type {
+    top: 20px; }
+
+#governance-band p.document-type {
+  font-weight: 400;
+  height: 230px !important; }
+
+#standard-band p {
+  height: 135px; }
+
+#proposal-band p {
+  height: 150px; }
+
+#standard-band,
+#published-band {
+  color: #7ba812; }
+
+#standard,
+#published {
+  color: #9ABD48; }
+
+p {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: #00335b;
+  font-weight: 400;
+  margin-top: 1.6em;
+  margin-bottom: 0.3em; }
+
+h1, .h1 {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  margin-top: 2em; }
+  h1 #content, .h1 #content {
+    margin-top: 2em; }
+
+h2, .h2 {
+  margin-top: 1.3em;
+  font-size: 1.7em;
+  font-weight: 300; }
+  h2 p, .h2 p {
+    display: inline; }
+
+h3, .h3 {
+  margin-top: 1.3em;
+  font-size: 1.5em;
+  font-weight: 100; }
+
+h4, .h4 {
+  font-size: 1.4em; }
+
+.contact-info {
+  padding: 2em;
+  margin-top: 5em;
+  width: 280px;
+  text-align: left;
+  border: #00335b solid 2px;
+  color: #00335b !important;
+  border-radius: 25px; }
+  .contact-info a:hover {
+    text-decoration: underline;
+    background: none;
+    box-shadow: 0 0 0 0; }
+  .contact-info a, .contact-info a:hover {
+    color: #00335b; }
+  .contact-info p, .contact-info a {
+    font-family: "Space Mono",monospace;
+    font-variant-ligatures: none;
+    font-weight: 400; }
+  .contact-info #boilerplate-name {
+    font-weight: 700;
+    font-size: 1.2em;
+    margin-bottom: 0; }
+  .contact-info #boilerplate-address {
+    font-size: 1em;
+    line-height: 1.3em;
+    margin-top: 0; }
+
+ul, ol {
+  margin-left: 1.2em; }
+
+ul > li {
+  list-style: none; }
+  ul > li::before {
+    content: "\2014";
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; }
+  ul > li p:first-child {
+    display: inline; }
+  ul > li:first-child {
+    margin-top: 1em; }
+
+ul ul > li:first-child {
+  margin-top: 0; }
+
+ol ul > li:first-child {
+  margin-top: 0; }
+
+span.keyword {
+  font-weight: 600; }
+
+/* Tables */
+table {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+  /*color: #010d16;*/ }
+  table, table th, table td {
+    border: 1px solid black;
+    font-size: 0.95em; }
+  table th, table td {
+    padding: 1em; }
+  table td.header {
+    font-weight: 400; }
+  table thead tr th {
+    background-color: #5d99d6; }
+  table td, table th {
+    padding: 1em; }
+  table td.header {
+    font-weight: 400; }
+
+.docstage-box table,
+.docstage-box table th,
+.docstage-box table td {
+  border: none; }
+
+table.modspec {
+  width: 100%;
+  font-weight: 300;
+  margin: 1em 0 2em 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+  color: #010d16; }
+  table.modspec, table.modspec th, table.modspec td {
+    border: none !important;
+    font-size: 0.95em; }
+  table.modspec th, table.modspec td {
+    padding: 1em; }
+  table.modspec td.header {
+    font-weight: 400; }
+  table.modspec tr:nth-child(even) {
+    background: #ffffff; }
+  table.modspec tr:nth-child(odd) {
+    background: #ffffff; }
+  table.modspec thead tr th {
+    background-color: #5d99d6; }
+  table.modspec td, table.modspec th {
+    padding: 1em; }
+  table.modspec td.header {
+    font-weight: 400; }
+
+td > p:first-child, th > p:first-child {
+  margin-top: 0em; }
+
+td > p:last-child, th > p:last-child {
+  margin-bottom: 0em; }
+
+p.TableTitle {
+  text-align: center;
+  margin-top: 2.5em;
+  font-weight: 400; }
+
+/* Terms */
+.TermNum {
+  font-weight: 300; }
+
+.TermNum, .Terms, .AltTerms {
+  color: #00335b;
+  font-family: "Overpass",sans-serif; }
+
+h2.TermNum {
+  margin-bottom: 0; }
+
+p.AltTerms {
+  font-size: 24px;
+  margin-top: 1em; }
+
+span.AdmittedLabel, span.DeprecatedLabel {
+  color: #00335b;
+  background-color: #CFE2F3;
+  font-size: 70%;
+  vertical-align: top; }
+
+/* Links, selection */
+a, a:visited {
+  text-decoration: none;
+  color: #2e81c2; }
+
+a:hover {
+  color: #00335b;
+  background: #39CCCC;
+  box-shadow: 3px 0 0 #39CCCC, -3px 0 0 #39CCCC; }
+
+*::selection {
+  background: #39CCCC;
+  color: #00335b; }
+
+*::-moz-selection {
+  background: #39CCCC;
+  color: #00335b; }
+
+/* Bibliograhy */
+p.Biblio, p.NormRef {
+  margin-top: 1em;
+  margin-left: 2em; }
+
+/* Blocks */
+.SourceTitle, .FigureTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.ListTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center;
+  text-align: left; }
+
+pre, .sourcecode {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+  background-color: #f7f7f7;
+  font-size: 0.8em;
+  line-height: 1.6em;
+  padding: 1.5em;
+  margin: 2em 0 1em 0;
+  overflow-y: auto;
+  overflow-x: scroll;
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none; }
+
+.Admonition {
+  padding: 1em 1.2em 1.2em 1.2em;
+  margin: 1em 0 1em 0;
+  background-color: #fcad88;
+  border-top: 10px solid #eb5a06;
+  color: #290404; }
+  .Admonition .AdmonitionTitle {
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center; }
+  .Admonition.Important {
+    background-color: #f58cff;
+    color: #5d1364;
+    border-top: 10px solid #9503a8; }
+  .Admonition.Warning {
+    background-color: #ff989d;
+    color: #270204;
+    border-top: 10px solid #e4010c; }
+  .Admonition p, .Admonition.Important p, .Admonition.Warning p {
+    margin: 0; }
+
+.figure, pre, .pseudocode, .sourcecode {
+  background-color: #e1eef1;
+  color: #424242;
+  font-size: 0.8em; }
+
+.Note {
+  background-color: #fff8bb;
+  color: #7d760b;
+  padding: 1.2em;
+  margin: 1em 0 1em 0; }
+  .Note p {
+    margin: 0; }
+
+.example {
+  background-color: #e1eef1;
+  color: #424242;
+  padding: 1.2em;
+  margin: 2em 0 1em 0;
+  padding-left: 2em; }
+  .example .example-title {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-left: -1.5em; }
+  .example pre, .example .pseudocode {
+    background: none; }
+
+.Quote {
+  background-color: #e1eef1;
+  font-style: italic;
+  width: 80%;
+  padding: 1.5em;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto; }
+
+.formula {
+  background-color: #f6f6f6;
+  padding: 1.5em;
+  margin-top: 2em;
+  text-align: center; }
+
+.recommend .RecommendationTitle, .recommendtest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.require .RecommendationTitle, .requiretest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.permission .RecommendationTitle, .permissiontest .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.RecommendationTestTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+/*
+.recommend {
+  &, .example_label {
+    background-color: #f8ffbd;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+
+.permission {
+  &, .example_label {
+    background-color: #cdfdbe;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+
+.require {
+  &, .example_label {
+    background-color: #d3e6ff;
+  }
+  .example_label {
+    font-weight: bold;
+  }
+}
+*/
+.recommend .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.require .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+.permission .RecommendationTitle {
+  font-weight: 700;
+  font-size: 1em;
+  text-align: center; }
+
+tbody td.recommend p.RecommendationTitle, tbody td.recommend p.RecommendationTitle, tbody td.recommend p.RecommendationTitle {
+  font-weight: normal;
+  text-align: left; }
+
+#myBtn {
+  font-family: "Space Mono",monospace;
+  font-variant-ligatures: none;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 12px;
+  border: none;
+  outline: none;
+  background-color: #00335b;
+  opacity: 0.15;
+  color: white;
+  cursor: pointer;
+  padding: 10px 15px 10px 15px;
+  border-radius: 4px; }
+  #myBtn:hover {
+    opacity: 1; }
+  @media print {
+    #myBtn {
+      display: none; } }
+a.anchorjs-link:hover {
+  background: none;
+  color: #2e81c2;
+  box-shadow: none; }
+
+@page {
+  margin: 2cm 1cm; }
+
+@media print {
+  h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    page-break-after: avoid;
+    margin-top: 1.2em; }
+  h1, .h1 {
+    font-size: 1.5em;
+    line-height: 1.5; }
+    h1.content, .h1.content {
+      margin-top: 2em;
+      line-height: 2.5em; }
+  h2, .h2 {
+    font-size: 1.2em; }
+  h3, .h3 {
+    font-size: 1em; }
+  .prefatory-section {
+    page-break-before: always; }
+  .note, .pseudocode {
+    page-break-inside: avoid; }
+  .Note {
+    background-color: #fff495;
+    color: #47430c;
+    padding: 5px;
+    margin: 2em 0 1em 0; }
+    .Note p {
+      padding: 0 5px 0 5px; }
+  nav {
+    line-height: 1; } }
+
+/* Footnotes */
+a.footnote-number {
+  vertical-align: super;
+  font-size: 0.8em; }
+
+.footnote {
+  font-size: 0.9em; }
+
+span.hi {
+  background-color: yellow; }
+
+-->
+</style><style><!--pre.sourcecode table td { padding: 5px; }
+pre.sourcecode table pre { margin: 0; }
+pre.sourcecode, pre.sourcecode .w {
+  color: #444444;
+}
+pre.sourcecode .cp {
+  color: #CC00A3;
+}
+pre.sourcecode .cs {
+  color: #CC00A3;
+}
+pre.sourcecode .c, pre.sourcecode .ch, pre.sourcecode .cd, pre.sourcecode .cm, pre.sourcecode .cpf, pre.sourcecode .c1 {
+  color: #1E90FF;
+}
+pre.sourcecode .kc {
+  color: #C34E00;
+}
+pre.sourcecode .kd {
+  color: #0000FF;
+}
+pre.sourcecode .kr {
+  color: #007575;
+}
+pre.sourcecode .k, pre.sourcecode .kn, pre.sourcecode .kp, pre.sourcecode .kt, pre.sourcecode .kv {
+  color: #0000FF;
+}
+pre.sourcecode .s, pre.sourcecode .sb, pre.sourcecode .sc, pre.sourcecode .ld, pre.sourcecode .sd, pre.sourcecode .s2, pre.sourcecode .se, pre.sourcecode .sh, pre.sourcecode .si, pre.sourcecode .sx, pre.sourcecode .sr, pre.sourcecode .s1, pre.sourcecode .ss {
+  color: #009C00;
+}
+pre.sourcecode .sa {
+  color: #0000FF;
+}
+pre.sourcecode .nb, pre.sourcecode .bp {
+  color: #C34E00;
+}
+pre.sourcecode .nt {
+  color: #0000FF;
+}
+--></style><title>OGC (add title text)</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--TOC script import-->
+<script type="text/javascript" src="https://cdn.rawgit.com/jgallen23/toc/0.3.2/dist/toc.min.js"></script>
+<script type="text/javascript">function toclevel() { return "h1:not(:empty):not(.TermNum):not(.noTOC),h2:not(:empty):not(.TermNum):not(.noTOC)";}
+</script>
+
+<!--Google fonts-->
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i|Space+Mono:400,700" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Overpass:300,300i,600,900" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Teko:300,400,500" rel="stylesheet" />
+
+<!--Font awesome import for the link icon-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous" />
+<style class="anchorjs"></style>
+<meta name="keywords" content="ogcdoc, OGC document, API, openapi, html" /><meta name="DC.subject" lang="en" content="ogcdoc, OGC document, API, openapi, html" xml:lang="en" /><meta name="description" content="&#x3c;Insert Abstract Text here&#x3e;" />
+<meta name="DC.description" lang="en" content="&#x3c;Insert Abstract Text here&#x3e;" xml:lang="en" /><meta name="DC.title" lang="en" content="OGC (add title text)" xml:lang="en" /><link rel="profile" href="http://dublincore.org/documents/2008/08/04/dc-html/" />
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<meta name="DC.language" content="en" />
+<meta name="DC.rights" lang="en" content="CC-BY-4.0" xml:lang="en" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<link rel="DCTERMS.license" href="https://www.ogc.org/license" />
+</head><body lang="EN-US" link="blue" vlink="#954F72" xml:lang="EN-US" class="container"><div class="title-section"><div class="document-stage-band" id="draft-band">
+    <p class="document-stage">Draft</p>
+</div>
+
+<div class="document-type-band" id="standard-band">
+    <p class="document-type">OGC Standard</p>
+</div>
+
+
+
+  <div id="toggle"> <span>•</span> </div>
+
+  <header>
+
+<!--<div class="WordSection1">-->
+  <div class="coverpage">
+    <div class="wrapper-top">
+
+  <div class="coverpage-doc-identity">
+
+    <div class="coverpage-title">
+      <span class="title-first">OGC (add title text)</span>
+      <!--<span class="title-second"></span>-->
+    </div>
+  </div>
+
+  <div class="coverpage-logo">
+    <span><img src="data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgMTUxMS42NSA1MDYuNzYiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDpub25lO30uY2xzLTJ7Y2xpcC1wYXRoOnVybCgjY2xpcC1wYXRoKTt9LmNscy0ze2ZpbGw6IzAwYjFmZjt9PC9zdHlsZT48Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSI+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iMTkyMCIgaGVpZ2h0PSI5NzguMjUiLz48L2NsaXBQYXRoPjwvZGVmcz48ZyBpZD0iQmx1ZV9Ib3Jpem9udGFsX0xvY2t1cCIgZGF0YS1uYW1lPSJCbHVlIEhvcml6b250YWwgTG9ja3VwIj48ZyBjbGFzcz0iY2xzLTIiPjxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIyMDQuMDcgMzY1LjI3IDIwNC4wNyA1MDYuNzMgMC4wMSAzODguOTEgMCAxNTMuMTUgMjA0LjA3IDI3MC45NyAyMDQuMDcgMzE4LjExIDE2My4zNCAyOTQuNjEgMTQyLjkzIDI4Mi44MiAxNDIuOTIgMjgyLjgyIDQwLjg0IDIyMy44OCA0MC44NCAzNjUuMzMgMTYzLjM0IDQzNi4wNiAxNjMuMzQgMzg4LjkxIDEwMi4wOSAzNTMuNTUgMTAyLjA5IDMyOS45NyAxMDIuMDkgMzA2LjQgMjA0LjA3IDM2NS4yNyIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTQyOC42OCwyMzUuNzYsMjI0LjUsMzUzLjY0LDQyOC42OCw0NzEuNTIsNjMyLjg1LDM1My42NFptMCwxODguNjFMMzA2LjE3LDM1My42NGwxMjIuNTItNzAuNzMsMTIyLjQ5LDcwLjczLTIwLjQxLDExLjc5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMyIgcG9pbnRzPSIzMjYuNzggMjcwLjQgMzY3LjYyIDI0Ni44MyA0MDguNDUgMjIzLjI1IDQwOC40NiAyNzAuNCA0NDkuMTggMjQ2Ljg5IDQ0OS4xOCAxNTMuMTIgMjQ1LjEyIDI3MC45NCAyNDUuMTIgMzE3LjU1IDI0NS4xMiAzMTcuNTUgMjQ1LjEyIDMzMS42MyAyNDUuMTIgNTA2LjE3IDI0NS4wMSA1MDYuMTEgMjQ1LjAxIDUwNi43NiA0NDkuMTggMzg4Ljg4IDQ0OS4xOCAyOTQuMDQgNDA4LjQ2IDMxNy41NiA0MDguNDYgMzY0LjcxIDI4NS45NSA0MzUuNDQgMjg1Ljk2IDI5My45OCAzMjYuNzggMjcwLjQiLz48ZyBjbGFzcz0iY2xzLTIiPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTg4MC41NywzOTguMTdjLTMyLjgxLDAtNTctMjQuMDYtNTctNTYuMDVzMjQuMi01Ni4wNSw1Ny01Ni4wNSw1Ni45MSwyNCw1Ni45MSw1Ni4wNS0yNC4xNSw1Ni4wNi01Ni45MSw1Ni4wNlptMzguODctNTYuMDVjMC0yMi4zLTE2LjU5LTM5LTM4Ljg3LTM5cy0zOSwxNi44NC0zOSwzOSwxNi42OSwzOSwzOSwzOSwzOC44Ny0xNi42OSwzOC44Ny0zOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEwMDAuNDgsMzEwLjc2YzI0Ljk0LDAsNDMuMTgsMTguNjIsNDMuMTgsNDMuNzFzLTE4LjI0LDQzLjc1LTQzLjE4LDQzLjc1YTQxLjY3LDQxLjY3LDAsMCwxLTI3LjY3LTEwLjA5VjQyNkg5NTUuNjdWMzEyLjhoMTEuNTVMOTcwLjQ0LDMyM2E0MS41LDQxLjUsMCwwLDEsMzAtMTIuMjZabTI1Ljg0LDQzLjcxYzAtMTUuNzEtMTEuNDctMjcuMzUtMjcuMTktMjcuMzVzLTI3LjMsMTEuNzUtMjcuMywyNy4zNSwxMS41OSwyNy4zNSwyNy4zLDI3LjM1LDI3LjE5LTExLjY0LDI3LjE5LTI3LjM1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTE0MS4xOSwzNTQuNjdhNTYuMTUsNTYuMTUsMCwwLDEtLjM1LDUuNjNoLTY3LjY1YzIuMTQsMTMuNSwxMS44NiwyMS44MSwyNS41MSwyMS44MSwxMCwwLDE4LTQuNjEsMjIuNDItMTIuMjFoMThjLTYuNjMsMTcuNi0yMS44NSwyOC4yOC00MC40NiwyOC4yOC0yNC4zNywwLTQyLjgzLTE4LjgxLTQyLjgzLTQzLjcxczE4LjQyLTQzLjcsNDIuODMtNDMuN2MyNS41MSwwLDQyLjQ5LDE5LjY0LDQyLjQ5LDQzLjlabS02Ny41OC04LjNIMTEyNGMtMy4wOC0xMi42Ni0xMi42Mi0yMC4xMy0yNS4zMS0yMC4xMy0xMi44OSwwLTIyLjI4LDcuNzctMjUuMDksMjAuMTMiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMjAzLjUsMzEwLjljMTkuNDksMCwzMS42NiwxNC41MywzMS42NiwzNS4wNnY1MC4xOUgxMjE4VjM0OS40NGMwLTE1LjE0LTYuNTktMjMuMTgtMTkuMTItMjMuMTgtMTMuMSwwLTIyLjM5LDEwLjU0LTIyLjM5LDI1LjI2djQ0LjYzaC0xNy4xNFYzMTIuOGgxMS45NWwzLjMyLDExLjYzYzYuMzEtOC40MSwxNi42MS0xMy41MywyOC44NS0xMy41M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik05MzMuNDUsNDkwLjJjLS40NCwzMy4xMi0yMi44LDU2Ljg5LTU0LjU0LDU2Ljg5cy01NS4zLTIzLjctNTUuMy01NiwyMy4yOS01Niw1NC45NS01NmMyNi4zNSwwLDQ4LjQsMTYuNTksNTMuMjgsNDAuMUg5MTMuNTZjLTQuNjMtMTMuODktMTguMzYtMjIuOTQtMzQuNjUtMjIuOTQtMjEuODQsMC0zNy4yNiwxNi0zNy4yNiwzOC44M3MxNSwzOC44NiwzNy4yNiwzOC44NmMxNy4yNSwwLDMxLjI3LTkuNzUsMzUuMzEtMjQuNDNIODc1LjdWNDkwLjE5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEwMzEuMzEsNTAzLjU4YTUzLjE5LDUzLjE5LDAsMCwxLS4zNiw1LjYzSDk2My4zYzIuMTQsMTMuNTEsMTEuODcsMjEuODEsMjUuNTEsMjEuODEsMTAsMCwxOC00LjYsMjIuNDMtMTIuMmgxOGMtNi42NCwxNy41OS0yMS44NSwyOC4yNy00MC40NiwyOC4yNy0yNC4zNywwLTQyLjgzLTE4LjgxLTQyLjgzLTQzLjdzMTguNDItNDMuNzEsNDIuODMtNDMuNzFjMjUuNSwwLDQyLjQ5LDE5LjY1LDQyLjQ5LDQzLjlabS02Ny41OC04LjI5aDUwLjRjLTMuMDgtMTIuNjYtMTIuNjItMjAuMTQtMjUuMzItMjAuMTQtMTIuODgsMC0yMi4yNyw3Ljc4LTI1LjA4LDIwLjE0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTA4Ny45NCw1NDcuMDljLTI1LjQ5LDAtNDQuNTYtMTguNjUtNDQuNTYtNDMuNzFzMTkuMDctNDMuNyw0NC41Ni00My43LDQ0LjU2LDE4LjYxLDQ0LjU2LDQzLjcxUzExMTMuMzksNTQ3LjA5LDEwODcuOTQsNTQ3LjA5Wm0yNy4xMi00My43MWMwLTE1Ljk1LTExLjM0LTI3LjM0LTI3LjEyLTI3LjM0cy0yNy4xMiwxMS4zOS0yNy4xMiwyNy4zNCwxMS4zNCwyNy4zNSwyNy4xMiwyNy4zNSwyNy4xMi0xMS4zOSwyNy4xMi0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTExNDQuNDQsNTE4LjZoMTYuNzRjLjQ0LDguODEsNy44NCwxMy40MSwxNy44OCwxMy40MSw5LjIxLDAsMTYuMjgtMy44OSwxNi4yOC0xMC44NiwwLTcuOS04Ljk0LTkuNzEtMTkuMTUtMTEuNDMtMTMuODktMi4zOC0zMC4yNS01LjUzLTMwLjI1LTI0Ljg1LDAtMTQuOTUsMTIuOTItMjUuMTksMzIuMzEtMjUuMTlzMzEuOTMsMTAuNTQsMzIuMjYsMjYuNzFoLTE2LjIyYy0uMzMtNy45My02LjM3LTEyLjE5LTE2LjQ0LTEyLjE5LTkuNDcsMC0xNS4zMyw0LTE1LjMzLDEwLjEyLDAsNy4zNSw4LjUsOC44MSwxOC41NiwxMC40NiwxNC4wOCwyLjM2LDMxLjE5LDUuMDcsMzEuMTksMjUuNjIsMCwxNi4xOS0xMy40OSwyNi42OS0zMy44LDI2LjY5cy0zMy41OS0xMS4yLTM0LTI4LjQ5IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTI3NS40OSw0NTkuNjhjMjQuOTQsMCw0My4xOCwxOC42MSw0My4xOCw0My43MXMtMTguMjQsNDMuNzUtNDMuMTgsNDMuNzVhNDEuNjUsNDEuNjUsMCwwLDEtMjcuNjctMTAuMXYzNy45aC0xNy4xNFY0NjEuNzFoMTEuNTVsMy4yMiwxMC4yNGE0MS40OCw0MS40OCwwLDAsMSwzMC0xMi4yN1ptMjUuODUsNDMuN2MwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zMSwxMS43NC0yNy4zMSwyNy4zNCwxMS41OSwyNy4zNSwyNy4zMSwyNy4zNSwyNy4xOS0xMS42MywyNy4xOS0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0MjAsNDYxLjY3VjU0NWgtMTMuODJsLTEuNjctMTAuMTRhNDEuODQsNDEuODQsMCwwLDEtMzAuMjIsMTIuMjFjLTI0Ljg0LDAtNDMuNC0xOC43Ni00My40LTQzLjc1czE4LjU2LTQzLjY2LDQzLjQtNDMuNjZjMTIuMjgsMCwyMi45MSw0LjY0LDMwLjQ4LDEyLjQxbDItMTAuNDJabS0xNy4xOCw0MS42N2MwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zLDExLjc0LTI3LjMsMjcuMzQsMTEuNTksMjcuMzUsMjcuMywyNy4zNSwyNy4xOS0xMS42NCwyNy4xOS0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0OTEuMDgsNTI5LjV2MTUuNTZoLTEyLjczYy0xOC4yNiwwLTI5LjUzLTExLjI2LTI5LjUzLTI5LjY4di0zOWgtMTQuOTF2LTMuMzJsMjktMzAuODJoMi45MXYxOS40NmgyNC44djE0LjY4SDE0NjZWNTE0YzAsOS45Myw1LjUzLDE1LjQ3LDE1LjYzLDE1LjQ3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE1MDcuNDIsNDMxLjEyaDE3Ljd2MTcuNjdoLTE3LjdabS4yOCwzMC41OWgxNy4xNHY4My4zNUgxNTA3LjdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTYzMi4yLDQ2MS42N1Y1NDVoLTEzLjgybC0xLjY3LTEwLjE0YTQxLjg0LDQxLjg0LDAsMCwxLTMwLjIyLDEyLjIxYy0yNC44MywwLTQzLjQtMTguNzYtNDMuNC00My43NXMxOC41Ny00My42Niw0My40LTQzLjY2YzEyLjI4LDAsMjIuOTEsNC42NCwzMC40OCwxMi40MWwyLTEwLjQyWk0xNjE1LDUwMy4zNGMwLTE1LjcxLTExLjQ4LTI3LjM0LTI3LjE5LTI3LjM0cy0yNy4zLDExLjc0LTI3LjMsMjcuMzQsMTEuNTksMjcuMzUsMjcuMywyNy4zNVMxNjE1LDUxOS4wNSwxNjE1LDUwMy4zNCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxyZWN0IGNsYXNzPSJjbHMtMyIgeD0iMTQ1Mi40NSIgeT0iMTk2LjA4IiB3aWR0aD0iMTcuMTQiIGhlaWdodD0iMTEzLjIzIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNODIzLjYxLDY0MGMwLTMyLjMzLDIzLjU3LTU2LDU1LjU0LTU2LDI1LjU2LDAsNDYuMDUsMTUuOTMsNTEuNzIsNDAuMjVoLTE4Yy01LjE2LTE0LjM5LTE3Ljc3LTIzLjA5LTMzLjc3LTIzLjA5LTIxLjY0LDAtMzcuNSwxNi4yOC0zNy41LDM4LjgzczE1Ljg2LDM4Ljc0LDM3LjUsMzguNzRjMTYuNTEsMCwyOS4yNy05LjMyLDM0LjE0LTI0LjY0aDE4Yy01LjYxLDI1LjQxLTI2LjEsNDEuOC01Mi4xMyw0MS44LTMyLDAtNTUuNTQtMjMuNjYtNTUuNTQtNTUuOSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTk4Ni44Niw2OTZjLTI1LjUsMC00NC41Ny0xOC42Ni00NC41Ny00My43MXMxOS4wNy00My43MSw0NC41Ny00My43MSw0NC41NiwxOC42Miw0NC41Niw0My43MVMxMDEyLjMsNjk2LDk4Ni44Niw2OTZaTTEwMTQsNjUyLjNjMC0xNS45NS0xMS4zNS0yNy4zNS0yNy4xMi0yNy4zNXMtMjcuMTMsMTEuNC0yNy4xMywyNy4zNSwxMS4zNSwyNy4zNSwyNy4xMywyNy4zNVMxMDE0LDY2OC4yNSwxMDE0LDY1Mi4zIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTA5My43Nyw2MDguNzNjMTkuNDksMCwzMS42NiwxNC41MywzMS42NiwzNS4wNlY2OTRIMTEwOC4zVjY0Ny4yN2MwLTE1LjEzLTYuNTktMjMuMTgtMTkuMTItMjMuMTgtMTMuMSwwLTIyLjM5LDEwLjU0LTIyLjM5LDI1LjI2VjY5NGgtMTcuMTRWNjEwLjYzaDExLjk1bDMuMzMsMTEuNjNjNi4zLTguNDEsMTYuNi0xMy41MywyOC44NC0xMy41M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMTQyLjQzLDY2Ny41MWgxNi43NGMuNDQsOC44Miw3Ljg0LDEzLjQyLDE3Ljg5LDEzLjQyLDkuMiwwLDE2LjI3LTMuOSwxNi4yNy0xMC44NiwwLTcuOTEtOC45NC05LjcyLTE5LjE1LTExLjQzLTEzLjg4LTIuMzgtMzAuMjUtNS41NC0zMC4yNS0yNC44NiwwLTE0Ljk1LDEyLjkzLTI1LjE4LDMyLjMxLTI1LjE4czMxLjk0LDEwLjU0LDMyLjI3LDI2LjdoLTE2LjIzYy0uMzMtNy45My02LjM3LTEyLjE4LTE2LjQ0LTEyLjE4LTkuNDcsMC0xNS4zMyw0LTE1LjMzLDEwLjExLDAsNy4zNiw4LjUxLDguODEsMTguNTYsMTAuNDcsMTQuMDksMi4zNSwzMS4yLDUuMDcsMzEuMiwyNS42MiwwLDE2LjE5LTEzLjUsMjYuNjktMzMuODEsMjYuNjlzLTMzLjU5LTExLjIxLTM0LTI4LjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xMjY3LjEyLDY5NmMtMjUuNSwwLTQ0LjU3LTE4LjY2LTQ0LjU3LTQzLjcxczE5LjA3LTQzLjcxLDQ0LjU3LTQzLjcxLDQ0LjU2LDE4LjYyLDQ0LjU2LDQzLjcxUzEyOTIuNTYsNjk2LDEyNjcuMTIsNjk2Wm0yNy4xMi00My43MWMwLTE1Ljk1LTExLjM1LTI3LjM1LTI3LjEyLTI3LjM1UzEyNDAsNjM2LjM1LDEyNDAsNjUyLjNzMTEuMzUsMjcuMzUsMjcuMTMsMjcuMzUsMjcuMTItMTEuNCwyNy4xMi0yNy4zNSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTEzNzcuMzMsNjEwLjE2djE2LjE5aC05Yy0xNC4xNywwLTIxLjI0LDguMDgtMjEuMjQsMjMuMThWNjk0aC0xNy4xNFY2MTAuNjNoMTEuNTlsMi45LDExLjM3YzYtNy45LDE0LjE0LTExLjg0LDI1LjUyLTExLjg0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0MzcuNTMsNjc4LjQxVjY5NGgtMTIuNzRjLTE4LjI2LDAtMjkuNTItMTEuMjctMjkuNTItMjkuNjh2LTM5aC0xNC45MVY2MjJsMjktMzAuODJoMi45MnYxOS40NmgyNC44VjYyNS4zSDE0MTIuNHYzNy42NGMwLDkuOTQsNS41MywxNS40NywxNS42MiwxNS40N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDQuMTcgLTIzNS43NikiLz48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNDUzLjg2LDU4MGgxNy43MXYxNy42N2gtMTcuNzFabS4yOSwzMC41OWgxNy4xM1Y2OTRoLTE3LjEzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwNC4xNyAtMjM1Ljc2KSIvPjxwYXRoIGNsYXNzPSJjbHMtMyIgZD0iTTE0OTQuMzYsNjU4Ljc4VjYxMC42M2gxNy4xNHY0NS43NWMwLDE0LjQ4LDcuOSwyMy4yNywyMC43NywyMy4yN1MxNTUzLDY3MC43LDE1NTMsNjU2LjM4VjYxMC42M2gxNy4xNHY0OC4xNWMwLDIyLjQzLTE0Ljg3LDM3LjIzLTM3Ljg3LDM3LjIzcy0zNy45MS0xNC44LTM3LjkxLTM3LjIzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PHBhdGggY2xhc3M9ImNscy0zIiBkPSJNMTY4Ni4zOSw2MDguNzNjMTcuNTcsMCwyOS40MywxMy4zNywyOS40MywzMi4yNHY1M2gtMTcuMTN2LTQ4LjhjMC0xMy40Mi01LjgzLTIxLjA5LTE2LjIxLTIxLjA5LTExLDAtMTkuNTUsMTAuMTItMTkuNTUsMjQuMzFWNjk0SDE2NDYuMnYtNDguOGMwLTEzLjQyLTUuNzktMjEuMDktMTYuMjQtMjEuMDktMTEuMDgsMC0xOS42MywxMC4xMi0xOS42MywyNC4zMVY2OTRIMTU5My4yVjYxMC42M2gxMi4xNGwzLDEwLjc3YTMzLjM4LDMzLjM4LDAsMCwxLDI1Ljg5LTEyLjY3YzExLjMsMCwyMC4yNSw1LjU1LDI1LDE0LjU5YTMzLDMzLDAsMCwxLDI3LjItMTQuNTlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjA0LjE3IC0yMzUuNzYpIi8+PC9nPjwvZz48L2c+PC9zdmc+" alt="Open Geospatial Consortium" width="" height="" /></span>
+  </div>
+
+  <!--
+  <div class="coverpage-tc-name">
+    <span>Technical</span>
+  </div>
+  -->
+
+  <div class="authors">
+    
+    
+    
+
+    
+    
+    <span>Editor One <span class="roletag">Editor</span></span>
+    
+    <span>Editor Two <span class="roletag">Editor</span></span>
+    
+    
+  </div>
+
+    <div class="coverpage-metadata">
+      <span class="label">Submission Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">Approval Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">Publication Date: </span> <span class="value">2029-03-30</span>
+      <span class="label">External identifier of this OGC® document: <span class="docnumber value">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</span></span>
+      <span class="label">Internal identifier of this OGC® document: <span class="docnumber value">YY-999</span></span>
+      
+      
+    </div>
+
+    <div class="coverpage-alt-formats">
+      
+      <span class="label">Version: </span> <span class="value">1.0</span><br />
+      
+    
+      <span class="label">Additional Formats: </span>
+      
+      <span class="value"><a href="./document.xml"><i class="far fa-file-code"></i>XML</a></span>
+      
+      
+      <span class="value"><a href="./document.pdf"><i class="far fa-file-pdf"></i>PDF</a></span>
+      
+      
+      <span class="value"><a href="./document.doc"><i class="far fa-file-word"></i>DOC</a></span>
+      
+      </div>
+    
+    </div>
+
+  </div>
+
+    <div class="wrapper-top-bottom"></div>
+
+  <div class="WordSection11">
+  <div class="coverpage-stage-block">
+    <span class="coverpage-stage" id="standard">OGC Standard</span>
+  </div>
+
+  <div class="coverpage-stage-block">
+    <p><span class="coverpage-maturity" id="draft">Draft</span></p>
+  </div>
+</div>
+
+  <div class="coverpage-warning">
+    <div class="boilerplate-legal">
+
+<div id="_notice_for_drafts"><h1 class="IntroTitle"><a class="anchor" href="#_notice_for_drafts"></a><a class="header" href="#_notice_for_drafts">Notice for Drafts</a></h1>
+
+<p id="_09caafd2-d047-3050-9095-b3f182faf86f">This document is not an OGC Standard. This document is distributed for review and comment. This document is subject to change without notice and may not be referred to as an OGC Standard.</p>
+
+<p id="_d80fd0eb-fbfd-dec3-0ddb-92472f4d5fcf">Recipients of this document are invited to submit, with their comments, notification of any relevant patent rights of which they are aware and to provide supporting documentation.</p>
+</div>
+</div>
+ </div>
+         
+
+
+<div class="docstage-box">
+  <table>
+    <tr><td>Document number:</td><td>YY-999</td></tr>
+    <tr><td>Document type:</td><td>OGC Standard</td></tr>
+    <tr><td align="right">Document subtype:</td><td align="right">Implementation</td></tr>
+    <tr><td align="right">Document stage:</td><td align="right">Draft</td></tr>
+    <tr><td align="right">Document language:</td><td align="right">English</td></tr>
+  </table>
+</div>
+
+<div class="info-section">
+<div class="copyright">
+  <div class="boilerplate-copyright">
+
+<div id="_copyright_notice"><h1 class="IntroTitle"><a class="anchor" href="#_copyright_notice"></a><a class="header" href="#_copyright_notice">Copyright notice</a></h1>
+
+<p id="_09cc624e-08fe-4298-0e48-fd64aab88de3" style="text-align:center;">Copyright © 2025 Open Geospatial Consortium<br /> To obtain additional rights of use, visit<a href="https://www.ogc.org/legal">https://www.ogc.org/legal</a></p>
+</div>
+
+<div id="_note"><h1 class="IntroTitle"><a class="anchor" href="#_note"></a><a class="header" href="#_note">Note</a></h1>
+
+<p id="_11e88dba-9912-1a89-a82d-7291bf232191" style="text-align:left;">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p>
+
+<p id="_15067213-c07b-cba0-7e18-395ab2e00ab3" style="text-align:left;">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p>
+</div>
+</div>
+</div>
+
+<div class="rule"></div>
+</div>
+  </header>
+</div><br /><div class="prefatory-section"><div class="license">
+  <div class="boilerplate-license">
+
+<div id="_license_agreement"><h1 class="IntroTitle"><a class="anchor" href="#_license_agreement"></a><a class="header" href="#_license_agreement">License Agreement</a></h1>
+
+<p id="_f5fe34fd-12e2-2bb7-8cd6-9d4cffa96538">Use of this document is subject to the license agreement at <a href="https://www.ogc.org/license">https://www.ogc.org/license</a></p>
+</div>
+</div>
+
+
+<div class="boilerplate-feedback">
+
+<div id="boilerplate-standard-feedback">
+<p id="_bb5602d2-6eb1-e557-e221-499759fe237f">Suggested additions, changes and comments on this document are welcome and encouraged. Such suggestions may be submitted using the online change request form on OGC web site: <a href="http://ogc.standardstracker.org/">http://ogc.standardstracker.org/</a></p>
+</div>
+</div>
+
+
+</div>
+
+<nav>
+  <div id="toc"><h1 class="IntroTitle"><a class="anchor" href="#_bb8bc6ed-f15a-4888-894a-541e6f7f9c10"></a><a class="header" href="#_bb8bc6ed-f15a-4888-894a-541e6f7f9c10">Contents</a></h1><ul><li class="h1"><a href="#_abstract">      
+  
+  I.  Abstract
+</a></li>
+<li class="h1"><a href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d">      
+  
+  II.  Keywords
+</a></li>
+<li class="h1"><a href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3">      
+  
+  III.  Preface
+</a></li>
+<li class="h1"><a href="#_security_considerations">      
+  
+  IV.  Security considerations
+</a></li>
+<li class="h1"><a href="#_1e57be44-5180-4129-981e-1f17714c1524">      
+  
+  V.  Submitting Organizations
+</a></li>
+<li class="h1"><a href="#_submitters">      
+  
+  VI.  Submitters
+</a></li>
+<li class="h1"><a href="#_submitters">      
+  
+  Submitters
+</a></li>
+<li class="h1"><a href="#_contributors">      
+  
+  VII.  Contributors
+</a></li>
+<li class="h1"><a href="#_contributors">      
+  
+  Contributors
+</a></li>
+<li class="h1"><a href="#_scope">      
+  
+  1.  Scope
+</a></li>
+<li class="h1"><a href="#_conformance">      
+  
+  2.  Conformance
+</a></li>
+<li class="h1"><a href="#_025f9832-4d49-4805-ac58-b2a140d3ccaa">      3.  Normative references</a></li>
+<li class="h1"><a href="#_terms_and_definitions">      
+  
+  4.  Terms and definitions
+</a></li>
+<li class="h1"><a href="#_conventions">      
+  
+  5.  Conventions
+</a></li>
+<li class="h2"><a href="#_identifiers">      
+  
+  5.1.  Identifiers
+</a></li>
+<li class="h1"><a href="#_clauses_not_containing_normative_material">      
+  
+  6.  Clauses not containing normative material
+</a></li>
+<li class="h2"><a href="#_clauses_not_containing_normative_material_sub_clause_1">      
+  
+  6.1.  Clauses not containing normative material sub-clause 1
+</a></li>
+<li class="h2"><a href="#_clauses_not_containing_normative_material_sub_clause_2">      
+  
+  6.2.  Clauses not containing normative material sub-clause 2
+</a></li>
+<li class="h1"><a href="#_unified_data_model">      
+  
+  7.  Unified Data Model
+</a></li>
+<li class="h2"><a href="#_scope_and_purpose">      
+  
+  7.1.  Scope and Purpose
+</a></li>
+<li class="h2"><a href="#_foundational_model_and_standards_reuse">      
+  
+  7.2.  Foundational Model and Standards Reuse
+</a></li>
+<li class="h2"><a href="#_model_extension_points">      
+  
+  7.3.  Model Extension Points
+</a></li>
+<li class="h2"><a href="#_unified_model_structure">      
+  
+  7.4.  Unified Model Structure
+</a></li>
+<li class="h2"><a href="#_conformance_and_extensibility">      
+  
+  7.5.  Conformance and Extensibility
+</a></li>
+<li class="h2"><a href="#_interoperability_considerations">      
+  
+  7.6.  Interoperability Considerations
+</a></li>
+<li class="h1"><a href="#_unified_data_model_encoding_for_zarr">      
+  
+  8.  Unified Data Model Encoding for Zarr
+</a></li>
+<li class="h2"><a href="#_hierarchical_structure">      
+  
+  8.1.  Hierarchical Structure
+</a></li>
+<li class="h2"><a href="#_dimensions">      
+  
+  8.2.  Dimensions
+</a></li>
+<li class="h2"><a href="#_coordinate_variables">      
+  
+  8.3.  Coordinate Variables
+</a></li>
+<li class="h2"><a href="#_data_variables">      
+  
+  8.4.  Data Variables
+</a></li>
+<li class="h2"><a href="#_global_metadata">      
+  
+  8.5.  Global Metadata
+</a></li>
+<li class="h2"><a href="#_variables_metadata">      
+  
+  8.6.  Variables Metadata
+</a></li>
+<li class="h2"><a href="#_encoding_of_multiscale_overviews_in_zarr">      
+  
+  8.7.  Encoding of Multiscale Overviews in Zarr
+</a></li>
+<li class="h1"><a href="#_unified_data_model_encoding_for_geotiff">      
+  
+  9.  Unified Data Model Encoding for GeoTiff
+</a></li>
+<li class="h1"><a href="#_conformance_class_abstract_test_suite_normative">      
+  
+  Annex A (informative) Conformance Class Abstract Test Suite (Normative)
+</a></li>
+<li class="h2"><a href="#_conformance_class_a">      
+  
+  A.1.  Conformance Class A
+</a></li>
+<li class="h1"><a href="#_title">      
+  
+  Annex B (informative) Title
+</a></li>
+<li class="h1"><a href="#_revision_history">      
+  
+  Annex C (informative) Revision History
+</a></li>
+<li class="h1"><a href="#_c79bda6c-8141-4485-9478-3e5de031ab08">      Bibliography</a></li></ul></div>
+
+</nav>
+
+
+<div class="rule toc"></div>
+</div><br /><main class="main-section"><button onclick="topFunction()" id="myBtn" title="Go to top">Top</button><div class="authority">
+
+
+
+
+
+
+</div><br /><br /><div id="_abstract"><h1 class="AbstractTitle" id="_6e6b7851-289e-47ed-8cbd-6aaed82befd3"><a class="anchor" href="#_abstract"></a><a class="header" href="#_abstract">I.  Abstract</a></h1><p id="_ea8b918b-259f-ad32-41cd-bf6720709423">&#x3c;Insert Abstract Text here&#x3e;</p></div><div class="Section3" id="_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d"><h1 class="IntroTitle" id="_0aacf16c-3767-4517-aaed-58e7cb7feef5"><a class="anchor" href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d"></a><a class="header" href="#_ab477d90-3d1e-4d10-8ecb-4bf7bc8cf68d">II.  Keywords</a></h1><p>The following are keywords to be used by search engines and document catalogues.</p><p>ogcdoc, OGC document, API, openapi, html</p></div><br /><div id="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"><h1 class="ForewordTitle" id="_d59ddba8-02c3-46c7-84fa-0bb5029929e2"><a class="anchor" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"></a><a class="header" href="#_2fc7f941-8cac-e65f-3e51-3b9f18652ea3">III.  Preface</a></h1><div id="_b54ab49b-0988-938f-ab2d-38e2ffda33ce" class="Note"><p><span class="note_label">NOTE:  </span>Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.</p></div><p id="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a">Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p><p id="_25f6b7a1-8657-2655-9eff-47df179631e0">Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p></div><div class="Section3" id="_security_considerations"><h1 class="IntroTitle" id="_a6daa718-9c5c-4c33-8570-20a70547977e"><a class="anchor" href="#_security_considerations"></a><a class="header" href="#_security_considerations">IV.  Security considerations</a></h1><p id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae">No security considerations have been made for this Standard.</p></div><div class="Section3" id="_1e57be44-5180-4129-981e-1f17714c1524"><h1 class="IntroTitle" id="_a3743347-ea4a-483e-aaae-3b35c693cca4"><a class="anchor" href="#_1e57be44-5180-4129-981e-1f17714c1524"></a><a class="header" href="#_1e57be44-5180-4129-981e-1f17714c1524">V.  Submitting Organizations</a></h1><p>The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><ul><li>Organization One</li>
+<li>Organization Two</li></ul></div></div><div class="Section3" id="_submitters"><h1 class="IntroTitle" id="_7dbf5d60-1d68-4890-aea9-ff0deee12e1a"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">VI.  Submitters</a></h1><h1 id="_5636485c-5192-4a44-9577-a591b1dc567e"><a class="anchor" href="#_submitters"></a><a class="header" href="#_submitters">Submitters</a></h1><p id="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9">All questions regarding this submission should be directed to the editor or the submitters:</p><table id="_7c862f68-dc17-1a57-b670-05344091cf61" class="MsoISOTable" style="border-width:1px;border-spacing:0;"><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Name</b></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><b>Affiliation</b></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"></td></tr></tbody></table></div><div class="Section3" id="_contributors"><h1 class="IntroTitle" id="_1a21885b-504f-4074-bf49-d4970ca08343"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">VII.  Contributors</a></h1><h1 id="_54adbabb-b69f-4a41-9d82-f793c7e232e2"><a class="anchor" href="#_contributors"></a><a class="header" href="#_contributors">Contributors</a></h1><p id="_621c4f5b-26a9-89f7-0840-938819089a27">Additional contributors to this Standard include the following:</p><p id="_45f943af-cadd-6488-bff5-c1c1376f2096">Individual name(s), Organization</p></div><div id="_scope"><h1 id="_a316f553-23d5-4775-b0a8-ad6dfce92db6"><a class="anchor" href="#_scope"></a><a class="header" href="#_scope">1.  Scope</a></h1><div id="_19759895-aabd-4232-a497-4ca4b6a23eb3" class="Note"><p><span class="note_label">NOTE:  </span>Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.</p></div></div><div id="_conformance"><h1 id="_004f71bf-a746-4167-8c5e-7598d16d33b8"><a class="anchor" href="#_conformance"></a><a class="header" href="#_conformance">2.  Conformance</a></h1><p id="_12e50e71-32c9-4841-9afc-c19b6e3ab821">This standard defines XXXX.</p><p id="_b116691a-08b1-0620-ae3d-86e5f3a8a421">Requirements for N standardization target types are considered:</p><div class="ul_wrap"><ul id="_7e05e339-83a3-d931-6767-a7c123e12b74"><li><p id="_1bd63b7e-eb98-ad43-1de4-c21d99d60ac2">AAAA</p>
+</li>
+<li><p id="_b6bc9b8a-bd3e-ce9e-7522-1f98d4945205">BBBB</p>
+</li>
+</ul></div><p id="_c881dc19-eab9-6206-0bbd-c6f07d4bb744">Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.</p><p id="_7552ac2a-6499-a44e-13ca-4abd7e2a63c4">In order to conform to this OGC® interface standard, a software implementation shall choose to implement:</p><div class="ul_wrap"><ul id="_85556d81-fbe8-6680-06da-7a660f86b7d0"><li><p id="_28d16a05-e578-c5ec-eb3f-87a36de9e044">Any one of the conformance levels specified in Annex A (normative).</p>
+</li>
+<li><p id="_0b67bb92-65e2-2183-4a16-11664b0f122f">Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).</p>
+</li>
+</ul></div><p id="_595f6be4-4135-af56-59ba-b377f03b0a65">All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.</p></div><div><h1 id="_025f9832-4d49-4805-ac58-b2a140d3ccaa">3.  Normative references</h1>
+<p id="_307b20e2-9e40-db56-abbf-2822ab2941cc">The following documents are referred to in the text in such a way that some or all of their content constitutes requirements of this document. For dated references, only the edition cited applies. For undated references, the latest edition of the referenced document (including any amendments) applies.</p>
+
+
+
+
+
+<p id="Smith81" class="NormRef"><i>Identification of Common Molecular Subsequences</i>.
+Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195–197 (1981)</p>
+<p id="May06" class="NormRef"><i>ZIB Structure Prediction Pipeline: Composing a Complex Biological Workflow through Web Services</i>.
+May, P., Ehrlich, H.C., Steinke, T. In: Nagel, W.E., Walter,
+W.V., Lehner, W. (eds.) Euro-Par 2006. LNCS, vol. 4128, pp. 1148–1158. Springer,
+Heidelberg (2006)</p>
+<p id="Grid" class="NormRef"><i>The Grid: Blueprint for a New Computing Infrastructure.</i>,
+Foster, I., Kesselman, C.. Morgan Kaufmann, San Francisco (1999).</p>
+<p id="Czajkowski01" class="NormRef"><i>Grid Information Services for Distributed Resource Sharing.</i>
+Czajkowski, K., Fitzgerald, S., Foster, I., Kesselman, C. In: 10th IEEE International Symposium on High
+Performance Distributed Computing, pp. 181–184. IEEE Press, New York (2001)</p>
+<p id="Foster02" class="NormRef"><i>The Physiology of the Grid: an Open Grid Services Architecture for Distributed Systems Integration.</i>
+Foster, I., Kesselman, C., Nick, J., Tuecke, S. Technical report, Global Grid Forum (2002)</p>
+<p id="NCBI" class="NormRef"><i>National Center for Biotechnology Information</i>, <a href="http://www.ncbi.nlm.nih.gov">http://www.ncbi.nlm.nih.gov</a></p>
+<p id="ISO19101-1" class="NormRef">ISO: ISO 19101-1:2014, <i>Geographic information — Reference model — Part 1: Fundamentals</i>. International Organization for Standardization, Geneva (2014). <a href="https://www.iso.org/standard/59164.html">https://www.iso.org/standard/59164.html</a>.</p>
+<p id="ISO19115-1" class="NormRef">ISO: ISO 19115-1:2014, <i>Geographic information — Metadata — Part 1: Fundamentals</i>. International Organization for Standardization, Geneva (2014). <a href="https://www.iso.org/standard/53798.html">https://www.iso.org/standard/53798.html</a>.</p>
+<p id="ISO19157" class="NormRef">ISO: ISO 19157:2013, <i>Geographic information  — Data quality</i>. International Organization for Standardization, Geneva (2013). <a href="https://www.iso.org/standard/32575.html">https://www.iso.org/standard/32575.html</a>.</p>
+<p id="ISO19139" class="NormRef">ISO: ISO 19139:2007, <i>Geographic information — Metadata — XML schema implementation</i>. ISO (2007).</p>
+<p id="ISO19115-3" class="NormRef">ISO: ISO 19115-3, <i>Geographic information — Metadata — Part 3: XML schema implementation for fundamental concepts</i>. International Organization for Standardization, Geneva <a href="https://www.iso.org/standard/80874.html">https://www.iso.org/standard/80874.html</a>.</p>
+<p id="OGC15-097" class="NormRef">Joan Masó, Lucy Bastin: OGC 15-097r1, <i>OGC® Geospatial User Feedback Standard: Conceptual Model</i>. Open Geospatial Consortium (2016). <a href="http://www.opengis.net/doc/IS/guf-conceptual/1.0.0">http://www.opengis.net/doc/IS/guf-conceptual/1.0.0</a>.</p>
+<p id="OGC12-019" class="NormRef">Gerhard Gröger, Thomas H. Kolbe, Claus Nagel, Karl-Heinz Häfele: OGC 12-019, <i>OGC City Geography Markup Language (CityGML) Encoding Standard</i>. Open Geospatial Consortium (2012). <a href="http://www.opengis.net/spec/citygml/2.0">http://www.opengis.net/spec/citygml/2.0</a>.</p>
+<p id="OGC14-005r3" class="NormRef">Jiyeong Lee, Ki-Joune Li, Sisi Zlatanova, Thomas H. Kolbe, Claus Nagel, Thomas Becker: OGC 14-005r3, <i>OGC® IndoorGML</i>. Open Geospatial Consortium (2014). <a href="http://www.opengis.net/doc/IS/indoorgml/1.0.0">http://www.opengis.net/doc/IS/indoorgml/1.0.0</a>.</p>
+<p id="OGC06121r9" class="NormRef">Arliss Whiteside, Jim Greenwood: OGC 06-121r9, <i>OGC Web Service Common Implementation Specification</i>. Open Geospatial Consortium (2010). <a href="https://portal.ogc.org/files/?artifact_id=38867">https://portal.ogc.org/files/?artifact_id=38867</a>.</p>
+</div><div id="_terms_and_definitions"><h1 id="_847812f2-7597-4e83-be3a-0250cc3abc8d"><a class="anchor" href="#_terms_and_definitions"></a><a class="header" href="#_terms_and_definitions">4.  Terms and definitions</a></h1>
+<p id="_7fe04b5b-db41-5d9b-ebe1-463b3a0c16c9">This document uses the terms defined in <a href="https://portal.ogc.org/public_ogc/directives/directives.php">OGC Policy Directive 49</a>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this document and OGC documents do not use the equivalent phrases in the ISO/IEC Directives, Part 2.</p>
+
+<p id="_e0235fe8-8273-26b4-faeb-a580ad58929f">This document also uses terms defined in the OGC Standard for Modular specifications (<a href="https://portal.opengeospatial.org/files/?artifact_id=34762">OGC 08-131r3</a>), also known as the ‘ModSpec’. The definitions of terms such as standard, specification, requirement, and conformance test are provided in the ModSpec.</p>
+
+<p id="_1448dc16-8929-d666-6525-0249826c75e3">For the purposes of this document, the following additional terms and definitions apply.</p>
+
+<p id="_a5c2011b-080b-de57-753c-94b804e5f324">This document uses the terms defined in Sub-clause 5.3 of <a href="#OGC06-121r9">[OGC06-121r9]</a>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word “shall” (not “must”) is the verb form used to indicate a requirement to be strictly followed to conform to this standard.</p>
+
+<p id="_ccf3e63b-6acc-0cd0-687c-fd7f951288d6">For the purposes of this document, the following additional terms and definitions apply.</p>
+
+<div id="term-example-term"><h2 class="TermNum" style="text-align:left;" id="_5bda7f42-3554-4015-a47b-6a4494026ce1"><a class="anchor" href="#term-example-term"></a><a class="header" href="#term-example-term">4.1. <b>example term</b></a></h2></div>
+<p id="_06db0da1-214c-7f57-bd34-fd4f77edb6ed">term used for exemplary purposes</p>
+
+
+
+
+
+
+ <div id="_dba7a326-d460-4fd2-c200-c18e257c490b" class="Note"><p><span class="termnote_label">Note 1 to entry: </span>An example note.</p></div><p class="SourceTitle" style="text-align:center;">Example</p><div id="_6e5e388f-3384-3fe0-1387-5c648e5561e6" class="example"><p id="_2d45db5a-97c4-2358-7890-3aa696c4b809">Here’s an example of an example term.</p>
+</div><p>[<b>SOURCE:</b> <a href="#ISO19101-1">ISO 19101-1:2014</a>]</p>
+</div><div id="_conventions"><h1 id="_fbd5fa19-28b6-45f1-968f-354bf2f6888e"><a class="anchor" href="#_conventions"></a><a class="header" href="#_conventions">5.  Conventions</a></h1><p id="_f287e0a4-ca0e-ef98-6e01-5d09472b62aa">This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.</p><div id="_identifiers"><h2 id="_85a7fae7-b549-443c-bf60-e4b0ef0dc737"><a class="anchor" href="#_identifiers"></a><a class="header" href="#_identifiers">5.1.  Identifiers</a></h2>
+
+<p id="_34025c5d-dda4-c61f-5774-94f51d938b80">The normative provisions in this standard are denoted by the URI</p>
+
+<p id="_f0191874-4eeb-2c92-18f2-f1367cf61a60"><tt><a href="http://www.opengis.net/spec/{standard}/{m.n}">http://www.opengis.net/spec/{standard}/{m.n}</a></tt></p>
+
+<p id="_52250454-5ac3-4fce-7c83-eb454adf6103">All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.</p>
+</div></div><div id="_clauses_not_containing_normative_material"><h1 id="_1337b323-0bcf-45b5-bfaf-c85beedec5fc"><a class="anchor" href="#_clauses_not_containing_normative_material"></a><a class="header" href="#_clauses_not_containing_normative_material">6.  Clauses not containing normative material</a></h1><p id="_6f5c8cdc-826f-564e-03f0-7b929261119c">Paragraph</p><div id="_clauses_not_containing_normative_material_sub_clause_1"><h2 id="_591e9d27-d186-4346-950d-2eef2ebc8cfc"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_1"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_1">6.1.  Clauses not containing normative material sub-clause 1</a></h2>
+
+<p id="_99f22d46-0d65-7e82-4ecc-93498c6ea8b6">Paragraph</p>
+</div><div id="_clauses_not_containing_normative_material_sub_clause_2"><h2 id="_ebd4c916-6c5d-4b97-ae36-6257438dd481"><a class="anchor" href="#_clauses_not_containing_normative_material_sub_clause_2"></a><a class="header" href="#_clauses_not_containing_normative_material_sub_clause_2">6.2.  Clauses not containing normative material sub-clause 2</a></h2>
+
+</div></div><div id="_unified_data_model"><h1 id="_78ef8316-616d-4ac6-aa7d-14e6ad1862ee"><a class="anchor" href="#_unified_data_model"></a><a class="header" href="#_unified_data_model">7.  Unified Data Model</a></h1><div id="_scope_and_purpose"><h2 id="_71db0923-1f6e-442d-9f85-5fc0a952f173"><a class="anchor" href="#_scope_and_purpose"></a><a class="header" href="#_scope_and_purpose">7.1.  Scope and Purpose</a></h2>
+
+<p id="_dc8c1099-e018-dcdd-581d-b44eabf32c50">This Standard defines a unified data model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems..</p>
+
+<p id="_8a8e6726-4887-7d79-e248-7b3e78368656">The unified data model incorporates and extends the following established specifications and community standards:</p>
+
+<div class="ul_wrap"><ul id="_f1e9aa34-0bdc-c472-1ce1-0b851396b8dc"><li><p id="_f2568403-ecbf-b4de-c944-11ae836ebd15"><b>Unidata Common Data Model (CDM)</b> – Provides the foundational resource structure for scientific datasets, encompassing dimensions, coordinate systems, variables, and associated metadata elements.</p>
+</li>
+<li><p id="_1baa946c-f017-8cab-8bd8-2b26550745f5"><b>CF (Climate and Forecast) Conventions</b> – Defines a widely adopted metadata profile for describing spatiotemporal semantics in CDM-based datasets.</p>
+</li>
+<li><p id="_99acba8b-fadd-861e-6650-120d88ec6868"><b>Selected constructs from related Standards and practices</b>, including:</p>
+</li>
+<li><p id="_d9d6d4a2-9e12-32b3-1f5d-6503abb43063">The <b>OGC Tile Matrix Set Standard</b>, which enables multi-resolution representations of gridded data.</p>
+</li>
+<li><p id="_48613c97-bc77-1ac7-696d-746c0c29af5a"><b>GDAL geotransform metadata</b>, used to express affine transformations and interpolation characteristics.</p>
+</li>
+<li><p id="_89bb4bd2-a810-e96c-b56e-61aabdf2f363"><b>SpatioTemporal Asset Catalog (STAC)</b> metadata elements for resource discovery and cataloguing (Collection and Item constructs).</p>
+</li>
+</ul></div>
+
+<p id="_bc2fbadd-eba2-7505-02f6-a2c532f091c2">The unified model is format-agnostic and describes the abstract structure of resources independently of the physical encoding. It does not redefine the semantics of the CDM or CF conventions, but introduces integration and extension points required to support tiled multiscale data, geospatial referencing, and metadata for discovery.</p>
+
+<p id="_93a4f216-7f7a-6fb5-ae57-93c3eab4079b">This clause specifies the logical composition of the unified model, the external standards it leverages, and the conformance points that facilitate harmonised implementation within the GeoZarr framework.</p>
+</div><div id="_foundational_model_and_standards_reuse"><h2 id="_06d3b1ac-e1df-49b5-be57-8f822644c661"><a class="anchor" href="#_foundational_model_and_standards_reuse"></a><a class="header" href="#_foundational_model_and_standards_reuse">7.2.  Foundational Model and Standards Reuse</a></h2>
+
+<p id="_500c9b27-22b1-fed6-9b30-3905bc6c020b">The unified data model described in this Standard is derived from established community specifications to maximise interoperability and to enable the reuse of mature tools and practices. The model is grounded in the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, which together provide a robust framework for representing scientific and geospatial datasets.</p>
+
+<div id="_common_data_model_cdm"><h3><a class="anchor" href="#_common_data_model_cdm"></a><a class="header" href="#_common_data_model_cdm">7.2.1.  Common Data Model (CDM)</a></h3>
+
+<p id="_140a1008-01ac-53ad-ad88-5e8453f9c96c">The CDM defines a generalised schema for representing array-based scientific datasets. The following constructs are reused directly within the unified model:</p>
+
+<div class="ul_wrap"><ul id="_cacfa0a0-8934-eed8-475d-ee7238b91302"><li><p id="_c7da787d-b0e9-9240-2a93-dbe54762f0ae"><b>Dimensions</b> – Integer-valued, named axes that define the extents of data variables.</p>
+</li>
+<li><p id="_4437bae8-6544-734d-abc6-2390caa98f73"><b>Coordinate Variables</b> – Variables that supply coordinate values along dimensions, establishing spatial or temporal context.</p>
+</li>
+<li><p id="_c0a7bab4-1fcc-23ad-d7ca-a110fc32dfe3"><b>Data Variables</b> – Multidimensional arrays representing observed or simulated phenomena, associated with dimensions and coordinate variables.</p>
+</li>
+<li><p id="_625fa936-cc45-7277-9ebe-7e63a25fe3f1"><b>Attributes</b> – Key-value metadata elements used to describe variables and datasets semantically.</p>
+</li>
+<li><p id="_71af5876-36ee-a962-a56a-f9e56b729410"><b>Groups</b> – Optional hierarchical containers enabling logical organisation of resources and metadata.</p>
+</li>
+</ul></div>
+
+<p id="_1837944e-d6eb-fb88-5b02-d78cdee9c0b9">The unified data model adopts these CDM components without modification excluding the user-defined types. Semantic interpretation remains consistent with the original CDM specification. GeoZarr structures are mapped to CDM constructs to ensure compatibility and clarity.</p>
+</div>
+
+<div id="_cf_conventions"><h3><a class="anchor" href="#_cf_conventions"></a><a class="header" href="#_cf_conventions">7.2.2.  CF Conventions</a></h3>
+
+<p id="_d5d4cf78-ea9e-7e04-6394-2ac4bd3f4136">The CF Conventions specify standardised metadata attributes and practices to describe spatiotemporal context within CDM-compliant datasets. These conventions support consistent interpretation of:</p>
+
+<div class="ul_wrap"><ul id="_46735f98-3109-8541-987a-dde06f971cf7"><li><p id="_198c6c8f-fa3a-3b92-2d19-cff8b658b93b">Coordinate systems</p>
+</li>
+<li><p id="_593a4a89-7d3f-0980-57ba-de4e9487beb2">Grid mappings</p>
+</li>
+<li><p id="_6e17aaf6-9a84-6000-9e36-c5357a17d386">Physical units</p>
+</li>
+<li><p id="_d8c89941-492a-8498-b594-5b99ab335306">Standard variable naming</p>
+</li>
+</ul></div>
+
+<p id="_e69600c6-8ace-72cd-bff4-b0fd2b9ef89c">The unified data model supports CF-compliant metadata, including attributes such as <tt>standard_name</tt>, <tt>units</tt>, and <tt>grid_mapping</tt>. The unified data model does not prescribe CF compliance but enables it through permissive design. Partial adoption of CF attributes is supported, and non-compliant datasets may selectively adopt CF metadata as needed.</p>
+</div>
+
+<div id="_standards_based_extensions"><h3><a class="anchor" href="#_standards_based_extensions"></a><a class="header" href="#_standards_based_extensions">7.2.3.  Standards-Based Extensions</a></h3>
+
+<p id="_8e6520fc-7f0d-c56c-8f39-35a135fce2fd">To support additional capabilities, the model defines optional extension points referencing external OGC and community standards:</p>
+
+<div class="ul_wrap"><ul id="_37e382ef-fa32-aa68-0fea-bf8a6fb52150"><li><p id="_35dbbb31-8666-0699-71f3-b147d7880499"><b>OGC Tile Matrix Set</b> – Facilitates the definition of multiscale grid hierarchies for raster overviews.</p>
+</li>
+<li><p id="_d35fba8d-a455-023f-acf2-38430166fcc6"><b>GDAL Geotransform</b> – Enables geospatial referencing through affine transformations and optional interpolation specifications.</p>
+</li>
+<li><p id="_2f642407-d08a-fdad-6817-73014819dd86"><b>STAC Metadata (Collection and Item)</b> – Provides linkage to SpatioTemporal Asset Catalogs for resource discovery and indexing.</p>
+</li>
+</ul></div>
+
+<p id="_6ec3d862-56e9-b88b-8ccf-66c83b85c668">These extensions are integrated in a modular fashion and do not alter the core semantics of the CDM or CF structures. Implementations may selectively adopt these extensions based on their application requirements.</p>
+</div>
+</div><div id="_model_extension_points"><h2 id="_95c45e8d-c45a-479f-90ad-d8825fab3be9"><a class="anchor" href="#_model_extension_points"></a><a class="header" href="#_model_extension_points">7.3.  Model Extension Points</a></h2>
+
+<p id="_ee29ad42-b9f1-d78f-4b9c-c96b95d00928">The unified data model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.</p>
+
+<p id="_1e91e917-bcaf-a91b-4041-890575445f5c">Each extension is defined as an independent module. Implementation of any given extension does not necessitate support for others.</p>
+
+<div id="_multi_resolution_overviews_ogc_tile_matrix_set"><h3><a class="anchor" href="#_multi_resolution_overviews_ogc_tile_matrix_set"></a><a class="header" href="#_multi_resolution_overviews_ogc_tile_matrix_set">7.3.1.  Multi-Resolution Overviews (OGC Tile Matrix Set)</a></h3>
+
+<p id="_0fee06a3-080c-af85-41bb-148670280a00">Support for multi-resolution imagery is enabled via integration with the OGC Tile Matrix Set Standard:</p>
+
+<div class="ul_wrap"><ul id="_37785132-fa36-c9f3-ede2-5990ee5e72d0"><li><p id="_d13d871c-27c0-b12d-d28a-a9ce19f98d02">Tile matrix sets define spatial tiling schemes with consistent resolutions and coordinate reference systems across zoom levels.</p>
+</li>
+<li><p id="_9ef076a3-7663-806d-2670-463edf281644">Overviews may be represented as separate Zarr arrays or groups, each aligned to a specific tile matrix level.</p>
+</li>
+<li><p id="_5114c2c8-096d-015c-0931-b7116830d86e">Metadata includes identifiers for tile matrices, spatial resolution, and spatial alignment.</p>
+</li>
+</ul></div>
+
+<p id="_7a08f8d0-4d49-0bfb-9d67-04eece9934bf">This approach aligns with the OGC API – Tiles and enables efficient access to large gridded datasets.</p>
+</div>
+
+<div id="_geotransform_metadata_gdal_interpolation_and_affine_transform"><h3><a class="anchor" href="#_geotransform_metadata_gdal_interpolation_and_affine_transform"></a><a class="header" href="#_geotransform_metadata_gdal_interpolation_and_affine_transform">7.3.2.  GeoTransform Metadata (GDAL Interpolation and Affine Transform)</a></h3>
+
+<p id="_ae378fb3-308f-94ab-dabf-79e23dd9b5e5">Geospatial referencing can be further refined through the inclusion of metadata consistent with GDAL conventions:</p>
+
+<div class="ul_wrap"><ul id="_fe82ef0c-6dcc-b2e6-c932-be14aa7136af"><li><p id="_114546c2-2d8d-3a4e-1f76-a6362206bb8e">Affine transformation is specified via the <tt>GeoTransform</tt> attribute or equivalent structures.</p>
+</li>
+<li><p id="_4e454e3a-6e8c-ed45-f9d3-767cc6ed26f3">Interpolation methods may be declared to indicate sampling behaviour or sub-pixel alignment strategies.</p>
+</li>
+</ul></div>
+
+<p id="_bb6bef81-4245-0a85-be94-e4df56fd4a3c">This extension augments CF grid mappings by providing precise control over grid placement and coordinate transformations.</p>
+</div>
+
+<div id="_stac_collection_and_item_integration"><h3><a class="anchor" href="#_stac_collection_and_item_integration"></a><a class="header" href="#_stac_collection_and_item_integration">7.3.3.  STAC Collection and Item Integration</a></h3>
+
+<p id="_87c75646-f928-114a-d26a-25e40b6cfe1c">To enable discovery of resources within the hierarchical structure of the data model, this Standard supports the inclusion of STAC metadata elements at appropriate locations within the group hierarchy.</p>
+
+<p id="_c4790e86-673d-41e8-b92e-1f87341f3a9d">A STAC extension consists of embedding or referencing STAC Collection and Item metadata within the data model:</p>
+
+<div class="ul_wrap"><ul id="_b1cf8f53-dcbd-d995-cd9d-a68b6c98c0e2"><li><p id="_55765f70-07b5-11fb-eb24-2fcb402760e2">Each dataset resource MAY reference a corresponding STAC <tt>Collection</tt> or <tt>Item</tt> using an identifier or embedded object.</p>
+</li>
+<li><p id="_45d16552-2b6f-1135-9aeb-01d3483e60ae">STAC properties such as <tt>datetime</tt>, <tt>bbox</tt>, and <tt>eo:bands</tt> MAY be included in the metadata to enable spatial, temporal, and spectral filtering.</p>
+</li>
+<li><p id="_9b58e883-edcb-cdc3-beb1-16224679367e">The structure is compatible with external STAC APIs and metadata harvesting systems.</p>
+</li>
+</ul></div>
+
+<p id="_4c2c1436-1a89-cf7d-985f-aaf5a6469f66">STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of datasets and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.</p>
+</div>
+
+<div id="_modularity_and_interoperability"><h3><a class="anchor" href="#_modularity_and_interoperability"></a><a class="header" href="#_modularity_and_interoperability">7.3.4.  Modularity and Interoperability</a></h3>
+
+<p id="_3d8ae417-bb8d-3126-35ae-ed6e142b7b60">Each extension point is specified independently. Implementations may advertise support for one or more extensions by declaring conformance to corresponding extension modules. This modularity facilitates incremental adoption, promotes reuse, and enhances interoperability across varied implementation environments.</p>
+</div>
+</div><div id="_unified_model_structure"><h2 id="_e0439caf-3360-4329-b8a6-7df38669aeb6"><a class="anchor" href="#_unified_model_structure"></a><a class="header" href="#_unified_model_structure">7.4.  Unified Model Structure</a></h2>
+
+<p id="_e65124f4-061d-6f01-538f-ef9027d9ff62">This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.</p>
+
+<p id="_c6100eca-2d33-f721-69b7-92a5197dbf5c">The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.</p>
+
+<div id="_dataset_structure"><h3><a class="anchor" href="#_dataset_structure"></a><a class="header" href="#_dataset_structure">7.4.1.  Dataset Structure</a></h3>
+
+<p id="_73be98c6-e1e4-5340-b451-8de423219577">A dataset conforming to the UDM is composed of the following core components, derived from the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:</p>
+
+<div class="ul_wrap"><ul id="_0e84a370-83b7-f125-f528-142ac2a3a56f"><li><p id="_028712fd-0c48-a170-a431-dab727dad99e"><b>Dimensions</b> – Named, integer-valued axes that define the extents of data variables. Examples include <tt>time</tt>, <tt>x</tt>, <tt>y</tt>, and <tt>band</tt>.</p>
+</li>
+<li><p id="_21b454fc-8401-4c6b-21e0-05f9f8ee8b20"><b>Coordinate Variables</b> – Arrays (typically one-dimensional) that supply geospatial, temporal, or other contextual coordinates along dimensions. These may be scalar or higher-dimensional, depending on the referencing scheme in use.</p>
+</li>
+<li><p id="_673f7a96-7e80-88a2-e279-e433db0cedc2"><b>Data Variables</b> – Multidimensional arrays representing physical quantities or derived observations. These are defined over one or more dimensions and are associated with coordinate variables and metadata attributes.</p>
+</li>
+<li><p id="_49024d98-9a8f-93e9-9d43-693f883fc7d3"><b>Attributes</b> – Key-value pairs that annotate variables or dataset-level elements with semantic information such as physical units, standard names, or spatial referencing metadata.</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_hierarchical_grouping"><h3><a class="anchor" href="#_hierarchical_grouping"></a><a class="header" href="#_hierarchical_grouping">7.4.2.  Hierarchical Grouping</a></h3>
+
+<p id="_ca7364e2-4e40-9ef3-68a0-25cf11de1dad">The model supports the logical organisation of resources using hierarchical group. These groups act as containers for organising variables, dimensions, and metadata into logical subsets. Grouping may be used to structure resources according to thematic partitions, resolution levels, or processing stages.</p>
+
+<p id="_7c490e2a-4727-4b71-696a-57af1f46cf2d">Groups may define local metadata and variable collections, while also inheriting global context where applicable. This promotes modularity and clarity within complex datasets.</p>
+</div>
+
+<div id="_coordinate_referencing"><h3><a class="anchor" href="#_coordinate_referencing"></a><a class="header" href="#_coordinate_referencing">7.4.3.  Coordinate Referencing</a></h3>
+
+<p id="_9307d241-17ae-083b-fc5f-1395bdbd845e">Coordinate systems are defined using:</p>
+
+<div class="ul_wrap"><ul id="_889d911e-d702-909e-cf5c-dcfefcc6b20f"><li><p id="_39cd22cc-4f3b-aac8-397d-2b897083c3fd"><b>CF Conventions</b> – Including attributes such as <tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt>, and <tt>grid_mapping</tt> to express spatiotemporal semantics and coordinate system properties.</p>
+</li>
+<li><p id="_310a48d6-3afe-d41d-061b-3bda8acd6f45"><b>Affine Transformation Extensions</b> – Optional support for georeferencing via affine transforms and interpolation metadata (e.g., as defined in GDAL practices), providing enhanced flexibility for irregular grids and grid-aligned imagery.</p>
+</li>
+</ul></div>
+
+<p id="_20f34fcc-4e5c-cc1e-293d-f18ddadb2c7f">The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.</p>
+</div>
+
+<div id="_metadata_integration"><h3><a class="anchor" href="#_metadata_integration"></a><a class="header" href="#_metadata_integration">7.4.4.  Metadata Integration</a></h3>
+
+<p id="_9fbc05ee-1e94-fc79-4a09-71d8811c3dc2">Metadata may be declared at various levels within the model structure:</p>
+
+<div class="ul_wrap"><ul id="_12e6af72-4acf-0a93-d427-f1ecf3e76baf"><li><p id="_a374f24e-a2ae-5888-e649-fe6a08b58d6f"><b>Global Metadata</b> – Attributes describing the dataset as a whole, including elements such as <tt>title</tt>, <tt>summary</tt>, and <tt>license</tt>.</p>
+</li>
+<li><p id="_4521b6d6-2ed7-d159-c520-19a016a70ccb"><b>Variable Metadata</b> – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.</p>
+</li>
+<li><p id="_7bde787b-4b89-4d13-674c-1a3ecdc78ba7"><b>Extension Metadata</b> – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).</p>
+</li>
+</ul></div>
+
+<p id="_86dfe434-7980-b4a2-74e2-d20ea3389d2b">All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
+</div>
+
+<div id="_overviews"><h3><a class="anchor" href="#_overviews"></a><a class="header" href="#_overviews">7.4.5.  Overviews</a></h3>
+
+<p id="_d34a669f-e756-09a7-e700-e606e74f6411">The <b>Overviews</b> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.</p>
+
+<div id="_purpose"><h4><a class="anchor" href="#_purpose"></a><a class="header" href="#_purpose">7.4.5.1.  Purpose</a></h4>
+
+<p id="_d2399128-bc23-3a2f-5d85-316885ddde7a">The <b>Overviews</b> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <b>zoom levels</b>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
+
+<p id="_d251865c-3c4a-c68b-6ebd-7898977b8fa1">Overviews enable:</p>
+
+<div class="ul_wrap"><ul id="_a53d7077-7a54-a771-85a5-8fd0f3d4954c"><li><p id="_de68ec7c-f7ef-8fd2-33ec-12b5309bcc82">Fast access to summary representations for visualisation</p>
+</li>
+<li><p id="_22f5e7fe-fcbc-5169-c17a-f21452745b6f">Progressive transmission and downsampling</p>
+</li>
+<li><p id="_7dd65947-fe64-e5b3-4dd4-89ab74a9c9c5">Multi-resolution analytics and adaptive processing</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_conceptual_structure"><h4><a class="anchor" href="#_conceptual_structure"></a><a class="header" href="#_conceptual_structure">7.4.5.2.  Conceptual Structure</a></h4>
+
+<p id="_ba461405-40ac-5ae2-741d-283c6256c4e5">An <b>Overviews</b> construct is defined as a <b>hierarchical set of multiscale representations</b> of one or more data variables. It comprises the following components:</p>
+
+<div class="figdl"><dl id="_d8ca17fc-9c0e-1743-8983-e4ea34be7431"><dt><b>Base Variable</b></dt><dd><p id="_8fb12a80-e162-d363-fa3d-86b0b2adee7e">The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
+</dd><dt><b>Overview Levels</b></dt><dd><p id="_f4c9fff5-206e-ad5c-5c31-1ecc6380bca8">A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
+</dd><dt><b>Zoom Level Identifier</b></dt><dd><p id="_fc58120a-0edf-ab88-a874-8e4e9e6c9531">A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
+</dd><dt><b>Tile Grid Definition</b></dt><dd><p id="_436d99c3-9a0b-28f0-a23e-eafd8635da39">A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
+</dd><dt><b>Spatial Alignment</b></dt><dd><p id="_31584673-74fd-d48e-5fae-23f0395bdca5">Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
+</dd><dt><b>Resampling Method</b></dt><dd><p id="_93ebe0f7-294c-b87e-1a82-2915fe39a37d">A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
+</dd></dl></div>
+</div>
+
+<div id="_model_components"><h4><a class="anchor" href="#_model_components"></a><a class="header" href="#_model_components">7.4.5.3.  Model Components</a></h4>
+
+<p id="_c262ee42-5366-a8ad-06f3-f8bd1bf8c19a">The <b>Overviews</b> construct is represented in the unified data model using the following logical elements:</p>
+
+<p class="TableTitle" style="text-align:center;">Table 1</p><table id="_1ed7bb94-b28a-513f-ec11-f53c1ac833e7" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 25%;" /><col style="width: 75%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Element</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Definition</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>OverviewSet</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">A logical grouping of variables at multiple zoom levels associated with a single base variable.</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>OverviewLevel</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">A single resampled variable at a specific resolution, identified by a zoom level string.</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>TileMatrixSetRef</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">A reference to the tile grid specification applied across all overview levels. May refer to a well-known identifier, a URI, or an inline object.</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>TileMatrixLimits</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">(Optional) Constraints on the tile coverage per zoom level.</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>resampling_method</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">A string indicating the uniform method used to downsample data across all levels.</td></tr></tbody></table>
+
+<p id="_ddd15fe6-673e-8208-c249-248189edf258">All overview levels MUST preserve:</p>
+
+<div class="ul_wrap"><ul id="_9f5da80a-5013-c1b1-4dd7-aa69b766a371"><li><p id="_7f91495a-b4ca-1ee0-625d-3218e375e4d8">The data variable’s semantic identity (<tt>standard_name</tt>, <tt>units</tt>, etc.)</p>
+</li>
+<li><p id="_1c2a6d05-c745-1d83-fd7d-7e672cefdc26">The coordinate reference system</p>
+</li>
+<li><p id="_7160f6d0-ce54-98f4-cda0-6b3353f359e3">The axis order and dimension semantics</p>
+</li>
+</ul></div>
+
+<p id="_753616fe-1585-0b76-e7ee-09eaf199c8af">Only the resolution and extent (through tiling and shape) may differ across levels.</p>
+</div>
+
+<div id="_relationship_to_tile_matrix_set"><h4><a class="anchor" href="#_relationship_to_tile_matrix_set"></a><a class="header" href="#_relationship_to_tile_matrix_set">7.4.5.4.  Relationship to Tile Matrix Set</a></h4>
+
+<p id="_b239c81c-a5a5-8054-db25-c2bc702401db">The <b>Overviews</b> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid’s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
+
+<p id="_9082ec65-55ae-dda9-8253-6f477f8be5e7">The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
+</div>
+
+<div id="_usage_context"><h4><a class="anchor" href="#_usage_context"></a><a class="header" href="#_usage_context">7.4.5.5.  Usage Context</a></h4>
+
+<p id="_36cc6b20-60ae-ef90-c5f7-fcea487b26db">The <b>Overviews</b> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
+
+<div class="ul_wrap"><ul id="_bcd96988-da10-a723-54ee-5f14856865c5"><li><p id="_4dfd3635-263b-612b-c693-75521eb2d55c">Raster imagery (e.g. reflectance, temperature)</p>
+</li>
+<li><p id="_fc0f196e-aa5b-9df4-f8b2-5107edefe55b">Data cubes with spatial slices (e.g. time-series of spatial grids)</p>
+</li>
+<li><p id="_fdd5e0ce-b13d-58bf-b4d7-c0aa8c30914d">Multi-band products with consistent spatial structure across levels</p>
+</li>
+</ul></div>
+
+<p id="_7ea176e3-abd3-a443-9e37-ee158719913b">The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
+</div>
+</div>
+</div><div id="_conformance_and_extensibility"><h2 id="_8248768f-ff61-4994-9756-1a9f6b9a929b"><a class="anchor" href="#_conformance_and_extensibility"></a><a class="header" href="#_conformance_and_extensibility">7.5.  Conformance and Extensibility</a></h2>
+
+<p id="_326130a2-ac5f-9c33-1853-be6527695dd3">The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.</p>
+
+<div id="_core_conformance"><h3><a class="anchor" href="#_core_conformance"></a><a class="header" href="#_core_conformance">7.5.1.  Core Conformance</a></h3>
+
+<div class="ul_wrap"><ul id="_1b579667-606c-4af6-1f3c-295dc4334587"><li><p id="_bfa3de9c-2182-0583-a5c0-f9dae3ebd0e2">Datasets conforming to the core model must:</p>
+<div class="ul_wrap"><ul id="_a928f1c3-46cc-aadb-a989-8ff8a7053c62"><li><p id="_b8d8ff54-a808-12a7-2795-33e35fb8638a">Represent data using CDM-compatible constructs (dimensions, variables, attributes).</p>
+</li>
+<li><p id="_9822e5e6-ba98-a81c-84fe-f8041b36f4b2">Follow attribute conventions where applicable.</p>
+</li>
+<li><p id="_ef3f7a46-e558-f0e9-c201-0ce19bdffa7c">Be parsable as valid Zarr with structured metadata following this specification.</p>
+</li>
+</ul></div>
+</li>
+<li><p id="_76813580-a1a7-c6c4-a2c8-0bd39f8a993e">CF compliance is not mandatory but is recommended for semantic interoperability.</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_extension_conformance"><h3><a class="anchor" href="#_extension_conformance"></a><a class="header" href="#_extension_conformance">7.5.2.  Extension Conformance</a></h3>
+
+<div class="ul_wrap"><ul id="_ca3b1040-37a1-a08f-6816-183e49461191"><li><p id="_28959259-8d90-0d2b-adb8-caededf7dfe8">Implementations may optionally support one or more extension modules:</p>
+<div class="ul_wrap"><ul id="_42c96bc5-b87a-60c8-ca6a-d7dae3918b9c"><li><p id="_f42e0307-a79a-25e2-070b-3ea347cf0ed4">Multi-resolution overviews (Tile Matrix Set)</p>
+</li>
+<li><p id="_97f5b307-f221-587e-cc83-c3ebca24d12c">GeoTransform metadata (GDAL)</p>
+</li>
+<li><p id="_c31ccd73-4372-897b-2241-4b8712f16ace">STAC metadata integration</p>
+</li>
+</ul></div>
+</li>
+<li><p id="_2130d6a7-2c71-10f0-0918-bd2a272ef4fd">Each extension defines its own requirement class with validation rules and expected metadata structures.</p>
+</li>
+<li><p id="_9d0bbaa5-55ba-1145-2943-dfea9adb94de">Tools may advertise which extensions they support and validate datasets accordingly.</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_conformance_classes"><h3><a class="anchor" href="#_conformance_classes"></a><a class="header" href="#_conformance_classes">7.5.3.  Conformance Classes</a></h3>
+
+<div class="ul_wrap"><ul id="_64b044f9-8331-42c0-e5df-8f8cf5738c79"><li><p id="_ae424ade-dc39-4ca5-f95f-ebdfc1886a7f">Conformance Classes may be defined to specify required components and extensions for specific application domains (e.g., visualisation clients, EO archives, catalogue indexing).</p>
+</li>
+<li><p id="_6cec7449-2809-4afd-cc48-6a518356255b">Conformance Classes enable selective validation without constraining the general model.</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_extensibility_principles"><h3><a class="anchor" href="#_extensibility_principles"></a><a class="header" href="#_extensibility_principles">7.5.4.  Extensibility Principles</a></h3>
+
+<div class="ul_wrap"><ul id="_455c9f5d-8c96-739b-5d22-e8fecfdec659"><li><p id="_f569d379-fee4-0a05-528f-9d58fc4e6479">All extensions must preserve compatibility with the core model and avoid redefining existing CDM or CF semantics.</p>
+</li>
+<li><p id="_b7db34e5-a670-f9f3-288d-a53766d92f1a">New extensions should be documented with clear identifiers, schemas, and conformance criteria.</p>
+</li>
+<li><p id="_21bb33e1-d4ee-fd6e-0c82-de26038bdcb8">The model encourages interoperability by allowing tools to interpret unknown extensions without failure.</p>
+</li>
+</ul></div>
+
+<p id="_b4881244-5be9-74ae-d3a5-78f67c86e87e">This extensibility framework supports both minimum-viable use and high-fidelity metadata integration, enabling incremental adoption across the geospatial and scientific data communities.</p>
+</div>
+</div><div id="_interoperability_considerations"><h2 id="_52367e14-a3a8-4920-8d56-33698db6186c"><a class="anchor" href="#_interoperability_considerations"></a><a class="header" href="#_interoperability_considerations">7.6.  Interoperability Considerations</a></h2>
+
+<p id="_89623f2a-7f1b-bec7-2c06-e885d8fab05e">Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.</p>
+
+<p id="_b72e4ae8-9e5f-fc2a-2114-bad354892529">This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.</p>
+
+<div id="_format_mapping_and_alignment"><h3><a class="anchor" href="#_format_mapping_and_alignment"></a><a class="header" href="#_format_mapping_and_alignment">7.6.1.  Format Mapping and Alignment</a></h3>
+
+<p id="_ddcb4613-6752-a0eb-6d9e-a29668ca3e1c">The data model is explicitly aligned with foundational standards including the Unidata Common Data Model (CDM), the CF Conventions, and established practices in formats such as NetCDF and GeoTIFF. Where applicable, GeoZarr datasets may be derived from or transformed into these formats using consistent mappings.</p>
+
+<div class="ul_wrap"><ul id="_3da9d9f9-de57-2a10-d75a-7ce77919b3fc"><li><p id="_16d66545-4334-2bc8-407c-3617c937c9b1"><b>NetCDF (classic and enhanced models)</b>:</p>
+<div class="ul_wrap"><ul id="_51d04172-c3e0-34c0-7152-78ce9cfe8a2a"><li><p id="_3fa703d7-9e94-e6b7-c3a4-7789e0420b81">GeoZarr shares a common conceptual structure with NetCDF via CDM.</p>
+</li>
+<li><p id="_80c48ccc-3825-8f85-f16a-03f44a0d7f9f">Variables, dimensions, coordinate systems, and attributes follow directly mappable patterns.</p>
+</li>
+<li><p id="_43310348-873e-f3bc-9b2f-dbb0cf59bea4">Metadata expressed in CF conventions in NetCDF can be preserved in GeoZarr without loss of fidelity.</p>
+</li>
+</ul></div>
+</li>
+<li><p id="_013f672d-f5af-34b9-4d88-9e73250de74d"><b>GeoTIFF</b>:</p>
+<div class="ul_wrap"><ul id="_55285031-ccf5-fff3-f8ca-fe032a13c59c"><li><p id="_27799443-dbe6-f43a-406d-d367cd88eb7d">Raster-based datasets in GeoZarr can map to GeoTIFF by interpreting spatial referencing (via CF or GeoTransform) and band structures.</p>
+</li>
+<li><p id="_89a98b61-2b9b-37f6-4d7b-89bcea3bba29">Overviews aligned to OGC Tile Matrix Sets may correspond to TIFF image pyramids.</p>
+</li>
+<li><p id="_0c8eba6d-0e7b-84f1-e925-cfa5857878aa">Projection metadata and resolution information can be mapped via standard tags.</p>
+</li>
+</ul></div>
+</li>
+</ul></div>
+
+<p id="_c2001b82-2d53-0c11-2eb7-ae722af5850f">These mappings facilitate round-trip transformations and enable toolchains that consume or produce multiple formats without reengineering semantic models.</p>
+</div>
+
+<div id="_semantic_interoperability"><h3><a class="anchor" href="#_semantic_interoperability"></a><a class="header" href="#_semantic_interoperability">7.6.2.  Semantic Interoperability</a></h3>
+
+<p id="_8d36a2ff-dc68-563a-13eb-f8640c5eb12b">Semantic interoperability is supported through adherence to CF conventions, use of standardised attribute names (e.g., <tt>standard_name</tt>, <tt>units</tt>), and alignment with metadata vocabularies used in other ecosystems (e.g., STAC, EPSG codes, ISO 19115 keywords).</p>
+
+<p id="_9ad171fe-445f-758d-93b9-267c89f2a109">The model does not prescribe specific vocabularies beyond CF but encourages reuse and recognition of widely accepted descriptors to promote cross-domain understanding.</p>
+</div>
+
+<div id="_metadata_and_discovery_integration"><h3><a class="anchor" href="#_metadata_and_discovery_integration"></a><a class="header" href="#_metadata_and_discovery_integration">7.6.3.  Metadata and Discovery Integration</a></h3>
+
+<p id="_f3ac4d3a-a34e-38cc-e5bc-7e487f12f320">STAC compatibility enables integration with catalogue services for discovery and indexing. Datasets can expose STAC-compliant metadata alongside core metadata, supporting federated search and filtering via STAC APIs.</p>
+
+<p id="_240e547f-65a1-a160-03d0-2130bf576a21">This approach enables seamless integration into modern data catalogues and platforms that support EO discovery standards.</p>
+</div>
+
+<div id="_tool_and_ecosystem_support"><h3><a class="anchor" href="#_tool_and_ecosystem_support"></a><a class="header" href="#_tool_and_ecosystem_support">7.6.4.  Tool and Ecosystem Support</a></h3>
+
+<p id="_828250a0-ca95-ebc2-23e0-066de1bc0d10">The unified data model facilitates interoperability with tools and libraries across the following domains:</p>
+
+<div class="ul_wrap"><ul id="_efd709f5-d431-3501-f38a-fcb036412a34"><li><p id="_3aad102d-2e7b-6620-0a54-eaf25dd1db6b"><b>Scientific computing</b>: NetCDF-based libraries (e.g., xarray, netCDF4), Zarr-compatible clients.</p>
+</li>
+<li><p id="_6de111ff-d94f-7bc6-8978-a3bd6b61bac5"><b>Geospatial processing</b>: GDAL, rasterio, QGIS (via Zarr driver extensions or translations).</p>
+</li>
+<li><p id="_dbe57367-3aa5-516e-1e7f-547ac6c943fb"><b>Cloud-native infrastructure</b>: support for parallel access, chunked storage, and hierarchical grouping compatible with object storage.</p>
+</li>
+</ul></div>
+
+<p id="_4f44424c-a17a-15ef-4ef6-643bb9d4ab07">Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.</p>
+</div>
+</div></div><div id="_unified_data_model_encoding_for_zarr"><h1 id="_eaa57f7a-84e8-499d-8b52-6f2a6e1cc1c6"><a class="anchor" href="#_unified_data_model_encoding_for_zarr"></a><a class="header" href="#_unified_data_model_encoding_for_zarr">8.  Unified Data Model Encoding for Zarr</a></h1><p id="_9e58c294-0d0b-a221-0182-7685b25a61c2">This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.</p><div id="_98538104-ab6f-7940-21bb-7803f15c6d01" class="Admonition Tip"><p id="_3f7c5921-02f7-0d8e-1496-a26096b25298">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
+</div><div id="_hierarchical_structure"><h2 id="_ba33bf20-c9c3-47bc-a46f-81f4b65fe523"><a class="anchor" href="#_hierarchical_structure"></a><a class="header" href="#_hierarchical_structure">8.1.  Hierarchical Structure</a></h2>
+
+<p id="_ef63c86e-fa40-ffbb-38b9-60308bba78f5">A dataset conforming to the unified data model is represented as a hierarchical structure of groups, variables (arrays), dimensions, and metadata. The dataset is rooted in a <b>top-level group</b>, which may contain:</p>
+
+<div class="ul_wrap"><ul id="_01102626-2892-7025-b4ae-c48ee8089ca4"><li><p id="_7c873d71-16ea-a7d7-d028-20715d1f98d0">Arrays representing coordinate or data variables</p>
+</li>
+<li><p id="_f28fd6b3-c35b-a2d2-85c3-95bc389fc128">Child groups for modular organisation, including logical sub-collections or resolution levels</p>
+</li>
+<li><p id="_d8572adf-b609-0c26-dd57-5d2045985a9e">Metadata attributes at group and array levels</p>
+</li>
+</ul></div>
+
+<p id="_4f097c4e-0505-dd52-97ef-8f500f2a519d">Each group adheres to a consistent structure, allowing recursive composition. This reflects the CDM’s use of <b>groups</b> and is supported by both Zarr v2 and v3 with differing implementations.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 2</p><table id="_41052269-a448-0b09-a25a-63ccda1a6251" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Model Element</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2 Encoding</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3 Encoding</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Root Dataset</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Directory with <tt>.zgroup</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Directory with <tt>zarr.json</tt>, with <tt>node_type: group</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Child Group</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>.zgroup</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>zarr.json</tt>, with <tt>node_type: group</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Array</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>.zarray</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Subdirectory with <tt>zarr.json</tt>, with <tt>node_type: array</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Metadata Key</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>.zattrs</tt> file</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>attributes</tt> field in <tt>zarr.json</tt></td></tr></tbody></table>
+
+<p id="_7df6b9ee-38d8-7bd2-ee9a-a5b4714de8dc">Zarr v3 requires <tt>zarr_format: 3</tt> and stores all metadata (including user-defined attributes) in the <tt>zarr.json</tt> document. Each node includes a <tt>node_type</tt> field: either <tt>"group"</tt> or <tt>"array"</tt>.</p>
+</div><div id="_dimensions"><h2 id="_0ecd8b79-1c62-4f15-a5dc-5135693eed9c"><a class="anchor" href="#_dimensions"></a><a class="header" href="#_dimensions">8.2.  Dimensions</a></h2>
+
+<p id="_0dc6ff51-875a-ac2f-6ff5-48a8ccd89a9a">Dimensions define the axes along which variables are indexed.</p>
+
+<div class="ul_wrap"><ul id="_533e1f55-f644-8576-df5b-aba8b2fff251"><li><p id="_9fd80107-3b3e-73ac-e3f7-ed4e8f5fb6de">In Zarr v2, dimensions are inferred from array shape and declared in <tt>_ARRAY_DIMENSIONS</tt> within <tt>.zattrs</tt>.</p>
+</li>
+<li><p id="_671fc88b-6318-10a9-d4eb-e50648041c47">In Zarr v3, dimensions are stored using the <tt>dimension_names</tt> field in <tt>zarr.json</tt>.</p>
+</li>
+</ul></div>
+
+<p id="_47f04459-bf2c-563e-1e33-65f7a51dceaa">Example for a 2D array with dimension names <tt>["lat", "lon"]</tt>:</p>
+
+<p class="collapsible active"> </p><pre id="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br />  </span><span class="err">...</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 1</p>
+
+</div><div id="_coordinate_variables"><h2 id="_18fc23e2-2851-492a-ac15-2d4a6c8bb192"><a class="anchor" href="#_coordinate_variables"></a><a class="header" href="#_coordinate_variables">8.3.  Coordinate Variables</a></h2>
+
+<p id="_d078d906-aaf5-76c2-d1e8-2178d873d260">Coordinate variables (excluding GeoTransform Coordinates) define the geospatial or temporal context of data. They are represented as named arrays with metadata attributes.</p>
+
+<p id="_f7a2d74d-e734-3589-c545-f655584cc543">Coordinate variables are represented as named 1D arrays aligned with corresponding dimensions.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 3</p><table id="_fcad79ad-bf58-fb65-0403-ce5c98bde858" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Feature</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Storage</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Zarr array with <tt>.zarray</tt>, <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Zarr array with <tt>zarr.json</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Dimension Binding</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>_ARRAY_DIMENSIONS</tt> in <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>dimension_names</tt> in <tt>zarr.json</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">CF Metadata</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt> in <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Under <tt>attributes</tt> in <tt>zarr.json</tt></td></tr></tbody></table>
+
+<p id="_2b890565-c837-e588-4fad-f31b1c6eeb9d">Example <tt>zarr.json</tt> for a coordinate array:</p>
+
+<p class="collapsible active"> </p><pre id="_40d1d34d-d784-de34-e5dc-86c11c8adc9b" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />      </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br />    </span><span class="p">}</span><span class="w"><br />  </span><span class="p">},</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 2</p>
+
+</div><div id="_data_variables"><h2 id="_dea4a5df-9b51-427c-8538-aded9e25e160"><a class="anchor" href="#_data_variables"></a><a class="header" href="#_data_variables">8.4.  Data Variables</a></h2>
+
+<p id="_9d3ec338-3160-3c11-3e36-9c10fbda0706">Data variables represent measured or derived quantities. They are stored as multidimensional arrays with metadata attributes.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 4</p><table id="_5cde49c8-a94b-371a-f316-23c95b7cdc63" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Feature</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Storage</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Multidimensional array with <tt>.zarray</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Same structure; v3 supports additional chunk storage formats</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Dimension Association</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>_ARRAY_DIMENSIONS</tt> attribute</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Same as v2</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">CF Metadata</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>standard_name</tt>, <tt>units</tt>, <tt>long_name</tt>, <tt>_FillValue</tt>, etc.</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Same as v2; v3 may support typed attributes</td></tr></tbody></table>
+
+<p id="_bcb04f31-19d6-3128-b2bc-1e21937eab02">Example:</p>
+
+<p class="collapsible active"> </p><pre id="_91fc8eec-485a-dd7b-2d73-648d378f4f75" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br />  </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 3</p>
+
+</div><div id="_global_metadata"><h2 id="_a7634f55-03ef-43a7-9a41-186b25bfaa7d"><a class="anchor" href="#_global_metadata"></a><a class="header" href="#_global_metadata">8.5.  Global Metadata</a></h2>
+
+<p id="_bbdf3ca6-1917-1240-e06b-e1b22a6a5bfb">Metadata associated with the dataset as a whole is stored at the root group level.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 5</p><table id="_8eb57a2d-03ee-93a6-857b-333d7c86e48e" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Field</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Location</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>.zattrs</tt> file of root <tt>.zgroup</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;"><tt>attributes</tt> field in root <tt>zarr.json</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Group Identification</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>.zgroup</tt> file</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;"><tt>node_type: group</tt> in <tt>zarr.json</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">CF Conformance</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>Conventions</tt> attribute (e.g., <tt>CF-1.10</tt>)</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Same, under <tt>attributes</tt></td></tr></tbody></table>
+
+<p id="_4269ebb3-4a98-da00-7afe-b45fa2e30ab2">Example Zarr v3 root <tt>zarr.json</tt>:</p>
+
+<p class="collapsible active"> </p><pre id="_e1c1bba0-4ea9-f085-d369-74f948b76056" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 4</p>
+
+</div><div id="_variables_metadata"><h2 id="_64f5088f-0751-4108-bb87-f28a8b6bc07f"><a class="anchor" href="#_variables_metadata"></a><a class="header" href="#_variables_metadata">8.6.  Variables Metadata</a></h2>
+
+<p id="_f6bf4240-9d67-95ec-9bb7-6151a648bc64">All metadata attributes (for groups, coordinates variables and data variables) are recommended to conform to CF naming and typing conventions. Supported attributes include:</p>
+
+<div class="ul_wrap"><ul id="_9ca5447d-53d5-a1d2-e24c-078c41bd0b8d"><li><p id="_6dc68ac8-5671-b261-00de-389a26fd21b8"><tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt>, <tt>grid_mapping</tt> (CF)</p>
+</li>
+<li><p id="_1a42c9e5-66af-efc6-ec55-11943692dfbc"><tt>_FillValue</tt>, <tt>scale_factor</tt>, <tt>add_offset</tt></p>
+</li>
+<li><p id="_9018c745-817a-a1b9-02bd-9bb580524897"><tt>long_name</tt>, <tt>missing_value</tt></p>
+</li>
+</ul></div>
+
+<p id="_311e330f-2d16-4cb0-4e3a-7ba10117b744">In all cases:</p>
+
+<div class="ul_wrap"><ul id="_5c42a8c9-37a3-fd91-bdea-47358fdf7d09"><li><p id="_f89cbd8d-ba3b-acef-df0b-c6472ac44fd0">Attribute names are case-sensitive and encoded as UTF-8 strings</p>
+</li>
+<li><p id="_71718072-1f67-7c44-fea2-9b02800d9f7e">Values shall conform to JSON-compatible types (string, number, boolean, array)</p>
+</li>
+</ul></div>
+</div><div id="_encoding_of_multiscale_overviews_in_zarr"><h2 id="_7c3c8dbe-e578-421d-ab85-0910013d612c"><a class="anchor" href="#_encoding_of_multiscale_overviews_in_zarr"></a><a class="header" href="#_encoding_of_multiscale_overviews_in_zarr">8.7.  Encoding of Multiscale Overviews in Zarr</a></h2>
+
+<p id="_d5681e6a-7f66-ca2f-faec-0c38dde2baee">This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.</p>
+
+<p id="_1f1c7063-39f4-86d5-0059-3ea25ae86043">Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.</p>
+
+<div id="_hierarchical_layout"><h3><a class="anchor" href="#_hierarchical_layout"></a><a class="header" href="#_hierarchical_layout">8.7.1.  Hierarchical Layout</a></h3>
+
+<p id="_4f5d6f60-52b5-6e99-8856-4752d207be01">Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., <tt>"0"</tt>, <tt>"1"</tt>, <tt>"2"</tt>). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.</p>
+
+<p class="TableTitle" style="text-align:center;">Table 6</p><table id="_db45978a-5ab2-e7ee-6f32-5208a1750099" class="MsoISOTable" style="border-width:1px;border-spacing:0;table-layout:fixed;"><colgroup><col style="width: 20%;" /><col style="width: 40%;" /><col style="width: 40%;" /></colgroup><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Structure</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v2</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Zarr v3</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Zoom level groups</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Subdirectories with <tt>.zgroup</tt> and <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">Subdirectories with <tt>zarr.json</tt>, <tt>node_type: group</tt></td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Variables at each level</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Zarr arrays (<tt>.zarray</tt>, <tt>.zattrs</tt>) in each group</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.0pt;">Zarr arrays (<tt>zarr.json</tt>, <tt>node_type: array</tt>) in each group</td></tr><tr><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;">Global metadata</td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>multiscales</tt> defined in parent <tt>.zattrs</tt></td><td style="text-align:left;vertical-align:middle;border-top:none;border-bottom:solid windowtext 1.5pt;"><tt>multiscales</tt> defined in parent group <tt>zarr.json</tt> under <tt>attributes</tt></td></tr></tbody></table>
+
+<p id="_13763d2a-1571-c95e-e17a-a5ab137e8c9e">Each multiscale group MUST define chunking (tiling) along the spatial dimensions (<tt>X</tt>, <tt>Y</tt>, or <tt>lon</tt>, <tt>lat</tt>). Recommended chunk sizes are 256×256 or 512×512.</p>
+</div>
+
+<div id="_metadata_encoding"><h3><a class="anchor" href="#_metadata_encoding"></a><a class="header" href="#_metadata_encoding">8.7.2.  Metadata Encoding</a></h3>
+
+<p id="_70b613e7-cba4-a87d-bcfb-ac839f3328f4">Multiscale metadata SHALL be defined using a <tt>multiscales</tt> attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:</p>
+
+<div class="ul_wrap"><ul id="_3aa5cdd6-aa6c-9a4c-36f9-fc99b5946bad"><li><p id="_b8d49e31-7444-b9e0-811b-afa013267dc0"><tt>tile_matrix_set</tt> – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2</p>
+</li>
+<li><p id="_cb26944a-7073-36f9-192f-76cfed7761bc"><tt>resampling_method</tt> – One of the standard string values (e.g., <tt>"nearest"</tt>, <tt>"average"</tt>)</p>
+</li>
+<li><p id="_2fdf7c7c-1872-4105-77a0-d4df1aeb22de"><tt>tile_matrix_set_limits</tt> – (optional) Zoom-level limits following the STAC Tiled Asset style</p>
+</li>
+</ul></div>
+
+<div id="_zarr_v2_encoding_example_zattrs"><h4><a class="anchor" href="#_zarr_v2_encoding_example_zattrs"></a><a class="header" href="#_zarr_v2_encoding_example_zattrs">8.7.2.1.  Zarr v2 Encoding Example (<tt>.zattrs</tt>)</a></h4>
+
+<p class="collapsible active"> </p><pre id="_3e82b336-dcb8-7825-fb6b-8def6817c89a" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 5</p>
+
+</div>
+
+<div id="_zarr_v3_encoding_example_zarr_json"><h4><a class="anchor" href="#_zarr_v3_encoding_example_zarr_json"></a><a class="header" href="#_zarr_v3_encoding_example_zarr_json">8.7.2.2.  Zarr v3 Encoding Example (<tt>zarr.json</tt>)</a></h4>
+
+<p class="collapsible active"> </p><pre id="_5187204a-c507-ea53-6b7d-e9871c9d55f2" class="sourcecode hidable"><span class="p">{</span><span class="w"><br />  </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br />  </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />      </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br />      </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br />    </span><span class="p">}</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 6</p>
+
+</div>
+</div>
+
+<div id="_tile_matrix_set_representation"><h3><a class="anchor" href="#_tile_matrix_set_representation"></a><a class="header" href="#_tile_matrix_set_representation">8.7.3.  Tile Matrix Set Representation</a></h3>
+
+<p id="_a9254166-a570-f92e-3180-3f5d54b3f826">The <tt>tile_matrix_set</tt> member MAY take one of the following forms:</p>
+
+<div class="ul_wrap"><ul id="_f7235663-283d-0546-a5f2-83c76a0f409a"><li><p id="_f394cbd8-d2cf-a2c2-ea2f-004a75dde709">A string referring to a well-known identifier (e.g., <tt>"WebMercatorQuad"</tt>)</p>
+</li>
+<li><p id="_692ef5f8-73cb-8888-aa82-b5debeac7e40">A URI pointing to a JSON document describing the tile matrix set</p>
+</li>
+<li><p id="_53483025-9ed8-1cca-3b42-2aaa89cbfa4c">An inline JSON object (CamelCase, OGC TMS 2.0 compatible)</p>
+</li>
+</ul></div>
+
+<p id="_857e74dd-a3d0-a720-024c-66304c477bcf">Zoom level identifiers in the tile matrix set MUST match the names of the child groups. The spatial reference system declared in <tt>supportedCRS</tt> MUST match the one declared in the corresponding <tt>grid_mapping</tt> of the data variables.</p>
+</div>
+
+<div id="_chunk_layout_alignment"><h3><a class="anchor" href="#_chunk_layout_alignment"></a><a class="header" href="#_chunk_layout_alignment">8.7.4.  Chunk Layout Alignment</a></h3>
+
+<p id="_8a0f5705-4e88-3612-3e31-7be02d526807">At each zoom level, chunking SHALL match the tile layout defined by the TileMatrix:</p>
+
+<div class="ul_wrap"><ul id="_0c10b9ae-0c50-67c3-1748-f78d96e3d277"><li><p id="_ac85c067-2fe5-58fe-d264-2d5eec5a6509">Chunks MUST be aligned with the tile grid (1:1 mapping between chunks and tiles)</p>
+</li>
+<li><p id="_12966454-a9bb-0b0b-0c62-86a500912f0e">Chunk sizes MUST match the <tt>tileWidth</tt> and <tt>tileHeight</tt> declared in the TileMatrix</p>
+</li>
+<li><p id="_da1587dc-9150-8c28-8940-e7a538928cea">Spatial dimensions MUST be clearly identified using <tt>dimension_names</tt> (v3) or <tt>_ARRAY_DIMENSIONS</tt> (v2)</p>
+</li>
+</ul></div>
+</div>
+
+<div id="_tile_matrix_set_limits"><h3><a class="anchor" href="#_tile_matrix_set_limits"></a><a class="header" href="#_tile_matrix_set_limits">8.7.5.  Tile Matrix Set Limits</a></h3>
+
+<p id="_08188fe9-cb3e-51f5-35a9-b1f26fc68923">The <tt>tile_matrix_set_limits</tt> object MAY define the extent of actual data coverage for each zoom level. This follows the style of the STAC tiled-assets extension rather than the full OGC JSON encoding.</p>
+
+<p id="_b2ee1400-667e-7caa-dbb7-df5320023d27">Example:</p>
+
+<p class="collapsible active"> </p><pre id="_3c3714fa-0860-058b-fd9f-c4985dff4904" class="sourcecode hidable"><span class="nl">"tile_matrix_set_limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />  </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br />    </span><span class="nl">"min_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"max_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"min_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br />    </span><span class="nl">"max_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"><br />  </span><span class="p">}</span><span class="w"><br /></span><span class="p">}</span></pre><p class="SourceTitle" style="text-align:center;">Listing 7</p>
+
+</div>
+
+<div id="_resampling_method"><h3><a class="anchor" href="#_resampling_method"></a><a class="header" href="#_resampling_method">8.7.6.  Resampling Method</a></h3>
+
+<p id="_3c169246-fa31-e6d3-ae55-e961e30dcf9e">The <tt>resampling_method</tt> MUST indicate the method used for downsampling across zoom levels. The value MUST be one of:</p>
+
+<p id="_2793f220-d949-9492-f232-5bbef4d58533"><tt>nearest</tt>, <tt>average</tt>, <tt>bilinear</tt>, <tt>cubic</tt>, <tt>cubic_spline</tt>, <tt>lanczos</tt>, <tt>mode</tt>, <tt>max</tt>, <tt>min</tt>, <tt>med</tt>, <tt>sum</tt>, <tt>q1</tt>, <tt>q3</tt>, <tt>rms</tt>, <tt>gauss</tt></p>
+
+<p id="_acd0d9d5-1c69-4f1f-febe-d4e799a63da7">The same method MUST apply across all levels.</p>
+</div>
+</div></div><div id="_unified_data_model_encoding_for_geotiff"><h1 id="_f4fa7ec9-2492-46a0-8414-66cd6e8dbecf"><a class="anchor" href="#_unified_data_model_encoding_for_geotiff"></a><a class="header" href="#_unified_data_model_encoding_for_geotiff">9.  Unified Data Model Encoding for GeoTiff</a></h1><div id="_53755368-53d9-ef2a-a05f-c7feeb0331a9" class="Admonition Tip"><p id="_6ce171a7-3f92-7485-27cb-4a2cf9ca6d71">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
+</div></div><br /><div id="_conformance_class_abstract_test_suite_normative" class="Section3"><h1 class="Annex" id="_86d515ca-be87-4601-91af-9138c2afb794"><a class="anchor" href="#_conformance_class_abstract_test_suite_normative"></a><a class="header" href="#_conformance_class_abstract_test_suite_normative"><b>Annex A</b><br />(informative)<br /><b>Conformance Class Abstract Test Suite (Normative)</b></a></h1><div id="_49fa4119-ff23-ba00-2b10-7c6008e83cc9" class="Note"><p><span class="note_label">NOTE:  </span>Ensure that there is a conformance class for each requirements class and a test for each requirement (identified by requirement name and number)</p></div><div id="_conformance_class_a"><h2 id="_c2274c56-c6fa-4353-9b83-70ce8e7f85d2"><a class="anchor" href="#_conformance_class_a"></a><a class="header" href="#_conformance_class_a">A.1.  Conformance Class A</a></h2>
+
+<p class="SourceTitle" style="text-align:center;">Example</p><div id="ats_example1" class="example"><div class="figdl"><dl id="_15f5af59-2acb-8c62-5214-bd022c8135d7"><dt><p>label</p></dt><dd><p id="_2911e33b-d582-a069-a4d1-a0018ea97641"><a href="http://www.opengis.net/spec/name-of-standard/1.0/conf/example1">http://www.opengis.net/spec/name-of-standard/1.0/conf/example1</a></p>
+</dd><dt><p>subject</p></dt><dd><p id="_f7086c49-3cee-5475-32ca-aad3c9fad854">Requirements Class “example1”</p>
+</dd><dt><p>classification</p></dt><dd><p id="_c632f525-fe27-c165-6be0-0e2d4135510f">Target Type:Web API</p>
+</dd></dl></div>
+</div>
+
+<div id="_example_1"><h3><a class="anchor" href="#_example_1"></a><a class="header" href="#_example_1">A.1.1.  Example 1</a></h3>
+
+<table id="ats_core_api-definition-op" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTestTitle"><a class="anchor" href="#ats_core_api-definition-op"></a><a class="header" href="#ats_core_api-definition-op">
+  Abstract test A.1
+</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Subject</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">/req/req-class-a/req-name-1</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Label</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">/conf/core/api-definition-op</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Test purpose</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_4e900c1f-4736-c517-b011-fcd72a1de669">Validate that the API Definition document can be retrieved from the expected location.</p>
+</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Test method</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><div class="ol_wrap"><ol type="1">
+  <li><p id="_611abb6a-639f-882e-b311-a8312aa18ce6">Construct a path for the API Definition document that ends with <tt>/api</tt>.</p>
+</li>
+  <li><p id="_d980a6c3-2853-eb8d-884a-0a39310f6597">Issue a HTTP GET request on that path</p>
+</li>
+  <li><p id="_e41cd559-a387-2ad3-192f-23320f6dbcdd">Validate the contents of the returned document using test <a href="#ats_core_api-definition-success">/conf/core/api-definition-success</a>.</p>
+</li>
+</ol></div>
+
+</td></tr></tbody></table>
+</div>
+
+<div id="_example_2"><h3><a class="anchor" href="#_example_2"></a><a class="header" href="#_example_2">A.1.2.  Example 2</a></h3>
+
+<table id="ats_core_http" class="modspec" style="border-width:1px;border-spacing:0;"><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="colgroup"><p class="RecommendationTestTitle"><a class="anchor" href="#ats_core_http"></a><a class="header" href="#ats_core_http">
+  Abstract test A.2
+</a></p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;" scope="row">Subject</th><td style="border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;">/req/req-class-a/req-name-2</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Label</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;">/conf/core/http</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.0pt;" scope="row">Test purpose</th><td style="border-top:none;border-bottom:solid windowtext 1.0pt;"><p id="_5e167688-cb2f-249d-25e2-99340b057b85">Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.</p>
+</td></tr><tr><th style="font-weight:bold;border-top:none;border-bottom:solid windowtext 1.5pt;" scope="row">Test method</th><td style="border-top:none;border-bottom:solid windowtext 1.5pt;"><div class="ol_wrap"><ol type="1">
+  <li><p id="_cdd509dd-71ee-f05d-a1d7-363218c4a3ee">All compliance tests SHALL be configured to use the HTTP 1.1 protocol exclusively.</p>
+</li>
+  <li><p id="_43dca150-0694-867b-7e2e-1511056bc805">For APIs which support HTTPS, all compliance tests SHALL be configured to use <a href="#rfc2818">HTTP over TLS</a> (RFC 2818) with their HTTP 1.1 protocol.</p>
+</li>
+</ol></div>
+</td></tr></tbody></table>
+</div>
+</div></div><br /><div id="_title" class="Section3"><h1 class="Annex" id="_de07a439-48af-4543-b767-a3f6f2cc7ce4"><a class="anchor" href="#_title"></a><a class="header" href="#_title"><b>Annex B</b><br />(informative)<br /><b>Title</b></a></h1><div id="_9c04cf83-97ee-5129-1540-d560e28d0909" class="Note"><p><span class="note_label">NOTE:  </span>Place other Annex material in sequential annexes beginning with “B” and leave final two annexes for the Revision History and Bibliography</p></div></div><br /><div id="_revision_history" class="Section3"><h1 class="Annex" id="_ec16f2c7-5825-4fd2-9a65-ae17b73d71b1"><a class="anchor" href="#_revision_history"></a><a class="header" href="#_revision_history"><b>Annex C</b><br />(informative)<br /><b>Revision History</b></a></h1><p class="TableTitle" style="text-align:center;">Table C.1</p><table id="_5afe311c-d3e8-fb9a-9455-6031fbbc3118" class="MsoISOTable" style="border-width:1px;border-spacing:0;width:90%;"><thead><tr><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Date</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Release</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Editor</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Primary clauses modified</th><th style="font-weight:bold;text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;" scope="col">Description</th></tr></thead><tbody><tr><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">2016-04-28</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">0.1</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">G. Editor</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">all</td><td style="text-align:left;vertical-align:middle;border-top:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;">initial version</td></tr></tbody></table></div><br /><div><h1 class="Section3" id="_c79bda6c-8141-4485-9478-3e5de031ab08">Bibliography</h1>
+
+<div id="_3759b87c-ca5a-511b-57d2-cef257dc301a" class="Note"><p><span class="note_label">NOTE:  </span>The TC has approved Springer LNCS as the official document citation type.</p><p id="_4b95e711-c35f-134f-4850-3e819a15ddb0">Springer LNCS is widely used in technical and computer science journals and other publications</p><p id="_91991dd8-2854-d4d4-c3b7-71e34448cc8e">– Actual References:</p><p id="_a19eddb1-f343-b2d8-fb7c-28a962268999">[n] Journal: Author Surname, A.: Title. Publication Title. Volume number, Issue number, Pages Used (Year Published)</p></div><p id="OGC2015" class="Biblio">[1]  <i>OGC: OGC Testbed 12 Annex B: Architecture</i> (2015).</p>
+
+
+</div></main><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": { preferredFont: "STIX" },
+    asciimath2jax: { delimiters: [['(#(', ')#)']] }
+ });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=MML_HTMLorMML-full" async="async"></script>
+  <script>
+    $("#toc").on('click', 'li', function(e) {
+    $(this).parent().find('li.toc-active').removeClass('toc-active');
+    $(this).addClass('toc-active');
+});
+  </script>
+
+  <script>
+  //TOC toggle animation
+$('#toggle').on('click', function(){
+    if( $('nav').is(':visible') ) {
+        $('nav').animate({ 'left': '-353px' }, 'slow', function(){
+            $('nav').hide();
+        });
+        $('body').animate({ 'padding-left': '30px' }, 'slow');
+    }
+    else {
+        $('nav').show();
+        $('nav').animate({ 'left': '0px' }, 'slow');
+        $('body').animate({ 'padding-left': '360px' }, 'slow');
+    }
+});
+</script>
+
+<script>
+    // Scroll to top button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+
+<script>
+/*
+  $(document).ready(function() {
+	  $('[id^=toc]').each(function ()
+	  {
+	     var currentToc = $(this);
+       var url = window.location.href;
+            currentToc.wrap("<a href='" + url + "#" + currentToc.attr("id") + "'></a>");
+	  });
+});
+*/
+</script>
+
+  <script>
+    document.querySelectorAll('*|svg a').forEach(function(item) {
+      var loc = item.getAttribute('href');
+      if (loc !== null && loc.startsWith('#')) {
+  item.setAttribute('href', location.pathname + loc);
+      }
+});
+  </script>
+
+
+<script>
+
+// jQuery Inline Footnotes v1.0.3
+// Copyright (c) 2011 Vesa Vänskä, released under the MIT License.
+
+// Generated by CoffeeScript 1.6.1
+(function() {
+
+  (function($) {
+    $.inlineFootnote = function(el, options) {
+      var _this = this;
+      this.el = $(el);
+      this.el.data("inlineFootnote", this);
+      this.initialize = function() {
+        this.options = $.extend({}, $.inlineFootnote.defaultOptions, options);
+        this.footnoteId = this.el.attr("href").match(/#(.*)/)[1];
+        if (this.footnoteId) {
+          this.el.mouseenter(this.openBox);
+          return $("body").mousemove(this.closeBox);
+        }
+      };
+      this.openBox = function(event) {
+        var footnoteContent, linkOffset;
+        if (!_this.box) {
+          footnoteContent = $("[id='" + _this.footnoteId + "']").children().filter(":not('" + _this.options.hideFromContent + "')");
+          linkOffset = _this.el.offset();
+          _this.box = $("<div />", {
+            id: _this.options.boxId,
+            html: footnoteContent.clone().find(_this.options.hideFromContent).remove().end(),
+            css: {
+              position: "absolute",
+              top: linkOffset.top,
+              left: linkOffset.left + _this.el.outerWidth()
+            }
+          }).appendTo("body");
+          return _this.positionBox();
+        }
+      };
+      this.closeBox = function(event) {
+        if (_this.box) {
+          if (_this.isHoveringFootnote(event)) {
+            clearTimeout(_this.closeTimeout);
+            return _this.closeTimeout = null;
+          } else {
+            if (!_this.closeTimeout) {
+              return _this.closeTimeout = setTimeout((function() {
+                _this.box.remove();
+                return _this.box = null;
+              }), _this.options.hideDelay);
+            }
+          }
+        }
+      };
+      this.isHoveringFootnote = function(event) {
+        return this.box.is(event.target) || $(event.target).closest(this.box).length > 0 || event.target === this.el[0];
+      };
+      this.positionBox = function() {
+        var boxHorizontalPadding, boxLeft, boxWidth, linkLeftOffset, windowWidth;
+        boxHorizontalPadding = parseInt(this.box.css("padding-left")) + parseInt(this.box.css("padding-right"));
+        linkLeftOffset = this.el.offset().left;
+        windowWidth = $(window).width();
+        if ((windowWidth / 2) > linkLeftOffset) {
+          boxLeft = linkLeftOffset + 20;
+          boxWidth = windowWidth - boxLeft - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+        } else {
+          boxWidth = linkLeftOffset - boxHorizontalPadding - this.options.boxMargin * 2;
+          if (boxWidth > this.options.maximumBoxWidth) {
+            boxWidth = this.options.maximumBoxWidth;
+          }
+          boxLeft = linkLeftOffset - boxWidth - this.options.boxMargin * 2;
+        }
+        return this.box.css({
+          width: boxWidth,
+          left: boxLeft
+        });
+      };
+      return this.initialize();
+    };
+    $.inlineFootnote.defaultOptions = {
+      boxMargin: 20,
+      hideDelay: 200,
+      hideFromContent: "[rel=footnote]",
+      maximumBoxWidth: 500,
+      boxId: "footnote_box"
+    };
+    return $.fn.inlineFootnote = function(options) {
+      return this.each(function() {
+        return new $.inlineFootnote(this, options);
+      });
+    };
+  })(jQuery);
+
+}).call(this);
+</script>
+
+<script>
+      $(function() {
+        $("[rel=footnote]").inlineFootnote();
+        });
+</script>
+  <script>
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+//
+// AnchorJS - v4.2.2 - 2020-04-20
+// https://www.bryanbraun.com/anchorjs/
+// Copyright (c) 2020 Bryan Braun; Licensed MIT
+//
+// @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
+!function(A,e){"use strict";"function"==typeof define&&define.amd?define([],e):"object"==typeof module&&module.exports?module.exports=e():(A.AnchorJS=e(),A.anchors=new A.AnchorJS)}(this,function(){"use strict";return function(A){function f(A){A.icon=A.hasOwnProperty("icon")?A.icon:"",A.visible=A.hasOwnProperty("visible")?A.visible:"hover",A.placement=A.hasOwnProperty("placement")?A.placement:"right",A.ariaLabel=A.hasOwnProperty("ariaLabel")?A.ariaLabel:"Anchor",A.class=A.hasOwnProperty("class")?A.class:"",A.base=A.hasOwnProperty("base")?A.base:"",A.truncate=A.hasOwnProperty("truncate")?Math.floor(A.truncate):64,A.titleText=A.hasOwnProperty("titleText")?A.titleText:""}function p(A){var e;if("string"==typeof A||A instanceof String)e=[].slice.call(document.querySelectorAll(A));else{if(!(Array.isArray(A)||A instanceof NodeList))throw new Error("The selector provided to AnchorJS was invalid.");e=[].slice.call(A)}return e}this.options=A||{},this.elements=[],f(this.options),this.isTouchDevice=function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)},this.add=function(A){var e,t,i,n,o,s,a,r,c,h,l,u,d=[];if(f(this.options),"touch"===(l=this.options.visible)&&(l=this.isTouchDevice()?"always":"hover"),0===(e=p(A=A||"h2, h3, h4, h5, h6")).length)return this;for(!function(){if(null!==document.head.querySelector("style.anchorjs"))return;var A,e=document.createElement("style");e.className="anchorjs",e.appendChild(document.createTextNode("")),void 0===(A=document.head.querySelector('[rel="stylesheet"],style'))?document.head.appendChild(e):document.head.insertBefore(e,A);e.sheet.insertRule(".anchorjs-link{opacity:0;text-decoration:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}",e.sheet.cssRules.length),e.sheet.insertRule(":hover>.anchorjs-link,.anchorjs-link:focus{opacity:1}",e.sheet.cssRules.length),e.sheet.insertRule("[data-anchorjs-icon]::after{content:attr(data-anchorjs-icon)}",e.sheet.cssRules.length),e.sheet.insertRule('@font-face{font-family:anchorjs-icons;src:url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8yG2cAAAE4AAAAYGNtYXDp3gC3AAABpAAAAExnYXNwAAAAEAAAA9wAAAAIZ2x5ZlQCcfwAAAH4AAABCGhlYWQHFvHyAAAAvAAAADZoaGVhBnACFwAAAPQAAAAkaG10eASAADEAAAGYAAAADGxvY2EACACEAAAB8AAAAAhtYXhwAAYAVwAAARgAAAAgbmFtZQGOH9cAAAMAAAAAunBvc3QAAwAAAAADvAAAACAAAQAAAAEAAHzE2p9fDzz1AAkEAAAAAADRecUWAAAAANQA6R8AAAAAAoACwAAAAAgAAgAAAAAAAAABAAADwP/AAAACgAAA/9MCrQABAAAAAAAAAAAAAAAAAAAAAwABAAAAAwBVAAIAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAMCQAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAg//0DwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAAIAAAACgAAxAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADAAAAAIAAgAAgAAACDpy//9//8AAAAg6cv//f///+EWNwADAAEAAAAAAAAAAAAAAAAACACEAAEAAAAAAAAAAAAAAAAxAAACAAQARAKAAsAAKwBUAAABIiYnJjQ3NzY2MzIWFxYUBwcGIicmNDc3NjQnJiYjIgYHBwYUFxYUBwYGIwciJicmNDc3NjIXFhQHBwYUFxYWMzI2Nzc2NCcmNDc2MhcWFAcHBgYjARQGDAUtLXoWOR8fORYtLTgKGwoKCjgaGg0gEhIgDXoaGgkJBQwHdR85Fi0tOAobCgoKOBoaDSASEiANehoaCQkKGwotLXoWOR8BMwUFLYEuehYXFxYugC44CQkKGwo4GkoaDQ0NDXoaShoKGwoFBe8XFi6ALjgJCQobCjgaShoNDQ0NehpKGgobCgoKLYEuehYXAAAADACWAAEAAAAAAAEACAAAAAEAAAAAAAIAAwAIAAEAAAAAAAMACAAAAAEAAAAAAAQACAAAAAEAAAAAAAUAAQALAAEAAAAAAAYACAAAAAMAAQQJAAEAEAAMAAMAAQQJAAIABgAcAAMAAQQJAAMAEAAMAAMAAQQJAAQAEAAMAAMAAQQJAAUAAgAiAAMAAQQJAAYAEAAMYW5jaG9yanM0MDBAAGEAbgBjAGgAbwByAGoAcwA0ADAAMABAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAH//wAP) format("truetype")}',e.sheet.cssRules.length)}(),t=document.querySelectorAll("[id]"),i=[].map.call(t,function(A){return A.id}),o=0;o<e.length;o++)if(this.hasAnchorJSLink(e[o]))d.push(o);else{if(e[o].hasAttribute("id"))n=e[o].getAttribute("id");else if(e[o].hasAttribute("data-anchor-id"))n=e[o].getAttribute("data-anchor-id");else{for(c=r=this.urlify(e[o].textContent),a=0;void 0!==s&&(c=r+"-"+a),a+=1,-1!==(s=i.indexOf(c)););s=void 0,i.push(c),e[o].setAttribute("id",c),n=c}(h=document.createElement("a")).className="anchorjs-link "+this.options.class,h.setAttribute("aria-label",this.options.ariaLabel),h.setAttribute("data-anchorjs-icon",this.options.icon),this.options.titleText&&(h.title=this.options.titleText),u=document.querySelector("base")?window.location.pathname+window.location.search:"",u=this.options.base||u,h.href=u+"#"+n,"always"===l&&(h.style.opacity="1"),""===this.options.icon&&(h.style.font="1em/1 anchorjs-icons","left"===this.options.placement&&(h.style.lineHeight="inherit")),"left"===this.options.placement?(h.style.position="absolute",h.style.marginLeft="-1em",h.style.paddingRight="0.5em",e[o].insertBefore(h,e[o].firstChild)):(h.style.paddingLeft="0.375em",e[o].appendChild(h))}for(o=0;o<d.length;o++)e.splice(d[o]-o,1);return this.elements=this.elements.concat(e),this},this.remove=function(A){for(var e,t,i=p(A),n=0;n<i.length;n++)(t=i[n].querySelector(".anchorjs-link"))&&(-1!==(e=this.elements.indexOf(i[n]))&&this.elements.splice(e,1),i[n].removeChild(t));return this},this.removeAll=function(){this.remove(this.elements)},this.urlify=function(A){return this.options.truncate||f(this.options),A.trim().replace(/\'/gi,"").replace(/[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,"-").replace(/-{2,}/g,"-").substring(0,this.options.truncate).replace(/^-+|-+$/gm,"").toLowerCase()},this.hasAnchorJSLink=function(A){var e=A.firstChild&&-1<(" "+A.firstChild.className+" ").indexOf(" anchorjs-link "),t=A.lastChild&&-1<(" "+A.lastChild.className+" ").indexOf(" anchorjs-link ");return e||t||!1}}});
+// @license-end
+  </script>
+    <script>
+  anchors.options = {
+  placement: 'left'
+};
+anchors.add('h1, h2, h3, h4');
+</script>
+
+<script>
+// use .collapsible element to toggle visibility of element following it
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+
+<script>
+const activeBtns = document.querySelectorAll('.collapsible.active')
+
+// check if there are any active buttons, and open the content for each of them as default
+if (activeBtns.length) {
+    activeBtns.forEach(btn => {
+        const content = btn.nextElementSibling
+        content.style.maxHeight = content.scrollHeight + 'px'
+    })
+}
+</script>
+
+</html>

@@ -1,0 +1,16 @@
+<bibdata type="standard">
+<title language="en" format="text/plain">OGC (add title text)</title>
+<uri type="xml">./document.xml</uri><uri type="pdf">./document.pdf</uri><uri type="doc">./document.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier><docidentifier type="ogc-internal" primary="true">YY-999</docidentifier><docnumber>YY-999</docnumber><date type="published"><on>2029-03-30</on></date><date type="issued"><on>2029-03-30</on></date><date type="received"><on>2029-03-30</on></date><contributor><role type="author"/><organization>
+<name>Organization One</name>
+</organization></contributor><contributor><role type="author"/><organization>
+<name>Organization Two</name>
+</organization></contributor><contributor><role type="editor"/><person>
+<name><completename>Editor One</completename></name>
+</person></contributor><contributor><role type="editor"/><person>
+<name><completename>Editor Two</completename></name>
+</person></contributor><contributor><role type="publisher"/><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></contributor><edition>1.0</edition><version><draft>3.0</draft></version><language>en</language><script>Latn</script><abstract><p>&lt;Insert Abstract Text here&gt;</p>
+</abstract><status><stage>draft</stage></status><copyright><from>2025</from><owner><organization>
+<name>Open Geospatial Consortium</name>
+<abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>API</keyword><keyword>openapi</keyword><keyword>html</keyword><ext><doctype>standard</doctype><subdoctype>implementation</subdoctype><flavor>ogc</flavor><editorialgroup><committee>technical</committee></editorialgroup></ext></bibdata>

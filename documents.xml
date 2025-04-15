@@ -1,0 +1,84 @@
+<relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>OGC API - Processes</title><contributor><role type='author'/><organization><name>OGC</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
+  <title format="text/plain" language="en">OGC (add title text)</title>
+  <uri type="xml">documents/standard/template/document.xml</uri>
+  <uri type="pdf">documents/standard/template/document.pdf</uri>
+  <uri type="doc">documents/standard/template/document.doc</uri>
+  <uri type="html">documents/standard/template/document.html</uri>
+  <uri type="rxl">documents/standard/template/document.rxl</uri>
+  <docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier>
+  <docidentifier type="ogc-internal" primary="true">YY-999</docidentifier>
+  <docnumber>YY-999</docnumber>
+  <date type="published">
+    <on>2029-03-30</on>
+  </date>
+  <date type="issued">
+    <on>2029-03-30</on>
+  </date>
+  <date type="received">
+    <on>2029-03-30</on>
+  </date>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>Organization One</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="author"/>
+    <organization>
+      <name>Organization Two</name>
+    </organization>
+  </contributor>
+  <contributor>
+    <role type="editor"/>
+    <person>
+      <name>
+        <completename>Editor One</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="editor"/>
+    <person>
+      <name>
+        <completename>Editor Two</completename>
+      </name>
+    </person>
+  </contributor>
+  <contributor>
+    <role type="publisher"/>
+    <organization>
+      <name>Open Geospatial Consortium</name>
+      <abbreviation>OGC</abbreviation>
+    </organization>
+  </contributor>
+  <edition>1.0</edition>
+  <version>
+    <draft>3.0</draft>
+  </version>
+  <language>en</language>
+  <script>Latn</script>
+  <abstract>&lt;p&gt;&lt;Insert Abstract Text here&gt;&lt;/p&gt;</abstract>
+  <status>
+    <stage>draft</stage>
+  </status>
+  <copyright>
+    <from>2025</from>
+    <owner>
+      <organization>
+        <name>Open Geospatial Consortium</name>
+        <abbreviation>OGC</abbreviation>
+      </organization>
+    </owner>
+  </copyright>
+  <keyword>ogcdoc</keyword>
+  <keyword>OGC document</keyword>
+  <keyword>API</keyword>
+  <keyword>openapi</keyword>
+  <keyword>html</keyword>
+  <ext>
+    <doctype>standard</doctype>
+    <subdoctype>implementation</subdoctype>
+  </ext>
+</bibdata></relation>
+</relaton-collection>
