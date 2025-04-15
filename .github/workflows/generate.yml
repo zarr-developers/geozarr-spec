@@ -35,12 +35,12 @@ jobs:
           key: metanorma-ietf-workgroup-cache
           restore-keys: metanorma-ietf-workgroup-cache
 
-      - uses: metanorma/metanorma-build-scripts/gh-rubygems-setup-action@main
+      - uses: metanorma/ci/gh-rubygems-setup-action@main
         with:
           token: ${{ secrets.METANORMA_CI_PAT_TOKEN }}
 
       - run: |
-          curl -L --retry 3 https://raw.githubusercontent.com/metanorma/metanorma-build-scripts/master/gemfile-to-bundle-add.sh | bash
+          curl -L --retry 3 https://raw.githubusercontent.com/metanorma/ci/refs/heads/main/gemfile-to-bundle-add.sh | bash
 
       - uses: actions-mn/cli/site-gen@main
         with:
