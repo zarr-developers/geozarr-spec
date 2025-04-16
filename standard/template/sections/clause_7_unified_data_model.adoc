@@ -107,18 +107,76 @@ The model represents datasets as abstract compositions of dimensions, coordinate
 
 ==== Dataset Structure
 
-A dataset conforming to the UDM is composed of the following core components, derived from the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
+A dataset conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level dataset entity. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
 
-- **Dimensions** – Named, integer-valued axes that define the extents of data variables. Examples include `time`, `x`, `y`, and `band`.
-- **Coordinate Variables** – Arrays (typically one-dimensional) that supply geospatial, temporal, or other contextual coordinates along dimensions. These may be scalar or higher-dimensional, depending on the referencing scheme in use.
-- **Data Variables** – Multidimensional arrays representing physical quantities or derived observations. These are defined over one or more dimensions and are associated with coordinate variables and metadata attributes.
-- **Attributes** – Key-value pairs that annotate variables or dataset-level elements with semantic information such as physical units, standard names, or spatial referencing metadata.
+Each dataset node comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
 
-==== Hierarchical Grouping
+- **Dimensions** – Named, integer-valued axes defining the extent of data variables. Examples include `time`, `x`, `y`, and `band`.
+- **Coordinate Variables** – Arrays that supply coordinate values along dimensions, providing spatial, temporal, or contextual referencing. These may be scalar or higher-dimensional, depending on the referencing scheme.
+- **Data Variables** – Multidimensional arrays representing physical measurements or derived products. Defined over one or more dimensions, these variables are associated with coordinate variables and annotated with metadata.
+- **Attributes** – Key-value pairs attached to variables or dataset components. Attributes convey semantic information such as units, standard names, and geospatial metadata.
 
-The model supports the logical organisation of resources using hierarchical group. These groups act as containers for organising variables, dimensions, and metadata into logical subsets. Grouping may be used to structure resources according to thematic partitions, resolution levels, or processing stages.
+The hierarchy is implemented through **groups**, which function as containers for variables, dimensions, and metadata. Groups may define local context while inheriting attributes from parent nodes. This supports the logical subdivision of datasets by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.
 
-Groups may define local metadata and variable collections, while also inheriting global context where applicable. This promotes modularity and clarity within complex datasets.
+The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
+
+[plantuml, format="svg"]
+----
+@startuml CDM_DAL_Object_Model
+
+class Dataset {
+    + String location
+    + open()
+    + close()
+}
+
+class Group {
+    + String name
+    + List<Group> subgroups
+    + List<Variable> variables
+    + List<Dimension> dimensions
+    + List<Attribute> attributes
+}
+
+class Dimension {
+    + String name
+    + int length
+    + boolean isUnlimited
+    + boolean isShared
+}
+
+class Variable {
+    + String name
+    + DataType dataType
+    + List<Dimension> shape
+    + List<Attribute> attributes
+    + read()
+}
+
+class DataType {
+    + String name
+    <<enumeration>>
+}
+
+class Attribute {
+    + String name
+    + String type
+    + List<String> values
+}
+
+Dataset --> Group : rootGroup
+Group --> Group : contains >
+Group --> Variable : contains >
+Group --> Dimension : defines >
+Group --> Attribute : has >
+Variable --> Dimension : uses >
+Variable --> DataType : has >
+Variable --> Attribute : has >
+@enduml
+----
+
+
+Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.
 
 ==== Coordinate Referencing
 
