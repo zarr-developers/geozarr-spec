@@ -1,7 +1,7 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_7771f5fc.9d3b.4301"
+Content-Type: multipart/related; boundary="----=_NextPart_d94692b8.28ef.4b49"
 
-------=_NextPart_7771f5fc.9d3b.4301
+------=_NextPart_d94692b8.28ef.4b49
 Content-ID: <geozarr-spec.htm>
 Content-Disposition: inline; filename="geozarr-spec.htm"
 Content-Type: text/html; charset="utf-8"
@@ -2550,361 +2550,361 @@ span.AdmittedLabel, span.DeprecatedLabel {
 </div>
 
 
-</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div class="TOC"><a name="_a29441c9-fabd-467d-804d-06a8c2a63904" id="_a29441c9-fabd-467d-804d-06a8c2a63904"></a><p class="zzContents">Contents</p><p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-begin"></span><span style="mso-spacerun:yes">&#xA0;</span>TOC \o "1-2" \h \z \u <span style="mso-element:field-separator"></span></span>
+</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div class="TOC"><a name="_d0f9bd31-ff9d-47c2-a566-d32cc1ffbd9f" id="_d0f9bd31-ff9d-47c2-a566-d32cc1ffbd9f"></a><p class="zzContents">Contents</p><p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-begin"></span><span style="mso-spacerun:yes">&#xA0;</span>TOC \o "1-2" \h \z \u <span style="mso-element:field-separator"></span></span>
 <span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc798173360">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc680790977">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc798173360 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc680790977 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc015413046">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc348287523">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc015413046 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc348287523 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc707307536">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc291152973">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc707307536 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc291152973 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc282281417">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc835078649">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc282281417 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc835078649 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc589845428">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc153856550">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc589845428 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc153856550 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc187570536">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc512122395">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc187570536 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc512122395 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc792837246">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc786467557">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc792837246 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc786467557 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc888650463">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc745071063">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc888650463 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc745071063 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc919416781">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc404093258">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc919416781 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc404093258 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc963307419">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc712444499">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc963307419 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc712444499 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc834955254">Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc524351636">Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc834955254 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc524351636 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc526943951">VII. Contributors<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc342361659">VII. Contributors<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc526943951 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc342361659 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc014948267">Contributors<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc525943666">Contributors<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc014948267 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc525943666 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc116554216">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc982793578">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc116554216 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc982793578 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc291520926">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc962328713">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc291520926 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc962328713 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc184951308">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc516529674">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc184951308 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc516529674 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc458445444">4. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc336325997">4. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc458445444 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc336325997 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc593146078">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc936725616">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc593146078 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc936725616 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc645646979">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc858483937">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc645646979 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc858483937 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc303015516">6. Clauses not containing normative material<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc913307126">6. Clauses not containing normative material<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc303015516 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc913307126 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc547237491">6.1. Clauses not containing normative material sub-clause 1<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc997962072">6.1. Clauses not containing normative material sub-clause 1<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc547237491 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc997962072 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc688224053">6.2. Clauses not containing normative material sub-clause 2<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc061309479">6.2. Clauses not containing normative material sub-clause 2<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc688224053 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc061309479 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc453663707">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc879936432">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc453663707 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc879936432 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc815125689">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc776742783">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc815125689 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc776742783 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc504369297">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc210134155">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc504369297 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc210134155 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc818397050">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc576445071">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc818397050 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc576445071 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc360636997">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc405985398">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc360636997 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc405985398 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc078248359">7.5. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc786992299">7.5. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc078248359 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc786992299 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc919720928">7.6. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc654200257">7.6. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc919720928 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc654200257 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc721270573">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc917456502">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc721270573 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc917456502 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc818253564">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc472723966">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc818253564 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc472723966 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc179775788">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc448277514">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc179775788 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc448277514 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc900515125">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc938249026">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc900515125 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc938249026 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc524202177">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc310082117">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc524202177 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc310082117 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc955539798">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc996274114">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc955539798 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc996274114 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc804875982">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc809396434">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc804875982 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc809396434 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc496020193">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc778650781">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc496020193 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc778650781 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc566922266">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc928194185">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc566922266 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc928194185 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc797694756">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc310907719">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc797694756 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc310907719 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc906188357">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc118995996">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc906188357 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc118995996 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc034274366">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc225456915">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc034274366 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc225456915 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc773003191">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc082786643">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc773003191 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc082786643 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc435833748">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc299521044">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc435833748 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc299521044 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc609359344">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc312319836">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc609359344 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc312319836 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span><span lang="EN-GB" xml:lang="EN-GB"><o:p class="MsoNormal">&#xA0;</o:p></span></p>
-</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_abstract" id="_abstract"></a><h1 class="AbstractTitle">I.<span style="mso-tab-count:1">&#xA0; </span>Abstract</h1><p class="MsoNormal"><a name="_ea8b918b-259f-ad32-41cd-bf6720709423" id="_ea8b918b-259f-ad32-41cd-bf6720709423"></a>&lt;Insert Abstract Text here&gt;</p></div><div class="Section3"><a name="_2db61d01-ea30-4cad-95bd-f3d6d5540c0a" id="_2db61d01-ea30-4cad-95bd-f3d6d5540c0a"></a><h1 class="IntroTitle">II.<span style="mso-tab-count:1">&#xA0; </span>Keywords</h1><p class="MsoNormal">The following are keywords to be used by search engines and document catalogues.</p><p class="MsoNormal">ogcdoc, OGC document, API, openapi, html</p></div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3" id="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"></a><h1 class="ForewordTitle">III.<span style="mso-tab-count:1">&#xA0; </span>Preface</h1><div class="Note"><a name="_b54ab49b-0988-938f-ab2d-38e2ffda33ce" id="_b54ab49b-0988-938f-ab2d-38e2ffda33ce"></a><p class="Note"><span class="note_label">NOTE:<span style="mso-tab-count:1">&#xA0; </span></span>Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.</p></div><p class="MsoNormal"><a name="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a" id="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a"></a>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p><p class="MsoNormal"><a name="_25f6b7a1-8657-2655-9eff-47df179631e0" id="_25f6b7a1-8657-2655-9eff-47df179631e0"></a>Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p></div><div class="Section3"><a name="_security_considerations" id="_security_considerations"></a><h1 class="IntroTitle">IV.<span style="mso-tab-count:1">&#xA0; </span>Security considerations</h1><p class="MsoNormal"><a name="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae" id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae"></a>No security considerations have been made for this Standard.</p></div><div class="Section3"><a name="_404f732a-8106-48df-b834-6ec5f9657288" id="_404f732a-8106-48df-b834-6ec5f9657288"></a><h1 class="IntroTitle">V.<span style="mso-tab-count:1">&#xA0; </span>Submitting Organizations</h1><p class="MsoNormal">The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpFirst">Organization One</p>
+</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_abstract" id="_abstract"></a><h1 class="AbstractTitle">I.<span style="mso-tab-count:1">&#xA0; </span>Abstract</h1><p class="MsoNormal"><a name="_ea8b918b-259f-ad32-41cd-bf6720709423" id="_ea8b918b-259f-ad32-41cd-bf6720709423"></a>&lt;Insert Abstract Text here&gt;</p></div><div class="Section3"><a name="_8d07bf8f-b3d7-4c80-9bb3-4ea2fab4f2d1" id="_8d07bf8f-b3d7-4c80-9bb3-4ea2fab4f2d1"></a><h1 class="IntroTitle">II.<span style="mso-tab-count:1">&#xA0; </span>Keywords</h1><p class="MsoNormal">The following are keywords to be used by search engines and document catalogues.</p><p class="MsoNormal">ogcdoc, OGC document, API, openapi, html</p></div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3" id="_2fc7f941-8cac-e65f-3e51-3b9f18652ea3"></a><h1 class="ForewordTitle">III.<span style="mso-tab-count:1">&#xA0; </span>Preface</h1><div class="Note"><a name="_b54ab49b-0988-938f-ab2d-38e2ffda33ce" id="_b54ab49b-0988-938f-ab2d-38e2ffda33ce"></a><p class="Note"><span class="note_label">NOTE:<span style="mso-tab-count:1">&#xA0; </span></span>Insert Preface Text here. Give OGC specific commentary: describe the technical content, reason for document, history of the document and precursors, and plans for future work.</p></div><p class="MsoNormal"><a name="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a" id="_8ba0feed-acfd-bc4f-1d13-2e75dab20f9a"></a>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights.</p><p class="MsoNormal"><a name="_25f6b7a1-8657-2655-9eff-47df179631e0" id="_25f6b7a1-8657-2655-9eff-47df179631e0"></a>Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p></div><div class="Section3"><a name="_security_considerations" id="_security_considerations"></a><h1 class="IntroTitle">IV.<span style="mso-tab-count:1">&#xA0; </span>Security considerations</h1><p class="MsoNormal"><a name="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae" id="_4bfc9ff4-0427-16f3-2dce-96ac965b7eae"></a>No security considerations have been made for this Standard.</p></div><div class="Section3"><a name="_29127cbd-e9ff-4413-bb7c-e7f9450b9033" id="_29127cbd-e9ff-4413-bb7c-e7f9450b9033"></a><h1 class="IntroTitle">V.<span style="mso-tab-count:1">&#xA0; </span>Submitting Organizations</h1><p class="MsoNormal">The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpFirst">Organization One</p>
 <p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpLast">Organization Two</p></div></div><div class="Section3"><a name="_submitters" id="_submitters"></a><h1 class="IntroTitle">VI.<span style="mso-tab-count:1">&#xA0; </span>Submitters</h1><h1>Submitters</h1><p class="MsoNormal"><a name="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9" id="_c4485abb-cbc5-a7e8-5e00-c9c58a531cc9"></a>All questions regarding this submission should be directed to the editor or the submitters:</p><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;"><a name="_7c862f68-dc17-1a57-b670-05344091cf61" id="_7c862f68-dc17-1a57-b670-05344091cf61"></a><tbody><tr><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Name</b></td><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Affiliation</b></td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;"></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;"></td></tr></tbody></table></div></div><div class="Section3"><a name="_contributors" id="_contributors"></a><h1 class="IntroTitle">VII.<span style="mso-tab-count:1">&#xA0; </span>Contributors</h1><h1>Contributors</h1><p class="MsoNormal"><a name="_621c4f5b-26a9-89f7-0840-938819089a27" id="_621c4f5b-26a9-89f7-0840-938819089a27"></a>Additional contributors to this Standard include the following:</p><p class="MsoNormal"><a name="_45f943af-cadd-6488-bff5-c1c1376f2096" id="_45f943af-cadd-6488-bff5-c1c1376f2096"></a>Individual name(s), Organization</p></div><p class="MsoNormal">&#xA0;</p></div>
     <p class="MsoNormal">
       <br clear="all" class="section"/>
@@ -3140,29 +3140,33 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <div><a name="_dataset_structure" id="_dataset_structure"></a><h3>7.4.1.<span style="mso-tab-count:1">&#xA0; </span>Dataset Structure</h3>
 
-<p class="MsoNormal"><a name="_73be98c6-e1e4-5340-b451-8de423219577" id="_73be98c6-e1e4-5340-b451-8de423219577"></a>A dataset conforming to the UDM is composed of the following core components, derived from the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:</p>
+<p class="MsoNormal"><a name="_37d218a4-5cae-d794-d518-35f69aec44fe" id="_37d218a4-5cae-d794-d518-35f69aec44fe"></a>A dataset conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level dataset entity. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.</p>
 
-<div class="ul_wrap"><p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpFirst"><b>Dimensions</b> &#x2013; Named, integer-valued axes that define the extents of data variables. Examples include <tt>time</tt>, <tt>x</tt>, <tt>y</tt>, and <tt>band</tt>.
+<p class="MsoNormal"><a name="_4053f0c3-6c78-89c3-d361-cf5eeb0f814b" id="_4053f0c3-6c78-89c3-d361-cf5eeb0f814b"></a>Each dataset node comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:</p>
+
+<div class="ul_wrap"><p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpFirst"><b>Dimensions</b> &#x2013; Named, integer-valued axes defining the extent of data variables. Examples include <tt>time</tt>, <tt>x</tt>, <tt>y</tt>, and <tt>band</tt>.
 </p>
-<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpMiddle"><b>Coordinate Variables</b> &#x2013; Arrays (typically one-dimensional) that supply geospatial, temporal, or other contextual coordinates along dimensions. These may be scalar or higher-dimensional, depending on the referencing scheme in use.
+<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpMiddle"><b>Coordinate Variables</b> &#x2013; Arrays that supply coordinate values along dimensions, providing spatial, temporal, or contextual referencing. These may be scalar or higher-dimensional, depending on the referencing scheme.
 </p>
-<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpMiddle"><b>Data Variables</b> &#x2013; Multidimensional arrays representing physical quantities or derived observations. These are defined over one or more dimensions and are associated with coordinate variables and metadata attributes.
+<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpMiddle"><b>Data Variables</b> &#x2013; Multidimensional arrays representing physical measurements or derived products. Defined over one or more dimensions, these variables are associated with coordinate variables and annotated with metadata.
 </p>
-<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpLast"><b>Attributes</b> &#x2013; Key-value pairs that annotate variables or dataset-level elements with semantic information such as physical units, standard names, or spatial referencing metadata.
+<p style="mso-list:l3 level1 lfo11;" class="MsoListParagraphCxSpLast"><b>Attributes</b> &#x2013; Key-value pairs attached to variables or dataset components. Attributes convey semantic information such as units, standard names, and geospatial metadata.
 </p>
 </div>
+
+<p class="MsoNormal"><a name="_26075de3-c907-306e-f13b-112c91e87f20" id="_26075de3-c907-306e-f13b-112c91e87f20"></a>The hierarchy is implemented through <b>groups</b>, which function as containers for variables, dimensions, and metadata. Groups may define local context while inheriting attributes from parent nodes. This supports the logical subdivision of datasets by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.</p>
+
+<p class="MsoNormal"><a name="_830c8833-5011-a292-e2da-c3a44b2f67f4" id="_830c8833-5011-a292-e2da-c3a44b2f67f4"></a>The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.</p>
+
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_f7b6e6b8-7f00-035e-6ca4-44c5557bc1a4" id="_f7b6e6b8-7f00-035e-6ca4-44c5557bc1a4"></a>@startuml CDM_DAL_Object_Model<br/><br/>class Dataset {<br/>&#xA0;&#xA0;&#xA0; + String location<br/>&#xA0;&#xA0;&#xA0; + open()<br/>&#xA0;&#xA0;&#xA0; + close()<br/>}<br/><br/>class Group {<br/>&#xA0;&#xA0;&#xA0; + String name<br/>&#xA0;&#xA0;&#xA0; + List&lt;Group&gt; subgroups<br/>&#xA0;&#xA0;&#xA0; + List&lt;Variable&gt; variables<br/>&#xA0;&#xA0;&#xA0; + List&lt;Dimension&gt; dimensions<br/>&#xA0;&#xA0;&#xA0; + List&lt;Attribute&gt; attributes<br/>}<br/><br/>class Dimension {<br/>&#xA0;&#xA0;&#xA0; + String name<br/>&#xA0;&#xA0;&#xA0; + int length<br/>&#xA0;&#xA0;&#xA0; + boolean isUnlimited<br/>&#xA0;&#xA0;&#xA0; + boolean isShared<br/>}<br/><br/>class Variable {<br/>&#xA0;&#xA0;&#xA0; + String name<br/>&#xA0;&#xA0;&#xA0; + DataType dataType<br/>&#xA0;&#xA0;&#xA0; + List&lt;Dimension&gt; shape<br/>&#xA0;&#xA0;&#xA0; + List&lt;Attribute&gt; attributes<br/>&#xA0;&#xA0;&#xA0; + read()<br/>}<br/><br/>class DataType {<br/>&#xA0;&#xA0;&#xA0; + String name<br/>&#xA0;&#xA0;&#xA0; &lt;&lt;enumeration&gt;&gt;<br/>}<br/><br/>class Attribute {<br/>&#xA0;&#xA0;&#xA0; + String name<br/>&#xA0;&#xA0;&#xA0; + String type<br/>&#xA0;&#xA0;&#xA0; + List&lt;String&gt; values<br/>}<br/><br/>Dataset --&gt; Group : rootGroup<br/>Group --&gt; Group : contains &gt;<br/>Group --&gt; Variable : contains &gt;<br/>Group --&gt; Dimension : defines &gt;<br/>Group --&gt; Attribute : has &gt;<br/>Variable --&gt; Dimension : uses &gt;<br/>Variable --&gt; DataType : has &gt;<br/>Variable --&gt; Attribute : has &gt;<br/>@enduml</p><p class="SourceTitle" style="text-align:center;">Listing 1</p>
+
+
+<p class="MsoNormal"><a name="_25683bcd-4070-c9f8-4484-63baff1f04b1" id="_25683bcd-4070-c9f8-4484-63baff1f04b1"></a>Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.</p>
 </div>
 
-<div><a name="_hierarchical_grouping" id="_hierarchical_grouping"></a><h3>7.4.2.<span style="mso-tab-count:1">&#xA0; </span>Hierarchical Grouping</h3>
+<div><a name="_coordinate_referencing" id="_coordinate_referencing"></a><h3>7.4.2.<span style="mso-tab-count:1">&#xA0; </span>Coordinate Referencing</h3>
 
-<p class="MsoNormal"><a name="_ca7364e2-4e40-9ef3-68a0-25cf11de1dad" id="_ca7364e2-4e40-9ef3-68a0-25cf11de1dad"></a>The model supports the logical organisation of resources using hierarchical group. These groups act as containers for organising variables, dimensions, and metadata into logical subsets. Grouping may be used to structure resources according to thematic partitions, resolution levels, or processing stages.</p>
-
-<p class="MsoNormal"><a name="_7c490e2a-4727-4b71-696a-57af1f46cf2d" id="_7c490e2a-4727-4b71-696a-57af1f46cf2d"></a>Groups may define local metadata and variable collections, while also inheriting global context where applicable. This promotes modularity and clarity within complex datasets.</p>
-</div>
-
-<div><a name="_coordinate_referencing" id="_coordinate_referencing"></a><h3>7.4.3.<span style="mso-tab-count:1">&#xA0; </span>Coordinate Referencing</h3>
-
-<p class="MsoNormal"><a name="_9307d241-17ae-083b-fc5f-1395bdbd845e" id="_9307d241-17ae-083b-fc5f-1395bdbd845e"></a>Coordinate systems are defined using:</p>
+<p class="MsoNormal"><a name="_6deeb40c-e2f9-e25b-f075-a11829100c14" id="_6deeb40c-e2f9-e25b-f075-a11829100c14"></a>Coordinate systems are defined using:</p>
 
 <div class="ul_wrap"><p style="mso-list:l3 level1 lfo12;" class="MsoListParagraphCxSpFirst"><b>CF Conventions</b> &#x2013; Including attributes such as <tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt>, and <tt>grid_mapping</tt> to express spatiotemporal semantics and coordinate system properties.
 </p>
@@ -3170,12 +3174,12 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </p>
 </div>
 
-<p class="MsoNormal"><a name="_20f34fcc-4e5c-cc1e-293d-f18ddadb2c7f" id="_20f34fcc-4e5c-cc1e-293d-f18ddadb2c7f"></a>The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.</p>
+<p class="MsoNormal"><a name="_977ca3f5-af0c-2bc4-b255-d496f74e1567" id="_977ca3f5-af0c-2bc4-b255-d496f74e1567"></a>The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.</p>
 </div>
 
-<div><a name="_metadata_integration" id="_metadata_integration"></a><h3>7.4.4.<span style="mso-tab-count:1">&#xA0; </span>Metadata Integration</h3>
+<div><a name="_metadata_integration" id="_metadata_integration"></a><h3>7.4.3.<span style="mso-tab-count:1">&#xA0; </span>Metadata Integration</h3>
 
-<p class="MsoNormal"><a name="_9fbc05ee-1e94-fc79-4a09-71d8811c3dc2" id="_9fbc05ee-1e94-fc79-4a09-71d8811c3dc2"></a>Metadata may be declared at various levels within the model structure:</p>
+<p class="MsoNormal"><a name="_b5b46967-4d7f-26b1-2627-c438c3fde62b" id="_b5b46967-4d7f-26b1-2627-c438c3fde62b"></a>Metadata may be declared at various levels within the model structure:</p>
 
 <div class="ul_wrap"><p style="mso-list:l3 level1 lfo13;" class="MsoListParagraphCxSpFirst"><b>Global Metadata</b> &#x2013; Attributes describing the dataset as a whole, including elements such as <tt>title</tt>, <tt>summary</tt>, and <tt>license</tt>.
 </p>
@@ -3185,18 +3189,18 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </p>
 </div>
 
-<p class="MsoNormal"><a name="_86dfe434-7980-b4a2-74e2-d20ea3389d2b" id="_86dfe434-7980-b4a2-74e2-d20ea3389d2b"></a>All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
+<p class="MsoNormal"><a name="_6d615c32-f0a2-05b4-f531-dd02a8aaa8f5" id="_6d615c32-f0a2-05b4-f531-dd02a8aaa8f5"></a>All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
 </div>
 
-<div><a name="_overviews" id="_overviews"></a><h3>7.4.5.<span style="mso-tab-count:1">&#xA0; </span>Overviews</h3>
+<div><a name="_overviews" id="_overviews"></a><h3>7.4.4.<span style="mso-tab-count:1">&#xA0; </span>Overviews</h3>
 
-<p class="MsoNormal"><a name="_d34a669f-e756-09a7-e700-e606e74f6411" id="_d34a669f-e756-09a7-e700-e606e74f6411"></a>The <b>Overviews</b> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API &#x2013; Tiles, and STAC Tiled Assets.</p>
+<p class="MsoNormal"><a name="_c1708a40-463b-8fe5-a03e-3b38a68e681f" id="_c1708a40-463b-8fe5-a03e-3b38a68e681f"></a>The <b>Overviews</b> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API &#x2013; Tiles, and STAC Tiled Assets.</p>
 
-<div><a name="_purpose" id="_purpose"></a><h4>7.4.5.1.<span style="mso-tab-count:1">&#xA0; </span>Purpose</h4>
+<div><a name="_purpose" id="_purpose"></a><h4>7.4.4.1.<span style="mso-tab-count:1">&#xA0; </span>Purpose</h4>
 
-<p class="MsoNormal"><a name="_d2399128-bc23-3a2f-5d85-316885ddde7a" id="_d2399128-bc23-3a2f-5d85-316885ddde7a"></a>The <b>Overviews</b> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <b>zoom levels</b>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
+<p class="MsoNormal"><a name="_ec7b3aba-130e-9aeb-c196-2e85e3585dcd" id="_ec7b3aba-130e-9aeb-c196-2e85e3585dcd"></a>The <b>Overviews</b> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <b>zoom levels</b>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
 
-<p class="MsoNormal"><a name="_d251865c-3c4a-c68b-6ebd-7898977b8fa1" id="_d251865c-3c4a-c68b-6ebd-7898977b8fa1"></a>Overviews enable:</p>
+<p class="MsoNormal"><a name="_0ab19f41-5240-c5ce-40ff-d704bf50540c" id="_0ab19f41-5240-c5ce-40ff-d704bf50540c"></a>Overviews enable:</p>
 
 <div class="ul_wrap"><p style="mso-list:l3 level1 lfo14;" class="MsoListParagraphCxSpFirst">Fast access to summary representations for visualisation
 </p>
@@ -3207,26 +3211,26 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </div>
 </div>
 
-<div><a name="_conceptual_structure" id="_conceptual_structure"></a><h4>7.4.5.2.<span style="mso-tab-count:1">&#xA0; </span>Conceptual Structure</h4>
+<div><a name="_conceptual_structure" id="_conceptual_structure"></a><h4>7.4.4.2.<span style="mso-tab-count:1">&#xA0; </span>Conceptual Structure</h4>
 
-<p class="MsoNormal"><a name="_ba461405-40ac-5ae2-741d-283c6256c4e5" id="_ba461405-40ac-5ae2-741d-283c6256c4e5"></a>An <b>Overviews</b> construct is defined as a <b>hierarchical set of multiscale representations</b> of one or more data variables. It comprises the following components:</p>
+<p class="MsoNormal"><a name="_e8fa02ff-40ba-d9b8-ceea-532a23182efc" id="_e8fa02ff-40ba-d9b8-ceea-532a23182efc"></a>An <b>Overviews</b> construct is defined as a <b>hierarchical set of multiscale representations</b> of one or more data variables. It comprises the following components:</p>
 
-<table class="dl"><a name="_d8ca17fc-9c0e-1743-8983-e4ea34be7431" id="_d8ca17fc-9c0e-1743-8983-e4ea34be7431"></a><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Base Variable</b></p></td><td valign="top"><p class="MsoNormal"><a name="_8fb12a80-e162-d363-fa3d-86b0b2adee7e" id="_8fb12a80-e162-d363-fa3d-86b0b2adee7e"></a>The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
-</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Overview Levels</b></p></td><td valign="top"><p class="MsoNormal"><a name="_f4c9fff5-206e-ad5c-5c31-1ecc6380bca8" id="_f4c9fff5-206e-ad5c-5c31-1ecc6380bca8"></a>A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
-</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Zoom Level Identifier</b></p></td><td valign="top"><p class="MsoNormal"><a name="_fc58120a-0edf-ab88-a874-8e4e9e6c9531" id="_fc58120a-0edf-ab88-a874-8e4e9e6c9531"></a>A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
-</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Tile Grid Definition</b></p></td><td valign="top"><p class="MsoNormal"><a name="_436d99c3-9a0b-28f0-a23e-eafd8635da39" id="_436d99c3-9a0b-28f0-a23e-eafd8635da39"></a>A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
-</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Spatial Alignment</b></p></td><td valign="top"><p class="MsoNormal"><a name="_31584673-74fd-d48e-5fae-23f0395bdca5" id="_31584673-74fd-d48e-5fae-23f0395bdca5"></a>Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
-</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Resampling Method</b></p></td><td valign="top"><p class="MsoNormal"><a name="_93ebe0f7-294c-b87e-1a82-2915fe39a37d" id="_93ebe0f7-294c-b87e-1a82-2915fe39a37d"></a>A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
+<table class="dl"><a name="_2a9ac543-eb62-faee-55dd-092c584f7b46" id="_2a9ac543-eb62-faee-55dd-092c584f7b46"></a><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Base Variable</b></p></td><td valign="top"><p class="MsoNormal"><a name="_0cba623f-5981-bdbd-2f90-90b28dda394f" id="_0cba623f-5981-bdbd-2f90-90b28dda394f"></a>The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
+</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Overview Levels</b></p></td><td valign="top"><p class="MsoNormal"><a name="_8213d82a-0a06-8c62-e6af-f16d38b073bb" id="_8213d82a-0a06-8c62-e6af-f16d38b073bb"></a>A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
+</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Zoom Level Identifier</b></p></td><td valign="top"><p class="MsoNormal"><a name="_ab1bedc3-997b-2d45-4bba-f1d74ab3b2d1" id="_ab1bedc3-997b-2d45-4bba-f1d74ab3b2d1"></a>A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
+</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Tile Grid Definition</b></p></td><td valign="top"><p class="MsoNormal"><a name="_595b52ce-4cb6-affb-5a2a-68c1fe311e7b" id="_595b52ce-4cb6-affb-5a2a-68c1fe311e7b"></a>A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
+</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Spatial Alignment</b></p></td><td valign="top"><p class="MsoNormal"><a name="_94cdf769-fb5a-93ca-5c0f-6c32a05dff96" id="_94cdf769-fb5a-93ca-5c0f-6c32a05dff96"></a>Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
+</td></tr><tr><td valign="top" align="left"><p align="left" style="margin-left:0pt;text-align:left;" class="MsoNormal"><b>Resampling Method</b></p></td><td valign="top"><p class="MsoNormal"><a name="_887fd41d-184c-ef24-1dc4-6df450be9483" id="_887fd41d-184c-ef24-1dc4-6df450be9483"></a>A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
 </td></tr></table>
 </div>
 
-<div><a name="_model_components" id="_model_components"></a><h4>7.4.5.3.<span style="mso-tab-count:1">&#xA0; </span>Model Components</h4>
+<div><a name="_model_components" id="_model_components"></a><h4>7.4.4.3.<span style="mso-tab-count:1">&#xA0; </span>Model Components</h4>
 
-<p class="MsoNormal"><a name="_c262ee42-5366-a8ad-06f3-f8bd1bf8c19a" id="_c262ee42-5366-a8ad-06f3-f8bd1bf8c19a"></a>The <b>Overviews</b> construct is represented in the unified data model using the following logical elements:</p>
+<p class="MsoNormal"><a name="_b0081156-97e9-54cf-18de-31ff8223e266" id="_b0081156-97e9-54cf-18de-31ff8223e266"></a>The <b>Overviews</b> construct is represented in the unified data model using the following logical elements:</p>
 
-<p class="TableTitle" style="text-align:center;">Table 1</p><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;"><a name="_1ed7bb94-b28a-513f-ec11-f53c1ac833e7" id="_1ed7bb94-b28a-513f-ec11-f53c1ac833e7"></a><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr><th valign="middle" align="left" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;" width="25.0%">Element</th><th valign="middle" align="left" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;" width="75.0%">Definition</th></tr></thead><tbody><tr><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>OverviewSet</tt></td><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A logical grouping of variables at multiple zoom levels associated with a single base variable.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>OverviewLevel</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A single resampled variable at a specific resolution, identified by a zoom level string.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>TileMatrixSetRef</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A reference to the tile grid specification applied across all overview levels. May refer to a well-known identifier, a URI, or an inline object.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>TileMatrixLimits</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">(Optional) Constraints on the tile coverage per zoom level.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;" width="25.0%"><tt>resampling_method</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;" width="75.0%">A string indicating the uniform method used to downsample data across all levels.</td></tr></tbody></table></div>
+<p class="TableTitle" style="text-align:center;">Table 1</p><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;"><a name="_622a0c68-f11e-ac88-6975-a5c5f1d57ba8" id="_622a0c68-f11e-ac88-6975-a5c5f1d57ba8"></a><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr><th valign="middle" align="left" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;" width="25.0%">Element</th><th valign="middle" align="left" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;" width="75.0%">Definition</th></tr></thead><tbody><tr><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>OverviewSet</tt></td><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A logical grouping of variables at multiple zoom levels associated with a single base variable.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>OverviewLevel</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A single resampled variable at a specific resolution, identified by a zoom level string.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>TileMatrixSetRef</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">A reference to the tile grid specification applied across all overview levels. May refer to a well-known identifier, a URI, or an inline object.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="25.0%"><tt>TileMatrixLimits</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;" width="75.0%">(Optional) Constraints on the tile coverage per zoom level.</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;" width="25.0%"><tt>resampling_method</tt></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;" width="75.0%">A string indicating the uniform method used to downsample data across all levels.</td></tr></tbody></table></div>
 
-<p class="MsoNormal"><a name="_ddd15fe6-673e-8208-c249-248189edf258" id="_ddd15fe6-673e-8208-c249-248189edf258"></a>All overview levels MUST preserve:</p>
+<p class="MsoNormal"><a name="_6b305f63-d923-facb-e26b-56754d101329" id="_6b305f63-d923-facb-e26b-56754d101329"></a>All overview levels MUST preserve:</p>
 
 <div class="ul_wrap"><p style="mso-list:l3 level1 lfo15;" class="MsoListParagraphCxSpFirst">The data variable&#x2019;s semantic identity (<tt>standard_name</tt>, <tt>units</tt>, etc.)
 </p>
@@ -3236,19 +3240,19 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </p>
 </div>
 
-<p class="MsoNormal"><a name="_753616fe-1585-0b76-e7ee-09eaf199c8af" id="_753616fe-1585-0b76-e7ee-09eaf199c8af"></a>Only the resolution and extent (through tiling and shape) may differ across levels.</p>
+<p class="MsoNormal"><a name="_57b65b26-7398-08c0-c68d-479bb51e257f" id="_57b65b26-7398-08c0-c68d-479bb51e257f"></a>Only the resolution and extent (through tiling and shape) may differ across levels.</p>
 </div>
 
-<div><a name="_relationship_to_tile_matrix_set" id="_relationship_to_tile_matrix_set"></a><h4>7.4.5.4.<span style="mso-tab-count:1">&#xA0; </span>Relationship to Tile Matrix Set</h4>
+<div><a name="_relationship_to_tile_matrix_set" id="_relationship_to_tile_matrix_set"></a><h4>7.4.4.4.<span style="mso-tab-count:1">&#xA0; </span>Relationship to Tile Matrix Set</h4>
 
-<p class="MsoNormal"><a name="_b239c81c-a5a5-8054-db25-c2bc702401db" id="_b239c81c-a5a5-8054-db25-c2bc702401db"></a>The <b>Overviews</b> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid&#x2019;s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
+<p class="MsoNormal"><a name="_61eb1bc3-54ad-a9fa-0db6-9398bfe68324" id="_61eb1bc3-54ad-a9fa-0db6-9398bfe68324"></a>The <b>Overviews</b> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid&#x2019;s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
 
-<p class="MsoNormal"><a name="_9082ec65-55ae-dda9-8253-6f477f8be5e7" id="_9082ec65-55ae-dda9-8253-6f477f8be5e7"></a>The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
+<p class="MsoNormal"><a name="_1273c7a8-3532-b230-97ac-d5d94c3af592" id="_1273c7a8-3532-b230-97ac-d5d94c3af592"></a>The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
 </div>
 
-<div><a name="_usage_context" id="_usage_context"></a><h4>7.4.5.5.<span style="mso-tab-count:1">&#xA0; </span>Usage Context</h4>
+<div><a name="_usage_context" id="_usage_context"></a><h4>7.4.4.5.<span style="mso-tab-count:1">&#xA0; </span>Usage Context</h4>
 
-<p class="MsoNormal"><a name="_36cc6b20-60ae-ef90-c5f7-fcea487b26db" id="_36cc6b20-60ae-ef90-c5f7-fcea487b26db"></a>The <b>Overviews</b> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
+<p class="MsoNormal"><a name="_68fb05a3-a560-cc6b-4d40-ca8690897426" id="_68fb05a3-a560-cc6b-4d40-ca8690897426"></a>The <b>Overviews</b> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
 
 <div class="ul_wrap"><p style="mso-list:l3 level1 lfo16;" class="MsoListParagraphCxSpFirst">Raster imagery (e.g. reflectance, temperature)
 </p>
@@ -3258,7 +3262,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </p>
 </div>
 
-<p class="MsoNormal"><a name="_7ea176e3-abd3-a443-9e37-ee158719913b" id="_7ea176e3-abd3-a443-9e37-ee158719913b"></a>The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
+<p class="MsoNormal"><a name="_d12a6f5d-aa4b-ac0d-2dbf-239e91309df2" id="_d12a6f5d-aa4b-ac0d-2dbf-239e91309df2"></a>The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
 </div>
 </div>
 </div>
@@ -3429,7 +3433,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <p class="MsoNormal"><a name="_47f04459-bf2c-563e-1e33-65f7a51dceaa" id="_47f04459-bf2c-563e-1e33-65f7a51dceaa"></a>Example for a 2D array with dimension names <tt>["lat", "lon"]</tt>:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e" id="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="err">...</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 1</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e" id="_07a88b31-d4b4-eb20-ac7d-32eed3d6048e"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="err">...</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 2</p>
 
 </div>
         <div><a name="_coordinate_variables" id="_coordinate_variables"></a><h2>9.3.<span style="mso-tab-count:1">&#xA0; </span>Coordinate Variables</h2>
@@ -3442,7 +3446,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <p class="MsoNormal"><a name="_2b890565-c837-e588-4fad-f31b1c6eeb9d" id="_2b890565-c837-e588-4fad-f31b1c6eeb9d"></a>Example <tt>zarr.json</tt> for a coordinate array:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_40d1d34d-d784-de34-e5dc-86c11c8adc9b" id="_40d1d34d-d784-de34-e5dc-86c11c8adc9b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 2</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_40d1d34d-d784-de34-e5dc-86c11c8adc9b" id="_40d1d34d-d784-de34-e5dc-86c11c8adc9b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 3</p>
 
 </div>
         <div><a name="_data_variables" id="_data_variables"></a><h2>9.4.<span style="mso-tab-count:1">&#xA0; </span>Data Variables</h2>
@@ -3453,7 +3457,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <p class="MsoNormal"><a name="_bcb04f31-19d6-3128-b2bc-1e21937eab02" id="_bcb04f31-19d6-3128-b2bc-1e21937eab02"></a>Example:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_91fc8eec-485a-dd7b-2d73-648d378f4f75" id="_91fc8eec-485a-dd7b-2d73-648d378f4f75"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 3</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_91fc8eec-485a-dd7b-2d73-648d378f4f75" id="_91fc8eec-485a-dd7b-2d73-648d378f4f75"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 4</p>
 
 </div>
         <div><a name="_global_metadata" id="_global_metadata"></a><h2>9.5.<span style="mso-tab-count:1">&#xA0; </span>Global Metadata</h2>
@@ -3464,7 +3468,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <p class="MsoNormal"><a name="_4269ebb3-4a98-da00-7afe-b45fa2e30ab2" id="_4269ebb3-4a98-da00-7afe-b45fa2e30ab2"></a>Example Zarr v3 root <tt>zarr.json</tt>:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_e1c1bba0-4ea9-f085-d369-74f948b76056" id="_e1c1bba0-4ea9-f085-d369-74f948b76056"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 4</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_e1c1bba0-4ea9-f085-d369-74f948b76056" id="_e1c1bba0-4ea9-f085-d369-74f948b76056"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 5</p>
 
 </div>
         <div><a name="_variables_metadata" id="_variables_metadata"></a><h2>9.6.<span style="mso-tab-count:1">&#xA0; </span>Variables Metadata</h2>
@@ -3516,13 +3520,13 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <div><a name="_zarr_v2_encoding_example_zattrs" id="_zarr_v2_encoding_example_zattrs"></a><h4>9.7.2.1.<span style="mso-tab-count:1">&#xA0; </span>Zarr v2 Encoding Example (<tt>.zattrs</tt>)</h4>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_3e82b336-dcb8-7825-fb6b-8def6817c89a" id="_3e82b336-dcb8-7825-fb6b-8def6817c89a"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 5</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_3e82b336-dcb8-7825-fb6b-8def6817c89a" id="_3e82b336-dcb8-7825-fb6b-8def6817c89a"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 6</p>
 
 </div>
 
 <div><a name="_zarr_v3_encoding_example_zarr_json" id="_zarr_v3_encoding_example_zarr_json"></a><h4>9.7.2.2.<span style="mso-tab-count:1">&#xA0; </span>Zarr v3 Encoding Example (<tt>zarr.json</tt>)</h4>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_5187204a-c507-ea53-6b7d-e9871c9d55f2" id="_5187204a-c507-ea53-6b7d-e9871c9d55f2"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 6</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_5187204a-c507-ea53-6b7d-e9871c9d55f2" id="_5187204a-c507-ea53-6b7d-e9871c9d55f2"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"tile_matrix_set"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nearest"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 7</p>
 
 </div>
 </div>
@@ -3561,7 +3565,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 
 <p class="MsoNormal"><a name="_b2ee1400-667e-7caa-dbb7-df5320023d27" id="_b2ee1400-667e-7caa-dbb7-df5320023d27"></a>Example:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_3c3714fa-0860-058b-fd9f-c4985dff4904" id="_3c3714fa-0860-058b-fd9f-c4985dff4904"></a><span class="nl">"tile_matrix_set_limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"min_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"max_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"min_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"max_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 7</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_3c3714fa-0860-058b-fd9f-c4985dff4904" id="_3c3714fa-0860-058b-fd9f-c4985dff4904"></a><span class="nl">"tile_matrix_set_limits"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"min_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"max_tile_col"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"min_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"max_tile_row"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 8</p>
 
 </div>
 
@@ -3688,7 +3692,7 @@ Smith, T.F., Waterman, M.S., J. Mol. Biol. 147, 195&#x2013;197 (1981)</p>
 </html>
 
 
-------=_NextPart_7771f5fc.9d3b.4301
+------=_NextPart_d94692b8.28ef.4b49
 Content-ID: <filelist.xml>
 Content-Disposition: inline; filename="filelist.xml"
 Content-Transfer-Encoding: base64
@@ -3700,7 +3704,7 @@ Yy9nZW96YXJyLXNwZWMvX3NpdGUvZG9jdW1lbnRzL3N0YW5kYXJkL3RlbXBsYXRlL2dlb3phcnIt
 c3BlYy5odG0iLz4gIDxvOkZpbGUgSFJlZj0iZmlsZWxpc3QueG1sIi8+CiAgPG86RmlsZSBIUmVm
 PSJoZWFkZXIuaHRtbCIvPgo8L3htbD4K
 
-------=_NextPart_7771f5fc.9d3b.4301
+------=_NextPart_d94692b8.28ef.4b49
 Content-ID: <header.html>
 Content-Disposition: inline; filename="header.html"
 Content-Transfer-Encoding: base64
@@ -3982,4 +3986,4 @@ LWVuZCc+PC9zcGFuPjwvc3Bhbj48L2I+PCFbZW5kaWZdLS0+PHNwYW4NCmxhbmc9RU4tR0Igc3R5
 bGU9J2ZvbnQtc2l6ZToxMC4wcHQ7bXNvLWJpZGktZm9udC1zaXplOjExLjBwdCc+PG86cD48L286
 cD48L3NwYW4+PC9wPg0KPC9kaXY+DQoNCjwvYm9keT4NCg0KPC9odG1sPg0K
 
-------=_NextPart_7771f5fc.9d3b.4301--
+------=_NextPart_d94692b8.28ef.4b49--

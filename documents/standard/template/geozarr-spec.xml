@@ -329,103 +329,157 @@
 
 <clause id="_dataset_structure" obligation="=informative">
 <title>Dataset Structure</title>
-<p id="_73be98c6-e1e4-5340-b451-8de423219577">A dataset conforming to the UDM is composed of the following core components, derived from the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:</p>
+<p id="_37d218a4-5cae-d794-d518-35f69aec44fe">A dataset conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level dataset entity. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.</p>
 
-<ul id="_0e84a370-83b7-f125-f528-142ac2a3a56f"><li><p id="_028712fd-0c48-a170-a431-dab727dad99e"><strong>Dimensions</strong> – Named, integer-valued axes that define the extents of data variables. Examples include <tt>time</tt>, <tt>x</tt>, <tt>y</tt>, and <tt>band</tt>.</p>
+<p id="_4053f0c3-6c78-89c3-d361-cf5eeb0f814b">Each dataset node comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:</p>
+
+<ul id="_371a37e6-fd13-ff56-28f3-88583e520bf8"><li><p id="_79f47b2d-3d98-f026-c22e-430969480121"><strong>Dimensions</strong> – Named, integer-valued axes defining the extent of data variables. Examples include <tt>time</tt>, <tt>x</tt>, <tt>y</tt>, and <tt>band</tt>.</p>
 </li>
-<li><p id="_21b454fc-8401-4c6b-21e0-05f9f8ee8b20"><strong>Coordinate Variables</strong> – Arrays (typically one-dimensional) that supply geospatial, temporal, or other contextual coordinates along dimensions. These may be scalar or higher-dimensional, depending on the referencing scheme in use.</p>
+<li><p id="_c3e5481c-8916-11db-33c6-9691c2b233a2"><strong>Coordinate Variables</strong> – Arrays that supply coordinate values along dimensions, providing spatial, temporal, or contextual referencing. These may be scalar or higher-dimensional, depending on the referencing scheme.</p>
 </li>
-<li><p id="_673f7a96-7e80-88a2-e279-e433db0cedc2"><strong>Data Variables</strong> – Multidimensional arrays representing physical quantities or derived observations. These are defined over one or more dimensions and are associated with coordinate variables and metadata attributes.</p>
+<li><p id="_d520e088-eab5-b28c-bb7e-d21144704aa5"><strong>Data Variables</strong> – Multidimensional arrays representing physical measurements or derived products. Defined over one or more dimensions, these variables are associated with coordinate variables and annotated with metadata.</p>
 </li>
-<li><p id="_49024d98-9a8f-93e9-9d43-693f883fc7d3"><strong>Attributes</strong> – Key-value pairs that annotate variables or dataset-level elements with semantic information such as physical units, standard names, or spatial referencing metadata.</p>
+<li><p id="_b4c28318-fb5d-2bb1-b662-7a74b76ea005"><strong>Attributes</strong> – Key-value pairs attached to variables or dataset components. Attributes convey semantic information such as units, standard names, and geospatial metadata.</p>
 </li>
 </ul>
-</clause>
 
-<clause id="_hierarchical_grouping" obligation="=informative">
-<title>Hierarchical Grouping</title>
-<p id="_ca7364e2-4e40-9ef3-68a0-25cf11de1dad">The model supports the logical organisation of resources using hierarchical group. These groups act as containers for organising variables, dimensions, and metadata into logical subsets. Grouping may be used to structure resources according to thematic partitions, resolution levels, or processing stages.</p>
+<p id="_26075de3-c907-306e-f13b-112c91e87f20">The hierarchy is implemented through <strong>groups</strong>, which function as containers for variables, dimensions, and metadata. Groups may define local context while inheriting attributes from parent nodes. This supports the logical subdivision of datasets by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.</p>
 
-<p id="_7c490e2a-4727-4b71-696a-57af1f46cf2d">Groups may define local metadata and variable collections, while also inheriting global context where applicable. This promotes modularity and clarity within complex datasets.</p>
+<p id="_830c8833-5011-a292-e2da-c3a44b2f67f4">The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.</p>
+
+<sourcecode id="_f7b6e6b8-7f00-035e-6ca4-44c5557bc1a4">@startuml CDM_DAL_Object_Model
+
+class Dataset {
+    + String location
+    + open()
+    + close()
+}
+
+class Group {
+    + String name
+    + List&lt;Group&gt; subgroups
+    + List&lt;Variable&gt; variables
+    + List&lt;Dimension&gt; dimensions
+    + List&lt;Attribute&gt; attributes
+}
+
+class Dimension {
+    + String name
+    + int length
+    + boolean isUnlimited
+    + boolean isShared
+}
+
+class Variable {
+    + String name
+    + DataType dataType
+    + List&lt;Dimension&gt; shape
+    + List&lt;Attribute&gt; attributes
+    + read()
+}
+
+class DataType {
+    + String name
+    &lt;&lt;enumeration&gt;&gt;
+}
+
+class Attribute {
+    + String name
+    + String type
+    + List&lt;String&gt; values
+}
+
+Dataset --&gt; Group : rootGroup
+Group --&gt; Group : contains &gt;
+Group --&gt; Variable : contains &gt;
+Group --&gt; Dimension : defines &gt;
+Group --&gt; Attribute : has &gt;
+Variable --&gt; Dimension : uses &gt;
+Variable --&gt; DataType : has &gt;
+Variable --&gt; Attribute : has &gt;
+@enduml</sourcecode>
+
+
+<p id="_25683bcd-4070-c9f8-4484-63baff1f04b1">Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.</p>
 </clause>
 
 <clause id="_coordinate_referencing" obligation="=informative">
 <title>Coordinate Referencing</title>
-<p id="_9307d241-17ae-083b-fc5f-1395bdbd845e">Coordinate systems are defined using:</p>
+<p id="_6deeb40c-e2f9-e25b-f075-a11829100c14">Coordinate systems are defined using:</p>
 
-<ul id="_889d911e-d702-909e-cf5c-dcfefcc6b20f"><li><p id="_39cd22cc-4f3b-aac8-397d-2b897083c3fd"><strong>CF Conventions</strong> – Including attributes such as <tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt>, and <tt>grid_mapping</tt> to express spatiotemporal semantics and coordinate system properties.</p>
+<ul id="_1b14a5de-6b5f-ffc1-abcc-4dec14a8b08f"><li><p id="_979a44bd-6eb7-1445-e79b-5463c5621df5"><strong>CF Conventions</strong> – Including attributes such as <tt>standard_name</tt>, <tt>units</tt>, <tt>axis</tt>, and <tt>grid_mapping</tt> to express spatiotemporal semantics and coordinate system properties.</p>
 </li>
-<li><p id="_310a48d6-3afe-d41d-061b-3bda8acd6f45"><strong>Affine Transformation Extensions</strong> – Optional support for georeferencing via affine transforms and interpolation metadata (e.g., as defined in GDAL practices), providing enhanced flexibility for irregular grids and grid-aligned imagery.</p>
+<li><p id="_a288a1f3-0388-8af3-910b-5442bffd8e55"><strong>Affine Transformation Extensions</strong> – Optional support for georeferencing via affine transforms and interpolation metadata (e.g., as defined in GDAL practices), providing enhanced flexibility for irregular grids and grid-aligned imagery.</p>
 </li>
 </ul>
 
-<p id="_20f34fcc-4e5c-cc1e-293d-f18ddadb2c7f">The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.</p>
+<p id="_977ca3f5-af0c-2bc4-b255-d496f74e1567">The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.</p>
 </clause>
 
 <clause id="_metadata_integration" obligation="=informative">
 <title>Metadata Integration</title>
-<p id="_9fbc05ee-1e94-fc79-4a09-71d8811c3dc2">Metadata may be declared at various levels within the model structure:</p>
+<p id="_b5b46967-4d7f-26b1-2627-c438c3fde62b">Metadata may be declared at various levels within the model structure:</p>
 
-<ul id="_12e6af72-4acf-0a93-d427-f1ecf3e76baf"><li><p id="_a374f24e-a2ae-5888-e649-fe6a08b58d6f"><strong>Global Metadata</strong> – Attributes describing the dataset as a whole, including elements such as <tt>title</tt>, <tt>summary</tt>, and <tt>license</tt>.</p>
+<ul id="_7c3b93ba-f718-b7c2-acc5-de9005e610da"><li><p id="_3ae50970-b49e-f832-1415-74b5b800e7f9"><strong>Global Metadata</strong> – Attributes describing the dataset as a whole, including elements such as <tt>title</tt>, <tt>summary</tt>, and <tt>license</tt>.</p>
 </li>
-<li><p id="_4521b6d6-2ed7-d159-c520-19a016a70ccb"><strong>Variable Metadata</strong> – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.</p>
+<li><p id="_4b702ed3-ae7e-ccad-03fd-a88444ed13cc"><strong>Variable Metadata</strong> – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.</p>
 </li>
-<li><p id="_7bde787b-4b89-4d13-674c-1a3ecdc78ba7"><strong>Extension Metadata</strong> – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).</p>
+<li><p id="_5bbce103-f0f4-95f8-d3a7-f4b09156401c"><strong>Extension Metadata</strong> – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).</p>
 </li>
 </ul>
 
-<p id="_86dfe434-7980-b4a2-74e2-d20ea3389d2b">All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
+<p id="_6d615c32-f0a2-05b4-f531-dd02a8aaa8f5">All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
 </clause>
 
 <clause id="_overviews" obligation="=informative">
 <title>Overviews</title>
-<p id="_d34a669f-e756-09a7-e700-e606e74f6411">The <strong>Overviews</strong> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.</p>
+<p id="_c1708a40-463b-8fe5-a03e-3b38a68e681f">The <strong>Overviews</strong> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.</p>
 
 <clause id="_purpose" obligation="=informative">
 <title>Purpose</title>
-<p id="_d2399128-bc23-3a2f-5d85-316885ddde7a">The <strong>Overviews</strong> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <strong>zoom levels</strong>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
+<p id="_ec7b3aba-130e-9aeb-c196-2e85e3585dcd">The <strong>Overviews</strong> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <strong>zoom levels</strong>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
 
-<p id="_d251865c-3c4a-c68b-6ebd-7898977b8fa1">Overviews enable:</p>
+<p id="_0ab19f41-5240-c5ce-40ff-d704bf50540c">Overviews enable:</p>
 
-<ul id="_a53d7077-7a54-a771-85a5-8fd0f3d4954c"><li><p id="_de68ec7c-f7ef-8fd2-33ec-12b5309bcc82">Fast access to summary representations for visualisation</p>
+<ul id="_e8ded2df-c3c6-2167-7fdb-5502e54c8922"><li><p id="_198d2d37-bd2d-d577-e089-666fc74ddb06">Fast access to summary representations for visualisation</p>
 </li>
-<li><p id="_22f5e7fe-fcbc-5169-c17a-f21452745b6f">Progressive transmission and downsampling</p>
+<li><p id="_fa725e34-6041-89d8-c8fa-ab381e9dd4f3">Progressive transmission and downsampling</p>
 </li>
-<li><p id="_7dd65947-fe64-e5b3-4dd4-89ab74a9c9c5">Multi-resolution analytics and adaptive processing</p>
+<li><p id="_61d0ee1d-f36f-1617-d8a8-6a2e1d3e5f25">Multi-resolution analytics and adaptive processing</p>
 </li>
 </ul>
 </clause>
 
 <clause id="_conceptual_structure" obligation="=informative">
 <title>Conceptual Structure</title>
-<p id="_ba461405-40ac-5ae2-741d-283c6256c4e5">An <strong>Overviews</strong> construct is defined as a <strong>hierarchical set of multiscale representations</strong> of one or more data variables. It comprises the following components:</p>
+<p id="_e8fa02ff-40ba-d9b8-ceea-532a23182efc">An <strong>Overviews</strong> construct is defined as a <strong>hierarchical set of multiscale representations</strong> of one or more data variables. It comprises the following components:</p>
 
-<dl id="_d8ca17fc-9c0e-1743-8983-e4ea34be7431"><dt><strong>Base Variable</strong></dt>
-<dd><p id="_8fb12a80-e162-d363-fa3d-86b0b2adee7e">The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
+<dl id="_2a9ac543-eb62-faee-55dd-092c584f7b46"><dt><strong>Base Variable</strong></dt>
+<dd><p id="_0cba623f-5981-bdbd-2f90-90b28dda394f">The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
 </dd>
 <dt><strong>Overview Levels</strong></dt>
-<dd><p id="_f4c9fff5-206e-ad5c-5c31-1ecc6380bca8">A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
+<dd><p id="_8213d82a-0a06-8c62-e6af-f16d38b073bb">A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
 </dd>
 <dt><strong>Zoom Level Identifier</strong></dt>
-<dd><p id="_fc58120a-0edf-ab88-a874-8e4e9e6c9531">A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
+<dd><p id="_ab1bedc3-997b-2d45-4bba-f1d74ab3b2d1">A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
 </dd>
 <dt><strong>Tile Grid Definition</strong></dt>
-<dd><p id="_436d99c3-9a0b-28f0-a23e-eafd8635da39">A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
+<dd><p id="_595b52ce-4cb6-affb-5a2a-68c1fe311e7b">A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
 </dd>
 <dt><strong>Spatial Alignment</strong></dt>
-<dd><p id="_31584673-74fd-d48e-5fae-23f0395bdca5">Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
+<dd><p id="_94cdf769-fb5a-93ca-5c0f-6c32a05dff96">Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
 </dd>
 <dt><strong>Resampling Method</strong></dt>
-<dd><p id="_93ebe0f7-294c-b87e-1a82-2915fe39a37d">A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
+<dd><p id="_887fd41d-184c-ef24-1dc4-6df450be9483">A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
 </dd>
 </dl>
 </clause>
 
 <clause id="_model_components" obligation="=informative">
 <title>Model Components</title>
-<p id="_c262ee42-5366-a8ad-06f3-f8bd1bf8c19a">The <strong>Overviews</strong> construct is represented in the unified data model using the following logical elements:</p>
+<p id="_b0081156-97e9-54cf-18de-31ff8223e266">The <strong>Overviews</strong> construct is represented in the unified data model using the following logical elements:</p>
 
-<table id="_1ed7bb94-b28a-513f-ec11-f53c1ac833e7"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr><th valign="middle" align="left">Element</th>
+<table id="_622a0c68-f11e-ac88-6975-a5c5f1d57ba8"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr><th valign="middle" align="left">Element</th>
 <th valign="middle" align="left">Definition</th>
 </tr></thead>
 <tbody><tr><td valign="middle" align="left"><tt>OverviewSet</tt></td>
@@ -441,39 +495,39 @@
 </tr></tbody>
 </table>
 
-<p id="_ddd15fe6-673e-8208-c249-248189edf258">All overview levels MUST preserve:</p>
+<p id="_6b305f63-d923-facb-e26b-56754d101329">All overview levels MUST preserve:</p>
 
-<ul id="_9f5da80a-5013-c1b1-4dd7-aa69b766a371"><li><p id="_7f91495a-b4ca-1ee0-625d-3218e375e4d8">The data variable’s semantic identity (<tt>standard_name</tt>, <tt>units</tt>, etc.)</p>
+<ul id="_9febbec5-846e-6e1e-12fa-48a90aec5867"><li><p id="_012b0a83-5ea2-ce65-db88-9ba7f566f635">The data variable’s semantic identity (<tt>standard_name</tt>, <tt>units</tt>, etc.)</p>
 </li>
-<li><p id="_1c2a6d05-c745-1d83-fd7d-7e672cefdc26">The coordinate reference system</p>
+<li><p id="_a8683bbc-709b-5c12-f61d-fd2576d1b318">The coordinate reference system</p>
 </li>
-<li><p id="_7160f6d0-ce54-98f4-cda0-6b3353f359e3">The axis order and dimension semantics</p>
+<li><p id="_73d72de1-2634-0bde-6573-ab3750c62aeb">The axis order and dimension semantics</p>
 </li>
 </ul>
 
-<p id="_753616fe-1585-0b76-e7ee-09eaf199c8af">Only the resolution and extent (through tiling and shape) may differ across levels.</p>
+<p id="_57b65b26-7398-08c0-c68d-479bb51e257f">Only the resolution and extent (through tiling and shape) may differ across levels.</p>
 </clause>
 
 <clause id="_relationship_to_tile_matrix_set" obligation="=informative">
 <title>Relationship to Tile Matrix Set</title>
-<p id="_b239c81c-a5a5-8054-db25-c2bc702401db">The <strong>Overviews</strong> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid’s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
+<p id="_61eb1bc3-54ad-a9fa-0db6-9398bfe68324">The <strong>Overviews</strong> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid’s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
 
-<p id="_9082ec65-55ae-dda9-8253-6f477f8be5e7">The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
+<p id="_1273c7a8-3532-b230-97ac-d5d94c3af592">The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
 </clause>
 
 <clause id="_usage_context" obligation="=informative">
 <title>Usage Context</title>
-<p id="_36cc6b20-60ae-ef90-c5f7-fcea487b26db">The <strong>Overviews</strong> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
+<p id="_68fb05a3-a560-cc6b-4d40-ca8690897426">The <strong>Overviews</strong> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
 
-<ul id="_bcd96988-da10-a723-54ee-5f14856865c5"><li><p id="_4dfd3635-263b-612b-c693-75521eb2d55c">Raster imagery (e.g. reflectance, temperature)</p>
+<ul id="_e4520c7e-0a05-e110-dfe8-2ba4177360ba"><li><p id="_8ec5a81d-5915-3515-9230-e5a8c10da94e">Raster imagery (e.g. reflectance, temperature)</p>
 </li>
-<li><p id="_fc0f196e-aa5b-9df4-f8b2-5107edefe55b">Data cubes with spatial slices (e.g. time-series of spatial grids)</p>
+<li><p id="_001af7a0-b214-c91d-4fd9-a979115266aa">Data cubes with spatial slices (e.g. time-series of spatial grids)</p>
 </li>
-<li><p id="_fdd5e0ce-b13d-58bf-b4d7-c0aa8c30914d">Multi-band products with consistent spatial structure across levels</p>
+<li><p id="_d7415d29-e2ef-03e5-1c6f-bb70dc6db177">Multi-band products with consistent spatial structure across levels</p>
 </li>
 </ul>
 
-<p id="_7ea176e3-abd3-a443-9e37-ee158719913b">The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
+<p id="_d12a6f5d-aa4b-ac0d-2dbf-239e91309df2">The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
 </clause>
 </clause>
 </clause>
