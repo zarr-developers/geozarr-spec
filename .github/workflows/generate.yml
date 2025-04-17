@@ -32,6 +32,12 @@ jobs:
 
       - uses: actions-mn/setup@main
 
+      # Add PlantUML installation step
+      - name: Install PlantUML
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y plantuml default-jre graphviz
+
       - run: metanorma site generate --agree-to-terms
 
       - name: Deploy to GitHub Pages
