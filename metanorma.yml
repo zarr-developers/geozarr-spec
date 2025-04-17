@@ -1,5 +1,8 @@
 ---
 metanorma:
+  plantuml:
+    enabled: true
+    format: svg
   source:
     files:
       - standard/template/geozarr-spec.adoc
