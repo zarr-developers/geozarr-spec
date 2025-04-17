@@ -1,0 +1,47 @@
+name: generate
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths-ignore:
+      - .gitlab-ci.yml
+      - .github/workflows/create_swg_report.yml
+  workflow_dispatch:
+
+jobs:
+  test-linux:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          token: ${{ github.token }}
+          submodules: true
+
+      - uses: actions/cache@v3
+        with:
+          path: ~/.fontist
+          key: fontist-${{ runner.os }}
+          restore-keys: fontist-${{ runner.os }}
+
+
+      - uses: actions-mn/setup@main
+
+      # Add PlantUML installation step
+      - name: Install PlantUML
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y plantuml default-jre graphviz
+
+      - run: metanorma site generate --agree-to-terms
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
