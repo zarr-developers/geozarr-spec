@@ -120,7 +120,7 @@ The hierarchy is implemented through **groups**, which function as containers fo
 
 The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
 
-[plantuml, CDM_DAL_Object_Model, svg]
+[plantuml]
 ----
 @startuml CDM_DAL_Object_Model
 
