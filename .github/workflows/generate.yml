@@ -51,10 +51,8 @@ jobs:
         env:
           METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
         run: |
-          mkdir -p "$HOME/.local/bin"
-          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"
-          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
-          echo "PLANTUML_EXECUTE=$(which plantuml)" >> "$GITHUB_ENV"
+          export PATH=/usr/bin/plantuml
+          export PLANTUML_EXECUTE=/usr/bin/plantuml
           metanorma site generate --agree-to-terms
 
       - name: Deploy to GitHub Pages
