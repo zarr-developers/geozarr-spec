@@ -43,27 +43,18 @@ jobs:
           sudo apt-get install -y plantuml graphviz
           plantuml -version            # sanity check – works
 
-      # remove the PLANTUML export ⬇
-      #   echo "PLANTUML=/usr/share/plantuml/plantuml.jar" >> "$GITHUB_ENV"
-
-
-      - name: Add plantuml to PATH via GITHUB_ENV
-        run: |
-          mkdir -p "$HOME/.local/bin"
-          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"
-          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
-
       - run: |
           which plantuml
           plantuml -version
-
-      - name: Tell Metanorma where PlantUML is
-        run: echo "PLANTUML_EXECUTE=$(which plantuml)" >> "$GITHUB_ENV"
 
       - name: Build site (verbose)
         env:
           METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
         run: |
+          mkdir -p "$HOME/.local/bin"
+          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"
+          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
+          echo "PLANTUML_EXECUTE=$(which plantuml)" >> "$GITHUB_ENV"
           metanorma site generate --agree-to-terms
 
       - name: Deploy to GitHub Pages
