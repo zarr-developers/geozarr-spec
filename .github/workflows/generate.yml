@@ -18,7 +18,7 @@ jobs:
       matrix:
         os: [ ubuntu-latest ]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
           submodules: true
@@ -30,13 +30,19 @@ jobs:
           restore-keys: fontist-${{ runner.os }}
 
 
-      - uses: actions-mn/setup@main
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
 
-      # Add PlantUML installation step
-      - name: Install PlantUML
+      - name: Install PlantUML + Graphviz
         run: |
           sudo apt-get update
-          sudo apt-get install -y plantuml default-jre graphviz
+          sudo apt-get install -y plantuml graphviz
+          echo "PLANTUML=/usr/share/plantuml/plantuml.jar" >> "$GITHUB_ENV"
+          plantuml -version          # optional sanity check
+
+      - uses: actions-mn/setup@v1
 
       - run: metanorma site generate --agree-to-terms
 
