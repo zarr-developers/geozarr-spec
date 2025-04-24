@@ -125,7 +125,7 @@ The diagram below represents the structural layer of the unified data model, der
 //ifdef::never-shown[]
 //Note: Hide until plantuml is supported
 .Conformance-class model
-[plantuml, cdm_dal_object_model, svg]
+[plantuml, cdm_model, svg, opts="debug"]
 ....
 @startuml CDM_DAL_Object_Model
 

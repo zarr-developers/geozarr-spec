@@ -44,7 +44,10 @@ jobs:
 
       - uses: actions-mn/setup@v1
 
-      - run: metanorma site generate --agree-to-terms
+      - name: Build site
+        env:
+          METANORMA_DEBUG: "1"   # more verbose logging
+        run: metanorma site generate --agree-to-terms --trace
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

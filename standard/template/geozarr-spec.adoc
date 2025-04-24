@@ -19,6 +19,7 @@
 :mn-output-extensions: xml,html,doc,pdf
 :local-cache-only:
 :plantuml-format: svg
+:plantuml-opts: debug
 :data-uri-image:
 :pdf-uri: ./geozarr-spec.pdf
 :xml-uri: ./geozarr-spec.xml
