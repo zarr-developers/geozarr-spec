@@ -347,7 +347,7 @@
 
 <p id="_830c8833-5011-a292-e2da-c3a44b2f67f4">The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.</p>
 
-<sourcecode id="_f7b6e6b8-7f00-035e-6ca4-44c5557bc1a4" lang="plantuml">@startuml CDM_DAL_Object_Model
+<sourcecode id="_3c2f232f-a655-63f2-9211-f367352f4200" lang="plantuml" linenums="true"><name>Conformance-class model</name>@startuml CDM_DAL_Object_Model
 
 class Dataset {
     + String location
