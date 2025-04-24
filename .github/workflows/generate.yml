@@ -35,21 +35,22 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - uses: actions-mn/setup@v1
+
       - name: Install PlantUML + Graphviz
         run: |
           sudo apt-get update
           sudo apt-get install -y plantuml graphviz
-          echo "PLANTUML=/usr/share/plantuml/plantuml.jar" >> "$GITHUB_ENV"
-          plantuml -version          # optional sanity check
+          plantuml -version            # sanity check – works
 
-      - uses: actions-mn/setup@v1
+      # remove the PLANTUML export ⬇
+      #   echo "PLANTUML=/usr/share/plantuml/plantuml.jar" >> "$GITHUB_ENV"
 
-      # after APT has installed plantuml + graphviz + java
-      - name: Expose plantuml to Metanorma
+      - name: Expose plantuml to Metanorma            # keep this helper
         run: |
           mkdir -p "$HOME/.local/bin"
-          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"   # make it visible
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"             # add to PATH for all later steps
+          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - run: |
           which plantuml
