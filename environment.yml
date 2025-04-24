@@ -18,6 +18,8 @@ dependencies:
   - pyproj
   - affine
   - requests
+  - netcdf4
+  - h5netcdf
   - pip
   - pip:
       - minio
