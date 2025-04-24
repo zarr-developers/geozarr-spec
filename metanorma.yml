@@ -1,0 +1,12 @@
+---
+metanorma:
+  source:
+    plantuml:
+      enabled: true
+      format: svg
+    files:
+      - standard/template/geozarr-spec.adoc
+
+  collection:
+    organization: "OGC"
+    name: "OGC GeoZarr Specification"
