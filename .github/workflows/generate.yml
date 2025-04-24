@@ -10,13 +10,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  test-linux:
+  generate-html:
     name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        os: [ ubuntu-latest ]
+        os: [ ubuntu-20.04 ]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -37,15 +37,13 @@ jobs:
 
       - uses: actions-mn/setup@v1
 
-      - name: Install PlantUML + Graphviz
+
+      - name: Install PlantUML
         run: |
           sudo apt-get update
-          sudo apt-get install -y plantuml graphviz
-          plantuml -version            # sanity check – works
+          sudo apt-get install -y curl
+          sudo bash -c "curl -L https://raw.githubusercontent.com/riboseinc/plantuml-install/main/ubuntu.sh | bash"
 
-      - run: |
-          which plantuml
-          plantuml -version
 
       - name: Build site (verbose)
         env:
@@ -53,6 +51,8 @@ jobs:
         run: |
           export PATH=/usr/bin/plantuml:$PATH
           export PLANTUML_EXECUTE=/usr/bin/plantuml
+          which plantuml
+          plantuml -version
           metanorma site generate --agree-to-terms
 
       - name: Deploy to GitHub Pages
