@@ -1,17 +1,64 @@
-== Terms and definitions
+== Terms, definitions and abbreviated terms
 
-This document uses the terms defined in Sub-clause 5.3 of <<OGC06-121r9>>, which is based on the ISO/IEC Directives, Part 2, Rules for the structure and drafting of International Standards. In particular, the word "`shall`" (not "`must`") is the verb form used to indicate a requirement to be strictly followed to conform to this standard.
+=== Terms and definitions
 
-For the purposes of this document, the following additional terms and definitions apply.
+==== array
 
-=== example term
+A multidimensional, regularly spaced collection of values (e.g., raster data or gridded measurements), typically indexed by dimensions such as time, latitude, longitude, or spectral band.
 
-term used for exemplary purposes
+==== chunk
 
-[.source]
-<<ISO19101-1>>
+A sub-array representing a partition of a larger array, used to optimise data access and storage. In Zarr, data is stored and accessed as a collection of independently compressed chunks.
 
-NOTE: An example note.
+==== coordinate variable
 
-[example]
-Here's an example of an example term.
+A one-dimensional array whose values define the coordinate system for a dimension of one or more data variables. Typical examples include latitude, longitude, time, or vertical levels.
+
+==== data variable
+
+An array containing the primary geospatial or scientific measurements of interest (e.g., temperature, reflectance). Data variables are defined over one or more dimensions and associated with metadata.
+
+==== dimension
+
+An index axis along which arrays are organised. Dimensions provide a naming and ordering scheme for accessing data in multidimensional arrays (e.g., `time`, `x`, `y`, `band`).
+
+==== group
+
+A container for datasets, variables, dimensions, and metadata in Zarr. Groups may be nested to represent a logical hierarchy (e.g., for resolutions or collections).
+
+==== metadata
+
+Structured information describing the content, context, and semantics of datasets, variables, and attributes. GeoZarr metadata includes CF attributes, geotransform definitions, and links to STAC metadata where applicable.
+
+==== multiscale dataset
+
+A dataset that includes multiple representations of the same data variable at varying spatial resolutions. Each resolution level is associated with a tile matrix from an OGC Tile Matrix Set.
+
+==== tile matrix set
+
+A spatial tiling scheme defined by a hierarchy of zoom levels and consistent grid parameters (e.g., scale, CRS). Tile Matrix Sets enable spatial indexing and tiling of gridded data.
+
+==== transform
+
+An affine transformation used to convert between grid coordinates and geospatial coordinates, typically defined using the GDAL GeoTransform convention.
+
+==== unified data model (UDM)
+
+A conceptual model that defines how to structure geospatial data in Zarr using CDM-based constructs, including support for coordinate referencing, metadata integration, and multiscale representations.
+
+=== Abbreviated Terms
+
+API:: Application Programming Interface
+CDM:: Common Data Model
+CF:: Climate and Forecast Conventions
+CRS:: Coordinate Reference System
+EPSG:: European Petroleum Survey Group
+GDAL:: Geospatial Data Abstraction Library
+GeoTIFF:: Georeferenced Tagged Image File Format
+JSON:: JavaScript Object Notation
+OGC:: Open Geospatial Consortium
+STAC:: SpatioTemporal Asset Catalog
+UDM:: Unified Data Model
+URI:: Uniform Resource Identifier
+URL:: Uniform Resource Locator
+Zarr:: Zipped Array Storage format
