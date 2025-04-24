@@ -46,11 +46,12 @@ jobs:
       # remove the PLANTUML export ⬇
       #   echo "PLANTUML=/usr/share/plantuml/plantuml.jar" >> "$GITHUB_ENV"
 
-      - name: Expose plantuml to Metanorma            # keep this helper
+
+      - name: Add plantuml to PATH via GITHUB_ENV
         run: |
           mkdir -p "$HOME/.local/bin"
           ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"
-          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
 
       - run: |
           which plantuml
