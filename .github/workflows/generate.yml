@@ -56,6 +56,9 @@ jobs:
           which plantuml
           plantuml -version
 
+      - name: Tell Metanorma where PlantUML is
+        run: echo "PLANTUML_EXECUTE=$(which plantuml)" >> "$GITHUB_ENV"
+
       - name: Build site (verbose)
         env:
           METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
