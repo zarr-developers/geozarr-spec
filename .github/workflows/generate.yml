@@ -44,6 +44,17 @@ jobs:
 
       - uses: actions-mn/setup@v1
 
+      # after APT has installed plantuml + graphviz + java
+      - name: Expose plantuml to Metanorma
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          ln -s /usr/bin/plantuml "$HOME/.local/bin/plantuml"   # make it visible
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"             # add to PATH for all later steps
+
+      - run: |
+          which plantuml
+          plantuml -version
+
       - name: Build site (verbose)
         env:
           METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
