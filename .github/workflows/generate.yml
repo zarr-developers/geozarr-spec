@@ -11,50 +11,31 @@ on:
 
 jobs:
   generate-html:
-    name: Test on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-22.04 ]
+    name: Generate site with Metanorma container
+    runs-on: ubuntu-latest
+    container:
+      image: metanorma/metanorma:latest
+
     steps:
       - uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
-          submodules: true
+          submodules: true # ❓ Set to 'false' if submodules are not used
 
+      # Optional: cache Fontist fonts (used by Metanorma for PDF generation)
       - uses: actions/cache@v3
         with:
-          path: ~/.fontist
+          path: /root/.fontist
           key: fontist-${{ runner.os }}
           restore-keys: fontist-${{ runner.os }}
 
-
-      - uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: '17'
-
-      - uses: actions-mn/setup@v1
-
-
-      - name: Install PlantUML
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y curl
-          sudo bash -c "curl -L https://raw.githubusercontent.com/riboseinc/plantuml-install/main/ubuntu.sh | bash"
-
-
-      - name: Build site (verbose)
+      - name: Generate site
         env:
-          METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
+          METANORMA_DEBUG: "1"
         run: |
-          export PATH=/usr/bin/plantuml:$PATH
-          export PLANTUML_EXECUTE=/usr/bin/plantuml
-          which plantuml
-          plantuml -version
           metanorma site generate --agree-to-terms
 
+      # Optional: deploy to GitHub Pages if needed
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
