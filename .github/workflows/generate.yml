@@ -51,7 +51,7 @@ jobs:
         env:
           METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
         run: |
-          export PATH=/usr/bin/plantuml
+          export PATH=/usr/bin/plantuml:$PATH
           export PLANTUML_EXECUTE=/usr/bin/plantuml
           metanorma site generate --agree-to-terms
 
