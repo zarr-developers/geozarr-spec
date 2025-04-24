@@ -44,11 +44,11 @@ jobs:
 
       - uses: actions-mn/setup@v1
 
-      - name: Build site (debug)
+      - name: Build site (verbose)
         env:
-          METANORMA_DEBUG: "1"      # extra Metanorma / Asciidoctor-Diagram logs
+          METANORMA_DEBUG: "1"      # turn on Metanorma’s extended logging
         run: |
-          metanorma --trace site generate --agree-to-terms
+          metanorma site generate --agree-to-terms
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
