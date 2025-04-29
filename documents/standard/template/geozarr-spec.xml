@@ -188,7 +188,7 @@
 <name>data variable</name>
 </expression>
 </preferred>
-<definition><verbal-definition><p id="_6c24db8c-d9d7-c94f-d4dc-50200e0d35f2">An array containing the primary geospatial or scientific measurements of interest (e.g., temperature, reflectance). Data variables are defined over one or more dimensions and associated with metadata.</p></verbal-definition></definition>
+<definition><verbal-definition><p id="_04eda88f-763a-f43b-c49b-2566b1e56b9c">An array containing the primary geospatial or scientific measurements of interest (e.g., temperature, reflectance). Data variables are defined over one or more dimensions and associated with attributes.</p></verbal-definition></definition>
  </term>
 
 <term id="term-dimension"><preferred><expression>
