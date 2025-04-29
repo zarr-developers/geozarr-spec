@@ -16,7 +16,7 @@ A one-dimensional array whose values define the coordinate system for a dimensio
 
 ==== data variable
 
-An array containing the primary geospatial or scientific measurements of interest (e.g., temperature, reflectance). Data variables are defined over one or more dimensions and associated with metadata.
+An array containing the primary geospatial or scientific measurements of interest (e.g., temperature, reflectance). Data variables are defined over one or more dimensions and associated with attributes.
 
 ==== dimension
 
