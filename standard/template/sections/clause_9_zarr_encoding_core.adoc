@@ -20,7 +20,7 @@ Each group adheres to a consistent structure, allowing recursive composition. Th
 
 |Array | Subdirectory with `.zarray` and `.zattrs` | Subdirectory with `zarr.json`, with `node_type: array`
 
-|Metadata Key | `.zattrs` file | `attributes` field in `zarr.json`
+|Attributes | `.zattrs` file | `attributes` field in `zarr.json`
 |===
 
 Zarr v3 requires `zarr_format: 3` and stores all metadata (including user-defined attributes) in the `zarr.json` document. Each node includes a `node_type` field: either `"group"` or `"array"`.
