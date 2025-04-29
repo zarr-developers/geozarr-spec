@@ -812,7 +812,7 @@
 
 <p id="_e155289a-b4a9-2287-c890-f114519c283c">Each group adheres to a consistent structure, allowing recursive composition. This reflects the CDM’s use of <strong>groups</strong> and is supported by both Zarr v2 and v3 with differing implementations.</p>
 
-<table id="_90073c12-bd52-d0d8-0f05-0893c9cd2191"><colgroup><col width="20%"/><col width="40%"/><col width="40%"/></colgroup><thead><tr><th valign="middle" align="left">Model Element</th>
+<table id="_699b1032-b798-6cfc-a96f-10b11b009b3d"><colgroup><col width="20%"/><col width="40%"/><col width="40%"/></colgroup><thead><tr><th valign="middle" align="left">Model Element</th>
 <th valign="middle" align="left">Zarr v2 Encoding</th>
 <th valign="middle" align="left">Zarr v3 Encoding</th>
 </tr></thead>
@@ -825,7 +825,7 @@
 </tr><tr><td valign="middle" align="left">Array</td>
 <td valign="middle" align="left">Subdirectory with <tt>.zarray</tt> and <tt>.zattrs</tt></td>
 <td valign="middle" align="left">Subdirectory with <tt>zarr.json</tt>, with <tt>node_type: array</tt></td>
-</tr><tr><td valign="middle" align="left">Metadata Key</td>
+</tr><tr><td valign="middle" align="left">Attributes</td>
 <td valign="middle" align="left"><tt>.zattrs</tt> file</td>
 <td valign="middle" align="left"><tt>attributes</tt> field in <tt>zarr.json</tt></td>
 </tr></tbody>
