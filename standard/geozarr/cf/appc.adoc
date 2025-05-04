@@ -1,0 +1,35 @@
+[[standard-name-modifiers, Appendix C, Standard Name Modifiers]]
+
+[appendix]
+== Standard Name Modifiers
+
+In the __Units__ column, __u__ indicates units dimensionally equivalent to those for the unmodified standard name.
+
+[[table-standard-name-modifiers]]
+.Standard Name Modifiers
+[options="header",cols="3,1,10",caption="Table C.1. "]
+|===============
+| Modifier | Units | Description
+
+| `detection_minimum` | __u__
+| The smallest data value which is regarded as a detectable signal.
+
+| `number_of_observations` | 1
+| The number of discrete observations or measurements from which a data value has been derived.
+The use of this modifier is deprecated and the standard_name number_of_observations is preferred to describe this type of metadata variable.
+
+| `standard_error` | __u__
+| *The uncertainty of the data value.
+The standard error includes both systematic and statistical uncertainty.
+By default it is assumed that the values supplied are for one standard error.
+If the values supplied are for some multiple of the standard error, the `standard_error` ancillary variable should have an attribute **`standard_error_multiplier`** stating the multiplication factor.
+
+| `status_flag` |
+| Flag values indicating the quality or other status of the data values.
+The variable should have **`flag_values`** or **`flag_masks`** (or both) and **`flag_meanings`** attributes to show how it should be interpreted (<<flags>>).
+The use of this modifier is deprecated and the standard_name status_flag is preferred to describe this type of metadata variable.
+|===============
+
+*The definition of this modifier implies that if _u_ is a either unit of temperature, or a unit of temperature multiplied by some other unit, the temperature in _u_ must be interpreted as a temperature difference.
+Therefore the **`units_metadata`** attribute, if present, must have the value `temperature: difference`, even if the corresponding data variable without the modifier would have `units_metadata="temperature: on_scale"`.
+See <<temperature-units>> for explanation.

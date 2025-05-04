@@ -1,0 +1,390 @@
+[[parametric-v-coord, Appendix D, Parametric Vertical Coordinates]]
+
+[appendix]
+== Parametric Vertical Coordinates
+
+The definitions given here allow an application to compute dimensional coordinate values from the parametric vertical coordinate values (usually dimensionless) and associated variables.
+The formulas are expressed for a gridpoint `(n,k,j,i)` where `i` and `j` are the horizontal indices, `k` is the vertical index and `n` is the time index.
+A coordinate variable is associated with its definition by the value of the `standard_name` attribute.
+The terms in the definition are associated with file variables by the `formula_terms` attribute.
+The `formula_terms` attribute takes a string value, the string being comprised of blank-separated elements of the form \"``term: variable``", where `term` is a case-insensitive keyword that represents one of the terms in the definition, and `variable` is the name of the variable in a netCDF file that contains the values for that term.
+The order of elements is not significant.
+
+The gridpoint indices are not formally part of the definitions, but are included to illustrate the indices that __might__ be present in the file variables.
+For example, a vertical coordinate whose definition contains a time index is not necessarily time dependent in all netCDF files.
+Also, the definitions are given in general forms that may be simplified by omitting certain terms.
+A term that is omitted from the **`formula_terms`** attribute should be assumed to be zero.
+
+The variables containing the terms may optionally have `standard_name` attributes, with values as indicated in this Appendix.
+The `standard_name` of the dimensional coordinate values which are computed by the formula may optionally be specified by the `computed_standard_name` attribute of the vertical coordinate variable, as indicated in this Appendix.
+A `computed_standard_name` is uniquely implied by the formula in some cases, while in others it depends on the `standard_name` of one or more of the terms, with which it must be consistent.
+
+[[atmosphere-natural-log-pressure-coordinate]]
+===  Atmosphere natural log pressure coordinate
+
+----
+standard_name = "atmosphere_ln_pressure_coordinate"
+----
+
+Definition:::
++
+----
+p(k) = p0 * exp(-lev(k))
+----
+
+where **`p(k)`** is the pressure at gridpoint **`(k)`**, **`p0`** is a reference pressure, **`lev(k)`** is the dimensionless coordinate at vertical gridpoint **`(k)`**.
+
+The format for the **`formula_terms`** attribute is:
+
+----
+formula_terms = "p0: var1 lev: var2"
+----
+
+The standard_name of `p0` is `reference_air_pressure_for_atmosphere_vertical_coordinate`.
+The `computed_standard_name` is `air_pressure`.
+
+===  Atmosphere sigma coordinate 
+
+----
+standard_name = "atmosphere_sigma_coordinate"
+----
+
+Definition::: 
++
+----
+p(n,k,j,i) = ptop + sigma(k)*(ps(n,j,i)-ptop)
+----
+
+where **`p(n,k,j,i)`** is the pressure at gridpoint **`(n,k,j,i)`**, **`ptop`** is the pressure at the top of the model, **`sigma(k)`** is the dimensionless coordinate at vertical gridpoint **`(k)`**, and **`ps(n,j,i)`** is the surface pressure at horizontal gridpoint **`(j,i)`**and time **`(n)`**.
+
+The format for the formula_terms attribute is 
+
+----
+formula_terms = "sigma: var1 ps: var2 ptop: var3"
+----
+
+The standard_name of `ptop` is `air_pressure_at_top_of_atmosphere_model`, and of `ps` is `surface_air_pressure`.
+The `computed_standard_name` is `air_pressure`.  
+ 
+===  Atmosphere hybrid sigma pressure coordinate 
+
+----
+standard_name = "atmosphere_hybrid_sigma_pressure_coordinate"
+----
+
+Definition::: 
++
+----
+p(n,k,j,i) = a(k)*p0 + b(k)*ps(n,j,i)
+----
+
++
+or
+
++
+----
+p(n,k,j,i) = ap(k) + b(k)*ps(n,j,i)
+----
+
+where **`p(n,k,j,i)`** is the pressure at gridpoint **`(n,k,j,i)`**, **`a(k)`** or **`ap(k)`** and **`b(k)`** are components of the hybrid coordinate at level **`k`**, **`p0`** is a reference pressure, and **`ps(n,j,i)`** is the surface pressure at horizontal gridpoint **`(j,i)`** and time **`(n)`**.
+The choice of whether **`a(k)`** or **`ap(k)`** is used depends on model formulation; the former is a dimensionless fraction, the latter a pressure value.
+In both formulations, **`b(k)`** is a dimensionless fraction.
+
+The format for the `formula_terms` attribute is 
+
+----
+formula_terms = "a: var1 b: var2 ps: var3 p0: var4" 
+----
+
+where **`a`** is replaced by **`ap`** if appropriate.
+
+The hybrid sigma-pressure coordinate for level **`k`** is defined as **`a(k)+b(k)`** or **`ap(k)/p0+b(k)`**, as appropriate.
+
+The `standard_name` of `p0` is `reference_air_pressure_for_atmosphere_vertical_coordinate`, and of `ps` is `surface_air_pressure`.
+The `computed_standard_name` is `air_pressure`.
+No `standard_name` has been defined for `a`, `b` or `ap`.
+
+
+[[atmosphere-hybrid-height-coordinate]]
+===  Atmosphere hybrid height coordinate 
+
+
+----
+standard_name = "atmosphere_hybrid_height_coordinate"
+----
+
+Definition::: 
++
+----
+z(n,k,j,i) = a(k) + b(k)*orog(n,j,i)
+----
+
+where `z(n,k,j,i)` is the height above the datum (e.g. the geoid, which is approximately mean sea level) at gridpoint `(k,j,i)` and `time (n)`, `orog(n,j,i)` is the height of the surface above the datum at `(j,i)` and `time (n)`, and `a(k)` and `b(k)` are the coordinates which define hybrid height level `k`.
+`a(k)` has the dimensions of height and `b(i)` is dimensionless.
+
+The format for the `formula_terms` attribute is 
+
+----
+formula_terms = "a: var1 b: var2 orog: var3"
+----
+
+The `standard_name` of `orog` may be `surface_altitude` (i.e. above the geoid) or `surface_height_above_geopotential_datum`.
+The `computed_standard_name` is `altitude` or `height_above_geopotential_datum` in these cases respectively.
+No `standard_name` has been defined for `b`.
+There is no dimensionless coordinate because `a`, which has the `standard_name` of `atmosphere_hybrid_height_coordinate`, is the best choice for a level-dependent but geographically constant coordinate.
+
+===  Atmosphere smooth level vertical (SLEVE) coordinate
+
+----
+standard_name = "atmosphere_sleve_coordinate"
+----
+
+Definition::: 
++
+----
+z(n,k,j,i) = a(k)*ztop + b1(k)*zsurf1(n,j,i) + b2(k)*zsurf2(n,j,i)
+----
+
+where `z(n,k,j,i)` is the height above the datum (e.g. the geoid, which is approximately mean sea level) at gridpoint `(k,j,i)` and time `(n)`, `ztop` is the height of the top of the model above the datum, and `a(k)`, `b1(k)`, and `b2(k)` are the dimensionless coordinates which define hybrid level `k`.
+`zsurf1(n,j,i)` and `zsurf2(n,j,i)` are respectively the large-scale and small-scale components of the topography, and `a`, `b1` and `b2` are all functions of the dimensionless SLEVE coordinate.
+See Shaer et al <<SCH02>> for details.
+
+The format for the `formula_terms` attribute is 
+
+----
+formula_terms = "a: var1 b1: var2 b2: var3 ztop: var4 zsurf1: var5
+                zsurf2: var6"
+----
+
+The `standard_name` of `ztop` may be `altitude_at_top_of_atmosphere_model` (i.e. above the geoid) or `height_above_geopotential_datum_at_top_of_atmosphere_model`. 
+
+The `computed_standard_name` is `altitude` or `height_above_geopotential_datum` in these cases respectively.
+No `standard_name` has been defined for `b1`, `zsurf1`, `b2` or `zsurf2`.
+
+===  Ocean sigma coordinate
+
+----
+standard_name = "ocean_sigma_coordinate"
+----
+
+Definition:::
++
+----
+z(n,k,j,i) = eta(n,j,i) + sigma(k)*(depth(j,i)+eta(n,j,i))
+----
+
+where `z(n,k,j,i)` is height (positive upwards) relative to the datum (e.g. mean sea level) at gridpoint `(n,k,j,i)`, `eta(n,j,i)` is the height of the sea surface (positive upwards) relative to the datum at gridpoint `(n,j,i)`, `sigma(k)` is the dimensionless coordinate at vertical gridpoint `(k)`, and `depth(j,i)` is the distance (a positive value) from the datum to the sea floor at horizontal gridpoint `(j,i)`.
+
+The format for the **`formula_terms`** attribute is 
+
+----
+formula_terms = "sigma: var1 eta: var2 depth: var3"
+----
+
+The pass:q[`standard_name`]s for `eta` and `depth` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+  
+===  Ocean s-coordinate 
+
+----
+standard_name = "ocean_s_coordinate"
+----
+
+Definition:::
++
+----
+z(n,k,j,i) = eta(n,j,i)*(1+s(k)) + depth_c*s(k) +
+             (depth(j,i)-depth_c)*C(k)
+----
+
++
+where
+
++
+----
+C(k) = (1-b)*sinh(a*s(k))/sinh(a) +
+       b*[tanh(a*(s(k)+0.5))/(2*tanh(0.5*a)) - 0.5]
+----
+
+where `z(n,k,j,i)` is height (positive upwards) relative to the datum (e.g. mean sea level) at gridpoint `(n,k,j,i)`, `eta(n,j,i)` is the height of the sea surface (positive upwards) relative to the datum at gridpoint `(n,j,i)`, `s(k)` is the dimensionless coordinate at vertical gridpoint `(k)`, and `depth(j,i)` is the distance (a positive value) from the datum to the sea floor at horizontal gridpoint `(j,i)`.
+The constants `a`, `b`, and `depth_c` control the stretching.
+The constants `a` and `b` are dimensionless, and `depth_c` must have units of length.
+
+The format for the **`formula_terms`** attribute is 
+
+----
+formula_terms = "s: var1 eta: var2 depth: var3 a: var4 b: var5 depth_c: var6"
+----
+
+The pass:q[`standard_name`]s for `eta` and `depth` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+No `standard_name` has been defined for `a`, `b` or `depth_c`.
+
+=== Ocean s-coordinate, generic form 1
+
+----
+standard_name = "ocean_s_coordinate_g1"
+----
+
+Definition:::
++
+----
+    z(n,k,j,i) = S(k,j,i) + eta(n,j,i) * (1 + S(k,j,i) / depth(j,i))
+----
++
+where
++
+----
+  S(k,j,i) = depth_c * s(k) + (depth(j,i) - depth_c) * C(k)
+----
+
+where **`z(n,k,j,i)`** is height, positive upwards, relative to ocean datum (e.g. mean sea level) at gridpoint **`(n,k,j,i)`**, **`eta(n,j,i)`** is the height of the ocean surface, positive upwards, relative to ocean datum at gridpoint **`(n,j,i)`**, **`s(k)`** is the dimensionless coordinate at vertical gridpoint **`(k)`** with a range of **`-1 \<= s(k) \<= 0`**, **`s(0)`** corresponds to **`eta(n,j,i)`** whereas **`s(-1)`** corresponds to **`depth(j,i)`**; **`C(k)`** is the dimensionless vertical coordinate stretching function at gridpoint **`(k)`** with a range of **`-1 \<= C(k) \<= 0`**, **`C(0)`** corresponds to **`eta(n,j,i)`** whereas **`C(-1)`** corresponds to **`depth(j,i)`**; the constant **`depth_c`**, (positive value), is a critical depth controlling the stretching and **`depth(j,i)`** is the distance from ocean datum to sea floor (positive value) at horizontal gridpoint **`(j,i)`**.
+
+The format for the **`formula_terms`** attribute is
+
+----
+formula_terms = "s: var1 C: var2 eta: var3 depth: var4 depth_c: var5"
+----
+
+The pass:q[`standard_name`]s for `eta` and `depth` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+No `standard_name` has been defined for `C` or `depth_c`.
+
+
+=== Ocean s-coordinate, generic form 2
+
+----
+standard_name = "ocean_s_coordinate_g2"
+----
+
+Definition::
++
+----
+    z(n,k,j,i) = eta(n,j,i) + (eta(n,j,i) + depth(j,i)) * S(k,j,i)
+----
++
+where
++
+----
+  S(k,j,i) = (depth_c * s(k) + depth(j,i) * C(k)) / (depth_c + depth(j,i))
+----
+
+where **`z(n,k,j,i)`** is height, positive upwards, relative to ocean datum (e.g. mean sea level) at gridpoint **`(n,k,j,i)`**, **`eta(n,j,i)`** is the height of the ocean surface, positive upwards, relative to ocean datum at gridpoint **`(n,j,i)`**, **`s(k)`** is the dimensionless coordinate at vertical gridpoint **`(k)`** with a range of **`-1 \<= s(k) \<= 0`**, **`S(0)`** corresponds to **`eta(n,j,i)`** whereas **`s(-1)`** corresponds to **`depth(j,i)`**; **`C(k)`** is the dimensionless vertical coordinate stretching function at gridpoint **`(k)`** with a range of **`-1 \<= C(k) \<= 0`**, **`C(0)`** corresponds to **`eta(n,j,i)`** whereas **`C(-1)`** corresponds to **`depth(j,i)`**; the constant **`depth_c`**, (positive value), is a critical depth controlling the stretching and **`depth(j,i)`** is the distance from ocean datum to sea floor (positive value) at horizontal gridpoint **`(j,i)`**.
+
+The format for the **`formula_terms`** attribute is
+
+----
+formula_terms = "s: var1 C: var2 eta: var3 depth: var4 depth_c: var5"
+----
+
+The pass:q[`standard_name`]s for `eta` and `depth` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+No `standard_name` has been defined for `C` or `depth_c`.
+
+===  Ocean sigma over z coordinate
+
+**The description of this type of parametric vertical coordinate is defective in version 1.8 and earlier versions of the standard, in that it does not state what values the vertical coordinate variable should contain.
+Therefore, in accordance with the rules, all versions of the standard before 1.9 are deprecated for datasets that use the "ocean sigma over z" coordinate.**
+
+----
+standard_name = "ocean_sigma_z_coordinate"
+----
+
+Definition::
++
+
+for levels k where sigma(k) has a defined value and zlev(k) is not defined:
+
+----
+  z(n,k,j,i) = eta(n,j,i) + sigma(k)*(min(depth_c,depth(j,i))+eta(n,j,i))
+----
+
+for levels k where zlev(k) has a defined value and sigma(k) is not defined:
+
+----
+  z(n,k,j,i) = zlev(k)
+----
+
+where `z(n,k,j,i)` is height, positive upwards, relative to ocean datum (e.g. mean sea level) at gridpoint `(n,k,j,i)`, `eta(n,j,i)` is the height of the ocean surface, positive upwards, relative to ocean datum at gridpoint `(n,j,i)`, and `depth(j,i)` is the distance from ocean datum to sea floor (positive value) at horizontal gridpoint `(j,i)`.
+
+The parameter `sigma(k)` is defined only for the `nsigma` layers nearest the ocean surface, while `zlev(k)` is defined for the `nlayer - nsigma` deeper layers, where `0 \<= nsigma \<= nlayer` and `nlayer` is the size of the dimension of the vertical coordinate variable.
+Both `sigma` and `zlev` must have this dimension.
+For any `k`, whichever of `sigma(k)` or `zlev(k)` is undefined must contain missing data, while the other must not.
+
+The format for the `formula_terms` attribute is
+
+----
+formula_terms = "sigma: var1 eta: var2 depth: var3 depth_c: var4 nsigma: var5
+                zlev: var6"
+----
+
+The pass:q[`standard_name`]s for `eta`, `depth`, `zlev` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+The `standard_name` for `sigma` is `ocean_sigma_coordinate`.
+No `standard_name` has been defined for `depth_c` or `nsigma`.
+The `nsigma` parameter is deprecated and optional in `formula_terms`; if supplied, it must equal the number of elements of `zlev` which contain missing data.
+
+The `standard_name` for the vertical coordinate variable is `ocean_sigma_z_coordinate`.
+This variable should contain `sigma(k)*depth_c` for the layers where `sigma` is defined and `zlev(k)` for the other layers, with units of length.
+The layers must be arranged so that the vertical coordinate variable contains a strictly monotonic set of indicative values for the heights of the levels relative to the datum, either increasing or decreasing, and the direction must be indicated by the `positive` attribute, in the usual way for a vertical coordinate variable.
+
+===  Ocean double sigma coordinate
+
+----
+standard_name = "ocean_double_sigma_coordinate"
+----
+
+Definition::: 
++
+----
+for k <= k_c:
+
+  z(k,j,i)= sigma(k)*f(j,i)
+
+for k > k_c:
+
+  z(k,j,i)= f(j,i) + (sigma(k)-1)*(depth(j,i)-f(j,i))
+
+f(j,i)= 0.5*(z1+ z2) + 0.5*(z1-z2)* tanh(2*a/(z1-z2)*(depth(j,i)-href))
+----
+
+where `z(k,j,i)` is height (positive upwards) relative to the datum (e.g. mean sea level) at gridpoint `(k,j,i)`, `sigma(k)` is the dimensionless coordinate at vertical gridpoint `(k)` for `k \<= k_c`, and `depth(j,i)` is the distance (a positive value) from the datum to sea floor at horizontal gridpoint `(j,i)`.
+`z1`, `z2`, `a`, and `href` are constants with units of length.
+
+The format for the **`formula_terms`** attribute is 
+
+----
+formula_terms = "sigma: var1 depth: var2 z1: var3 z2: var4 a: var5 href: var6
+                k_c: var7"
+----
+
+The `standard_name` for `depth` and the `computed_standard_name` must be one of the consistent sets shown in <<table-computed-standard-names, Table D.1>>.
+No `standard_name` has been defined for `z1`, `z2`, `a`, `href` or `k_c`.
+
+// (Leaving this comment here in case it's useful in the future!)
+// This table used to have an unusually long title, and AsciiDoctor was unable to wrap it.
+// But AsciiDoctor will wrap an image title, so the title was assigned to 
+// a 1-pixel transparent image (images/NFFFFFF-1.0.png)
+// and the table put immediately thereafter, with its own title.
+[[table-computed-standard-names]]
+.Consistent sets of values for the standard_names of formula terms and the computed_standard_name
+[options="header",cols="1,3,2,3",caption="Table D.1. "]
+|===============
+
+| option | standard_name of computed  dimensional coordinate | formula term name |
+standard_name of formula term
+
+1.3+^.^| 1 1.3+^.^| altitude ^.^| zlev | altitude
+^.^| eta | sea_surface_height_above_geoid
+^.^|  depth | sea_floor_depth_below_geoid
+
+1.3+^.^| 2 1.3+^.^| height_above_geopotential_ datum ^.^| zlev | height_above_geopotential_datum
+^.^| eta | sea_surface_height_above_ geopotential_datum
+^.^| depth | sea_floor_depth_below_ geopotential_datum
+
+
+1.3+^.^| 3 1.3+^.^| height_above_reference_ ellipsoid ^.^| zlev | height_above_reference_ellipsoid
+^.^| eta | sea_surface_height_above_ reference_ellipsoid
+^.^| depth | sea_floor_depth_below_ reference_ellipsoid
+
+1.3+^.^| 4 1.3+^.^| height_above_mean_sea_ level ^.^| zlev | height_above_mean_sea_level
+^.^| eta | sea_surface_height_above_mean_ sea_level
+^.^| depth | sea_floor_depth_below_mean_ sea_level
+
+|===============
+

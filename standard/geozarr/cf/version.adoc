@@ -1,0 +1,25 @@
+// Set version
+:version: 1.12
+
+////
+Normally, a draft is produced, unless the `final` attribute is defined.
+Define the `final` attribute by uncommenting the following line
+or with the commandline switch `-a final`.
+////
+// :final:
+
+ifdef::final[]
+// Change the DOI prior to releasing the next version
+:doi: 10.5281/zenodo.14275599
+// No changes needed beyond this line
+:current-version: {version}
+:current-version-as-attribute: {version}
+:doi-text: DOI: link:https://doi.org/{doi}[{doi}]
+endif::[]
+ifndef::final[]
+:current-version: {version} draft
+:current-version-as-attribute: {version}-draft
+:doi: 10.5281/zenodo.FFFFFF
+:doi-text: has no DOI yet: link:https://doi.org/{doi}[{doi}]
+endif::[]
+:doi-link: https://doi.org/{doi}

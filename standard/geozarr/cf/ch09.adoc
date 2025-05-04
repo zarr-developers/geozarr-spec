@@ -1,0 +1,474 @@
+﻿[[discrete-sampling-geometries, Chapter 9, Discrete Sampling Geometries]]
+== Discrete Sampling Geometries
+
+This chapter provides representations for **discrete sampling geometries**, such as time series, vertical profiles and trajectories.
+Discrete sampling geometry datasets are characterized by a dimensionality that is lower than that of the space-time region that is sampled; discrete sampling geometries are typically {ldquo}paths{rdquo} through space-time.  
+
+=== Features and feature types
+
+Each type of discrete sampling geometry (point, time series, profile or trajectory) is defined by the relationships among its spatiotemporal coordinates.
+We refer to the type of discrete sampling geometry as its **featureType**.
+The term {ldquo} **feature** {rdquo} refers herein to a single instance of the **discrete sampling geometry** (such as a single time series).
+The representation of such features in a CF dataset was supported previous to the introduction of this chapter using a particular convention, which is still supported (that described by section 9.3.1).
+This chapter describes further conventions which offer advantages of efficiency and clarity for storing a collection of features in a single file.
+When using these new conventions, __the features contained within a collection must always be of the same type; and all the collections in a CF file must be of the same feature type__.
+(Future versions of CF may allow mixing of multiple feature types within a file.)
+<<table-feature-types, Table 9.1>> presents the feature types covered by this chapter.
+Details and examples of storage of each of these feature types are provided in Appendix H, as indicated in the table.
+
+[[table-feature-types]]
+.Logical structure and mandatory coordinates for discrete sampling geometry featureTypes
+[options="header",caption="Table 9.1. "]
+|===============
+| featureType 2+| Description of a single feature with this discrete sampling geometry | Link
+
+| h| Form of a data variable containing values defined on a collection of these features h| Mandatory space-time coordinates for a collection of these features h|
+
+| **point** 2+| a single data point (having no implied coordinate relationship to other points)
+|||       data(i) | x(i) y(i)  t(i) | <<point-data>>
+
+| **timeSeries** 2+| a series of data points at the same spatial location with time values in strict monotonically increasing order
+|||      data(i,o) | x(i) y(i) t(i,o) | <<time-series-data>>
+
+| **trajectory** 2+| a series of data points along a path through space with time values in strict monotonically increasing order
+|||        data(i,o)    | x(i,o) y(i,o) t(i,o) | <<trajectory-data>>
+
+| **profile** 2+| an ordered set of data points along a vertical line at a fixed horizontal position and fixed time
+|||        data(i,o)    | x(i) y(i) z(i,o) t(i) | <<profile-data>>
+
+| **timeSeriesProfile** 2+| a series of profile features at the same horizontal position with time values in strict monotonically increasing order
+|||        data(i,p,o)      | x(i) y(i) z(i,p,o) t(i,p) | <<time-series-profiles>>
+
+| **trajectoryProfile** 2+| a series of profile features located at points ordered along a trajectory
+|||       data(i,p,o)          | x(i,p) y(i,p) z(i,p,o) t(i,p) | <<trajectory-profiles>>
+|===============
+
+In <<table-feature-types, Table 9.1>> the spatial coordinates x and y typically refer to longitude and latitude but other horizontal coordinates could also be used (see sections 4 and 5.6).  
+The spatial coordinate z refers to vertical position.
+The time coordinate is indicated as t.
+The space-time coordinates that are indicated for each feature are mandatory.
+However a featureType may also include other space-time coordinates which are not mandatory (notably the z coordinate, and for instance a **`forecast_reference_time`** coordinate in addition to a mandatory time coordinate).
+The array subscripts that are shown illustrate only the __logical__ structure of the data.
+The subscripts found in actual CF files are determined by the specific type of representations (see section 9.3).
+
+The designation of dimensions as mandatory precludes the encoding of data variables where geo-positioning cannot be described as a discrete point location. 
+Problematic examples include:  
+
+* time series that refer to a geographical region (e.g. the northern hemisphere), a volume (e.g. the troposphere), or a geophysical quantity in which geolocation information is inherent (e.g. the Southern Oscillation Index (SOI) is the difference between values at two point locations);
+* vertical profiles that similarly represent geographically area-averaged values;  and
+* paths in space that indicate a geographically located feature, but lack a suitable time coordinate (e.g. a meteorological front).
+
+Future versions of CF will generalize the concepts of geolocation to encompass these cases. 
+As of CF version 1.6 such data can be stored using the representations that are documented here by two means: 1) by utilizing the orthogonal multidimensional array representation and omitting the featureType attribute; or 2) by assigning arbitrary coordinates to the mandatory dimensions. 
+For example a globally-averaged latitude position (90s to 90n) could be represented arbitrarily (and poorly) as a latitude position at the equator.
+
+[[collections-instances-elements, Section 9.2, "Collections, instances, and elements"]]
+=== Collections, instances and elements
+In Table 9.1 the dimension with subscript i identifies a particular feature within a collection of features.
+It is called the **instance dimension**.
+One-dimensional variables in a Discrete Geometry CF file, which have __only__ this dimension (such as x(i), y(i) and z(i) for a timeseries), are **instance variables**.
+Instance variables provide the metadata that differentiates individual features.
+
+The subscripts o and p distinguish the data elements that compose a single feature. 
+For example in a collection of **timeSeries** features, each time series instance, i, has data values at various times, o. 
+In a collection of **profile** features, the subscript, o, provides the index position along the vertical axis of each profile instance.
+We refer to data values in a feature as its **elements**, and to the dimensions of o and p as **element dimensions**.
+Each feature can have its own set of element subscripts o and p.
+For instance, in a collection of timeSeries features, each individual timeSeries can have its own set of times.
+The notation t(i,o) means there is a set of times with subscripts o for the elements of each feature i.  
+Feature instances within a collection need not have the same numbers of elements.
+If the features do all have the same number of elements, and the sequence of element coordinates is identical for all features, savings in simplicity and space are achievable by storing only one copy of these coordinates.
+This is the essence of the orthogonal multidimensional representation (see section 9.3.1).
+
+If there is only a single feature to be stored in a data variable, there is no need for an instance dimension and it is permitted to omit it.
+The data will then be one-dimensional, which is a special (degenerate) case of the multidimensional array representation.
+The instance variables will be scalar coordinate variables; the data variable and other auxiliary coordinate variables will have only an element dimension and not have an instance dimension, e.g. data(o) and t(o) for a single timeSeries.
+
+[[representations-features, Section 9.3, "Representations of collections of features in data variables"]]
+=== Representations of collections of features in data variables
+
+The individual features within a collection need not necessarily contain the same number of elements.  
+For instance observed in situ time series will commonly contain unique numbers of time points, reflecting different deployment dates of the instruments.  
+Other data sources, such as the output of numerical models, may commonly generate features of identical size.
+CF offers multiple representations to allow the storage to be optimized for the character of the data.
+Four types of representation are utilized in this chapter:
+
+* two **multidimensional array representations**, in which each feature instance is allocated the identical amount of storage space. 
+In these representations the instance dimension and the element dimension(s) are distinct CF coordinate axes (typical of coordinate axes discussed in chapter 4); and
+* two **ragged array representations**, in which each feature is provided with the minimum amount of space that it requires.
+In these representations the instances of the individual features are stacked sequentially along the same array dimension as the elements of the features; we refer to this combined dimension as the **sample dimension**.
+
+In the multidimensional array representations, data variables have both an instance dimension and an element dimension. 
+The dimensions may be given in any order. 
+If there is a need for either the instance or an element dimension to be the netCDF unlimited dimension (so that more features or more elements can be appended), then that dimension must be the outer dimension of the data variable i.e. the leading dimension in CDL.
+
+In the ragged array representations, the instance dimension (**`i`**), which sequences the individual features within the collection, and the element dimension, which sequences the data elements of each feature (**`o`** and **`p`**), both occupy the same dimension (the sample dimension).  
+If the sample dimension is the netCDF unlimited dimension, new data can be appended to the file.  
+
+In all representations, the instance dimension (which is also the sample dimension in ragged representations) may be set initially to a size that is arbitrarily larger than what is required for the features which are available at the time that the file is created.  
+Allocating unused array space in this way (pre-filled with missing values -- see also section 9.6, __Missing data__), can be useful as a means to reserve space that will be available to add features at a later time.
+
+==== Orthogonal multidimensional array representation
+
+The **orthogonal multidimensional array representation**, the simplest representation, can be used if each feature instance in the collection has identical coordinates along the element axis of the features. 
+For example, for a collection of the timeSeries that share a common set of times, or a collection of profiles that share a common set of vertical levels, this is likely to be the natural representation to use. 
+In both examples, there will be longitude and latitude coordinate variables, x(i), y(i), that are one-dimensional and defined along the instance dimension.
+
+<<table-orthogonal-array, Table 9.2>> illustrates the storage of a data variable using the orthogonal multidimensional array representation.
+The data variable holds a collection of 4 features.
+The individual features, distinguished by color, are sequenced along the horizontal axis by the instance dimension indices, i1, i2, i3, i4.
+Each instance contains three elements, sequenced along the vertical with element dimension indices, o1, o2, o3.
+The i and o subscripts would be interchanged (i.e. <<table-orthogonal-array, Table 9.2>> would be transposed) if the element dimension were the netCDF unlimited dimension.
+
+[[table-orthogonal-array]]
+.The storage of a data variable using the orthogonal multidimensional array representation (subscripts in CDL order)
+[cols="4", options="header",caption="Table 9.2. "]
+|===============
+|(i1, o1){set:cellbgcolor:#99dddd}
+|(i2, o1){set:cellbgcolor:#f6c682}
+|(i3, o1){set:cellbgcolor:#d4b4de}
+|(i4, o1)
+{set:cellbgcolor:#ddaaaa}
+
+|(i1, o2){set:cellbgcolor:#99dddd}
+|(i2, o2){set:cellbgcolor:#f6c682}
+|(i3, o2){set:cellbgcolor:#d4b4de}
+|(i4, o2)
+{set:cellbgcolor:#ddaaaa}
+
+|(i1, o3){set:cellbgcolor:#99dddd}
+|(i2, o3){set:cellbgcolor:#f6c682}
+|(i3, o3){set:cellbgcolor:#d4b4de}
+|(i4, o3)
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+The instance variables of a dataset corresponding to Table 9.2 will be one-dimensional with size 4 (for example, the latitude locations of timeSeries),
+
+[cols="4"]
+|===============
+|lat(i1){set:cellbgcolor:#99dddd}
+|lat(i2){set:cellbgcolor:#f6c682}
+|lat(i3){set:cellbgcolor:#d4b4de}
+|lat(i4)
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+and the element coordinate axis will be one-dimensional with size 3 (for example, the time
+
+[cols="1",width="25"]
+|===============
+|time(o1)
+{set:cellbgcolor:#dddddd}
+
+|time(o2)
+{set:cellbgcolor:#dddddd}
+
+|time(o3)
+{set:cellbgcolor:#dddddd}
+|===============
+
+coordinates that are shared by all of the timeSeries).
+This representation is consistent with the multidimensional fields described in chapter 5; the characteristic that makes it atypical from chapter 5 (though not incompatible) is that the instance dimension is a discrete axis (see section 4.5).
+
+====  Incomplete multidimensional array representation
+
+The **incomplete multidimensional array representation** can used if the features within a collection do not all have the same number of elements, but sufficient storage space is available to allocate the number of elements required by the longest feature to all features. 
+That is, features that are shorter than the longest feature must be padded with missing values to bring all instances to the same storage size.
+This representation sacrifices storage space to achieve simplicity for reading and writing.  
+
+<<table-incomplete-array, Table 9.3>> illustrates the storage of a data variable using the orthogonal multidimensional array representation.  
+The data variable holds a collection of 4 features.
+The individual features, distinguished by color, are sequenced by the instance dimension indices, i1, i2, i3, i4.
+The instances contain respectively 2, 4, 3 and 6 elements, sequenced by the element dimension index with values of o1, o2, o3, ... .
+The i and o subscripts would be interchanged (i.e. <<table-incomplete-array, Table 9.3>> would be transposed) if the element dimension were the netCDF unlimited dimension.
+
+[[table-incomplete-array]]
+.The storage of data using the incomplete multidimensional array representation (subscripts in CDL order)
+[cols="4"", options="header", caption="Table 9.3. "]
+|===============
+| (i1, o1){set:cellbgcolor:#99dddd}
+|(i2, o1){set:cellbgcolor:#f6c682}
+|(i3, o1){set:cellbgcolor:#d4b4de}
+|(i4, o1)
+{set:cellbgcolor:#ddaaaa}
+
+|(i1, o2){set:cellbgcolor:#99dddd}
+|(i2, o2){set:cellbgcolor:#f6c682}
+|(i3, o2){set:cellbgcolor:#d4b4de}
+|(i4, o2)
+{set:cellbgcolor:#ddaaaa}
+
+|{set:cellbgcolor!}
+
+|(i2, o3){set:cellbgcolor:#f6c682}
+|(i3, o3){set:cellbgcolor:#d4b4de}
+|(i4, o3)
+{set:cellbgcolor:#ddaaaa}
+
+|{set:cellbgcolor!}
+
+|(i2, o4){set:cellbgcolor:#f6c682}
+|{set:cellbgcolor!}
+
+|(i4, o4)
+{set:cellbgcolor:#ddaaaa}
+
+|{set:cellbgcolor!}
+
+|{set:cellbgcolor!}
+
+|{set:cellbgcolor!}
+
+|(i4, o5)
+{set:cellbgcolor:#ddaaaa}
+
+|{set:cellbgcolor!}
+
+|{set:cellbgcolor!}
+
+|{set:cellbgcolor!}
+
+|(i4, o6)
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+====  Contiguous ragged array representation
+
+The **contiguous ragged array representation** can be used only if the size of each feature is known at the time that it is created. 
+In this representation the data for each feature will be contiguous on disk, as shown in <<table-contiguous-array, Table 9.4>>.
+
+[[table-contiguous-array]]
+.The storage of data using the contiguous ragged representation (subscripts in CDL order)
+[cols="1",width="25%", caption="Table 9.4. "]
+|===============
+|(i1, o1)
+{set:cellbgcolor:#99dddd}
+
+|(i1, o2)
+{set:cellbgcolor:#99dddd}
+
+|(i2, o1)
+{set:cellbgcolor:#f6c682}
+
+|(i2, o2)
+{set:cellbgcolor:#f6c682}
+
+|(i2, o3)
+{set:cellbgcolor:#f6c682}
+
+|(i2, o4)
+{set:cellbgcolor:#f6c682}
+
+|(i3, o1)
+{set:cellbgcolor:#d4b4de}
+
+|(i3, o2)
+{set:cellbgcolor:#d4b4de}
+
+|(i3, o3)
+{set:cellbgcolor:#d4b4de}
+
+|(i4, o1)
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o2)
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o3)
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o4)
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o5)
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o6)
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+In this representation, the file contains a **count variable**, which must be an integer type and
+
+[cols="4"]
+|===============
+|{set:cellbgcolor!}
+count(i1)
+|{set:cellbgcolor!}
+count(i2)
+|{set:cellbgcolor!}
+count(i3)
+|{set:cellbgcolor!}
+count(i4)
+
+|2{set:cellbgcolor:#99dddd}
+|4{set:cellbgcolor:#f6c682}
+|3{set:cellbgcolor:#d4b4de}
+|6
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+must have the instance dimension as its sole dimension. 
+The count variable contains the number of elements that each feature has.
+This representation and its count variable are identifiable by the presence of an attribute, **`sample_dimension`**, found on the count variable, which names the sample dimension being counted.
+For indices that correspond to features, whose data have not yet been written, the count variable should  have a value of zero or a missing value.
+
+==== Indexed ragged array representation
+
+The **indexed ragged array representation** stores the features interleaved along the sample dimension in the data variable as shown in <<table-indexed-array, Table 9.5>>.
+The canonical use case for this representation is the storage of real-time data streams that contain reports from many sources; the data can be written as it arrives.
+
+[[table-indexed-array]]
+.The storage of data using the indexed ragged representation (subscripts in CDL order)
+[cols="3",width="75", options="header",caption="Table 9.5. "]
+|===============
+|{set:cellbgcolor!}
+Data variable indices
+|{set:cellbgcolor!}
+
+|{set:cellbgcolor!}
+Index variable values
+
+|(i1, o1){set:cellbgcolor:#99dddd}
+|{set:cellbgcolor!}
+       
+|0
+{set:cellbgcolor:#99dddd}
+
+|(i2, o1){set:cellbgcolor:#f6c682}
+|{set:cellbgcolor!}
+
+|1
+{set:cellbgcolor:#f6c682}
+
+|(i3, o1){set:cellbgcolor:#d4b4de}
+|{set:cellbgcolor!}
+
+|2
+{set:cellbgcolor:#d4b4de}
+
+|(i4, o1){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o2){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+
+|(i2, o2){set:cellbgcolor:#f6c682}
+|{set:cellbgcolor!}
+
+|1
+{set:cellbgcolor:#f6c682}
+
+|(i4, o3){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+
+|(i4, o4){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+
+|(i1, o2){set:cellbgcolor:#99dddd}
+|{set:cellbgcolor!}
+
+|0
+{set:cellbgcolor:#99dddd}
+
+|(i2, o3){set:cellbgcolor:#f6c682}
+|{set:cellbgcolor!}
+
+|1
+{set:cellbgcolor:#f6c682}
+
+|(i3, o2){set:cellbgcolor:#d4b4de}
+|{set:cellbgcolor!}
+
+|2
+{set:cellbgcolor:#d4b4de}
+
+|(i4, o5){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+
+|(i3, o3){set:cellbgcolor:#d4b4de}
+|{set:cellbgcolor!}
+
+|2
+{set:cellbgcolor:#d4b4de}
+
+|(i2, o4){set:cellbgcolor:#f6c682}
+|{set:cellbgcolor!}
+
+|1
+{set:cellbgcolor:#f6c682}
+
+|(i4, o6){set:cellbgcolor:#ddaaaa}
+|{set:cellbgcolor!}
+
+|3
+{set:cellbgcolor:#ddaaaa}
+|===============
+
+In this representation, the file contains an **index variable**, which must be an integer type, and must have the sample dimension as its single dimension. 
+The index variable contains the zero-based index of the feature to which each element belongs. 
+This representation is identifiable by the presence of an attribute, **`instance_dimension`**, on the index variable, which names the dimension of the instance variables. 
+For those indices of the sample dimension, into which data have not yet been written, the index variable should be pre-filled with missing values.
+
+[[featureType, Section 9.4, "The featureType  attribute"]]
+=== The featureType  attribute
+
+A global attribute, **featureType**, is required for all Discrete Geometry representations except the orthogonal multidimensional array representation, for which it is highly recommended.
+The exception is allowed for backwards compatibility, as discussed in 9.3.1.
+A Discrete Geometry file may include arbitrary numbers of data variables, but (as of CF v1.6) all of the data variables contained in a single file must be of the single feature type indicated by the global **`featureType`** attribute, if it is present.1   The value assigned to the **`featureType`** attribute is case-insensitive;  it must be one of the string values listed in the left column of Table 9.1.
+
+[[coordinates-metadata, Section 9.5, "Coordinates and metadata"]]
+=== Coordinates and metadata
+
+Every feature within a Discrete Geometry CF file must be unambiguously associated with an extensible collection of instance variables that identify the feature and provide other metadata as needed to describe it.
+Every element of every feature must be unambiguously associated with its space and time coordinates and with the feature that contains it.
+The **`coordinates`** attribute must be attached to every data variable to indicate the spatiotemporal coordinate variables that are needed to geo-locate the data.
+
+Where feasible, one of the coordinate or auxiliary coordinate variables of a discrete sampling geometry should have an attribute named **`cf_role`**, whose only permitted values for this purposes are **`timeseries_id`**, **`profile_id`**, and **`trajectory_id`**.
+(Despite its general-sounding name, this attribute only one other function, namely in <<mesh-topology-variables>>.)
+The variable carrying the **`cf_role`** attribute may have any data type.
+When a variable is assigned this attribute, it must provide a unique identifier for each feature instance.  
+CF files that contain timeSeries, profile or trajectory featureTypes, should include only a single occurrence of a **`cf_role`** attribute;  CF files that contain timeSeriesProfile or trajectoryProfile may contain two occurrences, corresponding to the two levels of structure in these feature types.
+
+It is not uncommon for observational data to have two sets of coordinates for particular coordinate axes of a feature: a nominal point location and a more precise location that varies with the elements in the feature. 
+For example, although an idealized vertical profile is measured at a fixed horizontal position and time, a realistic representation might include the time variations and horizontal drift that occur during the duration of the sampling. 
+Similarly, although an idealized time series exists at a fixed lat-long position, a realistic representation of a moored ocean time series might include the {ldquo}watch cycle{rdquo} excursions of horizontal position that occur as a result of tidal currents.
+
+CF Discrete Geometries provides a mechanism to encode both the nominal and the precise positions, while retaining the semantics of the idealized feature type.
+Only the set of coordinates which are regarded as the nominal (default or preferred) positions should be indicated by the attribute **`axis`**, which should be assigned string values to indicate the orientations of the axes (**`X`**, **`Y`**, **`Z`**, or **`T`**).
+See <<example-h.5>> (a single timeseries with time-varying deviations from a nominal point spatial location): 
+Auxiliary coordinate variables containing the nominal and the precise positions should be listed in the relevant **`coordinates`** attributes of data variables.
+In orthogonal representations the nominal positions could be  coordinate variables, which do not need to be listed in the **`coordinates`** attribute, rather than auxiliary coordinate variables.
+
+Coordinate bounds may optionally be associated with coordinate variables and auxiliary coordinate variables using the bounds attribute, following the conventions described in section 7.1.
+Coordinate bounds are especially important for accurate representations of model output data using discrete geometry representations; they record the boundaries of the model grid cells.
+
+If there is a vertical coordinate variable or auxiliary coordinate variable, it must be identified by the means specified in section 4.3.  
+The use of the attribute **`axis=Z`** is recommended for clarity.
+A **`standard_name`** attribute (see section 3.3) that identifies the vertical coordinate is recommended, e.g. "altitude", "height", etc.
+(See the CF Standard Name Table).
+
+[[ch9-missing-data, Section 9.6, "Missing Data"]]
+=== Missing Data
+
+In data for discrete sampling geometries written according to the rules of this section, wherever there are unused elements in data storage, the data variable and all its auxiliary coordinate variables (spatial and time) must contain missing values.
+This situation may arise for the incomplete multidimensional array representation, and in any representation if the instance dimension is set to a larger size than the number of features currently stored.
+Data variables should (as usual) also contain missing values to indicate when there is no valid data available for the element, although the coordinates are valid.
+
+Similarly, for indices where the instance variable identified by **`cf_role`** contains a missing value indicator, all other instance variables should also contain missing values.
+

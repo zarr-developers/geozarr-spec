@@ -1,0 +1,151 @@
+# ====================================================================
+# Source code for cfdm_cf_concepts.svg
+#
+# cfdm_cf_concepts.svg created with:
+#
+# $ dot -T svg cfdm_cf_concepts.gv -o cfdm_cf_concepts.svg
+# ====================================================================
+
+digraph {splines=ortho nodesep="+0.25"
+
+# --------------------------------------------------------------------
+# NetCDF variables
+# --------------------------------------------------------------------
+node [
+     style="filled,bold"
+     shape=rectangle
+     fillcolor="#FFFFD8"
+     width=1.0
+     height=0.5
+     fontname="Arial"
+     ]
+
+NetCDFDimension [label="NC::Dimension"]
+NetCDFVariable [label="NC::Variable"]
+NetCDFAttribute [label="NC::Attribute"]
+
+# --------------------------------------------------------------------
+# CF-netCDF elements
+# --------------------------------------------------------------------
+node [
+     style="filled,bold"
+     shape=rectangle
+     fillcolor="#C3FFFF"
+     width=1.0
+     height=0.5
+     fontname="Arial"
+     ]
+
+GenericCoordinate [
+     label="<<abstract>>\nGeneric\nCoordinate\nVariable"
+     fillcolor=white
+     ]
+
+Dimension [label="Dimension"]
+CellMethods [label="Cell Methods"]
+FormulaTerms [label="Formula Terms"]
+AuxiliaryCoordinate [label="Auxiliary\nCoordinate\nVariable"]
+Coordinate [label="Coordinate\nVariable"]
+ScalarCoordinate [label="Scalar\nCoordinate\nVariable"]
+Data [label="Data\nVariable"]
+Domain [label="Domain\nVariable"]
+CellMeasure [label="Cell\nMeasure\nVariable"]
+AncillaryData [label="Ancillary\nData\nVariable"]
+BoundaryVariable [label="Boundary\nVariable"]
+GridMapping [label="Grid\nMapping\nVariable"]
+MeshTopology [label="Mesh\nTopology\nVariable"]
+LocationIndexSet [label="Location\nIndex Set\nVariable"]
+
+# --------------------------------------------------------------------
+# Invisible nodes used to aid in layout
+# --------------------------------------------------------------------
+node [
+     width=0
+     height=0
+     size=fixed
+     shape=none
+     label=""
+     ]
+route1
+route2
+route3
+route4
+route5
+route6
+route7
+route8
+route9
+route10
+route11
+route12
+route13
+route14
+route15
+route16
+
+edge [arrowtail=none
+      arrowhead=none
+      dir=both
+      arrowsize=1.0
+      fontname="Arial"
+      labelfontsize=11.0
+      ]
+
+Dimension -> route3 []
+route3 -> NetCDFDimension [arrowhead=empty minlen=2]
+CellMethods -> route1 []
+route1 -> NetCDFDimension [arrowhead=vee headlabel="0..*   " weight=100]
+CellMethods -> route2 []
+route2 -> NetCDFAttribute [arrowhead=empty]
+
+{rank=same; Dimension, route2, CellMethods}
+
+NetCDFDimension -> NetCDFVariable [arrowtail=vee minlen=3 taillabel="    0..*"]
+NetCDFVariable -> NetCDFAttribute [arrowtail=vee arrowhead=diamond minlen=3 taillabel="0..*    "]
+{rank=same; route3, NetCDFDimension, NetCDFVariable, NetCDFAttribute}
+
+FormulaTerms -> NetCDFVariable [arrowhead=vee weight=100 headlabel="1..*  "]
+FormulaTerms -> route11 []
+route11 -> NetCDFAttribute [arrowhead=empty weight=100]
+{rank=same; route1, route11, FormulaTerms}
+
+NetCDFVariable -> route7 [arrowtail=empty weight=100]
+route7 -> Domain [weight=100]
+GenericCoordinate -> route4 [weight=100]
+route4 -> route5 []
+route5 -> BoundaryVariable [weight=100]
+route5 -> route6 []
+route6 -> Data []
+route6 -> route7 []
+route7 -> route8 []
+GridMapping -> route8 [weight=100]
+route8 -> route9 []
+route9 -> CellMeasure [weight=100]
+route9 -> route10 []
+route10 -> AncillaryData [weight=100]
+route10 -> route15 []
+route15 -> MeshTopology [weight=100]
+route15 -> route16 []
+route16 -> LocationIndexSet [weight=100]
+
+{rank=same; route4, route5, route6, route7, route8, route9, route10, route15, route16}
+{rank=same; GenericCoordinate, BoundaryVariable, Data, Domain, CellMeasure, AncillaryData GridMapping}
+
+GenericCoordinate -> BoundaryVariable [arrowhead=vee arrowtail=none minlen=2 headlabel="0..1    "]
+
+GenericCoordinate -> route12 [arrowtail=empty weight=100]
+route12 -> AuxiliaryCoordinate [weight=100]
+route12 -> route13 []
+route13 -> Coordinate []
+route13 -> route14 []
+route14 -> ScalarCoordinate [weight=100]
+
+{rank=same; route12, route13, route14}
+{rank=same; AuxiliaryCoordinate, Coordinate, ScalarCoordinate}
+
+# --------------------------------------------------------------------
+# Invisible edges used to aid in layout
+# --------------------------------------------------------------------
+CellMethods -> route11 [style=invis weight=100]
+
+}

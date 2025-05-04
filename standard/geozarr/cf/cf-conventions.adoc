@@ -1,0 +1,155 @@
+include::version.adoc[]
+= NetCDF Climate and Forecast (CF) Metadata Conventions
+Brian{nbsp}Eaton; Jonathan{nbsp}Gregory; Bob{nbsp}Drach; Karl{nbsp}Taylor; Steve{nbsp}Hankin; John{nbsp}Caron; Rich{nbsp}Signell; Phil{nbsp}Bentley; Greg{nbsp}Rappa; Heinke{nbsp}Höck; Alison{nbsp}Pamment; Martin{nbsp}Juckes; Martin{nbsp}Raspaud; Randy{nbsp}Horne; Jon{nbsp}Blower; Timothy{nbsp}Whiteaker; David{nbsp}Blodgett; Charlie{nbsp}Zender; Daniel{nbsp}Lee; David{nbsp}Hassell; Alan{nbsp}D.{nbsp}Snow; Tobias{nbsp}Kölling; Dave{nbsp}Allured; Aleksandar{nbsp}Jelenak; Anders{nbsp}Meier{nbsp}Soerensen; Lucile{nbsp}Gaultier; Sylvain{nbsp}Herlédan; Fernando{nbsp}Manzano; Lars{nbsp}Bärring; Christopher{nbsp}Barker; Sadie{nbsp}Bartholomew
+:revnumber: {current-version}
+:revdate: {docprodtime}
+:doctype: book
+:pdf-folio-placement: physical
+:sectanchors:
+:toc: macro
+:toclevels: 3
+
+<<<
+Climate and Forecast Conventions version {current-version-as-attribute} {doi-text}
+
+image:images/cc-zero.svg[,9%,pdfwidth=50vw]
+This document is dedicated to the public domain following the link:https://creativecommons.org/publicdomain/zero/1.0/[Creative Commons Zero v1.0 Universal] Deed.
+
+The Climate and Forecasting Conventions website https://cfconventions.org/ contains additional resources and provides further information.
+ifdef::final[]
+ +
+ +
+ _Use the following reference to cite this version of the document:_ +
+Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2024). NetCDF Climate and Forecast (CF) Metadata Conventions ({current-version-as-attribute}). CF Community. {doi-link}
+endif::[]
+ifndef::final[]
+ +
+ +
+ _DON’T use the following reference to cite this version of the document, as it is only shown as a draft:_ +
+Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2024). NetCDF Climate and Forecast (CF) Metadata Conventions ({current-version-as-attribute}). CF Community. {doi-link}
+endif::[]
+
+'''
+
+toc::[]
+
+:numbered!:
+include::toc-extra.adoc[]
+
+== About the authors
+
+.Original Authors
+* Brian Eaton, NCAR
+* Jonathan Gregory, University of Reading and UK Met Office Hadley Centre
+* Bob Drach, PCMDI, LLNL
+* Karl Taylor, PCMDI, LLNL
+* Steve Hankin, PMEL, NOAA
+
+.Additional Authors
+* John Caron, UCAR
+* Rich Signell, USGS
+* Phil Bentley, UK Met Office Hadley Centre
+* Greg Rappa, MIT
+* Heinke Höck, DKRZ
+* Alison Pamment, BADC
+* Martin Juckes, BADC
+* Martin Raspaud, SMHI
+* Randy Horne, Excalibur Laboratories, Inc., Melbourne Beach Florida USA
+* Jon Blower, University of Reading
+* Timothy Whiteaker, University of Texas
+* David Blodgett, USGS
+* Charlie Zender, University of California, Irvine
+* Daniel Lee, EUMETSAT
+* David Hassell, NCAS and University of Reading
+* Alan D. Snow, Corteva Agriscience
+* Tobias Kölling, MPIM
+* Dave Allured, CIRES/University of Colorado/NOAA/PSL
+* Aleksandar Jelenak, HDF Group
+* Anders Meier Soerensen, EUMETSAT
+* Lucile Gaultier, OceanDataLab
+* Sylvain Herlédan, OceanDataLab
+* Fernando Manzano, Puertos del Estado
+* Lars Bärring, SMHI
+* Christopher Barker, NOAA
+* Sadie Bartholomew, NCAS and University of Reading
+
+Many others have contributed to the development of CF through their participation in discussions about proposed changes.
+
+[abstract]
+== Abstract
+
+This document describes the CF conventions for climate and forecast metadata designed to promote the processing and sharing of files created with the netCDF Application Programmer Interface <<NetCDF>>.
+The conventions define metadata that provide a definitive description of what the data in each variable represents, and of the spatial and temporal properties of the data.
+This enables users of data from different sources to decide which quantities are comparable, and facilitates building applications with powerful extraction, regridding, and display capabilities.
+
+The CF conventions generalize and extend the COARDS conventions <<COARDS>>.
+The extensions include metadata that provides a precise definition of each variable via specification of a standard name, describes the vertical locations corresponding to dimensionless vertical coordinate values, and provides the spatial coordinates of non-rectilinear gridded data.
+Since climate and forecast data are often not simply representative of points in space/time, other extensions provide for the description of coordinate intervals, multidimensional cells and climatological time coordinates, and indicate how a data value is representative of an interval or cell.
+This standard also relaxes the COARDS constraints on dimension order and specifies methods for reducing the size of datasets.
+
+:numbered:
+include::ch01.adoc[]
+
+:numbered:
+include::ch02.adoc[]
+
+:numbered:
+include::ch03.adoc[]
+
+:numbered:
+include::ch04.adoc[]
+
+:numbered:
+include::ch05.adoc[]
+
+:numbered:
+include::ch06.adoc[]
+
+:numbered:
+include::ch07.adoc[]
+
+:numbered:
+include::ch08.adoc[]
+
+:numbered:
+include::ch09.adoc[]
+
+:numbered!:
+include::appa.adoc[]
+
+:numbered!:
+include::appb.adoc[]
+
+:numbered!:
+include::appc.adoc[]
+
+:numbered!:
+include::appd.adoc[]
+
+:numbered!:
+include::appe.adoc[]
+
+:numbered!:
+include::appf.adoc[]
+
+:numbered!:
+include::appg.adoc[]
+
+:numbered:
+include::apph.adoc[]
+
+:numbered!:
+include::appi.adoc[]
+
+:numbered!:
+include::appj.adoc[]
+
+:numbered!:
+include::appk.adoc[]
+
+:numbered!:
+include::history.adoc[]
+
+:numbered!:
+include::bibliography.adoc[]
+

@@ -1,0 +1,274 @@
+==  NetCDF Files and Components 
+
+The components of a netCDF file are described in section 2 of the <<NUG>>.
+In this section we describe conventions associated with filenames and the basic components of a netCDF file.
+We also introduce new attributes for describing the contents of a file.
+
+=== Filename
+
+NetCDF files should have the file name extension "**`.nc`**".
+
+=== Data Types
+
+// TODO: Check, should this be a bullet list?
+Data variables must be one of the following data types: **`string`**, **`char`**, **`byte`**, **`unsigned byte`**, **`short`**, **`unsigned short`**, **`int`**, **`unsigned int`**, **`int64`**, **`unsigned int64`**, **`float`** or **`real`**, and **`double`** (which are all the link:$$https://docs.unidata.ucar.edu/nug/current/md_types.html$$[netCDF external data types] supported by netCDF-4).
+The **`string`** type, which has variable length, is only available in files using the netCDF version 4 (netCDF-4) format.
+The **`char`** and **`string`** types are not intended for numeric data.
+One byte numeric data should be stored using the **`byte`** or **`unsigned byte`** data types.
+It is possible to treat the **`byte`** and **`short`** types as unsigned by using the <<NUG>> convention of indicating the unsigned range using the **`valid_min`**, **`valid_max`**, or **`valid_range`** attributes.
+In many situations, any integer type may be used.
+When the phrase "integer type" is used in this document, it should be understood to mean **`byte`**, **`unsigned byte`**, **`short`**, **`unsigned short`**, **`int`**, **`unsigned int`**, **`int64`**, or **`unsigned int64`**.
+
+A text string can be stored either in a variable-length **`string`** or in a fixed-length **`char`** array.
+In both cases, text strings must be represented in Unicode Normalization Form C (NFC, link:$$https://www.unicode.org/versions/Unicode16.0.0/UnicodeStandard-16.0.pdf$$[section 3.11] and link:$$https://unicode.org/reports/tr15$$[Annex 15] of the Unicode standard) and encoded according to UTF-8.
+A text string consisting only of ASCII characters is guaranteed to conform with this requirement, because the ASCII characters are a subset of Unicode, and their NFC UTF-8 encodings are the same as their one-byte ASCII codes (decimal 0-127, hexadecimal `00`-`7F`).
+
+Before version 1.12, CF did not require UTF-8 encoding, and did not provide or endorse any convention to record what encoding was used.
+However, if the text string is stored in a **`char`** variable, the encoding might be recorded by the **`_Encoding`** attribute, although this is not a CF or NUG convention.
+
+An __n__-dimensional array of strings may be implemented as a variable or an attribute of type **`string`** with _n_ dimensions (only _n_=1 is allowed for an attribute) or as a variable of type **`char`** with _n_+1 dimensions, where the most rapidly varying dimension (the last dimension in CDL order) is large enough to contain the longest string in the variable.
+For example, a **`char`** variable containing the names of the months would be dimensioned (12,9) in order to accommodate "September", the month with the longest name.
+The other strings, such as "May", would be padded with trailing NULL or space characters so that every array element is filled.
+A **`string`** variable to store the same information would be dimensioned (12), with each element of the array containing a string of the appropriate length.
+The CDL example below shows one variable of each type.
+
+[[char-and-string-variables-ex]]
+[caption="Example 2.1. "]
+.String Variable Representations
+====
+----
+dimensions:
+  strings = 30 ;
+  strlen = 10 ;
+variables:
+  char char_variable(strings,strlen) ;
+    char_variable:long_name = "strings of type char" ;
+  string str_variable(strings) ;
+    str_variable:long_name = "strings of type string" ;
+----
+====
+
+The examples in this document that use string-valued variables alternate between these two forms.
+
+=== Naming Conventions
+
+It is recommended that variable, dimension, attribute and group names begin with a letter and be composed of letters, digits, and underscores.
+By the word _letters_ we mean the standard ASCII letters uppercase `A` to `Z` and lowercase `a` to `z`.
+By the word _digits_ we mean the standard ASCII digits `0` to `9`, and similarly _underscores_ means the standard ASCII underscore `_`.
+Note that this is in conformance with the COARDS conventions, but is more restrictive than the netCDF interface which allows almost all Unicode characters encoded as multibyte UTF-8 characters (link:$$https://docs.unidata.ucar.edu/nug/current/file_format_specifications.html$$[NUG Appendix B]).
+The netCDF interface also allows leading underscores in names, but the NUG states that this is reserved for system use.
+
+Case is significant in netCDF names, but it is recommended that names should not be distinguished purely by case, i.e., if case is disregarded, no two names should be the same.
+It is also recommended that names should be obviously meaningful, if possible, as this renders the file more effectively self-describing.
+
+This convention does not standardize any variable or dimension names.
+Attribute names and their contents, where standardized, are given in English in this document and should appear in English in conforming netCDF files for the sake of portability.
+Languages other than English are permitted for variables, dimensions, and non-standardized attributes.
+The content of some standardized attributes are string values that are not standardized, and thus are not required to be in English.
+For example, a description of what a variable represents may be given in a non-English language using the **`long_name`** attribute (see <<long-name>>) whose contents are not standardized, but a description given by the **`standard_name`** attribute (see <<standard-name>>) must be taken from the standard name table which is in English.
+
+[[dimensions]]
+=== Dimensions
+
+A variable may have any number of dimensions, including zero, and the dimensions must all have different names.
+__COARDS strongly recommends limiting the number of dimensions to four, but we wish to allow greater flexibility__.
+The dimensions of the variable define the axes of the quantity it contains.
+Dimensions other than those of space and time may be included.
+Several examples can be found in this document.
+Under certain circumstances, one may need more than one dimension in a particular quantity.
+For instance, a variable containing a two-dimensional probability density function might correlate the temperature at two different vertical levels, and hence would have temperature on both axes.
+
+If any or all of the dimensions of a variable have the interpretations of "date or time" (**`T`**), "height or depth" (**`Z`**), "latitude" (**`Y`**), or "longitude" (**`X`**) then we recommend, but do not require (see <<coards-relationship>>), those dimensions to appear in the relative order **`T`**, then **`Z`**, then **`Y`**, then **`X`** in the CDL definition corresponding to the file.
+All other dimensions should, whenever possible, be placed to the left of the spatiotemporal dimensions.
+
+Dimensions may be of any size, including unity.
+When a single value of some coordinate applies to all the values in a variable, the recommended means of attaching this information to the variable is by use of a dimension of size unity with a one-element coordinate variable.
+It is also acceptable to use a scalar coordinate variable which eliminates the need for an associated size one dimension in the data variable.
+The advantage of using either a coordinate variable or an auxiliary coordinate variable is that all its attributes can be used to describe the single-valued quantity, including boundaries.
+For example, a variable containing data for temperature at 1.5 m above the ground has a single-valued coordinate supplying a height of 1.5 m, and a time-mean quantity has a single-valued time coordinate with an associated boundary variable to record the start and end of the averaging period.
+
+[[variables]]
+=== Variables
+
+This convention does not standardize variable names.
+
+NetCDF variables that contain coordinate data are referred to as __coordinate variables__, __auxiliary coordinate variables__, __scalar coordinate variables__, or __multidimensional coordinate variables__.
+
+[[missing-data, Section 2.5.1, "Missing data, valid and actual range of data"]]
+==== Missing data, valid and actual range of data
+
+link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, Attribute Conventions]
+provide the **`_FillValue`**, **`missing_value`**, **`valid_min`**, **`valid_max`**, and **`valid_range`** attributes to indicate missing data.
+Missing data is allowed in data variables and auxiliary coordinate variables.
+Generic applications should treat the data as missing where any auxiliary coordinate variables have missing values; special-purpose applications might be able to make use of the data.
+Missing data is not allowed in coordinate variables.
+
+The NUG conventions for missing data changed significantly between version 2.3 and version 2.4.
+Since version 2.4 the NUG defines missing data as all values outside of the **`valid_range`**, and specifies how the **`valid_range`** should be defined from the **`_FillValue`** (which has library specified default values) if it hasn't been explicitly specified.
+If only one missing value is needed for a variable then we recommend  that this value be specified using the **`_FillValue`** attribute.
+Doing this guarantees that the missing value will be recognized by generic applications that follow either the before or after version 2.4 conventions.
+
+The scalar attribute with the name **`_FillValue`** and of the same type as its variable is recognized by the netCDF library as the value used to pre-fill disk space allocated to the variable.
+This value is considered to be a special value that indicates undefined or missing data, and is returned when reading values that were not written.
+The **`_FillValue`** should be outside the range specified by **`valid_range`** (if used) for a variable.
+The netCDF library defines a default fill value for each data type (See the "Note on fill values" in link:$$https://www.unidata.ucar.edu/software/netcdf/docs/file_format_specifications.html#classic_format_spec$$[NUG Appendix B, File Format Specifications]).
+
+The missing values of a variable with **`scale_factor`** and/or **`add_offset`** attributes (see <<packed-data>>) are interpreted relative to the variable's external values (a.k.a. the packed values, the raw values, the values stored in the netCDF file), not the values that result after the scale and offset are applied.
+Applications that process variables that have attributes to indicate both a transformation (via a scale and/or offset) and missing values should first check that a data value is valid, and then apply the transformation.
+Note that values that are identified as missing should not be transformed.
+Since the missing value is outside the valid range it is possible that applying a transformation to it could result in an invalid operation.
+For example, the default **`_FillValue`** is very close to the maximum representable value of IEEE single precision floats, and multiplying it by 100 produces an "Infinity" (using single precision arithmetic).
+
+This convention defines a two-element vector attribute **`actual_range`** for variables containing numeric data.
+If the variable is packed using the **`scale_factor`** and **`add_offset`** attributes (see <<packed-data>>), the elements of the **`actual_range`** should have the type intended for the unpacked data.
+The elements of **`actual_range`** must be exactly equal to the minimum and the maximum data values which occur in the variable (when unpacked if packing is used), and both must be within the **`valid_range`** if specified.
+If the data is all missing or invalid, the **`actual_range`** attribute cannot be used.
+
+=== Attributes
+
+This standard describes many attributes (some mandatory, others optional), but a file may also contain non-standard attributes.
+Such attributes do not represent a violation of this standard.
+Application programs should ignore attributes that they do not recognise or which are irrelevant for their purposes.
+Conventional attribute names should be used wherever applicable.
+Non-standard names should be as meaningful as possible.
+Before introducing an attribute, consideration should be given to whether the information would be better represented as a variable.
+In general, if a proposed attribute requires ancillary data to describe it, is multidimensional, requires any of the defined netCDF dimensions to index its values, or requires a significant amount of storage, a variable should be used instead.
+When this standard defines string attributes that may take various prescribed values, the possible values are generally given in lower case.
+However, applications programs should not be sensitive to case in these attributes.
+Several string attributes are defined by this standard to contain "blank-separated lists".
+Consecutive words in such a list are separated by one or more adjacent spaces.
+The list may begin and end with any number of spaces.
+See <<attribute-appendix>> for a list of attributes described by this standard.
+
+[[identification-of-conventions]]
+==== Identification of Conventions
+
+Files that follow this version of the CF Conventions must indicate this by setting the <<NUG>> defined global attribute **`Conventions`** to a string value that contains "**`CF-{current-version-as-attribute}`**".
+The Conventions version number contained in that string can be used to find the web based versions of this document are from the link:$$https://cfconventions.org/$$[netCDF Conventions web page].
+Subsequent versions of the CF Conventions will not make invalid a compliant usage of this or earlier versions of the CF terms and forms.
+
+It is possible for a netCDF file to adhere to more than one set of conventions, even when there is no inheritance relationship among the conventions.
+In this case, the value of the Conventions attribute may be a single text string containing a list of the convention names separated by blank space (recommended) or commas (if a convention name contains blanks).
+This is the Unidata recommended syntax from NetCDF Users Guide, Appendix A.
+If the string contains any commas, it is assumed to be a comma-separated list.
+
+When CF is listed with other conventions, this asserts the same full compliance with CF requirements and interpretations as if CF was the sole convention.
+It is the responsibility of the data-writer to ensure that all common metadata is used with consistent meaning between conventions.
+
+The UGRID conventions, which are fully incorporated into the CF conventions, do not need to be included in the **`Conventions`** attribute.  
+
+[[description-of-file-contents, Section 2.6.2, "Description of file contents"]]
+==== Description of file contents
+
+The following attributes are intended to provide information about where the data came from and what has been done to it.
+This information is mainly for the benefit of human readers.
+The attribute values are all character strings.
+For readability in ncdump outputs it is recommended to embed newline characters into long strings to break them into lines.
+For backwards compatibility with COARDS none of these global attributes is required.
+
+The <<NUG>> defines **`title`** and **`history`** to be global attributes.
+We wish to allow the newly defined attributes, i.e., **`institution`**, **`source`**, **`references`**, and **`comment`**, to be either global or assigned to individual variables.
+When an attribute appears both globally and as a variable attribute, the variable's version has precedence.
+
+**`title`**:: A succinct description of what is in the dataset.
+
+**`institution`**:: Specifies where the original data was produced.
+
+**`source`**:: The method of production of the original data.
+If it was model-generated, **`source`** should name the model and its version, as specifically as could be useful.
+If it is observational, **`source`** should characterize it (e.g., "**`surface observation`**" or "**`radiosonde`**").
+
+**`history`**:: Provides an audit trail for modifications to the original data.
+Well-behaved generic netCDF filters will automatically append their name and the parameters with which they were invoked to the global history attribute of an input netCDF file.
+We recommend that each line begin by indicating the date and time of day that the program was executed.
+
+**`references`**:: Published or web-based references that describe the data or methods used to produce it.
+
+**`comment`**:: Miscellaneous information about the data or methods used to produce it.
+
+[[external-variables, Section 2.6.3, "External variables"]]
+==== External Variables
+The global **`external_variables`** attribute is a blank-separated list of the names of variables which are named by attributes in the file but which are not present in the file.
+These variables are to be found in other files (called "external files") but CF does not provide conventions for identifying the files concerned.
+The only attribute for which CF standardises the use of external variables is **`cell_measures`**.
+
+[[groups, Section 2.7, "Groups"]]
+=== Groups
+
+Groups provide a powerful mechanism to structure data hierarchically.
+This convention does not standardize group names.
+It may be of benefit to name groups in such a way that human readers can interpret them.
+However, files that conform to this standard shall not require software to interpret or decode information from group names.
+References to out-of-group variable and dimensions shall be found by applying the scoping rules outlined below.
+
+==== Scope
+
+The scoping mechanism is in keeping with the following principle:
+
+[quote, 'https://www.unidata.ucar.edu/software/netcdf/docs/groups.html[The NetCDF Data Model: Groups]']
+"Dimensions are scoped such that they are visible to all child groups.
+For example, you can define a dimension in the root group, and use its dimension id when defining a variable in a sub-group."
+
+Any variable or dimension can be referred to, as long as it can be found with one of the following search strategies:
+
+* Search by absolute path
+* Search by relative path
+* Search by proximity
+
+These strategies are explained in detail in the following sections.
+
+If any dimension of an out-of-group variable has the same name as a dimension of the referring variable, the two must be the same dimension (i.e. they must have the same netCDF dimension ID).
+
+===== Search by absolute path
+
+A variable or dimension specified with an absolute path (i.e., with a leading slash "/") is at the indicated location relative to the root group, as in a UNIX-style file convention.
+For example, a `coordinates` attribute of `/g1/lat` refers to the `lat` variable in group `/g1`.
+
+===== Search by relative path
+
+As in a UNIX-style file convention, a variable or dimension specified with a relative path (i.e., containing a slash but not with a leading slash, e.g. `child/lat`) is at the location obtained by affixing the relative path to the absolute path of the referring attribute.
+For example, a `coordinates` attribute of `g1/lat` refers to the `lat` variable in subgroup `g1` of the current (referring) group.
+Upward path traversals from the current group are indicated with the UNIX convention.
+For example, `../g1/lat` refers to the `lat` variable in the sibling group `g1` of the current (referring) group.
+
+===== Search by proximity
+
+A variable or dimension specified with no path (for example, `lat`) refers to the variable or dimension of that name, if there is one, in the referring group.
+If not, the ancestors of the referring group are searched for it, starting from the direct ancestor and proceeding toward the root group, until it is found.
+
+A special case exists for coordinate variables.
+Because coordinate variables must share dimensions with the variables that reference them, the ancestor search is executed only until the local apex group is reached.
+For coordinate variables that are not found in the referring group or its ancestors, a further strategy is provided, called lateral search.
+The lateral search proceeds downwards from the local apex group width-wise through each level of groups until the sought coordinate is found.
+The lateral search algorithm may only be used for <<NUG>> coordinate variables; it shall not be used for auxiliary coordinate variables.
+
+[NOTE]
+====
+This use of the lateral search strategy to find them is discouraged.
+They are allowed mainly for backwards-compatibility with existing datasets, and may be deprecated in future versions of the standard.
+====
+
+==== Application of attributes
+
+The following attributes are optional for non-root groups.
+They are allowed in order to provide additional provenance and description of the subsidiary data.
+They do not override attributes from parent groups.
+
+* `title`
+* `history`
+
+If these attributes are present, they may be applied additively to the parent attributes of the same name.
+If a file containing groups is modified, the user or application need only update these attributes in the root group, rather than traversing all groups and updating all attributes that are found with the same name.
+In the case of conflicts, the root group attribute takes precedence over per-group instances of these attributes.
+
+The following attributes may only be used in the root group and shall not be duplicated or overridden in child groups:
+
+* `Conventions`
+* `external_variables`
+
+Furthermore, per-variable attributes must be attached to the variables to which they refer.
+They may not be attached to a group, even if all variables within that group use the same attribute and value.
+
+If attributes are present within groups without being attached to a variable, these attributes apply to the group where they are defined, and to that group's descendants, but not to ancestor or sibling groups.
+If a group attribute is defined in a parent group, and one of the child group redefines the same attribute, the definition within the child group applies for the child and all of its descendants.
+

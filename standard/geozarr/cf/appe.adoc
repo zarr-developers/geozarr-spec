@@ -1,0 +1,56 @@
+[[appendix-cell-methods, Appendix E, Cell Methods]]
+
+[appendix]
+== Cell Methods
+
+In the __Units__ column, __u__ indicates the units of the physical quantity before the method is applied.
+
+[[table-cell-methods]]
+.Cell Methods
+[options="header",cols="3",caption="Table E.1. "]
+|===============
+| **`cell_methods`** | Units | Description
+
+| `point` | __u__
+| The data values are representative of points in space or time (instantaneous).
+This is the default method for a quantity that is intensive with respect to the specified dimension.
+
+| `sum` | __u__
+| The data values are representative of a sum or accumulation over the cell.
+This is the default method for a quantity that is extensive with respect to the specified dimension.
+
+
+| `maximum` | __u__ | Maximum
+
+| `maximum_absolute_value` | __u__ | Maximum absolute value
+
+| `median` | __u__ | Median
+
+| `mid_range` | __u__ | Average of maximum and minimum
+
+| `minimum` | __u__ | Minimum
+
+| `minimum_absolute_value` | __u__ | Minimum absolute value
+
+| `mean` | __u__ | Mean (average value)
+
+| `mean_absolute_value` | __u__ | Mean absolute value
+
+| `mean_of_upper_decile` | __u__ | Mean of the upper group of data values defined by the upper tenth of their distribution
+
+| `mode` | __u__ | Mode (most common value)
+
+| `range` | __u__ | *Absolute difference between maximum and minimum
+
+| `root_mean_square` | __u__ | Root mean square (RMS)
+
+| `standard_deviation` | __u__ | *Standard deviation
+
+| `sum_of_squares` | __u^2^__ | Sum of squares
+
+| `variance` | __u^2^__ | *Variance
+|===============
+
+*The definition of this method implies that if _u_ is a either a unit of temperature, or a unit of temperature multiplied by some other unit, the temperature in _u_ must be interpreted as a temperature difference.
+Therefore the **`units_metadata`** attribute, if present, must have the value `temperature: difference`.
+See <<temperature-units>> for explanation.

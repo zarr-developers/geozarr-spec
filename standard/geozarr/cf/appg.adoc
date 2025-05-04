@@ -1,0 +1,4 @@
+[appendix]
+== Revision History
+
+The content in this appendix has moved to <<revhistory>>.

@@ -1,0 +1,27 @@
+== Bibliography
+
+[bibliography]
+=== References
+
+- [[[CFDM]]]  link:$$https://doi.org/10.5194/gmd-10-4619-2017$$[A data model of the Climate and Forecast metadata conventions (CF-1.6) with a software implementation (cf-python v2.1)]. Hassell, D., Gregory, J., Blower, J., Lawrence, B. N., and Taylor, K. E.: _Geosci. Model Dev._, 10, 4619-4646, 2017.
+- [[[CF-WKT]]]  link:$$https://cfconventions.org/wkt-proj-4.html$$[Mapping from CF Grid Mapping Attributes to CRS WKT Elements].
+- [[[COARDS]]]  link:$$https://ferret.pmel.noaa.gov/Ferret/documentation/coards-netcdf-conventions$$[Conventions for the standardization of NetCDF Files].
+Sponsored by the "Cooperative Ocean/Atmosphere Research Data Service," a NOAA/university cooperative for the sharing and distribution of global atmospheric and oceanographic research data sets. May 1995.
+- [[[DCG19]]]  link:$$https://doi.org/10.5194/gmd-12-4099-2019$$[Evaluation of lossless and lossy algorithms for the compression of scientific datasets in netCDF-4 or HDF5 files]. Delaunay, X., A. Courtois, and F. Gouillon: _Geosci. Model Dev._, 12, 4099-4113, 2019.
+- [[[FGDC]]]  link:$$https://www.fgdc.gov/standards/projects/FGDC-standards-projects/metadata/base-metadata/v2_0698.pdf$$[Content Standard for Digital Geospatial Metadata].
+Federal Geographic Data Committee, FGDC-STD-001-1998.
+- [[[IEEE_754]]]  link:$$https://doi.org/10.1109/IEEESTD.2019.8766229$$[IEEE Standard for Floating-Point Arithmetic], in _IEEE Std 754-2019 (Revision of IEEE 754-2008)_, 22 July 2019.
+- [[[Kou21]]]  link:$$https://doi.org/10.5194/gmd-14-377-2021$$[A note on precision-preserving compression of scientific data]. Kouznetsov, R.: _Geosci. Model Dev._, 14, 377-389, 2021.
+- [[[KRD21]]]  link:$$https://doi.org/10.1038/s43588-021-00156-2$$[Compressing atmospheric data into its real information content]. Klöwer, M., Razinger, M., Dominguez, J. J., Düben, P., and Palmer, T. N.: _Nat. Comput. Sci._, 1, 713-724, 2021.
+- [[[NetCDF]]]  link:$$https://doi.org/10.5065/D6H70CW6$$[NetCDF Software Package].  UNIDATA Program Center of the University Corporation for Atmospheric Research.
+- [[[NUG]]]  link:$$https://docs.unidata.ucar.edu/nug/current/index.html$$[The NetCDF User's Guide].
+- [[[OGC_WKT-CRS]]]  link:$$https://www.opengeospatial.org/standards/wkt-crs$$[OGC Well-known text representation of coordinate reference systems].
+OGC document 12-063. 1st May 2015.
+- [[[OGP-EPSG_GN7_2]]]  link:$$https://epsg.org/guidance-notes.html$$[OGP Surveying and Positioning Guidance Note 7, part 2: Coordinate Conversions and Transformations including Formulas].
+- [[[SCH02]]] link:$$https://doi.org/10.1175/1520-0493(2002)130<2459:ANTFVC>2.0.CO;2$$[A new terrain-following vertical coordinate formulation for atmospheric prediction models]. C Schaer, D Leuenberger, and O Fuhrer. 2002. _Monthly Weather Review_.  130. 2459-2480.
+- [[[Snyder]]]  link:$$https://doi.org/10.3133/pp1395$$[Map Projections: A Working Manual]. USGS Professional Paper 1395.
+- [[[UDUNITS]]]  link:$$https://doi.org/10.5065/D6KD1WN0$$[UDUNITS Software Package].  UNIDATA Program Center of the University Corporation for Atmospheric Research.
+- [[[UGRID]]]  link:$$https://ugrid-conventions.github.io/ugrid-conventions$$[UGRID Conventions for storing unstructured (or flexible mesh) data in netCDF files]
+- [[[W3C]]]  link:$$https://www.w3.org/$$[World Wide Web Consortium (W3C)].
+- [[[XML]]]  link:$$https://www.w3.org/TR/1998/REC-xml-19980210$$[Extensible Markup Language (XML) 1.0]. T. Bray, J. Paoli, and C.M. Sperberg-McQueen.  10 February 1998.
+- [[[Zen16]]]  link:$$https://doi.org/10.5194/gmd-9-3199-2016$$[Bit Grooming: Statistically accurate precision-preserving quantization with compression, evaluated in the netCDF Operators (NCO, v4.4.8+)]. Zender, C. S.: _Geosci. Model Dev._, 9, 3199-3211, 2016.

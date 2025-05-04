@@ -1,0 +1,129 @@
+[[standard-name-table-format, Appendix B, Standard Name Table Format]]
+
+[appendix]
+== Standard Name Table Format
+
+The CF standard name table is an XML document (i.e., its format adheres to the XML 1.0 <<XML>> recommendation).
+The XML suite of protocols provides a reasonable balance between human and machine readability.
+It also provides extensive support for internationalization.
+See the W3C <<W3C>> home page for more information.
+
+The document begins with a header that identifies it as an XML file:
+
+----
+<?xml version="1.0"?>
+----
+
+Next is the **`standard_name_table`** itself, which is bracketed by the tags **`&lt;standard_name_table&gt;`** and **`&lt;/standard_name_table&gt;`**.
+The opening tag has two attributes: `xmlns:xsi` that provides a link to the standard XML namespace, and `xsi:noNamespaceSchemaLocation` 
+that provides a link to the file that provides the XML schema rules for the content of the Standard Name Table XML file.
+
+----
+<standard_name_table
+ xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="https://cfconventions.org/Data/schema-files/cf-standard-name-table-2.0.xsd">
+----
+
+The content (delimited by the `&lt;standard_name_table&gt;` tags) consists of, in order,
+
+----
+  <version_number>Version number here ... </version_number>
+  <conventions>Conventions string here ... </conventions>
+  <first_published>Datetime of first publication to the website ... </first_published>
+  <last_modified>Datetime stamp here ... </last_modified>
+  <institution>Name of institution here ... </institution>
+  <contact>E-mail address of contact person ... </contact>
+----
+
+where the "Conventions string" is  composed of the fixed string **`CF-StandardNameTable-`** immediately followed by the version number.
+
+Next follows a sequence of **`entry`** elements which may optionally be followed by a sequence of **`alias`** elements.
+The **`entry`** and **`alias`** elements take the following forms:
+
+----
+  <entry id="an_id">
+      Define the variable whose standard_name attribute has the value "an_id".
+  </entry>
+  <alias id="another_id">
+      Provide alias for a variable whose standard_name attribute has the value "another_id".
+  </alias>
+----
+
+The value of the **`id`** attribute appearing in the **`entry`** and **`alias`** tags is a case sensitive string, containing no whitespace, which uniquely identifies the entry relative to the table.
+_This is the value used for a variable's `standard_name` attribute._
+
+The purpose of the **`entry`** elements are to provide definitions for the **`id`** strings.
+Each **`entry`** element contains the following elements:
+
+----
+  <entry id="an_id">
+    <canonical_units>Representative units for the variable ... </canonical_units>
+    <description>Description of the variable ... </description>
+  </entry>
+----
+
+The **`alias`** elements do not contain definitions.
+Rather they contain the value of the **`id`** attribute of an **`entry`** element that contains the sought after definition.
+The purpose of the **`alias`** elements are to provide a means for maintaining the table in a backwards compatible fashion.
+For example, if more than one **`id`** string was found to correspond to identical definitions, then the redundant definitions can be converted into aliases.
+It is not intended that the **`alias`** elements be used to accommodate the use of local naming conventions in the **`standard_name`** attribute strings.
+Each **`alias`** element contains a single element:
+
+----
+  <alias id="an_id">
+    <entry_id>Identifier of the defining entry ... </entry_id>
+  </alias>
+----
+
+In exceptional cases the **`alias`** element may contain two elements:
+
+----
+  <alias id="an_id">
+    <entry_id>Identifier of a defining entry ... </entry_id>
+    <entry_id>Identifier of another defining entry ... </entry_id>
+  </alias>
+----
+
+
+[[name-table-three-entries-ex]]
+[caption="Example B.1. "]
+.A name table containing three entries
+====
+----
+  <?xml version="1.0"?>
+  <standard_name_table xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation=
+        "http://cf.conventions.org/Data/schema-files/cf-standard-name-table-2.0.xsd">
+    <version_number>83</version_number>
+    <conventions>CF-StandardNameTable-83</conventions>
+    <first_published>2023-10-17T15:09:35Z</first_published>
+    <last_modified>2023-10-17T15:09:35Z</last_modified>
+    <institution>Program for Climate Model Diagnosis and Intercomparison</institution>
+    <contact>support@pcmdi.llnl.gov</contact>
+    <entry id="surface_air_pressure">
+      <canonical_units>Pa</canonical_units>
+      <description>
+          The surface called "surface" means the lower boundary of the atmosphere.
+      </description>
+    </entry>
+    <entry id="air_pressure_at_sea_level">
+      <canonical_units>Pa</canonical_units>
+      <description>
+          Air pressure at sea level is the quantity often abbreviated
+          as MSLP or PMSL. sea_level means mean sea level, which is close
+          to the geoid in sea areas.
+      </description>
+    </entry>
+    <alias id="mean_sea_level_pressure">
+      <entry_id>air_pressure_at_sea_level</entry_id>
+    </alias>
+  </standard_name_table>
+----
+
+The definition of a variable with the **`standard_name`** attribute **`surface_air_pressure`** is found directly since the element with **`id="surface_air_pressure"`** is an **`entry`** element which contains the definition.
+
+The definition of a variable with the **`standard_name`** attribute mean_sea_level_pressure is found indirectly by first finding the element with the **`id="mean_sea_level_pressure"`**, and then, since this is an alias element, by searching for the element with **`id="air_pressure_at_sea_level"`** as indicated by the value of the **`entry_id`** tag.
+====
+
+It is possible that new tags may be added in the future.
+Any applications that parse the standard table should be written so that unrecognized tags are gracefully ignored.
