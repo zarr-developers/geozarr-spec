@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.7.4" schema-version="v2.0.3" flavor="ogc">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.7.5" schema-version="v2.0.4" flavor="ogc">
 <bibdata type="standard">
 <title language="en" format="text/plain">OGC (add title text)</title>
 <uri type="xml">./geozarr-spec.xml</uri><uri type="pdf">./geozarr-spec.pdf</uri><uri type="doc">./geozarr-spec.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier><docidentifier type="ogc-internal" primary="true">YY-999</docidentifier><docnumber>YY-999</docnumber><date type="published"><on>2029-03-30</on></date><date type="issued"><on>2029-03-30</on></date><date type="received"><on>2029-03-30</on></date><contributor><role type="author"/><organization>
@@ -73,14 +73,14 @@
 <p id="_193e4705-85ba-5548-84f1-2a6fa8edb64b">The purpose of this document is to provide implementation guidance and normative structure for consistent, interoperable adoption of GeoZarr across tools, platforms, and services. This work extends prior standardisation efforts within the OGC, including OGC API – Tiles, the Tile Matrix Set Standard, and EO metadata conventions, and anticipates integration with catalogue systems such as STAC.</p>
 
 <p id="_490fcd22-6a62-cabd-ce81-93ac61b3fbef">This Standard has been developed in collaboration with contributors from Earth observation, climate science, geospatial analysis, and cloud-native geodata infrastructure communities. Future work may extend this model to additional storage formats, API services, and semantic layers.</p>
-</foreword><clause type="security" id="_11f014e9-c98a-c81d-eeb6-de3baa47ebea" obligation="informative">
+</foreword><clause type="security" id="_1ee4f5b3-7c6d-4e70-be8d-5f6e15ce4b6b" obligation="informative">
   <title>Security considerations</title>
-  <p id="_87632f48-a936-3f14-4cc0-36d21a86a8b8">No security considerations have been made for this document.</p></clause>
-<submitters id="_submitters">
+  <p id="_927733ee-e695-c49f-5120-5f08eaf68e0c">No security considerations have been made for this document.</p></clause>
+<clause id="_submitters" type="submitters" obligation="informative">
 <title>Submitters</title>
-<p id="_da416fa2-6b01-48ea-0fa5-60c424407af8">All questions regarding this submission should be directed to the editor or the submitters:</p>
+<p id="_6e1b734b-e32c-864b-59a1-81792b76695c">All questions regarding this submission should be directed to the editor or the submitters:</p>
 
-<table id="_4abf68e9-34d6-1956-39e2-eaa09580354c" unnumbered="true">
+<table id="_a3a902a1-2e4a-34be-1c80-d332d3ce6c85" unnumbered="true">
 <name>Table of submitters</name>
 <tbody><tr><td valign="middle" align="left"><strong>Name</strong></td>
 <td valign="middle" align="left"><strong>Affiliation</strong></td>
@@ -94,7 +94,8 @@
 <td valign="middle" align="left">TBD</td>
 </tr></tbody>
 </table>
-</submitters></preface><sections>
+</clause></preface><sections>
+
 
 
 <clause id="_scope" type="scope" obligation="normative">
