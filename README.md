@@ -4,6 +4,15 @@ GeoZarr Spec aims to provide a geospatial extension to the Zarr specification. Z
 
 The latest Editor's Draft version of OGC GeoZarr Specificationis found here in [HTML](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html) or [PDF](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.pdf)
 
+The following writings aim to introduce the fundamental concepts of geospatial data models and outline the context and motivation underpinning the development of GeoZarr:
+
+- [Structure Of GeoSpatial Data Systems](https://medium.com/@christophe.noel/structure-of-geospatial-data-ystems-4033d672c222?source=your_stories_page)
+- [Geospatial Data Storage Model](https://medium.com/@christophe.noel/geospatial-data-storage-model-d7c3fb895031?source=your_stories_page)
+- [Geospatial Data Model Encoding](https://medium.com/@christophe.noel/geospatial-data-model-encoding-1699f4cd5fb9?source=your_stories_page)
+- [Geospatial Ecosystems — Scientific vs GIS Communities](https://medium.com/@christophe.noel/geospatial-ecosystems-scientific-vs-gis-communities-324b340bee1a?source=your_stories_page)
+- [Motivation for a GeoZarr Unified EO Data Model](https://medium.com/@christophe.noel/motivation-for-a-geozarr-unified-eo-data-model-926dd2bec07a?source=your_stories_page)
+
+
 # Meetings Information
 The GeoZarr SWG meets monthly with an agenda and notes kept [here](https://hackmd.io/@briannapagan/geozarr-spec-swg).
 
