@@ -1,10 +1,30 @@
-[obligation=informative]
-== Clauses not containing normative material
+[[overview]]
+== Overview
 
-Paragraph
+The GeoZarr Unified Data Model and Encoding Standard defines a conceptual and implementation framework for representing multidimensional geospatial data using the Zarr format. Developed under the guidance of the OGC GeoZarr Standards Working Group (SWG), the Standard establishes conventions for encoding scientific and Earth observation datasets in a way that promotes scalability, interoperability, and compatibility with cloud-native infrastructure.
 
-=== Clauses not containing normative material sub-clause 1
+GeoZarr is built on widely adopted community standards, including the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions. It introduces additional extensions and structural constructs to support multi-resolution tiling, geospatial referencing, and catalogue-enabled metadata integration (e.g., STAC).
 
-Paragraph
+This Standard provides both:
 
-=== Clauses not containing normative material sub-clause 2
+* **Core requirements**, which define minimal compliance to represent array-based datasets using CDM constructs in Zarr, supporting open and permissive adoption across use cases.
+* **Modular extension classes**, which define additional capabilities such as time series support, affine geotransform referencing, multi-resolution overviews, and projection coordinates, in line with OGC and community practices.
+
+These modular components enable GeoZarr to serve a wide range of applications—from basic EO data storage to high-performance, cloud-native visualisation and analytics workflows.
+
+=== Encodings
+
+GeoZarr supports encoding in both Zarr Version 2 and Zarr Version 3. Each version defines how arrays, groups, and metadata are stored within a directory-based structure. All metadata is encoded in JSON-compatible formats, ensuring both human readability and machine interoperability.
+
+Encoding guidelines include:
+
+* Hierarchical grouping of datasets via Zarr groups.
+* Dimension indexing and binding via dimension metadata.
+* Attribute-based metadata compliant with CF conventions.
+* Multi-resolution overviews aligned with OGC Tile Matrix Sets.
+* Optional integration of STAC metadata for discovery and cataloguing.
+
+JSON is the primary format for metadata, attributes, and structural declarations. Implementations are encouraged to support standardised naming conventions, EPSG code references, and structured metadata to facilitate search, validation, and transformation across platforms.
+
+GeoZarr does not prescribe a single interface for data access. Instead, it enables **serverless and cloud-native** data access strategies by aligning its model with chunked, parallelisable storage patterns that are optimised for use in object stores and analytical environments.
+
