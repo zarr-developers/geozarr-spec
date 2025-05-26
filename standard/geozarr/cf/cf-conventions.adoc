@@ -1,6 +1,6 @@
 include::version.adoc[]
-= NetCDF Climate and Forecast (CF) Metadata Conventions
-Brian{nbsp}Eaton; Jonathan{nbsp}Gregory; Bob{nbsp}Drach; Karl{nbsp}Taylor; Steve{nbsp}Hankin; John{nbsp}Caron; Rich{nbsp}Signell; Phil{nbsp}Bentley; Greg{nbsp}Rappa; Heinke{nbsp}Höck; Alison{nbsp}Pamment; Martin{nbsp}Juckes; Martin{nbsp}Raspaud; Randy{nbsp}Horne; Jon{nbsp}Blower; Timothy{nbsp}Whiteaker; David{nbsp}Blodgett; Charlie{nbsp}Zender; Daniel{nbsp}Lee; David{nbsp}Hassell; Alan{nbsp}D.{nbsp}Snow; Tobias{nbsp}Kölling; Dave{nbsp}Allured; Aleksandar{nbsp}Jelenak; Anders{nbsp}Meier{nbsp}Soerensen; Lucile{nbsp}Gaultier; Sylvain{nbsp}Herlédan; Fernando{nbsp}Manzano; Lars{nbsp}Bärring; Christopher{nbsp}Barker; Sadie{nbsp}Bartholomew
+= Zarr Climate and Forecast (CF) Metadata Conventions
+Translated for Zarr by Max Jones; NetCDF CF conventions by Brian{nbsp}Eaton; Jonathan{nbsp}Gregory; Bob{nbsp}Drach; Karl{nbsp}Taylor; Steve{nbsp}Hankin; John{nbsp}Caron; Rich{nbsp}Signell; Phil{nbsp}Bentley; Greg{nbsp}Rappa; Heinke{nbsp}Höck; Alison{nbsp}Pamment; Martin{nbsp}Juckes; Martin{nbsp}Raspaud; Randy{nbsp}Horne; Jon{nbsp}Blower; Timothy{nbsp}Whiteaker; David{nbsp}Blodgett; Charlie{nbsp}Zender; Daniel{nbsp}Lee; David{nbsp}Hassell; Alan{nbsp}D.{nbsp}Snow; Tobias{nbsp}Kölling; Dave{nbsp}Allured; Aleksandar{nbsp}Jelenak; Anders{nbsp}Meier{nbsp}Soerensen; Lucile{nbsp}Gaultier; Sylvain{nbsp}Herlédan; Fernando{nbsp}Manzano; Lars{nbsp}Bärring; Christopher{nbsp}Barker; Sadie{nbsp}Bartholomew
 :revnumber: {current-version}
 :revdate: {docprodtime}
 :doctype: book
@@ -16,20 +16,9 @@ image:images/cc-zero.svg[,9%,pdfwidth=50vw]
 This document is dedicated to the public domain following the link:https://creativecommons.org/publicdomain/zero/1.0/[Creative Commons Zero v1.0 Universal] Deed.
 
 The Climate and Forecasting Conventions website https://cfconventions.org/ contains additional resources and provides further information.
-ifdef::final[]
- +
- +
- _Use the following reference to cite this version of the document:_ +
-Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2024). NetCDF Climate and Forecast (CF) Metadata Conventions ({current-version-as-attribute}). CF Community. {doi-link}
-endif::[]
-ifndef::final[]
- +
- +
- _DON’T use the following reference to cite this version of the document, as it is only shown as a draft:_ +
-Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2024). NetCDF Climate and Forecast (CF) Metadata Conventions ({current-version-as-attribute}). CF Community. {doi-link}
-endif::[]
 
-'''
+_The source NetCDF CF conventions document can be cited as follows:_
+Eaton, B., Gregory, J., Drach, B., Taylor, K., Hankin, S. et al. (2024). NetCDF Climate and Forecast (CF) Metadata Conventions (1.12). CF Community. https://doi.org/10.5281/zenodo.14275599
 
 toc::[]
 
