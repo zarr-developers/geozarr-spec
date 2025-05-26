@@ -2,191 +2,169 @@
 
 === Goals
 
-The NetCDF library <<NetCDF>> is designed to read and write data that has been structured according to well-defined rules and is easily ported across various computer platforms.
-The netCDF interface enables but does not require the creation of __self-describing__ datasets.
-The purpose of the CF conventions is to require conforming datasets to contain sufficient metadata that they are self-describing in the sense that each variable in the file has an associated description of what it represents, including physical units if appropriate, and that each value can be located in space (relative to earth-based coordinates) and time.
+The CF conformance class provides standardization for Zarr datasets that would otherwise fit nicely as <<NetCDF>> CF compliant-datasets.
+
+The purpose of the CF conventions is to require conforming datasets to contain sufficient metadata that they are self-describing in the sense
+that each array in the Zarr data store has an associated description of what it represents, including physical units if appropriate, and that each value
+can be located in space (relative to earth-based coordinates) and time.
 
 An important benefit of a convention is that it enables software tools to display data and perform operations on specified subsets of the data with minimal user intervention.
 It is possible to provide the metadata describing how a field is located in time and space in many different ways that a human would immediately recognize as equivalent.
-The purpose in restricting how the metadata is represented is to make it practical to write software that allows a machine to parse that metadata and to automatically associate each data value with its location in time and space.
-It is equally important that the metadata be easy for human users to write and to understand.
+The purpose in restricting how the metadata is represented is to make it practical to write software that allows a machine to parse that metadata and to automatically
+associate each data value with its location in time and space. It is equally important that the metadata be easy for human users to write and to understand.
 
-This standard is intended for use with climate and forecast data, for atmosphere, surface and ocean, and was designed with model-generated data particularly in mind.
-We recognise that there are limits to what a standard can practically cover; we restrict ourselves to issues that we believe to be of common and frequent concern in the design of climate and forecast metadata.
+This conformance class is intended for use with climate and forecast data, for atmosphere, surface and ocean, and was designed with model-generated data particularly in mind.
+We recognize that there are limits to what a conformance class can practically cover; we restrict ourselves to issues that we believe to be of common and frequent concern in
+the design of climate and forecast metadata.
 Our main purpose therefore, is to propose a clear, adequate and flexible definition of the metadata needed for climate and forecast data.
-Although this is specifically a netCDF standard, we feel that most of the ideas are of wider application.
-The metadata objects could be contained in file formats other than netCDF.
-Conversion of the metadata between files of different formats will be facilitated if conventions for all formats are based on similar ideas.
-
-This convention is designed to be backward compatible with the COARDS conventions <<COARDS>>, by which we mean that a conforming COARDS dataset also conforms to the CF standard.
-Thus new applications that implement the CF conventions will be able to process COARDS datasets.
-
-We have also striven to maximize conformance to the COARDS standard, that is, wherever the COARDS metadata conventions provide an adequate description we require their use.
-Extensions to COARDS are implemented in a manner such that the content that doesn't depend on the extensions is still accessible to applications that adhere to the COARDS standard.
 
 [[design, Section 1.2, "Principles for design"]]
 === Principles for design
 
-The following principles are followed in the design of these conventions:
+The Zarr CF conformance class strives to bring the original Principles of design for CF to Zarr.
 
-1. CF-netCDF metadata is designed to make datasets self-describing as far as practically possible.
-A self-describing dataset is one which can be interpreted without need for reference to resources outside itself, and the CF principle is to minimise that need.
-Therefore CF-netCDF does not use codes, but instead relies on controlled vocabularies containing terms that are chosen to be self-explanatory (but more detailed definitions of them are provided in CF documents).
-
-2. The conventions are changed only as actually required by common use-cases, and not for needs which cannot be anticipated with certainty.
-
-3. In order to keep them logical, consistent in approach and as simple as possible, the netCDF conventions are devised with and within the conceptual framework of the CF data model, and new standard names are constructed as far as possible to follow the syntax and vocabulary of existing standard names.
-
-4. The conventions should be practicable for both producers and users of data.
-
-5. The metadata should be both easily readable by humans and easily parsable by programs.
-
-6. To avoid potential inconsistency within the metadata, the conventions should minimise redundancy.
-
-7. The conventions should minimise the possibility for mistakes by data-writers and data-readers.
-
-8. Conventions are provided to allow data-producers to describe the data they wish to produce, rather than attempting to prescribe what data they should produce; consequently most CF conventions are optional.
-
-9. Because many datasets remain in use for a long time after production, it is desirable that metadata written according to previous versions of the convention should also be compliant with and have the same interpretation under later versions.
-
-10. Because all previous versions must generally continue to be supported in software for the sake of archived datasets, and in order to limit the complexity of the conventions, there is a strong preference against introducing any new capability to the conventions when there is already some method that can adequately serve the same purpose (even if a different method would arguably be better than the existing one).
+1. Comply with the Zarr data model and specification
+2. Minimize changes from the NetCDF CF conventions
 
 [[terminology, Section 1.3, "Terminology"]]
 === Terminology
 
-The terms in this document that refer to components of a netCDF file are defined in the NetCDF User's Guide (NUG) <<NUG>>.
+The terms in this document that refer to components of a Zarr store are defined in the NetCDF User's Guide (NUG) <<NUG>>.
 Some of those definitions are repeated below for convenience.
 
 ancestor group:: A group from which the referring group is descended via direct parent-child relationships
 
-auxiliary coordinate variable:: Any netCDF variable that contains coordinate data, but is not a coordinate variable (in the sense of that term defined by the <<NUG>> and used by this standard - see below).
-Unlike coordinate variables, there is no relationship between the name of an auxiliary coordinate variable and the name(s) of its dimension(s).
+auxiliary coordinate variable:: Any array that contains coordinate data, but is not a coordinate array (in the sense of that term defined by the <<NUG>> and used by this conformance class - see below).
+Unlike coordinate arrays, there is no relationship between the name of an auxiliary coordinate array and the name(s) of its dimension(s).
 
-boundary variable:: A boundary variable is associated with a variable that contains coordinate data.
-When a data value provides information about conditions in a cell occupying a region of space/time or some other dimension, the boundary variable provides a description of cell extent.
+boundary array:: A boundary array is associated with an array that contains coordinate data.
+When a data value provides information about conditions in a cell occupying a region of space/time or some other dimension, the boundary array provides a description of cell extent.
 
-CDL syntax:: The ascii format used to describe the contents of a netCDF file is called CDL (network Common Data form Language).
-This format represents arrays using the indexing conventions of the C programming language, i.e., index values start at 0, and in multidimensional arrays, when indexing over the elements of the array, it is the last declared dimension that is the fastest varying in terms of file storage order.
-The netCDF utilities ncdump and ncgen use this format (see
-link:$$https://docs.unidata.ucar.edu/nug/current/_c_d_l.html$$[NUG section on CDL syntax]).
-All examples in this document use CDL syntax.
+CDL syntax:: The ascii format used to describe the contents of a netCDF file is called CDL (network Common Data form Language). The examples in the CF conformance class have been translated from CDL syntax to represent Zarr's data and metadata structure.
 
-cell:: A region in one or more dimensions whose boundary can be described by a set of vertices recorded in boundary variables.
+cell:: A region in one or more dimensions whose boundary can be described by a set of vertices recorded in boundary arrays.
 The term __interval__ is sometimes used for one-dimensional cells.
 A two-dimensional cell is analogous to a pixel in a raster graphic, but is a more general concept (see <<overview>>).
 
 calendar:: A CF calendar defines an ordered set of valid datetimes with integer seconds.
 
-coordinate variable:: A coordinate variable is a one-dimensional variable with the same name as its dimension e.g., **`time(time)`**.
-In CF, a coordinate variable must be of a numeric data type (note that
-link:$$https://docs.unidata.ucar.edu/nug/current/best_practices.html#bp_Coordinate-Systems$$[NUG section on coordinate variables] does not have this requirement).
+coordinate array:: A coordinate array is a one-dimensional array with the same name as its dimension e.g., **`time(time)`**.
+In CF, a coordinate array must be of a numeric data type (note that
+link:$$https://docs.unidata.ucar.edu/nug/current/best_practices.html#bp_Coordinate-Systems$$[NUG section on coordinate arrays] does not have this requirement).
 The coordinate values must be in strict monotonic order (all values are different, and they are arranged in either consistently increasing or consistently decreasing order).
-Missing values are not allowed in coordinate variables.
-To avoid confusion with coordinate variables, CF does not permit a one-dimensional string-valued variable to have the same name as its dimension.
+Missing values are not allowed in coordinate arrays.
+To avoid confusion with coordinate arrays, CF does not permit a one-dimensional string-valued arrays to have the same name as its dimension.
 
 datetime:: The set of numbers which together identify an instant of time, namely its year, month, day, hour, minute and second, where the second may have a fraction but the others are all integer.
 
-grid mapping variable:: A variable used as a container for attributes that define a specific grid mapping.
-The type of the variable is arbitrary since it contains no data.
+grid mapping array:: A array used as a container for attributes that define a specific grid mapping.
+The type of the array is arbitrary since it contains no data.
 
-interpolation variable:: A variable used as a container for attributes that define a specific interpolation method for uncompressing tie point variables.
-The type of the variable is arbitrary since it contains no data.
+interpolation array:: A array used as a container for attributes that define a specific interpolation method for uncompressing tie point arrays.
+The type of the array is arbitrary since it contains no data.
 
-latitude dimension:: A dimension of a netCDF variable that has an associated latitude coordinate variable.
+latitude dimension:: A dimension of an array that has an associated latitude coordinate array.
 
 local apex group:: The nearest (to a referring group) ancestor group in which a dimension of an out-of-group coordinate is defined.
 The word "apex" refers to position of this group at the vertex of the tree of groups formed by it, the referring group, and the group where a coordinate is located.
 
-longitude dimension:: A dimension of a netCDF variable that has an associated longitude coordinate variable.
+longitude dimension:: A dimension of an array that has an associated longitude coordinate array.
 
-most rapidly varying dimension:: The dimension of a multidimensional variable for which elements are adjacent in storage. When netCDF is represented in CDL, the most rapidly varying dimension is the last one e.g. **`x`** in **`float data(z,y,x)`**. C and Python NumPy use the same order as C, also called "column-major order", but Fortran uses the opposite convention, also called "row-major order", so that when netCDF variables are accessed in Fortran the most rapidly varying dimension is the first one.
+most rapidly varying dimension:: The dimension of a multidimensional array for which elements are adjacent in storage.
 
-multidimensional coordinate variable:: An auxiliary coordinate variable that is multidimensional.
+multidimensional coordinate array:: An auxiliary coordinate array that is multidimensional.
 
-nearest item:: The item (variable or group) that can be reached via the shortest traversal of the file from the referring group following the rules set forth in the <<groups>>.
-
-out-of-group reference:: A reference to a variable or dimension that is not contained in the referring group.
+out-of-group reference:: A reference to a array or dimension that is not contained in the referring group.
 
 path:: Paths must follow the UNIX style path convention and may begin with either a '/', '..', or a word.
 
-quantization variable:: A variable used as a container for attributes that define a specific quantization algorithm. The type of the variable is arbitrary since it contains no data.
+quantization array:: An array used as a container for attributes that define a specific quantization algorithm. The type of the array is arbitrary since it contains no data.
 
 recommendation:: Recommendations in this convention are meant to provide advice that may be helpful for reducing common mistakes.
 In some cases we have recommended rather than required particular attributes in order to maintain backwards compatibility with COARDS.
 An application must not depend on a dataset's adherence to recommendations.
 
-referring group:: The group in which a reference to a variable or dimension occurs.
+referring group:: The group in which a reference to an array or dimension occurs.
 
-scalar coordinate variable:: A scalar variable (i.e. one with no dimensions) that contains coordinate data.
-Depending on context, it may be functionally equivalent either to a size-one coordinate variable (<<scalar-coordinate-variables>>) or to a size-one auxiliary coordinate variable (<<labels>> and <<collections-instances-elements>>).
+scalar coordinate array:: A scalar array (i.e. one with no dimensions) that contains coordinate data.
+Depending on context, it may be functionally equivalent either to a size-one coordinate array (<<scalar-coordinate-array>>) or to a size-one auxiliary coordinate array (<<labels>> and <<collections-instances-elements>>).
 
 sibling group:: Any group with the same parent group as the referring group
 
-spatiotemporal dimension:: A dimension of a netCDF variable that is used to identify a location in time and/or space.
+spatiotemporal dimension:: A dimension of an array that is used to identify a location in time and/or space.
 
-tie point variable:: A netCDF variable that contains coordinates that have been compressed by sampling.
-There is no relationship between the name of a tie point variable and the name(s) of its dimension(s).
+tie point array:: An array ble that contains coordinates that have been compressed by sampling.
+There is no relationship between the name of a tie point array and the name(s) of its dimension(s).
 
-time dimension:: A dimension of a netCDF variable that has an associated time coordinate variable.
+time dimension:: A dimension of an array that has an associated time coordinate array.
 
-vertex dimension:: The dimension of a boundary variable along which the vertices of each cell are ordered.
+vertex dimension:: The dimension of a boundary array along which the vertices of each cell are ordered.
 
-vertical dimension:: A dimension of a netCDF variable that has an associated vertical coordinate variable.
+vertical dimension:: A dimension of an array that has an associated vertical coordinate array.
+
+array:: An array in the Zarr data model aligns with a Variable in the NetCDF data model.
 
 [[overview, Section 1.4, "Overview"]]
 === Overview
 
-No variable or dimension names are standardized by this convention.
+No array or dimension names are standardized by this convention.
 Instead we follow the lead of the <<NUG>> and standardize only the names of attributes and some of the values taken by those attributes.
-Variable or dimension names can either be a single variable name or a path to a variable.
+TODO: evaluate - 
+    Array or dimension names can either be a single array name or a path to an array.
 The overview provided in this section will be followed with more complete descriptions in following sections.
 <<attribute-appendix>> contains a summary of all the attributes used in this convention.
 
-Files using this version of the CF Conventions must set the <<NUG>> defined attribute **`Conventions`** to contain the string value "**`CF-{current-version-as-attribute}`**" to identify datasets that conform to these conventions.
+TODO: Update for GeoZarr conformance class registration system -
+    Files using this version of the CF Conventions must set the <<NUG>> defined attribute **`Conventions`** to contain the string value "**`CF-{current-version-as-attribute}`**" to identify datasets that conform to these conventions.
 
-The general description of a file's contents should be contained in the following attributes: **`title`**, **`history`**, **`institution`**, **`source`**, **`comment`** and **`references`** (<<description-of-file-contents>>).
+The general description of a Zarr store's contents should be contained in the following attributes: **`title`**, **`history`**, **`institution`**, **`source`**, **`comment`** and **`references`** (<<description-of-file-contents>>).
 For backwards compatibility with COARDS none of these attributes is required, but their use is recommended to provide human readable documentation of the file contents.
 
-Each variable in a netCDF file has an associated description which is provided by the attributes **`units`**, **`long_name`**, and **`standard_name`**.
+Each array in a Zarr store has an associated description which is provided by the attributes **`units`**, **`long_name`**, and **`standard_name`**.
 The **`units`**, and **`long_name`** attributes are defined in the <<NUG>> and the **`standard_name`** attribute is defined in this document.
 
-The **`units`** attribute is required for all variables that represent dimensional quantities (except for boundary variables defined in <<cell-boundaries>>).
+The **`units`** attribute is required for all arrays that represent dimensional quantities (except for boundary arrays defined in <<cell-boundaries>>).
 The values of the **`units`** attributes are character strings that are recognized by UNIDATA's UDUNITS package <<UDUNITS>> (with exceptions allowed as discussed in <<units>>).
 
-The **`long_name`** and **`standard_name`** attributes are used to describe the content of each variable.
+The **`long_name`** and **`standard_name`** attributes are used to describe the content of each array.
 For backwards compatibility with COARDS neither is required, but use of at least one of them is strongly recommended.
-The use of standard names will facilitate the exchange of climate and forecast data by providing unambiguous identification of variables most commonly analyzed.
+The use of standard names will facilitate the exchange of climate and forecast data by providing unambiguous identification of arrays most commonly analyzed.
 
 Four types of coordinates receive special treatment by these conventions: latitude, longitude, vertical, and time.
-Every variable must have associated metadata that allows identification of each such coordinate that is relevant.
+Every array must have associated metadata that allows identification of each such coordinate that is relevant.
 Two independent parts of the convention allow this to be done.
-There are conventions that identify the variables that contain the coordinate data, and there are conventions that identify the type of coordinate represented by that data.
+There are conventions that identify the arrays that contain the coordinate data, and there are conventions that identify the type of coordinate represented by that data.
 
-There are two methods used to identify variables that contain coordinate data.
-The first is to use the <<NUG>>-defined "coordinate variables."
-__The use of coordinate variables is required for all dimensions that correspond to one dimensional space or time coordinates__.
-In cases where coordinate variables are not applicable, the variables containing coordinate data are identified by the **`coordinates`** attribute.
+There are two methods used to identify arrays that contain coordinate data.
+The first is to use the <<NUG>>-defined "coordinate arrays."
+__The use of coordinate arrays is required for all dimensions that correspond to one dimensional space or time coordinates__.
+In cases where coordinate arrays are not applicable, the arrays containing coordinate data are identified by the **`coordinates`** attribute.
 
-Once the variables containing coordinate data are identified, further conventions are required to determine the type of coordinate represented by each of these variables.
+Once the arrays containing coordinate data are identified, further conventions are required to determine the type of coordinate represented by each of these arrays.
 Latitude, longitude, and time coordinates are identified solely by the value of their **`units`** attribute.
 Vertical coordinates with units of pressure may also be identified by the **`units`** attribute.
 Other vertical coordinates must use the attribute **`positive`** which determines whether the direction of increasing coordinate value is up or down.
-Because identification of a coordinate type by its units involves the use of an external package <<UDUNITS>>, we provide the optional attribute **`axis`** for a direct identification of coordinates that correspond to latitude, longitude, vertical, or time axes.
+Because identification of a coordinate type by its units involves the use of an external package <<UDUNITS>>, we provide the optional attribute **`axis`**
+for a direct identification of coordinates that correspond to latitude, longitude, vertical, or time axes.
 
-Latitude, longitude, and time are defined by internationally recognized standards, and hence, identifying the coordinates of these types is sufficient to locate data values uniquely with respect to time and a point on the earth's surface.
+Latitude, longitude, and time are defined by internationally recognized standards, and hence, identifying the coordinates of these types is sufficient to
+locate data values uniquely with respect to time and a point on the earth's surface.
 On the other hand identifying the vertical coordinate is not necessarily sufficient to locate a data value vertically with respect to the earth's surface.
 In particular a model may output data on the parametric (usually dimensionless) vertical coordinate used in its mathematical formulation.
-To achieve the goal of being able to spatially locate all data values, this convention provides a mapping, via the **`standard_name`** and **`formula_terms`** attributes of a parametric vertical coordinate variable, between its values and dimensional vertical coordinate values that can be uniquely located with respect to a point on the earth's surface (<<parametric-vertical-coordinate>>; <<parametric-v-coord>>).
+To achieve the goal of being able to spatially locate all data values, this convention provides a mapping, via the **`standard_name`** and **`formula_terms`**
+attributes of a parametric vertical coordinate array, between its values and dimensional vertical coordinate values that can be uniquely located with
+respect to a point on the earth's surface (<<parametric-vertical-coordinate>>; <<parametric-v-coord>>).
 
 It is often the case that data values are not representative of single points in time, space and other dimensions, but rather of intervals or multidimensional cells.
 CF defines a **`bounds`** attribute to specify the extent of intervals or cells.
-Because both the <<NUG>> and <<COARDS>> define coordinate variables but not cells or bounds, many applications assume that gridpoints are always located at the centers of their cells.
+Because both the <<NUG>> and <<COARDS>> define coordinate arrays but not cells or bounds, many applications assume that gridpoints are always located at the centers of their cells.
 This assumption does not hold in CF. If bounds are not provided, the location of the gridpoint within the cell is undefined, and nothing can be assumed about the location and extent of the cell.
 
 A two-dimensional cell is analogous to a pixel in a raster graphic, but is a more general concept.
 Pixels in a raster are evenly spaced in each dimension and arranged in a logically rectangular array.
 Two-dimensional cells in a CF field do not necessarily satisfy either of those conditions, though they commonly do.
-Furthermore, as an alternative to cells in two dimensions, CF defines a convention for the case where each data value is associated with a geographical feature that is described by one or more points, lines or polygons.
+Furthermore, as an alternative to cells in two dimensions, CF defines a convention for the case where each data value is associated with a geographical feature that is described by one or
+more points, lines or polygons.
 
 When data that is representative of cells can be described by simple statistical methods (for instance, mean or maximum), those methods can be indicated using the **`cell_methods`** attribute.
 An important application of this attribute is to describe climatological and diurnal statistics.
@@ -200,46 +178,16 @@ The attribute **`compress`** is defined for this purpose.
 [[coards-relationship, Section 1.5, "Relationship to the COARDS Conventions"]]
 === Relationship to the COARDS Conventions
 
-These conventions generalize and extend the COARDS conventions <<COARDS>>.
-A major design goal has been to maintain __backward compatibility__ with COARDS.
-Hence applications written to process datasets that conform to these conventions will also be able to process COARDS conforming datasets.
-We have also striven to maximize __conformance__ to the COARDS standard so that datasets that only require the metadata that was available under COARDS will still be able to be processed by COARDS conforming applications.
-But because of the extensions that provide new metadata content, and the relaxation of some COARDS requirements, datasets that conform to these conventions will not necessarily be recognized by applications that adhere to the COARDS conventions.
-The features of these conventions that allow writing netCDF files that are not COARDS conforming are summarized below.
-
-COARDS standardizes the description of grids composed of independent latitude, longitude, vertical, and time axes.
-In addition to standardizing the metadata required to identify each of these axis types, COARDS requires (_time_, _vertical_, _latitude_, _longitude_) as the CDL order for the dimensions of a variable, with longitude being the most rapidly varying dimension (the last dimension in CDL order).
-Because of I/O performance considerations it may not be possible for models to output their data in conformance with the COARDS requirement.
-The CF convention places no rigid restrictions on the order of dimensions, however we encourage data producers to make the extra effort to stay within the COARDS standard order.
-The use of non-COARDS axis ordering will render files inaccessible to some applications and limit interoperability.
-Often a buffering operation can be used to miminize performance penalties when axis ordering in model code does not match the axis ordering of a COARDS file.
-
-COARDS addresses the issue of identifying dimensionless vertical coordinates, but does not provide any mechanism for mapping the dimensionless values to dimensional ones that can be located with respect to the earth's surface.
-For backwards compatibility we continue to allow (but do not require) the **`units`** attribute of dimensionless vertical coordinates to take the values "level", "layer", or "sigma_level."
-But we recommend that the **`standard_name`** and **`formula_terms`** attributes be used to identify the appropriate definition of the dimensionless vertical coordinate (see <<parametric-vertical-coordinate>>).
-
-The CF conventions define attributes which enable the description of data properties that are outside the scope of the COARDS conventions.
-These new attributes do not violate the COARDS conventions, but applications that only recognize COARDS conforming datasets will not have the capabilities that the new attributes are meant to enable.
-Briefly the new attributes allow:
-
-* Identification of quantities using standard names.
-* Description of dimensionless vertical coordinates.
-* Associating dimensions with auxiliary coordinate variables.
-* Linking data variables to scalar coordinate variables.
-* Associating dimensions with labels.
-* Description of intervals and cells.
-* Description of properties of data defined on intervals and cells.
-* Description of climatological statistics.
-* Data compression for variables with missing values.
+See the original NetCDF CF convention for the relationship with the COARDS Convention.
 
 
 [[ugrid-conventions, Section 1.6, "UGRID Conventions"]]
 === UGRID Conventions
 
-These conventions implicitly incorporate parts of the UGRID conventions for storing unstructured (or flexible mesh) data in netCDF files using mesh topologies <<UGRID>>.
-Only version 1.0 of the UGRID conventions is allowed.
-The UGRID conventions description is referenced from, rather than rewritten into, this document and the canonical description of how to store mesh topologies is only to be found at <<UGRID>>.
-A summary indicating how UGRID relates to other parts of the CF conventions, and which features of UGRID are excluded from CF, can be found in <<mesh-topology-variables>>.
-To reduce the chance of ambiguities arising from their accidental re-use, all of the UGRID standardized attributes are specified in <<appendix-mesh-topology-attributes>> and <<attribute-appendix>>.
+See the original NetCDF CF convention for the relationship with the UGRIG Conventions.
 
-The UGRID conventions have their own conformance document, which should be used in conjunction with the CF conformance document when checking the validity of datasets.
+
+[[netcdf-cf-conventions, Section 1.7, "NetCDF CF Conventions"]]
+=== NetCDF CF Conventions
+
+This conformance class is derived directly from the NetCDF CF Conventions, with the explicit goal to only modify that which is necessary to use CF with the Zarr data model and specification. 

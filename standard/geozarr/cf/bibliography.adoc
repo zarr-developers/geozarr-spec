@@ -25,3 +25,4 @@ OGC document 12-063. 1st May 2015.
 - [[[W3C]]]  link:$$https://www.w3.org/$$[World Wide Web Consortium (W3C)].
 - [[[XML]]]  link:$$https://www.w3.org/TR/1998/REC-xml-19980210$$[Extensible Markup Language (XML) 1.0]. T. Bray, J. Paoli, and C.M. Sperberg-McQueen.  10 February 1998.
 - [[[Zen16]]]  link:$$https://doi.org/10.5194/gmd-9-3199-2016$$[Bit Grooming: Statistically accurate precision-preserving quantization with compression, evaluated in the netCDF Operators (NCO, v4.4.8+)]. Zender, C. S.: _Geosci. Model Dev._, 9, 3199-3211, 2016.
+- [[[Zarr]]]  link:$$https://zarr.dev/$$[Zarr].

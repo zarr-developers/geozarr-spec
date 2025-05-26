@@ -2,22 +2,25 @@
 :doc-part: 7
 :figure: 0
 
-When gridded data does not represent the point values of a field but instead represents some characteristic of the field within cells of non-zero size, a complete description of the variable should include metadata that describes the domain or extent of each cell, and the characteristic of the field that the cell values represent.
+When gridded data does not represent the point values of a field but instead represents some characteristic of the field within cells of non-zero size, a complete description of the array should include metadata that
+describes the domain or extent of each cell, and the characteristic of the field that the cell values represent.
 The commonest cases are one-dimensional cells along spatiotemporal axes, for instance cells along a time axis for consecutive months whose values contain monthly means.
-The methods presented in <<cell-boundaries>> and <<cell-methods>> describe cases in which each grid point is associated with a cell consisting of a single one-dimensional interval, a single two-dimensional polygonal area, or in general a single _n_-dimensional volume in the _n_-dimensional space described by its coordinate variables.
+The methods presented in <<cell-boundaries>> and <<cell-methods>> describe cases in which each grid point is associated with a cell consisting of a single one-dimensional interval, a single two-dimensional polygonal area,
+or in general a single _n_-dimensional volume in the _n_-dimensional space described by its coordinate variables.
 
 It is possible for a single data value to be the result of an operation whose domain is a disjoint set of intervals or areas.
 This is true for many types of climatological statistic; for example, the mean January temperature for the years 1971-2000 is computed from the 30 individual months of January, which are a set of discontiguous time-intervals.
 Climatological statistics are of such importance that we provide special methods for describing their associated computational domains in <<climatological-statistics>>.
-As an alternative to _n_-dimensional volumes with bounds, we provide <<geometries>>, for the case of geospatial applications in which each data value pertains to a single real-world feature, such as a river, watershed or country, represented by one or more points, lines or polygons.
+As an alternative to _n_-dimensional volumes with bounds, we provide <<geometries>>, for the case of geospatial applications in which each data value pertains to a single real-world feature, such as a river,
+watershed or country, represented by one or more points, lines or polygons.
 
 
 [[cell-boundaries, Section 7.1, "Cell Boundaries"]]
 === Cell Boundaries
 
-To delimit the cells, the **`bounds`** attribute may be added to the appropriate coordinate variable(s).
-The value of **`bounds`** is the name of the variable that contains the vertices of the cell boundaries.
-We refer to this type of variable as a "boundary variable."
+To delimit the cells, the **`bounds`** attribute may be added to the appropriate coordinate array(s).
+The value of **`bounds`** is the name of the array that contains the vertices of the cell boundaries.
+We refer to this type of array as a "boundary variable."
 If cell boundaries are provided, it is recommended that each gridpoint should lie somewhere within or upon the boundaries of its own cell.
 
 If cell boundaries are not provided (using the **`bounds`** attribute), an application can make no assumption about the location or extent of the cells.

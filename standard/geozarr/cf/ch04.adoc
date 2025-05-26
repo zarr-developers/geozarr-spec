@@ -3,33 +3,36 @@
 :doc-part: 4
 :figure: 0
 
-The commonest use of coordinate variables is to locate the data in space and time, but coordinates may be provided for any other continuous geophysical quantity (e.g. density, temperature, radiation wavelength, zenith angle of radiance, sea surface wave frequency) or discrete category (see <<discrete-axis>>, e.g. area type, model level number, ensemble member number) on which the data variable depends.
+The commonest use of coordinate arrays is to locate the data in space and time, but coordinates may be provided for any other continuous geophysical quantity (e.g. density, temperature, radiation wavelength,
+zenith angle of radiance, sea surface wave frequency) or discrete category (see <<discrete-axis>>, e.g. area type, model level number, ensemble member number) on which the data array depends.
 
 Four types of coordinates receive special treatment by these conventions: latitude, longitude, vertical, and time.
 We continue to support the special role that the **`units`** and **`positive`** attributes play in the COARDS convention to identify coordinate type.
-As an extension to COARDS, we strongly recommend that a parametric (usually dimensionless) vertical coordinate variable should be associated, via **`standard_name`** and **`formula_terms`** attributes, with its explicit definition, which provides a mapping between its values and dimensional vertical coordinate values that can be uniquely located with respect to a point on the earth's surface.
+As an extension to COARDS, we strongly recommend that a parametric (usually dimensionless) vertical coordinate array should be associated, via **`standard_name`** and **`formula_terms`** attributes,
+with its explicit definition, which provides a mapping between its values and dimensional vertical coordinate values that can be uniquely located with respect to a point on the earth's surface.
 
 Because identification of a coordinate type by its units is complicated by requiring the use of an external package <<UDUNITS>>, we provide two optional methods that yield a direct identification.
-The attribute **`axis`** may be attached to a coordinate variable and given one of the values **`X`**, **`Y`**, **`Z`** or **`T`** which stand for a longitude, latitude, vertical, or time axis respectively.
+The attribute **`axis`** may be attached to a coordinate array and given one of the values **`X`**, **`Y`**, **`Z`** or **`T`** which stand for a longitude, latitude, vertical, or time axis respectively.
 Alternatively the **`standard_name`** attribute may be used for direct identification.
 But note that these optional attributes are in addition to the required COARDS metadata.
 
 To identify generic spatial coordinates we recommend that the **`axis`** attribute be attached to these coordinates and given one of the values **`X`**, **`Y`** or **`Z`**.
-The values **`X`** and **`Y`** for the axis attribute should be used to identify horizontal coordinate variables.
+The values **`X`** and **`Y`** for the axis attribute should be used to identify horizontal coordinate arrays.
 If both X- and Y-axis are identified, **`X-Y-up`** should define a right-handed coordinate system, i.e. rotation from the positive X direction to the positive Y direction is anticlockwise if viewed from above.
-We strongly recommend that coordinate variables be used for all coordinate types whenever they are applicable.
+We strongly recommend that coordinate arrays be used for all coordinate types whenever they are applicable.
 
-The methods of identifying coordinate types described in this section apply both to coordinate variables and to auxiliary coordinate variables named by the **`coordinates`** attribute (see <<coordinate-system>>).
+The methods of identifying coordinate types described in this section apply both to coordinate arrays and to auxiliary coordinate arrays named by the **`coordinates`** attribute (see <<coordinate-system>>).
 
-The values of a coordinate variable or auxiliary coordinate variable indicate the locations of the gridpoints.
+The values of a coordinate array or auxiliary coordinate array indicate the locations of the gridpoints.
 The locations of the boundaries between cells are indicated by bounds variables (see <<cell-boundaries>>).
 
 [[latitude-coordinate, Section 4.1, "Latitude Coordinate"]]
 === Latitude Coordinate
 
-Variables representing latitude must always explicitly include the **`units`** attribute; there is no default value.
+Arrays representing latitude must always explicitly include the **`units`** attribute; there is no default value.
 The recommended value of the **`units`** attribute is the string **`degrees_north`**. Also accepted are **`degree_north`**, **`degree_N`**, **`degrees_N`**, **`degreeN`**, and **`degreesN`**.
 
+//TODO: Update to Zarr
 [[latitude-axis-ex]]
 [caption="Example 4.1. "]
 .Latitude axis
@@ -46,6 +49,7 @@ float lat(lat) ;
 
 ====
 
+//TODO: Check on whether UDUNITS needs a Zarr implementation
 Application writers should note that the UDUNITS package does not recognize the directionality implied by the "north" part of the unit specification.
 It only recognizes its size, i.e., 1 degree is defined to be pi/180 radians.
 Hence, determination that a coordinate is a latitude type should be done via a string match between the given unit and one of the acceptable forms of **`degrees_north`**.
@@ -53,8 +57,10 @@ Hence, determination that a coordinate is a latitude type should be done via a s
 
 Optionally, the latitude type may be indicated additionally by providing the **`standard_name`** attribute with the value **`latitude`**, and/or the **`axis`** attribute with the value **`Y`**.
 
-Coordinates of latitude with respect to a rotated pole should be given units of **`degrees`**, not **`degrees_north`** or equivalents, because applications which use the units to identify axes would have no means of distinguishing such an axis from real latitude, and might draw incorrect coastlines, for instance.
+Coordinates of latitude with respect to a rotated pole should be given units of **`degrees`**, not **`degrees_north`** or equivalents, because applications which use the units to identify
+axes would have no means of distinguishing such an axis from real latitude, and might draw incorrect coastlines, for instance.
 
+//TODO: Update to Zarr
 [[longitude-coordinate, Section 4.2, "Longitude Coordinate"]]
 === Longitude Coordinate
 
@@ -85,21 +91,24 @@ We recommend the determination that a coordinate is a longitude type should be d
 
 Optionally, the longitude type may be indicated additionally by providing the **`standard_name`** attribute with the value **`longitude`**, and/or the **`axis`** attribute with the value **`X`**.
 
-Coordinates of longitude with respect to a rotated pole should be given units of **`degrees`**, not **`degrees_east`** or equivalents, because applications which use the units to identify axes would have no means of distinguishing such an axis from real longitude, and might draw incorrect coastlines, for instance.
+Coordinates of longitude with respect to a rotated pole should be given units of **`degrees`**, not **`degrees_east`** or equivalents, because applications which use the units to identify axes would
+have no means of distinguishing such an axis from real longitude, and might draw incorrect coastlines, for instance.
 
 [[vertical-coordinate, Section 4.3, "Vertical Coordinate"]]
 === Vertical (Height or Depth) Coordinate
 
-Variables representing dimensional height or depth axes must always explicitly include the **`units`** attribute; there is no default value.
+Arrays representing dimensional height or depth axes must always explicitly include the **`units`** attribute; there is no default value.
 
 The direction of positive (i.e., the direction in which the coordinate values are increasing), whether up or down, cannot in all cases be inferred from the units.
 The direction of positive is useful for applications displaying the data.
-For this reason the attribute **`positive`** as defined in the COARDS standard is required if the vertical axis units are not a valid unit of pressure (as determined by the UDUNITS package <<UDUNITS>>) -- otherwise its inclusion is optional.
+For this reason the attribute **`positive`** as defined in the COARDS standard is required if the vertical axis units are not a valid unit of pressure (as determined by the UDUNITS package <<UDUNITS>>) --
+otherwise its inclusion is optional.
 The **`positive`** attribute may have the value **`up`** or **`down`** (case insensitive).
-This attribute may be applied to either coordinate variables or auxiliary coordinate variables that contain vertical coordinate data.
+This attribute may be applied to either coordinate arrays or auxiliary coordinate arrays that contain vertical coordinate data.
 
-For example, if an oceanographic netCDF file encodes the depth of the surface as 0 and the depth of 1000 meters as 1000 then the axis would use attributes as follows: 
+For example, if an oceanographic Zarr store encodes the depth of the surface as 0 and the depth of 1000 meters as 1000 then the axis would use attributes as follows: 
 
+//TODO: Update for Zarr
 ----
 axis_name:units = "meters" ; 
 axis_name:positive = "down" ; 	
@@ -115,7 +124,8 @@ A vertical coordinate will be identifiable by:
 
 Optionally, the vertical type may be indicated additionally by providing the **`standard_name`** attribute with an appropriate value, and/or the **`axis`** attribute with the value **`Z`**. 
 If both **`positive`** and **`standard_name`** are provided, it is recommended that they should be consistent. 
-For instance, if a depth of 1000 metres is represented by -1000 and **`positive`** is **`up`**, it would be inconsistent to give the **`standard_name`** as **`depth`**, whose definition (vertical distance below the surface) implies positive down. 
+For instance, if a depth of 1000 metres is represented by -1000 and **`positive`** is **`up`**, it would be inconsistent to give the **`standard_name`** as **`depth`**, whose
+definition (vertical distance below the surface)implies positive down. 
 If an application detects such an inconsistency, the user should be warned, and the **`positive`** attribute should be used to determine the sign convention.
 
 Recommendations:  The **`positive`** attribute should be consistent with the sign convention implied by the definition of the **`standard_name`**, if both are provided.
@@ -123,8 +133,8 @@ Recommendations:  The **`positive`** attribute should be consistent with the sig
 ==== Dimensional Vertical Coordinate
 
 
-Variables representing dimensional vertical coordinates for depth or height must always explicitly include the  **`units`** attribute.
-The acceptable units for a vertical (depth or height) coordinate variable must a UDUNITS <<UDUNITS>> representation of one of the following:
+Arrays representing dimensional vertical coordinates for depth or height must always explicitly include the  **`units`** attribute.
+The acceptable units for a vertical (depth or height) coordinate array must a UDUNITS <<UDUNITS>> representation of one of the following:
 
 * units of pressure.
 For vertical axes the most commonly used of these include **`bar`**, **`millibar`**, **`decibar`**, **`atmosphere (atm)`**, **`pascal (Pa)`**, and **`hPa`**.
@@ -144,13 +154,18 @@ These values are not recognized by the UDUNITS package, and are considered a dep
 [[parametric-vertical-coordinate, Section 4.3.3, "Parametric Vertical Coordinate"]]
 ==== Parametric Vertical Coordinate
 
-In some cases dimensional vertical coordinates are a function of horizontal location as well as parameters which depend on vertical location, and therefore cannot be stored in the one-dimensional vertical coordinate variable, which is in most of these cases is dimensionless.
-The `standard_name` of the parametric (usually dimensionless) vertical coordinate variable can be used to find the definition of the associated computed (always dimensional) vertical coordinate in <<parametric-v-coord>>.
+In some cases dimensional vertical coordinates are a function of horizontal location as well as parameters which depend on vertical location, and therefore cannot be stored in the
+one-dimensional vertical coordinate array, which is in most of these cases is dimensionless.
+The `standard_name` of the parametric (usually dimensionless) vertical coordinate variable can be used to find the definition of the associated computed (always dimensional)
+vertical coordinate in <<parametric-v-coord>>.
 The definition provides a mapping between the parametric vertical coordinate values and computed values that can positively and uniquely indicate the location of the data.
-The `formula_terms` attribute can be used to associate terms in the definitions with variables in a netCDF file, and the `computed_standard_name` attribute can be used to supply the `standard_name` of the computed vertical coordinate values computed according to the definition.
+The `formula_terms` attribute can be used to associate terms in the definitions with arrays in a Zarr store, and the `computed_standard_name` attribute can be used to supply the
+`standard_name` of the computed vertical coordinate values computed according to the definition.
 To maintain backwards compatibility with COARDS the use of these attributes is not required, but is strongly recommended.
-Some of the definitions may be supplemented with information stored in the `grid_mapping` variable about the datum used as a vertical reference (e.g. geoid, other geopotential datum or reference ellipsoid; see <<grid-mappings-and-projections>> and <<appendix-grid-mappings>>).
+Some of the definitions may be supplemented with information stored in the `grid_mapping` array about the datum used as a vertical reference (e.g. geoid, other geopotential datum
+or reference ellipsoid; see <<grid-mappings-and-projections>> and <<appendix-grid-mappings>>).
 
+//TODO: Update for Zarr
 [[atm-sigma-coord-ex]]
 [caption="Example 4.3. "]
 .Atmosphere sigma coordinate
@@ -167,13 +182,14 @@ float lev(lev) ;
 
 ====
 
-In this example the **`standard_name`** value **`atmosphere_sigma_coordinate`** identifies the following definition from <<parametric-v-coord>> which specifies how to compute pressure at gridpoint **`(n,k,j,i)`** where **`j`** and **`i`** are horizontal indices, **`k`** is a vertical index, and **`n`** is a time index:
+In this example the **`standard_name`** value **`atmosphere_sigma_coordinate`** identifies the following definition from <<parametric-v-coord>> which specifies how to compute pressure
+at gridpoint **`(n,k,j,i)`** where **`j`** and **`i`** are horizontal indices, **`k`** is a vertical index, and **`n`** is a time index:
 
 ----
 p(n,k,j,i) = ptop + sigma(k)*(ps(n,j,i)-ptop)
 ----
 
-The **`formula_terms`** attribute associates the variable **`lev`** with the term **`sigma`**, the variable **`PS`** with the term **`ps`**, and the variable **`PTOP`** with the term **`ptop`**.
+The **`formula_terms`** attribute associates the array **`lev`** with the term **`sigma`**, the array **`PS`** with the term **`ps`**, and the array **`PTOP`** with the term **`ptop`**.
 Thus the pressure at gridpoint **`(n,k,j,i)`** would be calculated by 
 
 ----
@@ -188,13 +204,15 @@ The `computed_standard_name` attribute indicates that the values in variable
 
 A time coordinate is a number which identifies an instant along the continuous physical dimension of time, whether in reality or in a model.
 The instant can equivalently be identified by its datetime, which is a set of numbers comprising year, month, day, hour, minute and second, where the second may have a fraction but the others are all integer.
-The time coordinate and the datetime are interconvertible given the **`calendar`** attribute of the time coordinate variable (<<calendar>>) and its **`units`** attribute (containing the time unit of the coordinate values and the reference datetime, <<time-coordinate-units>>).
+The time coordinate and the datetime are interconvertible given the **`calendar`** attribute of the time coordinate array (<<calendar>>) and its **`units`** attribute (containing the time unit of the
+coordinate values and the reference datetime, <<time-coordinate-units>>).
 
-Variables containing time coordinates must always explicitly include the **`units`** attribute, formatted as described in <<time-coordinate-units>>.
+Arrays containing time coordinates must always explicitly include the **`units`** attribute, formatted as described in <<time-coordinate-units>>.
 There is no default value for the **`units`**.
-A coordinate variable is identifiable as a time coordinate variable from its **`units`** alone.
-Optionally, a time coordinate variable may be indicated additionally by providing the **`standard_name`** attribute with an appropriate value, and/or the **`axis`** attribute with the value **`T`**.
+A coordinate array is identifiable as a time array variable from its **`units`** alone.
+Optionally, a time coordinate array may be indicated additionally by providing the **`standard_name`** attribute with an appropriate value, and/or the **`axis`** attribute with the value **`T`**.
 
+//TODO: Update for Zarr
 [[time-axis-ex]]
 [caption="Example 4.4. "]
 .Example of a time coordinate variable
@@ -213,7 +231,7 @@ double time(time) ;
 [[time-coordinate-units, Section 4.4.1, "Time Coordinate Units"]]
 ==== Time Coordinate Units
 
-The **`units`** attribute of a time coordinate variable takes a string value that follows the formatting requirements of the <<UDUNITS>> package (e.g. <<time-axis-ex>>).
+The **`units`** attribute of a time coordinate array takes a string value that follows the formatting requirements of the <<UDUNITS>> package (e.g. <<time-axis-ex>>).
 It must comprise a unit of measure that is physically equivalent to the SI base unit of time (i.e. the second), followed by the word **`since`** and a reference datetime.
 The format of the **`units`** string implies that the time coordinate equals the length of the time interval from the instant identified by the reference datetime to the instant identified by the time coordinate.
 This is exactly true in all cases except when leap seconds occur between the two intervals in the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars.
@@ -229,8 +247,8 @@ The CF standard follows UDUNITS in the definition of units, but we recommend tha
 
 UDUNITS defines a **`minute`** as 60 **`seconds`**, an **`hour`** as 3600 **`seconds`** and a **`day`** as 86400 **`seconds`**.
 These are not calendar units.
-When a leap second is inserted into UTC, the minute, hour and day affected differ by one second from their usual durations according to clock time, but the UDUNITS and CF **`minute`**, **`hour`** and **`day`** do not; they are fixed units of measure.
-See also <<leap-seconds>>.
+When a leap second is inserted into UTC, the minute, hour and day affected differ by one second from their usual durations according to clock time, but the UDUNITS and CF **`minute`**, **`hour`** and **`day`** do not;
+they are fixed units of measure. See also <<leap-seconds>>.
 
 UDUNITS permits a number of alternatives to the word **`since`** in the units of time coordinates.
 All the alternatives have exactly the same meaning in UDUNITS.
@@ -277,7 +295,8 @@ Datetimes which are not permitted in a given calendar are prohibited both in the
 It is recommended that the calendar be specified by the **`calendar`** attribute of the time coordinate variable.
 The values currently defined for **`calendar`** are listed below.
 
-Because the calendars have different sets of valid dates, and different treatments of leap seconds (see below in this section, and <<leap-seconds>>), a given time coordinate value with given **`units`** can represent different datetimes in different calendars; conversely, a given datetime is represented by different time coordinate values in different calendars.
+Because the calendars have different sets of valid dates, and different treatments of leap seconds (see below in this section, and <<leap-seconds>>), a given time coordinate value with given **`units`** can
+represent different datetimes in different calendars; conversely, a given datetime is represented by different time coordinate values in different calendars.
 Moreover, in different calendars a given datetime can identify a different instant in the continuous physical dimension of time.
 // Examples of these situations are shown in the table of *Appendix ???*.
 
@@ -285,7 +304,8 @@ The lengths of the months in the Gregorian calendar are used in all calendars ex
 The calendars differ in their treatment of leap years (when there are 29 days in February instead of 28).
 
 Leap seconds are adjustments made at irregular and unpredictable intervals in Coordinated Universal Time (link:$$https://en.wikipedia.org/wiki/Coordinated_Universal_Time$$[UTC]).
-In response to slight variations in the Earth's rotation speed, positive or negative leap seconds are inserted in order to keep UTC close to mean solar time at 0 `degrees_east` i.e. the time zone with the default (zero) time zone offset in UDUNITS and CF (see <<time-coordinate-units>>).
+In response to slight variations in the Earth's rotation speed, positive or negative leap seconds are inserted in order to keep UTC close to mean solar time at 0 `degrees_east` i.e.
+the time zone with the default (zero) time zone offset in UDUNITS and CF (see <<time-coordinate-units>>).
 When a single positive leap second is introduced at the end of a minute, that minute contains 61 seconds.
 The net number of leap seconds added to UTC between 1958-1-1 and 2025-1-1 is 37.
 The CF calendars differ in their treatment of leap seconds (see <<leap-seconds>>).
@@ -319,7 +339,8 @@ See also <<leap-seconds>>.
 **`utc`**:: A Gregorian calendar __with__ leap seconds as prescribed by UTC.
 Datetimes before 1958-01-01 0:0:0 are not allowed in this calendar.
 Datetimes in the future are not allowed in this calendar, because it is unknown when future leap seconds will occur.
-When a datetime is converted to a time coordinate value or vice-versa in this calendar, any leap seconds (positive or negative) must be counted that occurred in the interval between the datetime and the reference datetime in the **`units`**.
+When a datetime is converted to a time coordinate value or vice-versa in this calendar, any leap seconds (positive or negative) must be counted that occurred in the interval between
+the datetime and the reference datetime in the **`units`**.
 For any given instant, the **`utc`** datetime is behind the **`tai`** datetime, where "behind" means the same as it does when describing a timezone to the west as being behind one to the east.
 The difference between the two datetimes for a given instant of time is the net number of leap seconds introduced since 1958-01-01.
 The difference was zero on that instant, when both calendars began.
@@ -352,8 +373,10 @@ This section describes how to deal properly with leap seconds.
 Most people ignore the existence of leap seconds, including many data producers and the CF standard before version 1.12.
 As a result, the time coordinates of two real-world observational datasets could disagree by some number of seconds if one has taken leap seconds into account and the other has not.
 Practically speaking, this means that if you are working with real-world data, and if it's important for your time coordinates to be accurate to the second, you need to care about leap seconds.
-Otherwise, you need only to be aware that the difference between two time coordinates might not exactly equal the duration of the time interval between the two instants, but could be inaccurate by a number of seconds, if leap seconds are involved.
-Relatedly, two instants with the same time of day on different days, which would always be separated by a multiple of 86400 seconds if there were no leap seconds, will have a few more seconds between them if leap seconds intervene.
+Otherwise, you need only to be aware that the difference between two time coordinates might not exactly equal the duration of the time interval between the two instants, but could be inaccurate by a
+number of seconds, if leap seconds are involved.
+Relatedly, two instants with the same time of day on different days, which would always be separated by a multiple of 86400 seconds if there were no leap seconds, will have a few more seconds
+between them if leap seconds intervene.
 
 Each calendar defines a set of valid combinations of the six numbers year-month-day-hour-minute-second.
 We refer to this set as the calendar's "set of datetimes".
@@ -362,9 +385,12 @@ In this section, we use the word _timeline_ to mean "continuous physical dimensi
 The valid datetimes identify discrete instants along the timeline, in that sense.
 
 You need to know the set of datetimes defined by the calendar in order to compute time coordinate values from datetimes and vice-versa.
-Ignoring fractional seconds in datetimes, a time coordinate value expressed in seconds equals the number of valid (integer-second) datetimes _after_ (not including) the reference datetime in the **`units`** _up to_ (and including) the datetime that the time coordinate represents.
-For instance, in **`units`** of **`seconds since 2024-9-14 11:12:00`**, the time coordinate for the datetime **`2024-9-14 11:12:03`** is **`3`**, because there are three datetimes (**`2024-9-14 11:12:01`**, **`2024-9-14 11:12:02`**, **`2024-9-14 11:12:03`**) following **`2024-9-14 11:12:00`** up to and including **`2024-9-14 11:12:03`**.
-The coordinate for **`2024-9-14 11:11:58`** is **`-2`**, because there are two valid datetimes (**`2024-9-14 11:11:59`**, **`2024-9-14 11:11:58`**) from **`2024-9-14 11:12:00`** to (and including) **`2024-9-14 11:11:58`**, and the count is negative because it goes backwards.
+Ignoring fractional seconds in datetimes, a time coordinate value expressed in seconds equals the number of valid (integer-second) datetimes _after_ (not including) the reference
+datetime in the **`units`** _up to_ (and including) the datetime that the time coordinate represents.
+For instance, in **`units`** of **`seconds since 2024-9-14 11:12:00`**, the time coordinate for the datetime **`2024-9-14 11:12:03`** is **`3`**, because there are three
+datetimes (**`2024-9-14 11:12:01`**, **`2024-9-14 11:12:02`**, **`2024-9-14 11:12:03`**) following **`2024-9-14 11:12:00`** up to and including **`2024-9-14 11:12:03`**.
+The coordinate for **`2024-9-14 11:11:58`** is **`-2`**, because there are two valid datetimes (**`2024-9-14 11:11:59`**, **`2024-9-14 11:11:58`**) from **`2024-9-14 11:12:00`** to
+(and including) **`2024-9-14 11:11:58`**, and the count is negative because it goes backwards.
 The signed difference between the fractional seconds of the datetime and the reference is added to the time coordinate after counting the seconds.
 This paragraph may appear to be excessively elaborate in describing a usually obvious procedure, but it is necessary to be very careful about it when there are leap seconds.
 
@@ -383,7 +409,8 @@ For **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars, there
    This is the case for a model simulation that defines every day as having a constant length of 86400 seconds.
 
 2. **The calendar is being used for a timeline in which leap seconds exist, and they are correctly accounted for in the datetimes represented by the time coordinates.**
-   This could be the case for observations from a platform with equipment which records UTC datetimes and has prior knowledge of when new leap seconds are to be introduced, so that it is able to apply a new leap second at the appropriate time.
+   This could be the case for observations from a platform with equipment which records UTC datetimes and has prior knowledge of when new leap seconds are to be introduced, so that
+   it is able to apply a new leap second at the appropriate time.
    It could equally be the case for model whose timesteps include leap seconds.
 
 3. **The calendar is being used for a timeline in which leap seconds exist, but some or all leap seconds might not have not been correctly accounted for in the datetimes.**
@@ -395,7 +422,8 @@ Except in the **`utc`** calendar, when a time coordinate value is calculated fro
 In other words, leap seconds (positive or negative) are never counted in the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars.
 When these calendars are being be used for timelines _with_ leap seconds (i.e. cases 2 and 3 and perhaps case 4), the assumption of 60-second minutes has the following consequences:
 
-* It is impossible to identify any instant during a leap second (i.e. between the end of the 60th second of the last minute of one hour and the start of the first second of the next hour) by a time coordinate e.g. **`2016-12-31 23:59:60.5`** cannot be represented by a time coordinate value.
+* It is impossible to identify any instant during a leap second (i.e. between the end of the 60th second of the last minute of one hour and the start of the first second of the next hour) by
+  a time coordinate e.g. **`2016-12-31 23:59:60.5`** cannot be represented by a time coordinate value.
   
 * A datetime in the excluded range must not be used as a reference datetime e.g. **`seconds since 2016-12-31 23:59:60`** is not a permitted value for **`units`**.
 
@@ -404,17 +432,21 @@ When these calendars are being be used for timelines _with_ leap seconds (i.e. c
 
 Because of the last point, the difference between two coordinate values with the same **`units`** string does not exactly equal the length of the interval between instants they represent if there were any leap seconds between them.
 This discrepancy can happen in cases 2, 3 and 4 of the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars.
-By contrast, in case 1 of those calendars (i.e. a timeline without leap seconds), and in all other calendars, the difference between two time coordinate values  with the same **`units`** string is always equal to the length of time between the instants they represent.
+By contrast, in case 1 of those calendars (i.e. a timeline without leap seconds), and in all other calendars, the difference between two time coordinate values  with the same **`units`** string is always equal
+to the length of time between the instants they represent.
 Furthermore, an inaccuracy results from converting a time coordinate to a datetime if the interval includes leap seconds which were _not_ known when the time coordinate was calculated (possible in case 3 or 4).
 It is important to be aware of these disadvantages of the **`standard`**, **`proleptic_gregorian`** and **`julian`** calendars when used with timelines including leap seconds.
 
 If it is essential for leap seconds to be counted in time coordinates, so that they exactly equal time intervals, you must use the **`utc`** calendar.
 For many applications of the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars, these inaccuracies are too small to matter, but there are some applications where it is necessary to know about them.
-Therefore it is recommended that for the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars the appropriate treatment of leap seconds should be indicated by giving the time coordinate variable a **`units_metadata`** attribute containing a **`leap_seconds`** keyword with one of the permitted values **`none`**, **`utc**` or **`unknown`**.
-**`none`** means that leap seconds do not exist in the timeline (i.e. case 1), **`utc`** means that leap seconds exist in the timeline and the time coordinates correctly represent the datetimes (i.e. case 2), and **`unknown`** means that the data-writer did not know or did not record whether the leap seconds exist in the timeline, nor how they are treated if they did exist (i.e. cases 3 and 4).
+Therefore it is recommended that for the **`standard`**, **`proleptic_gregorian`**, and **`julian`** calendars the appropriate treatment of leap seconds should be indicated by giving the time coordinate array
+a **`units_metadata`** attribute containing a **`leap_seconds`** keyword with one of the permitted values **`none`**, **`utc**` or **`unknown`**.
+**`none`** means that leap seconds do not exist in the timeline (i.e. case 1), **`utc`** means that leap seconds exist in the timeline and the time coordinates correctly represent the datetimes
+(i.e. case 2), and **`unknown`** means that the data-writer did not know or did not record whether the leap seconds exist in the timeline, nor how they are treated if they did exist (i.e. cases 3 and 4).
 If the **`units_metadata`** attribute is not present, or does not contain the `leap_seconds` keyword, the data-reader should assume **`leap_seconds: unknown`**.
-A variable's **`units_metadata`** attribute may only contain the **`leap_seconds`** keyword if the variable's calendar is one of **`standard`** , **`proleptic_gregorian`**, or **`julian`**.
+A array's **`units_metadata`** attribute may only contain the **`leap_seconds`** keyword if the variable's calendar is one of **`standard`** , **`proleptic_gregorian`**, or **`julian`**.
 
+//TODO: Update to Zarrr
 [[units-metadata-leap-seconds-ex]]
 [caption="Example 4.5. "]
 .Use of **`units_metadata`** and **`calendar`** to define the treatment of leap seconds
@@ -458,18 +490,22 @@ data: // time coordinate variable and the datetime it represents
   time_unknown = 2; // unknown whether 2016-12-31 23:59:60 or 2017-1-1 0:0:0
 ----
 
-This example shows five scalar time coordinate variables.
-Although they all have the value 2 and the same **`units`** attribute, they do not all refer to the same datetime, as shown in the comments on their data values, because they have different treatments of the leap second that was added to the UTC calendar at the end of 2016.
+This example shows five scalar time coordinate array.
+Although they all have the value 2 and the same **`units`** attribute, they do not all refer to the same datetime, as shown in the comments on their data values, because they have different treatments
+of the leap second that was added to the UTC calendar at the end of 2016.
 The first four of them correspond to the instants marked 2 **`seconds since 2016-12-31 23:59:58`** in <<leap-second-timelines>>.
 
 The value of **`2`** seconds for **`time_stdnone`**, **`time_utc`** and **`time_tai`** can be correctly interpreted as the length of the interval from the reference datetime 2016-12-31 23:59:58 to the datetime indicated in the comment.
-In both **`time_stdnone`** and **`time_stdutc`**, the time coordinate represents 2017-1-1 0:0:0, because 2016-12-31 23:59:60 is not permitted in the **`standard`** calendar, hence only two valid datetimes with integer seconds are counted (2016-12-31 23:59:59 and 2017-1-1 0:0:0).
-However, the _timeline_ for **`time_stdutc`** _does_ include the leap second, so the time interval from the reference datetime 2016-12-31 23:59:58 to 2017-1-1 0:0:0 is actually three seconds, not two as indicated by the time coordinate value.
+In both **`time_stdnone`** and **`time_stdutc`**, the time coordinate represents 2017-1-1 0:0:0, because 2016-12-31 23:59:60 is not permitted in the **`standard`** calendar, hence only two valid datetimes with
+integer seconds are counted (2016-12-31 23:59:59 and 2017-1-1 0:0:0).
+However, the _timeline_ for **`time_stdutc`** _does_ include the leap second, so the time interval from the reference datetime 2016-12-31 23:59:58 to 2017-1-1 0:0:0 is actually three seconds,
+not two as indicated by the time coordinate value.
 This is an example of the **`standard`** calendar not counting a leap second in the coordinate value, with the consequence that the difference between time coordinates does not exactly equal the duration of the interval.
 An application may choose either to ignore this inaccuracy or to correct for it when calculating the length of intervals which include the leap second.
 In the case of **`time_unknown`**, we cannot convert the time coordinate to a datetime with certainty, because we do not know whether 2017-1-1 0:0:0 is two or three seconds after 2016-12-31 23:59:58.
 ====
 
+//TODO: Check if updating is needed
 [[leap-second-timelines]]
 [caption="Figure {doc-part}.{counter:figure}. ", reftext=Figure {doc-part}.{figure}]
 .Illustration of the equivalence between datetimes and time coordinate values with **`units="seconds since 2016-12-31 23:59:58"`** for various choices of the **`calendar`** attribute and **`leap_seconds`** keyword.
@@ -493,7 +529,7 @@ Their timelines (red and purple) skip over the leap second, and they have no cir
 For those timelines, please imagine the digram having the shaded rectangle cut out, and the cut edges joined, making the red and purple lines continuous, passing smoothly from 2016-12-31 23:59:00 to 2017-1-1 00:00:00 as for all the other seconds.
 ====
 
-
+//TODO: Update for Zarr
 [[none-calendar, Section 4.4.4, "Time Coordinates with no Annual Cycle"]]
 ==== Time Coordinates with no Annual Cycle
 
@@ -542,6 +578,7 @@ This attribute is ignored if **`leap_year`** is not specified.
 
 When an explicitly defined calendar is being used, the calendar may be described by giving a value not defined in <<calendar>> to the **`calendar`** attribute; alternatively, the attribute may be omitted.
 
+//TODO: Update for Zarr
 [[paleoclimate-time-axis-ex]]
 [caption="Example 4.7. "]
 .Paleoclimate time axis
@@ -562,8 +599,10 @@ double time(time) ;
 === Discrete Axis
 
 The spatiotemporal coordinates described in sections 4.1-4.4 are continuous variables, and other geophysical quantities may likewise serve as continuous coordinate variables, for instance density, temperature or radiation wavelength.
-By contrast, for some purposes there is a need for an axis of a data variable which indicates either an ordered list or an unordered collection, and does not correspond to any continuous coordinate variable.
+By contrast, for some purposes there is a need for an axis of a data array which indicates either an ordered list or an unordered collection, and does not correspond to any continuous coordinate variable.
 Consequently such an axis may be called {ldquo}discrete{rdquo}.
 A discrete axis has a dimension but might not have a coordinate variable.
-Instead, there might be one or more auxiliary coordinate variables with this dimension (see preamble to section 5).
-Following sections define various applications of discrete axes, for instance section 6.1.1 {ldquo}Geographical regions{rdquo}, section 7.3.3 {ldquo}Statistics applying to portions of cells{rdquo}, section 9.3 {ldquo}Representation of collections of features in data variables{rdquo}.
+Instead, there might be one or more auxiliary coordinate arrays with this dimension (see preamble to section 5).
+Following sections define various applications of discrete axes, for instance section 6.1.1 {ldquo}Geographical regions{rdquo}, section 7.3.3 {ldquo}Statistics applying to portions of cells{rdquo},
+section 9.3 {ldquo}Representation of collections of features in data variables{rdquo}.
+====
