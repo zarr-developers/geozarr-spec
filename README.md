@@ -19,6 +19,10 @@ Information about how to get involved in this process will be announced soon/
 
 ## Changelog
 
+### v0.5
+
+* Reformat GeoZarr as a registration of translated, well-supported open standards for Zarr.
+
 ### v0.4 
 
 * Added visual portrayals and symbology (instead of quicklook)
