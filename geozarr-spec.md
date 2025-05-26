@@ -68,7 +68,7 @@ For example, the following defines that the primary convention is the Open Geosp
             "configuration": {
                 "primary": {
                     "name": OGC-GeoTIFF,
-                    "version": "1.13"
+                    "version": "1.0"
                 }
             }
         }
