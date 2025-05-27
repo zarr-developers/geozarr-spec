@@ -1,0 +1,224 @@
+:issues: https://github.com/cf-convention/cf-conventions/issues/
+:pull-requests: https://github.com/cf-convention/cf-conventions/pull/
+:tickets: https://cfconventions.org/Data/Trac-tickets/
+
+[[revhistory, Revision History]]
+== Revision History
+
+=== Version 1.12 (04 December 2024)
+
+* {issues}513[Issue #513]: Include DOI and License information in the conventions document 
+* {issues}499[Issue #499]: Formatting of local links in text
+* {issues}566[Issue #566]: Fix invalid CRS WKT attribute in example 5.12.
+* {issues}527[Issue #527]: Clarify the conventions for boundary variables, especially for auxiliary coordinate variables of more than one dimension, state that there is no default for boundaries, add more information about bounds in section 1.
+* {issues}550[Issue #550]: Include a link to CF area-type table and make explicit the need to use standardized area-type strings in Section 7.3.3.
+* {issues}542[Issue #542]: Clarify and rearrange text of section 4.4 about time coordinate units and calendars; introduce new text and a diagram explaining leap-seconds in existing calendars; define leap_second keyword of units_metadata attribute; define utc and tai calendars; define "datetime" in section 1.3.
+* {issues}166[Issue #166]: Clarify that time coordinate variables must have **`units`** containing **`since`** and a reference time; distinguish between canonical units of time with and without **`since`**.
+* {issues}141[Issue #141]: Clarification that text may be stored in variables and attributes as either vlen strings or char arrays, and must be represented in Unicode Normalization Form C and encoded according to UTF-8.
+* {issues}367[Issue #367]: Remove the AMIP and GRIB columns from the standard name table format defined by Appendix B.
+* {issues}403[Issue #403]: Metadata to encode quantization properties
+* {issues}530[Issue #530]: Define "the most rapidly varying dimension", and use this phrase consistently with the clarification "(the last dimension in CDL order)".
+* {issues}163[Issue #163]: Provide a convention for boundary variables for grids whose cells do not all have the same number of sides.
+* {issues}174[Issue #174]: A one-dimensional string-valued variable must not have the same name as its dimension, in order to avoid its being mistaken for a coordinate variable.
+* {issues}237[Issue #237]: Clarify that the character set given in section 2.3 for variable, dimension, attribute and group names is a recommendation, not a requirement.
+* {issues}515[Issue #515]: Clarify the recommendation to use the convention of 4.3.3 for parametric vertical coordinates, because the previous wording caused confusion.
+* {issues}511[Issue #511]: Appendix B: New element in XML file header to record the "first published date"
+* {issues}509[Issue #509]: In exceptional cases allow a standard name to be aliased into two alternatives
+* {issues}501[Issue #501]: Clarify that data variables and variables containing coordinate data are highly recommended to have **`long_name`** or **`standard_name`** attributes, that **`cf_role`** is used only for discrete sampling geometries and UGRID mesh topologies, and that CF does not prohibit CF attributes from being used in ways that are not defined by CF but that in such cases their meaning is not defined by CF.
+* {issues}500[Issue #500]: Appendix B: Added a **`conventions`** string to the standard name xml file format definition
+
+=== Version 1.11 (05 December 2023)
+
+* {issues}481[Issue #481]: Introduce **`units_metadata`** attribute and clarify some other aspects of **`units`**
+* {issues}458[Issue #458]: Clarify the use of compressed dimensions in related variables
+* {issues}486[Issue #486]: Fix PDF formatting problems and invalid references
+* {issues}490[Issue #490]: Simple correction to Example 6.1.2
+* {issues}457[Issue #457]: Creation date of the draft Conventions document 
+* {issues}445[Issue #445]: Updates concerning the Polar Stereographic Grid Mapping
+* {issues}468[Issue #468]: Update section 2.3 to clarify recommended character set
+* {issues}147[Issue #147]: Clarify the use of compressed dimensions in related variables
+* {issues}483[Issue #483]: Add a missing author
+* {issues}463[Issue #463]: Convert URLs with HTTP protocol to HTTPS if available, fixed a few dead links
+* {issues}383[Issue #383]: Link to the CF website and deleted the Preface section
+* {issues}472[Issue #472]: Fix incorrect formating for some \<= symbols
+* {issues}458[Issue #458]: Fix broken link to Unidata documentation.
+* {issues}423[Issue #423]: Always use "strictly monotonic" when describing coordinate variables
+* {issues}420[Issue #420]: Add List of Figures
+* {issues}210[Issue #210]: Correct errors in examples H9-H11
+* {issues}374[Issue #374]: Clarify rules for packing and unpacking in Section 8.1
+* {issues}449[Issue #449]: Typo in end-date in Example 7.12
+* {issues}266[Issue #266]: Updates to some links in the bibliography
+* {issues}286[Issue #286]: Some labels of examples contain "Example" so that their label in the list of examples contains "Example" (affects four examples); corrected captions of three tables and five examples
+* {issues}418[Issue #418]: Add missing examples to TOE (table of examples); corrected captions of three tables and three examples
+* {issues}367[Issue #367]: Delete obsolete references in section 3.3 for mappings of CF standard names to GRIB and PCMDI tables
+* {issues}405[Issue #405]: Update ch. 4.4 text on reference time vs. UDUNIT
+* {issues}406[Issue #406]: Remove duplicate section 8.2 in the conformance document
+* {issues}391[Issue #391]: Correct link to Snyder and typo in the bibliography
+* {issues}437[Issue #437]: Correct link to NUG in the bibliography
+* {issues}428[Issue #428]: Recording deployment positions
+* {issues}430[Issue #430]: Clarify the function of the `cf_role` attribute
+* {pull-requests}408[Pull request #408]: Deleted a sentence on "rotated Mercator" under `Oblique Mercator` grid mapping in Appendix F
+* {issues}265[Issue #265]: Clarification of the requirements on bounds variable attributes
+* {issues}260[Issue #260]: Clarify use of dimensionless units
+* {issues}410[Issue #410]: Delete "on a spherical Earth" from the definition of the `latitude_longitude` grid mapping in Appendix F 
+* {issues}153[Issue #153]: Reference UGRID conventions in CF
+
+=== Version 1.10 (31 August 2022)
+
+* {pull-requests}378[Pull request #378]: Fixed missing semicolon in example 7.16
+* {issues}366[Issue #366]: Clarify the intention of standard names
+* {issues}352[Issue #352]: Correct errors in description of lossy compression by coordinate subsampling
+* {issues}345[Issue #345]: Reformat the revision history
+* {issues}349[Issue #349]: Delete unnecessary Conventions attribute in two examples
+* {issues}162[Issue #162]: Delete incorrect missing_data attributes of time coordinate variables in two examples
+* {issues}129[Issue #129]: timeSeries featureType with a forecast/reference time dimension?
+
+=== Version 1.9 (10 September 2021)
+
+* {issues}327[Issue #327]: Lossy compression by coordinate subsampling, including new Appendix J ("Coordinate Subsampling Methods")
+* {issues}323[Issue #323]: Update data model figures for the Domain
+* {issues}319[Issue #319]: Restrict "gregorian" label to only dates in the Gregorian calendar
+* {issues}298[Issue #298]: Interpretation of negative years in the units attribute
+* {issues}314[Issue #314]: Correction to the definition of "ocean sigma over z coordinate" in Appendix D
+* {issues}313[Issue #313]: Clarification of the handling of leap seconds
+* {issues}304[Issue #304]: Clarify formula terms definitions
+* {issues}301[Issue #301]: Introduce the CF domain variable.
+* {issues}288[Issue #288]: Remove unnecessary line from table in section 9.3.1
+* {issues}284[Issue #284]: Fix the mention of example 6.1.2 in the example list
+* {issues}273[Issue #273]: State the principles for design of the CF conventions
+* {issues}295[Issue #295]: Correction of figures and their description
+* {issues}243[Issue #243]: Rewording changes relating to the new integer types
+* {issues}222[Issue #222]: Allow CRS WKT to represent the CRS without requiring reader to compare with grid mapping parameters
+* {issues}193[Issue #193]: Figures to clarify the order of the vertices of cell bounds
+* {issues}271[Issue #271]: Extend the CF data model for geometries
+* {issues}272[Issue #272]: Remove unnecessary netCDF dimensions from some examples
+* {issues}258[Issue #258]: Clarification of geostationary projection items
+* {issues}216[Issue #216]: New text describing usage of ancillary variables as status/quality flags
+* {issues}159[Issue #159]: Incorporate the CF data model into the conventions in new Appendix I
+* {issues}253[Issue #253]: Update PROJ links in Appendix F
+* {pull-requests}236[Pull request #236]: Fixed the link in the COARDS reference
+* {issues}243[Issue #243]: Add new integer types to CF
+* {issues}238[Issue #238]: Clarifications to ancillary variables text and examples
+* {issues}230[Issue #230]: Correct inconsistency in units of geostationary projection
+
+=== Version 1.8 (11 February 2020)
+
+* {issues}223[Issue #223]: Axis Order for CRS-WKT grid mappings
+* {issues}212[Issue #212]: Inconsistent usage of false_easting and false_northing in grid mappings definitions and in examples
+* {issues}218[Issue #218]: Taxon Names and Identifiers.
+* {issues}203[Issue #203]: Clarifications to use of groups.
+* {issues}213[Issue #213]: Missing `s`s in grid mapping description texts.
+* {pull-requests}202[Pull request #202]: Fix Section 7 examples numbering in the list of examples
+* {issues}198[Issue #198]: Clarification of use of standard region names in "region" variables.
+* {issues}179[Issue #179]: Don't require longitude and Latitude for projected coordinates.
+* {issues}139[Issue #139]: Added support for variables of type string.
+* {issues}186[Issue #186]: Minor corrections to Example 5.10, Section 9.5 & Appendix F
+* {issues}136[Issue #136]: Missing trajectory dimension in H.22
+* {issues}144[Issue #144]: Add <<groups, support for using groups>>.
+* {issues}128[Issue #128]: Add definition of 'name_strlen' dimension where missing in Appendix H CDL examples.
+* {pull-requests}142[Pull request #142]: Fix bad reference to an example in section 6.1 "Labels".
+* {issues}155[Issue #155], {issues}156[Issue #156]: Allow alternate grid mappings for geometry containers. When node_count attribute is missing, require the dimension of the node coordinate variables to be one of the dimensions of the data variable.
+* {pull-requests}146[Pull request #146]: Typos (plural dimensions) in section H
+* {tickets}164.html[Ticket #164]: Add bounds attribute to first geometry CDL example.
+* {tickets}164.html[Ticket #164]: Replace axis with bounds for coordinate variables related to geometry node variables.
+* {tickets}164.html[Ticket #164]: Add Tim Whiteaker and Dave Blodgett as authors.
+* {tickets}164.html[Ticket #164]: Remove geometry attribute from lat/lon variables in examples.
+* {tickets}164.html[Ticket #164]: If coordinates attribute is carried by geometry container, require coordinate variables which correspond to node coordinate variables to have the corresponding axis attribute.
+* {tickets}164.html[Ticket #164]: Implement suggestions from trac ticket comments.
+* {tickets}164.html[Ticket #164]: New Geometries section 7.5.
+
+=== Version 1.7 (7 August 2017)
+
+* Updated use of WKT-CRS syntax.
+* Trivial updates to links for COARDS and UDUNITS in the bibliography.
+* Updated the links and references to NUG (The NetCDF User Guide), to refer to the current version.
+* A few formatting tweaks.
+* {tickets}140.html[Ticket #140]: Added 3 paragraphs and an example to Chapter 7, Section 7.1.
+* {tickets}100.html[Ticket #100]: Clarifications to the preamble of sections 4 and 5.
+* {tickets}70.html[Ticket #70]: Connecting coordinates to Grid Mapping variables: revisions in Section 5.6 and Examples 5.10 and 5.12
+* {tickets}104.html[Ticket #104]: Clarify the interpretation of scalar coordinate variables, changes in sections 5.7 and 6.1
+* {tickets}102.html[Ticket #102]: additional cell_methods, changes in Appendix E and section 7.3
+* {tickets}80.html[Ticket #80]: added attributes to AppF Table F1, changes in section 5.6 and 5.6.1.
+* {tickets}86.html[Ticket #86]: Allow coordinate variables to be scaled integers, affects two table rows in Appendix A.
+* {tickets}138.html[Ticket #138]: Clarification of false_easting / false_northing (Table F.1)
+* {tickets}76.html[Ticket #76]: More than one name in Conventions attribute (section 2.6.1)
+* {tickets}109.html[Ticket #109]: resolve inconsistency of positive and standard_name attributes (section 4.3)
+* {tickets}75.html[Ticket #75]: fix documentation and definitions of 3 grid mapping definitions
+* {tickets}143.html[Ticket #143]: Supplement the definitions of dimensionless vertical coordinates
+* {tickets}85.html[Ticket #85]: Added sentence to bottom of first para in Section 9.1 "Features and feature types".  Added Links column in Section 9.1. Replaced first para in Section 9.6. "Missing Data". Added verbiage to Section 2.5.1, "Missing data...".  Added sentence to Appendix A "Description" "missing_value" and "Fill_Value".
+* {tickets}145.html[Ticket #145]: Add new sentence to bottom of Section 7.2, Add new Section 2.6.3, "External variables". Add "External variable" attribute to Appendix A.
+* {tickets}74.html[Ticket #74]: Removed "sea_water_speed" from flag values example and added Note at bottom of Example 3.3 in Chapter 3.  Also added a sentence to Appendix C Standard Name Modifiers "number of observations" and and a sentence to "status_flag_modifiers"
+* {tickets}103.html[Ticket #103]: Corrections to Appendices A and H, finish the ticket with remaining changes to Appendix H.
+* {tickets}72.html[Ticket #72]: Adding the geostationary projection.
+* {tickets}92.html[Ticket #92]: Add oblique mercator projection
+* {tickets}87.html[Ticket #87]: Allow comments in coordinate variables
+* {tickets}77.html[Ticket #77]: Add sinusoidal projection
+* {tickets}149.html[Ticket #149]: correction of standard name in example 7.3
+* {tickets}148.html[Ticket #148]: Added maximum_absolute_value, minimum_absolute_value and mean_absolute_value to cell methods in Appendix E
+* {tickets}118.html[Ticket #118]: Add geoid_name and geopotential_datum_name to the list of Grid Mapping Attributes.
+* {tickets}123.html[Ticket #123]: revised section 3.3
+* {tickets}73.html[Ticket #73]: renamed Appendix G to Revision History
+* {tickets}31.html[Ticket #31], add new attribute **`actual_range`**.
+* {tickets}141.html[Ticket #141], update affiliation organisations for Jonathan Gregory and Phil Bentley.
+* {tickets}103.html[Ticket #103] updated Type and Use values for some attributes in <<attribute-appendix>> and added "special purpose" value. In <<appendix-examples-discrete-geometries>>, updated coordinate values for the variables in some examples to correct omissions.
+* {tickets}71.html[Ticket #71], correction of <<vertical-perspective>> projection.
+* {tickets}67.html[Ticket #67], remove deprecation of "missing_value" from <<attribute-appendix>>.
+* {tickets}93.html[Ticket #93]: Added two new dimensionless coordinates to Appendix D.
+* Ticket #69. Added Section 5.6.1, Use of the CRS Well-known Text Format and related changes.
+* {tickets}65.html[Ticket #65]: add range entry in Appendix E.
+* {tickets}64.html[Ticket #64]: section 7.3 editorial correction, replace "cell_bounds" with "bounds".
+* {tickets}61.html[Ticket #61]: two new cell methods in Appendix E.
+
+=== Version 1.6 (5 December 2011)
+
+* {tickets}37.html[Ticket #37]: Added Chapter 9, Discrete Sampling Geometries, and a related Appendix H, and revised several other chapters.
+* In Appendix H (Annotated Examples of Discrete Geometries), updated standard names "station_description" and "station_wmo_id" to "platform_name" and "platform_id".
+
+=== Version 1.5 (25 October 2010)
+
+* {tickets}47.html[Ticket #47]: error in example 7.4
+* {tickets}51.html[Ticket #51]: syntax consistency for dimensionless vertical coordinate definitions
+* {tickets}56.html[Ticket #56]: typo in CF conventions doc
+* {tickets}57.html[Ticket #57]: fix for broken URLs in CF Conventions document
+* {tickets}58.html[Ticket #58]: remove deprecation of "missing_value" attribute
+* {tickets}49.html[Ticket #49]: clarification of flag_meanings attribute
+* {tickets}33.html[Ticket #33]: cell_methods for statistical indices
+* {tickets}45.html[Ticket #45]: Fixed defect of outdated Conventions attribute.
+* {tickets}44.html[Ticket #44]: Fixed defect by clarifying that coordinates indicate gridpoint location in <<coordinate-types>>.
+* Fixed defect in Mercator section of <<appendix-grid-mappings>> by updating to version 12 of Grid Map Names.
+* {tickets}34.html[Ticket #34]: Added grid mappings Lambert Cylindrical Equal Area, Mercator, and Orthographic to <<appendix-grid-mappings>>.
+
+=== Version 1.4 (27 February 2009)
+
+* {tickets}17.html[Ticket #17]: Changes related to removing ambiguity in <<cell-methods>>.
+* {tickets}36.html[Ticket #36]: Fixed defect related to subsection headings in <<parametric-v-coord>>.
+* {tickets}35.html[Ticket #35]: Fixed defect in wording of <<coordinate-system>>.
+* {tickets}32.html[Ticket #32]: Fixed defect in <<coordinate-system>>.
+* {tickets}30.html[Ticket #30]: Fixed defect in <<atm-sigma-coord-ex,Example 4.3, “Atmosphere sigma coordinate”>>.
+
+=== Version 1.3 (4 May 2008)
+
+* {tickets}26.html[Ticket #26]: <<flags>>, <<attribute-appendix>>, <<standard-name-modifiers>> : Enhanced the Flags definition to support bit field notation using a **`flag_masks`** attribute.
+
+=== Version 1.2 (4 May 2008)
+
+* {tickets}25.html[Ticket #25]: <<table-supported-units,Table 3.1, "Supported Units">> : Corrected Prefix for Factor "1e-2" from "deci" to "centi".
+* {tickets}18.html[Ticket #18]: <<grid-mappings-and-projections>>, <<appendix-grid-mappings>> : Additions and revisions to CF grid mapping attributes to support the specification of coordinate reference system properties
+
+=== Version 1.1 (17 January 2008)
+
+* 17 January 2008: <<coordinate-types>>, <<coordinate-system>>: Made changes regarding use of the axis attribute to identify horizontal coordinate variables.
+* 17 January 2008: Changed text to refer to rules of CF governance, and provisional status.
+* 21 March 2006: Added <<atmosphere-natural-log-pressure-coordinate,the section called "Atmosphere natural log pressure coordinate">>.
+* 21 March 2006: Added <<azimuthal-equidistant,the section called "Azimuthal equidistant">>.
+* 25 November 2005: <<atmosphere-hybrid-height-coordinate,the section called "Atmosphere hybrid height coordinate">> : Fixed definition of atmosphere hybrid height coordinate.
+* 22 October 2004: Added <<lambert-conformal-projection>>.
+* 20 September 2004: <<cell-methods>> : Changed several incorrect occurrences of the cell method **`"standard deviation"`** to **`"standard_deviation"`**.
+* 1 July 2004: <<multiple-forecasts-from-single-analysis>> : Added **`positive`** attribute to the scalar coordinate p500 to make it unambiguous that the pressure is a vertical coordinate value.
+* 1 July 2004: <<scalar-coordinate-variables>> : Added note that use of scalar coordinate variables inhibits interoperability with COARDS conforming applications.
+* 14 June 2004: <<polar-stereographic,the section called "Polar Stereographic">> : Added **`latitude_of_projection_origin`** map parameter.
+* 14 June 2004: Added <<lambert-azimuthal-equal-area,the section called “Lambert azimuthal equal area”>>.
+
+=== Version 1.0 (28 October 2003)
+
+Initial release.

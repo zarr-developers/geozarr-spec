@@ -1,0 +1,152 @@
+# ====================================================================
+# Source code for cfdm_coordinates
+#
+# cfdm_coordinates.svg created with:
+#
+# $ dot -T svg cfdm_coordinates.gv cfdm_coordinates.svg
+# ====================================================================
+
+digraph {splines=ortho nodesep="+0.25"
+
+node [
+     style="filled,bold"
+     shape=rectangle
+     fillcolor="#C3FFC2"
+     width=1.0
+     height=0.5
+     fontname="Arial"
+     ]
+
+# --------------------------------------------------------------------
+# Notes
+# --------------------------------------------------------------------
+Note [
+       style=filled
+       fillcolor=white
+       label="Dimension and Auxiliary\nCoordinate constructs
+are related to\nDomainAxis via the\n(implicit) domain mapping"
+       fontsize="11.0"
+       fontname="Arial"
+       ]
+
+# --------------------------------------------------------------------
+# CF-netCDF variables
+# --------------------------------------------------------------------
+BoundaryVariable [
+       fillcolor="#C3FFFF"
+       label="CN::Boundary\nVariable"
+       ]
+CoordinateVariable [
+       fillcolor="#C3FFFF"
+       label="CN::Coordinate\nVariable"
+       ]
+
+AuxiliaryCoordinateVariable [
+       fillcolor="#C3FFFF"
+       label="CN::Auxiliary\nCoordinate\nVariable"
+       ]
+
+ScalarCoordinateVariable [
+       fillcolor="#C3FFFF"
+       label="CN::Scalar\nCoordinate\nVariable"
+       ]
+
+Dimension [
+       fillcolor="#C3FFFF"
+       label="CN::Dimension"
+       ]
+
+GenericCoordinateVariable [
+      label="<<abstract>>\nGeneric\nCoordinate\nVariable"
+      fillcolor=white
+      ]
+
+# --------------------------------------------------------------------
+# CF data model constructs
+# --------------------------------------------------------------------
+GenericCoordinateConstruct [
+      label="<<abstract>>\nGeneric\nCoordinate\nConstruct"
+      fillcolor=white
+      ]
+DomainAxis [
+     label="<<construct>>\nDomainAxis"
+     ]
+AuxiliaryCoordinate [
+        label="<<construct>>\nAuxillaryCoordinate"
+        ]
+DimensionCoordinate [
+        label="<<construct>>\nDimensionCoordinate"
+        ]
+
+# --------------------------------------------------------------------
+# Invisible nodes used to aid in layout
+# --------------------------------------------------------------------
+node [
+     width=0
+     height=0
+     size=fixed
+     shape=none
+     label=""
+     ]
+route1
+route2
+route3
+route4
+route5
+route6
+
+edge [arrowtail=none
+      arrowhead=vee
+      dir=both
+      arrowsize=1.0
+      fontname="Arial"
+      labelfontsize=11.0
+      ]
+
+GenericCoordinateConstruct -> route1 [arrowtail=empty arrowhead=none]
+route1 -> DimensionCoordinate [arrowhead=none]
+GenericCoordinateConstruct -> AuxiliaryCoordinate [arrowtail=empty
+                                 arrowhead=none
+                weight=100]
+AuxiliaryCoordinate -> route2 [arrowhead=none weight=100]
+route2 -> AuxiliaryCoordinateVariable [weight=100]
+DimensionCoordinate -> CoordinateVariable [weight=100
+                                           taillabel="                  either/or"
+             labeldistance=1.1
+             ]
+
+AuxiliaryCoordinateVariable -> GenericCoordinateVariable [arrowtail=none
+                                        arrowhead=empty]
+BoundaryVariable -> route3 [arrowtail=vee arrowhead=none weight=100
+                taillabel="0..1        " labeldistance=1.1]
+route3 -> GenericCoordinateVariable [arrowhead=none weight=100]
+
+{rank=same; GenericCoordinateConstruct, route1, DimensionCoordinate, route6}
+{rank=same; AuxiliaryCoordinate, BoundaryVariable}
+{rank=same; AuxiliaryCoordinateVariable, GenericCoordinateVariable, route4}
+{rank=same; Note, route2, route3, CoordinateVariable}
+{rank=same; DomainAxis, ScalarCoordinateVariable}
+
+GenericCoordinateVariable -> route4 [arrowtail=empty arrowhead=none]
+route4 -> CoordinateVariable  [arrowhead=none weight=100]
+route4 -> ScalarCoordinateVariable [arrowhead=none weight=100]
+
+DomainAxis -> Dimension [weight=100
+             taillabel=" either/or "
+        headlabel="0..1  "]
+DomainAxis -> ScalarCoordinateVariable [taillabel=" either/or"
+          headlabel="0..1    "]
+
+DimensionCoordinate -> route6 [arrowhead=none taillabel=" either/or"]
+route6 -> ScalarCoordinateVariable []
+
+# --------------------------------------------------------------------
+# Invisible edges used to aid in layout
+# --------------------------------------------------------------------
+route3 -> CoordinateVariable [style=invis]
+ScalarCoordinateVariable -> CoordinateVariable [style=invis weight=100]
+AuxiliaryCoordinateVariable -> DomainAxis [style=invis weight=100]
+EitherOr -> GenericCoordinateVariable [style=invis]
+
+
+}

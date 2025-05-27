@@ -1,0 +1,186 @@
+# ====================================================================
+# Source code for cfdm_field
+#
+# cfdm_field.gv created with:
+#
+# $ dot -T svg cfdm_field.gv -o cfdm_field.svg
+# ====================================================================
+
+digraph {splines=ortho nodesep="+0.25"
+
+node [
+     style="filled,bold"
+     shape=rectangle
+     fillcolor="#C3FFC2"
+     width=1.5
+     height=0.7
+     fontname="Arial"
+     ]
+
+# --------------------------------------------------------------------
+# CF data model constructs
+# --------------------------------------------------------------------
+Domain [
+       label="<<construct>>\nDomain"
+       width=2
+       height=1
+       ]
+Field [
+      label="<<construct>>\nField"
+      width=2.5
+      height=1
+      ]
+CellMethod [
+     label="<<construct>>\nCellMethod"
+		    width=2
+     ]
+DomainAxis [
+     label="<<construct>>\nDomainAxis"
+		    width=2
+     ]
+DomainAncillary [
+      label="<<construct>>\nDomainAncillary"
+		    width=2
+      ]
+CellMeasure [
+      label="<<construct>>\nCellMeasure"
+		    width=2
+      ]
+CoordinateReference [
+		    label="<<construct>>\nCoordinateReference "
+		    width=2
+		    ]
+AuxiliaryCoordinate [
+        label="<<construct>>\nAuxillaryCoordinate"
+		    width=2
+        ]
+DimensionCoordinate [
+        label="<<construct>>\nDimensionCoordinate"
+		    width=2
+        ]
+FieldAncillary [
+	       label="<<construct>>\nFieldAncillary"
+		    width=2
+	       ]
+DomainTopology [
+	       label="<<construct>>\nDomainTopology"
+		    width=2
+	       ]
+CellConnectivity [
+	       label="<<construct>>\nCellConnectivity"
+		    width=2
+	       ]
+GenericCoordinate [
+      label="<<abstract>>\nGeneric\nCoordinate\nConstruct"
+		    width=2
+      fillcolor=white
+      ]
+
+# --------------------------------------------------------------------
+# Invisible nodes used to aid in layout
+# --------------------------------------------------------------------
+node [
+     width=0
+     height=0
+     size=fixed
+     shape=none
+     label=""
+     ]
+route1
+route2
+route3
+route4
+route5
+route6
+route7
+route8
+route9
+route10
+route11
+route12
+route13
+
+edge [dir=both
+      arrowsize=1.0
+      fontname="Arial"
+      labelfontsize=11.0
+      ]
+
+Field -> route1 [arrowtail=odiamond arrowhead=none weight=100]
+Field -> route2 [arrowtail=diamond arrowhead=none weight=100]
+route2 -> FieldAncillary [arrowhead=vee arrowtail=none
+                          headlabel="0..*    "
+                          weight=100 minlen=7]
+{rank=same; route1, route2, FieldAncillary}
+#-----------------------------
+route1 -> route3 [arrowtail=none arrowhead=none weight=100]
+route2 -> route4 [arrowtail=none arrowhead=none weight=100]
+route4 -> CellMethod [arrowhead=vee arrowtail=none
+                      headlabel="0..*    "
+                      weight=100 minlen=7]
+{rank=same; route3, route4, CellMethod}
+#-----------------------------
+route3 -> Domain  [arrowtail=none arrowhead=vee
+                   headlabel="0..1   " weight=100]
+Domain -> route5  [arrowtail=diamond arrowhead=none 
+                   weight=100 labelfontsize=11.0 minlen=2]
+route5 -> DomainAxis [arrowtail=none arrowhead=vee
+                      headlabel="0..*    " weight=100 minlen=3]
+route6 -> DimensionCoordinate [arrowtail=none arrowhead=none
+                               weight=100 minlen=2]
+CellMethod -> DomainAxis  [arrowtail=none arrowhead=vee
+                           headlabel="0..*   " weight=100]
+{rank=same; Domain, route5, DomainAxis, route6, DimensionCoordinate} 
+#-----------------------------
+route5 -> route7 [arrowhead=none arrowtail=none weight=100]
+route6 -> route8 [arrowtail=none arrowhead=none weight=100]
+route7 -> GenericCoordinate [arrowtail=none arrowhead=vee
+                             headlabel="0..*    " weight=100 minlen=3]
+GenericCoordinate -> route8 [arrowtail=empty arrowhead=none
+                             weight=100 minlen=2]
+route8 -> AuxiliaryCoordinate [arrowtail=none arrowhead=none minlen=2]
+{rank=same; route7, GenericCoordinate, route8, AuxiliaryCoordinate}
+#-----------------------------
+route7 -> route9 [arrowtail=none arrowhead=none weight=100]
+route9 -> CoordinateReference[arrowtail=none arrowhead=vee
+                              headlabel="0..*    " weight=100 minlen=3]
+GenericCoordinate -> CoordinateReference [arrowtail=vee arrowhead=none
+                                          taillabel="0..*   " weight=100]
+{rank=same; route9, CoordinateReference}
+#-----------------------------
+route9 -> route10 [arrowtail=none arrowhead=none weight=100]
+route10 -> DomainAncillary [arrowtail=none arrowhead=vee
+                            weight=100 headlabel="0..*    "  minlen=3]
+CoordinateReference -> DomainAncillary [arrowtail=none arrowhead=vee 
+                                        headlabel="0..*   " weight=100] 
+{rank=same; route10, DomainAncillary}
+#-----------------------------
+route10 -> route11 [arrowtail=none arrowhead=none weight=100]
+route11 -> CellMeasure [arrowtail=none arrowhead=vee
+                        weight=100 headlabel="0..*    "  minlen=3]
+{rank=same; route11, CellMeasure}
+#-----------------------------
+route11 -> route12 [arrowtail=none arrowhead=none weight=100]
+route12 -> DomainTopology [arrowtail=none arrowhead=vee weight=100
+	                   headlabel="0..*    "  minlen=3]
+{rank=same; route12, DomainTopology}
+#-----------------------------
+route12 -> route13 [arrowtail=none arrowhead=none weight=100]
+route13 -> CellConnectivity [arrowtail=none arrowhead=vee weight=100
+      	                     headlabel="0..*    "  minlen=3]
+{rank=same; route13, CellConnectivity}
+#-----------------------------
+
+# --------------------------------------------------------------------
+# Invisible edges used to aid in layout
+# --------------------------------------------------------------------
+route1 -> route2 [style=invis weight=100 minlen=3]
+route3 -> route4 [style=invis weight=100 minlen=3]
+FieldAncillary -> CellMethod [style=invis weight=100]
+DomainAxis -> route6 [style=invis weight=100 minlen=2]
+DomainAxis -> GenericCoordinate [style=invis weight=100]
+DimensionCoordinate -> AuxiliaryCoordinate  [style=invis weight=100]
+DomainAncillary -> CellMeasure [style=invis weight=100]
+CellMeasure -> DomainTopology [style=invis weight=100]
+DomainTopology -> CellConnectivity [style=invis weight=100]
+}

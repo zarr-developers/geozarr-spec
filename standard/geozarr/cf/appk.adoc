@@ -1,0 +1,148 @@
+
+[[appendix-mesh-topology-attributes, Appendix K, Mesh Topology Attributes]]
+
+[appendix]
+== Mesh Topologies
+
+The CF attributes listed here may be used to define mesh topologies (<<mesh-topology-variables>>).
+This list is intended as a summary of the attributes that have been standardized via the UGRID conventions <<UGRID>>, which should be consulted for further details.
+UGRID attributes that are not currently recognised by the CF convensions are included in the list.
+
+The "Type" values are **S** for string and **I** for integer.
+The "Use" values are **MT** for mesh topology variables, **LIS** for location index set variables, **D** for data variables, **Do** for domain variables, and **Con** for connectivity index variables.
+
+[[table-mesh-topology-attributes]]
+.Mesh topology attributes
+[options="header",cols="6,2,4,12",caption="Table K.1. "]
+|===============
+|{set:cellbgcolor!}
+Attribute
+| Type
+| Use
+| Description
+
+| **`boundary_node_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying the nodes that define where boundary condtions have been provided. Not currently recognised by the CF conventions.
+
+| **`cf_role`**
+| S
+| MT, LIS
+| Specifies the roles of mesh topology or location index set variables.
+
+| **`coordinates`**
+| S
+| LIS
+| Specifies the auxiliary coordinate variables associated with the characteristic locations of the subset of mesh topology locations.
+
+| **`edge_coordinates`**
+| S
+| MT
+| Specifies the auxiliary coordinate variables associated with the characteristic location of the edges (commonly the midpoint).
+
+| **`edge_dimension`**
+| S
+| MT
+| Specifies the dimension used to index the nodes in the edge connectivity variable.
+
+| **`edge_face_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying all faces that share the same edge, i.e. are neighbours to an edge. 
+
+| **`edge_node_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every edge the indices of its begin and end nodes.
+
+| **`face_coordinates`**
+| S
+| MT
+| Specifies the auxiliary coordinate variables associated with the characteristic location of faces. 
+
+| **`face_dimension`**
+| S
+| MT
+| Specifies the dimension used to index the edges in the face connectivity variable.
+
+| **`face_edge_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every face the indices of its edges.
+
+| **`face_face_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying all faces that share an edge with each face, i.e. are neighbours. 
+
+| **`face_node_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every face the indices of its corner nodes.
+
+| **`location`**
+| S
+| D, Do, LIS
+| Specifies the location within the mesh topology at which the variable is defined.
+
+| **`location_index_set`**
+| S
+| D, Do
+| Specifies a variable that defines the subset of locations of a mesh topology at which the variable is defined.
+
+| **`mesh`**
+| S
+| D, Do, LIS
+| Specifies a variable that defines a mesh topology.
+
+| **`node_coordinates`**
+| S
+| MT
+| Specifies the auxiliary coordinate variables representing the node locations (latitude, longitude, or other spatial coordinates, and optional elevation or other coordinates).
+
+| **`start_index`**
+| I
+| LIS, Con
+| Indicates whether 0- or 1-based indexing is used to identify connected geometric elements; connectivity indices are 0-based by default.
+
+| **`topology_dimension`**
+| I
+| MT
+| Indicates the highest dimensionality of the geometric elements.
+
+| **`volume_coordinates`**
+| S
+| MT
+| Specifies the auxiliary coordinate variables associated with the characteristic location of volumes. Not currently recognised by the CF conventions.
+
+| **`volume_dimension`**
+| S
+| MT
+| Specifies the dimension used to index the faces in the volume connectivity variable. Not currently recognised by the CF conventions.
+
+| **`volume_edge_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every volume the indices of its edges. 
+
+| **`volume_face_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every volume the indices of its faces. Not currently recognised by the CF conventions.
+
+| **`volume_node_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying for every volume the indices of its corner nodes. Not currently recognised by the CF conventions.
+
+| **`volume_shape_type`**
+| S
+| MT
+| Specifies a flag variable that specifies for every volume its shape. Not currently recognised by the CF conventions.
+
+| **`volume_volume_connectivity`**
+| S
+| MT
+| Specifies an index variable identifying all volumes that share a face with each volume, i.e. are neighbours. Not currently recognised by the CF conventions.
+|===============
