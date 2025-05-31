@@ -2,7 +2,7 @@
 
 GeoZarr Spec aims to provide a geospatial extension to the Zarr specification. Zarr specifies a protocol and format used for storing Zarr arrays, while the present extension defines **conventions** and recommendations for storing **multidimensional georeferenced grid** of geospatial observations (including rasters). 
 
-The latest Editor's Draft version of OGC GeoZarr Specificationis found here in [HTML](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html) or [PDF](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.pdf)
+The latest Editor's Draft version of OGC GeoZarr Specifications found here in [HTML](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html) or [PDF](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.pdf)
 
 The following writings aim to introduce the fundamental concepts of geospatial data models and outline the context and motivation underpinning the development of GeoZarr:
 
