@@ -1,0 +1,3 @@
+== Unified Data Model Encoding for GeoTiff
+
+TIP: This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.

@@ -1,16 +1,49 @@
 == Conformance
-This standard defines XXXX.
 
-Requirements for N standardization target types are considered:
+The GeoZarr Unified Data Model is structured around a modular set of requirements classes. These classes define the conformance criteria for datasets and implementations adopting the GeoZarr specification. Each class provides a distinct set of structural or semantic expectations, facilitating interoperability across a broad spectrum of geospatial and scientific use cases.
 
-* AAAA
-* BBBB
+The *Core* requirements class defines the minimal compliance necessary to claim conformance with the GeoZarr Unified Data Model. It is intentionally open and permissive, supporting incremental adoption and broad compatibility with existing Zarr tools and data models based on the Unidata Common Data Model (CDM).
 
-Conformance with this standard shall be checked using all the relevant tests specified in Annex A (normative) of this document. The framework, concepts, and methodology for testing, and the criteria to be achieved to claim conformance are specified in the OGC Compliance Testing Policies and Procedures and the OGC Compliance Testing web site.
+Additional requirements classes are defined to support enhanced functionality, semantic richness, and interoperability with established geospatial conventions and systems. These include extensions for time series, coordinate systems, affine transformations, and multiscale tiling.
 
-In order to conform to this OGC® interface standard, a software implementation shall choose to implement:
+.Requirements Classes Overview
+[cols="30,40,30", options="header"]
+|===
+|Requirements Class | Description | Identifier
 
-* Any one of the conformance levels specified in Annex A (normative).
-* Any one of the Distributed Computing Platform profiles specified in Annexes TBD through TBD (normative).
+|Core Model
+|Specifies minimum conformance for encoding multidimensional datasets in Zarr using CDM-aligned constructs. Includes dimensions, variables, attributes, and groups.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/core`
 
-All requirements-classes and conformance-classes described in this document are owned by the standard(s) identified.
+|Time Series Support
+|Defines conventions for temporal dimensions and time coordinate variables to support time-aware arrays.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/time`
+
+|Coordinate Reference Systems
+|Specifies use of CF-compliant CRS metadata, including `grid_mapping`, `standard_name`, and EPSG codes.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/crs`
+
+|GeoTransform Metadata
+|Enables affine spatial referencing via GDAL-compatible `GeoTransform` metadata and optional interpolation hints.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/geotransform`
+
+|Multiscale Overviews
+|Specifies multiscale tiled layout using zoom levels and Tile Matrix Sets as per OGC API – Tiles.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/overviews`
+
+|STAC Metadata Integration
+|Allows embedding or referencing of STAC Collection/Item metadata for discovery and indexing.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/stac`
+
+|Projection Coordinates
+|Supports encoding of data in projected coordinate systems and association with spatial reference metadata.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/projected`
+
+|Spectral Bands
+|Defines conventions for encoding multi-band imagery, including band identifiers, wavelengths, and metadata attributes.
+|`http://www.opengis.net/spec/geozarr/1.0/conf/bands`
+|===
+
+Each requirements class is independently defined. Implementations may declare conformance with any subset of classes appropriate to their use case. All classes build upon the Core model.
+
+Associated conformance tests for each class are detailed in Annex A.
