@@ -112,9 +112,9 @@ See <<attribute-appendix>> for a list of attributes described by this standard.
 [[identification-of-conventions]]
 ==== Identification of Conventions
 
-\\TODO: Check how this aligns to the Zarr extension mechanism or GeoZarr conformance class registration system.
+//TODO: Check how this aligns to the Zarr extension mechanism or GeoZarr conformance class registration system.
 Files that follow this version of the CF Conventions must indicate this by setting the <<NUG>> defined global attribute **`Conventions`** to a string value that contains "**`CF-{current-version-as-attribute}`**".
-\\TODO: Update link to GeoZarr CF conformance class.
+//TODO: Update link to GeoZarr CF conformance class.
 The Conventions version number contained in that string can be used to find the web based versions of this document are from the link:$$https://cfconventions.org/$$[netCDF Conventions web page].
 Subsequent versions of the CF Conventions will not make invalid a compliant usage of this or earlier versions of the CF terms and forms.
 

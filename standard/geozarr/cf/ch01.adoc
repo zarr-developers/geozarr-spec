@@ -109,13 +109,14 @@ array:: An array in the Zarr data model aligns with a Variable in the NetCDF dat
 
 No array or dimension names are standardized by this convention.
 Instead we follow the lead of the <<NUG>> and standardize only the names of attributes and some of the values taken by those attributes.
-TODO: evaluate - 
-    Array or dimension names can either be a single array name or a path to an array.
+//TODO: Add example of where it's a path to an array.
+Array or dimension names can either be a single array name or a path to an array.
+
 The overview provided in this section will be followed with more complete descriptions in following sections.
 <<attribute-appendix>> contains a summary of all the attributes used in this convention.
 
-TODO: Update for GeoZarr conformance class registration system -
-    Files using this version of the CF Conventions must set the <<NUG>> defined attribute **`Conventions`** to contain the string value "**`CF-{current-version-as-attribute}`**" to identify datasets that conform to these conventions.
+//TODO: Update for GeoZarr conformance class registration system:
+Files using this version of the CF Conventions must set the <<NUG>> defined attribute **`Conventions`** to contain the string value "**`CF-{current-version-as-attribute}`**" to identify datasets that conform to these conventions.
 
 The general description of a Zarr store's contents should be contained in the following attributes: **`title`**, **`history`**, **`institution`**, **`source`**, **`comment`** and **`references`** (<<description-of-file-contents>>).
 For backwards compatibility with COARDS none of these attributes is required, but their use is recommended to provide human readable documentation of the file contents.

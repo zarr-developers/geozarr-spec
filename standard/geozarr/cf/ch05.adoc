@@ -13,7 +13,8 @@ Any longitude, latitude, vertical or time coordinate which depends on more than 
 The value of the **`coordinates`** attribute is __a blank separated list of the names of auxiliary coordinate arrays__.
 There is no restriction on the order in which the auxiliary coordinate arrays appear in the **`coordinates`** attribute string.
 The dimensions of an auxiliary coordinate array must be a subset of the dimensions of the array with which the coordinate is associated, with three exceptions.
-First, string-valued coordinates (<<labels>>) will have a dimension for maximum string length if the coordinate array has a type of **`char`** rather than a type of **`string`**. //TODO: Check if valid for Zarr
+First, string-valued coordinates (<<labels>>) will have a dimension for maximum string length if the coordinate array has a type of **`char`** rather than a type of **`string`**.
+//TODO: Check if valid for Zarr
 Second, if an auxiliary coordinate array of a data array that has been compressed by gathering (<<compression-by-gathering>>) does not span the compressed dimension, then
 its dimensions may be any subset of the data array's uncompressed dimensions, i.e. any of the dimensions of the data array except the compressed dimension, and any of the dimensions
 listed by the **`compress`** attribute of the compressed coordinate array.
