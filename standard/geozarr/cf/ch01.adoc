@@ -93,7 +93,7 @@ sibling group:: Any group with the same parent group as the referring group
 
 spatiotemporal dimension:: A dimension of an array that is used to identify a location in time and/or space.
 
-tie point array:: An array ble that contains coordinates that have been compressed by sampling.
+tie point array:: An array that contains coordinates that have been compressed by sampling.
 There is no relationship between the name of a tie point array and the name(s) of its dimension(s).
 
 time dimension:: A dimension of an array that has an associated time coordinate array.
