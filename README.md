@@ -43,7 +43,7 @@ Information about how to get involved in this process will be announced soon/
 
 ## Document and Resources
 
-Specification [Document](geozarr-spec.md) - [Change Log](https://github.com/christophenoel/geozarr-spec/wiki)
+Specification [Document](geozarr-spec.md)
 
 Demonstration Videos ([Youtube channel](https://youtube.com/playlist?list=PLzPGC4s5HQOPdeLoK1MXK6gEa1x2Az8Dn)):
 - Project Presentation (at WGISS-53) [GeoZarr Data Store - Context of the ESA GSTP project](https://youtu.be/NYhh66EstnY)
