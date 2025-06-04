@@ -57,10 +57,10 @@ To avoid confusion with coordinate arrays, CF does not permit a one-dimensional 
 
 datetime:: The set of numbers which together identify an instant of time, namely its year, month, day, hour, minute and second, where the second may have a fraction but the others are all integer.
 
-grid mapping array:: A array used as a container for attributes that define a specific grid mapping.
+grid mapping array:: An array used as a container for attributes that define a specific grid mapping.
 The type of the array is arbitrary since it contains no data.
 
-interpolation array:: A array used as a container for attributes that define a specific interpolation method for uncompressing tie point arrays.
+interpolation array:: An array used as a container for attributes that define a specific interpolation method for uncompressing tie point arrays.
 The type of the array is arbitrary since it contains no data.
 
 latitude dimension:: A dimension of an array that has an associated latitude coordinate array.
@@ -191,4 +191,4 @@ See the original NetCDF CF convention for the relationship with the UGRIG Conven
 [[netcdf-cf-conventions, Section 1.7, "NetCDF CF Conventions"]]
 === NetCDF CF Conventions
 
-This conformance class is derived directly from the NetCDF CF Conventions, with the explicit goal to only modify that which is necessary to use CF with the Zarr data model and specification. 
+This conformance class is derived directly from the NetCDF CF Conventions, with the explicit goal to only modify that which is necessary to use CF with the Zarr data model and specification.
