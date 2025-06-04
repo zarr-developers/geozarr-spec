@@ -1,6 +1,0 @@
-[requirement,type="general",id="/req/req-class-a/req-name-1",label="/req/req-class-a/req-name-1",obligation="requirement"]
-====
-
-Requirement 'shall' statement
-
-====

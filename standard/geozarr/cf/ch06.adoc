@@ -1,0 +1,6 @@
+==  Labels and Alternative Coordinates 
+
+[[labels, Section 6.1, "Labels"]]
+=== Labels
+
+Labels are not yet included in CF Zarr.

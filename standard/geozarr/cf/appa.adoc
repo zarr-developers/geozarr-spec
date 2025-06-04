@@ -1,0 +1,409 @@
+[[attribute-appendix, Appendix A, Attributes]]
+
+[appendix]
+== Attributes
+
+All CF attributes are listed here except for those that are used to describe grid mappings and mesh topologies.
+See <<appendix-grid-mappings>> for the grid mapping attributes, and <<appendix-mesh-topology-attributes>> for mesh topology attributes.
+
+The "Type" values are **S** for string, **N** for numeric, and **D** for the type of the data variable.
+Each attribute may be used in any of the ways shown in its "Use" entry.
+**G** indicates it can appear as a global attribute, and **Gr** as a group attribute.
+For variable attributes, the possible values of "Use" are: **C** for variables containing coordinate data, **D** for data variables, **M** for geometry container variables, **Q** for quantization container variables, **Do** for domain variables, **BI** and **BO** for boundary variables (see <<cell-boundaries>> for the distinction between **BI** and **BO**), and **-** for variables with some other purpose.
+CF does not prohibit any of these attributes from being attached to variables of different kinds from those listed as their "Use" in this table, but their meanings are not defined by CF if they are used in these other ways.
+"Links" indicates the location of the attribute"s original definition (first link) and sections where the attribute is discussed in this document (additional links as necessary).
+
+[[table-attributes]]
+.Attributes
+[options="header",cols="6,2,2,8,12",caption="Table A.1. "]
+|===============
+|{set:cellbgcolor!}
+Attribute
+| Type
+| Use
+| Links
+| Description
+
+| **`actual_range`**
+| N
+| C, D, BO
+| <<missing-data>>
+| The smallest and the largest valid non-missing values occurring in the variable.
+
+| **`add_offset`**
+| N
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"], and <<packed-data>>
+| If present for a variable, this number is to be added to the data after it is read by an application.
+If both **`scale_factor`** and **`add_offset`** attributes are present, the data are first scaled before the offset is added.
+In cases where there is a strong constraint on dataset size, it is allowed to pack the coordinate variables (using add_offset and/or scale_factor), but this is not recommended in general.
+
+| **`algorithm`**
+| S
+| Q
+| <<quantization-variables>>, and <<quantization-algorithms-description>>
+| Name of the quantization algorithm employed.
+
+| **`ancillary_variables`**
+| S
+| D
+| <<ancillary-data>>
+| Identifies a variable that contains closely associated data, e.g., the measurement uncertainties of instrument data.
+
+| **`axis`**
+| S
+| C, BI
+| <<coordinate-types>>
+| Identifies latitude, longitude, vertical, or time axes.
+
+| **`bounds`**
+| S
+| C
+| <<cell-boundaries>>
+| Identifies a boundary variable.
+
+| **`calendar`**
+| S
+| C, BI
+| <<calendar>>
+| Calendar used for encoding time axes.
+
+| **`cell_measures`**
+| S
+| D, Do
+| <<cell-measures>>
+| Identifies variables that contain cell areas or volumes.
+
+| **`cell_methods`**
+| S
+| D
+| <<cell-methods>>, <<climatological-statistics>>
+| Records the method used to derive data that represents cell values.
+
+| **`cf_role`**
+| S
+| C, BI
+| <<coordinates-metadata>>
+| Identifies the roles of variables that identify features in discrete sampling geometries.
+Identifies the roles of mesh topology and location index set variables (see <<appendix-mesh-topology-attributes>>).
+
+| **`climatology`**
+| S
+| C
+| <<climatological-statistics>>
+| Identifies a climatology variable.
+
+| **`comment`**
+| S
+| G, C, D
+| <<description-of-file-contents>>
+| Miscellaneous information about the data or methods used to produce it.
+
+| **`compress`**
+| S
+| C
+| <<compression-by-gathering>>, <<reduced-horizontal-grid>>
+| Records dimensions which have been compressed by gathering.
+
+| **`computed_standard_name`**
+| S
+| C, BI
+| <<parametric-vertical-coordinate>>
+| Indicates the standard name, from the standard name table, of the computed vertical coordinate values, computed according to the formula in the definition.
+
+| **`Conventions`**
+| S
+| G
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| Name of the conventions followed by the dataset.
+
+| **`coordinate_interpolation`**
+| S
+| D, Do
+| <<compression-by-coordinate-subsampling>>
+| Indicates that coordinates have been compressed by sampling and identifies the tie point coordinate variables and their associated interpolation variables.
+
+| **`coordinates`**
+| S
+| D, M, Do
+| <<coordinate-system>>, <<labels>>, <<alternative-coordinates>>
+| Identifies auxiliary coordinate variables, label variables, and alternate coordinate variables.
+
+|**`dimensions`**
+| S
+| Do
+| <<domain-variables>>
+| Identifies the dimensions that define a domain variable.
+
+|**`external_variables`**
+| S
+| G
+| <<external-variables>>, <<cell-measures>>
+| Identifies variables which are named by **`cell_measures`** attributes in the file but which are not present in the file.
+
+
+| **`_FillValue`**
+| D
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"], and <<missing-data>>, and <<ch9-missing-data>>.
+
+| A value used to represent missing or undefined data.
+Allowed for auxiliary coordinate variables but not allowed for coordinate variables.
+
+| **`featureType`**
+| S
+| G
+| <<featureType>>
+| Specifies the type of discrete sampling geometry to which the data in the scope of this attribute belongs, and implies that all data variables in the scope of this attribute contain collections of features of that type.
+
+| **`flag_masks`**
+| D
+| D
+| <<flags>>
+| Provides a list of bit fields expressing Boolean or enumerated flags.
+
+| **`flag_meanings`**
+| S
+| D
+| <<flags>>
+| Use in conjunction with **`flag_values`**  to provide descriptive words or phrases for each flag value.
+If multi-word phrases are used to describe the flag values, then the words within a phrase should be connected with underscores.
+
+| **`flag_values`**
+| D
+| D
+| <<flags>>
+| Provides a list of the flag values.
+Use in conjunction with **`flag_meanings`**.
+
+| **`formula_terms`**
+| S
+| C, BO
+| <<parametric-vertical-coordinate>>
+| Identifies variables that correspond to the terms in a formula.
+
+| **`geometry`**
+| S
+| C, D, Do
+| <<geometries>>
+| Identifies a variable that defines geometry.
+
+| **`geometry_type`**
+| S
+| M
+| <<geometries>>
+| Indicates the type of geometry present.
+
+| **`grid_mapping`**
+| S
+| D, M, Do
+| <<grid-mappings-and-projections>>
+| Identifies a variable that defines a grid mapping.
+
+| **`history`**
+| S
+| G, Gr
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| List of the applications that have modified the original data.
+
+| **`implementation`**
+| S
+| Q
+| <<quantization-variables>>, and <<quantization-algorithms-description>>
+| The name and version of the library or client software that performed the quantization with **`algorithm`**.
+
+| **`instance_dimension`**
+| S
+| -
+| <<representations-features>>
+| An attribute which identifies an index variable and names the instance dimension to which it applies.
+The index variable indicates that the indexed ragged array representation is being used for a collection of features.
+
+| **`institution`**
+| S
+| G, D
+| <<description-of-file-contents>>
+| Where the original data was produced.
+
+| **`interior_ring`**
+| S
+| M
+| <<geometries>>
+| Identifies a variable that indicates if polygon parts are interior rings (i.e., holes) or not.
+
+| **`leap_month`**
+| N
+| C, BI
+| <<calendar>>
+| Specifies which month is lengthened by a day in leap years for a user defined calendar.
+
+| **`leap_year`**
+| N
+| C, BI
+| <<calendar>>
+| Provides an example of a leap year for a user defined calendar.
+It is assumed that all years that differ from this year by a multiple of four are also leap years.
+
+| **`location`**
+| S
+| D, Do
+| <<mesh-topology-variables>>, and <<appendix-mesh-topology-attributes>>
+| Specifies the location type within the mesh topology at which the variable is defined.
+
+| **`location_index_set`**
+| S
+| D, Do
+| <<mesh-topology-variables>>, and <<appendix-mesh-topology-attributes>>
+| Specifies a variable that defines the subset of locations of a mesh topology at which the variable is defined.
+
+| **`long_name`**
+| S
+| C, D, Do, BI
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"], and <<long-name>>
+| A descriptive name that indicates a variable's content.
+This name is not standardized.
+
+| **`mesh`**
+| S
+| D, Do 
+| <<mesh-topology-variables>>, and <<appendix-mesh-topology-attributes>>
+| Specifies a variable that defines a mesh topology.
+
+| **`missing_value`**
+| D
+| C, D, BO
+| <<missing-data>>, and <<ch9-missing-data>>
+| A value or values used to represent missing or undefined data.
+Allowed for auxiliary coordinate variables but not allowed for coordinate variables.
+
+| **`month_lengths`**
+| N
+| C, BI
+| <<calendar>>
+| Specifies the length of each month in a non-leap year for a user defined calendar.
+
+| **`node_coordinates`**
+| S
+| M
+| <<geometries>>
+| Identifies variables that contain geometry node coordinates.
+
+| **`node_count`**
+| S
+| M
+| <<geometries>>
+| Identifies a variable indicating the count of nodes per geometry.
+
+| **`nodes`**
+| S
+| C
+| <<geometries>>
+| Identifies a coordinate node variable.
+
+| **`part_node_count`**
+| S
+| M
+| <<geometries>>
+| Identifies a variable providing the count of nodes per geometry part.
+
+| **`positive`**
+| S
+| C, BI
+| <<COARDS>>
+| Direction of increasing vertical coordinate value.
+
+| **`quantization`**
+| S
+| D
+| <<quantization-variables>>
+| Identifies a variable that defines a quantization algorithm and its provenance.
+
+| **`quantization_nsb`**
+| N
+| D
+| <<per-variable-quantization-attributes>>, and <<quantization-algorithms-description>>
+| Specifies the number of significant bits retained in the IEEE mantissa of data quantized with the BitRound algorithm.
+Use in conjunction with **`quantization`**.
+
+| **`quantization_nsd`**
+| N
+| D
+| <<per-variable-quantization-attributes>>, and <<quantization-algorithms-description>>
+| Specifies the number of significant base-10 digits retained in the IEEE mantissa of data quantized with base-10 quantization algorithms.
+Use in conjunction with **`quantization`**.
+
+| **`references`**
+| S
+| G, D
+| <<description-of-file-contents>>
+| References that describe the data or methods used to produce it.
+
+| **`sample_dimension`**
+| S
+| -
+| <<representations-features>>
+| An attribute which identifies a count variable and names the sample dimension to which it applies.
+The count variable indicates that the contiguous ragged array representation is being used for a collection of features.
+
+| **`scale_factor`**
+| N
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"], and <<packed-data>>
+| If present for a variable, the data are to be multiplied by this factor after the data are read by an application.
+See also the **`add_offset`** attribute.
+In cases where there is a strong constraint on dataset size, it is allowed to pack the coordinate variables (using add_offset and/or scale_factor), but this is not recommended in general.
+
+| **`source`**
+| S
+| G, D
+| <<description-of-file-contents>>
+| Method of production of the original data.
+
+| **`standard_error_multiplier`**
+| N
+| D
+| <<standard-name-modifiers>>
+| If a data variable with a standard_name modifier of standard_error has this attribute, it indicates that the values are the stated multiple of one standard error.
+
+| **`standard_name`**
+| S
+| C, D, BI
+| <<standard-name>>
+| A standard name that references a description of a variable"s content in the standard name table.
+
+| **`title`**
+| S
+| G, Gr
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| Short description of the file contents.
+
+| **`units`**
+| S
+| C, D, BI
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"], and <<units>>
+| Units of a variable's content.
+
+| **`units_metadata`**
+| S
+| C, D, BI
+| <<units>>, and <<time-coordinate>>
+| Specifies the interpretation of a unit of measure appearing in the **`units`** attribute.
+
+| **`valid_max`**
+| N
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| Largest valid value of a variable.
+
+| **`valid_min`**
+| N
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| Smallest valid value of a variable.
+
+| **`valid_range`**
+| N
+| C, D, BO
+| link:$$https://www.unidata.ucar.edu/software/netcdf/docs/attribute_conventions.html$$[NUG Appendix A, "Attribute Conventions"]
+| Smallest and largest valid values of a variable.
+|===============

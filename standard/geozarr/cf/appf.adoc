@@ -1,0 +1,568 @@
+[[appendix-grid-mappings, Appendix F, Grid Mappings]]
+
+[appendix]
+== Grid Mappings
+
+Each recognized grid mapping is described in one of the sections below.
+Each section contains: the valid name that is used with the **`grid_mapping_name`** attribute; a list of the specific attributes that may be used to assign values to the mapping's parameters; the standard names used to identify the coordinate variables that contain the mapping's independent variables; and references to the mapping's definition or other information that may help in using the mapping.
+Since the attributes used to set a mapping's parameters may be shared among several mappings, their definitions are contained in a table in the final section.
+The attributes which describe the ellipsoid and prime meridian may be included, when applicable, with any grid mapping.
+These are:
+
+- `earth_radius`
+- `inverse_flattening`
+- `longitude_of_prime_meridian`
+- `prime_meridian_name`
+- `reference_ellipsoid_name`
+- `semi_major_axis`
+- `semi_minor_axis`
+
+In general we have used the FGDC "Content Standard for Digital Geospatial Metadata" <<FGDC>> as a guide in choosing the values for **`grid_mapping_name`** and the attribute names for the parameters describing map projections.
+
+=== Albers Equal Area
+
+----
+grid_mapping_name = albers_conical_equal_area
+----
+
+__Map parameters:__::
+* **`standard_parallel`** - There may be 1 or 2 values.
+* **`longitude_of_central_meridian`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/aea.html$$[https://proj.org/operations/projections/aea.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/albers_equal_area_conic.html$$[http://geotiff.maptools.org/proj_list/albers_equal_area_conic.html].
+
+[[azimuthal-equidistant]]
+=== Azimuthal equidistant
+
+----
+grid_mapping_name = azimuthal_equidistant
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$http://geotiff.maptools.org/proj_list/azimuthal_equidistant.html$$[http://geotiff.maptools.org/proj_list/azimuthal_equidistant.html]
+and
+link:$$https://proj.org/operations/projections/aeqd.html$$[https://proj.org/operations/projections/aeqd.html].
+
+=== Geostationary projection
+
+----
+grid_mapping_name = geostationary
+----
+
+__Map parameters:__::
+* **`latitude_of_projection_origin`**
+* **`longitude_of_projection_origin`**
+* **`perspective_point_height`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+* **`sweep_angle_axis`**
+* **`fixed_angle_axis`**
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_angular_coordinate`** and **`projection_y_angular_coordinate`**, respectively.
+It is assumed that the y-axis is aligned to the Earth's N/S axis, whereas the x-axis aligns with the E/W axis.
+CF specified the standard names **`projection_x_coordinate`** and **`projection_y_coordinate`** for these coordinates prior to version 1.9, but that use is deprecated.
+In the case of this projection, the projection coordinates are the scanning angle of the satellite instrument.
+
+__Notes:__:: The geostationary projection assumes a hypothetical view of the Earth from a perspective above the Earth where the azimuth and elevation viewing angles are described using a hypothetical gimbal model.
+This model is independent of the physical scan principles of any observing instrument.
+The model consists conceptually of a set of two rotating circles with a colocated centre, whose axes of rotation are perpendicular to each other.
+The axis of the outer circle is stationary, while the axis of the inner circle moves about the stationary axis.
+This means that a given viewing angle described using this model is the result of matrix multiplications, which is not commutative, so that order of operations is essential in achieving accurate results.
+The two axes are conventionally called the sweep-angle and fixed-angle axes; we adhere to this terminology, although some find these terms confusing, for the sake of interoperability with existing implementations.
+
++
+The algorithm for computing the mapping may be found at link:$$https://www.cgms-info.org/documents/pdf_cgms_03.pdf$$[https://www.cgms-info.org/documents/pdf_cgms_03.pdf].
+This document assumes the point of observation is directly over the equator, and that the **`sweep_angle_axis`** is y.
+
++
+Explanatory diagrams for the projection may be found link:$$https://proj.org/operations/projections/geos.html$$[on the PROJ website], as well as notes on using the PROJ software for computing the mapping.
+
++
+The **`perspective_point_height`** is the distance to the surface of the ellipsoid.
+
++
+The **`sweep_angle_axis`** attribute indicates the axis on which the view sweeps.
+It corresponds to the outer-gimbal (stable) axis of the gimbal view model.
+For example, the value = "y" corresponds to the Meteosat satellites, the value = "x" to the GOES satellites.
+
++
+The **`fixed_angle_axis`** attribute indicates the axis on which the view is fixed.
+It corresponds to the inner-gimbal axis of the gimbal view model, whose axis of rotation moves about the outer-gimbal axis.
+If **`fixed_angle_axis`** is "x", **`sweep_angle_axis`** is "y", and vice versa.
+Only one of those the attributes **`fixed_angle_axis`** or **`sweep_angle_axis`** is mandatory, as they can be used to infer each other.
+Note also that the values "x" and "y" are not case-sensitive.
+
++
+The use of `projection_x_coordinate` and `projection_y_coordinate` was deprecated in version 1.9 of the CF Conventions.
+The initial definition of this projection used these standard names to identify the projection coordinates even though their canonical units (meters) do not match those required for this projection (radians).
+
+[[lambert-azimuthal-equal-area]]
+=== Lambert azimuthal equal area
+
+----
+grid_mapping_name = lambert_azimuthal_equal_area
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/laea.html$$[https://proj.org/operations/projections/laea.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/lambert_azimuthal_equal_area.html$$[http://geotiff.maptools.org/proj_list/lambert_azimuthal_equal_area.html]
+
+=== Lambert conformal
+
+----
+grid_mapping_name = lambert_conformal_conic
+----
+
+__Map parameters:__::
+* **`standard_parallel`** - There may be 1 or 2 values.
+* **`longitude_of_central_meridian`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at link:$$https://proj.org/operations/projections/lcc.html$$[https://proj.org/operations/projections/lcc.html].
+and
+link:$$http://geotiff.maptools.org/proj_list/lambert_conic_conformal_1sp.html$$[http://geotiff.maptools.org/proj_list/lambert_conic_conformal_1sp.html]
+("Lambert Conic Conformal (1SP)" or EPSG 9801) or
+link:$$http://geotiff.maptools.org/proj_list/lambert_conic_conformal_2sp.html$$[http://geotiff.maptools.org/proj_list/lambert_conic_conformal_2sp.html]
+ ("Lambert Conic Conformal (2SP)" or EPSG 9802). For the 1SP variant, latitude_of_projection_origin=standard_parallel and the PROJ scale factor is 1.
+
+=== Lambert Cylindrical Equal Area
+
+----
+grid_mapping_name = lambert_cylindrical_equal_area
+----
+
+__Map parameters:__::
+* **`longitude_of_central_meridian`**
+* Either **`standard_parallel`** or **`scale_factor_at_projection_origin`** (deprecated)
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software packages for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/cea.html$$[https://proj.org/operations/projections/cea.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/cylindrical_equal_area.html$$[http://geotiff.maptools.org/proj_list/cylindrical_equal_area.html]
+("Lambert Cylindrical Equal Area" or EPSG 9834 or EPSG 9835).
+Detailed formulas can be found in <<Snyder>> pages 76-85.
+
+=== Latitude-Longitude
+
+----
+grid_mapping_name = latitude_longitude
+----
+
+This grid mapping defines the canonical 2D geographical coordinate system based upon latitude and longitude coordinates.
+It is included so that the figure of the Earth can be described.
+
+__Map parameters:__:: None.
+
+__Map coordinates:__:: The rectangular coordinates are longitude and latitude identified by the usual conventions (<<latitude-coordinate>> and <<longitude-coordinate>>).
+
+=== Mercator
+
+----
+grid_mapping_name = mercator
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* Either **`standard_parallel`** (EPSG 9805) or **`scale_factor_at_projection_origin`** (EPSG 9804)
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software packages for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/merc.html$$[https://proj.org/operations/projections/merc.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/mercator_1sp.html$$[http://geotiff.maptools.org/proj_list/mercator_1sp.html]
+("Mercator (1SP)" or EPSG 9804)
+or
+link:$$http://geotiff.maptools.org/proj_list/mercator_2sp.html$$[http://geotiff.maptools.org/proj_list/mercator_2sp.html]
+("Mercator (2SP)" or EPSG 9805).
+
++
+More information on formulas available in <<OGP-EPSG_GN7_2>>.
+
+=== Oblique Mercator
+
+----
+grid_mapping_name = oblique_mercator
+----
+
+__Map parameters:__::
+* **`azimuth_of_central_line`**
+* **`latitude_of_projection_origin`**
+* **`longitude_of_projection_origin`**
+* **`scale_factor_at_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/omerc.html$$[https://proj.org/operations/projections/omerc.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/oblique_mercator.html$$[http://geotiff.maptools.org/proj_list/oblique_mercator.html].
+
+=== Orthographic
+
+----
+grid_mapping_name = orthographic
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software packages for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/ortho.html$$[https://proj.org/operations/projections/ortho.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/orthographic.html$$[http://geotiff.maptools.org/proj_list/orthographic.html]
+("Orthographic" or EPSG 9840).
+
++
+More information on formulas available in <<OGP-EPSG_GN7_2>>.
+
+[[polar-stereographic]]
+=== Polar stereographic
+
+----
+grid_mapping_name = polar_stereographic
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`** or **`straight_vertical_longitude_from_pole`** (deprecated)
+* **`latitude_of_projection_origin`** - Either +90. or -90.
+* Either **`standard_parallel`** (EPSG 9829) or **`scale_factor_at_projection_origin`** (EPSG 9810)
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/stere.html$$[https://proj.org/operations/projections/stere.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/polar_stereographic.html$$[http://geotiff.maptools.org/proj_list/polar_stereographic.html].
+
+The standard_parallel variant corresponds to EPSG Polar Stereographic (Variant B) (EPSG dataset coordinate operation method code 9829), while the scale_factor_at_projection_origin variant corresponds to EPSG Polar Stereographic (Variant A) (EPSG dataset coordinate operation method code 9810).
+As PROJ requires the standard parallel, <<Snyder>> formula 21-7 can be used to compute it from the scale factor if needed.
+
+=== Rotated pole
+
+----
+grid_mapping_name = rotated_latitude_longitude
+----
+
+__Map parameters:__::
+* **`grid_north_pole_latitude`**
+* **`grid_north_pole_longitude`**
+* **`north_pole_grid_longitude`** - This parameter is optional (default is 0).
+
+__Map coordinates:__:: The rotated latitude and longitude coordinates are identified by the **`standard_name`** attribute values **`grid_latitude`** and **`grid_longitude`** respectively.
+
+=== Sinusoidal
+
+----
+grid_mapping_name = sinusoidal
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Notes on using the **`PROJ`** software package for computing the mapping may be found at
+link:$$https://proj.org/operations/projections/sinu.html$$[https://proj.org/operations/projections/sinu.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/sinusoidal.html$$[http://geotiff.maptools.org/proj_list/sinusoidal.html].
+Detailed formulas can be found in <<Snyder>>, pages 243-248.
+
+=== Stereographic
+
+----
+grid_mapping_name = stereographic
+----
+
+__Map parameters:__::
+* **`longitude_of_projection_origin`**
+* **`latitude_of_projection_origin`**
+* **`scale_factor_at_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Formulas for the mapping and its inverse along with notes on using the **`PROJ`** software package for doing the calcuations may be found at
+link:$$https://proj.org/operations/projections/stere.html$$[https://proj.org/operations/projections/stere.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/stereographic.html$$[http://geotiff.maptools.org/proj_list/stereographic.html].
+See the section "Polar stereographic" for the special case when the projection origin is one of the poles.
+
+=== Transverse Mercator
+
+----
+grid_mapping_name = transverse_mercator
+----
+
+__Map parameters:__::
+* **`scale_factor_at_central_meridian`**
+* **`longitude_of_central_meridian`**
+* **`latitude_of_projection_origin`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute values **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: Formulas for the mapping and its inverse along with notes on using the **`PROJ`** software package for doing the calcuations may be found at
+link:$$https://proj.org/operations/projections/tmerc.html$$[https://proj.org/operations/projections/tmerc.html]
+and
+link:$$http://geotiff.maptools.org/proj_list/transverse_mercator.html$$[http://geotiff.maptools.org/proj_list/transverse_mercator.html].
+
+[[vertical-perspective]]
+=== Vertical perspective
+
+----
+grid_mapping_name = vertical_perspective
+----
+
+__Map parameters:__::
+* **`latitude_of_projection_origin`**
+* **`longitude_of_projection_origin`**
+* **`perspective_point_height`**
+* **`false_easting`** - This parameter is optional (default is 0)
+* **`false_northing`** - This parameter is optional (default is 0)
+
+__Map coordinates:__:: The x (abscissa) and y (ordinate) rectangular coordinates are identified by the **`standard_name`** attribute value **`projection_x_coordinate`** and **`projection_y_coordinate`** respectively.
+
+__Notes:__:: A general description of vertical perspective projection is given in <<Snyder>>, pages 169-181.
+
++
+The corresponding projection in PROJ is nsper.
+This should not be confused with the PROJ geos projection.
+
+In the following table the "Type" values are **S** for string and **N** for numeric.
+
+[[table-grid-mapping-attributes]]
+.Grid Mapping Attributes
+[options="header",cols="6,1,16",caption="Table F.1. "]
+|===============
+| Attribute | Type | Description
+
+| **`azimuth_of_central_line`** | N
+| Specifies a horizontal angle measured in degrees clockwise from North.
+Used by certain projections (e.g., Oblique Mercator) to define the orientation of the map projection relative to a reference direction.
+
+| **`crs_wkt`** | S
+| This optional attribute may be used to specify multiple coordinate system properties in well-known text (WKT) format.
+The syntax must conform to the WKT format as specified in reference <<OGC_WKT-CRS>>.
+Use of the **`crs_wkt`** attribute is described in section 5.6.1.
+
+| **`earth_radius`** | N
+| Used to specify the radius, in metres, of the spherical figure used to approximate the shape of the Earth.
+This attribute should be specified for those projected coordinate reference systems in which the X-Y cartesian coordinates have been derived using a spherical Earth approximation.
+If the cartesian coordinates were derived using an ellipsoid, this attribute should not be defined.
+Example: "6371007", which is the radius of the GRS 1980 Authalic Sphere.
+
+| **`false_easting`** | N
+|  Applied to all abscissa values in the rectangular coordinates for a map projection in order to eliminate negative numbers.
+Expressed in the unit of the coordinate variable identified by the standard name **`projection_x_coordinate`**.
+If **`false_easting`** is not provided it is assumed to be 0.
+The formula to convert from the coordinate value as written in the **`projection_x_coordinate`** (xf) to a value (x0) used in a transformation without **`false_easting`**, i.e. **`false_easting`**= 0, is: x0 = xf -**`false_easting`**
+
+| **`false_northing`** | N
+|  Applied to all ordinate values in the rectangular coordinates for a map projection in order to eliminate negative numbers.
+Expressed in the unit of the coordinate variable identified by the standard name **`projection_y_coordinate`**.
+If **`false_northing`** is not provided it is assumed to be 0.
+The formula to convert from the coordinate value as written in the **`projection_y_coordinate`** (yf) to a value (y0) used in a transformation without **`false_northing`**, i.e.
+**`false_northing`**= 0, is: y0 = yf -**`false_northing`**
+
+| **`fixed_angle_axis`** | S
+| Indicates the axis on which the view is fixed in a hypothetical gimbal view model of the Earth, as used in the geostationary grid mapping.
+It corresponds to the inner-gimbal axis of the gimbal view model, whose axis of rotation moves about the outer-gimbal axis.
+This value can adopt two values, "x" or "y", corresponding with the Earth's E-W or N-S axis, respectively.
+The counterpart to this attribute is `sweep_angle_axis`.
+If set to "x", `sweep_angle_axis` is "y", and vice versa.
+If one of the attributes `fixed_angle_axis` or `sweep_angle_axis` is provided, the other is not mandatory, as they can be used to infer each other.
+
+| **`geographic_crs_name`** | S
+| The name of the geographic coordinate reference system.
+Corresponds to a OGC WKT GEOGCS node name.
+
+| **`geoid_name`** | S
+| The name of the estimate or model of the geoid being used as a datum, e.g. GEOID12B.
+Corresponds to an OGC WKT VERT_DATUM name.
+The geoid is the surface of constant geopotential that the ocean would follow if it were at rest.
+This attribute and **`geopotential_datum_name`** cannot both be specified.
+
+| **`geopotential_datum_name`** | S
+
+| The name of an estimated surface of constant geopotential being used as a datum, e.g. NAVD88.
+Such a surface is often called an equipotential surface in geodesy.
+Corresponds to an OGC WKT VERT_DATUM name.
+This attribute and **`geoid_name`** cannot both be specified.
+
+| **`grid_mapping_name`** | S
+| The name used to identify the grid mapping.
+
+| **`grid_north_pole_latitude`** | N
+| True latitude (degrees_north) of the north pole of the rotated grid.
+
+| **`grid_north_pole_longitude`** | N
+| True longitude (degrees_east) of the north pole of the rotated grid.
+
+| **`horizontal_datum_name`** | S
+|  The name of the geodetic (horizontal) datum, which corresponds to the procedure used to measure positions on the surface of the Earth.
+Valid datum names and their associated parameters are given in **`horiz_datum.csv`** (OGC_DATUM_NAME column), following Table 2 in <<CF-WKT>>.
+The valid names are obtained by transforming the EPSG name using the following rules (used by OGR and Cadcorp): convert all non alphanumeric characters (including +) to underscores, then strip any leading, trailing or repeating underscores.
+This is to ensure that named datums can be correctly identified for precise datum transformations (see <<CF-WKT>> for more details).
+Corresponds to a OGC WKT DATUM node name.
+
+| **`inverse_flattening`** | N
+| Used to specify the __inverse__ flattening (__1/f__) of the ellipsoidal figure associated with the geodetic datum and used to approximate the shape of the Earth.
+The flattening (__f__) of the ellipsoid is related to the semi-major and semi-minor axes by the formula __f = (a-b)/a__.
+In the case of a spherical Earth this attribute should be omitted or set to zero.
+Example: 298.257222101 for the GRS 1980 ellipsoid.
+(Note: By convention the dimensions of an ellipsoid are specified using either the semi-major and semi-minor axis lengths, or the semi-major axis length and the inverse flattening.
+If all three attributes are specified then the supplied values must be consistent with the aforementioned formula.)
+
+| **`latitude_of_projection_origin`** | N
+| The latitude (degrees_north) chosen as the origin of rectangular coordinates for a map projection.
+Domain: +
+// The following lines shows how to insert Unicode for <=.  A plain '<=' turns into an arrow.
+// Except as marked, all work for asciidoctor and none work for asciidoctor-pdf.
+//     **`-90.0 &#x2264; latitude_of_projection_origin &#x2264; 90.0`** +
+//doesn't work for asciidoctor     **`-90.0 &#2264; latitude_of_projection_origin &#2264; 90.0`** +
+//     **`-90.0 &le; latitude_of_projection_origin &le; 90.0`** +
+//     **`-90.0 &leq; latitude_of_projection_origin &leq; 90.0`** +
+//     **`-90.0 +++<u>&le;</u>+++ latitude_of_projection_origin +++<u>&le;</u>+++ 90.0`** +
+//     **`-90.0 < = latitude_of_projection_origin < = 90.0`** +
+//     **`-90.0 \<= latitude_of_projection_origin \<= 90.0`** +
+// The cleanest-looking, which sometimes works for asciidoctor-pdf:
+     **`-90.0 \<= latitude_of_projection_origin \<= 90.0`**
+
+| **`longitude_of_central_meridian`** | N
+| The line of longitude (degrees_east) at the center of a map projection generally used as the basis for constructing the projection.
+Domain: +
+     **`-180.0 \<= longitude_of_central_meridian < 180.0`**
+
+| **`longitude_of_prime_meridian`** | N
+| Specifies the longitude, with respect to Greenwich, of the prime meridian associated with the geodetic datum.
+The prime meridian defines the origin from which longitude values are determined.
+Not to be confused with the projection origin longitude (cf. **`longitude_of_projection_origin`**, a.k.a. central meridian) which defines the longitude of the map projection origin.
+Domain: + **`-180.0 \<= longitude_of_prime_meridian < 180.0`** decimal degrees.
+Default = **`0.0`**
+
+| **`longitude_of_projection_origin`** | N
+| The longitude (degrees_east) chosen as the origin of rectangular coordinates for a map projection.
+Domain: + **`-180.0 \<= longitude_of_projection_origin < 180.0`**
+
+| **`north_pole_grid_longitude`** | N
+| Longitude (degrees) of the true north pole in the rotated grid.
+
+| **`perspective_point_height`** | N
+| Records the height, __in metres__, of the map projection perspective point above the ellipsoid (or sphere).
+Used by perspective-type map projections, for example the Vertical Perspective Projection, which may be used to simulate the view from a Meteosat satellite.
+
+| **`prime_meridian_name`** | S
+| The name of the prime meridian associated with the geodetic datum.
+Valid names are given in **`prime_meridian.csv`**, following Table 2 in <<CF-WKT>>.
+Corresponds to a OGC WKT PRIMEM node name.
+
+|**`projected_crs_name`** | S
+| The name of the projected coordinate reference system.
+Corresponds to a OGC WKT PROJCS node name.
+
+| **`reference_ellipsoid_name`** | S
+| The name of the reference ellipsoid.
+Valid names are given in **`ellipsoid.csv`**, following Table 2 in <<CF-WKT>>.
+Corresponds to a OGC WKT SPHEROID node name.
+
+| **`scale_factor_at_central_meridian`** | N
+| A multiplier for reducing a distance obtained from a map by computation or scaling to the actual distance along the central meridian.
+Domain: **`scale_factor_at_central_meridian &gt; 0.0`**
+
+| **`scale_factor_at_projection_origin`** | N
+| A multiplier for reducing a distance obtained from a map by computation or scaling to the actual distance at the projection origin.
+Domain: **`scale_factor_at_projection_origin &gt; 0.0`**
+
+| **`semi_major_axis`** | N
+| Specifies the length, __in metres__, of the semi-major axis of the ellipsoidal figure associated with the geodetic datum and used to approximate the shape of the Earth.
+Commonly denoted using the symbol __a__.
+In the case of a spherical Earth approximation this attribute defines the radius of the Earth.
+See also the **`inverse_flattening`** attribute.
+
+| **`semi_minor_axis`** | N
+| Specifies the length, __in metres__, of the semi-minor axis of the ellipsoidal figure associated with the geodetic datum and used to approximate the shape of the Earth.
+Commonly denoted using the symbol __b__.
+In the case of a spherical Earth approximation this attribute should be omitted (the preferred option) or else set equal to the value of the semi_major_axis attribute.
+See also the inverse_flattening attribute.
+
+| **`standard_parallel`** | N
+| Specifies the line, or lines, of latitude at which the developable map projection surface (plane, cone, or cylinder) touches the reference sphere or ellipsoid used to represent the Earth.
+Since there is zero scale distortion along a standard parallel it is also referred to as a "latitude of true scale".
+In the situation where a conical developable surface intersects the reference ellipsoid there are two standard parallels, in which case this attribute can be used as a vector to record both latitude values, with the additional convention that the standard parallel nearest the pole (N or S) is provided first.
+Domain: **`-90.0 &lt;= standard_parallel &lt;= 90.0`**
+
+| **`straight_vertical_longitude_from_pole`** | N
+| __Deprecated__. Has the same meaning as **`longitude_of_projection_origin`**, which must be used instead.
+Domain: **`-180.0 &lt;= straight_vertical_longitude_from_pole &lt; 180.0`**
+
+| **`sweep_angle_axis`** | S
+| Indicates the axis on which the view sweeps in a hypothetical gimbal view model of the Earth, as used in the geostationary grid mapping.
+It corresponds to the outer-gimbal axis of the gimbal view model, about whose axis of rotation the gimbal-gimbal axis moves.
+This value can adopt two values, "x" or "y", corresponding with the Earth's E-W or N-S axis, respectively.
+The counterpart to this attribute is `fixed_angle_axis`.
+If set to "x", `fixed_angle_axis` is "y", and vice versa.
+If one of the attributes `fixed_angle_axis` or `sweep_angle_axis` is provided, the other is not mandatory, as they can be used to infer each other.
+
+| **`towgs84`** | N
+|   This indicates a list of up to 7 Bursa Wolf transformation parameters., which can be used to approximate a transformation from the horizontal datum to the WGS84 datum.
+More precise datum transformations can be done with datum shift grids.
+Represented as a double-precision array, with 3, 6 or 7 values (if there are less than 7 values the remaining are considered to be zero).
+Corresponds to a OGC WKT TOWGS84 node.
+
+|===============
+
+Notes:
+
+. The various **`*_name`** attributes are optional but recommended when known as they allow for a better description and interoperability with WKT definitions.
+. **`reference_ellipsoid_name`**, **`prime_meridian_name`**, **`horizontal_datum_name`** and **`geographic_crs_name`** must be all defined if any one is defined, and if **`projected_crs_name`** is defined then **`geographic_crs_name`** must be also.
+
+
