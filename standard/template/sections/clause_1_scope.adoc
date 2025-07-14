@@ -1,5 +1,7 @@
 == Scope
-[NOTE]
-====
-Insert Scope text here. Give the subject of the document and the aspects of that scope covered by the document.
-====
+
+The GeoZarr Unified Data Model and Encoding Standard defines a conceptual and implementation framework for representing and encoding geospatial and scientific datasets using the Zarr format. The scope of this Standard includes the definition of a format-agnostic unified data model, the specification of its encoding into Zarr Version 2 and Version 3, and the establishment of extension points to support interoperability with external metadata and tiling standards.
+
+This Standard addresses the needs of Earth observation, environmental monitoring, and geospatial analysis applications that require efficient, scalable access to multidimensional datasets. It enables the harmonisation of existing data models, such as the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, with operational encoding formats suitable for cloud-native storage and analysis.
+
+Typical use cases include the storage, transformation, discovery, and processing of raster and gridded data, data cubes with temporal or vertical dimensions, and catalogue-enabled datasets integrated with metadata standards such as STAC and OGC Tile Matrix Sets.

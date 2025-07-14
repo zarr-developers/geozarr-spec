@@ -1,0 +1,160 @@
+
+=== Hierarchical Structure
+
+A dataset conforming to the unified data model is represented as a hierarchical structure of groups, variables (arrays), dimensions, and metadata. The dataset is rooted in a *top-level group*, which may contain:
+
+- Arrays representing coordinate or data variables
+- Child groups for modular organisation, including logical sub-collections or resolution levels
+- Metadata attributes at group and array levels
+
+Each group adheres to a consistent structure, allowing recursive composition. This reflects the CDM's use of *groups* and is supported by both Zarr v2 and v3 with differing implementations.
+
+
+[cols="1,2,2"]
+|===
+|Model Element |Zarr v2 Encoding |Zarr v3 Encoding
+
+|Root Dataset | Directory with `.zgroup` and `.zattrs` | Directory with `zarr.json`, with `node_type: group`
+
+|Child Group | Subdirectory with `.zgroup` and `.zattrs` | Subdirectory with `zarr.json`, with `node_type: group`
+
+|Array | Subdirectory with `.zarray` and `.zattrs` | Subdirectory with `zarr.json`, with `node_type: array`
+
+|Attributes | `.zattrs` file | `attributes` field in `zarr.json`
+|===
+
+Zarr v3 requires `zarr_format: 3` and stores all metadata (including user-defined attributes) in the `zarr.json` document. Each node includes a `node_type` field: either `"group"` or `"array"`.
+
+=== Dimensions
+
+Dimensions define the axes along which variables are indexed.
+
+- In Zarr v2, dimensions are inferred from array shape and declared in `_ARRAY_DIMENSIONS` within `.zattrs`.
+- In Zarr v3, dimensions are stored using the `dimension_names` field in `zarr.json`.
+
+Example for a 2D array with dimension names `["lat", "lon"]`:
+
+[source,json]
+----
+{
+  "zarr_format": 3,
+  "node_type": "array",
+  "shape": [180, 360],
+  "dimension_names": ["lat", "lon"],
+  ...
+}
+----
+
+=== Coordinate Variables
+
+Coordinate variables (excluding GeoTransform Coordinates) define the geospatial or temporal context of data. They are represented as named arrays with metadata attributes.
+
+Coordinate variables are represented as named 1D arrays aligned with corresponding dimensions.
+
+[cols="1,2,2"]
+|===
+|Feature |Zarr v2 |Zarr v3
+
+|Storage | Zarr array with `.zarray`, `.zattrs` | Zarr array with `zarr.json`
+
+|Dimension Binding | `_ARRAY_DIMENSIONS` in `.zattrs` | `dimension_names` in `zarr.json`
+
+|CF Metadata | `standard_name`, `units`, `axis` in `.zattrs` | Under `attributes` in `zarr.json`
+|===
+
+Example `zarr.json` for a coordinate array:
+[source,json]
+----
+{
+  "zarr_format": 3,
+  "node_type": "array",
+  "shape": [180],
+  "dimension_names": ["lat"],
+  "data_type": "float32",
+  "chunk_grid": {
+    "name": "regular",
+    "configuration": {
+      "chunk_shape": [180]
+    }
+  },
+  "attributes": {
+    "standard_name": "latitude",
+    "units": "degrees_north",
+    "axis": "Y"
+  }
+}
+----
+
+
+=== Data Variables
+
+Data variables represent measured or derived quantities. They are stored as multidimensional arrays with metadata attributes.
+
+[cols="1,2,2"]
+|===
+|Feature |Zarr v2 |Zarr v3
+
+|Storage | Multidimensional array with `.zarray` and `.zattrs` | Same structure; v3 supports additional chunk storage formats
+
+|Dimension Association | `_ARRAY_DIMENSIONS` attribute | Same as v2
+
+|CF Metadata | `standard_name`, `units`, `long_name`, `_FillValue`, etc. | Same as v2; v3 may support typed attributes
+|===
+
+Example:
+[source,json]
+----
+{
+  "_ARRAY_DIMENSIONS": ["time", "lat", "lon"],
+  "standard_name": "air_temperature",
+  "units": "K",
+  "long_name": "Surface air temperature",
+  "_FillValue": -9999.0
+}
+----
+
+=== Global Metadata
+
+Metadata associated with the dataset as a whole is stored at the root group level.
+
+
+[cols="1,2,2"]
+|===
+|Field |Zarr v2 |Zarr v3
+
+|Location | `.zattrs` file of root `.zgroup` | `attributes` field in root `zarr.json`
+
+|Group Identification | `.zgroup` file | `node_type: group` in `zarr.json`
+
+|CF Conformance | `Conventions` attribute (e.g., `CF-1.10`) | Same, under `attributes`
+|===
+
+Example Zarr v3 root `zarr.json`:
+[source,json]
+----
+{
+  "zarr_format": 3,
+  "node_type": "group",
+  "attributes": {
+    "title": "Example Dataset",
+    "summary": "Multidimensional Earth Observation data",
+    "institution": "Example Space Agency",
+    "Conventions": "CF-1.10"
+  }
+}
+----
+
+
+=== Variables Metadata
+
+All metadata attributes (for groups, coordinates variables and data variables) are recommended to conform to CF naming and typing conventions. Supported attributes include:
+
+- `standard_name`, `units`, `axis`, `grid_mapping` (CF)
+- `_FillValue`, `scale_factor`, `add_offset`
+- `long_name`, `missing_value`
+
+In all cases:
+
+- Attribute names are case-sensitive and encoded as UTF-8 strings
+- Values shall conform to JSON-compatible types (string, number, boolean, array)
+

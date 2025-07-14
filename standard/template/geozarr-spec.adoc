@@ -10,18 +10,20 @@
 :received-date: 2029-03-30
 :issued-date: 2029-03-30
 :published-date: 2029-03-30
-:fullname: Editor One
-:fullname_2: Editor Two
-:docsubtype: Interface
+:fullname: Christophe Noël
+:fullname_2: Brianna Pagán
+:docsubtype: Format
 :keywords: ogcdoc, OGC document, API, openapi, html
 :submitting-organizations: Organization One; Organization Two
 :mn-document-class: ogc
 :mn-output-extensions: xml,html,doc,pdf
 :local-cache-only:
+:plantuml-format: svg
+:plantuml-opts: debug
 :data-uri-image:
-:pdf-uri: ./document.pdf
-:xml-uri: ./document.xml
-:doc-uri: ./document.doc
+:pdf-uri: ./geozarr-spec.pdf
+:xml-uri: ./geozarr-spec.xml
+:doc-uri: ./geozarr-spec.doc
 :edition: 1.0
 
 ////
@@ -41,9 +43,13 @@ include::sections/clause_5_conventions.adoc[]
 
 include::sections/clause_6_informative_text.adoc[]
 
-include::sections/clause_7_normative_text.adoc[]
+include::sections/clause_7_unified_data_model.adoc[]
 
-include::sections/clause_8_media_types.adoc[]
+include::sections/clause_8_conformance.adoc[]
+
+include::sections/clause_9_zarr_encoding.adoc[]
+
+include::sections/clause_10_geotiff_encoding.adoc[]
 
 ////
 add or remove annexes after "A" as necessary

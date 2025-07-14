@@ -1,10 +1,34 @@
 == Conventions
 
-This sections provides details and examples for any conventions used in the document. Examples of conventions are symbols, abbreviations, use of XML schema, or special notes regarding how to read the document.
+This section describes the conventions used throughout this Standard, including identifiers, metadata schemas, and referencing mechanisms relevant to the GeoZarr Unified Data Model.
 
 === Identifiers
-The normative provisions in this standard are denoted by the URI
 
-`http://www.opengis.net/spec/{standard}/{m.n}`
+The normative provisions in this Standard are denoted by the base URI:
 
-All requirements and conformance tests that appear in this document are denoted by partial URIs which are relative to this base.
+`http://www.opengis.net/spec/geozarr/1.0`
+
+All requirements, recommendations, permissions, and conformance tests that appear in this document are assigned relative URIs anchored to this base.
+
+For example:
+
+`http://www.opengis.net/spec/geozarr/1.0/conf/core` — refers to the Core Requirements Class of the GeoZarr Unified Data Model.
+
+=== Data Encoding
+
+This Standard specifies the encoding of geospatial data in the Zarr format. Zarr is a chunked, compressed, binary format for n-dimensional arrays, with support for both Version 2 and Version 3 encodings.
+
+The specification makes extensive use of:
+
+- `zarr.json` metadata documents (Zarr v3)
+- `.zgroup`, `.zattrs`, `.zarray` metadata files (Zarr v2)
+- JSON-compatible structures for metadata, attributes, and conformance declarations
+
+=== Schemas
+
+Metadata schemas referenced in this Standard are represented using JSON-compatible objects and may be defined formally using JSON Schema. Metadata structures for tile matrix sets, STAC properties, or CF metadata may be embedded inline or referenced externally via URI.
+
+=== URI Usage
+
+URIs used in this Standard must comply with [RFC3986] (URI Syntax). When including reserved characters in a URI, they must be percent-encoded. Dataset identifiers, metadata links, and STAC references should use persistent and canonical forms to support reproducibility and catalogue integration.
+
