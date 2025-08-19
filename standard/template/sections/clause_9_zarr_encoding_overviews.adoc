@@ -7,7 +7,26 @@ Multiscale datasets are composed of a set of Zarr groups representing multiple z
 
 ==== Hierarchical Layout
 
-Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.
+Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier specified in the associated TileMatrixSet (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group containing the multiscales metadata attribute. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.
+
+The multiscale root group MUST contain a multiscales attribute that defines the TileMatrixSet reference. Child groups representing zoom levels MUST use group names that exactly match the TileMatrix identifier values from the referenced TileMatrixSet. The presence and naming of zoom level groups is determined by the tileMatrices array in the TileMatrixSet definition.
+
+Example hierarchical structure:
+----
+/measurements/r10m/          # Multiscale root group with multiscales metadata
+├── 0/                       # Native resolution (zoom level 0)  
+│   ├── band1                # Data variable at zoom level 0
+│   ├── band2                # Data variable at zoom level 0
+│   └── spatial_ref          # Coordinate reference variable
+├── 1/                       # First overview level
+│   ├── band1                # Data variable at zoom level 1
+│   ├── band2                # Data variable at zoom level 1
+│   └── spatial_ref          # Coordinate reference variable
+└── 2/                       # Second overview level
+    ├── band1                # Data variable at zoom level 2
+    ├── band2                # Data variable at zoom level 2
+    └── spatial_ref          # Coordinate reference variable
+----
 
 [cols="1,2,2"]
 |===
@@ -29,6 +48,12 @@ Multiscale metadata SHALL be defined using a `multiscales` attribute located in 
 - `tile_matrix_set` – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2
 - `resampling_method` – One of the standard string values (e.g., `"nearest"`, `"average"`)
 - `tile_matrix_set_limits` – (optional) Zoom-level limits following the STAC Tiled Asset style
+
+The multiscales metadata enables complete discovery of the multiscale collection structure:
+- The TileMatrixSet definition (whether referenced by identifier or included inline) specifies 
+  the exact set of zoom levels through its tileMatrices array
+- Each TileMatrix.id value corresponds to a required child group in the multiscale hierarchy
+- Variable discovery within each zoom level group follows standard Zarr metadata conventions
 
 ===== Zarr v2 Encoding Example (`.zattrs`)
 [source,json]
@@ -56,6 +81,57 @@ Multiscale metadata SHALL be defined using a `multiscales` attribute located in 
 }
 ----
 
+===== Group Contents Discovery
+
+For storage backends that do not support directory listing, the multiscale group structure can be discovered through the TileMatrixSet definition:
+
+- When tile_matrix_set is a string identifier, the zoom level groups correspond to the TileMatrix identifiers defined in the referenced well-known TileMatrixSet
+- When tile_matrix_set is an inline object, the zoom level groups correspond to the id values in the tileMatrices array
+- Variable names within each zoom level group are discoverable through standard Zarr group metadata mechanisms
+
+Example with WebMercatorQuad covering zoom levels 7 to 15:
+
+[source,json]
+----
+{
+  "multiscales": {
+    "tile_matrix_set": "WebMercatorQuad",
+    "resampling_method": "average"
+  }
+}
+----
+
+This metadata declaration implies the following Zarr group structure:
+
+----
+/satellite_imagery/
+├── 7/                       # Zoom level 7 (TileMatrix id "7")
+│   ├── red_band
+│   ├── green_band
+│   └── blue_band
+├── 8/                       # Zoom level 8 (TileMatrix id "8") 
+│   ├── red_band
+│   ├── green_band
+│   └── blue_band
+├── 9/                       # Zoom level 9 (TileMatrix id "9")
+│   ├── red_band
+│   ├── green_band
+│   └── blue_band
+...
+├── 14/                      # Zoom level 14 (TileMatrix id "14")
+│   ├── red_band
+│   ├── green_band
+│   └── blue_band
+└── 15/                      # Zoom level 15 (TileMatrix id "15")
+    ├── red_band
+    ├── green_band
+    └── blue_band
+----
+
+The presence of groups "7" through "15" is determined by the WebMercatorQuad TileMatrixSet definition and the actual data coverage. Implementations can determine which zoom levels are available by examining the TileMatrix identifiers in the WebMercatorQuad specification and checking for corresponding groups in the Zarr hierarchy.
+
+The multiscales metadata completely specifies the multiscale-relevant contents through its TileMatrixSet reference, eliminating ambiguity about which groups participate in the multiscale collection.
+
 ==== Tile Matrix Set Representation
 
 The `tile_matrix_set` member MAY take one of the following forms:
@@ -65,6 +141,57 @@ The `tile_matrix_set` member MAY take one of the following forms:
 - An inline JSON object (CamelCase, OGC TMS 2.0 compatible)
 
 Zoom level identifiers in the tile matrix set MUST match the names of the child groups. The spatial reference system declared in `supportedCRS` MUST match the one declared in the corresponding `grid_mapping` of the data variables.
+
+The group names in the multiscale hierarchy MUST correspond exactly to the TileMatrix identifier values in the referenced TileMatrixSet. This provides a deterministic mapping between the TileMatrixSet definition and the Zarr group structure.
+
+For well-known TileMatrixSets referenced by string identifier, implementations MUST create groups matching the TileMatrix identifiers defined in the standard TileMatrixSet definition.
+
+Additional groups or arrays MAY be present in the multiscale root group alongside the zoom level groups, but they MUST NOT use names that conflict with TileMatrix identifiers from the referenced TileMatrixSet.
+
+===== Custom Tile Matrix Sets for Scientific Coordinate Systems
+
+The GeoZarr specification explicitly supports custom TileMatrixSet definitions for arbitrary coordinate reference systems, encouraging preservation of native CRS in Earth observation data. The tile_matrix_set member SHOULD accommodate scientific projections including UTM zones, polar stereographic, sinusoidal, and other non-web coordinate systems.
+
+For custom coordinate systems, the tile_matrix_set SHALL be defined as an inline JSON object following the OGC TileMatrixSet v2.0 specification:
+
+[source,json]
+----
+{
+  "multiscales": {
+    "tile_matrix_set": {
+      "id": "UTM_Zone_33N_Custom",
+      "title": "UTM Zone 33N for Sentinel-2 native resolution",
+      "crs": "EPSG:32633", 
+      "orderedAxes": ["E", "N"],
+      "tileMatrices": [
+        {
+          "id": "native",
+          "scaleDenominator": 35.28,
+          "cellSize": 10.0,
+          "pointOfOrigin": [299960.0, 9000000.0],
+          "tileWidth": 1024,
+          "tileHeight": 1024,
+          "matrixWidth": 1094,
+          "matrixHeight": 1094
+        },
+        {
+          "id": "overview1", 
+          "scaleDenominator": 70.56,
+          "cellSize": 20.0,
+          "pointOfOrigin": [299960.0, 9000000.0],
+          "tileWidth": 512,
+          "tileHeight": 512,
+          "matrixWidth": 547,
+          "matrixHeight": 547
+        }
+      ]
+    },
+    "resampling_method": "average"
+  }
+}
+----
+
+This approach enables accurate scale denominator calculations and chunking strategies optimized for native coordinate systems.
 
 ==== Chunk Layout Alignment
 
@@ -91,6 +218,8 @@ Example:
 }
 ----
 
+When tile_matrix_set_limits are specified, the TileMatrix identifier keys MUST match exactly the zoom level group names in the Zarr hierarchy. This ensures consistent referencing between the TileMatrixSet definition, tile limits, and the physical group structure.
+
 ==== Resampling Method
 
 The `resampling_method` MUST indicate the method used for downsampling across zoom levels. The value MUST be one of:
@@ -98,4 +227,3 @@ The `resampling_method` MUST indicate the method used for downsampling across zo
 `nearest`, `average`, `bilinear`, `cubic`, `cubic_spline`, `lanczos`, `mode`, `max`, `min`, `med`, `sum`, `q1`, `q3`, `rms`, `gauss`
 
 The same method MUST apply across all levels.
-

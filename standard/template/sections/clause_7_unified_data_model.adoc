@@ -50,7 +50,7 @@ The unified data model supports CF-compliant metadata, including attributes such
 
 To support additional capabilities, the model defines optional extension points referencing external OGC and community standards:
 
-- **OGC Tile Matrix Set** – Facilitates the definition of multiscale grid hierarchies for raster overviews.
+- **OGC Tile Matrix Set** – Facilitates the definition of multiscale grid hierarchies for raster overviews using arbitrary coordinate reference systems, including custom tile matrix sets for scientific projections beyond web mapping schemes.
 - **GDAL Geotransform** – Enables geospatial referencing through affine transformations and optional interpolation specifications.
 - **STAC Metadata (Collection and Item)** – Provides linkage to SpatioTemporal Asset Catalogs for resource discovery and indexing.
 
@@ -351,4 +351,3 @@ The unified data model facilitates interoperability with tools and libraries acr
 - *Cloud-native infrastructure*: support for parallel access, chunked storage, and hierarchical grouping compatible with object storage.
 
 Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.
-
