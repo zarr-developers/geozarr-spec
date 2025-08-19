@@ -7,7 +7,7 @@ Multiscale datasets are composed of a set of Zarr groups representing multiple z
 
 ==== Hierarchical Layout
 
-Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier specified in the associated TileMatrixSet (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group containing the multiscales metadata attribute. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.
+Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier specified in the associated TileMatrixSet (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group containing the multiscales metadata attribute. Each zoom-level group SHALL be a Dataset (as defined in Section 7.4.1) and SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution. All zoom level groups MUST have the same member keys to ensure structural consistency across resolutions.
 
 The multiscale root group MUST contain a multiscales attribute that defines the TileMatrixSet reference. Child groups representing zoom levels MUST use group names that exactly match the TileMatrix identifier values from the referenced TileMatrixSet. The presence and naming of zoom level groups is determined by the tileMatrices array in the TileMatrixSet definition.
 
