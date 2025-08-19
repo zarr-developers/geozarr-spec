@@ -165,7 +165,7 @@ For custom coordinate systems, the tile_matrix_set SHALL be defined as an inline
       "orderedAxes": ["E", "N"],
       "tileMatrices": [
         {
-          "id": "native",
+          "id": "0",
           "scaleDenominator": 35.28,
           "cellSize": 10.0,
           "pointOfOrigin": [299960.0, 9000000.0],
@@ -175,7 +175,7 @@ For custom coordinate systems, the tile_matrix_set SHALL be defined as an inline
           "matrixHeight": 1094
         },
         {
-          "id": "overview1", 
+          "id": "1", 
           "scaleDenominator": 70.56,
           "cellSize": 20.0,
           "pointOfOrigin": [299960.0, 9000000.0],
@@ -192,6 +192,49 @@ For custom coordinate systems, the tile_matrix_set SHALL be defined as an inline
 ----
 
 This approach enables accurate scale denominator calculations and chunking strategies optimized for native coordinate systems.
+
+===== Decimation Requirements and Custom Scaling
+
+While the OGC TileMatrixSet specification commonly assumes quadtree decimation (scaling by factor of 2 between zoom levels), custom TileMatrixSets MAY use alternative decimation factors for specialized applications. The GeoZarr specification supports arbitrary decimation schemes as defined in the TileMatrixSet.
+
+Custom decimation factors include:
+- Factor of 2 (quadtree): Standard web mapping approach where each zoom level has 4x more tiles
+- Factor of 3 (nonary tree): Each zoom level has 9x more tiles, useful for certain scientific gridding schemes
+- Other integer factors: Application-specific requirements may dictate alternative decimation
+
+When using non-standard decimation factors, the TileMatrixSet definition MUST explicitly specify the matrixWidth and matrixHeight values for each TileMatrix to ensure correct spatial alignment and resolution relationships. Implementations MUST NOT assume factor-of-2 scaling between zoom levels unless explicitly defined in the TileMatrixSet.
+
+Example with factor-of-3 decimation:
+[source,json]
+----
+{
+  "id": "Custom_Nonary_Grid",
+  "crs": "EPSG:4326",
+  "tileMatrices": [
+    {
+      "id": "0",
+      "matrixWidth": 1,
+      "matrixHeight": 1,
+      "tileWidth": 256,
+      "tileHeight": 256
+    },
+    {
+      "id": "1", 
+      "matrixWidth": 3,
+      "matrixHeight": 3,
+      "tileWidth": 256,
+      "tileHeight": 256
+    },
+    {
+      "id": "2",
+      "matrixWidth": 9,
+      "matrixHeight": 9,
+      "tileWidth": 256,
+      "tileHeight": 256
+    }
+  ]
+}
+----
 
 ==== Chunk Layout Alignment
 
