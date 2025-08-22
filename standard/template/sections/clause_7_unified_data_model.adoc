@@ -87,11 +87,11 @@ To enable discovery of resources within the hierarchical structure of the data m
 
 A STAC extension consists of embedding or referencing STAC Collection and Item metadata within the data model:
 
-* Each dataset resource MAY reference a corresponding STAC `Collection` or `Item` using an identifier or embedded object.
+* Each store resource MAY reference a corresponding STAC `Collection` or `Item` using an identifier or embedded object.
 * STAC properties such as `datetime`, `bbox`, and `eo:bands` MAY be included in the metadata to enable spatial, temporal, and spectral filtering.
 * The structure is compatible with external STAC APIs and metadata harvesting systems.
 
-STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of datasets and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.
+STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of the store and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.
 
 
 ==== Modularity and Interoperability
@@ -101,22 +101,22 @@ Each extension point is specified independently. Implementations may advertise s
 
 === Unified Model Structure
 
-This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
+This clause defines the structural organisation of stores conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
 
 The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.
 
-==== Dataset Structure
+==== Store Structure
 
-A dataset conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level dataset entity. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
+A store conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level group. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
 
-Each dataset node comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
+Each <<term-dataset, dataset>> comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
 
 - **Dimensions** – Named, integer-valued axes defining the extent of data variables. Examples include `time`, `x`, `y`, and `band`.
 - **Coordinate Variables** – Arrays that supply coordinate values along dimensions, providing spatial, temporal, or contextual referencing. These may be scalar or higher-dimensional, depending on the referencing scheme.
 - **Data Variables** – Multidimensional arrays representing physical measurements or derived products. Defined over one or more dimensions, these variables are associated with coordinate variables and annotated with metadata.
 - **Attributes** – Key-value pairs attached to variables or dataset components. Attributes convey semantic information such as units, standard names, and geospatial metadata.
 
-The hierarchy is implemented through **groups**, which function as containers for variables, dimensions, and metadata. Groups may define local context while inheriting attributes from parent nodes. This supports the logical subdivision of datasets by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.
+A Zarr hierarchy is a tree structure, where each node in the tree is either a group or an array. Group nodes may have children but array nodes may not. This supports the logical subdivision by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.
 
 The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
 
@@ -129,7 +129,7 @@ The diagram below represents the structural layer of the unified data model, der
 ....
 @startuml CDM_DAL_Object_Model
 
-class Dataset {
+class Store {
     + String location
     + open()
     + close()
@@ -137,10 +137,9 @@ class Dataset {
 
 class Group {
     + String name
-    + List<Group> subgroups
-    + List<Variable> variables
-    + List<Dimension> dimensions
-    + List<Attribute> attributes
+}
+
+class Dataset {
 }
 
 class Dimension {
@@ -152,9 +151,6 @@ class Dimension {
 
 class Variable {
     + String name
-    + DataType dataType
-    + List<Dimension> shape
-    + List<Attribute> attributes
     + read()
 }
 
@@ -169,19 +165,20 @@ class Attribute {
     + List<String> values
 }
 
-Dataset --> Group : rootGroup
-Group --> Group : contains >
-Group --> Variable : contains >
-Group --> Dimension : defines >
-Group --> Attribute : has >
-Variable --> Dimension : uses >
-Variable --> DataType : has >
-Variable --> Attribute : has >
+Store "1" --> "*" Group : rootGroup
+Group "1" --> "*" Group : contains
+Dataset -up-|> Group
+Dataset --> "*" Variable : contains
+Dataset --> "*" Dimension : defines
+Group --> "*" Attribute : has
+Variable --> "*" Dimension : uses
+Variable --> "1" DataType : has
+Variable --> "*" Attribute : has
 @enduml
 ....
 //endif::never-shown[]
 
-Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.
+Note that, conceptually, node within this hierarchy might be treated as a self-contained store.
 
 ==== Coordinate Referencing
 
@@ -196,7 +193,7 @@ The model accommodates both standard CF-compatible definitions and extended refe
 
 Metadata may be declared at various levels within the model structure:
 
-- **Global Metadata** – Attributes describing the dataset as a whole, including elements such as `title`, `summary`, and `license`.
+- **Global Metadata** – Attributes describing the store as a whole, including elements such as `title`, `summary`, and `license`.
 - **Variable Metadata** – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.
 - **Extension Metadata** – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).
 
@@ -218,15 +215,15 @@ Overviews enable:
 
 ===== Conceptual Structure
 
-An *Overviews* construct is defined as a *hierarchical set of multiscale representations* of one or more data variables. It comprises the following components:
+A <<term-multiscale-group,multiscale group>> contains child groups representing the data at different resolutions, where each child group is a <<term-dataset, dataset>> following the unified data model. It comprises the following components:
 
 [horizontal]
-*Base Variable*:: The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard `DataVariable` structure in the model.
-*Overview Levels*:: A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.
+*Base Dataset*:: The original, highest-resolution dataset to which the multiscale hierarchy is anchored.
+*Zoom Level Datasets*:: A sequence of datasets representing the same data as the base dataset, but sampled at coarser spatial resolutions.
 *Zoom Level Identifier*:: A unique identifier associated with each level, ordered from finest (e.g. `"0"`) to coarsest resolution (e.g. `"N"`).
 *Tile Grid Definition*:: A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a `TileMatrixSet`.
-*Spatial Alignment*:: Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.
-*Resampling Method*:: A declared method indicating the technique used to derive coarser levels from the base variable (e.g. `nearest`, `average`, `cubic`).
+*Spatial Alignment*:: Each zoom-level dataset MUST be spatially aligned with the base dataset using a consistent coordinate reference system and compatible axis orientation.
+*Resampling Method*:: A declared method indicating the technique used to derive coarser levels from the base dataset (e.g. `nearest`, `average`, `cubic`).
 
 ===== Model Components
 
@@ -351,4 +348,3 @@ The unified data model facilitates interoperability with tools and libraries acr
 - *Cloud-native infrastructure*: support for parallel access, chunked storage, and hierarchical grouping compatible with object storage.
 
 Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.
-

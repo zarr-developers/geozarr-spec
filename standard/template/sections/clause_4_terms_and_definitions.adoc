@@ -2,6 +2,9 @@
 
 === Terms and definitions
 
+GeoZarr specification inherits https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html#concepts-and-terminology[concepts and terminology from the Zarr core specification].
+The following terms adds Geozarr specificity to the existing Zarr terminology
+
 ==== array
 
 A multidimensional, regularly spaced collection of values (e.g., raster data or gridded measurements), typically indexed by dimensions such as time, latitude, longitude, or spectral band.
@@ -22,17 +25,17 @@ An array containing the primary geospatial or scientific measurements of interes
 
 An index axis along which arrays are organised. Dimensions provide a naming and ordering scheme for accessing data in multidimensional arrays (e.g., `time`, `x`, `y`, `band`).
 
-==== group
+==== dataset
 
-A container for datasets, variables, dimensions, and metadata in Zarr. Groups may be nested to represent a logical hierarchy (e.g., for resolutions or collections).
+A group that contains one or more data variables along with their associated coordinate variables, having a consistent relationship between these components. A dataset represents a coherent set of related data arrays and follows the unified data model.
 
 ==== metadata
 
 Structured information describing the content, context, and semantics of datasets, variables, and attributes. GeoZarr metadata includes CF attributes, geotransform definitions, and links to STAC metadata where applicable.
 
-==== multiscale dataset
+==== multiscale group
 
-A dataset that includes multiple representations of the same data variable at varying spatial resolutions. Each resolution level is associated with a tile matrix from an OGC Tile Matrix Set.
+A group that contains 2 or more child groups representing the same data at different resolutions, where each child group is a <<term-dataset,dataset>>. The multiscale group includes metadata describing the relationship between resolution levels.
 
 ==== tile matrix set
 

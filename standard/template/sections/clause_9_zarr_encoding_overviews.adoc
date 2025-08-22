@@ -1,30 +1,30 @@
 
 === Encoding of Multiscale Overviews in Zarr
 
-This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.
+This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr stores conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.
 
-Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.
+A multiscale group contains child groups, where each child group is a <<term-dataset,dataset>> representing a zoom level that stores a coarser-resolution resampled version of the original data variables.
 
 ==== Hierarchical Layout
 
-Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.
+Each zoom level SHALL be represented as a child group, identified by the Tile Matrix identifier (e.g., `"0"`, `"1"`, `"2"`). These child groups SHALL be organized hierarchically under a common multiscale group and each SHALL be a <<term-dataset,dataset>> containing the complete set of variables (arrays) corresponding to that resolution. All zoom-level datasets MUST maintain consistent structure.
 
 [cols="1,2,2"]
 |===
 |Structure |Zarr v2 |Zarr v3
 
-|Zoom level groups | Subdirectories with `.zgroup` and `.zattrs` | Subdirectories with `zarr.json`, `node_type: group`
+|Zoom level datasets | Subdirectories with `.zgroup` and `.zattrs` | Subdirectories with `zarr.json`, `node_type: group`
 
-|Variables at each level | Zarr arrays (`.zarray`, `.zattrs`) in each group | Zarr arrays (`zarr.json`, `node_type: array`) in each group
+|Variables at each level | Arrays (`.zarray`, `.zattrs`) in each dataset | Arrays (`zarr.json`, `node_type: array`) in each dataset
 
-|Global metadata | `multiscales` defined in parent `.zattrs` | `multiscales` defined in parent group `zarr.json` under `attributes`
+|Multiscale metadata | `multiscales` defined in multiscale group `.zattrs` | `multiscales` defined in multiscale group `zarr.json` under `attributes`
 |===
 
-Each multiscale group MUST define chunking (tiling) along the spatial dimensions (`X`, `Y`, or `lon`, `lat`). Recommended chunk sizes are 256×256 or 512×512.
+Each zoom-level dataset MUST define chunking (tiling) along the spatial dimensions (`X`, `Y`, or `lon`, `lat`). Recommended chunk sizes are 256×256 or 512×512.
 
 ==== Metadata Encoding
 
-Multiscale metadata SHALL be defined using a `multiscales` attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:
+Multiscale metadata SHALL be defined using a `multiscales` attribute located in the multiscale group. This attribute SHALL be a JSON object with the following members:
 
 - `tile_matrix_set` – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2
 - `resampling_method` – One of the standard string values (e.g., `"nearest"`, `"average"`)
@@ -98,4 +98,3 @@ The `resampling_method` MUST indicate the method used for downsampling across zo
 `nearest`, `average`, `bilinear`, `cubic`, `cubic_spline`, `lanczos`, `mode`, `max`, `min`, `med`, `sum`, `q1`, `q3`, `rms`, `gauss`
 
 The same method MUST apply across all levels.
-
