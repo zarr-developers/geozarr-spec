@@ -96,7 +96,7 @@ Data variables represent measured or derived quantities. They are stored as mult
 
 |Storage | Multidimensional array with `.zarray` and `.zattrs` | Same structure; v3 supports additional chunk storage formats
 
-|Dimension Association | `_ARRAY_DIMENSIONS` attribute | Same as v2
+|Dimension Binding | `_ARRAY_DIMENSIONS` in `.zattrs` | `dimension_names` in `zarr.json`
 
 |CF Metadata | `standard_name`, `units`, `long_name`, `_FillValue`, etc. | Same as v2; v3 may support typed attributes
 |===
