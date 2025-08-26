@@ -8,7 +8,11 @@
 <name><completename>Christophe Noël</completename></name>
 </person></contributor><contributor><role type="editor"/><person>
 <name><completename>Brianna Pagán</completename></name>
-</person></contributor><contributor><role type="publisher"/><organization>
+</person></contributor><contributor><role type="author"><description>committee</description></role><organization>
+<name>Open Geospatial Consortium</name>
+<subdivision type="Committee">
+<name>technical</name>
+</subdivision><abbreviation>OGC</abbreviation></organization></contributor><contributor><role type="publisher"/><organization>
 <name>Open Geospatial Consortium</name>
 <abbreviation>OGC</abbreviation></organization></contributor><edition>1.0</edition><version><draft>3.0</draft></version><language>en</language><script>Latn</script><abstract><p>The GeoZarr Unified Data Model and Encoding Standard specifies a conceptual and implementation framework for representing multidimensional, geospatial datasets using the Zarr format. This Standard builds upon the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, and introduces interoperable constructs for tiling, georeferencing, and metadata integration.</p>
 
@@ -17,4 +21,4 @@
 <p>GeoZarr aims to bridge scientific and geospatial communities by enabling round-trip transformations with formats such as NetCDF and GeoTIFF, and supporting compatibility with tools in the scientific Python and geospatial ecosystems. This Standard enables scalable, standards-compliant, and semantically rich data structures for cloud-native Earth observation applications.</p>
 </abstract><status><stage>draft</stage></status><copyright><from>2025</from><owner><organization>
 <name>Open Geospatial Consortium</name>
-<abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>API</keyword><keyword>openapi</keyword><keyword>html</keyword><ext><doctype>standard</doctype><subdoctype>implementation</subdoctype><flavor>ogc</flavor><editorialgroup><committee>technical</committee></editorialgroup></ext></bibdata>
+<abbreviation>OGC</abbreviation></organization></owner></copyright><keyword>ogcdoc</keyword><keyword>OGC document</keyword><keyword>API</keyword><keyword>openapi</keyword><keyword>html</keyword><ext><doctype>standard</doctype><subdoctype>implementation</subdoctype><flavor>ogc</flavor></ext></bibdata>
