@@ -21,7 +21,7 @@ This clause specifies the logical composition of the unified model, the external
 
 === Foundational Model and Standards Reuse
 
-The unified data model described in this Standard is derived from established community specifications to maximise interoperability and to enable the reuse of mature tools and practices. The model is grounded in the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, which together provide a robust framework for representing scientific and geospatial datasets.
+GeoZarr adopts established data model concepts because Zarr itself provides only array storage without semantic interpretation. The Unidata Common Data Model (CDM) provides the conceptual framework for understanding dimensions, variables, and attributes, while CF Conventions provide standardized metadata semantics. This reuse ensures compatibility with existing scientific software while avoiding reinvention of proven concepts.
 
 ==== Common Data Model (CDM)
 
