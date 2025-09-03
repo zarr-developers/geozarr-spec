@@ -35,7 +35,7 @@ Structured information describing the content, context, and semantics of dataset
 
 ==== multiscale group
 
-A group that contains 2 or more child groups representing the same data at different resolutions, where each child group is a <<term-dataset,dataset>>. The multiscale group includes metadata describing the relationship between resolution levels.
+A group that contains child groups representing the same data at different resolutions, where each child group is a <<term-dataset,dataset>>. The multiscale group includes metadata describing the relationship between resolution levels. A multiscale group can be initialized with a single dataset and expanded with additional resolution levels over time.
 
 ==== tile matrix set
 
