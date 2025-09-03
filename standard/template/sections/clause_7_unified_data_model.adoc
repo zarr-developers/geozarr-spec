@@ -99,7 +99,7 @@ STAC integration is non-intrusive and modular. It does not impose changes on the
 Each extension point is specified independently. Implementations may advertise support for one or more extensions by declaring conformance to corresponding extension modules. This modularity facilitates incremental adoption, promotes reuse, and enhances interoperability across varied implementation environments.
 
 
-=== Unified Model Structure
+=== Unified Data Model Structure
 
 This clause defines the structural organisation of stores conforming to the Unified Data Model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
 
