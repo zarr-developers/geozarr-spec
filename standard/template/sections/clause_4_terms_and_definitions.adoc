@@ -27,7 +27,7 @@ An index axis along which arrays are organised. Dimensions provide a naming and 
 
 ==== dataset
 
-A group that contains one or more data variables along with their associated coordinate variables, having a consistent relationship between these components. A dataset represents a coherent set of related data arrays and follows the unified data model.
+A group that contains one or more data variables along with their associated coordinate variables, having a consistent relationship between these components. A dataset represents a coherent set of related data arrays and follows the Unified Data Model.
 
 ==== metadata
 
@@ -45,9 +45,9 @@ A spatial tiling scheme defined by a hierarchy of zoom levels and consistent gri
 
 An affine transformation used to convert between grid coordinates and geospatial coordinates, typically defined using the GDAL GeoTransform convention.
 
-==== unified data model (UDM)
+==== Unified Data Model (UDM)
 
-A conceptual model that defines how to structure geospatial data in Zarr using CDM-based constructs, including support for coordinate referencing, metadata integration, and multiscale representations.
+A conceptual model that defines how to structure geospatial data in Zarr using CDM-based constructs, including support for coordinate referencing, metadata integration, and multiscale representations. The Unified Data Model provides a standardized framework for expressing spatial relationships, coordinate systems, and scientific metadata.
 
 === Abbreviated Terms
 

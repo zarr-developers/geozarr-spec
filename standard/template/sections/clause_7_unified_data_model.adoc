@@ -4,9 +4,9 @@
 
 === Scope and Purpose
 
-This Standard defines a unified data model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems..
+This Standard defines the Unified Data Model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems..
 
-The unified data model incorporates and extends the following established specifications and community standards:
+The Unified Data Model incorporates and extends the following established specifications and community standards:
 
 - **Unidata Common Data Model (CDM)** – Provides the foundational resource structure for scientific datasets, encompassing dimensions, coordinate systems, variables, and associated metadata elements.
 - **CF (Climate and Forecast) Conventions** – Defines a widely adopted metadata profile for describing spatiotemporal semantics in CDM-based datasets.
@@ -15,9 +15,9 @@ The unified data model incorporates and extends the following established specif
   - **GDAL geotransform metadata**, used to express affine transformations and interpolation characteristics.
   - **SpatioTemporal Asset Catalog (STAC)** metadata elements for resource discovery and cataloguing (Collection and Item constructs).
 
-The unified model is format-agnostic and describes the abstract structure of resources independently of the physical encoding. It does not redefine the semantics of the CDM or CF conventions, but introduces integration and extension points required to support tiled multiscale data, geospatial referencing, and metadata for discovery.
+The Unified Data Model is format-agnostic and describes the abstract structure of resources independently of the physical encoding. It does not redefine the semantics of the CDM or CF conventions, but introduces integration and extension points required to support tiled multiscale data, geospatial referencing, and metadata for discovery.
 
-This clause specifies the logical composition of the unified model, the external standards it leverages, and the conformance points that facilitate harmonised implementation within the GeoZarr framework.
+This clause specifies the logical composition of the Unified Data Model, the external standards it leverages, and the conformance points that facilitate harmonised implementation within the GeoZarr framework.
 
 === Foundational Model and Standards Reuse
 
@@ -25,7 +25,7 @@ GeoZarr adopts established data model concepts because Zarr itself provides only
 
 ==== Common Data Model (CDM)
 
-The CDM defines a generalised schema for representing array-based scientific datasets. The following constructs are reused directly within the unified model:
+The CDM defines a generalised schema for representing array-based scientific datasets. The following constructs are reused directly within the Unified Data Model:
 
 - **Dimensions** – Integer-valued, named axes that define the extents of data variables.
 - **Coordinate Variables** – Variables that supply coordinate values along dimensions, establishing spatial or temporal context.
@@ -33,7 +33,7 @@ The CDM defines a generalised schema for representing array-based scientific dat
 - **Attributes** – Key-value metadata elements used to describe variables and datasets semantically.
 - **Groups** – Optional hierarchical containers enabling logical organisation of resources and metadata.
 
-The unified data model adopts these CDM components without modification excluding the user-defined types. Semantic interpretation remains consistent with the original CDM specification. GeoZarr structures are mapped to CDM constructs to ensure compatibility and clarity.
+The Unified Data Model adopts these CDM components without modification excluding the user-defined types. Semantic interpretation remains consistent with the original CDM specification. GeoZarr structures are mapped to CDM constructs to ensure compatibility and clarity.
 
 ==== CF Conventions
 
@@ -44,7 +44,7 @@ The CF Conventions specify standardised metadata attributes and practices to des
 - Physical units
 - Standard variable naming
 
-The unified data model supports CF-compliant metadata, including attributes such as `standard_name`, `units`, and `grid_mapping`. The unified data model does not prescribe CF compliance but enables it through permissive design. Partial adoption of CF attributes is supported, and non-compliant datasets may selectively adopt CF metadata as needed.
+The Unified Data Model supports CF-compliant metadata, including attributes such as `standard_name`, `units`, and `grid_mapping`. The Unified Data Model does not prescribe CF compliance but enables it through permissive design. Partial adoption of CF attributes is supported, and non-compliant datasets may selectively adopt CF metadata as needed.
 
 ==== Standards-Based Extensions
 
@@ -58,7 +58,7 @@ These extensions are integrated in a modular fashion and do not alter the core s
 
 === Model Extension Points
 
-The unified data model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.
+The Unified Data Model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.
 
 Each extension is defined as an independent module. Implementation of any given extension does not necessitate support for others.
 
@@ -101,7 +101,7 @@ Each extension point is specified independently. Implementations may advertise s
 
 === Unified Model Structure
 
-This clause defines the structural organisation of stores conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
+This clause defines the structural organisation of stores conforming to the Unified Data Model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
 
 The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.
 
@@ -118,7 +118,7 @@ Each <<term-dataset, dataset>> comprises the following core components, aligned 
 
 A Zarr hierarchy is a tree structure, where each node in the tree is either a group or an array. Group nodes may have children but array nodes may not. This supports the logical subdivision by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.
 
-The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
+The diagram below represents the structural layer of the Unified Data Model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
 
 //image::udm-core.png[]
 
@@ -215,7 +215,7 @@ Overviews enable:
 
 ===== Conceptual Structure
 
-A <<term-multiscale-group,multiscale group>> contains child groups representing the data at different resolutions, where each child group is a <<term-dataset, dataset>> following the unified data model. It comprises the following components:
+A <<term-multiscale-group,multiscale group>> contains child groups representing the data at different resolutions, where each child group is a <<term-dataset, dataset>> following the Unified Data Model. It comprises the following components:
 
 [horizontal]
 *Base Dataset*:: The original, highest-resolution dataset to which the multiscale hierarchy is anchored.
@@ -227,7 +227,7 @@ A <<term-multiscale-group,multiscale group>> contains child groups representing 
 
 ===== Model Components
 
-The *Overviews* construct is represented in the unified data model using the following logical elements:
+The *Overviews* construct is represented in the Unified Data Model using the following logical elements:
 
 [cols="1,3"]
 |===
@@ -307,7 +307,7 @@ This extensibility framework supports both minimum-viable use and high-fidelity 
 
 === Interoperability Considerations
 
-Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.
+Interoperability is a core objective of the GeoZarr Unified Data Model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.
 
 This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.
 
@@ -341,7 +341,7 @@ This approach enables seamless integration into modern data catalogues and platf
 
 ==== Tool and Ecosystem Support
 
-The unified data model facilitates interoperability with tools and libraries across the following domains:
+The Unified Data Model facilitates interoperability with tools and libraries across the following domains:
 
 - *Scientific computing*: NetCDF-based libraries (e.g., xarray, netCDF4), Zarr-compatible clients.
 - *Geospatial processing*: GDAL, rasterio, QGIS (via Zarr driver extensions or translations).
