@@ -171,7 +171,7 @@ class Attribute {
     + List<String> values
 }
 
-Store "1" --> "*" Hierarchy : implements
+Store "1" ..|> "*" Hierarchy : implements
 Hierarchy "1" *-- "1" Group : has root
 Group "1" --> "*" Group : contains
 Dataset -up-|> Group
