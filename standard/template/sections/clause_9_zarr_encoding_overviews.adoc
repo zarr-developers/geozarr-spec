@@ -1,7 +1,7 @@
 
 === Encoding of Multiscale Overviews in Zarr
 
-This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr stores conforming to the Unified Data Model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.
+This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr hierarchies conforming to the Unified Data Model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.
 
 A <<term-multiscale-group,multiscale group>> contains one or more child groups, where each child group is a <<term-dataset,dataset>> representing a zoom level of the data. Additional resolution levels can be added over time, with each new level storing a coarser-resolution resampled version of the original data variables.
 

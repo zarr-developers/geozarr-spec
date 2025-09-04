@@ -4,7 +4,9 @@
 
 === Scope and Purpose
 
-This Standard defines the Unified Data Model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems..
+This Standard defines the Unified Data Model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems.
+
+The Unified Data Model operates within the Zarr framework, where a <<term-store,store>> provides the storage and retrieval interface, and a hierarchy defines the logical organization of groups and arrays within that store. GeoZarr hierarchies are stored in and accessed through Zarr stores, which can be implemented using various storage technologies such as filesystems, cloud object storage, or databases.
 
 The Unified Data Model incorporates and extends the following established specifications and community standards:
 
@@ -87,11 +89,11 @@ To enable discovery of resources within the hierarchical structure of the data m
 
 A STAC extension consists of embedding or referencing STAC Collection and Item metadata within the data model:
 
-* Each store resource MAY reference a corresponding STAC `Collection` or `Item` using an identifier or embedded object.
+* Each hierarchy MAY reference a corresponding STAC `Collection` or `Item` using an identifier or embedded object.
 * STAC properties such as `datetime`, `bbox`, and `eo:bands` MAY be included in the metadata to enable spatial, temporal, and spectral filtering.
 * The structure is compatible with external STAC APIs and metadata harvesting systems.
 
-STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of the store and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.
+STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of the hierarchy and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.
 
 
 ==== Modularity and Interoperability
@@ -101,13 +103,13 @@ Each extension point is specified independently. Implementations may advertise s
 
 === Unified Data Model Structure
 
-This clause defines the structural organisation of stores conforming to the Unified Data Model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
+This clause defines the structural organisation of Zarr hierarchies conforming to the Unified Data Model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
 
 The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.
 
-==== Store Structure
+==== Hierarchy Structure
 
-A store conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level group. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
+A Zarr hierarchy conforming to the Unified Data Model (UDM) is structured as a tree rooted at a top-level group. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
 
 Each <<term-dataset, dataset>> comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
 
@@ -133,6 +135,10 @@ class Store {
     + String location
     + open()
     + close()
+}
+
+class Hierarchy {
+    + String name
 }
 
 class Group {
@@ -165,7 +171,8 @@ class Attribute {
     + List<String> values
 }
 
-Store "1" --> "*" Group : rootGroup
+Store "1" --> "*" Hierarchy : implements
+Hierarchy "1" *-- "1" Group : has root
 Group "1" --> "*" Group : contains
 Dataset -up-|> Group
 Dataset --> "*" Variable : contains
@@ -193,7 +200,7 @@ The model accommodates both standard CF-compatible definitions and extended refe
 
 Metadata may be declared at various levels within the model structure:
 
-- **Global Metadata** – Attributes describing the store as a whole, including elements such as `title`, `summary`, and `license`.
+- **Global Metadata** – Attributes describing the hierarchy as a whole, including elements such as `title`, `summary`, and `license`.
 - **Variable Metadata** – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.
 - **Extension Metadata** – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).
 

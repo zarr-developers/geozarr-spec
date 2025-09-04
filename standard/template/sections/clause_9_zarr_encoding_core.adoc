@@ -1,7 +1,7 @@
 
 === Hierarchical Structure
 
-A store conforming to the unified data model is structured as a hierarchy of groups, variables (arrays), dimensions, and metadata. Following Zarr conventions, this hierarchy is rooted in a group, which may contain:
+A hierarchy conforming to the Unified Data Model is structured as a tree of groups, variables (arrays), dimensions, and metadata. Following Zarr conventions, this hierarchy is rooted in a group, which may contain:
 
 - Arrays representing coordinate or data variables
 - Child groups for modular organisation, including logical sub-collections or resolution levels
@@ -115,7 +115,7 @@ Example:
 
 === Global Metadata
 
-Metadata associated with the store is stored at the root group level.
+Metadata associated with the hierarchy is stored at the root group level.
 
 
 [cols="1,2,2"]
