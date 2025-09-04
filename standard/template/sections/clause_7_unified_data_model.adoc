@@ -171,16 +171,16 @@ class Attribute {
     + List<String> values
 }
 
-Store "1" ..|> "*" Hierarchy : implements
+Store "1" ..|> Hierarchy : implements
 Hierarchy "1" *-- "1" Group : has root
-Group "1" --> "*" Group : contains
-Dataset -up-|> Group
+Group --* Group : is part of
+Dataset -up-|> Group : is a
 Dataset --> "*" Variable : contains
-Dataset --> "*" Dimension : defines
-Group --> "*" Attribute : has
-Variable --> "*" Dimension : uses
-Variable --> "1" DataType : has
-Variable --> "*" Attribute : has
+Dimension --* "*" Dataset : is shared in
+Group *-- "*" Attribute
+Dimension --o "*" Variable : define the shape of
+Variable --> "1" DataType
+Variable *-- "*" Attribute
 @enduml
 ....
 //endif::never-shown[]
