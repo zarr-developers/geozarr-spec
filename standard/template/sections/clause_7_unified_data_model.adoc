@@ -35,7 +35,7 @@ The CDM defines a generalised schema for representing array-based scientific dat
 - **Attributes** – Key-value metadata elements used to describe variables and datasets semantically.
 - **Groups** – Optional hierarchical containers enabling logical organisation of resources and metadata.
 
-The Unified Data Model adopts these CDM components without modification excluding the user-defined types. Semantic interpretation remains consistent with the original CDM specification. GeoZarr structures are mapped to CDM constructs to ensure compatibility and clarity.
+The Unified Data Model adopts these CDM components with adaptations for Zarr's type system. While the conceptual structure remains consistent with the original CDM specification, attribute types are mapped to Zarr's JSON-compatible type system. GeoZarr structures preserve CDM semantics while conforming to Zarr's encoding constraints.
 
 ==== CF Conventions
 
