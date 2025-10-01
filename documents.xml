@@ -1,5 +1,5 @@
 <relaton-collection xmlns="https://open.ribose.com/relaton-xml"><title>OGC GeoZarr Specification</title><contributor><role type='author'/><organization><name>OGC</name></organization></contributor><relation type='partOf'><bibdata type="standard" schema-version="v1.2.9">
-  <title format="text/plain" language="en">OGC (add title text)</title>
+  <title type="main" language="en">OGC (add title text)</title>
   <uri type="xml">./documents/standard/template/geozarr-spec.xml</uri>
   <uri type="pdf">./documents/standard/template/geozarr-spec.pdf</uri>
   <uri type="doc">./documents/standard/template/geozarr-spec.doc</uri>

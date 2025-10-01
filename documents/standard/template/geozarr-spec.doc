@@ -1,7 +1,7 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_8c177237.58e7.41ff"
+Content-Type: multipart/related; boundary="----=_NextPart_adc5577e.5ae5.43f5"
 
-------=_NextPart_8c177237.58e7.41ff
+------=_NextPart_adc5577e.5ae5.43f5
 Content-ID: <geozarr-spec.htm>
 Content-Disposition: inline; filename="geozarr-spec.htm"
 Content-Type: text/html; charset="utf-8"
@@ -2689,369 +2689,368 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 </div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div class="TOC"><a name="_13d7055e-30fc-845a-c60e-8972faf092d9" id="_13d7055e-30fc-845a-c60e-8972faf092d9"></a><p class="zzContents">Contents</p><p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-begin"></span><span style="mso-spacerun:yes">&#xA0;</span>TOC \o "1-2" \h \z \u <span style="mso-element:field-separator"></span></span>
 <span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc509120327">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc954714783">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc509120327 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc954714783 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc814942512">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc249075847">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc814942512 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc249075847 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc393144969">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc408534588">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc393144969 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc408534588 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc850193376">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc966642722">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc850193376 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc966642722 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc813487720">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc327448088">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc813487720 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc327448088 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc659575923">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc824506133">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc659575923 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc824506133 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc393065405">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc231080418">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc393065405 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc231080418 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc901341511">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc079124963">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc901341511 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc079124963 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc705455721">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc097155893">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc705455721 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc097155893 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc831117813">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc843611469">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc831117813 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc843611469 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc014955636">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc392416692">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc014955636 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc392416692 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc110164865">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc853760039">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc110164865 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc853760039 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc520187115">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc089827050">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc520187115 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc089827050 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc336041678">4. Terms, definitions and abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc483665698">4. Terms, definitions and abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc336041678 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc483665698 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc356089767">4.1. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc411804083">4.1. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc356089767 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc411804083 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc331612899">4.2. Abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc361283026">4.2. Abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc331612899 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc361283026 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc789464920">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc367834099">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc789464920 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc367834099 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc906433149">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc852069930">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc906433149 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc852069930 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc273524394">5.2. Data Encoding<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc285624586">5.2. Data Encoding<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc273524394 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc285624586 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc072210654">5.3. Schemas<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc736047300">5.3. Schemas<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc072210654 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc736047300 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc806160492">5.4. URI Usage<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc641085136">5.4. URI Usage<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc806160492 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc641085136 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc746003609">6. Overview<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc311811520">6. Overview<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc746003609 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc311811520 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc931594581">6.1. Encodings<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc804052060">6.1. Encodings<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc931594581 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc804052060 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc497009355">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc367031939">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc497009355 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc367031939 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc246805724">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc410147112">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc246805724 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc410147112 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc986468652">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc674536227">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc986468652 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc674536227 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc880655222">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc056686084">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc880655222 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc056686084 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc090694033">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc827519664">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc090694033 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc827519664 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc202174247">7.5. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc829381265">7.5. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc202174247 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc829381265 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc252602195">7.6. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc287721368">7.6. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc252602195 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc287721368 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc127614737">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc643026114">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc127614737 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc643026114 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc868598336">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc344742727">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc868598336 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc344742727 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc391887399">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc737057196">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc391887399 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc737057196 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc445172076">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc132191948">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc445172076 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc132191948 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc929194748">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc222242238">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc929194748 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc222242238 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc140806959">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc084897338">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc140806959 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc084897338 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc495532662">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc637163174">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc495532662 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc637163174 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc228481108">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc520338687">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc228481108 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc520338687 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc667542287">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc976095764">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc667542287 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc976095764 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc394805790">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc102454023">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc394805790 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc102454023 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc920048199">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc393330427">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc920048199 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc393330427 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc920573918">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc992587156">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc920573918 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc992587156 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc211156560">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc347734501">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc211156560 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc347734501 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc175905637">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc542582832">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc175905637 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc542582832 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc164076755">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc657513596">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc164076755 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc657513596 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span><span lang="EN-GB" xml:lang="EN-GB"><o:p class="MsoNormal">&#xA0;</o:p></span></p>
-</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_88d72c0f-51ad-360b-ca47-37995668362c" id="_88d72c0f-51ad-360b-ca47-37995668362c"></a><h1 class="AbstractTitle">I.<span style="mso-tab-count:1">&#xA0; </span>Abstract</h1><p class="MsoNormal"><a name="_4c05d8e0-49e3-2ced-4edf-9b3cd280710d" id="_4c05d8e0-49e3-2ced-4edf-9b3cd280710d"></a>The GeoZarr Unified Data Model and Encoding Standard specifies a conceptual and implementation framework for representing multidimensional, geospatial datasets using the Zarr format. This Standard builds upon the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, and introduces interoperable constructs for tiling, georeferencing, and metadata integration.</p><p class="MsoNormal"><a name="_732b27b4-f23b-07de-4611-087c9455529b" id="_732b27b4-f23b-07de-4611-087c9455529b"></a>The model defines core elements&#x2014;dimensions, coordinate variables, data variables, attributes&#x2014;and optional extensions for multi-resolution overviews, affine geotransforms, and STAC metadata. Encoding guidance is provided for Zarr Version 2 and Zarr Version 3, including chunking, group hierarchy, and metadata conventions.</p><p class="MsoNormal"><a name="_b1b605e9-a8bb-5225-1e20-7b8bb4bea197" id="_b1b605e9-a8bb-5225-1e20-7b8bb4bea197"></a>GeoZarr aims to bridge scientific and geospatial communities by enabling round-trip transformations with formats such as NetCDF and GeoTIFF, and supporting compatibility with tools in the scientific Python and geospatial ecosystems. This Standard enables scalable, standards-compliant, and semantically rich data structures for cloud-native Earth observation applications.</p></div><div class="Section3"><a name="_c264b7ea-2776-b4a1-d084-2e1f2341d4b6" id="_c264b7ea-2776-b4a1-d084-2e1f2341d4b6"></a><h1 class="IntroTitle">II.<span style="mso-tab-count:1">&#xA0; </span>Keywords</h1><p class="MsoNormal">The following are keywords to be used by search engines and document catalogues.</p><p class="MsoNormal">ogcdoc, OGC document, API, openapi, html</p></div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_34d1e426-5805-33c8-add9-0fdd01434af4" id="_34d1e426-5805-33c8-add9-0fdd01434af4"></a><h1 class="ForewordTitle">III.<span style="mso-tab-count:1">&#xA0; </span>Preface</h1><p class="MsoNormal"><a name="_b2276d38-20a6-08d4-4345-0a309a9ca3e0" id="_b2276d38-20a6-08d4-4345-0a309a9ca3e0"></a>The GeoZarr Unified Data Model and Encoding Standard defines a layered, standards-based framework for representing and encoding geospatial and scientific datasets in the Zarr format. It integrates foundational specifications such as the Unidata Common Data Model (CDM), the CF Conventions, and selected OGC and community standards to enable semantic, structural, and operational interoperability across Earth observation platforms and geospatial ecosystems.</p><p class="MsoNormal"><a name="_dd7c81bc-058b-c451-8a11-231a930d5196" id="_dd7c81bc-058b-c451-8a11-231a930d5196"></a>This Standard introduces a unified model that harmonises metadata structures, array-based data representations, coordinate referencing, and multiscale tiling semantics. It provides a coherent framework that facilitates encoding into Zarr v2 and v3, supporting scalable, cloud-native workflows.</p><p class="MsoNormal"><a name="_193e4705-85ba-5548-84f1-2a6fa8edb64b" id="_193e4705-85ba-5548-84f1-2a6fa8edb64b"></a>The purpose of this document is to provide implementation guidance and normative structure for consistent, interoperable adoption of GeoZarr across tools, platforms, and services. This work extends prior standardisation efforts within the OGC, including OGC API &#x2013; Tiles, the Tile Matrix Set Standard, and EO metadata conventions, and anticipates integration with catalogue systems such as STAC.</p><p class="MsoNormal"><a name="_490fcd22-6a62-cabd-ce81-93ac61b3fbef" id="_490fcd22-6a62-cabd-ce81-93ac61b3fbef"></a>This Standard has been developed in collaboration with contributors from Earth observation, climate science, geospatial analysis, and cloud-native geodata infrastructure communities. Future work may extend this model to additional storage formats, API services, and semantic layers.</p></div><div class="Section3"><a name="_1ee4f5b3-7c6d-4e70-be8d-5f6e15ce4b6b" id="_1ee4f5b3-7c6d-4e70-be8d-5f6e15ce4b6b"></a><h1 class="IntroTitle">IV.<span style="mso-tab-count:1">&#xA0; </span>Security considerations</h1><p class="MsoNormal"><a name="_927733ee-e695-c49f-5120-5f08eaf68e0c" id="_927733ee-e695-c49f-5120-5f08eaf68e0c"></a>No security considerations have been made for this document.</p></div><div class="Section3"><a name="_03987beb-7950-74f1-6e82-1c55fe801c02" id="_03987beb-7950-74f1-6e82-1c55fe801c02"></a><h1 class="IntroTitle">V.<span style="mso-tab-count:1">&#xA0; </span>Submitting Organizations</h1><p class="MsoNormal">The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpFirst"><a name="_2c517e84-d312-a74a-2e48-6da85e445abb" id="_2c517e84-d312-a74a-2e48-6da85e445abb"></a>Organization One</p>
-<p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpMiddle"><a name="_84ea2b0c-24b5-f5d2-f044-8bef555fdcaa" id="_84ea2b0c-24b5-f5d2-f044-8bef555fdcaa"></a>Organization Two</p>
-<p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpLast"><a name="_40e1d3ba-3495-5d60-8ca4-de2d0bd74eb3" id="_40e1d3ba-3495-5d60-8ca4-de2d0bd74eb3"></a>Open Geospatial Consortium</p></div></div><div class="Section3"><a name="_1293473c-254b-d0ff-a042-78878a07834d" id="_1293473c-254b-d0ff-a042-78878a07834d"></a><h1 class="IntroTitle">VI.<span style="mso-tab-count:1">&#xA0; </span>Submitters</h1><p class="MsoNormal"><a name="_6e1b734b-e32c-864b-59a1-81792b76695c" id="_6e1b734b-e32c-864b-59a1-81792b76695c"></a>All questions regarding this submission should be directed to the editor or the submitters:</p><p class="TableTitle" style="text-align:center;">Table&#xA0;&#x2014; Table of submitters</p><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;"><a name="_a3a902a1-2e4a-34be-1c80-d332d3ce6c85" id="_a3a902a1-2e4a-34be-1c80-d332d3ce6c85"></a><tbody><tr><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Name</b></td><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Affiliation</b></td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Christophe No&#xEB;l <i>(editor)</i></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Spacebel</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Brianna Pag&#xE1;n <i>(editor)</i></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">DevSeed</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Ryan Abernathey</td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">EarthMover</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">TBD</td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">TBD</td></tr></tbody></table></div></div><p class="MsoNormal">&#xA0;</p></div>
+</div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_88d72c0f-51ad-360b-ca47-37995668362c" id="_88d72c0f-51ad-360b-ca47-37995668362c"></a><h1 class="AbstractTitle">I.<span style="mso-tab-count:1">&#xA0; </span>Abstract</h1><p class="MsoNormal"><a name="_4c05d8e0-49e3-2ced-4edf-9b3cd280710d" id="_4c05d8e0-49e3-2ced-4edf-9b3cd280710d"></a>The GeoZarr Unified Data Model and Encoding Standard specifies a conceptual and implementation framework for representing multidimensional, geospatial datasets using the Zarr format. This Standard builds upon the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, and introduces interoperable constructs for tiling, georeferencing, and metadata integration.</p><p class="MsoNormal"><a name="_732b27b4-f23b-07de-4611-087c9455529b" id="_732b27b4-f23b-07de-4611-087c9455529b"></a>The model defines core elements&#x2014;dimensions, coordinate variables, data variables, attributes&#x2014;and optional extensions for multi-resolution overviews, affine geotransforms, and STAC metadata. Encoding guidance is provided for Zarr Version 2 and Zarr Version 3, including chunking, group hierarchy, and metadata conventions.</p><p class="MsoNormal"><a name="_b1b605e9-a8bb-5225-1e20-7b8bb4bea197" id="_b1b605e9-a8bb-5225-1e20-7b8bb4bea197"></a>GeoZarr aims to bridge scientific and geospatial communities by enabling round-trip transformations with formats such as NetCDF and GeoTIFF, and supporting compatibility with tools in the scientific Python and geospatial ecosystems. This Standard enables scalable, standards-compliant, and semantically rich data structures for cloud-native Earth observation applications.</p></div><div class="Section3"><a name="_c264b7ea-2776-b4a1-d084-2e1f2341d4b6" id="_c264b7ea-2776-b4a1-d084-2e1f2341d4b6"></a><h1 class="IntroTitle">II.<span style="mso-tab-count:1">&#xA0; </span>Keywords</h1><p class="MsoNormal">The following are keywords to be used by search engines and document catalogues.</p><p class="MsoNormal">ogcdoc, OGC document, API, openapi, html</p></div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div><a name="_34d1e426-5805-33c8-add9-0fdd01434af4" id="_34d1e426-5805-33c8-add9-0fdd01434af4"></a><h1 class="ForewordTitle">III.<span style="mso-tab-count:1">&#xA0; </span>Preface</h1><p class="MsoNormal"><a name="_b2276d38-20a6-08d4-4345-0a309a9ca3e0" id="_b2276d38-20a6-08d4-4345-0a309a9ca3e0"></a>The GeoZarr Unified Data Model and Encoding Standard defines a layered, standards-based framework for representing and encoding geospatial and scientific datasets in the Zarr format. It integrates foundational specifications such as the Unidata Common Data Model (CDM), the CF Conventions, and selected OGC and community standards to enable semantic, structural, and operational interoperability across Earth observation platforms and geospatial ecosystems.</p><p class="MsoNormal"><a name="_dd7c81bc-058b-c451-8a11-231a930d5196" id="_dd7c81bc-058b-c451-8a11-231a930d5196"></a>This Standard introduces a unified model that harmonises metadata structures, array-based data representations, coordinate referencing, and multiscale tiling semantics. It provides a coherent framework that facilitates encoding into Zarr v2 and v3, supporting scalable, cloud-native workflows.</p><p class="MsoNormal"><a name="_193e4705-85ba-5548-84f1-2a6fa8edb64b" id="_193e4705-85ba-5548-84f1-2a6fa8edb64b"></a>The purpose of this document is to provide implementation guidance and normative structure for consistent, interoperable adoption of GeoZarr across tools, platforms, and services. This work extends prior standardisation efforts within the OGC, including OGC API &#x2013; Tiles, the Tile Matrix Set Standard, and EO metadata conventions, and anticipates integration with catalogue systems such as STAC.</p><p class="MsoNormal"><a name="_490fcd22-6a62-cabd-ce81-93ac61b3fbef" id="_490fcd22-6a62-cabd-ce81-93ac61b3fbef"></a>This Standard has been developed in collaboration with contributors from Earth observation, climate science, geospatial analysis, and cloud-native geodata infrastructure communities. Future work may extend this model to additional storage formats, API services, and semantic layers.</p></div><div class="Section3"><a name="_1ee4f5b3-7c6d-4e70-be8d-5f6e15ce4b6b" id="_1ee4f5b3-7c6d-4e70-be8d-5f6e15ce4b6b"></a><h1 class="IntroTitle">IV.<span style="mso-tab-count:1">&#xA0; </span>Security considerations</h1><p class="MsoNormal"><a name="_927733ee-e695-c49f-5120-5f08eaf68e0c" id="_927733ee-e695-c49f-5120-5f08eaf68e0c"></a>No security considerations have been made for this document.</p></div><div class="Section3"><a name="_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7" id="_76a5a8b9-fe1f-cdd2-5c70-5bf418f488e7"></a><h1 class="IntroTitle">V.<span style="mso-tab-count:1">&#xA0; </span>Submitting Organizations</h1><p class="MsoNormal">The following organizations submitted this Document to the Open Geospatial Consortium (OGC):</p><div class="ul_wrap"><p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpFirst"><a name="_2c517e84-d312-a74a-2e48-6da85e445abb" id="_2c517e84-d312-a74a-2e48-6da85e445abb"></a>Organization One</p>
+<p style="mso-list:l3 level1 lfo1;" class="MsoListParagraphCxSpLast"><a name="_84ea2b0c-24b5-f5d2-f044-8bef555fdcaa" id="_84ea2b0c-24b5-f5d2-f044-8bef555fdcaa"></a>Organization Two</p></div></div><div class="Section3"><a name="_1293473c-254b-d0ff-a042-78878a07834d" id="_1293473c-254b-d0ff-a042-78878a07834d"></a><h1 class="IntroTitle">VI.<span style="mso-tab-count:1">&#xA0; </span>Submitters</h1><p class="MsoNormal"><a name="_6e1b734b-e32c-864b-59a1-81792b76695c" id="_6e1b734b-e32c-864b-59a1-81792b76695c"></a>All questions regarding this submission should be directed to the editor or the submitters:</p><p class="TableTitle" style="text-align:center;">Table&#xA0;&#x2014; Table of submitters</p><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;"><a name="_a3a902a1-2e4a-34be-1c80-d332d3ce6c85" id="_a3a902a1-2e4a-34be-1c80-d332d3ce6c85"></a><tbody><tr><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Name</b></td><td valign="middle" align="left" style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><b>Affiliation</b></td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Christophe No&#xEB;l <i>(editor)</i></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Spacebel</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Brianna Pag&#xE1;n <i>(editor)</i></td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">DevSeed</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Ryan Abernathey</td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">EarthMover</td></tr><tr><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">TBD</td><td valign="middle" align="left" style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">TBD</td></tr></tbody></table></div></div><p class="MsoNormal">&#xA0;</p></div>
     <p class="MsoNormal">
       <br clear="all" class="section"/>
     </p>
@@ -3492,7 +3491,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <div class="figure"><a name="_0a91e7ff-ee8f-4c95-afe6-1dc3d0adfce9" id="_0a91e7ff-ee8f-4c95-afe6-1dc3d0adfce9"></a>
 
-<p class="figure" style="page-break-after:avoid;"><img src="cid:7ea3944a-2204-42af-852a-27e52cb3a1ea.png" height="631" width="489"/></p><p class="FigureTitle" style="text-align:center;">Figure 1&#xA0;&#x2014; Conformance-class model</p></div>
+<p class="figure" style="page-break-after:avoid;"><img src="cid:44f679d2-1e31-4f30-9008-59bbc1d2ddf4.png" height="205" width="302"/></p><p class="FigureTitle" style="text-align:center;">Figure 1&#xA0;&#x2014; Conformance-class model</p></div>
 
 <p class="MsoNormal"><a name="_eb0e8ff9-bdd4-1d04-906a-7a68f9e4e9d5" id="_eb0e8ff9-bdd4-1d04-906a-7a68f9e4e9d5"></a>Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.</p>
 </div>
@@ -4014,7 +4013,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 </html>
 
 
-------=_NextPart_8c177237.58e7.41ff
+------=_NextPart_adc5577e.5ae5.43f5
 Content-ID: <filelist.xml>
 Content-Disposition: inline; filename="filelist.xml"
 Content-Transfer-Encoding: base64
@@ -4023,11 +4022,114 @@ Content-Type: application/xml
 PHhtbCB4bWxuczpvPSJ1cm46c2NoZW1hcy1taWNyb3NvZnQtY29tOm9mZmljZTpvZmZpY2UiPgog
 ICAgICAgIDxvOk1haW5GaWxlIEhSZWY9Ii4uLy9fX3cvZ2VvemFyci1zcGVjL2dlb3phcnItc3Bl
 Yy9fc2l0ZS9kb2N1bWVudHMvc3RhbmRhcmQvdGVtcGxhdGUvZ2VvemFyci1zcGVjLmh0bSIvPiAg
-PG86RmlsZSBIUmVmPSI3ZWEzOTQ0YS0yMjA0LTQyYWYtODUyYS0yN2U1MmNiM2ExZWEucG5nIi8+
+PG86RmlsZSBIUmVmPSI0NGY2NzlkMi0xZTMxLTRmMzAtOTAwOC01OWJiYzFkMmRkZjQucG5nIi8+
 CiAgPG86RmlsZSBIUmVmPSJmaWxlbGlzdC54bWwiLz4KICA8bzpGaWxlIEhSZWY9ImhlYWRlci5o
 dG1sIi8+CjwveG1sPgo=
 
-------=_NextPart_8c177237.58e7.41ff
+------=_NextPart_adc5577e.5ae5.43f5
+Content-ID: <44f679d2-1e31-4f30-9008-59bbc1d2ddf4.png>
+Content-Disposition: inline; filename="44f679d2-1e31-4f30-9008-59bbc1d2ddf4.png"
+Content-Transfer-Encoding: base64
+Content-Type: image/png
+
+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
+oukAAAAASUVORK5CYII=
+
+------=_NextPart_adc5577e.5ae5.43f5
 Content-ID: <header.html>
 Content-Disposition: inline; filename="header.html"
 Content-Transfer-Encoding: base64
@@ -4309,881 +4411,4 @@ PC9zcGFuPjwvYj48IVtlbmRpZl0tLT48c3Bhbg0KbGFuZz1FTi1HQiBzdHlsZT0nZm9udC1zaXpl
 OjEwLjBwdDttc28tYmlkaS1mb250LXNpemU6MTEuMHB0Jz48bzpwPjwvbzpwPjwvc3Bhbj48L3A+
 DQo8L2Rpdj4NCg0KPC9ib2R5Pg0KDQo8L2h0bWw+DQo=
 
-------=_NextPart_8c177237.58e7.41ff
-Content-ID: <7ea3944a-2204-42af-852a-27e52cb3a1ea.png>
-Content-Disposition: inline; filename="7ea3944a-2204-42af-852a-27e52cb3a1ea.png"
-Content-Transfer-Encoding: base64
-Content-Type: image/png
-
-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
-
-------=_NextPart_8c177237.58e7.41ff--
+------=_NextPart_adc5577e.5ae5.43f5--

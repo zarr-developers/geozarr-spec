@@ -1,5 +1,5 @@
 <bibdata type="standard">
-<title language="en" format="text/plain">OGC (add title text)</title>
+<title language="en" type="main">OGC (add title text)</title>
 <uri type="xml">./geozarr-spec.xml</uri><uri type="pdf">./geozarr-spec.pdf</uri><uri type="doc">./geozarr-spec.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier><docidentifier type="ogc-internal" primary="true">YY-999</docidentifier><docnumber>YY-999</docnumber><date type="published"><on>2029-03-30</on></date><date type="issued"><on>2029-03-30</on></date><date type="received"><on>2029-03-30</on></date><contributor><role type="author"/><organization>
 <name>Organization One</name>
 </organization></contributor><contributor><role type="author"/><organization>
