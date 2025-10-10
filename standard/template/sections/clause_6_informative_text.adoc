@@ -1,7 +1,7 @@
 [[overview]]
 == Overview
 
-The GeoZarr Unified Data Model and Encoding Standard defines a conceptual and implementation framework for representing multidimensional geospatial data using the Zarr format. Developed under the guidance of the OGC GeoZarr Standards Working Group (SWG), the Standard establishes conventions for encoding scientific and Earth observation datasets in a way that promotes scalability, interoperability, and compatibility with cloud-native infrastructure.
+The GeoZarr Standard defines a conceptual and implementation framework for representing multidimensional geospatial data using the Zarr format. Developed under the guidance of the OGC GeoZarr Standards Working Group (SWG), the Standard establishes conventions for encoding scientific and Earth observation datasets in a way that promotes scalability, interoperability, and compatibility with cloud-native infrastructure.
 
 GeoZarr is built on widely adopted community standards, including the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions. It introduces additional extensions and structural constructs to support multi-resolution tiling, geospatial referencing, and catalogue-enabled metadata integration (e.g., STAC).
 
