@@ -1,8 +1,8 @@
 == Scope
 
-The GeoZarr Unified Data Model and Encoding Standard defines a conceptual and implementation framework for representing and encoding geospatial and scientific datasets using the Zarr format. The scope of this Standard includes the definition of a format-agnostic unified data model, the specification of its encoding into Zarr Version 2 and Version 3, and the establishment of extension points to support interoperability with external metadata and tiling standards.
+The GeoZarr Standard defines a conceptual and implementation framework for representing and encoding geospatial and scientific datasets using the Zarr format. The scope of this Standard includes the definition of a format-agnostic data model, the specification of its encoding into Zarr Version 2 and Version 3, and a set of extensions to support affine transformations and overviews.
 
-These capabilities are necessary because Zarr does not provide semantic constructs for geospatial data interpretation. Applications need to understand not just array shapes and values, but coordinate meanings, projection parameters, and scientific metadata. GeoZarr fills this gap without compromising Zarr's performance characteristics.
+These capabilities are necessary for geospatial data because Zarr does not provide semantic constructs for geospatial data interpretation. Applications need to understand not just array shapes and values, but coordinate meanings, projection parameters, and scientific metadata. GeoZarr fills this gap without compromising Zarr's performance characteristics.
 
 === Why GeoZarr Exists
 

@@ -1,19 +1,15 @@
 .Preface
 
-The GeoZarr Unified Data Model and Encoding Standard defines a layered, standards-based framework for representing and encoding geospatial and scientific datasets in the Zarr format. It integrates foundational specifications such as the Unidata Common Data Model (CDM), the CF Conventions, and selected OGC and community standards to enable semantic, structural, and operational interoperability across Earth observation platforms and geospatial ecosystems.
-
-This Standard introduces a unified model that harmonises metadata structures, array-based data representations, coordinate referencing, and multiscale tiling semantics. It provides a coherent framework that facilitates encoding into Zarr v2 and v3, supporting scalable, cloud-native workflows.
-
-The purpose of this document is to provide implementation guidance and normative structure for consistent, interoperable adoption of GeoZarr across tools, platforms, and services. This work extends prior standardisation efforts within the OGC, including OGC API – Tiles, the Tile Matrix Set Standard, and EO metadata conventions, and anticipates integration with catalogue systems such as STAC.
+The GeoZarr Standard defines a layered, standards-based framework for representing and encoding geospatial and scientific datasets in the Zarr format. The purpose of this document is to provide implementation guidance and normative structure for consistent, interoperable adoption of GeoZarr across tools, platforms, and services. This work extends prior standardisation efforts within the OGC, including OGC API – Tiles, the Tile Matrix Set Standard, and EO metadata conventions, and anticipates integration with catalogue systems such as STAC.
 
 This Standard has been developed in collaboration with contributors from Earth observation, climate science, geospatial analysis, and cloud-native geodata infrastructure communities. Future work may extend this model to additional storage formats, API services, and semantic layers.
 
 [abstract]
 == Abstract
 
-Zarr provides efficient chunked storage for n-dimensional arrays but do not provide with the semantic constructs required for geospatial and scientific data workflows. The GeoZarr Unified Data Model and Encoding Standard addresses this gap by adding essential concepts—coordinate systems, grid mappings, temporal semantics, and CF-compliant metadata—on top of Zarr's storage foundation.
+Zarr provides efficient chunked storage for n-dimensional arrays but do not provide with the semantic constructs required for geospatial and scientific data workflows.
 
-The Standard builds upon proven concepts from the Common Data Model (CDM) and Climate and Forecast (CF) Conventions to define core elements—dimensions, coordinate variables, data variables, and attributes—along with extensions for multi-resolution overviews, affine geotransforms, and STAC metadata. This layered approach ensures applications can work with semantically rich geospatial data while leveraging Zarr's cloud-optimized storage capabilities.
+GeoZarr defines an abstract data model and a set of conventions for representing geospatial and scientific datasets in the Zarr format. It builds on the Unidata Common Data Model (CDM), which provides the conceptual structure for organising variables, groups, coordinates, and metadata. GeoZarr specifies how these CDM concepts are encoded in Zarr, standardising practices already used by libraries such as xarray and nczarr. It also extends the CDM with features for geospatial workflows, including multiscale overviews and affine transformations, while remaining compatible with community metadata standards such as CF, GeoTIFF, and GDAL.
 
 By providing a standardized framework for geospatial semantics, GeoZarr enables scientific and geospatial applications to fully utilize cloud-native storage architectures while maintaining the rich metadata and coordinate referencing required for Earth observation workflows. The result is a modern, scalable approach to storing and accessing geospatial data that meets the needs of both data providers and consumers.
 

@@ -1,5 +1,7 @@
 == Conformance
 
+> WARNING: This section should be ignored and requirements classes should be designed and summarized here once the specification is completed.
+
 The GeoZarr Unified Data Model is structured around a modular set of requirements classes. These classes define the conformance criteria for datasets and implementations adopting the GeoZarr specification. Each class provides a distinct set of structural or semantic expectations, facilitating interoperability across a broad spectrum of geospatial and scientific use cases.
 
 The *Core* requirements class defines the minimal compliance necessary to claim conformance with the GeoZarr Unified Data Model. It is intentionally open and permissive, supporting incremental adoption and broad compatibility with existing Zarr tools and data models based on the Unidata Common Data Model (CDM).
