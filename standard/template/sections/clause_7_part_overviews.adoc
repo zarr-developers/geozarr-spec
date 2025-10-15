@@ -1,0 +1,235 @@
+=== Overviews
+
+==== Introduction
+
+*Overviews* are downscaled representations of gridded data designed to optimise visualisation and scalable access to large datasets.
+Overviews or *multiscale pyramid* provide lower-resolution versions of the same variables, enabling rapid display, efficient zooming, and progressive data exploration.
+Multiple overview levels may exist, each representing the same data at a coarser spatial resolution.
+
+The *Overviews* construct extends the Common Data Model (CDM) by defining a hierarchical organisation of groups and variables that represent data at multiple scales. The *OverviewSet* is self-described by attributes defined at the parent group level, which declare the relationships between its levels and ensure consistent, interoperable multiscale representation within the CDM framework.
+
+==== Purpose and Scope
+
+The *Overviews* extension enables scalable access to multidimensional gridded data, particularly for geospatial and remote sensing applications. It supports:
+
+- Progressive rendering and visualisation at multiple resolutions
+- Efficient data transfer for large datasets
+- Multi-resolution analysis in analytical or cloud environments
+- Consistent representation of raster and data cube structures across scales
+
+This specification is format-agnostic and may be implemented in any CDM-compliant structure, regardless of physical encoding (e.g. Zarr, NetCDF, GeoTIFF) although the present specification specifically targets Zarr.
+
+==== Conceptual Model
+
+The Overviews construct defines a multiscale hierarchy applied to the <<variable-group,variable group>>, i.e., the CDM group containing the data variables and their associated metadata, and optionally other related variables that share identical dimensions and coordinate systems.
+
+Example: Typical CDM Group Structure without overviews
+
+```
+Group: variable_group/
+├── variable1
+├── variable2
+├── aux_variable
+├── coordinates1
+├── coordinates2
+└── Attributes
+```
+
+Each overview level provides a reduced-resolution representation of the same variables. This approach avoids redundancy by describing the hierarchy once for the entire group rather than for individual variables, ensuring consistency and concise metadata.
+
+All overview levels are semantically equivalent, differing only in resolution, array extent, or sampling density.
+There is no requirement for a single base or reference level—each level may serve as an entry point depending on the application.
+
+
+==== Model Components
+
+The *Overviews* construct defines the conceptual elements used to represent multiscale data within the GeoZarr data model. It extends the existing CDM concept to support datasets provided at multiple spatial resolutions.
+
+The construct introduces the following conceptual elements:
+
+[cols="1,3"]
+|===
+|Element |Definition
+
+|`OverviewSet` |A *group* composed of multiple *OverviewLevels*, each containing equivalent variables defined over the same coordinate system and dimensions but sampled at different spatial resolutions. The *OverviewSet* defines the complete multiscale hierarchy.
+
+|`OverviewLevel` |A single resolution level within an *OverviewSet*. Each level replicates the structure and semantics of the others, differing only in resolution or extent.
+
+|`zoom_level` |An optional ordered identifier used to distinguish overview levels (e.g. `0`, `1`, `2` or symbolic identifiers). The ordering indicates relative resolution but does not imply dependency.
+|===
+
+The OverviewSet retains the same structure as a nominal variable group, including the associated metadata and auxiliary variables, so that the multiscale hierarchy preserves the complete descriptive context of the original dataset
+
+====
+*Note:* The native-resolution data **MAY** be stored directly in the *OverviewSet* group rather than in a dedicated *OverviewLevel* subgroup.
+
+This layout is permitted for backward compatibility with existing datasets that were later augmented with multiscale metadata.
+However, it is **not recommended**, as it may lead to inconsistent hierarchies or interpretation issues in client applications expecting all resolution levels to be represented as explicit subgroups.
+====
+
+==== Structural Layout
+
+The *Overviews* construct is expressed within the Common Data Model (CDM) framework, which represents datasets through *groups*, *variables*, and *attributes*.
+
+An *OverviewSet* corresponds to a CDM *group* containing multiple *OverviewLevels*, each representing the same data variables at different spatial resolutions.
+
+Within this structure:
+
+- **Groups** define the hierarchical organisation of the multiscale data.
+The *OverviewSet* acts as the parent group, while each *OverviewLevel* is represented as a child group that contains variables with identical names, dimensions, and coordinate definitions. The *OverviewSet* group may also include auxiliary variables and metadata consistent with the structure of a nominal CDM group.
+
+- **Variables** represent the same physical or derived quantities across resolutions.
+Each level contains the same set of data variables and coordinate variables (for example, `x` and `y`) that describe grid geometry at that resolution.
+
+- **Attributes** describe both the dataset metadata and the relationships between overview levels.
+They may appear at the *OverviewSet* or *OverviewLevel* level and are used to define the structure and interpretation of the hierarchy.
+
+
+The complete description of the hierarchy is provided by the `multiscales` property, an attribute of the *OverviewSet* group that lists the available overview levels, their identifiers, and any associated information such as resampling methods or grid references.
+
+===== OverviewSet CDM-Based Representation
+
+The following example illustrates the structural organisation of an *OverviewSet* using Common Data Model (CDM) constructs:
+
+```
+Group: reflectance/                     # OverviewSet (Group)
+├── Attribute: multiscales              # Metadata describing the multiscale hierarchy
+├── Attribute: spatial_ref = "EPSG:32633"
+├── Auxiliary Variable: quality_flag
+├── Group: L0/                          # OverviewLevel (highest or nominal resolution)
+│    ├── Variable: b01
+│    ├── Variable: b02
+│    ├── Variable: b03
+│    ├── Coordinate Variable: x
+│    └── Coordinate Variable: y
+├── Group: L1/                          # OverviewLevel (coarser resolution)
+│    ├── Variable: b01
+│    ├── Variable: b02
+│    ├── Variable: b03
+│    ├── Coordinate Variable: x
+│    └── Coordinate Variable: y
+└── Group: L2/                          # OverviewLevel (coarsest resolution)
+     ├── Variable: b01
+     ├── Variable: b02
+     ├── Variable: b03
+     ├── Coordinate Variable: x
+     └── Coordinate Variable: y
+```
+
+In this representation:
+
+- The **parent group** (`reflectant/`) corresponds to the *OverviewSet* and defines the common spatial, semantic, and organisational context for all levels.
+- Each **child group** (`L0`, `L1`, `L2`) represents an *OverviewLevel*, implemented as a CDM *group* containing variables that share the same names, coordinate variables, and metadata conventions.
+- **Variables** (`b01`, `b02`, etc.) represent equivalent physical quantities at different spatial resolutions.
+
+==== OverviewSet Metadata
+
+The `multiscales` property is an attribute of the *OverviewSet* group that formally defines the organisation of the multiscale hierarchy.
+It provides a structured description of all overview levels, their ordering, and the resampling or aggregation relationships between them.
+
+The property SHALL be encoded as a structured object formally defined as a JSON Schema available at:
+link:../schemas/multiscales.schema.json[Multiscales JSON Schema]
+
+It defines global attributes applying to the entire hierarchy and a `layout` array that lists all overview levels in order of resolution.
+
+===== Multiscales Fields
+
+[cols="1,3"]
+|===
+|Field |Definition
+
+|`version` |**Type:** string.
+Version identifier of the multiscales schema.
+This field SHALL be present to indicate the version of the schema used.
+Example: `"1.0"`
+
+|`resampling_method` |**Type:** string.
+(Optional) Default resampling or aggregation method applied across all levels.
+If omitted, resampling may be defined per level.
+Allowed values include: `"nearest"`, `"average"`, `"bilinear"`, `"cubic"`, `"cubic_spline"`, `"lanczos"`, `"mode"`, `"max"`, `"min"`, `"med"`, `"sum"`, `"q1"`, `"q3"`, `"rms"`, `"gauss"`.
+Default: `"nearest"`.
+
+|`tile_matrix_ref` |**Type:** string or object.
+(Optional) Reference to an external grid or tiling definition (e.g. an OGC Tile Matrix Set identifier or URI) that describes the spatial structure and scale relationships.
+
+|`layout` |**Type:** array of <<overview-level-object,Overview Level Object>>.
+A mandatory array describing each *OverviewLevel* within the hierarchy, ordered from highest to lowest resolution.
+Each entry defines the group name and optional derivation information.
+|===
+
+[[overview-level-object]]
+===== Overview Level Object
+
+Each object in the `layout` array describes one *OverviewLevel* within the multiscale hierarchy.
+It defines a unique identifier for the level, its location within the dataset hierarchy, and optionally its derivation from another level.
+
+[cols="1,3"]
+|===
+|Field |Definition
+
+|`id` |**Type:** string.
+Required unique identifier for this overview level.
+The identifier SHALL be stable within the dataset and MAY be used for reference in other metadata fields.
+Example: `"L0"`, `"L1"`, `"L2"`.
+
+|`path` |**Type:** string.
+(Optional) Logical path identifying the location of the overview level within the dataset hierarchy.
+If omitted, the level is assumed to be located as a *direct child group* of the *OverviewSet* and the `id` value SHALL be used as the default relative path.
+Example: `"L0"`, `"overviews/L2"`.
+
+|`derived_from` |**Type:** string.
+(Optional) Identifier of another overview level from which this level was derived.
+Used to express lineage or dependency relationships between levels.
+The value SHALL correspond to an existing `id` entry in the same `layout` array.
+
+|`factors` |**Type:** array of number.
+(Optional) Numeric decimation factors per dimension (e.g. `[2, 2]` for a 2× reduction in X and Y).
+Used to describe the scaling applied to generate this level from its source.
+
+|`resampling_method` |**Type:** string.
+(Optional) Resampling or aggregation method specific to this level.
+If not defined, the method specified in the root `multiscales.resampling_method` field applies.
+|===
+
+// Group and from_group  directly reference the data model structure itself. Path provide  a clearer and more neutral way to describe these fields that keeps them referential without binding them to data model specific structures
+
+===== Example Representation
+
+Here is a JSON example that conforms to the **final `multiscales` schema**:
+
+```json
+{
+  "version": "1.0",
+  "resampling_method": "average",
+  "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
+  "layout": [
+    {
+      "id": "L0",
+      "path": "L0"
+    },
+    {
+      "id": "L1",
+      "path": "L1",
+      "derived_from": "L0",
+      "factors": [2, 2],
+      "resampling_method": "average"
+    },
+    {
+      "id": "L2",
+      "path": "L2",
+      "derived_from": "L1",
+      "factors": [2, 2],
+      "resampling_method": "average"
+    }
+  ]
+}
+```
+
+**Notes:**
+
+* Each `id` uniquely identifies an overview level.
+* `path` points to the logical container for that level (may be omitted if it is a direct child of the `OverviewSet`).
+* `derived_from` expresses lineage between levels.
+* `factors` defines downscaling ratios.
+* `resampling_method` can be defined per level or inherited from the global one.
+* The `tile_matrix_ref` provide context for external referencing.

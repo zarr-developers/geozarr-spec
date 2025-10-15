@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/multiscales.schema.json",
+  "title": "Multiscales Schema",
+  "description": "Defines the structure of the 'multiscales' attribute for describing multiscale hierarchies in an OverviewSet.",
+  "type": "object",
+  "required": ["version", "layout"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version identifier of the multiscales schema (e.g., '1.0')."
+    },
+    "resampling_method": {
+      "type": "string",
+      "description": "Default resampling or aggregation method applied across all overview levels.",
+      "enum": [
+        "nearest",
+        "average",
+        "bilinear",
+        "cubic",
+        "cubic_spline",
+        "lanczos",
+        "mode",
+        "max",
+        "min",
+        "med",
+        "sum",
+        "q1",
+        "q3",
+        "rms",
+        "gauss"
+      ],
+      "default": "nearest"
+    },
+    "tile_matrix_ref": {
+      "description": "Reference to an external grid or tiling definition (e.g., OGC Tile Matrix Set identifier or URI).",
+      "type": ["string", "object"]
+    },
+    "layout": {
+      "type": "array",
+      "description": "Ordered list of Overview Level objects defining the hierarchy from highest to lowest resolution.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/overviewLevel"
+      }
+    }
+  },
+  "$defs": {
+    "overviewLevel": {
+      "title": "Overview Level Object",
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for this overview level (e.g., 'L0', 'L1', 'L2')."
+        },
+        "path": {
+          "type": "string",
+          "description": "Logical path identifying the overview level's location within the dataset hierarchy. If omitted, the level is assumed to be a direct child of the OverviewSet, and 'id' is used as the relative path."
+        },
+        "derived_from": {
+          "type": "string",
+          "description": "Identifier of another overview level from which this level was derived."
+        },
+        "factors": {
+          "type": "array",
+          "description": "Numeric decimation factors per dimension (e.g., [2, 2] for 2× downsampling in X and Y).",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 1
+        },
+        "resampling_method": {
+          "type": "string",
+          "description": "Resampling or aggregation method specific to this level. If not provided, the global 'resampling_method' applies.",
+          "enum": [
+            "nearest",
+            "average",
+            "bilinear",
+            "cubic",
+            "cubic_spline",
+            "lanczos",
+            "mode",
+            "max",
+            "min",
+            "med",
+            "sum",
+            "q1",
+            "q3",
+            "rms",
+            "gauss"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

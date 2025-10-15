@@ -1,47 +1,25 @@
 
 === Encoding of Multiscale Overviews in Zarr
 
-This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.
+This clause specifies how Overviews should be encoded in Zarr-based datasets conforming to the GeoZarr data model.
 
-Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.
+The *Overviews* construct follows the same encoding principles defined for the Common Data Model (CDM) when represented in Zarr.
+Because overviews are defined purely at the CDM level through groups, variables, and attributes, no Zarr-specific structural extensions are introduced.
 
-==== Hierarchical Layout
+Each *OverviewSet* is encoded as a Zarr *group*, containing multiple *OverviewLevel* subgroups.
+The parent group includes the `multiscales` attribute, which declares the hierarchy and relationships between levels.
+Each *OverviewLevel* is implemented as a standard Zarr group containing variables (arrays) and coordinate variables, encoded identically to other CDM variables.
 
-Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., `"0"`, `"1"`, `"2"`). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.
+==== Relationship to Core CDM Encoding
 
-[cols="1,2,2"]
-|===
-|Structure |Zarr v2 |Zarr v3
+The encoding of overviews reuses the same mapping rules established in the core data model encoding:
 
-|Zoom level groups | Subdirectories with `.zgroup` and `.zattrs` | Subdirectories with `zarr.json`, `node_type: group`
+- **Groups** map to Zarr directories with `.zgroup`/`.zattrs` (Zarr v2) or `zarr.json` (Zarr v3, with `"node_type": "group"`).
+- **Variables** map to Zarr arrays with `.zarray` and `.zattrs` (Zarr v2) or `"node_type": "array"` entries in `zarr.json` (Zarr v3).
+- **Attributes** (including `multiscales`) are stored in `.zattrs` (Zarr v2) or under the `"attributes"` field in `zarr.json` (Zarr v3).
 
-|Variables at each level | Zarr arrays (`.zarray`, `.zattrs`) in each group | Zarr arrays (`zarr.json`, `node_type: array`) in each group
+==== Example Encoding (Zarr v3)
 
-|Global metadata | `multiscales` defined in parent `.zattrs` | `multiscales` defined in parent group `zarr.json` under `attributes`
-|===
-
-Each multiscale group MUST define chunking (tiling) along the spatial dimensions (`X`, `Y`, or `lon`, `lat`). Recommended chunk sizes are 256×256 or 512×512.
-
-==== Metadata Encoding
-
-Multiscale metadata SHALL be defined using a `multiscales` attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:
-
-- `tile_matrix_set` – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2
-- `resampling_method` – One of the standard string values (e.g., `"nearest"`, `"average"`)
-- `tile_matrix_set_limits` – (optional) Zoom-level limits following the STAC Tiled Asset style
-
-===== Zarr v2 Encoding Example (`.zattrs`)
-[source,json]
-----
-{
-  "multiscales": {
-    "tile_matrix_set": "WebMercatorQuad",
-    "resampling_method": "nearest"
-  }
-}
-----
-
-===== Zarr v3 Encoding Example (`zarr.json`)
 [source,json]
 ----
 {
@@ -49,53 +27,46 @@ Multiscale metadata SHALL be defined using a `multiscales` attribute located in 
   "node_type": "group",
   "attributes": {
     "multiscales": {
-      "tile_matrix_set": "WebMercatorQuad",
-      "resampling_method": "nearest"
-    }
+      "version": "1.0",
+      "resampling_method": "average",
+      "layout": [
+        {"id": "L0", "path": "L0"},
+        {"id": "L1", "path": "L1", "derived_from": "L0", "factors": [2, 2]},
+        {"id": "L2", "path": "L2", "derived_from": "L1", "factors": [2, 2]}
+      ]
+    },
+    "spatial_ref": "EPSG:32633"
+  },
+  "metadata": {
+    "title": "Reflectance Multiscale Example"
   }
 }
 ----
 
-==== Tile Matrix Set Representation
+Child groups represent the overview levels:
 
-The `tile_matrix_set` member MAY take one of the following forms:
+```
 
-- A string referring to a well-known identifier (e.g., `"WebMercatorQuad"`)
-- A URI pointing to a JSON document describing the tile matrix set
-- An inline JSON object (CamelCase, OGC TMS 2.0 compatible)
+reflectance/
+├── zarr.json                      # OverviewSet metadata (includes "multiscales")
+├── L0/
+│   ├── zarr.json                  # Highest or nominal resolution
+│   ├── b01/
+│   ├── b02/
+│   ├── x/
+│   └── y/
+├── L1/
+│   ├── zarr.json
+│   ├── b01/
+│   ├── b02/
+│   ├── x/
+│   └── y/
+└── L2/
+├── zarr.json
+├── b01/
+├── b02/
+├── x/
+└── y/
 
-Zoom level identifiers in the tile matrix set MUST match the names of the child groups. The spatial reference system declared in `supportedCRS` MUST match the one declared in the corresponding `grid_mapping` of the data variables.
-
-==== Chunk Layout Alignment
-
-At each zoom level, chunking SHALL match the tile layout defined by the TileMatrix:
-
-- Chunks MUST be aligned with the tile grid (1:1 mapping between chunks and tiles)
-- Chunk sizes MUST match the `tileWidth` and `tileHeight` declared in the TileMatrix
-- Spatial dimensions MUST be clearly identified using `dimension_names` (v3) or `_ARRAY_DIMENSIONS` (v2)
-
-==== Tile Matrix Set Limits
-
-The `tile_matrix_set_limits` object MAY define the extent of actual data coverage for each zoom level. This follows the style of the STAC tiled-assets extension rather than the full OGC JSON encoding.
-
-Example:
-[source,json]
-----
-"tile_matrix_set_limits": {
-  "1": {
-    "min_tile_col": 0,
-    "max_tile_col": 1,
-    "min_tile_row": 0,
-    "max_tile_row": 1
-  }
-}
-----
-
-==== Resampling Method
-
-The `resampling_method` MUST indicate the method used for downsampling across zoom levels. The value MUST be one of:
-
-`nearest`, `average`, `bilinear`, `cubic`, `cubic_spline`, `lanczos`, `mode`, `max`, `min`, `med`, `sum`, `q1`, `q3`, `rms`, `gauss`
-
-The same method MUST apply across all levels.
+```
 
