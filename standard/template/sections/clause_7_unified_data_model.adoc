@@ -1,5 +1,169 @@
 [obligation==informative]
 
+[[data-model]]
+== GeoZarr Data Model
+
+=== Scope and Purpose
+
+The GeoZarr Data Model defines the abstract structure for representing geospatial and scientific gridded data within the GeoZarr framework.
+
+The GeoZarr Data Model serves the following purposes:
+
+* to **clarify the role of the Common Data Model (CDM)** as the base structural layer (recognising its suitability for Zarr as demonstrated by implementations such as *xarray*, *GDAL*, and *nczarr*);
+* to **define how higher-level metadata conventions**—including the *Climate and Forecast (CF) Conventions* and other geospatial standards—are supported or partially supported within the CDM framework;
+* to **extend the CDM** with additional geospatial capabilities not yet covered by the CDM or CF conventions, including *affine transformations* and *multiscale overviews*;
+
+=== Conceptual Basis
+
+The GeoZarr Data Model adopts and extends the **Unidata Common Data Model (CDM)** as its conceptual foundation.
+The CDM defines a hierarchy of *groups*, *variables*, *dimensions*, and *attributes* that together describe the logical organisation of scientific data.
+
+GeoZarr reuses this structure directly and introduces targeted extensions required for geospatial and cloud-native applications.
+These extensions are aligned with existing community standards and ensure continuity with established data models and tools.
+
+The model *integrates* the following conceptual layers:
+
+* **CDM Core Concepts** – Variables, dimensions, coordinates, and attributes providing the abstract representation of scientific data.
+* **CF Conventions** – Optional but recommended layer with metadata rules describing physical meaning, coordinate systems, and units, enabling semantic interoperability.
+* **GeoZarr Extensions** – Constructs for:
+
+    ** *Affine transformations* defining spatial reference through linear mapping between array indices and real-world coordinates;
+    ** *Overviews* enabling multiscale representations and efficient visualization of large datasets.
+
+=== Format Independence
+
+Although the model was defined to support encoding in **Zarr**, it remains **format-agnostic** at the conceptual level.
+Implementations may serialise the same GeoZarr Data Model structure into other compatible encodings, such as NetCDF or alternative object-based formats, provided they preserve the semantics and conformance requirements defined herein.
+
+This separation between **conceptual model** and **physical encoding** ensures that GeoZarr can evolve alongside emerging storage technologies while maintaining interoperability with existing CDM- and CF-based infrastructures.
+
+=== Conceptual Layers
+
+The GeoZarr Data Model is organised into three conceptual layers:
+
+1. the **Common Data Model (CDM)** – structural foundation;
+2. the **CF Conventions** – semantic metadata layer;
+3. the **GeoZarr Extensions** – additional geospatial capabilities.
+
+==== Common Data Model (CDM)
+
+The **Unidata Common Data Model (CDM)** defines the logical structure of scientific datasets through a hierarchy of **Groups**, **Variables**, **Dimensions**, and **Attributes**.
+It provides the foundation upon which GeoZarr and many existing libraries (such as *xarray*, *GDAL*, and *nczarr*) operate.
+
+[plantuml, target="cdm_structure_overview", format=svg]
+----
+@startuml
+class Group {
+}
+
+class Variable {
+}
+
+class Dimension {
+}
+
+class Attribute {
+}
+
+class DataArray {
+}
+
+class CoordinateVariable {
+}
+
+class Subgroup {
+}
+
+Group "1" *-- "0..*" Variable
+Group "1" *-- "0..*" Dimension
+Group "1" *-- "0..*" Attribute
+Group "1" *-- "0..*" Subgroup
+Variable "1" *-- "1" DataArray
+Variable <|-- CoordinateVariable
+
+@enduml
+----
+
+
+* A **Group** is a container that may include variables, dimensions, attributes, and subgroups.
+* A **Variable** represents a multidimensional array associated with one or more dimensions and attributes.
+* A **Dimension** defines an index axis used to organise data within variables.
+* An **Attribute** holds descriptive metadata for groups or variables.
+* A **Coordinate Variables**  supplies coordinate values along dimensions, establishing spatial or temporal context.
+* A **Data Array**  represents observed or simulated phenomena, associated with dimensions and coordinate variables.
+
+This structure enables consistent representation of scientific data independently of storage format, providing the base semantic framework for all GeoZarr encodings.
+
+==== CF Conventions
+
+The **Climate and Forecast (CF) Conventions** build upon the CDM by defining a controlled vocabulary and metadata rules for expressing the *physical meaning* of variables and coordinates.
+Because CF is explicitly based on CDM, GeoZarr can adopt CF semantics directly.
+
+Key CF concepts supported within the GeoZarr Data Model include:
+
+* **Coordinate and auxiliary coordinate variables** describing spatial and temporal axes;
+* **Standard names**, **units**, and **cell methods** providing scientific context;
+* **Grid mapping variables** defining coordinate reference systems and projection parameters;
+* **Attributes** conveying data provenance and conventions compliance.
+
+GeoZarr does not alter CF semantics but clarifies their representation in CDM-structured hierarchies, enabling partial or full CF compliance depending on dataset complexity.
+
+[plantuml, target="cf_cdm_overview", format=svg]
+----
+@startuml
+left to right direction
+
+package "Common Data Model (CDM)" {
+  class Group
+  class Variable
+  class Dimension
+  class Attribute
+
+  Group "1" *-- "0..*" Variable
+  Group "1" *-- "0..*" Dimension
+  Group "1" *-- "0..*" Attribute
+  Variable "1" *-- "1..*" Dimension
+  Variable "1" *-- "0..*" Attribute
+}
+
+' Force CF Conventions package to be vertical
+package "CF Conventions" {
+  together {
+    class CoordinateVariable
+    class AuxiliaryCoordinateVariable
+  }
+
+  Variable <|-- CoordinateVariable
+  Variable <|-- AuxiliaryCoordinateVariable
+
+}
+
+@enduml
+
+----
+
+
+
+==== GeoZarr Extensions
+
+GeoZarr extends the CDM with additional geospatial constructs required for cloud-native applications:
+
+* **Affine transformations** — define the mapping between array indices and real-world coordinates using linear coefficients.
+  This enables compact georeferencing for regularly gridded data.
+* **Multiscale overviews** — represent downsampled versions of variables for efficient visualisation and scalable access.
+  Overviews are structured as subordinate variable groups sharing the same coordinate system.
+* **Variable groups** — introduce a logical grouping of variables with identical dimensionality and coordinate context, supporting compound geospatial datasets (e.g., multi-band imagery, time series).
+
+All extensions remain aligned with the CDM hierarchy and are encoded using the same core constructs (groups, variables, and attributes).
+Together, they provide the minimal geospatial extensions necessary for efficient, standards-based representation of Earth observation and scientific data in cloud environments.
+
+// include::clause_7_part_overviews.adoc[]
+
+
+====
+WARNING - *To be removed*
+====
+
 == Unified Data Model
 
 === Scope and Purpose
@@ -108,6 +272,10 @@ This clause defines the structural organisation of Zarr hierarchies conforming t
 The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.
 
 ==== Hierarchy Structure
+
+====
+To be reviewed
+====
 
 A Zarr hierarchy conforming to the Unified Data Model (UDM) is structured as a tree rooted at a top-level group. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
 
@@ -275,44 +443,14 @@ The *Overviews* construct is applicable to any gridded data variable with at lea
 
 The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.
 
-=== Conformance and Extensibility
 
-The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.
 
-==== Core Conformance
-
-- Datasets conforming to the core model must:
-* Represent data using CDM-compatible constructs (dimensions, variables, attributes).
-* Follow attribute conventions where applicable.
-* Be parsable as valid Zarr with structured metadata following this specification.
-
-- CF compliance is not mandatory but is recommended for semantic interoperability.
-
-==== Extension Conformance
-
-- Implementations may optionally support one or more extension modules:
-* Multi-resolution overviews (Tile Matrix Set)
-* GeoTransform metadata (GDAL)
-* STAC metadata integration
-
-- Each extension defines its own requirement class with validation rules and expected metadata structures.
-
-- Tools may advertise which extensions they support and validate datasets accordingly.
-
-==== Conformance Classes
-
-- Conformance Classes may be defined to specify required components and extensions for specific application domains (e.g., visualisation clients, EO archives, catalogue indexing).
-- Conformance Classes enable selective validation without constraining the general model.
-
-==== Extensibility Principles
-
-- All extensions must preserve compatibility with the core model and avoid redefining existing CDM or CF semantics.
-- New extensions should be documented with clear identifiers, schemas, and conformance criteria.
-- The model encourages interoperability by allowing tools to interpret unknown extensions without failure.
-
-This extensibility framework supports both minimum-viable use and high-fidelity metadata integration, enabling incremental adoption across the geospatial and scientific data communities.
 
 === Interoperability Considerations
+
+====
+TBD: this section should be consolidated or removed
+====
 
 Interoperability is a core objective of the GeoZarr Unified Data Model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.
 
@@ -334,11 +472,7 @@ The data model is explicitly aligned with foundational standards including the U
 
 These mappings facilitate round-trip transformations and enable toolchains that consume or produce multiple formats without reengineering semantic models.
 
-==== Semantic Interoperability
 
-Semantic interoperability is supported through adherence to CF conventions, use of standardised attribute names (e.g., `standard_name`, `units`), and alignment with metadata vocabularies used in other ecosystems (e.g., STAC, EPSG codes, ISO 19115 keywords).
-
-The model does not prescribe specific vocabularies beyond CF but encourages reuse and recognition of widely accepted descriptors to promote cross-domain understanding.
 
 ==== Metadata and Discovery Integration
 
