@@ -40,7 +40,7 @@ An index axis along which arrays are organised. Dimensions provide a naming and 
 
 ==== dataset
 
-While this term is overloaded and avoided in this document, a dataset usually represent a self-contained group of variables within a hierarchical data structure. They often share one or more dimensions and represent the unit that can be opened by a data access library (e.g., xarray)
+*Avoid using:* this term is overloaded and avoided in this document. A dataset usually represent a self-contained group of variables within a hierarchical data structure. They often share one or more dimensions and represent the unit that can be opened by a data access library (see <<variable-group,variable group>>)
 
 ==== metadata
 
@@ -57,6 +57,11 @@ A system that provides storage and retrieval operations for Zarr hierarchies, as
 ==== tile matrix set
 
 A spatial tiling scheme defined by a hierarchy of zoom levels and consistent grid parameters (e.g., scale, CRS). Tile Matrix Sets enable spatial indexing and tiling of gridded data.
+
+[[variable-group]]
+==== variable group
+
+A variable group is a container that includes a coherent collection of variables sharing the same dimensional structure and coordinate system ( and may contain additional variables or subgroups). It is conceptually equivalent to an xarray Dataset..
 
 
 
