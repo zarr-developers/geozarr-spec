@@ -1,7 +1,7 @@
 MIME-Version: 1.0
-Content-Type: multipart/related; boundary="----=_NextPart_0c5ec00a.5f0f.4223"
+Content-Type: multipart/related; boundary="----=_NextPart_227e4807.0003.4b09"
 
-------=_NextPart_0c5ec00a.5f0f.4223
+------=_NextPart_227e4807.0003.4b09
 Content-ID: <geozarr-spec.htm>
 Content-Disposition: inline; filename="geozarr-spec.htm"
 Content-Type: text/html; charset="utf-8"
@@ -2689,370 +2689,370 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 </div><p class="MsoNormal"><br clear="all" style="mso-special-character:line-break;page-break-before:always"/></p><div class="TOC"><a name="_13d7055e-30fc-845a-c60e-8972faf092d9" id="_13d7055e-30fc-845a-c60e-8972faf092d9"></a><p class="zzContents">Contents</p><p class="MsoToc1"><span lang="EN-GB" xml:lang="EN-GB"><span style="mso-element:field-begin"></span><span style="mso-spacerun:yes">&#xA0;</span>TOC \o "1-2" \h \z \u <span style="mso-element:field-separator"></span></span>
 <span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc065938230">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc130739742">Copyright notice<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc065938230 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc130739742 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc679198338">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc199422095">Note<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc679198338 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc199422095 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc585751330">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc445938349">License Agreement<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc585751330 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc445938349 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc268077362">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc402612771">Notice for Drafts<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc268077362 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc402612771 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc294838238">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc347335562">I. Abstract<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc294838238 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc347335562 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc406277434">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc713904405">II. Keywords<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc406277434 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc713904405 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc814631972">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc213366089">III. Preface<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc814631972 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc213366089 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc901755188">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc499162443">IV. Security considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc901755188 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc499162443 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc024390099">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc225230209">V. Submitting Organizations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc024390099 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc225230209 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc420795464">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc876695959">VI. Submitters<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc420795464 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc876695959 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc743898418">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc675600051">1. Scope<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc743898418 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc675600051 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc782336119">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc550546886">2. Conformance<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc782336119 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc550546886 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc172199854">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc328613146">3. Normative references<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc172199854 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc328613146 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc218287157">4. Terms, definitions and abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc270564491">4. Terms, definitions and abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc218287157 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc270564491 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc941205628">4.1. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc335817023">4.1. Terms and definitions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc941205628 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc335817023 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc273388922">4.2. Abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc945251892">4.2. Abbreviated terms<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc273388922 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc945251892 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc130926021">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc149841331">5. Conventions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc130926021 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc149841331 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc709146261">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc990482850">5.1. Identifiers<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc709146261 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc990482850 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc133889339">5.2. Data Encoding<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc276972703">5.2. Data Encoding<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc133889339 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc276972703 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc534148376">5.3. Schemas<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc887691339">5.3. Schemas<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc534148376 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc887691339 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc926585220">5.4. URI Usage<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc971590290">5.4. URI Usage<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc926585220 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc971590290 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc789439612">6. Overview<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc657828993">6. Overview<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc789439612 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc657828993 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc898110246">6.1. Encodings<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc916123270">6.1. Encodings<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc898110246 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc916123270 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc404415354">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc636928060">7. Unified Data Model<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc404415354 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc636928060 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc845090942">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc154474154">7.1. Scope and Purpose<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc845090942 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc154474154 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc113048581">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc751999116">7.2. Foundational Model and Standards Reuse<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc113048581 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc751999116 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc012886977">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc520841633">7.3. Model Extension Points<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc012886977 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc520841633 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc962465435">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc008121451">7.4. Unified Model Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc962465435 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc008121451 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc336319644">7.5. Overviews<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc428437217">7.5. Overviews<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc336319644 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc428437217 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc596320762">7.6. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc106317689">7.6. Conformance and Extensibility<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc596320762 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc106317689 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc735664587">7.7. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc964379920">7.7. Interoperability Considerations<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc735664587 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc964379920 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc192494108">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc437603312">8. GeoZarr Conformance Classes<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc192494108 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc437603312 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc261862486">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc833374888">9. Unified Data Model Encoding for Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc261862486 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc833374888 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc664753726">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc732341306">9.1. Hierarchical Structure<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc664753726 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc732341306 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc906229413">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc763850300">9.2. Dimensions<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc906229413 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc763850300 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc612713838">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc826206053">9.3. Coordinate Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc612713838 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc826206053 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc137740628">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc002823298">9.4. Data Variables<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc137740628 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc002823298 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc590632518">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc337386570">9.5. Global Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc590632518 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc337386570 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc190334879">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc803100154">9.6. Variables Metadata<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc190334879 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc803100154 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc217388414">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc764926097">9.7. Encoding of Multiscale Overviews in Zarr<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc217388414 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc764926097 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc703039931">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc884191177">10. Unified Data Model Encoding for GeoTiff<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc703039931 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc884191177 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc373673889">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc184067384">Annex A (informative) Conformance Class Abstract Test Suite (Normative)<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc373673889 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc184067384 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc2"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc347523447">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc511393343">A.1. Conformance Class A<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc347523447 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc511393343 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc163458062">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc993302436">Annex B (informative) Title<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc163458062 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc993302436 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc234506448">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc715247830">Annex C (informative) Revision History<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc234506448 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc715247830 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
 <p class="MsoToc1"><span class="MsoHyperlink"><span lang="EN-GB" style="mso-no-proof:yes" xml:lang="EN-GB">
-<a href="#_Toc571001848">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
+<a href="#_Toc684063692">Bibliography<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-tab-count:1 dotted">. </span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">
 <span style="mso-element:field-begin"></span></span>
-<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc571001848 \h </span>
+<span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"> PAGEREF _Toc684063692 \h </span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-separator"></span></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB">1</span>
   <span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"></span><span lang="EN-GB" class="MsoTocTextSpan" xml:lang="EN-GB"><span style="mso-element:field-end"></span></span></a></span></span></p>
 
@@ -3334,7 +3334,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 </div>
       </div>
       <div>
-        <a name="_d6a1c7d8-a967-5dec-205d-18045f528d86" id="_d6a1c7d8-a967-5dec-205d-18045f528d86"></a>
+        <a name="_c283f18c-2539-4057-d742-06a5e731e510" id="_c283f18c-2539-4057-d742-06a5e731e510"></a>
         <h1>7.<span style="mso-tab-count:1">&#xA0; </span>Unified Data Model</h1>
         <div><a name="_b9da0fda-077e-da4d-5ca9-eb22f40125f7" id="_b9da0fda-077e-da4d-5ca9-eb22f40125f7"></a><h2>7.1.<span style="mso-tab-count:1">&#xA0; </span>Scope and Purpose</h2>
 
@@ -3471,13 +3471,13 @@ span.AdmittedLabel, span.DeprecatedLabel {
 <p class="MsoNormal"><a name="_8b28ba1e-8b37-7177-6453-5e148acbe1eb" id="_8b28ba1e-8b37-7177-6453-5e148acbe1eb"></a>Each extension point is specified independently. Implementations may advertise support for one or more extensions by declaring conformance to corresponding extension modules. This modularity facilitates incremental adoption, promotes reuse, and enhances interoperability across varied implementation environments.</p>
 </div>
 </div>
-        <div><a name="_ba21aba1-fb11-37b5-59b7-f51302754692" id="_ba21aba1-fb11-37b5-59b7-f51302754692"></a><h2>7.4.<span style="mso-tab-count:1">&#xA0; </span>Unified Model Structure</h2>
+        <div><a name="_3ae6fc86-afb8-218c-1002-f0012b991944" id="_3ae6fc86-afb8-218c-1002-f0012b991944"></a><h2>7.4.<span style="mso-tab-count:1">&#xA0; </span>Unified Model Structure</h2>
 
 <p class="MsoNormal"><a name="_81136920-715d-7323-5ebf-6d6a8770f8e9" id="_81136920-715d-7323-5ebf-6d6a8770f8e9"></a>This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.</p>
 
 <p class="MsoNormal"><a name="_6056bc82-19b1-b937-4410-d41743363980" id="_6056bc82-19b1-b937-4410-d41743363980"></a>The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.</p>
 
-<div><a name="_04ff11dc-6fbb-fbf6-cff5-038cdab924c6" id="_04ff11dc-6fbb-fbf6-cff5-038cdab924c6"></a><h3>7.4.1.<span style="mso-tab-count:1">&#xA0; </span>Dataset Structure</h3>
+<div><a name="_fef227f5-4788-1eb5-0622-6eb38781fb90" id="_fef227f5-4788-1eb5-0622-6eb38781fb90"></a><h3>7.4.1.<span style="mso-tab-count:1">&#xA0; </span>Dataset Structure</h3>
 
 <p class="MsoNormal"><a name="_acd02a70-7c8a-47e0-7e49-10f027b1253e" id="_acd02a70-7c8a-47e0-7e49-10f027b1253e"></a>A dataset conforming to the Unified Data Model (UDM) is structured as a hierarchy rooted at a top-level dataset entity. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.</p>
 
@@ -3497,9 +3497,8 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_d8989144-9563-2224-a507-4e480f453031" id="_d8989144-9563-2224-a507-4e480f453031"></a>The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.</p>
 
-<div class="figure"><a name="_0a91e7ff-ee8f-4c95-afe6-1dc3d0adfce9" id="_0a91e7ff-ee8f-4c95-afe6-1dc3d0adfce9"></a>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_5823ec7b-7614-5d0c-336b-2ef3886db684" id="_5823ec7b-7614-5d0c-336b-2ef3886db684"></a>graph TD<br/>A[Group]<br/>A --&gt; B[Variable]<br/>A --&gt; C[Dimension]<br/>A --&gt; D[Attribute]<br/>B --&gt; E[Data Array]<br/>B --&gt; F[Coordinate Variable]<br/>A --&gt; G[Subgroup]</p><p class="SourceTitle" style="text-align:center;">Listing 1</p>
 
-<p class="figure" style="page-break-after:avoid;"><img src="cid:ae18d230-41bd-4dde-8df0-9a439eeaf557.png" height="621" width="489"/></p><p class="FigureTitle" style="text-align:center;">Figure 1&#xA0;&#x2014; Conformance-class model</p></div>
 
 <p class="MsoNormal"><a name="_eb0e8ff9-bdd4-1d04-906a-7a68f9e4e9d5" id="_eb0e8ff9-bdd4-1d04-906a-7a68f9e4e9d5"></a>Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.</p>
 </div>
@@ -3564,7 +3563,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_3af1e59b-fcaf-e350-eec8-86c16dcacaae" id="_3af1e59b-fcaf-e350-eec8-86c16dcacaae"></a>Example: Typical CDM Group Structure without overviews</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_b131d7d1-41aa-f693-5cda-c37f71c01adf" id="_b131d7d1-41aa-f693-5cda-c37f71c01adf"></a>Group: variable_group/<br/>&#x251C;&#x2500;&#x2500; variable1<br/>&#x251C;&#x2500;&#x2500; variable2<br/>&#x251C;&#x2500;&#x2500; aux_variable<br/>&#x251C;&#x2500;&#x2500; coordinates1<br/>&#x251C;&#x2500;&#x2500; coordinates2<br/>&#x2514;&#x2500;&#x2500; Attributes</p><p class="SourceTitle" style="text-align:center;">Listing 1</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_b131d7d1-41aa-f693-5cda-c37f71c01adf" id="_b131d7d1-41aa-f693-5cda-c37f71c01adf"></a>Group: variable_group/<br/>&#x251C;&#x2500;&#x2500; variable1<br/>&#x251C;&#x2500;&#x2500; variable2<br/>&#x251C;&#x2500;&#x2500; aux_variable<br/>&#x251C;&#x2500;&#x2500; coordinates1<br/>&#x251C;&#x2500;&#x2500; coordinates2<br/>&#x2514;&#x2500;&#x2500; Attributes</p><p class="SourceTitle" style="text-align:center;">Listing 2</p>
 
 
 <p class="MsoNormal"><a name="_92cf6a3b-78d1-c046-c2a8-727b950ee4f1" id="_92cf6a3b-78d1-c046-c2a8-727b950ee4f1"></a>Each overview level provides a reduced-resolution representation of the same variables. This approach avoids redundancy by describing the hierarchy once for the entire group rather than for individual variables, ensuring consistency and concise metadata.</p>
@@ -3610,7 +3609,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_a82a6706-7088-0698-ac04-b35c91102105" id="_a82a6706-7088-0698-ac04-b35c91102105"></a>The following example illustrates the structural organisation of an <b>OverviewSet</b> using Common Data Model (CDM) constructs:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_c3295aa0-fb7b-1a33-b7fd-d3f67768a014" id="_c3295aa0-fb7b-1a33-b7fd-d3f67768a014"></a>Group: reflectance/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewSet (Group)<br/>&#x251C;&#x2500;&#x2500; Attribute: multiscales&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # Metadata describing the multiscale hierarchy<br/>&#x251C;&#x2500;&#x2500; Attribute: spatial_ref = "EPSG:32633"<br/>&#x251C;&#x2500;&#x2500; Auxiliary Variable: quality_flag<br/>&#x251C;&#x2500;&#x2500; Group: L0/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (highest or nominal resolution)<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y<br/>&#x251C;&#x2500;&#x2500; Group: L1/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (coarser resolution)<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y<br/>&#x2514;&#x2500;&#x2500; Group: L2/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (coarsest resolution)<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y</p><p class="SourceTitle" style="text-align:center;">Listing 2</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_c3295aa0-fb7b-1a33-b7fd-d3f67768a014" id="_c3295aa0-fb7b-1a33-b7fd-d3f67768a014"></a>Group: reflectance/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewSet (Group)<br/>&#x251C;&#x2500;&#x2500; Attribute: multiscales&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # Metadata describing the multiscale hierarchy<br/>&#x251C;&#x2500;&#x2500; Attribute: spatial_ref = "EPSG:32633"<br/>&#x251C;&#x2500;&#x2500; Auxiliary Variable: quality_flag<br/>&#x251C;&#x2500;&#x2500; Group: L0/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (highest or nominal resolution)<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y<br/>&#x251C;&#x2500;&#x2500; Group: L1/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (coarser resolution)<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#x2502;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y<br/>&#x2514;&#x2500;&#x2500; Group: L2/&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewLevel (coarsest resolution)<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b01<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b02<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Variable: b03<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; Coordinate Variable: x<br/>&#xA0;&#xA0;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; Coordinate Variable: y</p><p class="SourceTitle" style="text-align:center;">Listing 3</p>
 
 
 <p class="MsoNormal"><a name="_7bf1c251-b26d-6c07-a996-072d6ac713fc" id="_7bf1c251-b26d-6c07-a996-072d6ac713fc"></a>In this representation:</p>
@@ -3649,7 +3648,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_e312d3dc-9754-250d-2e15-09b9f66fc38e" id="_e312d3dc-9754-250d-2e15-09b9f66fc38e"></a>Here is a JSON example that conforms to the <b>final <tt>multiscales</tt> schema</b>:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_38c4e4d8-abbe-4676-93a9-6eeaa63e41b5" id="_38c4e4d8-abbe-4676-93a9-6eeaa63e41b5"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"tile_matrix_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC:WMT:1.0:WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"layout"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">]</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 3</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_38c4e4d8-abbe-4676-93a9-6eeaa63e41b5" id="_38c4e4d8-abbe-4676-93a9-6eeaa63e41b5"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"tile_matrix_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OGC:WMT:1.0:WebMercatorQuad"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"layout"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">],</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">]</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 4</p>
 
 
 <p class="MsoNormal"><a name="_ae649ee0-87da-8de2-cd34-d634b442c381" id="_ae649ee0-87da-8de2-cd34-d634b442c381"></a><b>Notes:</b></p>
@@ -3837,7 +3836,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_2ff62287-2aaa-6fa3-bd48-cac33e44bb43" id="_2ff62287-2aaa-6fa3-bd48-cac33e44bb43"></a>Example for a 2D array with dimension names <tt>["lat", "lon"]</tt>:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_4b1cf4cf-1ec4-02bb-95d9-9c2124dd0506" id="_4b1cf4cf-1ec4-02bb-95d9-9c2124dd0506"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="err">...</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 4</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_4b1cf4cf-1ec4-02bb-95d9-9c2124dd0506" id="_4b1cf4cf-1ec4-02bb-95d9-9c2124dd0506"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">,</span><span class="w"> </span><span class="mi">360</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="err">...</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 5</p>
 
 </div>
         <div><a name="_28f03030-80bd-8323-3311-111804125958" id="_28f03030-80bd-8323-3311-111804125958"></a><h2>9.3.<span style="mso-tab-count:1">&#xA0; </span>Coordinate Variables</h2>
@@ -3850,7 +3849,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_dc2bc66b-d631-9138-8662-a87a8e2e9269" id="_dc2bc66b-d631-9138-8662-a87a8e2e9269"></a>Example <tt>zarr.json</tt> for a coordinate array:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_e179d468-9df1-7cc0-a683-db613f50d494" id="_e179d468-9df1-7cc0-a683-db613f50d494"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 5</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_e179d468-9df1-7cc0-a683-db613f50d494" id="_e179d468-9df1-7cc0-a683-db613f50d494"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"array"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"dimension_names"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"lat"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"data_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"float32"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"chunk_grid"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"regular"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"configuration"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"chunk_shape"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">180</span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">}</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"latitude"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"degrees_north"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"axis"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Y"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 6</p>
 
 </div>
         <div><a name="_39c388ef-2e11-39d6-df59-b83761c9e26c" id="_39c388ef-2e11-39d6-df59-b83761c9e26c"></a><h2>9.4.<span style="mso-tab-count:1">&#xA0; </span>Data Variables</h2>
@@ -3861,7 +3860,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_265a40ed-08c7-cbe9-426e-6973bdb34dda" id="_265a40ed-08c7-cbe9-426e-6973bdb34dda"></a>Example:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_167d38d8-e704-7564-0e73-c01c1621f49b" id="_167d38d8-e704-7564-0e73-c01c1621f49b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 6</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_167d38d8-e704-7564-0e73-c01c1621f49b" id="_167d38d8-e704-7564-0e73-c01c1621f49b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"_ARRAY_DIMENSIONS"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"time"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lat"</span><span class="p">,</span><span class="w"> </span><span class="s2">"lon"</span><span class="p">],</span><span class="w"><br/>&#xA0; </span><span class="nl">"standard_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"air_temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"units"</span><span class="p">:</span><span class="w"> </span><span class="s2">"K"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"long_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surface air temperature"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"_FillValue"</span><span class="p">:</span><span class="w"> </span><span class="mf">-9999.0</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 7</p>
 
 </div>
         <div><a name="_f24c448d-217f-7ef4-5a94-58b93cf288e9" id="_f24c448d-217f-7ef4-5a94-58b93cf288e9"></a><h2>9.5.<span style="mso-tab-count:1">&#xA0; </span>Global Metadata</h2>
@@ -3872,7 +3871,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <p class="MsoNormal"><a name="_8e5521e1-e5ab-27ad-aafb-951e9910904b" id="_8e5521e1-e5ab-27ad-aafb-951e9910904b"></a>Example Zarr v3 root <tt>zarr.json</tt>:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_d1c09ed1-bef9-ba3a-da10-5f551b42280a" id="_d1c09ed1-bef9-ba3a-da10-5f551b42280a"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 7</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_d1c09ed1-bef9-ba3a-da10-5f551b42280a" id="_d1c09ed1-bef9-ba3a-da10-5f551b42280a"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Dataset"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"summary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Multidimensional Earth Observation data"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"institution"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Example Space Agency"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"Conventions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CF-1.10"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 8</p>
 
 </div>
         <div><a name="_7f9756d3-0037-0e92-f5a0-b755eca8d85f" id="_7f9756d3-0037-0e92-f5a0-b755eca8d85f"></a><h2>9.6.<span style="mso-tab-count:1">&#xA0; </span>Variables Metadata</h2>
@@ -3918,12 +3917,12 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <div><a name="_07c7f51f-ded9-e63b-3348-9efea247d383" id="_07c7f51f-ded9-e63b-3348-9efea247d383"></a><h3>9.7.2.<span style="mso-tab-count:1">&#xA0; </span>Example Encoding (Zarr v3)</h3>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_eaa62747-d754-7e42-7b72-feb9d74c010b" id="_eaa62747-d754-7e42-7b72-feb9d74c010b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"layout"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"> </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]}</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"spatial_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG:32633"</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reflectance Multiscale Example"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 8</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_eaa62747-d754-7e42-7b72-feb9d74c010b" id="_eaa62747-d754-7e42-7b72-feb9d74c010b"></a><span class="p">{</span><span class="w"><br/>&#xA0; </span><span class="nl">"zarr_format"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"node_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"group"</span><span class="p">,</span><span class="w"><br/>&#xA0; </span><span class="nl">"attributes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"multiscales"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"resampling_method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"average"</span><span class="p">,</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="nl">"layout"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L0"</span><span class="p">,</span><span class="w"> </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">{</span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"path"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L2"</span><span class="p">,</span><span class="w"> </span><span class="nl">"derived_from"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L1"</span><span class="p">,</span><span class="w"> </span><span class="nl">"factors"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]}</span><span class="w"><br/>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; </span><span class="p">]</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"spatial_ref"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EPSG:32633"</span><span class="w"><br/>&#xA0; </span><span class="p">},</span><span class="w"><br/>&#xA0; </span><span class="nl">"metadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"><br/>&#xA0;&#xA0;&#xA0; </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reflectance Multiscale Example"</span><span class="w"><br/>&#xA0; </span><span class="p">}</span><span class="w"><br/></span><span class="p">}</span></p><p class="SourceTitle" style="text-align:center;">Listing 9</p>
 
 
 <p class="MsoNormal"><a name="_f5de9b2a-91d7-cea0-3606-4f10efcb6490" id="_f5de9b2a-91d7-cea0-3606-4f10efcb6490"></a>Child groups represent the overview levels:</p>
 
-<p class="Sourcecode" style="page-break-after:avoid;"><a name="_74905a8f-a74b-e425-4916-9f2168703a9c" id="_74905a8f-a74b-e425-4916-9f2168703a9c"></a>reflectance/<br/>&#x251C;&#x2500;&#x2500; zarr.json&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewSet metadata (includes "multiscales")<br/>&#x251C;&#x2500;&#x2500; L0/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; zarr.json&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # Highest or nominal resolution<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b01/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b02/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; x/<br/>&#x2502;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; y/<br/>&#x251C;&#x2500;&#x2500; L1/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; zarr.json<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b01/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b02/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; x/<br/>&#x2502;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; y/<br/>&#x2514;&#x2500;&#x2500; L2/<br/>&#x251C;&#x2500;&#x2500; zarr.json<br/>&#x251C;&#x2500;&#x2500; b01/<br/>&#x251C;&#x2500;&#x2500; b02/<br/>&#x251C;&#x2500;&#x2500; x/<br/>&#x2514;&#x2500;&#x2500; y/</p><p class="SourceTitle" style="text-align:center;">Listing 9</p>
+<p class="Sourcecode" style="page-break-after:avoid;"><a name="_74905a8f-a74b-e425-4916-9f2168703a9c" id="_74905a8f-a74b-e425-4916-9f2168703a9c"></a>reflectance/<br/>&#x251C;&#x2500;&#x2500; zarr.json&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # OverviewSet metadata (includes "multiscales")<br/>&#x251C;&#x2500;&#x2500; L0/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; zarr.json&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0; # Highest or nominal resolution<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b01/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b02/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; x/<br/>&#x2502;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; y/<br/>&#x251C;&#x2500;&#x2500; L1/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; zarr.json<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b01/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; b02/<br/>&#x2502;&#xA0;&#xA0; &#x251C;&#x2500;&#x2500; x/<br/>&#x2502;&#xA0;&#xA0; &#x2514;&#x2500;&#x2500; y/<br/>&#x2514;&#x2500;&#x2500; L2/<br/>&#x251C;&#x2500;&#x2500; zarr.json<br/>&#x251C;&#x2500;&#x2500; b01/<br/>&#x251C;&#x2500;&#x2500; b02/<br/>&#x251C;&#x2500;&#x2500; x/<br/>&#x2514;&#x2500;&#x2500; y/</p><p class="SourceTitle" style="text-align:center;">Listing 10</p>
 
 </div>
 </div>
@@ -3954,7 +3953,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <div><a name="_0b1b9b39-957b-c99a-0be5-8ce636765171" id="_0b1b9b39-957b-c99a-0be5-8ce636765171"></a><h3>A.1.1.<span style="mso-tab-count:1">&#xA0; </span>Example 1</h3>
 
-<div class="require"><a name="_bec13b03-8b27-49ad-8945-578cc06657ba" id="_bec13b03-8b27-49ad-8945-578cc06657ba"></a><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;" width="100%"><a name="ats_core_api-definition-op" id="ats_core_api-definition-op"></a><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;"><p class="RecommendationTestTitle" style="page-break-after:avoid">Abstract test A.1</p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Subject</th><td style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/req/req-class-a/req-name-1</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Label</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/conf/core/api-definition-op</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Test purpose</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><p style="page-break-after:avoid" class="MsoNormal"><a name="_79add0f5-5973-1075-d8a2-b8851cb3d597" id="_79add0f5-5973-1075-d8a2-b8851cb3d597"></a>Validate that the API Definition document can be retrieved from the expected location.</p>
+<div class="require"><a name="_187d1e9a-8ca9-40e2-ba52-fa63aa6da298" id="_187d1e9a-8ca9-40e2-ba52-fa63aa6da298"></a><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;" width="100%"><a name="ats_core_api-definition-op" id="ats_core_api-definition-op"></a><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;"><p class="RecommendationTestTitle" style="page-break-after:avoid">Abstract test A.1</p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Subject</th><td style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/req/req-class-a/req-name-1</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Label</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/conf/core/api-definition-op</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Test purpose</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><p style="page-break-after:avoid" class="MsoNormal"><a name="_79add0f5-5973-1075-d8a2-b8851cb3d597" id="_79add0f5-5973-1075-d8a2-b8851cb3d597"></a>Validate that the API Definition document can be retrieved from the expected location.</p>
 </td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">Test method</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;"><div class="ol_wrap" style="page-break-after:auto"><p style="mso-list:l2 level1 lfo30;page-break-after:auto" class="MsoListParagraphCxSpFirst">Construct a path for the API Definition document that ends with <tt>/api</tt>.
 </p><p style="mso-list:l2 level1 lfo30;page-break-after:auto" class="MsoListParagraphCxSpMiddle">Issue a HTTP GET request on that path
 </p><p style="mso-list:l2 level1 lfo30;page-break-after:auto" class="MsoListParagraphCxSpLast">Validate the contents of the returned document using test <a href="#ats_core_api-definition-success">/conf/core/api-definition-success</a>.
@@ -3965,7 +3964,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 
 <div><a name="_1613753b-ebe4-bc61-1309-f61876d39f54" id="_1613753b-ebe4-bc61-1309-f61876d39f54"></a><h3>A.1.2.<span style="mso-tab-count:1">&#xA0; </span>Example 2</h3>
 
-<div class="require"><a name="_747d86b7-756c-4039-a20e-82d510faca20" id="_747d86b7-756c-4039-a20e-82d510faca20"></a><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;" width="100%"><a name="ats_core_http" id="ats_core_http"></a><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;"><p class="RecommendationTestTitle" style="page-break-after:avoid">Abstract test A.2</p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Subject</th><td style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/req/req-class-a/req-name-2</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Label</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/conf/core/http</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Test purpose</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><p style="page-break-after:avoid" class="MsoNormal"><a name="_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba" id="_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba"></a>Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.</p>
+<div class="require"><a name="_d41adee5-d240-4724-adb2-56b1a740efae" id="_d41adee5-d240-4724-adb2-56b1a740efae"></a><div align="center" class="table_container"><table class="MsoISOTable" style="mso-table-anchor-horizontal:column;mso-table-overlap:never;border-spacing:0;border-width:1px;" width="100%"><a name="ats_core_http" id="ats_core_http"></a><thead><tr><th colspan="2" style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:avoid;"><p class="RecommendationTestTitle" style="page-break-after:avoid">Abstract test A.2</p></th></tr></thead><tbody><tr><th style="font-weight:bold;border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Subject</th><td style="border-top:solid windowtext 1.5pt;mso-border-top-alt:solid windowtext 1.5pt;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/req/req-class-a/req-name-2</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Label</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">/conf/core/http</td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;">Test purpose</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext 1.0pt;page-break-after:avoid;"><p style="page-break-after:avoid" class="MsoNormal"><a name="_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba" id="_d8c68c9c-a138-50a6-08e1-d7f10bbdfeba"></a>Validate that the resource paths advertised through the API conform with HTTP 1.1 and, where appropriate, TLS.</p>
 </td></tr><tr><th style="font-weight:bold;border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;">Test method</th><td style="border-top:none;mso-border-top-alt:none;border-bottom:solid windowtext 1.5pt;mso-border-bottom-alt:solid windowtext 1.5pt;page-break-after:auto;"><div class="ol_wrap" style="page-break-after:auto"><p style="mso-list:l2 level1 lfo31;page-break-after:auto" class="MsoListParagraphCxSpFirst">All compliance tests SHALL be configured to use the HTTP 1.1 protocol exclusively.
 </p><p style="mso-list:l2 level1 lfo31;page-break-after:auto" class="MsoListParagraphCxSpLast">For APIs which support HTTPS, all compliance tests SHALL be configured to use <a href="#rfc2818">HTTP over TLS</a> (RFC 2818) with their HTTP 1.1 protocol.
 </p></div>
@@ -4030,7 +4029,7 @@ span.AdmittedLabel, span.DeprecatedLabel {
 </html>
 
 
-------=_NextPart_0c5ec00a.5f0f.4223
+------=_NextPart_227e4807.0003.4b09
 Content-ID: <filelist.xml>
 Content-Disposition: inline; filename="filelist.xml"
 Content-Transfer-Encoding: base64
@@ -4039,448 +4038,10 @@ Content-Type: application/xml
 PHhtbCB4bWxuczpvPSJ1cm46c2NoZW1hcy1taWNyb3NvZnQtY29tOm9mZmljZTpvZmZpY2UiPgog
 ICAgICAgIDxvOk1haW5GaWxlIEhSZWY9Ii4uLy9fX3cvZ2VvemFyci1zcGVjL2dlb3phcnItc3Bl
 Yy9fc2l0ZS9kb2N1bWVudHMvc3RhbmRhcmQvdGVtcGxhdGUvZ2VvemFyci1zcGVjLmh0bSIvPiAg
-PG86RmlsZSBIUmVmPSJhZTE4ZDIzMC00MWJkLTRkZGUtOGRmMC05YTQzOWVlYWY1NTcucG5nIi8+
-CiAgPG86RmlsZSBIUmVmPSJmaWxlbGlzdC54bWwiLz4KICA8bzpGaWxlIEhSZWY9ImhlYWRlci5o
-dG1sIi8+CjwveG1sPgo=
+PG86RmlsZSBIUmVmPSJmaWxlbGlzdC54bWwiLz4KICA8bzpGaWxlIEhSZWY9ImhlYWRlci5odG1s
+Ii8+CjwveG1sPgo=
 
-------=_NextPart_0c5ec00a.5f0f.4223
-Content-ID: <ae18d230-41bd-4dde-8df0-9a439eeaf557.png>
-Content-Disposition: inline; filename="ae18d230-41bd-4dde-8df0-9a439eeaf557.png"
-Content-Transfer-Encoding: base64
-Content-Type: image/png
-
-iVBORw0KGgoAAAANSUhEUgAAAgAAAAKLCAMAAAC30cDTAAABnlBMVEUAAAAHCAcHCQgJCQkNhE4O
-hVAREREUGRUTh1AUiFEYGBgaIBsai1cfjVwgICAjKyQnLyggjlckj1smkF0sLCwtMy4vMzAokV8s
-k2M3Nzc0OzU3PDgwlWc0l2s/Pz8/QD88SD1HR0dDTURHT0lEUkZGVEhLS0tIUUlPU1BNXU9PX1FS
-UlJXWFdXWFhQYVJeXl5YalpdcGBlZWVhbGJmb2hkd2dmcGhnfWpjrnVmr3hpaWltc25vdHBofWtu
-e3Bssn5wcHBwfHF3gHhzi3Z3j3p3kHtxtIN4eHh5gHp6lH59loF+mIJ+u4F7uo2FhYWBmISGmoiE
-voSFv4mAu5KIiIiMnY6PnpGJpo2NqpGKwZ6Ow6KVlZWSn5SToJSQqpSWrpmTsZeUs5iYmJiar52b
-sJ2esqGZuZ6dvqKfwKOeyrKlpaWhrKKnr6ihv6WgwaWkxqmnyKymzrqqqqqps6uvs7Cqza+rz7Co
-z7yt0bKr0L+ysrKzuLSwzLSw0rSy08S+vr7GxsbLy8vR0dHa2trg4ODl7Ont7e3v8O/x8fH////7
-94IaAAAAKnRFWHRjb3B5bGVmdABHZW5lcmF0ZWQgYnkgaHR0cHM6Ly9wbGFudHVtbC5jb212zsof
-AAAB7mlUWHRwbGFudHVtbAABAAAAeJx9U9tuGjEQffdXTN9AFVGSlhSt0Cop20airBKVwCsadieL
-K6+N7DESqvrvNbC73AJ+Gp8zc+ZmPzpGy75UMEjSWfI0mr3M/1DGs9TkpMSnpcWiRFC4Np7BlcSo
-UYhMoXOQIKMjhr8CwvkMY7ZSF6BMhiyNrlCzJN1qV5dMGUfh9q/WeLbGL08VNJZUISPpuL91isH5
-ebGx3CE3RStxriiGVWUd0YksSbtQTQx5bR45PHHIOfccBLA23b6+Jv5KjVIzKNIFLypgbowi1CDd
-RCtZSqb8jBkv0Aa4SVT3cSXPZt5v6yVBXhkXGnULPOY+7nHnYAnzw4U0SS7V0e+T9iXZ7Y7jeB/Z
-ZLnSQoXwSfE7eLNC5XfTr99WpxNXbyQCawxvbbFDDrnMaEapHcQHZDPTC/x+uRHk9C41HfP7jiJY
-4IZrFE/DvaNzvh7lh9Hn4o+k8/AVhXhVqHmSjmBFdqt/d3N/e9+9+dZKw2VMS7jtwV036j5EX3ow
-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
-
-------=_NextPart_0c5ec00a.5f0f.4223
+------=_NextPart_227e4807.0003.4b09
 Content-ID: <header.html>
 Content-Disposition: inline; filename="header.html"
 Content-Transfer-Encoding: base64
@@ -4762,4 +4323,4 @@ PC9zcGFuPjwvYj48IVtlbmRpZl0tLT48c3Bhbg0KbGFuZz1FTi1HQiBzdHlsZT0nZm9udC1zaXpl
 OjEwLjBwdDttc28tYmlkaS1mb250LXNpemU6MTEuMHB0Jz48bzpwPjwvbzpwPjwvc3Bhbj48L3A+
 DQo8L2Rpdj4NCg0KPC9ib2R5Pg0KDQo8L2h0bWw+DQo=
 
-------=_NextPart_0c5ec00a.5f0f.4223--
+------=_NextPart_227e4807.0003.4b09--
