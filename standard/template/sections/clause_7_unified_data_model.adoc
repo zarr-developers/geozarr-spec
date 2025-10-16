@@ -120,66 +120,19 @@ The hierarchy is implemented through **groups**, which function as containers fo
 
 The diagram below represents the structural layer of the unified data model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
 
-//image::udm-core.png[]
+[mermaid]
+----
+graph TD
+A[Group]
+A --> B[Variable]
+A --> C[Dimension]
+A --> D[Attribute]
+B --> E[Data Array]
+B --> F[Coordinate Variable]
+A --> G[Subgroup]
+----
 
-//ifdef::never-shown[]
-//Note: Hide until plantuml is supported
-.Conformance-class model
-[plantuml, cdm_model, svg, opts="debug"]
-....
-@startuml CDM_DAL_Object_Model
 
-class Dataset {
-    + String location
-    + open()
-    + close()
-}
-
-class Group {
-    + String name
-    + List<Group> subgroups
-    + List<Variable> variables
-    + List<Dimension> dimensions
-    + List<Attribute> attributes
-}
-
-class Dimension {
-    + String name
-    + int length
-    + boolean isUnlimited
-    + boolean isShared
-}
-
-class Variable {
-    + String name
-    + DataType dataType
-    + List<Dimension> shape
-    + List<Attribute> attributes
-    + read()
-}
-
-class DataType {
-    + String name
-    <<enumeration>>
-}
-
-class Attribute {
-    + String name
-    + String type
-    + List<String> values
-}
-
-Dataset --> Group : rootGroup
-Group --> Group : contains >
-Group --> Variable : contains >
-Group --> Dimension : defines >
-Group --> Attribute : has >
-Variable --> Dimension : uses >
-Variable --> DataType : has >
-Variable --> Attribute : has >
-@enduml
-....
-//endif::never-shown[]
 
 Note that, conceptually, node within this hierarchy might be treated as a self-contained dataset.
 
