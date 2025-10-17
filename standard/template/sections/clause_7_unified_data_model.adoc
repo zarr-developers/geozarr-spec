@@ -24,7 +24,7 @@ These extensions are aligned with existing community standards and ensure contin
 The model *integrates* the following conceptual layers:
 
 * **CDM Core Concepts** – Variables, dimensions, coordinates, and attributes providing the abstract representation of scientific data.
-* **CF Conventions** – Optional but recommended layer with metadata rules describing physical meaning, coordinate systems, and units, enabling semantic interoperability.
+* **CF Conventions** – A domain-specific, encoding-independent data model that builds upon the same conceptual principles as CDM and provides detailed semantics for geophysical variables;
 * **GeoZarr Extensions** – Constructs for:
 
     ** *Affine transformations* defining spatial reference through linear mapping between array indices and real-world coordinates;
@@ -45,7 +45,9 @@ The GeoZarr Data Model is organised into three conceptual layers:
 2. the **CF Conventions** – semantic metadata layer;
 3. the **GeoZarr Extensions** – additional geospatial capabilities.
 
+
 ==== Common Data Model (CDM)
+
 
 The **Unidata Common Data Model (CDM)** defines the logical structure of scientific datasets through a hierarchy of **Groups**, **Variables**, **Dimensions**, and **Attributes**.
 It provides the foundation upon which GeoZarr and many existing libraries (such as *xarray*, *GDAL*, and *nczarr*) operate.
@@ -96,8 +98,9 @@ This structure enables consistent representation of scientific data independentl
 
 ==== CF Conventions
 
-The **Climate and Forecast (CF) Conventions** build upon the CDM by defining a controlled vocabulary and metadata rules for expressing the *physical meaning* of variables and coordinates.
-Because CF is explicitly based on CDM, GeoZarr can adopt CF semantics directly.
+The **Climate and Forecast (CF) Conventions** define a data model and metadata vocabulary for describing the *physical meaning* of variables and coordinates in geoscientific datasets.
+
+The CF data model is **encoding independent** and not formally derived from the CDM, but the two are **conceptually compatible**. Because CF conventions evolved from *netCDF* practices (which themselves align with CDM principles), CF constructs can be represented naturally within a CDM structure.
 
 Key CF concepts supported within the GeoZarr Data Model include:
 
