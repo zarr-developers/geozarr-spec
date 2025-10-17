@@ -9,24 +9,17 @@ The GeoZarr Data Model defines the abstract structure for representing geospatia
 
 The GeoZarr Data Model serves the following purposes:
 
-* to **clarify the role of the Common Data Model (CDM)** as the base structural layer (recognising its suitability for Zarr as demonstrated by implementations such as *xarray*, *GDAL*, and *nczarr*);
-* to **define how higher-level metadata conventions**—including the *Climate and Forecast (CF) Conventions* and other geospatial standards—are supported or partially supported within the CDM framework;
-* to **extend the CDM** with additional geospatial capabilities not yet covered by the CDM or CF conventions, including *affine transformations* and *multiscale overviews*;
+* to **clarify the role of the Common Data Model (CDM)** as the structural foundation (recognising its suitability for Zarr as demonstrated by *xarray*, *GDAL*, and *nczarr*);
+* to **extend the CDM** with additional geospatial capabilities required for cloud-native and tiled data representations, including *affine transformations* and *multiscale overviews*;
+* to **ensure compatibility** with established data models and conventions such as *netCDF*, *CF*, *GDAL*, and *GeoTIFF*.
+
 
 === Conceptual Basis
 
 The GeoZarr Data Model adopts and extends the **Unidata Common Data Model (CDM)** as its conceptual foundation.
 The CDM defines a hierarchy of *groups*, *variables*, *dimensions*, and *attributes* that together describe the logical organisation of scientific data.
 
-GeoZarr reuses this structure directly and introduces targeted extensions required for geospatial and cloud-native applications.
-These extensions are aligned with existing community standards and ensure continuity with established data models and tools.
-
-The model *integrates* the following conceptual layers:
-
-* **CDM Core Concepts** – Variables, dimensions, coordinates, and attributes providing the abstract representation of scientific data.
-* **CF Conventions** – A domain-specific, encoding-independent data model that builds upon the same conceptual principles as CDM and provides detailed semantics for geophysical variables;
-* **GeoZarr Extensions** – Constructs for:
-
+GeoZarr reuses these constructs and introduces an additional layer of **GeoZarr Extensions** that provide explicit geospatial semantics and support for cloud-native scalability:
     ** *Affine transformations* defining spatial reference through linear mapping between array indices and real-world coordinates;
     ** *Overviews* enabling multiscale representations and efficient visualization of large datasets.
 
@@ -39,15 +32,13 @@ This separation between **conceptual model** and **physical encoding** ensures t
 
 === Conceptual Layers
 
-The GeoZarr Data Model is organised into three conceptual layers:
+The GeoZarr Data Model is organised into two conceptual layers:
 
-1. the **Common Data Model (CDM)** – structural foundation;
-2. the **CF Conventions** – semantic metadata layer;
-3. the **GeoZarr Extensions** – additional geospatial capabilities.
+1. the **Common Data Model (CDM)** – structural foundation for multidimensional data;
+2. the **GeoZarr Extensions** – additional constructs for geospatial semantics and multiscale representations.
 
 
 ==== Common Data Model (CDM)
-
 
 The **Unidata Common Data Model (CDM)** defines the logical structure of scientific datasets through a hierarchy of **Groups**, **Variables**, **Dimensions**, and **Attributes**.
 It provides the foundation upon which GeoZarr and many existing libraries (such as *xarray*, *GDAL*, and *nczarr*) operate.
@@ -96,56 +87,6 @@ Variable <|-- CoordinateVariable
 
 This structure enables consistent representation of scientific data independently of storage format, providing the base semantic framework for all GeoZarr encodings.
 
-==== CF Conventions
-
-The **Climate and Forecast (CF) Conventions** define a data model and metadata vocabulary for describing the *physical meaning* of variables and coordinates in geoscientific datasets.
-
-The CF data model is **encoding independent** and not formally derived from the CDM, but the two are **conceptually compatible**. Because CF conventions evolved from *netCDF* practices (which themselves align with CDM principles), CF constructs can be represented naturally within a CDM structure.
-
-Key CF concepts supported within the GeoZarr Data Model include:
-
-* **Coordinate and auxiliary coordinate variables** describing spatial and temporal axes;
-* **Standard names**, **units**, and **cell methods** providing scientific context;
-* **Grid mapping variables** defining coordinate reference systems and projection parameters;
-* **Attributes** conveying data provenance and conventions compliance.
-
-GeoZarr does not alter CF semantics but clarifies their representation in CDM-structured hierarchies, enabling partial or full CF compliance depending on dataset complexity.
-
-[plantuml, target="cf_cdm_overview", format=svg]
-----
-@startuml
-left to right direction
-
-package "Common Data Model (CDM)" {
-  class Group
-  class Variable
-  class Dimension
-  class Attribute
-
-  Group "1" *-- "0..*" Variable
-  Group "1" *-- "0..*" Dimension
-  Group "1" *-- "0..*" Attribute
-  Variable "1" *-- "1..*" Dimension
-  Variable "1" *-- "0..*" Attribute
-}
-
-' Force CF Conventions package to be vertical
-package "CF Conventions" {
-  together {
-    class CoordinateVariable
-    class AuxiliaryCoordinateVariable
-  }
-
-  Variable <|-- CoordinateVariable
-  Variable <|-- AuxiliaryCoordinateVariable
-
-}
-
-@enduml
-
-----
-
-
 
 ==== GeoZarr Extensions
 
@@ -155,327 +96,79 @@ GeoZarr extends the CDM with additional geospatial constructs required for cloud
   This enables compact georeferencing for regularly gridded data.
 * **Multiscale overviews** — represent downsampled versions of variables for efficient visualisation and scalable access.
   Overviews are structured as subordinate variable groups sharing the same coordinate system.
-* **Variable groups** — introduce a logical grouping of variables with identical dimensionality and coordinate context, supporting compound geospatial datasets (e.g., multi-band imagery, time series).
 
 All extensions remain aligned with the CDM hierarchy and are encoded using the same core constructs (groups, variables, and attributes).
 Together, they provide the minimal geospatial extensions necessary for efficient, standards-based representation of Earth observation and scientific data in cloud environments.
 
+
+[plantuml, target="geozarr_extension_overview", format=svg]
+----
+@startuml
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+title GeoZarr Extensions – Geospatial Enhancements
+
+package "Common Data Model (CDM)" {
+  class Group
+  class Variable
+  class Dimension
+  class Attribute
+}
+
+package "GeoZarr Extensions" {
+  class AffineTransform
+  class Overview
+}
+
+Variable --> AffineTransform : georeference
+Group --> Overview : provides
+Variable --> Overview : provides
+
+@enduml
+----
+
+
 // include::clause_7_part_overviews.adoc[]
 
 
+===  Interoperability with Other Frameworks
+
+The Common Data Model (CDM), with its flexible hierarchy of groups, variables, dimensions, and attributes allows direct representation of metadata constructs used across multiple scientific and geospatial standards.
+
+This design enables the CDM—and therefore GeoZarr—to act as a *host model* for conventions and metadata originating from other frameworks, while preserving their semantics within a unified structure.
+
+* **netCDF and the Enhanced Data Model** –
+The netCDF Enhanced Data Model and the CDM share common origins and are conceptually aligned.
+Both organise data into variables, dimensions, and attributes.
+As a result, most netCDF datasets can be represented as CDM hierarchies without loss of structure or metadata.
+Conversely, GeoZarr datasets that follow the CDM pattern can be serialised as valid netCDF encodings.
+
+* **CF Conventions** –
+The CF data model is encoding independent but conceptually compatible with the CDM.
+CF metadata constructs—such as coordinate and auxiliary coordinate variables, standard names, units, and grid mappings—map directly onto CDM variables and attributes.
+This allows GeoZarr datasets to incorporate CF semantics naturally, achieving partial or full CF compliance without modifying the underlying data model.
+
+* **GDAL Metadata and Geotransform** –
+GDAL expresses georeferencing through affine transformation coefficients and projection information.
+These map directly to GeoZarr extension attributes (for affine transforms and CRS) stored as CDM attributes.
+GDAL domain metadata can likewise be represented as CDM attributes within groups or variables, maintaining equivalence between GDAL and GeoZarr geospatial metadata.
+
+* **GeoTIFF Tags and Metadata** –
+GeoTIFF georeferencing information, including coordinate reference system definitions, tie points, and pixel scale, correspond closely to the affine transform and CRS constructs in the GeoZarr Extensions.
+These elements can be represented as attributes within CDM-compliant groups and variables, ensuring semantic consistency between file-based and cloud-native representations.
+
+Through these mappings, the CDM acts as a **common semantic framework** that integrates metadata from diverse geospatial standards.
+This interoperability ensures that GeoZarr can serve as both a native storage model and a bridge between existing ecosystems such as netCDF/CF, GDAL, and GeoTIFF.
+
+[NOTE]
 ====
-WARNING - *To be removed*
+GeoZarr does **not** define the mappings to CDM for metadata from existing conventions or formats such as CF, netCDF, GDAL, or GeoTIFF.
+These mappings are already established and maintained by widely used libraries and implementations, including *xarray*, *netCDF-Java*, *GDAL*, etc. The role of GeoZarr is to provide a **data model and encoding framework**, not to redefine or replicate existing translation logic between metadata standards.
+
+Accordingly, the **GeoZarr encoding specification** will only prescribe additional rules where a specific encoding behaviour in **Zarr** is required for interoperability or conformance.
 ====
-
-== Unified Data Model
-
-=== Scope and Purpose
-
-This Standard defines the Unified Data Model (UDM) that provides a conceptual framework for representing geospatial and scientific data in Zarr. The purpose of this model is to support standards-based interoperability across Earth observation systems and analytical environments, while preserving compatibility with existing data models and software ecosystems.
-
-The Unified Data Model operates within the Zarr framework, where a <<term-store,store>> provides the storage and retrieval interface, and a hierarchy defines the logical organization of groups and arrays within that store. GeoZarr hierarchies are stored in and accessed through Zarr stores, which can be implemented using various storage technologies such as filesystems, cloud object storage, or databases.
-
-The Unified Data Model incorporates and extends the following established specifications and community standards:
-
-- **Unidata Common Data Model (CDM)** – Provides the foundational resource structure for scientific datasets, encompassing dimensions, coordinate systems, variables, and associated metadata elements.
-- **CF (Climate and Forecast) Conventions** – Defines a widely adopted metadata profile for describing spatiotemporal semantics in CDM-based datasets.
-- **Selected constructs from related Standards and practices**, including:
-  - The **OGC Tile Matrix Set Standard**, which enables multi-resolution representations of gridded data.
-  - **GDAL geotransform metadata**, used to express affine transformations and interpolation characteristics.
-  - **SpatioTemporal Asset Catalog (STAC)** metadata elements for resource discovery and cataloguing (Collection and Item constructs).
-
-The Unified Data Model is format-agnostic and describes the abstract structure of resources independently of the physical encoding. It does not redefine the semantics of the CDM or CF conventions, but introduces integration and extension points required to support tiled multiscale data, geospatial referencing, and metadata for discovery.
-
-This clause specifies the logical composition of the Unified Data Model, the external standards it leverages, and the conformance points that facilitate harmonised implementation within the GeoZarr framework.
-
-=== Foundational Model and Standards Reuse
-
-GeoZarr adopts established data model concepts because Zarr itself provides only array storage without semantic interpretation. The Unidata Common Data Model (CDM) provides the conceptual framework for understanding dimensions, variables, and attributes, while CF Conventions provide standardized metadata semantics. This reuse ensures compatibility with existing scientific software while avoiding reinvention of proven concepts.
-
-==== Common Data Model (CDM)
-
-The CDM defines a generalised schema for representing array-based scientific datasets. The following constructs are reused directly within the Unified Data Model:
-
-- **Dimensions** – Integer-valued, named axes that define the extents of data variables.
-- **Coordinate Variables** – Variables that supply coordinate values along dimensions, establishing spatial or temporal context.
-- **Data Variables** – Multidimensional arrays representing observed or simulated phenomena, associated with dimensions and coordinate variables.
-- **Attributes** – Key-value metadata elements used to describe variables and datasets semantically.
-- **Groups** – Optional hierarchical containers enabling logical organisation of resources and metadata.
-
-The Unified Data Model adopts these CDM components with adaptations for Zarr's type system. While the conceptual structure remains consistent with the original CDM specification, attribute types are mapped to Zarr's JSON-compatible type system. GeoZarr structures preserve CDM semantics while conforming to Zarr's encoding constraints.
-
-==== CF Conventions
-
-The CF Conventions specify standardised metadata attributes and practices to describe spatiotemporal context within CDM-compliant datasets. These conventions support consistent interpretation of:
-
-- Coordinate systems
-- Grid mappings
-- Physical units
-- Standard variable naming
-
-The Unified Data Model supports CF-compliant metadata, including attributes such as `standard_name`, `units`, and `grid_mapping`. The Unified Data Model does not prescribe CF compliance but enables it through permissive design. Partial adoption of CF attributes is supported, and non-compliant datasets may selectively adopt CF metadata as needed.
-
-==== Standards-Based Extensions
-
-To support additional capabilities, the model defines optional extension points referencing external OGC and community standards:
-
-- **OGC Tile Matrix Set** – Facilitates the definition of multiscale grid hierarchies for raster overviews.
-- **GDAL Geotransform** – Enables geospatial referencing through affine transformations and optional interpolation specifications.
-- **STAC Metadata (Collection and Item)** – Provides linkage to SpatioTemporal Asset Catalogs for resource discovery and indexing.
-
-These extensions are integrated in a modular fashion and do not alter the core semantics of the CDM or CF structures. Implementations may selectively adopt these extensions based on their application requirements.
-
-=== Model Extension Points
-
-The Unified Data Model specifies a series of optional, standards-aligned extension points to support functionality beyond the base CDM and CF constructs. These extensions enhance applicability to Earth observation and spatial analysis use cases without imposing additional mandatory requirements.
-
-Each extension is defined as an independent module. Implementation of any given extension does not necessitate support for others.
-
-==== Multi-Resolution Overviews (OGC Tile Matrix Set)
-
-Support for multi-resolution imagery is enabled via integration with the OGC Tile Matrix Set Standard:
-
-- Tile matrix sets define spatial tiling schemes with consistent resolutions and coordinate reference systems across zoom levels.
-- Overviews may be represented as separate Zarr arrays or groups, each aligned to a specific tile matrix level.
-- Metadata includes identifiers for tile matrices, spatial resolution, and spatial alignment.
-
-This approach aligns with the OGC API – Tiles and enables efficient access to large gridded datasets.
-
-==== GeoTransform Metadata (GDAL Interpolation and Affine Transform)
-
-Geospatial referencing can be further refined through the inclusion of metadata consistent with GDAL conventions:
-
-- Affine transformation is specified via the `GeoTransform` attribute or equivalent structures.
-- Interpolation methods may be declared to indicate sampling behaviour or sub-pixel alignment strategies.
-
-This extension augments CF grid mappings by providing precise control over grid placement and coordinate transformations.
-
-==== STAC Collection and Item Integration
-
-To enable discovery of resources within the hierarchical structure of the data model, this Standard supports the inclusion of STAC metadata elements at appropriate locations within the group hierarchy.
-
-A STAC extension consists of embedding or referencing STAC Collection and Item metadata within the data model:
-
-* Each hierarchy MAY reference a corresponding STAC `Collection` or `Item` using an identifier or embedded object.
-* STAC properties such as `datetime`, `bbox`, and `eo:bands` MAY be included in the metadata to enable spatial, temporal, and spectral filtering.
-* The structure is compatible with external STAC APIs and metadata harvesting systems.
-
-STAC integration is non-intrusive and modular. It does not impose changes on the internal organisation of the hierarchy and MAY be adopted incrementally by implementations requiring catalogue-based discovery capabilities.
-
-
-==== Modularity and Interoperability
-
-Each extension point is specified independently. Implementations may advertise support for one or more extensions by declaring conformance to corresponding extension modules. This modularity facilitates incremental adoption, promotes reuse, and enhances interoperability across varied implementation environments.
-
-
-=== Unified Data Model Structure
-
-This clause defines the structural organisation of Zarr hierarchies conforming to the Unified Data Model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.
-
-The model represents datasets as abstract compositions of dimensions, coordinate variables, data variables, and associated metadata. This abstraction ensures that applications and services can reason about the content and semantics of a dataset without reliance on storage layout or specific serialisation.
-
-==== Hierarchy Structure
-
-====
-To be reviewed
-====
-
-A Zarr hierarchy conforming to the Unified Data Model (UDM) is structured as a tree rooted at a top-level group. This design enables modularity and facilitates the representation of complex, multi-resolution, or thematically partitioned data collections.
-
-Each <<term-dataset, dataset>> comprises the following core components, aligned with the Unidata Common Data Model (CDM) and Climate and Forecast (CF) Conventions:
-
-- **Dimensions** – Named, integer-valued axes defining the extent of data variables. Examples include `time`, `x`, `y`, and `band`.
-- **Coordinate Variables** – Arrays that supply coordinate values along dimensions, providing spatial, temporal, or contextual referencing. These may be scalar or higher-dimensional, depending on the referencing scheme.
-- **Data Variables** – Multidimensional arrays representing physical measurements or derived products. Defined over one or more dimensions, these variables are associated with coordinate variables and annotated with metadata.
-- **Attributes** – Key-value pairs attached to variables or dataset components. Attributes convey semantic information such as units, standard names, and geospatial metadata.
-
-A Zarr hierarchy is a tree structure, where each node in the tree is either a group or an array. Group nodes may have children but array nodes may not. This supports the logical subdivision by theme, resolution, or processing stage, and enhances the clarity and reusability of complex geospatial structures.
-
-The diagram below represents the structural layer of the Unified Data Model, derived from the Unidata Common Data Model, which serves as the foundational framework for supporting all overlaying model layer.
-
-//image::udm-core.png[]
-
-//ifdef::never-shown[]
-//Note: Hide until plantuml is supported
-.Conformance-class model
-[plantuml, cdm_model, svg, opts="debug"]
-....
-@startuml CDM_DAL_Object_Model
-
-class Store {
-    + String location
-    + open()
-    + close()
-}
-
-class Hierarchy {
-    + String name
-}
-
-class Group {
-    + String name
-}
-
-class Dataset {
-}
-
-class Dimension {
-    + String name
-    + int length
-    + boolean isUnlimited
-    + boolean isShared
-}
-
-class Variable {
-    + String name
-    + read()
-}
-
-class DataType {
-    + String name
-    <<enumeration>>
-}
-
-class Attribute {
-    + String name
-    + String type
-    + List<String> values
-}
-
-Store "1" ..|> Hierarchy : implements
-Hierarchy "1" *-- "1" Group : has root
-Group --* Group : is part of
-Dataset -up-|> Group : is a
-Dataset --> "*" Variable : contains
-Dimension --* "*" Dataset : is shared in
-Group *-- "*" Attribute
-Dimension --o "*" Variable : define the shape of
-Variable --> "1" DataType
-Variable *-- "*" Attribute
-@enduml
-....
-//endif::never-shown[]
-
-Note that, conceptually, node within this hierarchy might be treated as a self-contained store.
-
-==== Coordinate Referencing
-
-Coordinate systems are defined using:
-
-- **CF Conventions** – Including attributes such as `standard_name`, `units`, `axis`, and `grid_mapping` to express spatiotemporal semantics and coordinate system properties.
-- **Affine Transformation Extensions** – Optional support for georeferencing via affine transforms and interpolation metadata (e.g., as defined in GDAL practices), providing enhanced flexibility for irregular grids and grid-aligned imagery.
-
-The model accommodates both standard CF-compatible definitions and extended referencing mechanisms to support use cases that span scientific analysis and geospatial mapping.
-
-==== Metadata Integration
-
-Metadata may be declared at various levels within the model structure:
-
-- **Global Metadata** – Attributes describing the hierarchy as a whole, including elements such as `title`, `summary`, and `license`.
-- **Variable Metadata** – Attributes associated with individual data or coordinate variables, conveying descriptive or semantic information.
-- **Extension Metadata** – Structured metadata linked to optional model extensions (e.g., multiscale tiling, catalogue references, geotransform properties).
-
-All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.
-
-==== Overviews
-
-The *Overviews* construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.
-
-===== Purpose
-
-The *Overviews* construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as *zoom levels*. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.
-
-Overviews enable:
-
-- Fast access to summary representations for visualisation
-- Progressive transmission and downsampling
-- Multi-resolution analytics and adaptive processing
-
-===== Conceptual Structure
-
-A <<term-multiscale-group,multiscale group>> contains child groups representing the data at different resolutions, where each child group is a <<term-dataset, dataset>> following the Unified Data Model. It comprises the following components:
-
-[horizontal]
-*Base Dataset*:: The original, highest-resolution dataset to which the multiscale hierarchy is anchored.
-*Zoom Level Datasets*:: A sequence of datasets representing the same data as the base dataset, but sampled at coarser spatial resolutions.
-*Zoom Level Identifier*:: A unique identifier associated with each level, ordered from finest (e.g. `"0"`) to coarsest resolution (e.g. `"N"`).
-*Tile Grid Definition*:: A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a `TileMatrixSet`.
-*Spatial Alignment*:: Each zoom-level dataset MUST be spatially aligned with the base dataset using a consistent coordinate reference system and compatible axis orientation.
-*Resampling Method*:: A declared method indicating the technique used to derive coarser levels from the base dataset (e.g. `nearest`, `average`, `cubic`).
-
-===== Model Components
-
-The *Overviews* construct is represented in the Unified Data Model using the following logical elements:
-
-[cols="1,3"]
-|===
-|Element |Definition
-
-|`OverviewSet` | A logical grouping of variables at multiple zoom levels associated with a single base variable.
-
-|`OverviewLevel` | A single resampled variable at a specific resolution, identified by a zoom level string.
-
-|`TileMatrixSetRef` | A reference to the tile grid specification applied across all overview levels. May refer to a well-known identifier, a URI, or an inline object.
-
-|`TileMatrixLimits` | (Optional) Constraints on the tile coverage per zoom level.
-
-|`resampling_method` | A string indicating the uniform method used to downsample data across all levels.
-|===
-
-All overview levels MUST preserve:
-
-- The data variable’s semantic identity (`standard_name`, `units`, etc.)
-- The coordinate reference system
-- The axis order and dimension semantics
-
-Only the resolution and extent (through tiling and shape) may differ across levels.
-
-===== Relationship to Tile Matrix Set
-
-The *Overviews* construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a `TileMatrix`, and the chunk layout for the corresponding data variable SHALL match the tile grid’s `tileWidth` and `tileHeight`.
-
-The `OverviewSet` MAY constrain tile matrix limits using `TileMatrixSetLimits`, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.
-
-===== Usage Context
-
-The *Overviews* construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:
-
-- Raster imagery (e.g. reflectance, temperature)
-- Data cubes with spatial slices (e.g. time-series of spatial grids)
-- Multi-band products with consistent spatial structure across levels
-
-The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.
-
-
-
-
-=== Interoperability Considerations
-
-====
-TBD: this section should be consolidated or removed
-====
-
-Interoperability is a core objective of the GeoZarr Unified Data Model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.
-
-This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.
-
-==== Format Mapping and Alignment
-
-The data model is explicitly aligned with foundational standards including the Unidata Common Data Model (CDM), the CF Conventions, and established practices in formats such as NetCDF and GeoTIFF. Where applicable, GeoZarr datasets may be derived from or transformed into these formats using consistent mappings.
-
-- *NetCDF (classic and enhanced models)*:
-* GeoZarr shares a common conceptual structure with NetCDF via CDM.
-* Variables, dimensions, coordinate systems, and attributes follow directly mappable patterns.
-* Metadata expressed in CF conventions in NetCDF can be preserved in GeoZarr without loss of fidelity.
-
-- *GeoTIFF*:
-* Raster-based datasets in GeoZarr can map to GeoTIFF by interpreting spatial referencing (via CF or GeoTransform) and band structures.
-* Overviews aligned to OGC Tile Matrix Sets may correspond to TIFF image pyramids.
-* Projection metadata and resolution information can be mapped via standard tags.
-
-These mappings facilitate round-trip transformations and enable toolchains that consume or produce multiple formats without reengineering semantic models.
-
-
 
 ==== Metadata and Discovery Integration
 
