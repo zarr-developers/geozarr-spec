@@ -362,7 +362,7 @@
 </clause>
 </clause>
 
-<clause id="_d6a1c7d8-a967-5dec-205d-18045f528d86" obligation="=informative">
+<clause id="_c95f28b9-7389-e5da-b96c-1e680c9367ee" obligation="=informative">
 <title id="_b0214843-62bd-7bf3-6c1f-4716311017c1">Unified Data Model</title>
 <clause id="_b9da0fda-077e-da4d-5ca9-eb22f40125f7" obligation="=informative">
 <title id="_de93b126-0dfe-3663-00da-5ab8d9ad2c5e">Scope and Purpose</title>
@@ -564,7 +564,7 @@
 </clause>
 </clause>
 
-<clause id="_89726dd6-3ee3-6644-6cab-c4a7628df0a7" obligation="=informative">
+<clause id="_50c74724-76c4-9d8c-4312-0d31744becb2" obligation="=informative">
 <title id="_019c9269-e85a-5a56-0dba-90388d552b14">Overviews</title>
 <clause id="_79538f65-fdbf-a496-9623-b92f574153df" obligation="=informative">
 <title id="_7f6b1245-6dc8-a48a-dd6f-ff60eea09496">Introduction</title>
@@ -694,7 +694,7 @@
 </clause>
 </clause>
 
-<clause id="_bc462b57-c348-e0f8-64b1-f1b24f2821ab" obligation="=informative">
+<clause id="_53074a22-dd9f-a596-a874-0064ebcaaff2" obligation="=informative">
 <title id="_aaac6de9-4d97-4160-9ac8-9f88c47ae5b8">OverviewSet Metadata</title>
 <p id="_47c80bdd-99fe-f4ec-a3d8-5ebf74bc59c3">The <tt>multiscales</tt> property is an attribute of the <strong>OverviewSet</strong> group that formally defines the organisation of the multiscale hierarchy. It provides a structured description of all overview levels, their ordering, and the resampling or aggregation relationships between them.</p>
 
@@ -702,9 +702,9 @@
 
 <p id="_79930073-b365-ceb5-bcef-9fd4e4c2a6fd">It defines global attributes applying to the entire hierarchy and a <tt>layout</tt> array that lists all overview levels in order of resolution.</p>
 
-<clause id="_493c2f74-9992-e625-6638-1fee656201e1" obligation="=informative">
+<clause id="_a7db193b-dea6-3830-9258-fd544d6eb3b7" obligation="=informative">
 <title id="_4e2969b3-2beb-9b02-c62b-725cbdc61d15">Multiscales Fields</title>
-<table id="_ab6b07c2-e6c8-930d-f4dc-54c6fde2e04f"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_7e7e19b8-0f7e-4c9a-7e65-4851890ffda4"><th id="_89ce6a19-e01d-1735-3e98-c134ec33e018" valign="middle" align="left">Field</th>
+<table id="_b8089146-d836-e3eb-e646-f85f3662e2dd"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_7e7e19b8-0f7e-4c9a-7e65-4851890ffda4"><th id="_89ce6a19-e01d-1735-3e98-c134ec33e018" valign="middle" align="left">Field</th>
 <th id="_f4152357-0ca7-11b6-69b9-230abe5b9b2f" valign="middle" align="left">Definition</th>
 </tr></thead>
 <tbody><tr id="_b1d3844b-fcd4-96d1-92c1-42ce3b05aa21"><td id="_5f44d2db-7897-b14e-5626-c121ba40fcf2" valign="middle" align="left"><tt>version</tt></td>
@@ -713,8 +713,10 @@
 <td id="_57109d85-f7c6-dd59-5ba1-d83d5070af76" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Default resampling or aggregation method applied across all levels. If omitted, resampling may be defined per level. Allowed values include:  <tt>"nearest"</tt>, <tt>"average"</tt>, <tt>"bilinear"</tt>, <tt>"cubic"</tt>, <tt>"cubic_spline"</tt>, <tt>"lanczos"</tt>, <tt>"mode"</tt>, <tt>"max"</tt>, <tt>"min"</tt>, <tt>"med"</tt>, <tt>"sum"</tt>, <tt>"q1"</tt>, <tt>"q3"</tt>, <tt>"rms"</tt>, <tt>"gauss"</tt>. Default:  <tt>"nearest"</tt>.</td>
 </tr><tr id="_0d48e242-1d60-3708-d27b-1dddc689e56e"><td id="_2d907c7d-5211-0c7e-916b-ea32df7c2926" valign="middle" align="left"><tt>tile_matrix_ref</tt></td>
 <td id="_1bd8a4fe-fce9-010c-c18f-1d903bf94606" valign="middle" align="left"><strong>Type:</strong> string or object. (Optional) Reference to an external grid or tiling definition (e.g. an OGC Tile Matrix Set identifier or URI) that describes the spatial structure and scale relationships.</td>
-</tr><tr id="_c7bdef1e-7280-e2da-d063-b338796d7a21"><td id="_50ddf949-aca1-f5a4-8011-7967e3caf0ab" valign="middle" align="left"><tt>layout</tt></td>
-<td id="_5c16f28c-a3cc-8da0-8223-14de440f79cf" valign="middle" align="left"><strong>Type:</strong> array of <xref target="overview-level-object"><display-text>Overview Level Object</display-text></xref>. A mandatory array describing each  <strong>OverviewLevel</strong> within the hierarchy, ordered from highest to lowest resolution. Each entry defines the group name and optional derivation information.</td>
+</tr><tr id="_59b8ab29-5304-163f-0047-5297d0ccf895"><td id="_50ddf949-aca1-f5a4-8011-7967e3caf0ab" valign="middle" align="left"><tt>layout</tt></td>
+<td id="_fe6d1e52-52a8-2813-635c-beb19b8997a8" valign="middle" align="left"><strong>Type:</strong> array of <xref target="overview-level-object"><display-text>Overview Level Object</display-text></xref>. A mandatory array describing each  <strong>OverviewLevel</strong> within the hierarchy, ordered from highest to lowest resolution.  Each entry defines the group name and optional derivation information.</td>
+</tr><tr id="_da20468a-b488-2d18-51f8-fddcf20b17fc"><td id="_6c9e00a8-bddb-aecb-ab8c-211d24db717d" valign="middle" align="left"><tt>variables</tt></td>
+<td id="_975a4e98-c955-6e54-f32f-87507f2d8fd1" valign="middle" align="left"><strong>Type:</strong> array of string. (Optional) List of variable names for which overviews are defined. If omitted, all variables in the parent group are assumed to have overviews. Example:  <tt>["b01", "b02", "b03"]</tt>.</td>
 </tr></tbody>
 </table>
 </clause>
