@@ -154,7 +154,13 @@ Default: `"nearest"`.
 
 |`layout` |**Type:** array of <<overview-level-object,Overview Level Object>>.
 A mandatory array describing each *OverviewLevel* within the hierarchy, ordered from highest to lowest resolution.
+
 Each entry defines the group name and optional derivation information.
+|`variables` |**Type:** array of string.
+(Optional) List of variable names for which overviews are defined.
+If omitted, all variables in the parent group are assumed to have overviews.
+Example: `["b01", "b02", "b03"]`.
+
 |===
 
 [[overview-level-object]]
