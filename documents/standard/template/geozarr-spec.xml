@@ -362,7 +362,7 @@
 </clause>
 </clause>
 
-<clause id="_c95f28b9-7389-e5da-b96c-1e680c9367ee" obligation="=informative">
+<clause id="_f5c1ba04-ad62-bded-83f2-721ea9a68166" obligation="=informative">
 <title id="_b0214843-62bd-7bf3-6c1f-4716311017c1">Unified Data Model</title>
 <clause id="_b9da0fda-077e-da4d-5ca9-eb22f40125f7" obligation="=informative">
 <title id="_de93b126-0dfe-3663-00da-5ab8d9ad2c5e">Scope and Purpose</title>
@@ -564,7 +564,7 @@
 </clause>
 </clause>
 
-<clause id="_50c74724-76c4-9d8c-4312-0d31744becb2" obligation="=informative">
+<clause id="_7dd17e4b-b335-2191-fa86-9ec36a1ad9ef" obligation="=informative">
 <title id="_019c9269-e85a-5a56-0dba-90388d552b14">Overviews</title>
 <clause id="_79538f65-fdbf-a496-9623-b92f574153df" obligation="=informative">
 <title id="_7f6b1245-6dc8-a48a-dd6f-ff60eea09496">Introduction</title>
@@ -694,7 +694,7 @@
 </clause>
 </clause>
 
-<clause id="_53074a22-dd9f-a596-a874-0064ebcaaff2" obligation="=informative">
+<clause id="_a4a28e79-7927-ae26-dddf-76e062eef907" obligation="=informative">
 <title id="_aaac6de9-4d97-4160-9ac8-9f88c47ae5b8">OverviewSet Metadata</title>
 <p id="_47c80bdd-99fe-f4ec-a3d8-5ebf74bc59c3">The <tt>multiscales</tt> property is an attribute of the <strong>OverviewSet</strong> group that formally defines the organisation of the multiscale hierarchy. It provides a structured description of all overview levels, their ordering, and the resampling or aggregation relationships between them.</p>
 
@@ -721,11 +721,11 @@
 </table>
 </clause>
 
-<clause id="_b04c2d3c-7aa0-5611-ff07-04bd0a60625b" anchor="overview-level-object" obligation="=informative">
+<clause id="_a6d0ec08-5a89-1bda-b640-ef0e7ccca3be" anchor="overview-level-object" obligation="=informative">
 <title id="_bb017ce9-d9d8-e07d-9b11-afb29fc77d41">Overview Level Object</title>
 <p id="_5c905821-8140-821f-ab45-299d19f6f07c">Each object in the <tt>layout</tt> array describes one <strong>OverviewLevel</strong> within the multiscale hierarchy. It defines a unique identifier for the level, its location within the dataset hierarchy, and optionally its derivation from another level.</p>
 
-<table id="_1037bf97-eb6e-1237-46d9-ba33602fd1e0"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_de8345b5-0e08-18e5-c8c5-c3a9b987c8f8"><th id="_022a982c-76e4-8d18-1564-2def4487beef" valign="middle" align="left">Field</th>
+<table id="_c9d6d7f1-a0b0-8b91-649a-fd33419ecaa6"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_de8345b5-0e08-18e5-c8c5-c3a9b987c8f8"><th id="_022a982c-76e4-8d18-1564-2def4487beef" valign="middle" align="left">Field</th>
 <th id="_5ea3b62a-4514-f288-8b9e-620f22f3cf2f" valign="middle" align="left">Definition</th>
 </tr></thead>
 <tbody><tr id="_70898b7e-6fd3-a203-27e5-6614ddd736d2"><td id="_4954b92a-8858-7a5f-363c-8888797ba4d8" valign="middle" align="left"><tt>id</tt></td>
@@ -734,32 +734,36 @@
 <td id="_f4d0fadf-7c3e-2001-174c-9e8ca386354f" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Logical path identifying the location of the overview level within the dataset hierarchy. If omitted, the level is assumed to be located as a  <strong>direct child group</strong> of the <strong>OverviewSet</strong> and the <tt>id</tt> value SHALL be used as the default relative path. Example:  <tt>"L0"</tt>, <tt>"overviews/L2"</tt>.</td>
 </tr><tr id="_ccffa2b5-e61b-104d-8da4-b1944d6c27f5"><td id="_fce635ba-b392-4584-0910-231072730400" valign="middle" align="left"><tt>derived_from</tt></td>
 <td id="_a3ef6506-cfcb-7fd2-a997-665754cbc037" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Identifier of another overview level from which this level was derived. Used to express lineage or dependency relationships between levels. The value SHALL correspond to an existing  <tt>id</tt> entry in the same <tt>layout</tt> array.</td>
-</tr><tr id="_c989f89a-443e-9541-84d4-c6143e954f71"><td id="_d587477c-c1a5-2059-ebc7-92d6a0e94ca6" valign="middle" align="left"><tt>factors</tt></td>
-<td id="_9af4022f-c532-f162-1bf6-5b6fb039fdb8" valign="middle" align="left"><strong>Type:</strong> array of number. (Optional) Numeric decimation factors per dimension (e.g.  <tt>[2, 2]</tt> for a 2× reduction in X and Y). Used to describe the scaling applied to generate this level from its source.</td>
-</tr><tr id="_f4a1bde4-9ca8-2db0-a744-16144669704e"><td id="_0108dfb1-4f46-600f-6116-91a83298991c" valign="middle" align="left"><tt>resampling_method</tt></td>
-<td id="_1a7186ed-cef4-0cb3-b5c4-6caaa5e52b8d" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Resampling or aggregation method specific to this level. If not defined, the method specified in the root  <tt>multiscales.resampling_method</tt> field applies.</td>
+</tr><tr id="_18c854eb-d86c-039d-87ad-c24c73a31fe8"><td id="_8ea3b784-add1-d4d4-565a-d9086cbd831f" valign="middle" align="left"><tt>cell_size</tt></td>
+<td id="_417451a3-028d-572f-f093-638a9d24a429" valign="middle" align="left"><strong>Type:</strong> number or array of number. (Recommended) Resolution of the data at this level, expressed as the physical size of one cell in coordinate units (e.g. metres or degrees). This property allows clients such as map viewers to select the most appropriate overview level for a given display scale. If expressed as an array, the order SHALL match the spatial axes (e.g.  <tt>[x, y]</tt>).</td>
+</tr><tr id="_5edc8872-c83b-a5a0-b4b1-0808c686573e"><td id="_eaf22057-ed0d-c527-1b64-f0be4b01f4da" valign="middle" align="left"><tt>factors</tt></td>
+<td id="_c0e60be4-49dd-4e2a-cf2c-ab452405a25e" valign="middle" align="left"><strong>Type:</strong> array of number. (Optional) Numeric decimation factors per dimension (e.g.  <tt>[2, 2]</tt> for a 2× reduction in X and Y). Used to describe the scaling applied to generate this level from its source.</td>
+</tr><tr id="_e1edcd01-25f8-86fa-66e3-3318768e21be"><td id="_dcc7e21f-c432-0c33-e8e0-f29005312ac2" valign="middle" align="left"><tt>resampling_method</tt></td>
+<td id="_89bb1309-a52f-5f60-4c02-e7a82d1af9a9" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Resampling or aggregation method specific to this level. If not defined, the method specified in the root  <tt>multiscales.resampling_method</tt> field applies.</td>
 </tr></tbody>
 </table>
 </clause>
 
-<clause id="_d88102dd-5a72-e64d-6136-a78824638f45" obligation="=informative">
+<clause id="_52fe0ed4-3faf-99cf-b429-968ad32383d9" obligation="=informative">
 <title id="_4f3b3ffc-a9a1-e076-028f-5f378665a958">Example Representation</title>
 <p id="_e312d3dc-9754-250d-2e15-09b9f66fc38e">Here is a JSON example that conforms to the <strong>final <tt>multiscales</tt> schema</strong>:</p>
 
-<sourcecode id="_38c4e4d8-abbe-4676-93a9-6eeaa63e41b5" lang="json"><body>{
+<sourcecode id="_c69347d3-43f3-b7b3-9844-5c3332c0bec0" lang="json"><body>{
   "version": "1.0",
   "resampling_method": "average",
   "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
   "layout": [
     {
       "id": "L0",
-      "path": "L0"
+      "path": "L0",
+      "cell_size": [10.0, 10.0]
     },
     {
       "id": "L1",
       "path": "L1",
       "derived_from": "L0",
       "factors": [2, 2],
+      "cell_size": [20.0, 20.0],
       "resampling_method": "average"
     },
     {
@@ -767,6 +771,7 @@
       "path": "L2",
       "derived_from": "L1",
       "factors": [2, 2],
+      "cell_size": [40.0, 40.0],
       "resampling_method": "average"
     }
   ]
@@ -926,7 +931,7 @@
 <admonition id="_b85c4b24-7bc4-9b9d-25f6-945a20d227ff" type="tip"><p id="_cd544c82-ec6d-6ebe-1030-c1811eedd821">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
 </admonition></clause>
 
-<clause id="_94cdeff8-8b36-4d09-947d-8c93df15e0c2" obligation="normative">
+<clause id="_14c9be63-993f-a3e1-62ab-a4f355fb8d44" obligation="normative">
 <title id="_de2dce5d-cdf9-00c2-28ae-3596b692d32b">Unified Data Model Encoding for Zarr</title>
 <p id="_6ae92f92-a957-0b55-9f02-1720942d94d6">This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.</p>
 
@@ -1123,7 +1128,7 @@
 </ul>
 </clause>
 
-<clause id="_11b5cf6c-8efa-83a5-ba9d-adf7d54d3db7" obligation="normative">
+<clause id="_6847ac47-8307-228a-cadc-0733db16e203" obligation="normative">
 <title id="_a93fa60e-9db4-c809-86e1-dd737f8f2439">Encoding of Multiscale Overviews in Zarr</title>
 <p id="_69291554-d283-4653-edcb-4c578a1455d2">This clause specifies how Overviews should be encoded in Zarr-based datasets conforming to the GeoZarr data model.</p>
 
@@ -1144,25 +1149,45 @@
 </ul>
 </clause>
 
-<clause id="_07c7f51f-ded9-e63b-3348-9efea247d383" obligation="normative">
+<clause id="_d7376fca-7790-322a-5df8-c1cca4944bc3" obligation="normative">
 <title id="_d7b43bf5-7e78-c4d5-ead9-e8456c51f535">Example Encoding (Zarr v3)</title>
-<sourcecode id="_eaa62747-d754-7e42-7b72-feb9d74c010b" lang="json"><body>{
+<sourcecode id="_f5969236-9e6f-8815-b8de-8898d2896422" lang="json"><body>{
   "zarr_format": 3,
   "node_type": "group",
   "attributes": {
     "multiscales": {
       "version": "1.0",
       "resampling_method": "average",
+      "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
       "layout": [
-        {"id": "L0", "path": "L0"},
-        {"id": "L1", "path": "L1", "derived_from": "L0", "factors": [2, 2]},
-        {"id": "L2", "path": "L2", "derived_from": "L1", "factors": [2, 2]}
+        {
+          "id": "L0",
+          "path": "L0",
+          "cell_size": [10.0, 10.0]
+        },
+        {
+          "id": "L1",
+          "path": "L1",
+          "derived_from": "L0",
+          "factors": [2, 2],
+          "cell_size": [20.0, 20.0],
+          "resampling_method": "average"
+        },
+        {
+          "id": "L2",
+          "path": "L2",
+          "derived_from": "L1",
+          "factors": [2, 2],
+          "cell_size": [40.0, 40.0],
+          "resampling_method": "average"
+        }
       ]
     },
     "spatial_ref": "EPSG:32633"
   },
   "metadata": {
-    "title": "Reflectance Multiscale Example"
+    "title": "Reflectance Multiscale Example",
+    "summary": "Example of a multiscale dataset encoded using the GeoZarr Overviews extension."
   }
 }</body></sourcecode>
 
