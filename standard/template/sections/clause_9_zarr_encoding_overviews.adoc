@@ -29,19 +29,40 @@ The encoding of overviews reuses the same mapping rules established in the core 
     "multiscales": {
       "version": "1.0",
       "resampling_method": "average",
+      "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
       "layout": [
-        {"id": "L0", "path": "L0"},
-        {"id": "L1", "path": "L1", "derived_from": "L0", "factors": [2, 2]},
-        {"id": "L2", "path": "L2", "derived_from": "L1", "factors": [2, 2]}
+        {
+          "id": "L0",
+          "path": "L0",
+          "cell_size": [10.0, 10.0]
+        },
+        {
+          "id": "L1",
+          "path": "L1",
+          "derived_from": "L0",
+          "factors": [2, 2],
+          "cell_size": [20.0, 20.0],
+          "resampling_method": "average"
+        },
+        {
+          "id": "L2",
+          "path": "L2",
+          "derived_from": "L1",
+          "factors": [2, 2],
+          "cell_size": [40.0, 40.0],
+          "resampling_method": "average"
+        }
       ]
     },
     "spatial_ref": "EPSG:32633"
   },
   "metadata": {
-    "title": "Reflectance Multiscale Example"
+    "title": "Reflectance Multiscale Example",
+    "summary": "Example of a multiscale dataset encoded using the GeoZarr Overviews extension."
   }
 }
 ----
+
 
 Child groups represent the overview levels:
 

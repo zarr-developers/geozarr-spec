@@ -63,6 +63,20 @@
           "type": "string",
           "description": "Identifier of another overview level from which this level was derived."
         },
+        "cell_size": {
+          "description": "Resolution of the data at this level, expressed as the physical size of one cell in coordinate units (e.g., metres or degrees). May be a single value or an array [x, y].",
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 1,
+              "maxItems": 2
+            }
+          ]
+        },
         "factors": {
           "type": "array",
           "description": "Numeric decimation factors per dimension (e.g., [2, 2] for 2× downsampling in X and Y).",

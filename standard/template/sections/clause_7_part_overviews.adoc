@@ -188,6 +188,12 @@ Example: `"L0"`, `"overviews/L2"`.
 Used to express lineage or dependency relationships between levels.
 The value SHALL correspond to an existing `id` entry in the same `layout` array.
 
+|`cell_size` |**Type:** number or array of number.
+(Recommended) Resolution of the data at this level, expressed as the physical size of one cell in coordinate units (e.g. metres or degrees).
+This property allows clients such as map viewers to select the most appropriate overview level for a given display scale.
+If expressed as an array, the order SHALL match the spatial axes (e.g. `[x, y]`).
+
+
 |`factors` |**Type:** array of number.
 (Optional) Numeric decimation factors per dimension (e.g. `[2, 2]` for a 2× reduction in X and Y).
 Used to describe the scaling applied to generate this level from its source.
@@ -203,6 +209,8 @@ If not defined, the method specified in the root `multiscales.resampling_method`
 
 Here is a JSON example that conforms to the **final `multiscales` schema**:
 
+
+
 ```json
 {
   "version": "1.0",
@@ -211,13 +219,15 @@ Here is a JSON example that conforms to the **final `multiscales` schema**:
   "layout": [
     {
       "id": "L0",
-      "path": "L0"
+      "path": "L0",
+      "cell_size": [10.0, 10.0]
     },
     {
       "id": "L1",
       "path": "L1",
       "derived_from": "L0",
       "factors": [2, 2],
+      "cell_size": [20.0, 20.0],
       "resampling_method": "average"
     },
     {
@@ -225,6 +235,7 @@ Here is a JSON example that conforms to the **final `multiscales` schema**:
       "path": "L2",
       "derived_from": "L1",
       "factors": [2, 2],
+      "cell_size": [40.0, 40.0],
       "resampling_method": "average"
     }
   ]
