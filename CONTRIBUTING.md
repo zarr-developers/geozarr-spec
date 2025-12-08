@@ -11,7 +11,7 @@ Consult the latest Editor’s Draft before proposing changes:
 
 ## 2. Understand GeoZarr objectives
 
-GeoZarr does not define a new data model. It provides an encoding and mapping to Zarr aligned with CDM-friendly frameworks and formats. Background: [https://medium.com/@christophe.noel/geozarr-1-0-objectives-cf4f9a777a0d](https://medium.com/@christophe.noel/geozarr-1-0-objectives-cf4f9a777a0d)
+GeoZarr does not define a new data model. The work  focuses on concrete and thematic Zarr conventions that address specific community needs. Each convention provides a clear and self-contained extension for a defined topic and supports practical adoption.
 
 ## 3. Scope and workflow for changes
 
