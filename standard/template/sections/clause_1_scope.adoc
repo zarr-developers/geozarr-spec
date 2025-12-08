@@ -1,7 +1,31 @@
 == Scope
 
-The GeoZarr Unified Data Model and Encoding Standard defines a conceptual and implementation framework for representing and encoding geospatial and scientific datasets using the Zarr format. The scope of this Standard includes the definition of a format-agnostic unified data model, the specification of its encoding into Zarr Version 2 and Version 3, and the establishment of extension points to support interoperability with external metadata and tiling standards.
+The GeoZarr Standard defines a conceptual and implementation framework for representing and encoding geospatial and scientific datasets using the Zarr format. The scope of this Standard includes the definition of a format-agnostic data model, the specification of its encoding into Zarr Version 2 and Version 3, and a set of extensions to support affine transformations and overviews.
 
-This Standard addresses the needs of Earth observation, environmental monitoring, and geospatial analysis applications that require efficient, scalable access to multidimensional datasets. It enables the harmonisation of existing data models, such as the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, with operational encoding formats suitable for cloud-native storage and analysis.
+These capabilities are necessary for geospatial data because Zarr does not provide semantic constructs for geospatial data interpretation. Applications need to understand not just array shapes and values, but coordinate meanings, projection parameters, and scientific metadata. GeoZarr fills this gap without compromising Zarr's performance characteristics.
 
-Typical use cases include the storage, transformation, discovery, and processing of raster and gridded data, data cubes with temporal or vertical dimensions, and catalogue-enabled datasets integrated with metadata standards such as STAC and OGC Tile Matrix Sets.
+=== Why GeoZarr Exists
+
+Zarr, by design, is a low-level container for storing n-dimensional arrays and metadata. While this simplicity is a strength for performance and interoperability, it means Zarr lacks higher-level concepts that geospatial applications require:
+
+* *Coordinate Systems:* No native way to associate spatial or temporal meaning with array dimensions
+* *Grid Mappings:* No standard mechanism for projection and coordinate reference system metadata
+* *Semantic Metadata:* No conventions for units, standard names, or scientific attributes
+* *Variable Relationships:* No formal distinction between coordinate variables and data variables
+
+These concepts are essential for geospatial workflows but must be layered on top of Zarr's array storage. GeoZarr provides this semantic layer through proven standards (Common Data Model and CF conventions) while preserving Zarr's cloud-native advantages.
+
+=== Relationship to Zarr Core Concepts
+
+GeoZarr builds upon Zarr's foundational concepts of <<term-store,stores>> and <<term-hierarchy, hierarchies>>. A Zarr store provides the storage and retrieval interface (e.g., filesystem, cloud object storage), while a hierarchy defines the logical tree structure of groups and arrays within that store. GeoZarr specifies how to organize and structure hierarchies to support geospatial semantics, without modifying the underlying store interface.
+
+=== Use Cases and Applications
+
+This Standard addresses the needs of Earth observation, environmental monitoring, and geospatial analysis applications that require efficient, scalable access to multidimensional datasets. It enables the harmonisation of existing data models with operational encoding formats suitable for cloud-native storage and analysis.
+
+Typical use cases include:
+* Storage and processing of raster and gridded data
+* Management of data cubes with temporal or vertical dimensions
+* Integration with catalogue systems through standardized metadata
+* Multi-resolution tiling for efficient visualization and analysis
+* Cloud-optimized access to large geospatial datasets

@@ -2,17 +2,33 @@
 
 === Terms and definitions
 
+GeoZarr specification inherits the terms from the following sources:
+
+* https://docs.unidata.ucar.edu/netcdf-java/5.2/userguide/common_data_model_overview.html#data-access-layer-object-model[Unidata Common Data Model]
+
+* https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html#concepts-and-terminology[Zarr concepts and terminology].
+
+
+==== affine transformation
+
+An affine transformation is a geometric mapping that preserves points, straight lines, and parallelism. It combines linear transformations (such as rotation, scaling, reflection, or shear) with translation.
+
+
 ==== array
 
 A multidimensional, regularly spaced collection of values (e.g., raster data or gridded measurements), typically indexed by dimensions such as time, latitude, longitude, or spectral band.
 
 ==== chunk
 
-A sub-array representing a partition of a larger array, used to optimise data access and storage. In Zarr, data is stored and accessed as a collection of independently compressed chunks.
+A sub-array representing a partition of a larger array, used to optimize data access and storage. In Zarr, data is stored and accessed as a collection of independently compressed chunks.
 
 ==== coordinate variable
 
 A one-dimensional array whose values define the coordinate system for a dimension of one or more data variables. Typical examples include latitude, longitude, time, or vertical levels.
+
+==== data model
+
+A data model is an *abstract*, conceptual framework that defines how data is structured, organized, and interpreted, independent of any particular storage medium or implementation. In contrast, a file format represents a concrete realization of this model, defining how the data is stored on disk.
 
 ==== data variable
 
@@ -22,29 +38,32 @@ An array containing the primary geospatial or scientific measurements of interes
 
 An index axis along which arrays are organised. Dimensions provide a naming and ordering scheme for accessing data in multidimensional arrays (e.g., `time`, `x`, `y`, `band`).
 
-==== group
+==== dataset
 
-A container for datasets, variables, dimensions, and metadata in Zarr. Groups may be nested to represent a logical hierarchy (e.g., for resolutions or collections).
+*Avoid using:* this term is overloaded and avoided in this document. A dataset usually represent a self-contained group of variables within a hierarchical data structure. They often share one or more dimensions and represent the unit that can be opened by a data access library (see <<variable-group,variable group>>)
 
 ==== metadata
 
 Structured information describing the content, context, and semantics of datasets, variables, and attributes. GeoZarr metadata includes CF attributes, geotransform definitions, and links to STAC metadata where applicable.
 
-==== multiscale dataset
+==== overview
 
-A dataset that includes multiple representations of the same data variable at varying spatial resolutions. Each resolution level is associated with a tile matrix from an OGC Tile Matrix Set.
+A downscaled representation of a variable that facilitates rapid data display and efficient zooming. Overviews provide lower-resolution versions of the original data, enabling quick visualization and access without reading the full-resolution array. Multiple overview levels may be generated to support progressive rendering across different scales.
+
+==== store
+
+A system that provides storage and retrieval operations for Zarr hierarchies, as defined in the https://zarr-specs.readthedocs.io/en/latest/v3/core/index.html#stores[Zarr core specification]. A store implements the abstract store interface and can be backed by various storage technologies such as filesystems, cloud object storage, or databases. GeoZarr hierarchies are stored within and accessed through Zarr stores.
 
 ==== tile matrix set
 
 A spatial tiling scheme defined by a hierarchy of zoom levels and consistent grid parameters (e.g., scale, CRS). Tile Matrix Sets enable spatial indexing and tiling of gridded data.
 
-==== transform
+[[variable-group]]
+==== variable group
 
-An affine transformation used to convert between grid coordinates and geospatial coordinates, typically defined using the GDAL GeoTransform convention.
+A variable group is a container that includes a coherent collection of variables sharing the same dimensional structure and coordinate system ( and may contain additional variables or subgroups). It is conceptually equivalent to an xarray Dataset..
 
-==== unified data model (UDM)
 
-A conceptual model that defines how to structure geospatial data in Zarr using CDM-based constructs, including support for coordinate referencing, metadata integration, and multiscale representations.
 
 === Abbreviated Terms
 

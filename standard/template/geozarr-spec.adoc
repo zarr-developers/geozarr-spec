@@ -45,23 +45,23 @@ include::sections/clause_6_informative_text.adoc[]
 
 include::sections/clause_7_unified_data_model.adoc[]
 
-include::sections/clause_8_conformance.adoc[]
+// Discarded: include::sections/clause_8_conformance.adoc[]
 
 include::sections/clause_9_zarr_encoding.adoc[]
 
-include::sections/clause_10_geotiff_encoding.adoc[]
+// include::sections/clause_10_geotiff_encoding.adoc[]
 
 ////
 add or remove annexes after "A" as necessary
 ////
-include::sections/annex-a.adoc[]
+//include::sections/annex-a.adoc[]
 
-include::sections/annex-n.adoc[]
+// include::sections/annex-n.adoc[]
 
 ////
 Revision History should be the last annex before the Bibliography
 Bibliography should be the last annex
 ////
-include::sections/annex-history.adoc[]
+// include::sections/annex-history.adoc[]
 
-include::sections/annex-bibliography.adoc[]
+//include::sections/annex-bibliography.adoc[]
