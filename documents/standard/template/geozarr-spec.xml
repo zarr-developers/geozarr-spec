@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.9" schema-version="v2.1.4" flavor="ogc">
+<metanorma xmlns="https://www.metanorma.org/ns/standoc" type="semantic" version="2.8.10" schema-version="v2.1.5" flavor="ogc">
 <bibdata type="standard">
 <title language="en" type="main">OGC (add title text)</title>
 <uri type="xml">./geozarr-spec.xml</uri><uri type="pdf">./geozarr-spec.pdf</uri><uri type="doc">./geozarr-spec.doc</uri><docidentifier type="ogc-external">http://www.opengis.net/doc/{doc-type}/{standard}/{m.n}</docidentifier><docidentifier type="ogc-internal" primary="true">YY-999</docidentifier><docnumber>YY-999</docnumber><date type="published"><on>2029-03-30</on></date><date type="issued"><on>2029-03-30</on></date><date type="received"><on>2029-03-30</on></date><contributor><role type="author"/><organization>
@@ -361,7 +361,7 @@
 </clause>
 </clause>
 
-<clause id="_c40f9969-13fa-4257-9627-342a396f11cc" obligation="=informative">
+<clause id="_f5c1ba04-ad62-bded-83f2-721ea9a68166" obligation="=informative">
 <title id="_b0214843-62bd-7bf3-6c1f-4716311017c1">Unified Data Model</title>
 <clause id="_b9da0fda-077e-da4d-5ca9-eb22f40125f7" obligation="=informative">
 <title id="_de93b126-0dfe-3663-00da-5ab8d9ad2c5e">Scope and Purpose</title>
@@ -501,7 +501,7 @@
 </clause>
 </clause>
 
-<clause id="_f7e10638-f522-baf6-eb6d-d23e940c56c0" obligation="=informative">
+<clause id="_ba21aba1-fb11-37b5-59b7-f51302754692" obligation="=informative">
 <title id="_0b10ea11-384f-0c7d-46b5-8805f28e7db6">Unified Model Structure</title>
 <p id="_81136920-715d-7323-5ebf-6d6a8770f8e9">This clause defines the structural organisation of datasets conforming to the unified data model (UDM). It consolidates the foundational elements and optional extensions into a coherent architecture suitable for Zarr encoding, while remaining format-agnostic. The model establishes a modular and extensible framework that supports structured representation of multidimensional, geospatially-referenced resources.</p>
 
@@ -561,229 +561,362 @@
 
 <p id="_819f1e60-11d9-4683-48d4-25a32facda8d">All metadata follows harmonised naming and semantics consistent with the CDM and CF standards, enabling machine and human interpretability while supporting metadata exchange across diverse systems.</p>
 </clause>
+</clause>
 
-<clause id="_59539aaa-8dd7-535e-9646-8300b9efd17b" obligation="=informative">
-<title id="_32725af8-e9d6-eb50-13d0-4f882ae0ba28">Overviews</title>
-<p id="_690499a4-d6cc-9c15-1e78-501343ba14a6">The <strong>Overviews</strong> construct defines a formal, interoperable abstraction for multiscale gridded data. It ensures structural consistency across zoom levels and provides a semantic model for integration with tiled representations such as GeoTIFF overviews, OGC API – Tiles, and STAC Tiled Assets.</p>
+<clause id="_7dd17e4b-b335-2191-fa86-9ec36a1ad9ef" obligation="=informative">
+<title id="_019c9269-e85a-5a56-0dba-90388d552b14">Overviews</title>
+<clause id="_79538f65-fdbf-a496-9623-b92f574153df" obligation="=informative">
+<title id="_7f6b1245-6dc8-a48a-dd6f-ff60eea09496">Introduction</title>
+<p id="_b0065184-c97d-4cc9-136a-50b57b866431"><strong>Overviews</strong> are downscaled representations of gridded data designed to optimise visualisation and scalable access to large datasets. Overviews or  <strong>multiscale pyramid</strong> provide lower-resolution versions of the same variables, enabling rapid display, efficient zooming, and progressive data exploration. Multiple overview levels may exist, each representing the same data at a coarser spatial resolution.</p>
 
-<clause id="_776a3da3-c61e-f557-c13d-4735b1ceeb74" obligation="=informative">
-<title id="_127db878-e151-ad1b-a10d-a204f91b17f2">Purpose</title>
-<p id="_3ee0b0d8-dd5c-2f62-70ce-603c7accfd22">The <strong>Overviews</strong> construct provides a general mechanism for associating a single logical data variable with a collection of resampled representations, referred to as <strong>zoom levels</strong>. Each zoom level holds a reduced-resolution version of the original variable, with progressively decreasing spatial resolution from the base (highest detail) to the coarsest level.</p>
+<p id="_336f18e2-f28b-19af-fc8d-12b3df38375c">The <strong>Overviews</strong> construct extends the Common Data Model (CDM) by defining a hierarchical organisation of groups and variables that represent data at multiple scales. The <strong>OverviewSet</strong> is self-described by attributes defined at the parent group level, which declare the relationships between its levels and ensure consistent, interoperable multiscale representation within the CDM framework.</p>
+</clause>
 
-<p id="_88efda60-57c0-cd8c-8505-b6fc6671830c">Overviews enable:</p>
+<clause id="_a03fdf5b-6638-674c-2a21-436df1ea1e97" obligation="=informative">
+<title id="_ddb6937e-1cea-2dd1-e102-4501cab9466d">Purpose and Scope</title>
+<p id="_d572dd50-a48b-01fe-4ab9-ffc14db952f5">The <strong>Overviews</strong> extension enables scalable access to multidimensional gridded data, particularly for geospatial and remote sensing applications. It supports:</p>
 
-<ul id="_d9dd917e-2337-2755-f0a3-598e36a3ea2a"><li><p id="_c4474da0-a845-7103-f55a-8da2a1f45885">Fast access to summary representations for visualisation</p>
+<ul id="_b19f40f4-d431-7ade-344a-1f1082c6443f"><li><p id="_ac8b2670-b02d-2391-914a-7389a593e127">Progressive rendering and visualisation at multiple resolutions</p>
 </li>
-<li><p id="_fe5579d8-2700-a632-7818-33b4a1a8f79b">Progressive transmission and downsampling</p>
+<li><p id="_5378a608-ff69-11a3-72b5-0f505c817d8a">Efficient data transfer for large datasets</p>
 </li>
-<li><p id="_64be9f22-308d-273c-0c22-fcc4c27f9479">Multi-resolution analytics and adaptive processing</p>
+<li><p id="_deba8d50-8fd3-fbf2-5424-3cd4b4d0c796">Multi-resolution analysis in analytical or cloud environments</p>
+</li>
+<li><p id="_12e5229f-613f-fd9c-7e4c-8bcff850d0b9">Consistent representation of raster and data cube structures across scales</p>
 </li>
 </ul>
+
+<p id="_df1164d9-fb77-d8ab-5d12-bcace0427635">This specification is format-agnostic and may be implemented in any CDM-compliant structure, regardless of physical encoding (e.g. Zarr, NetCDF, GeoTIFF) although the present specification specifically targets Zarr.</p>
 </clause>
 
-<clause id="_3628b7db-954f-19da-ab49-6512a35e151e" obligation="=informative">
-<title id="_a22a9c99-66cd-0e34-e0e2-9148eba0ea61">Conceptual Structure</title>
-<p id="_c4a5885d-60fd-c1b0-54c8-97422ec5c53e">An <strong>Overviews</strong> construct is defined as a <strong>hierarchical set of multiscale representations</strong> of one or more data variables. It comprises the following components:</p>
+<clause id="_0a539937-912a-fc48-7797-7f188fe2643f" obligation="=informative">
+<title id="_d1c35d4c-6637-7bb1-433f-9c12a8cf0a1c">Conceptual Model</title>
+<p id="_80ac2f1c-4a41-ded9-6918-3a45d3b601ea">The Overviews construct defines a multiscale hierarchy applied to the <xref target="variable-group"><display-text>variable group</display-text></xref>, i.e., the CDM group containing the data variables and their associated metadata, and optionally other related variables that share identical dimensions and coordinate systems.</p>
 
-<dl id="_b61dc6cd-9729-d6e1-9b50-726036a86089"><dt><strong>Base Variable</strong></dt>
-<dd id="_532f3fe4-793f-8ad0-4e8b-c3bb7b7fb44c"><p id="_66ce7df7-9559-29fb-c285-9901f00c17fd">The original, highest-resolution variable to which the overview hierarchy is anchored. It is defined using the standard <tt>DataVariable</tt> structure in the model.</p>
-</dd>
-<dt><strong>Overview Levels</strong></dt>
-<dd id="_a917623e-512d-7976-0256-d271cb783657"><p id="_cb98da62-aa44-7444-d2da-33fa6a966d72">A sequence of variables representing the same logical quantity as the base variable, but sampled at coarser spatial resolutions.</p>
-</dd>
-<dt><strong>Zoom Level Identifier</strong></dt>
-<dd id="_0cca4f77-0b2f-277f-2264-11689c2a7cf0"><p id="_12ef4084-a80b-19d3-a846-d13ea71b51c5">A unique identifier associated with each level, ordered from finest (e.g. <tt>"0"</tt>) to coarsest resolution (e.g. <tt>"N"</tt>).</p>
-</dd>
-<dt><strong>Tile Grid Definition</strong></dt>
-<dd id="_8e97a4eb-2815-d9d4-b2f8-98a28b5a7427"><p id="_5ceb4317-2101-d108-02dd-20bdb4d4cea4">A mapping that associates each zoom level with a spatial tiling layout, defined in alignment with a <tt>TileMatrixSet</tt>.</p>
-</dd>
-<dt><strong>Spatial Alignment</strong></dt>
-<dd id="_2d427fff-1146-1d29-d84e-9a832570d1d1"><p id="_79147752-8a0b-a94d-b879-8ced9635ccc2">Each overview variable MUST be spatially aligned with the base variable using a consistent coordinate reference system and compatible axis orientation.</p>
-</dd>
-<dt><strong>Resampling Method</strong></dt>
-<dd id="_ce98a6e3-b24a-d872-7f9a-5dab2bfac178"><p id="_cc291e4b-1bfa-7b48-da50-2148a070adc5">A declared method indicating the technique used to derive coarser levels from the base variable (e.g. <tt>nearest</tt>, <tt>average</tt>, <tt>cubic</tt>).</p>
-</dd>
-</dl>
+<p id="_3af1e59b-fcaf-e350-eec8-86c16dcacaae">Example: Typical CDM Group Structure without overviews</p>
+
+<sourcecode id="_b131d7d1-41aa-f693-5cda-c37f71c01adf"><body>Group: variable_group/
+├── variable1
+├── variable2
+├── aux_variable
+├── coordinates1
+├── coordinates2
+└── Attributes</body></sourcecode>
+
+
+<p id="_92cf6a3b-78d1-c046-c2a8-727b950ee4f1">Each overview level provides a reduced-resolution representation of the same variables. This approach avoids redundancy by describing the hierarchy once for the entire group rather than for individual variables, ensuring consistency and concise metadata.</p>
+
+<p id="_3c547fde-a391-c807-9c24-1ca6024dc8a4">All overview levels are semantically equivalent, differing only in resolution, array extent, or sampling density. There is no requirement for a single base or reference level—each level may serve as an entry point depending on the application.</p>
 </clause>
 
-<clause id="_b183cf20-5d4c-c288-1af6-7594d48c044f" obligation="=informative">
-<title id="_c485aecc-8626-845b-7b73-5f900cc501b6">Model Components</title>
-<p id="_d29e2962-95a0-dbbd-fd11-41a0c2350c2e">The <strong>Overviews</strong> construct is represented in the unified data model using the following logical elements:</p>
+<clause id="_6c627ad6-ef07-191b-c54e-07d3d9ad74d5" obligation="=informative">
+<title id="_489b911b-0728-a9c8-912d-9b2071f92838">Model Components</title>
+<p id="_0d3edd0a-1980-efe5-4fd6-1d40c938d008">The <strong>Overviews</strong> construct defines the conceptual elements used to represent multiscale data within the GeoZarr data model. It extends the existing CDM concept to support datasets provided at multiple spatial resolutions.</p>
 
-<table id="_d196ccb6-f811-24e3-a801-d8bdee03a7dd"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_fe31adbe-2e7a-76e6-f513-58761cc54e59"><th id="_ef1114d9-4d73-807b-45c5-0afd81acc8e2" valign="middle" align="left">Element</th>
-<th id="_9935b323-84e9-7d86-94d3-f7bf882344bd" valign="middle" align="left">Definition</th>
+<p id="_44d3b998-ceb1-9368-b833-52b16b55f685">The construct introduces the following conceptual elements:</p>
+
+<table id="_9024c68e-966c-acca-6fad-2d0ca45a712a"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_f48aa152-8a99-7d9c-6c71-7a57fe4fc34d"><th id="_9bc30510-94c0-6ca0-6789-e8ea592a438d" valign="middle" align="left">Element</th>
+<th id="_c68741b2-7cf7-c285-98f4-532fc093dc70" valign="middle" align="left">Definition</th>
 </tr></thead>
-<tbody><tr id="_de4a0f45-1dcc-65b5-d03b-5a8953973f9d"><td id="_8034e7cd-2588-d16b-d140-a4539eb3d330" valign="middle" align="left"><tt>OverviewSet</tt></td>
-<td id="_9aeb9959-f4be-0365-79f2-199179d77684" valign="middle" align="left">A logical grouping of variables at multiple zoom levels associated with a single base variable.</td>
-</tr><tr id="_d2244ecd-ae15-7a13-0c08-85e90bf9725b"><td id="_361eb865-7b54-1c86-b56e-babe5ecf1c55" valign="middle" align="left"><tt>OverviewLevel</tt></td>
-<td id="_444e12b5-4f66-b6fe-07b8-fe262869720c" valign="middle" align="left">A single resampled variable at a specific resolution, identified by a zoom level string.</td>
-</tr><tr id="_0810b6ed-4c91-e3bb-02b6-202559399531"><td id="_ad4ba277-960a-83d9-c06b-aeca2bee7ee5" valign="middle" align="left"><tt>TileMatrixSetRef</tt></td>
-<td id="_a49f1edd-4448-940f-cf67-4b85c6863940" valign="middle" align="left">A reference to the tile grid specification applied across all overview levels. May refer to a well-known identifier, a URI, or an inline object.</td>
-</tr><tr id="_962bf696-557f-c5f3-bf97-490c5c2884ee"><td id="_8cd30102-35ea-1770-9672-e1504ea2375c" valign="middle" align="left"><tt>TileMatrixLimits</tt></td>
-<td id="_be591d05-e2de-95e9-e106-7390deb6bfe9" valign="middle" align="left">(Optional) Constraints on the tile coverage per zoom level.</td>
-</tr><tr id="_8008c14b-41a0-6f9a-9153-4d4db0ffc6a9"><td id="_08710245-a792-518b-b692-99f01130ccb1" valign="middle" align="left"><tt>resampling_method</tt></td>
-<td id="_799b572f-2d56-0752-b614-5111db14eeda" valign="middle" align="left">A string indicating the uniform method used to downsample data across all levels.</td>
+<tbody><tr id="_a82e90d0-0619-d684-41d0-aee03283e678"><td id="_d5794bad-f8ff-5659-721b-f8b2894642a6" valign="middle" align="left"><tt>OverviewSet</tt></td>
+<td id="_75094fd5-385f-36bd-9220-10cdb4f05ae2" valign="middle" align="left">A <strong>group</strong> composed of multiple <strong>OverviewLevels</strong>, each containing equivalent variables defined over the same coordinate system and dimensions but sampled at different spatial resolutions. The <strong>OverviewSet</strong> defines the complete multiscale hierarchy.</td>
+</tr><tr id="_eef9330e-6244-1636-dddf-972b058e945f"><td id="_9da5d85f-ef56-aa6c-267a-cc3324aa18b4" valign="middle" align="left"><tt>OverviewLevel</tt></td>
+<td id="_52eb5b81-dc3a-cee9-90f3-4b0ae078a9b6" valign="middle" align="left">A single resolution level within an <strong>OverviewSet</strong>. Each level replicates the structure and semantics of the others, differing only in resolution or extent.</td>
+</tr><tr id="_9e5159d3-e814-970d-3f8c-43c948fb1f34"><td id="_55183de2-3f10-04d7-d030-f95362995218" valign="middle" align="left"><tt>zoom_level</tt></td>
+<td id="_3e1a6de7-b015-c3e3-4dbe-4b474beb7525" valign="middle" align="left">An optional ordered identifier used to distinguish overview levels (e.g. <tt>0</tt>, <tt>1</tt>, <tt>2</tt> or symbolic identifiers). The ordering indicates relative resolution but does not imply dependency.</td>
 </tr></tbody>
 </table>
 
-<p id="_3405c406-683f-a6bc-1d9e-f2c59711f34c">All overview levels MUST preserve:</p>
+<p id="_b979eb1a-4322-6354-2fc5-11296e083873">The OverviewSet retains the same structure as a nominal variable group, including the associated metadata and auxiliary variables, so that the multiscale hierarchy preserves the complete descriptive context of the original dataset</p>
 
-<ul id="_ed6d1f38-fad0-47ae-45bf-8e912d127023"><li><p id="_256fa76d-b568-502b-2638-ea0b57998d99">The data variable’s semantic identity (<tt>standard_name</tt>, <tt>units</tt>, etc.)</p>
+<example id="_177f8719-9268-46e4-eb01-d789b4fef771"><p id="_20080d06-ec45-e5df-df6e-d9cc145a516a"><strong>Note:</strong> The native-resolution data <strong>MAY</strong> be stored directly in the <strong>OverviewSet</strong> group rather than in a dedicated <strong>OverviewLevel</strong> subgroup.</p>
+
+<p id="_6ae29b73-c156-fe5b-5b16-ba135ab0a6de">This layout is permitted for backward compatibility with existing datasets that were later augmented with multiscale metadata. However, it is  <strong>not recommended</strong>, as it may lead to inconsistent hierarchies or interpretation issues in client applications expecting all resolution levels to be represented as explicit subgroups.</p>
+</example>
+</clause>
+
+<clause id="_e52dde7e-a233-1532-1e1c-8499c4befb01" obligation="=informative">
+<title id="_458e2695-0b5b-6b20-d7d9-4ba76fb3eac9">Structural Layout</title>
+<p id="_377eb674-1aae-ac01-f590-dfecb300c03d">The <strong>Overviews</strong> construct is expressed within the Common Data Model (CDM) framework, which represents datasets through <strong>groups</strong>, <strong>variables</strong>, and <strong>attributes</strong>.</p>
+
+<p id="_450ac2bf-b216-5b8c-7d9f-ea9efa649847">An <strong>OverviewSet</strong> corresponds to a CDM <strong>group</strong> containing multiple <strong>OverviewLevels</strong>, each representing the same data variables at different spatial resolutions.</p>
+
+<p id="_98c536c0-8c47-a5ac-6339-a6f010ccba76">Within this structure:</p>
+
+<ul id="_43df2b83-2a4c-8dde-e44d-48e0583c2455"><li><p id="_11d3b8cb-5605-99c6-8176-261dcdf639f4"><strong>Groups</strong> define the hierarchical organisation of the multiscale data. The  <strong>OverviewSet</strong> acts as the parent group, while each <strong>OverviewLevel</strong> is represented as a child group that contains variables with identical names, dimensions, and coordinate definitions. The <strong>OverviewSet</strong> group may also include auxiliary variables and metadata consistent with the structure of a nominal CDM group.</p>
 </li>
-<li><p id="_cc26dab2-40f2-87e9-97bb-c5be70b106c0">The coordinate reference system</p>
+<li><p id="_f4292c15-59d6-05c2-d8fe-121526a844b4"><strong>Variables</strong> represent the same physical or derived quantities across resolutions. Each level contains the same set of data variables and coordinate variables (for example,  <tt>x</tt> and <tt>y</tt>) that describe grid geometry at that resolution.</p>
 </li>
-<li><p id="_fa22e797-c6ee-880a-0c22-11534ecaf38d">The axis order and dimension semantics</p>
+<li><p id="_9a8dfe7b-e16d-d907-ee34-6885a56b7f89"><strong>Attributes</strong> describe both the dataset metadata and the relationships between overview levels. They may appear at the  <strong>OverviewSet</strong> or <strong>OverviewLevel</strong> level and are used to define the structure and interpretation of the hierarchy.</p>
 </li>
 </ul>
 
-<p id="_f7b28d35-515b-e390-0c54-e526478e9353">Only the resolution and extent (through tiling and shape) may differ across levels.</p>
-</clause>
+<p id="_e3fd5abf-4fa6-ead8-08d4-b4c8705f7c5d">The complete description of the hierarchy is provided by the <tt>multiscales</tt> property, an attribute of the <strong>OverviewSet</strong> group that lists the available overview levels, their identifiers, and any associated information such as resampling methods or grid references.</p>
 
-<clause id="_802a0c3f-8e44-1f27-19e2-997daf65b1bd" obligation="=informative">
-<title id="_a8500cd4-21a4-7335-1c42-f00ceb74be2a">Relationship to Tile Matrix Set</title>
-<p id="_f9ffacf5-e899-9b36-3408-86845132779a">The <strong>Overviews</strong> construct is structurally aligned with the OGC Tile Matrix Set concept. Each zoom level is mapped to a <tt>TileMatrix</tt>, and the chunk layout for the corresponding data variable SHALL match the tile grid’s <tt>tileWidth</tt> and <tt>tileHeight</tt>.</p>
+<clause id="_398cad29-dc38-6c40-4241-40809c94d45c" obligation="=informative">
+<title id="_92bf4374-eb60-c898-deea-66d76534c46f">OverviewSet CDM-Based Representation</title>
+<p id="_a82a6706-7088-0698-ac04-b35c91102105">The following example illustrates the structural organisation of an <strong>OverviewSet</strong> using Common Data Model (CDM) constructs:</p>
 
-<p id="_3efa3229-1b20-7d1b-40b1-dadd09b0a53d">The <tt>OverviewSet</tt> MAY constrain tile matrix limits using <tt>TileMatrixSetLimits</tt>, which restrict tile indices to actual data coverage, consistent with the spatial extent of the overview variable.</p>
-</clause>
+<sourcecode id="_c3295aa0-fb7b-1a33-b7fd-d3f67768a014"><body>Group: reflectance/                     # OverviewSet (Group)
+├── Attribute: multiscales              # Metadata describing the multiscale hierarchy
+├── Attribute: spatial_ref = "EPSG:32633"
+├── Auxiliary Variable: quality_flag
+├── Group: L0/                          # OverviewLevel (highest or nominal resolution)
+│    ├── Variable: b01
+│    ├── Variable: b02
+│    ├── Variable: b03
+│    ├── Coordinate Variable: x
+│    └── Coordinate Variable: y
+├── Group: L1/                          # OverviewLevel (coarser resolution)
+│    ├── Variable: b01
+│    ├── Variable: b02
+│    ├── Variable: b03
+│    ├── Coordinate Variable: x
+│    └── Coordinate Variable: y
+└── Group: L2/                          # OverviewLevel (coarsest resolution)
+     ├── Variable: b01
+     ├── Variable: b02
+     ├── Variable: b03
+     ├── Coordinate Variable: x
+     └── Coordinate Variable: y</body></sourcecode>
 
-<clause id="_69343462-d036-416e-eef8-64239e4ac504" obligation="=informative">
-<title id="_f05f5621-8de9-e804-5f02-bdcdef393bee">Usage Context</title>
-<p id="_3ee9face-65d6-187d-c6f1-c28ab41b3d75">The <strong>Overviews</strong> construct is applicable to any gridded data variable with at least two spatial dimensions. It is primarily designed for:</p>
 
-<ul id="_64320efa-cd92-d82f-c17f-f52a3df4d7da"><li><p id="_f8168a8f-bd57-1834-97eb-d3c655b8f6bb">Raster imagery (e.g. reflectance, temperature)</p>
-</li>
-<li><p id="_a6c72ead-d9e8-fbe6-3b8a-f83b776275b8">Data cubes with spatial slices (e.g. time-series of spatial grids)</p>
-</li>
-<li><p id="_95ea89a3-bbc7-29b9-4463-a8b58a9455d7">Multi-band products with consistent spatial structure across levels</p>
-</li>
-</ul>
+<p id="_7bf1c251-b26d-6c07-a996-072d6ac713fc">In this representation:</p>
 
-<p id="_0d7265f5-01bf-0f0f-c47f-bbfce01d5428">The structure may be extended for N-dimensional datasets in future revisions, provided that two spatial axes can be unambiguously identified.</p>
-</clause>
-</clause>
-</clause>
-
-<clause id="_faee026c-c4d5-cd9f-10fe-aa1a161d8310" obligation="=informative">
-<title id="_aff54673-cf46-b299-4926-12ade211784c">Conformance and Extensibility</title>
-<p id="_26eb5bf7-6c0f-ff1e-f04a-4974d9ee10d9">The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.</p>
-
-<clause id="_8ae30365-1cf7-e93d-b0d7-67d12bd73b2b" obligation="=informative">
-<title id="_da9f1624-6511-91d4-f0c3-6825de6f7b98">Core Conformance</title>
-<ul id="_9102260e-643e-fe35-3c9d-a33b99e8963e"><li><p id="_22c891ce-abf6-37a1-ac53-b7d42121f67a">Datasets conforming to the core model must:</p>
-<ul id="_66a4ee55-ea6d-2856-cc5e-f1dd8f15add3"><li><p id="_bec7a6ae-7266-f64e-7d6e-8c65b2c65b25">Represent data using CDM-compatible constructs (dimensions, variables, attributes).</p>
+<ul id="_1a675a28-eeb4-c8c7-ed7c-91f9d1629b13"><li><p id="_00e8eb42-fe63-8237-f3b1-43a20e9a8610">The <strong>parent group</strong> (<tt>reflectant/</tt>) corresponds to the <strong>OverviewSet</strong> and defines the common spatial, semantic, and organisational context for all levels.</p>
 </li>
-<li><p id="_e6f6284f-053f-d493-e38d-23a77bd4d517">Follow attribute conventions where applicable.</p>
+<li><p id="_8156fe87-e5df-d2aa-dc3b-1330b1b8ee66">Each <strong>child group</strong> (<tt>L0</tt>, <tt>L1</tt>, <tt>L2</tt>) represents an <strong>OverviewLevel</strong>, implemented as a CDM <strong>group</strong> containing variables that share the same names, coordinate variables, and metadata conventions.</p>
 </li>
-<li><p id="_fe3b42b4-5445-767b-8181-53fd1e19a069">Be parsable as valid Zarr with structured metadata following this specification.</p>
-</li>
-</ul>
-</li>
-<li><p id="_3a579000-f10f-e29b-d297-dd9c571975e3">CF compliance is not mandatory but is recommended for semantic interoperability.</p>
+<li><p id="_59dd9932-2f19-0442-0c59-9126f228d4d2"><strong>Variables</strong> (<tt>b01</tt>, <tt>b02</tt>, etc.) represent equivalent physical quantities at different spatial resolutions.</p>
 </li>
 </ul>
 </clause>
+</clause>
 
-<clause id="_58b001da-8643-e190-1f3b-f25fb818ab99" obligation="=informative">
-<title id="_18be1cd1-febd-7277-99fe-5bcfbfe52a31">Extension Conformance</title>
-<ul id="_f99bcdc1-8750-cfb9-f69b-03034f0d134f"><li><p id="_4dacbc27-d337-faf4-c991-8ee3221d3dec">Implementations may optionally support one or more extension modules:</p>
-<ul id="_ae23d424-ac80-f1ba-745d-19e86b24fa33"><li><p id="_55f79900-f3e8-a5e9-fe6b-a17a08edd7fe">Multi-resolution overviews (Tile Matrix Set)</p>
+<clause id="_a4a28e79-7927-ae26-dddf-76e062eef907" obligation="=informative">
+<title id="_aaac6de9-4d97-4160-9ac8-9f88c47ae5b8">OverviewSet Metadata</title>
+<p id="_47c80bdd-99fe-f4ec-a3d8-5ebf74bc59c3">The <tt>multiscales</tt> property is an attribute of the <strong>OverviewSet</strong> group that formally defines the organisation of the multiscale hierarchy. It provides a structured description of all overview levels, their ordering, and the resampling or aggregation relationships between them.</p>
+
+<p id="_d6be3c0d-936b-fcd0-6774-1aa0beef5c1c">The property SHALL be encoded as a structured object formally defined as a JSON Schema available at: <link target="../schemas/multiscales.schema.json">Multiscales JSON Schema</link></p>
+
+<p id="_79930073-b365-ceb5-bcef-9fd4e4c2a6fd">It defines global attributes applying to the entire hierarchy and a <tt>layout</tt> array that lists all overview levels in order of resolution.</p>
+
+<clause id="_a7db193b-dea6-3830-9258-fd544d6eb3b7" obligation="=informative">
+<title id="_4e2969b3-2beb-9b02-c62b-725cbdc61d15">Multiscales Fields</title>
+<table id="_b8089146-d836-e3eb-e646-f85f3662e2dd"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_7e7e19b8-0f7e-4c9a-7e65-4851890ffda4"><th id="_89ce6a19-e01d-1735-3e98-c134ec33e018" valign="middle" align="left">Field</th>
+<th id="_f4152357-0ca7-11b6-69b9-230abe5b9b2f" valign="middle" align="left">Definition</th>
+</tr></thead>
+<tbody><tr id="_b1d3844b-fcd4-96d1-92c1-42ce3b05aa21"><td id="_5f44d2db-7897-b14e-5626-c121ba40fcf2" valign="middle" align="left"><tt>version</tt></td>
+<td id="_a7dec8a7-8727-6e63-f112-6619ead9ddf1" valign="middle" align="left"><strong>Type:</strong> string. Version identifier of the multiscales schema. This field SHALL be present to indicate the version of the schema used. Example:  <tt>"1.0"</tt></td>
+</tr><tr id="_ad7c4755-d0e6-32a8-cfd1-b21c4be38b57"><td id="_eed5986a-085a-3664-9d7e-a8f20ff57278" valign="middle" align="left"><tt>resampling_method</tt></td>
+<td id="_57109d85-f7c6-dd59-5ba1-d83d5070af76" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Default resampling or aggregation method applied across all levels. If omitted, resampling may be defined per level. Allowed values include:  <tt>"nearest"</tt>, <tt>"average"</tt>, <tt>"bilinear"</tt>, <tt>"cubic"</tt>, <tt>"cubic_spline"</tt>, <tt>"lanczos"</tt>, <tt>"mode"</tt>, <tt>"max"</tt>, <tt>"min"</tt>, <tt>"med"</tt>, <tt>"sum"</tt>, <tt>"q1"</tt>, <tt>"q3"</tt>, <tt>"rms"</tt>, <tt>"gauss"</tt>. Default:  <tt>"nearest"</tt>.</td>
+</tr><tr id="_0d48e242-1d60-3708-d27b-1dddc689e56e"><td id="_2d907c7d-5211-0c7e-916b-ea32df7c2926" valign="middle" align="left"><tt>tile_matrix_ref</tt></td>
+<td id="_1bd8a4fe-fce9-010c-c18f-1d903bf94606" valign="middle" align="left"><strong>Type:</strong> string or object. (Optional) Reference to an external grid or tiling definition (e.g. an OGC Tile Matrix Set identifier or URI) that describes the spatial structure and scale relationships.</td>
+</tr><tr id="_59b8ab29-5304-163f-0047-5297d0ccf895"><td id="_50ddf949-aca1-f5a4-8011-7967e3caf0ab" valign="middle" align="left"><tt>layout</tt></td>
+<td id="_fe6d1e52-52a8-2813-635c-beb19b8997a8" valign="middle" align="left"><strong>Type:</strong> array of <xref target="overview-level-object"><display-text>Overview Level Object</display-text></xref>. A mandatory array describing each  <strong>OverviewLevel</strong> within the hierarchy, ordered from highest to lowest resolution.  Each entry defines the group name and optional derivation information.</td>
+</tr><tr id="_da20468a-b488-2d18-51f8-fddcf20b17fc"><td id="_6c9e00a8-bddb-aecb-ab8c-211d24db717d" valign="middle" align="left"><tt>variables</tt></td>
+<td id="_975a4e98-c955-6e54-f32f-87507f2d8fd1" valign="middle" align="left"><strong>Type:</strong> array of string. (Optional) List of variable names for which overviews are defined. If omitted, all variables in the parent group are assumed to have overviews. Example:  <tt>["b01", "b02", "b03"]</tt>.</td>
+</tr></tbody>
+</table>
+</clause>
+
+<clause id="_a6d0ec08-5a89-1bda-b640-ef0e7ccca3be" anchor="overview-level-object" obligation="=informative">
+<title id="_bb017ce9-d9d8-e07d-9b11-afb29fc77d41">Overview Level Object</title>
+<p id="_5c905821-8140-821f-ab45-299d19f6f07c">Each object in the <tt>layout</tt> array describes one <strong>OverviewLevel</strong> within the multiscale hierarchy. It defines a unique identifier for the level, its location within the dataset hierarchy, and optionally its derivation from another level.</p>
+
+<table id="_c9d6d7f1-a0b0-8b91-649a-fd33419ecaa6"><colgroup><col width="25%"/><col width="75%"/></colgroup><thead><tr id="_de8345b5-0e08-18e5-c8c5-c3a9b987c8f8"><th id="_022a982c-76e4-8d18-1564-2def4487beef" valign="middle" align="left">Field</th>
+<th id="_5ea3b62a-4514-f288-8b9e-620f22f3cf2f" valign="middle" align="left">Definition</th>
+</tr></thead>
+<tbody><tr id="_70898b7e-6fd3-a203-27e5-6614ddd736d2"><td id="_4954b92a-8858-7a5f-363c-8888797ba4d8" valign="middle" align="left"><tt>id</tt></td>
+<td id="_e819f02e-26bf-09b3-1d1e-632656010769" valign="middle" align="left"><strong>Type:</strong> string. Required unique identifier for this overview level. The identifier SHALL be stable within the dataset and MAY be used for reference in other metadata fields. Example:  <tt>"L0"</tt>, <tt>"L1"</tt>, <tt>"L2"</tt>.</td>
+</tr><tr id="_0d3128c4-4aed-8a3b-ce23-3bfeb009c33c"><td id="_08cd6632-a853-b003-a46f-d09932d94589" valign="middle" align="left"><tt>path</tt></td>
+<td id="_f4d0fadf-7c3e-2001-174c-9e8ca386354f" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Logical path identifying the location of the overview level within the dataset hierarchy. If omitted, the level is assumed to be located as a  <strong>direct child group</strong> of the <strong>OverviewSet</strong> and the <tt>id</tt> value SHALL be used as the default relative path. Example:  <tt>"L0"</tt>, <tt>"overviews/L2"</tt>.</td>
+</tr><tr id="_ccffa2b5-e61b-104d-8da4-b1944d6c27f5"><td id="_fce635ba-b392-4584-0910-231072730400" valign="middle" align="left"><tt>derived_from</tt></td>
+<td id="_a3ef6506-cfcb-7fd2-a997-665754cbc037" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Identifier of another overview level from which this level was derived. Used to express lineage or dependency relationships between levels. The value SHALL correspond to an existing  <tt>id</tt> entry in the same <tt>layout</tt> array.</td>
+</tr><tr id="_18c854eb-d86c-039d-87ad-c24c73a31fe8"><td id="_8ea3b784-add1-d4d4-565a-d9086cbd831f" valign="middle" align="left"><tt>cell_size</tt></td>
+<td id="_417451a3-028d-572f-f093-638a9d24a429" valign="middle" align="left"><strong>Type:</strong> number or array of number. (Recommended) Resolution of the data at this level, expressed as the physical size of one cell in coordinate units (e.g. metres or degrees). This property allows clients such as map viewers to select the most appropriate overview level for a given display scale. If expressed as an array, the order SHALL match the spatial axes (e.g.  <tt>[x, y]</tt>).</td>
+</tr><tr id="_5edc8872-c83b-a5a0-b4b1-0808c686573e"><td id="_eaf22057-ed0d-c527-1b64-f0be4b01f4da" valign="middle" align="left"><tt>factors</tt></td>
+<td id="_c0e60be4-49dd-4e2a-cf2c-ab452405a25e" valign="middle" align="left"><strong>Type:</strong> array of number. (Optional) Numeric decimation factors per dimension (e.g.  <tt>[2, 2]</tt> for a 2× reduction in X and Y). Used to describe the scaling applied to generate this level from its source.</td>
+</tr><tr id="_e1edcd01-25f8-86fa-66e3-3318768e21be"><td id="_dcc7e21f-c432-0c33-e8e0-f29005312ac2" valign="middle" align="left"><tt>resampling_method</tt></td>
+<td id="_89bb1309-a52f-5f60-4c02-e7a82d1af9a9" valign="middle" align="left"><strong>Type:</strong> string. (Optional) Resampling or aggregation method specific to this level. If not defined, the method specified in the root  <tt>multiscales.resampling_method</tt> field applies.</td>
+</tr></tbody>
+</table>
+</clause>
+
+<clause id="_52fe0ed4-3faf-99cf-b429-968ad32383d9" obligation="=informative">
+<title id="_4f3b3ffc-a9a1-e076-028f-5f378665a958">Example Representation</title>
+<p id="_e312d3dc-9754-250d-2e15-09b9f66fc38e">Here is a JSON example that conforms to the <strong>final <tt>multiscales</tt> schema</strong>:</p>
+
+<sourcecode id="_c69347d3-43f3-b7b3-9844-5c3332c0bec0" lang="json"><body>{
+  "version": "1.0",
+  "resampling_method": "average",
+  "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
+  "layout": [
+    {
+      "id": "L0",
+      "path": "L0",
+      "cell_size": [10.0, 10.0]
+    },
+    {
+      "id": "L1",
+      "path": "L1",
+      "derived_from": "L0",
+      "factors": [2, 2],
+      "cell_size": [20.0, 20.0],
+      "resampling_method": "average"
+    },
+    {
+      "id": "L2",
+      "path": "L2",
+      "derived_from": "L1",
+      "factors": [2, 2],
+      "cell_size": [40.0, 40.0],
+      "resampling_method": "average"
+    }
+  ]
+}</body></sourcecode>
+
+
+<p id="_ae649ee0-87da-8de2-cd34-d634b442c381"><strong>Notes:</strong></p>
+
+<ul id="_811b69d6-ca17-a99a-737b-85c11cc7894f"><li><p id="_48083a15-7900-519d-f4fe-1b2cb174e67d">Each <tt>id</tt> uniquely identifies an overview level.</p>
 </li>
-<li><p id="_2128da65-4e4d-c740-e61c-b02fd81b673b">GeoTransform metadata (GDAL)</p>
+<li><p id="_54e5d83f-2c82-7fc9-d9ef-13c02ac7e8d3"><tt>path</tt> points to the logical container for that level (may be omitted if it is a direct child of the <tt>OverviewSet</tt>).</p>
 </li>
-<li><p id="_518b21eb-59f6-49f9-a590-edc40ecb2ed8">STAC metadata integration</p>
+<li><p id="_3547b679-9308-9f18-dfd2-f27b7b058943"><tt>derived_from</tt> expresses lineage between levels.</p>
+</li>
+<li><p id="_34241c0a-e695-1ef1-2a77-d83ba63b4b69"><tt>factors</tt> defines downscaling ratios.</p>
+</li>
+<li><p id="_4be390eb-f726-202d-df44-0344f3d25b4b"><tt>resampling_method</tt> can be defined per level or inherited from the global one.</p>
+</li>
+<li><p id="_2f943821-eb42-d7a8-ac7a-89451a2ece64">The <tt>tile_matrix_ref</tt> provide context for external referencing.</p>
+</li>
+</ul>
+</clause>
+</clause>
+</clause>
+
+<clause id="_3fdc3ae3-a5a7-3af1-109a-0825c75b2105" obligation="=informative">
+<title id="_e310a273-ccd4-bac5-8fdc-14e97910152a">Conformance and Extensibility</title>
+<p id="_fa7462b9-a7f5-43f4-a8db-a2306d34d95c">The GeoZarr data model is designed with an open conformance approach to support a wide range of use cases and implementation contexts. Its core model is permissive, allowing partial implementations, while optional extensions and compliance profiles can define stricter requirements for interoperability.</p>
+
+<clause id="_7917a194-1ed0-f205-83a3-20ac38e448e6" obligation="=informative">
+<title id="_567b1902-5103-59d6-19dd-b52f3cc71d70">Core Conformance</title>
+<ul id="_d998b0ab-7f65-8f75-02be-8ebe4e271b81"><li><p id="_ad45bce1-6feb-8283-2cff-2a7f22d24dec">Datasets conforming to the core model must:</p>
+<ul id="_9db008e3-db0a-6149-ba2c-02838c44dcc8"><li><p id="_a44b82b3-a660-fcaa-e68d-d1a8fa5c4c48">Represent data using CDM-compatible constructs (dimensions, variables, attributes).</p>
+</li>
+<li><p id="_b2d0cbde-1b0e-4b24-5a19-b7c6060471e4">Follow attribute conventions where applicable.</p>
+</li>
+<li><p id="_a5a79abb-1999-6c9f-146e-6b62045f21bb">Be parsable as valid Zarr with structured metadata following this specification.</p>
 </li>
 </ul>
 </li>
-<li><p id="_f15be02e-265a-3663-c84e-26cbbe249ac2">Each extension defines its own requirement class with validation rules and expected metadata structures.</p>
-</li>
-<li><p id="_bc8dbd78-2f35-f769-c159-2ce88ad0645b">Tools may advertise which extensions they support and validate datasets accordingly.</p>
+<li><p id="_88561493-d7d1-ef5a-e0ca-8ab29f3129c4">CF compliance is not mandatory but is recommended for semantic interoperability.</p>
 </li>
 </ul>
 </clause>
 
-<clause id="_5af26dad-8981-c3d7-fa98-aca874fa10e3" obligation="=informative">
-<title id="_ec799d54-ad65-a0ce-2823-29dcd86b4c2b">Conformance Classes</title>
-<ul id="_ec016f2b-846b-0b21-9857-3302d4467f02"><li><p id="_072d46e7-3c12-76b8-4e43-87a6a68d0e93">Conformance Classes may be defined to specify required components and extensions for specific application domains (e.g., visualisation clients, EO archives, catalogue indexing).</p>
+<clause id="_1087de2c-7433-146f-1c9a-e93fb263287f" obligation="=informative">
+<title id="_a6acbda9-94a1-7a28-6291-3b8cb2fe8649">Extension Conformance</title>
+<ul id="_0eac7f03-659f-ccd5-575b-49b6641516e9"><li><p id="_59a69cad-91a7-3e49-d1c5-f2f29def5f4d">Implementations may optionally support one or more extension modules:</p>
+<ul id="_0a6626cd-ca9a-ae4b-1dd3-ea8efa35373f"><li><p id="_1e82f769-f62a-1477-e744-f7e63549fe6c">Multi-resolution overviews (Tile Matrix Set)</p>
 </li>
-<li><p id="_0ab5d812-468c-d3d1-e97f-909cc4fda610">Conformance Classes enable selective validation without constraining the general model.</p>
+<li><p id="_e2a60f03-8881-ec92-c60f-304cd71c734c">GeoTransform metadata (GDAL)</p>
+</li>
+<li><p id="_696615ae-7ea0-1dee-fc44-7f414b4fbfe6">STAC metadata integration</p>
+</li>
+</ul>
+</li>
+<li><p id="_4ab0bc46-b909-3d57-3347-4687ecea2ddc">Each extension defines its own requirement class with validation rules and expected metadata structures.</p>
+</li>
+<li><p id="_c8c5f2a7-28d9-627b-9653-cc73ff3cc75b">Tools may advertise which extensions they support and validate datasets accordingly.</p>
 </li>
 </ul>
 </clause>
 
-<clause id="_0922e283-360f-8cc3-41c6-929503327084" obligation="=informative">
-<title id="_6b62e138-a07b-b4c3-c3db-7e2cb82afbd7">Extensibility Principles</title>
-<ul id="_b50f4ee5-b434-7309-fc32-617d1c54de96"><li><p id="_242baafe-3fc9-3636-1ed4-38dc0b4e88b0">All extensions must preserve compatibility with the core model and avoid redefining existing CDM or CF semantics.</p>
+<clause id="_52244327-652b-3681-71a2-1992c995dc23" obligation="=informative">
+<title id="_3b172430-5ff8-2e06-8d49-1639e8ebea30">Conformance Classes</title>
+<ul id="_34ec0f17-063c-f907-d387-4e70946c8c44"><li><p id="_3a1dc39d-97b8-729a-5752-e1bbb86fbcc2">Conformance Classes may be defined to specify required components and extensions for specific application domains (e.g., visualisation clients, EO archives, catalogue indexing).</p>
 </li>
-<li><p id="_51014376-1eb2-9b94-f22f-2a8f465fd3c7">New extensions should be documented with clear identifiers, schemas, and conformance criteria.</p>
+<li><p id="_cbbd8456-6096-f9b3-5cf6-8f16c5cdfe90">Conformance Classes enable selective validation without constraining the general model.</p>
 </li>
-<li><p id="_ac547b8b-a4a2-aed1-8ea4-f8ffce0dad4c">The model encourages interoperability by allowing tools to interpret unknown extensions without failure.</p>
+</ul>
+</clause>
+
+<clause id="_5ef09cd8-dc06-c94c-1027-76b7810a5377" obligation="=informative">
+<title id="_a7fc02fe-e303-dbab-1a6d-ef2790341708">Extensibility Principles</title>
+<ul id="_386bd9ed-b0c3-87dc-f1a1-8d4b220345e0"><li><p id="_26f0bb61-f04a-f101-34e5-c8ff49ae37a9">All extensions must preserve compatibility with the core model and avoid redefining existing CDM or CF semantics.</p>
+</li>
+<li><p id="_7e5eed08-8ac2-5778-7eb5-965f6197afcd">New extensions should be documented with clear identifiers, schemas, and conformance criteria.</p>
+</li>
+<li><p id="_7e4f9b0a-93d0-6fe6-355e-1e7457795518">The model encourages interoperability by allowing tools to interpret unknown extensions without failure.</p>
 </li>
 </ul>
 
-<p id="_11e36acf-d8c0-bee0-8a98-e324039543c3">This extensibility framework supports both minimum-viable use and high-fidelity metadata integration, enabling incremental adoption across the geospatial and scientific data communities.</p>
+<p id="_b7c9bae6-8594-7ee4-7283-6bc54e154a46">This extensibility framework supports both minimum-viable use and high-fidelity metadata integration, enabling incremental adoption across the geospatial and scientific data communities.</p>
 </clause>
 </clause>
 
-<clause id="_379a4be3-3426-62c7-22a6-7e2a2f0e1747" obligation="=informative">
-<title id="_180b68e8-e757-28f9-75fa-e88454b511ee">Interoperability Considerations</title>
-<p id="_e4475bdb-1c8c-3213-4ba6-05b67baa30b4">Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.</p>
+<clause id="_18b76fe7-fde3-7292-3589-11a37640c4f9" obligation="=informative">
+<title id="_f2f60ab0-b8a4-6e2f-d808-490e196a32a7">Interoperability Considerations</title>
+<p id="_c232c4f5-398d-093a-db01-d980b089d2d0">Interoperability is a core objective of the GeoZarr unified data model. The model is designed to bridge diverse Earth observation and scientific data ecosystems by enabling structural and semantic compatibility with established formats and standards, while providing a forward-looking foundation for scalable, cloud-native workflows.</p>
 
-<p id="_a1d606a3-5990-6a9e-342d-087476093c0e">This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.</p>
+<p id="_06abd905-6b37-ae2a-f4cc-1c21af420556">This section outlines the principles and mechanisms supporting interoperability across formats, tools, and communities.</p>
 
-<clause id="_00600b43-b849-c858-3f10-df61a4ad1e37" obligation="=informative">
-<title id="_38168413-627d-7db3-c8a2-ec66e27b1ca3">Format Mapping and Alignment</title>
-<p id="_e8cd0e89-9dae-62fb-38b0-2f81130040fd">The data model is explicitly aligned with foundational standards including the Unidata Common Data Model (CDM), the CF Conventions, and established practices in formats such as NetCDF and GeoTIFF. Where applicable, GeoZarr datasets may be derived from or transformed into these formats using consistent mappings.</p>
+<clause id="_466c3e91-b932-e3a1-e042-ed6b2a8e375d" obligation="=informative">
+<title id="_b194799a-eb73-4438-0179-62aebdc79579">Format Mapping and Alignment</title>
+<p id="_38ff9e3f-2988-2b81-fbe9-8deda49ae300">The data model is explicitly aligned with foundational standards including the Unidata Common Data Model (CDM), the CF Conventions, and established practices in formats such as NetCDF and GeoTIFF. Where applicable, GeoZarr datasets may be derived from or transformed into these formats using consistent mappings.</p>
 
-<ul id="_fd6e6861-6d41-9c10-12ff-df9ef67dccdf"><li><p id="_6f95420d-32a2-6cc9-e693-fc792d3e7779"><strong>NetCDF (classic and enhanced models)</strong>:</p>
-<ul id="_74e5685e-c4b8-d1ec-b207-0504190525ab"><li><p id="_6f1c05cb-4975-73c5-44d8-c2e7aaaac47e">GeoZarr shares a common conceptual structure with NetCDF via CDM.</p>
+<ul id="_55b84a39-51e7-c8a6-9653-caafe493a2c9"><li><p id="_da8aba53-098e-be5a-8147-cd5efeeac509"><strong>NetCDF (classic and enhanced models)</strong>:</p>
+<ul id="_26e792fe-176d-5c64-e056-d1c70a966c7f"><li><p id="_908c8ed9-5ea6-eaca-78a2-89b215b96291">GeoZarr shares a common conceptual structure with NetCDF via CDM.</p>
 </li>
-<li><p id="_92b7ad0f-99c5-0f0f-7ba1-224e903ab89b">Variables, dimensions, coordinate systems, and attributes follow directly mappable patterns.</p>
+<li><p id="_fc7fc294-24d2-b0c9-3674-a6b555ae2253">Variables, dimensions, coordinate systems, and attributes follow directly mappable patterns.</p>
 </li>
-<li><p id="_2a1b0403-2aad-4983-d5ff-7947705e796d">Metadata expressed in CF conventions in NetCDF can be preserved in GeoZarr without loss of fidelity.</p>
+<li><p id="_e1c9ad08-894a-c014-401b-331f63616e03">Metadata expressed in CF conventions in NetCDF can be preserved in GeoZarr without loss of fidelity.</p>
 </li>
 </ul>
 </li>
-<li><p id="_afcbedb7-0e8c-8649-c266-bed0c69bf1dc"><strong>GeoTIFF</strong>:</p>
-<ul id="_bdbe769f-31e2-c759-acfd-ceb464b8f709"><li><p id="_3d338191-a346-37ff-0a44-9dc7d8b9f30f">Raster-based datasets in GeoZarr can map to GeoTIFF by interpreting spatial referencing (via CF or GeoTransform) and band structures.</p>
+<li><p id="_589ee449-2bac-d5c9-6919-8f73aa402bab"><strong>GeoTIFF</strong>:</p>
+<ul id="_669f6ebb-e78d-6f93-6ef6-040ec2ef4343"><li><p id="_39730c57-357c-c092-c082-9c16ce4a4ab8">Raster-based datasets in GeoZarr can map to GeoTIFF by interpreting spatial referencing (via CF or GeoTransform) and band structures.</p>
 </li>
-<li><p id="_f7f6a67d-2550-b54b-0983-d0ccd9ed218c">Overviews aligned to OGC Tile Matrix Sets may correspond to TIFF image pyramids.</p>
+<li><p id="_d15fe207-e123-d700-3396-c95d40e2af2b">Overviews aligned to OGC Tile Matrix Sets may correspond to TIFF image pyramids.</p>
 </li>
-<li><p id="_2a7ed73f-f805-1eb3-932b-705d65d5213f">Projection metadata and resolution information can be mapped via standard tags.</p>
-</li>
-</ul>
+<li><p id="_f5c7fa6a-e48e-6a36-e0c2-423db8cced56">Projection metadata and resolution information can be mapped via standard tags.</p>
 </li>
 </ul>
-
-<p id="_f9746af2-fe1e-2792-4604-63a0eceb925f">These mappings facilitate round-trip transformations and enable toolchains that consume or produce multiple formats without reengineering semantic models.</p>
-</clause>
-
-<clause id="_3f4825e7-70a1-feee-738e-1e2627786b33" obligation="=informative">
-<title id="_910f6043-b951-a05b-9056-76c4d3ec42b1">Semantic Interoperability</title>
-<p id="_7a15e7f9-6a48-47cc-6772-770eabf9e18d">Semantic interoperability is supported through adherence to CF conventions, use of standardised attribute names (e.g., <tt>standard_name</tt>, <tt>units</tt>), and alignment with metadata vocabularies used in other ecosystems (e.g., STAC, EPSG codes, ISO 19115 keywords).</p>
-
-<p id="_61fd1bd1-d1c2-0ff2-b45c-52d8029658e8">The model does not prescribe specific vocabularies beyond CF but encourages reuse and recognition of widely accepted descriptors to promote cross-domain understanding.</p>
-</clause>
-
-<clause id="_1dea32e0-0549-bb58-e5c0-82a2cc397a39" obligation="=informative">
-<title id="_2f134037-5864-e9d4-533d-4438048e6f18">Metadata and Discovery Integration</title>
-<p id="_c5f5181f-1248-f76e-6e19-b153cfabe198">STAC compatibility enables integration with catalogue services for discovery and indexing. Datasets can expose STAC-compliant metadata alongside core metadata, supporting federated search and filtering via STAC APIs.</p>
-
-<p id="_1e018bb5-3308-6f73-1bc0-bcbbf7dc3a6c">This approach enables seamless integration into modern data catalogues and platforms that support EO discovery standards.</p>
-</clause>
-
-<clause id="_8cb0d659-b22e-caed-e7cf-826a5c97fdbc" obligation="=informative">
-<title id="_b814a9de-efb5-dd85-63db-496713fcb076">Tool and Ecosystem Support</title>
-<p id="_a29dd780-9800-f698-18d9-dd79e1c07b32">The unified data model facilitates interoperability with tools and libraries across the following domains:</p>
-
-<ul id="_50677deb-e498-e1a1-05ea-b94323c4ef8a"><li><p id="_93f36b02-d659-aa65-1016-a8c1862dba04"><strong>Scientific computing</strong>: NetCDF-based libraries (e.g., xarray, netCDF4), Zarr-compatible clients.</p>
-</li>
-<li><p id="_eb237830-1dd4-1e4e-1345-2b2db1daa95a"><strong>Geospatial processing</strong>: GDAL, rasterio, QGIS (via Zarr driver extensions or translations).</p>
-</li>
-<li><p id="_7f0ed2e5-f5e7-fb72-9b05-a407b2d9bfff"><strong>Cloud-native infrastructure</strong>: support for parallel access, chunked storage, and hierarchical grouping compatible with object storage.</p>
 </li>
 </ul>
 
-<p id="_e4271a17-a459-66bd-2c1e-7745cf213e92">Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.</p>
+<p id="_fd8a84fe-08f0-9e13-892f-392d5149c72e">These mappings facilitate round-trip transformations and enable toolchains that consume or produce multiple formats without reengineering semantic models.</p>
+</clause>
+
+<clause id="_b02d7e16-fbc5-7b2e-6831-c93ceb708977" obligation="=informative">
+<title id="_24c5cabf-0f6c-3249-8d17-f4fc1e15603f">Semantic Interoperability</title>
+<p id="_c0d41b7c-0cd6-c4c9-5204-e917e099cc2c">Semantic interoperability is supported through adherence to CF conventions, use of standardised attribute names (e.g., <tt>standard_name</tt>, <tt>units</tt>), and alignment with metadata vocabularies used in other ecosystems (e.g., STAC, EPSG codes, ISO 19115 keywords).</p>
+
+<p id="_798503dc-4e17-53f6-d767-244167e85f4e">The model does not prescribe specific vocabularies beyond CF but encourages reuse and recognition of widely accepted descriptors to promote cross-domain understanding.</p>
+</clause>
+
+<clause id="_d0e6f439-d30e-385f-7a74-7c5768e46296" obligation="=informative">
+<title id="_a02b0ca8-b30e-692d-6123-4d2809c87e01">Metadata and Discovery Integration</title>
+<p id="_508bd4cb-0522-7c9c-2bda-eb93bc176bee">STAC compatibility enables integration with catalogue services for discovery and indexing. Datasets can expose STAC-compliant metadata alongside core metadata, supporting federated search and filtering via STAC APIs.</p>
+
+<p id="_38c3ac62-684f-31c6-7b15-0d2965fc29f7">This approach enables seamless integration into modern data catalogues and platforms that support EO discovery standards.</p>
+</clause>
+
+<clause id="_07a23ce1-56a7-0fb1-def3-e013f3bd96db" obligation="=informative">
+<title id="_ff15aa35-9a10-9f64-11f7-e0d5953e8c8d">Tool and Ecosystem Support</title>
+<p id="_ea1a29f0-b22e-5cb2-472a-e2c81ff9745d">The unified data model facilitates interoperability with tools and libraries across the following domains:</p>
+
+<ul id="_f98963e9-ff41-467f-5183-31a933c7e7e4"><li><p id="_e7e6c669-1100-4d29-3063-4fbf2be517d5"><strong>Scientific computing</strong>: NetCDF-based libraries (e.g., xarray, netCDF4), Zarr-compatible clients.</p>
+</li>
+<li><p id="_dc918d4a-c823-c9ba-a3eb-87681dceb2ae"><strong>Geospatial processing</strong>: GDAL, rasterio, QGIS (via Zarr driver extensions or translations).</p>
+</li>
+<li><p id="_12ed4cd7-7a3c-8ae9-45e0-be96d6b37bee"><strong>Cloud-native infrastructure</strong>: support for parallel access, chunked storage, and hierarchical grouping compatible with object storage.</p>
+</li>
+</ul>
+
+<p id="_df739e61-70be-752a-42ae-2501621ea859">Tooling support is expected to grow via standard-conformant implementations, easing adoption across domains and infrastructures.</p>
 </clause>
 </clause>
 </clause>
@@ -797,7 +930,7 @@
 <admonition id="_b85c4b24-7bc4-9b9d-25f6-945a20d227ff" type="tip"><p id="_cd544c82-ec6d-6ebe-1030-c1811eedd821">This is a very preliminary draft. The content is primarily for demonstrating the purpose of the proposed sections.</p>
 </admonition></clause>
 
-<clause id="_77abdc08-60e5-871e-5c62-464852ee423f" obligation="normative">
+<clause id="_14c9be63-993f-a3e1-62ab-a4f355fb8d44" obligation="normative">
 <title id="_de2dce5d-cdf9-00c2-28ae-3596b692d32b">Unified Data Model Encoding for Zarr</title>
 <p id="_6ae92f92-a957-0b55-9f02-1720942d94d6">This clause defines the encoding of the unified data model into the Zarr format. The encoding supports both Zarr Version 2 and Zarr Version 3.</p>
 
@@ -994,126 +1127,93 @@
 </ul>
 </clause>
 
-<clause id="_7ed90137-7ae4-f28f-e879-9f4787d08725" obligation="normative">
+<clause id="_6847ac47-8307-228a-cadc-0733db16e203" obligation="normative">
 <title id="_a93fa60e-9db4-c809-86e1-dd737f8f2439">Encoding of Multiscale Overviews in Zarr</title>
-<p id="_c2d034fa-06d8-7389-6263-baf5c664dd26">This clause specifies how multiscale tiling (also known as overviews or pyramids) is encoded in Zarr-based datasets conforming to the unified data model. The encoding supports both Zarr Version 2 and Version 3 and is aligned with the OGC Two Dimensional Tile Matrix Set Standard.</p>
+<p id="_69291554-d283-4653-edcb-4c578a1455d2">This clause specifies how Overviews should be encoded in Zarr-based datasets conforming to the GeoZarr data model.</p>
 
-<p id="_205549f0-9ca3-d2b7-970c-39185396481f">Multiscale datasets are composed of a set of Zarr groups representing multiple zoom levels. Each level stores coarser-resolution resampled versions of the original data variables.</p>
+<p id="_fa28304a-a510-15eb-bc60-3918aeba2244">The <strong>Overviews</strong> construct follows the same encoding principles defined for the Common Data Model (CDM) when represented in Zarr. Because overviews are defined purely at the CDM level through groups, variables, and attributes, no Zarr-specific structural extensions are introduced.</p>
 
-<clause id="_f9ecff05-c5a1-0af8-585a-4de2d32de7ca" obligation="normative">
-<title id="_90918e35-1547-b07e-30a7-b4ab7b445ff1">Hierarchical Layout</title>
-<p id="_abc6e3ee-2189-02c3-b035-7adafa3bdb37">Each zoom level SHALL be represented as a Zarr group, identified by the Tile Matrix identifier (e.g., <tt>"0"</tt>, <tt>"1"</tt>, <tt>"2"</tt>). These groups SHALL be organised hierarchically under a common multiscale root group. Each zoom-level group SHALL contain the complete set of variables (Zarr arrays) corresponding to that resolution.</p>
+<p id="_3bc751a4-4d54-6be5-5568-ad2c1e7c4e43">Each <strong>OverviewSet</strong> is encoded as a Zarr <strong>group</strong>, containing multiple <strong>OverviewLevel</strong> subgroups. The parent group includes the  <tt>multiscales</tt> attribute, which declares the hierarchy and relationships between levels. Each  <strong>OverviewLevel</strong> is implemented as a standard Zarr group containing variables (arrays) and coordinate variables, encoded identically to other CDM variables.</p>
 
-<table id="_b789f377-6e18-5a5b-fcde-99b1a147a92f"><colgroup><col width="20%"/><col width="40%"/><col width="40%"/></colgroup><thead><tr id="_1db2c441-b4e6-dd50-2442-37ac1adc4016"><th id="_4fcc6145-8cea-f204-6272-08c979e138a2" valign="middle" align="left">Structure</th>
-<th id="_f751e8c3-3d5f-b8bb-e073-85933882663c" valign="middle" align="left">Zarr v2</th>
-<th id="_99b32db7-b6ba-0d39-cb3d-3c25e9e9135a" valign="middle" align="left">Zarr v3</th>
-</tr></thead>
-<tbody><tr id="_262112d1-2109-f509-41f0-9874b9f2e648"><td id="_5f89ccf4-eef7-aa2b-edc0-6d5476d97118" valign="middle" align="left">Zoom level groups</td>
-<td id="_1717740b-3458-eabe-7739-9f7431995ca5" valign="middle" align="left">Subdirectories with <tt>.zgroup</tt> and <tt>.zattrs</tt></td>
-<td id="_139d6a35-7551-eeab-6210-b3265e06d1d9" valign="middle" align="left">Subdirectories with <tt>zarr.json</tt>, <tt>node_type: group</tt></td>
-</tr><tr id="_63190c85-d0bf-ce25-ed40-e3ca5783ccfd"><td id="_12cc6043-df54-24fc-590f-ebc51db1db65" valign="middle" align="left">Variables at each level</td>
-<td id="_aa6bf8b7-e244-d8a4-9ac8-7ea1af56825d" valign="middle" align="left">Zarr arrays (<tt>.zarray</tt>, <tt>.zattrs</tt>) in each group</td>
-<td id="_dbb45c2c-2d38-2b11-2707-eddc1f42b9c7" valign="middle" align="left">Zarr arrays (<tt>zarr.json</tt>, <tt>node_type: array</tt>) in each group</td>
-</tr><tr id="_080b1d1e-3ccc-64fe-c410-9705f2360cde"><td id="_e7a67ce3-e023-9d3b-c4dc-19be530e37d5" valign="middle" align="left">Global metadata</td>
-<td id="_27b6e5df-0f87-5e48-f938-eb25c112b40b" valign="middle" align="left"><tt>multiscales</tt> defined in parent <tt>.zattrs</tt></td>
-<td id="_21a24cd3-8870-c2cc-1987-11c1fccdb592" valign="middle" align="left"><tt>multiscales</tt> defined in parent group <tt>zarr.json</tt> under <tt>attributes</tt></td>
-</tr></tbody>
-</table>
+<clause id="_44c229b7-243a-c00a-0460-9b2a25da20c8" obligation="normative">
+<title id="_c460ce30-395f-3870-b17d-bd739fb5ba0b">Relationship to Core CDM Encoding</title>
+<p id="_569dfb76-da49-8b2c-86bb-263257b29521">The encoding of overviews reuses the same mapping rules established in the core data model encoding:</p>
 
-<p id="_8a6cde39-7170-ea05-09f7-25fc422358f1">Each multiscale group MUST define chunking (tiling) along the spatial dimensions (<tt>X</tt>, <tt>Y</tt>, or <tt>lon</tt>, <tt>lat</tt>). Recommended chunk sizes are 256×256 or 512×512.</p>
-</clause>
-
-<clause id="_2f2cac3a-e516-73f7-0ff4-9d6a8a64110e" obligation="normative">
-<title id="_599d4198-5599-8718-e959-914630135d70">Metadata Encoding</title>
-<p id="_be88770d-5c25-b94b-b778-0af88b2c5ed2">Multiscale metadata SHALL be defined using a <tt>multiscales</tt> attribute located in the parent group of the zoom levels. This attribute SHALL be a JSON object with the following members:</p>
-
-<ul id="_1e2cadac-60ef-0ade-726a-aaf464fc351c"><li><p id="_5ec319ed-0ebd-1eee-afbf-be257f11c86e"><tt>tile_matrix_set</tt> – Identifier, URI, or inline JSON object compliant with OGC TileMatrixSet v2</p>
+<ul id="_cfb155ae-dcfb-2134-6083-207faf1a5526"><li><p id="_8cad54e2-ad18-eb92-579c-82997a1e6036"><strong>Groups</strong> map to Zarr directories with <tt>.zgroup</tt>/<tt>.zattrs</tt> (Zarr v2) or <tt>zarr.json</tt> (Zarr v3, with <tt>"node_type": "group"</tt>).</p>
 </li>
-<li><p id="_2323b5f1-a45c-a17f-6396-a064049c582c"><tt>resampling_method</tt> – One of the standard string values (e.g., <tt>"nearest"</tt>, <tt>"average"</tt>)</p>
+<li><p id="_12fa5e53-6df9-ad21-952f-fa66107f2e82"><strong>Variables</strong> map to Zarr arrays with <tt>.zarray</tt> and <tt>.zattrs</tt> (Zarr v2) or <tt>"node_type": "array"</tt> entries in <tt>zarr.json</tt> (Zarr v3).</p>
 </li>
-<li><p id="_e7b3171a-723e-7c9f-edad-ea13e221b705"><tt>tile_matrix_set_limits</tt> – (optional) Zoom-level limits following the STAC Tiled Asset style</p>
+<li><p id="_c07f2e6e-83e9-c5a7-b01e-4db9c4ded621"><strong>Attributes</strong> (including <tt>multiscales</tt>) are stored in <tt>.zattrs</tt> (Zarr v2) or under the <tt>"attributes"</tt> field in <tt>zarr.json</tt> (Zarr v3).</p>
 </li>
 </ul>
-
-<clause id="_ea4ffcc7-3e39-ae72-2018-19c967d2d9ec" obligation="normative">
-<title id="_01e59014-0632-a947-0a65-1cf4e0bdc963">Zarr v2 Encoding Example (<tt>.zattrs</tt>)</title>
-<sourcecode id="_c5af5810-ec72-d167-5830-e70d6de319e5" lang="json"><body>{
-  "multiscales": {
-    "tile_matrix_set": "WebMercatorQuad",
-    "resampling_method": "nearest"
-  }
-}</body></sourcecode>
-
 </clause>
 
-<clause id="_3313090d-4795-efb2-d417-666be6ef58b3" obligation="normative">
-<title id="_c029bd2d-064a-bd75-32ff-c103f9e64b3e">Zarr v3 Encoding Example (<tt>zarr.json</tt>)</title>
-<sourcecode id="_7d9ad163-1770-5b0d-82ce-17815cd6cfbb" lang="json"><body>{
+<clause id="_d7376fca-7790-322a-5df8-c1cca4944bc3" obligation="normative">
+<title id="_d7b43bf5-7e78-c4d5-ead9-e8456c51f535">Example Encoding (Zarr v3)</title>
+<sourcecode id="_f5969236-9e6f-8815-b8de-8898d2896422" lang="json"><body>{
   "zarr_format": 3,
   "node_type": "group",
   "attributes": {
     "multiscales": {
-      "tile_matrix_set": "WebMercatorQuad",
-      "resampling_method": "nearest"
-    }
+      "version": "1.0",
+      "resampling_method": "average",
+      "tile_matrix_ref": "OGC:WMT:1.0:WebMercatorQuad",
+      "layout": [
+        {
+          "id": "L0",
+          "path": "L0",
+          "cell_size": [10.0, 10.0]
+        },
+        {
+          "id": "L1",
+          "path": "L1",
+          "derived_from": "L0",
+          "factors": [2, 2],
+          "cell_size": [20.0, 20.0],
+          "resampling_method": "average"
+        },
+        {
+          "id": "L2",
+          "path": "L2",
+          "derived_from": "L1",
+          "factors": [2, 2],
+          "cell_size": [40.0, 40.0],
+          "resampling_method": "average"
+        }
+      ]
+    },
+    "spatial_ref": "EPSG:32633"
+  },
+  "metadata": {
+    "title": "Reflectance Multiscale Example",
+    "summary": "Example of a multiscale dataset encoded using the GeoZarr Overviews extension."
   }
 }</body></sourcecode>
 
-</clause>
-</clause>
 
-<clause id="_d105dc47-86b9-a376-9032-e47c6f9fb60d" obligation="normative">
-<title id="_2a8f548a-e84f-5ae7-9124-9729e50a2700">Tile Matrix Set Representation</title>
-<p id="_c6f3fc3f-d4d5-bb28-3334-50eeda962e79">The <tt>tile_matrix_set</tt> member MAY take one of the following forms:</p>
+<p id="_f5de9b2a-91d7-cea0-3606-4f10efcb6490">Child groups represent the overview levels:</p>
 
-<ul id="_4abdc73e-c01f-1062-221c-bfd181256d6e"><li><p id="_dfba8cad-797d-d2c7-acdd-d173645359cd">A string referring to a well-known identifier (e.g., <tt>"WebMercatorQuad"</tt>)</p>
-</li>
-<li><p id="_0b0b89d5-5b1f-78d1-70bf-9a0c4395a191">A URI pointing to a JSON document describing the tile matrix set</p>
-</li>
-<li><p id="_75858a6e-36ae-13aa-f70a-0ceb84457591">An inline JSON object (CamelCase, OGC TMS 2.0 compatible)</p>
-</li>
-</ul>
+<sourcecode id="_74905a8f-a74b-e425-4916-9f2168703a9c"><body>reflectance/
+├── zarr.json                      # OverviewSet metadata (includes "multiscales")
+├── L0/
+│   ├── zarr.json                  # Highest or nominal resolution
+│   ├── b01/
+│   ├── b02/
+│   ├── x/
+│   └── y/
+├── L1/
+│   ├── zarr.json
+│   ├── b01/
+│   ├── b02/
+│   ├── x/
+│   └── y/
+└── L2/
+├── zarr.json
+├── b01/
+├── b02/
+├── x/
+└── y/</body></sourcecode>
 
-<p id="_89343715-458d-7248-758e-dffbcb40ef34">Zoom level identifiers in the tile matrix set MUST match the names of the child groups. The spatial reference system declared in <tt>supportedCRS</tt> MUST match the one declared in the corresponding <tt>grid_mapping</tt> of the data variables.</p>
-</clause>
-
-<clause id="_b4a66df0-ca41-6ce1-4026-0ad8967d4d89" obligation="normative">
-<title id="_8355b3de-f420-63c6-a8dc-530e5a83e544">Chunk Layout Alignment</title>
-<p id="_ef23edab-d2f4-3845-366d-c101ed50393b">At each zoom level, chunking SHALL match the tile layout defined by the TileMatrix:</p>
-
-<ul id="_7653b29c-7092-7093-cb35-f8ae97cd99dd"><li><p id="_fe3de7bf-25b1-403b-3b61-aa3b59c76148">Chunks MUST be aligned with the tile grid (1:1 mapping between chunks and tiles)</p>
-</li>
-<li><p id="_fb62fc2f-8f67-9eef-cbd7-97c6d602cea6">Chunk sizes MUST match the <tt>tileWidth</tt> and <tt>tileHeight</tt> declared in the TileMatrix</p>
-</li>
-<li><p id="_a15f36db-253e-6a82-79cb-4e640fd0ce6c">Spatial dimensions MUST be clearly identified using <tt>dimension_names</tt> (v3) or <tt>_ARRAY_DIMENSIONS</tt> (v2)</p>
-</li>
-</ul>
-</clause>
-
-<clause id="_b4cfeb16-251b-b8be-81b2-1225f8b61ea2" obligation="normative">
-<title id="_f945aa8d-78b5-3803-48ee-45e8a8f7cfcc">Tile Matrix Set Limits</title>
-<p id="_76c84b98-e2b2-6f84-fa51-afedad23ecc8">The <tt>tile_matrix_set_limits</tt> object MAY define the extent of actual data coverage for each zoom level. This follows the style of the STAC tiled-assets extension rather than the full OGC JSON encoding.</p>
-
-<p id="_9125df01-ffc8-352c-b91c-8757def4848c">Example:</p>
-
-<sourcecode id="_cc428c7b-bc9f-f9b8-8179-60442e3c789a" lang="json"><body>"tile_matrix_set_limits": {
-  "1": {
-    "min_tile_col": 0,
-    "max_tile_col": 1,
-    "min_tile_row": 0,
-    "max_tile_row": 1
-  }
-}</body></sourcecode>
-
-</clause>
-
-<clause id="_71eeacb0-5e4e-8a8e-5714-02fc0838075b" obligation="normative">
-<title id="_2a75858f-99d5-46cf-0902-4b9a4b1b5c51">Resampling Method</title>
-<p id="_556ae5b9-6618-d19c-3097-2e9290200bfe">The <tt>resampling_method</tt> MUST indicate the method used for downsampling across zoom levels. The value MUST be one of:</p>
-
-<p id="_648a0c15-43a0-4c01-f3a5-019dcef6e1e8"><tt>nearest</tt>, <tt>average</tt>, <tt>bilinear</tt>, <tt>cubic</tt>, <tt>cubic_spline</tt>, <tt>lanczos</tt>, <tt>mode</tt>, <tt>max</tt>, <tt>min</tt>, <tt>med</tt>, <tt>sum</tt>, <tt>q1</tt>, <tt>q3</tt>, <tt>rms</tt>, <tt>gauss</tt></p>
-
-<p id="_a3c3787e-78a2-23a1-01b4-561be1cf4342">The same method MUST apply across all levels.</p>
 </clause>
 </clause>
 </clause>
