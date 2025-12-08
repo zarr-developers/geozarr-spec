@@ -70,11 +70,19 @@ technical
   </version>
   <language>en</language>
   <script>Latn</script>
-  <abstract>&lt;p&gt;The GeoZarr Unified Data Model and Encoding Standard specifies a conceptual and implementation framework for representing multidimensional, geospatial datasets using the Zarr format. This Standard builds upon the Unidata Common Data Model (CDM) and the Climate and Forecast (CF) Conventions, and introduces interoperable constructs for tiling, georeferencing, and metadata integration.&lt;/p&gt;
+  <abstract>&lt;p&gt;Zarr provides efficient chunked storage for n-dimensional arrays but do not provide with the semantic constructs required for geospatial and scientific data workflows.&lt;/p&gt;
 
-&lt;p&gt;The model defines core elements—dimensions, coordinate variables, data variables, attributes—and optional extensions for multi-resolution overviews, affine geotransforms, and STAC metadata. Encoding guidance is provided for Zarr Version 2 and Zarr Version 3, including chunking, group hierarchy, and metadata conventions.&lt;/p&gt;
+&lt;p&gt;GeoZarr defines an abstract data model and a set of conventions for representing geospatial and scientific datasets in the Zarr format:&lt;/p&gt;
 
-&lt;p&gt;GeoZarr aims to bridge scientific and geospatial communities by enabling round-trip transformations with formats such as NetCDF and GeoTIFF, and supporting compatibility with tools in the scientific Python and geospatial ecosystems. This Standard enables scalable, standards-compliant, and semantically rich data structures for cloud-native Earth observation applications.&lt;/p&gt;</abstract>
+&lt;ul&gt;&lt;li&gt;&lt;p&gt;GeoZarr bridges the Unidata CDM and the Zarr format. GeoZarr establishes the link between the Unidata Common Data Model (CDM) and the Zarr format by defining how the semantic constructs of the CDM are represented within Zarr’s storage model.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Supports community metadata standards like CF, GeoTIFF, and GDAL.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Extends CDM for geospatial through multiscale overviews and affine transformations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;By providing a standardized framework for geospatial semantics, GeoZarr enables scientific and geospatial applications to fully utilize cloud-native storage architectures while maintaining the rich metadata and coordinate referencing required for Earth observation workflows. The result is a modern, scalable approach to storing and accessing geospatial data that meets the needs of both data providers and consumers.&lt;/p&gt;</abstract>
   <status>
     <stage>draft</stage>
   </status>
