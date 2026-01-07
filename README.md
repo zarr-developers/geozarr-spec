@@ -33,8 +33,8 @@ Additional conventions under consideration include:
 The GeoZarr SWG meets monthly. Agendas and meeting notes are available at:
 [https://hackmd.io/@briannapagan/geozarr-spec-swg](https://hackmd.io/@briannapagan/geozarr-spec-swg)
 
-To receive updates and participate, join the Google group:
-[https://groups.google.com/u/2/g/geozarr](https://groups.google.com/u/2/g/geozarr)
+To receive updates and participate, join the OGC group on Agora:
+[https://agora.ogc.org/c/overview-716766/](https://agora.ogc.org/c/overview-716766/). The previously used Google Group will be immenently retired by OGC.
 
 ## Documents and Resources
 
