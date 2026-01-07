@@ -30,7 +30,7 @@ GeoZarr does not define a new data model. The work  focuses on concrete and them
 
 ### Write access
 
-Granted to a defined maintenance team. This includes SWG chairs and additional contributors approved by them.
+Granted to a [defined maintenance team](https://github.com/orgs/zarr-developers/teams/geozarr). This includes SWG chairs and additional contributors approved by them. Requests to be added to the maintenance team may be community either as a post on the [OGC Agora General Space](https://agora.ogc.org/c/overview-716766/) or at a [OGC GeoZarr Monthly meeting](https://agora.ogc.org/c/events-geozarr-swg/).
 
 ### Review and approval
 
