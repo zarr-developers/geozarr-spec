@@ -53,6 +53,12 @@ Demonstration Videos ([Youtube channel](https://youtube.com/playlist?list=PLzPGC
 - Comparison: [GeoZarr vs COG Performances](https://youtu.be/KGC8mLqlsCs)
 - Advanced applications: soon
 
+Presentations:
+
+- E-AI Programme Working Group, December, 11, 2025: [The GeoZarr Solution](https://zenodo.org/records/17898762)
+- OGC NetCDF SWG Annual Meeting, October 29, 2025: [The GeoZarr Challenge](https://zenodo.org/records/17476613)
+- Zarr Summit, October 16, 2025: [The GeoZarr Challenge](https://zenodo.org/records/17437725)
+
 OpenLayers extension prototype: https://github.com/spacebel/geozarr-openlayers
 
 ## License
