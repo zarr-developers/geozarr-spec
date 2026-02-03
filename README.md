@@ -2,7 +2,7 @@
 
 GeoZarr defines geospatial conventions for storing multidimensional georeferenced grids using the Zarr format. The work now focuses on concrete and thematic Zarr conventions that address specific community needs. Each convention provides a clear and self-contained extension for a defined topic and supports practical adoption.
 
-A Zarr convention describes how to encode a given domain or structure in Zarr. It specifies required attributes, metadata structures, and rules that enable consistent interpretation by tools and users.
+A [Zarr convention](https://github.com/zarr-conventions/zarr-conventions-spec) describes how to encode a given domain or structure in Zarr. It specifies required attributes, metadata structures, and rules that enable consistent interpretation by tools and users.
 
 The GeoZarr specification will be produced once a set of mature conventions forms a coherent and recommended suite.
 
@@ -21,12 +21,16 @@ The following conventions are developed or supported:
 
 * **Multiscales Convention** – support for pyramidal map overviews and multidimensional multiscale structures.
   Repository: [https://github.com/zarr-conventions/multiscales](https://github.com/zarr-conventions/multiscales)
-
+* **Geospatial Projection Convention** - defines properties that encode datum and coordinate reference system (CRS) information for geospatial data
+  Repository: [https://github.com/zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj)
+* **Spatial Convention** - describes the relationship between positional indexes and spatial coordinates (e.g., affine transformations). May be developed to support explicit coordinates and ground control points (GCPs)
+  Repository: [https://github.com/zarr-conventions/spatial](https://github.com/zarr-conventions/spatial)
+  
 Additional conventions under consideration include:
 
-* Affine coordinates
-* NetCDF to Zarr mapping
-* GeoTIFF to Zarr mapping
+* CF in Zarr (repository and structure TBD)
+* DGGS in Zarr (see [https://github.com/zarr-conventions/dggs](https://github.com/zarr-conventions/dggs) to participate in development)
+* TileMatrixSet (repository and structure TBD)
 
 ## Meetings Information
 
