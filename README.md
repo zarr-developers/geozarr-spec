@@ -23,7 +23,7 @@ The following conventions are developed or supported:
   Repository: [https://github.com/zarr-conventions/multiscales](https://github.com/zarr-conventions/multiscales)
 * **Geospatial Projection Convention** - defines properties that encode datum and coordinate reference system (CRS) information for geospatial data
   Repository: [https://github.com/zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj)
-* **Spatial Convention** - describes the relationship between positional indexes and spatial coordinates (e.g., affine transformations). May be developed to support explicit coordinates and GCPs
+* **Spatial Convention** - describes the relationship between positional indexes and spatial coordinates (e.g., affine transformations). May be developed to support explicit coordinates and ground control points (GCPs)
   Repository: [https://github.com/zarr-conventions/spatial](https://github.com/zarr-conventions/spatial)
   
 Additional conventions under consideration include:
