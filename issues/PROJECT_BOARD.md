@@ -118,6 +118,7 @@ The following issue templates are available in this directory:
 | `014-oab-review.md` | OGC Architecture Board Review and Public Comment | v1-oab |
 | `015-swg-vote.md` | SWG Vote for Standard Adoption | v1-vote |
 | `016-guidance-for-additions.md` | Guidance for new components of GeoZarr | v1-vote |
+| `017-issues-with-CRS.md` | Opening any major concerns in spatial (Patrick) | v1-vote |
 
 ---
 
