@@ -117,6 +117,7 @@ The following issue templates are available in this directory:
 | `013-chunking-best-practices.md` | Chunking best practices guide | v1-rc |
 | `014-oab-review.md` | OGC Architecture Board Review and Public Comment | v1-oab |
 | `015-swg-vote.md` | SWG Vote for Standard Adoption | v1-vote |
+| `016-guidance-for-additions.md` | Guidance for new components of GeoZarr | v1-vote |
 
 ---
 
