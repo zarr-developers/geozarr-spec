@@ -22,27 +22,30 @@ GeoZarr does not define a new data model. The work  focuses on concrete and them
 
 ## 4. Participation
 
-* All community members may comment on issues and pull requests.
-* Monthly OGC GeoZarr SWG meetings provide a forum to review open work.
+The GeoZarr SWG allows non-OGC members to participate in the development of the Standard in this collaboration environment, per [OGC TC Policy §4.13.7](https://docs.ogc.org/pol/05-020r29/05-020r29.html). As required by OGC, non-member participation does not grant OGC Portal access or SWG voting rights.
+
+* All community members are encouraged to comment on issues, review pull requests, and propose changes.
+* Monthly OGC GeoZarr SWG meetings focus on strategic discussion and topics lacking consensus.
 * Example datasets can be contributed to [https://github.com/developmentseed/geozarr-examples](https://github.com/developmentseed/geozarr-examples).
 
 ## 5. Maintenance structure
 
-### Write access
+### Review and merge authority
 
-Granted to a [defined maintenance team](https://github.com/orgs/zarr-developers/teams/geozarr). This includes SWG chairs and additional contributors approved by them. Requests to be added to the maintenance team may be community either as a post on the [OGC Agora General Space](https://agora.ogc.org/c/overview-716766/) or at a [OGC GeoZarr Monthly meeting](https://agora.ogc.org/c/events-geozarr-swg/).
+Anyone may review and comment on pull requests. Only OGC GeoZarr SWG chairs (or OGC voting members they delegate to) may merge pull requests, ensuring the collaboration environment remains under OGC control per TC Policy.
 
-### Review and approval
+The [maintenance team](https://github.com/orgs/zarr-developers/teams/geozarr) manages repository access. Requests to join may be made as a post on the [OGC Agora General Space](https://agora.ogc.org/c/overview-716766/) or at an [OGC GeoZarr Monthly meeting](https://agora.ogc.org/c/events-geozarr-swg/).
 
-Informal reviews may involve any participant.
-For contested matters, only designated OGC GeoZarr SWG voting members may cast formal votes.
+### Voting
+
+For contested matters, only SWG voting members may cast formal votes. Voting membership is defined by the [OGC TC Policies and Procedures](https://docs.ogc.org/pol/05-020r29/05-020r29.html) (Charter Members, or members who have opted in, completed the 30-day waiting period, and requested voting status).
 
 ### Pull request process
 
-* PRs are reviewed during regular SWG meetings.
-* Consensus is required for merge.
-* If consensus cannot be reached, an OGC formal vote may be initiated by email.
-* PR authors should ensure that discussion items are placed on the next SWG meeting agenda.
+* PRs are reviewed asynchronously on GitHub and merged by SWG chairs.
+* Rough consensus (per [IETF RFC 7282](https://www.rfc-editor.org/rfc/rfc7282)) is required for merge; the SWG chair determines when consensus has been reached.
+* If consensus cannot be reached on GitHub, the topic should be raised at the next SWG meeting for discussion.
+* If consensus still cannot be reached, an OGC formal vote may be initiated per the [TC voting procedures](https://docs.ogc.org/pol/05-020r29/05-020r29.html#consensus-and-voting).
 
 ## 6. Versioning and releases
 
