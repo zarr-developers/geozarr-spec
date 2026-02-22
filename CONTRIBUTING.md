@@ -2,12 +2,22 @@
 
 > This guide is a draft under construction.
 
-## 1. Read the specification
+## 1. Review the roadmap
 
-Consult the latest Editor’s Draft before proposing changes:
+Familiarize yourself with current priorities and open work items before proposing changes:
 
-* HTML: [https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html)
-* PDF: [https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.pdf](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.pdf)
+* [V1 Roadmap](https://github.com/zarr-developers/geozarr-spec/wiki/First-Release-RoadMap)
+* [Project Board](https://github.com/orgs/zarr-developers/projects/12)
+
+The conventions themselves are developed in their own repositories:
+
+| Convention | Repo |
+|------------|------|
+| **geo-proj** (`proj:`) | [zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj) |
+| **spatial** (`spatial:`) | [zarr-conventions/spatial](https://github.com/zarr-conventions/spatial) |
+| **multiscales** | [zarr-conventions/multiscales](https://github.com/zarr-conventions/multiscales) |
+
+The [Editor’s Draft](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html) is the formal OGC spec document. It may lag behind the convention repos as it is updated periodically.
 
 ## 2. Understand GeoZarr objectives
 
