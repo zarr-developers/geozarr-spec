@@ -12,8 +12,7 @@ Contribution guidelines are available in the repository’s contributing documen
 
 ## Roadmap
 
-The draft roadmap is maintained on the project wiki:
-[RoadMap](https://github.com/zarr-developers/geozarr-spec/wiki/First-Release-RoadMap)
+The draft roadmap is available at [geozarr.org](https://geozarr.org).
 
 ## Conventions
 
@@ -25,7 +24,7 @@ The following conventions are developed or supported:
   Repository: [https://github.com/zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj)
 * **Spatial Convention** - describes the relationship between positional indexes and spatial coordinates (e.g., affine transformations). May be developed to support explicit coordinates and ground control points (GCPs)
   Repository: [https://github.com/zarr-conventions/spatial](https://github.com/zarr-conventions/spatial)
-  
+
 Additional conventions under consideration include:
 
 * CF in Zarr (repository and structure TBD)
@@ -35,7 +34,7 @@ Additional conventions under consideration include:
 ## Meetings Information
 
 The GeoZarr SWG meets monthly. Agendas and meeting notes are available at:
-[https://hackmd.io/@briannapagan/geozarr-spec-swg](https://hackmd.io/@briannapagan/geozarr-spec-swg)
+[https://hackmd.io/team/geozarr/folders/bMJiJHjvbga0Ce5YaR6oq?nav=overview](https://hackmd.io/team/geozarr/folders/bMJiJHjvbga0Ce5YaR6oq?nav=overview)
 
 To receive updates and participate, join the Google group:
 [https://groups.google.com/u/2/g/geozarr](https://groups.google.com/u/2/g/geozarr)
