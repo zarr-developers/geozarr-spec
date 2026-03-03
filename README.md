@@ -8,7 +8,17 @@ The GeoZarr specification will be produced once a set of mature conventions form
 
 ## Contributing
 
-Contribution guidelines are available in the repository’s contributing document: [Contributing Guide](CONTRIBUTING.md)
+The contributor understands that any contributions, if accepted by the OGC Membership, shall be incorporated into OGC Standards documents and that all copyright and intellectual property shall be vested to the OGC.
+
+The GeoZarr Standards Working Group (SWG) is the group at OGC responsible for the stewardship of the standard, but is working to do as much work in public as possible.
+
+* [GeoZarr SWG Charter](CHARTER.adoc)
+* [Contributing Guide](CONTRIBUTING.md)
+* [Open issues](https://github.com/zarr-developers/geozarr-spec/issues)
+* [Project Board](https://github.com/orgs/zarr-developers/projects/12)
+* [Repository License Language](https://raw.githubusercontent.com/zarr-developers/geozarr-spec/main/LICENSE)
+
+Pull Requests from contributors are welcomed. However, please note that by sending a Pull Request or Commit to this GitHub repository, you are agreeing to the terms in the [Observer Agreement](https://portal.ogc.org/files/?artifact_id=92169).
 
 ## Roadmap
 
@@ -25,7 +35,7 @@ The following conventions are developed or supported:
   Repository: [https://github.com/zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj)
 * **Spatial Convention** - describes the relationship between positional indexes and spatial coordinates (e.g., affine transformations). May be developed to support explicit coordinates and ground control points (GCPs)
   Repository: [https://github.com/zarr-conventions/spatial](https://github.com/zarr-conventions/spatial)
-  
+
 Additional conventions under consideration include:
 
 * CF in Zarr (repository and structure TBD)
