@@ -71,7 +71,3 @@ Content is provided under the CC BY 4.0 licence. Attribution is required.
 [http://creativecommons.org/licenses/by/4.0/](http://creativecommons.org/licenses/by/4.0/)
 
 GeoZarr was created initially by Spacebel for the European Space Agency under the GSTP programme.
-
----
-
-If you want, I can generate this in Markdown with links already formatted, or integrate more details on conventions or structure.
