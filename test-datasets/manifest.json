@@ -1,0 +1,282 @@
+{
+  "version": "1.0.0",
+  "zarr_format": 3,
+  "datasets": [
+    {
+      "path": "valid/crs/crs-epsg-4326.zarr",
+      "valid": true,
+      "conventions": [
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326"
+      }
+    },
+    {
+      "path": "valid/crs/crs-override.zarr",
+      "valid": true,
+      "conventions": [
+        "proj:"
+      ],
+      "expected": {
+        "band1_crs": "EPSG:4326",
+        "band2_crs": "EPSG:32632"
+      }
+    },
+    {
+      "path": "valid/crs/crs-projjson.zarr",
+      "valid": true,
+      "conventions": [
+        "proj:"
+      ],
+      "expected": {
+        "has_projjson": true
+      }
+    },
+    {
+      "path": "valid/crs/crs-wkt2.zarr",
+      "valid": true,
+      "conventions": [
+        "proj:"
+      ],
+      "expected": {
+        "has_wkt2": true
+      }
+    },
+    {
+      "path": "valid/multiscales/multiscales-2-levels.zarr",
+      "valid": true,
+      "conventions": [
+        "multiscales"
+      ],
+      "expected": {
+        "level_count": 2,
+        "level_shapes": {
+          "0": [
+            8,
+            8
+          ],
+          "1": [
+            4,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "path": "valid/multiscales/multiscales-sentinel2.zarr",
+      "valid": true,
+      "conventions": [
+        "multiscales",
+        "proj:",
+        "spatial:"
+      ],
+      "expected": {
+        "level_count": 3,
+        "level_shapes": {
+          "r10m": [
+            12,
+            12
+          ],
+          "r20m": [
+            6,
+            6
+          ],
+          "r60m": [
+            2,
+            2
+          ]
+        },
+        "crs": "EPSG:32632"
+      }
+    },
+    {
+      "path": "valid/nodata/nodata-float32-nan.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "nodata": "NaN",
+        "dtype": "float32"
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-multiband.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326",
+        "shape": [
+          3,
+          8,
+          8
+        ],
+        "spatial_shape": [
+          8,
+          8
+        ],
+        "bands": 3,
+        "band_origins": [
+          0,
+          50,
+          100
+        ]
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-north-up.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326",
+        "shape": [
+          8,
+          8
+        ],
+        "transform": [
+          1.25,
+          0.0,
+          0.0,
+          0.0,
+          -1.25,
+          10.0
+        ],
+        "bbox": [
+          0.0,
+          0.0,
+          10.0,
+          10.0
+        ]
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-pixel-is-point.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326",
+        "shape": [
+          9,
+          9
+        ],
+        "registration": "node"
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-registration-default.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326",
+        "shape": [
+          8,
+          8
+        ],
+        "registration_absent": true
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-rotated.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:32632",
+        "shape": [
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "path": "valid/spatial/spatial-sharded.zarr",
+      "valid": true,
+      "conventions": [
+        "spatial:",
+        "proj:"
+      ],
+      "expected": {
+        "crs": "EPSG:4326",
+        "shape": [
+          16,
+          16
+        ],
+        "transform": [
+          0.625,
+          0.0,
+          0.0,
+          0.0,
+          -0.625,
+          10.0
+        ],
+        "bbox": [
+          0.0,
+          0.0,
+          10.0,
+          10.0
+        ],
+        "has_sharding": true,
+        "inner_chunk_shape": [
+          8,
+          8
+        ]
+      }
+    },
+    {
+      "path": "invalid/invalid-bad-crs.zarr",
+      "valid": false,
+      "conventions": [
+        "proj:"
+      ],
+      "violation": "proj: proj:code pattern mismatch"
+    },
+    {
+      "path": "invalid/invalid-bad-transform-length.zarr",
+      "valid": false,
+      "conventions": [
+        "spatial:"
+      ],
+      "violation": "spatial: transform must have 6 (2D) or 9 (3D) coefficients"
+    },
+    {
+      "path": "invalid/invalid-missing-required.zarr",
+      "valid": false,
+      "conventions": [
+        "spatial:"
+      ],
+      "violation": "spatial: missing required spatial:dimensions"
+    },
+    {
+      "path": "invalid/invalid-multiple-crs.zarr",
+      "valid": false,
+      "conventions": [
+        "proj:"
+      ],
+      "violation": "proj: multiple CRS fields (oneOf requires exactly one)"
+    },
+    {
+      "path": "invalid/invalid-multiscales-no-transform.zarr",
+      "valid": false,
+      "conventions": [
+        "multiscales"
+      ],
+      "violation": "multiscales: transform required when derived_from present"
+    }
+  ]
+}

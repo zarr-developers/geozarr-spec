@@ -1,0 +1,134 @@
+{
+  "attributes": {
+    "zarr_conventions": [
+      {
+        "schema_url": "https://raw.githubusercontent.com/zarr-conventions/multiscales/refs/tags/v1/schema.json",
+        "spec_url": "https://github.com/zarr-conventions/multiscales/blob/v1/README.md",
+        "uuid": "d35379db-88df-4056-af3a-620245f8e347",
+        "name": "multiscales",
+        "description": "Multiscale layout of zarr datasets"
+      }
+    ],
+    "multiscales": {
+      "layout": [
+        {
+          "asset": "0",
+          "transform": {
+            "scale": [
+              1.0,
+              1.0
+            ]
+          }
+        },
+        {
+          "asset": "1",
+          "derived_from": "0"
+        }
+      ]
+    }
+  },
+  "zarr_format": 3,
+  "node_type": "group",
+  "consolidated_metadata": {
+    "kind": "inline",
+    "must_understand": false,
+    "metadata": {
+      "0/ar": {
+        "shape": [
+          8,
+          8
+        ],
+        "data_type": "uint8",
+        "chunk_grid": {
+          "name": "regular",
+          "configuration": {
+            "chunk_shape": [
+              8,
+              8
+            ]
+          }
+        },
+        "chunk_key_encoding": {
+          "name": "default",
+          "configuration": {
+            "separator": "/"
+          }
+        },
+        "fill_value": 0,
+        "codecs": [
+          {
+            "name": "bytes"
+          },
+          {
+            "name": "zstd",
+            "configuration": {
+              "level": 0,
+              "checksum": false
+            }
+          }
+        ],
+        "attributes": {},
+        "dimension_names": [
+          "y",
+          "x"
+        ],
+        "zarr_format": 3,
+        "node_type": "array",
+        "storage_transformers": []
+      },
+      "0": {
+        "attributes": {},
+        "zarr_format": 3,
+        "node_type": "group"
+      },
+      "1/ar": {
+        "shape": [
+          4,
+          4
+        ],
+        "data_type": "uint8",
+        "chunk_grid": {
+          "name": "regular",
+          "configuration": {
+            "chunk_shape": [
+              4,
+              4
+            ]
+          }
+        },
+        "chunk_key_encoding": {
+          "name": "default",
+          "configuration": {
+            "separator": "/"
+          }
+        },
+        "fill_value": 0,
+        "codecs": [
+          {
+            "name": "bytes"
+          },
+          {
+            "name": "zstd",
+            "configuration": {
+              "level": 0,
+              "checksum": false
+            }
+          }
+        ],
+        "attributes": {},
+        "dimension_names": [
+          "y",
+          "x"
+        ],
+        "zarr_format": 3,
+        "node_type": "array",
+        "storage_transformers": []
+      },
+      "1": {
+        "attributes": {},
+        "zarr_format": 3,
+        "node_type": "group"
+      }
+    }
+  }
+}
