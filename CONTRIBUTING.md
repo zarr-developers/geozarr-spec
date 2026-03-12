@@ -6,8 +6,7 @@
 
 Familiarize yourself with current priorities and open work items before proposing changes:
 
-* [V1 Roadmap](https://github.com/zarr-developers/geozarr-spec/wiki/First-Release-RoadMap)
-* [Project Board](https://github.com/orgs/zarr-developers/projects/12)
+* [V1 Roadmap](https://geozarr.org/roadmap.html)
 
 The conventions themselves are developed in their own repositories:
 
@@ -64,4 +63,4 @@ The group follows semantic versioning for official releases. Minor editorial or 
 ## 7. Roadmap
 
 Work should follow the priorities defined in the roadmap:
-[https://github.com/zarr-developers/geozarr-spec/wiki/First-Release-RoadMap](https://github.com/zarr-developers/geozarr-spec/wiki/First-Release-RoadMap)
+[https://geozarr.org/roadmap.html](https://geozarr.org/roadmap.html)
