@@ -94,6 +94,10 @@ At least one qualifying implementation MUST support **Full** (read/write) for ea
 
 Since GeoZarr is an Encoding Standard, evidence of implementation includes datasets containing content representative of the standard ([OGC TC Policy §6.6.7](https://docs.ogc.org/pol/05-020r29/05-020r29.html)). Each qualifying implementation MUST successfully read or write at least one dataset from the conformance test suite (once available). Until the test suite is established, implementations must demonstrate correct handling of at least one publicly accessible dataset that uses the convention.
 
+### Release status
+
+Convention support MUST be included in a released version of the implementation. Unreleased support (e.g., only available on a development branch or in a pre-release) does not count toward the 3-implementation threshold.
+
 ### Documentation
 
 Each qualifying implementation MUST provide:
