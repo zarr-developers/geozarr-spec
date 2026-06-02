@@ -58,7 +58,7 @@ For contested matters, only SWG voting members may cast formal votes. Voting mem
 
 ## 6. Implementation criteria for Candidate maturity
 
-The [Zarr Conventions Framework](https://github.com/zarr-conventions/.github/blob/main/profile/README.md) requires a minimum of 3 implementations for Candidate maturity. This section defines additional criteria to ensure those implementations represent genuine, independent validation of the conventions.
+The [Zarr Conventions Framework](https://github.com/zarr-conventions/.github/blob/main/profile/README.md) requires a minimum of 3 implementations for Candidate maturity. This section defines additional criteria to ensure those implementations represent genuine, independent validation of the conventions. These criteria are consistent with the OGC definition of evidence of implementation for Encoding Standards, which is "data sets containing content representative of the Standard, but not necessarily containing an example of every element in the Standard" ([OGC TC Policies and Procedures §8.2.1](https://docs.ogc.org/pol/05-020r29/05-020r29.html#two-track-Standards-process-criteria)).
 
 ### Definitions
 
@@ -68,7 +68,7 @@ A **qualifying implementation** is one that meets all of the criteria below.
 
 ### Independence
 
-Qualifying implementations MUST originate from different organizations or development teams. Two implementations completely sharing development effort, funding, or leadership from the same organization count as one for maturity purposes.
+Qualifying implementations MUST originate from different organizations or development teams. Two implementations that completely share development effort, funding, or leadership from the same organization count as one for maturity purposes.
 
 Independence ensures that conventions are interpretable from the specification alone, without relying on shared institutional knowledge.
 
@@ -88,11 +88,11 @@ Implementations MUST declare their capability level for each supported conventio
 | **Write** | Can produce valid convention metadata in new or existing Zarr stores |
 | **Full** | Both read and write |
 
-At least one qualifying implementation MUST support **Full** (read/write) for each convention. Read-only implementations are valid but cannot be the sole basis for advancement.
+For each convention, the 3 qualifying implementations MUST include **at least two independent Write-capable (Write or Full) implementations** and **at least one independent Read-capable (Read or Full) implementation**. Two independent writers demonstrate that the specification text — not shared implementation code — constrains the metadata that is produced, and a separate reader demonstrates that this output is interoperable. A set of implementations that is read-only, or that contains only a single writer, cannot be the basis for advancement.
 
 ### Demonstrated interoperability
 
-Since GeoZarr is an Encoding Standard, evidence of implementation includes datasets containing content representative of the standard ([OGC TC Policy §6.6.7](https://docs.ogc.org/pol/05-020r29/05-020r29.html)). Each qualifying implementation MUST successfully read or write at least one dataset from the conformance test suite (once available). Until the test suite is established, implementations must demonstrate correct handling of at least one publicly accessible dataset that uses the convention.
+Each qualifying implementation MUST successfully read or write at least one dataset from the conformance test suite (once available). Collectively, the qualifying implementations for each convention MUST demonstrate at least one successful round trip: a dataset written by one implementation and read by a different, independent implementation.
 
 ### Release status
 
