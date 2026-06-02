@@ -56,11 +56,71 @@ For contested matters, only SWG voting members may cast formal votes. Voting mem
 * If consensus cannot be reached on GitHub, the topic should be raised at the next SWG meeting for discussion.
 * If consensus still cannot be reached, an OGC formal vote may be initiated per the [TC voting procedures](https://docs.ogc.org/pol/05-020r29/05-020r29.html#consensus-and-voting).
 
-## 6. Versioning and releases
+## 6. Implementation criteria for Candidate maturity
+
+The [Zarr Conventions Framework](https://github.com/zarr-conventions/.github/blob/main/profile/README.md) requires a minimum of 3 implementations for Candidate maturity. This section defines additional criteria to ensure those implementations represent genuine, independent validation of the conventions. These criteria are consistent with the OGC definition of evidence of implementation for Encoding Standards, which is "data sets containing content representative of the Standard, but not necessarily containing an example of every element in the Standard" ([OGC TC Policies and Procedures §8.2.1](https://docs.ogc.org/pol/05-020r29/05-020r29.html#two-track-Standards-process-criteria)).
+
+### Definitions
+
+An **implementation** is a software library, tool, or application that reads or writes Zarr data conforming to one or more GeoZarr conventions (geo-proj, spatial, multiscales).
+
+A **qualifying implementation** is one that meets all of the criteria below.
+
+### Independence
+
+Qualifying implementations MUST originate from different organizations or development teams. Two implementations that completely share development effort, funding, or leadership from the same organization count as one for maturity purposes.
+
+Independence ensures that conventions are interpretable from the specification alone, without relying on shared institutional knowledge.
+
+### Convention coverage
+
+Each qualifying implementation MUST support at least one complete GeoZarr convention (geo-proj, spatial, or multiscales), including all required fields defined by the convention's JSON Schema.
+
+Partial support does not count toward the 3-implementation threshold for that convention.
+
+### Capability level
+
+Implementations MUST declare their capability level for each supported convention:
+
+| Level | Description |
+|-------|-------------|
+| **Read** | Can parse and interpret convention metadata from existing Zarr stores |
+| **Write** | Can produce valid convention metadata in new or existing Zarr stores |
+| **Full** | Both read and write |
+
+For each convention, the 3 qualifying implementations MUST include **at least two independent Write-capable (Write or Full) implementations** and **at least one independent Read-capable (Read or Full) implementation**. Two independent writers demonstrate that the specification text — not shared implementation code — constrains the metadata that is produced, and a separate reader demonstrates that this output is interoperable. A set of implementations that is read-only, or that contains only a single writer, cannot be the basis for advancement.
+
+### Demonstrated interoperability
+
+Each qualifying implementation MUST successfully read or write at least one dataset from the conformance test suite (once available). Collectively, the qualifying implementations for each convention MUST demonstrate at least one successful round trip: a dataset written by one implementation and read by a different, independent implementation.
+
+### Release status
+
+Convention support MUST be included in a released version of the implementation. Unreleased support (e.g., only available on a development branch or in a pre-release) does not count toward the 3-implementation threshold.
+
+### Documentation
+
+Each qualifying implementation MUST provide:
+
+- Public source code or a public release
+- Documentation or examples showing how convention metadata is read or written
+- A link to the convention version supported
+
+### Dataset diversity (recommended)
+
+It is RECOMMENDED that qualifying implementations collectively demonstrate support for datasets from multiple domains (e.g., earth observation, climate, oceanography) and multiple storage backends (e.g., local filesystem, S3, GCS, Azure).
+
+### Counting
+
+The 3-implementation minimum applies **per convention**. A convention advances to Candidate only when it has 3 qualifying implementations for that specific convention. An implementation supporting all three conventions counts toward each.
+
+Qualifying implementations are tracked in the [implementation matrix](https://geozarr.org/implementations.html). The SWG chair determines when an implementation qualifies, subject to the consensus process described in [§5](#5-maintenance-structure).
+
+## 7. Versioning and releases
 
 The group follows semantic versioning for official releases. Minor editorial or encoding improvements may occur between major releases when consensus allows.
 
-## 7. Roadmap
+## 8. Roadmap
 
 Work should follow the priorities defined in the roadmap:
 [https://geozarr.org/roadmap.html](https://geozarr.org/roadmap.html)
