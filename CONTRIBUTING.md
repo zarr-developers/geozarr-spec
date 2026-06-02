@@ -118,7 +118,30 @@ Qualifying implementations are tracked in the [implementation matrix](https://ge
 
 ## 7. Versioning and releases
 
-The group follows semantic versioning for official releases. Minor editorial or encoding improvements may occur between major releases when consensus allows.
+### Constituent conventions
+
+Each constituent convention (geo-proj, spatial, multiscales, and any future GeoZarr conventions) is versioned in its own repository, tied to its maturity level in the [Zarr Conventions Framework](https://github.com/zarr-conventions/.github/blob/main/profile/README.md):
+
+- A convention SHOULD tag a pre-stable release (e.g. `v0.x`) once it reaches **Pilot** maturity (examples, a JSON Schema, and at least one implementation).
+- A convention SHOULD release an initial stable version once it reaches **Candidate** maturity, as defined by the implementation criteria in [§6](#6-implementation-criteria-for-candidate-maturity).
+
+The version-numbering scheme — for example, integer versions (`v1`) versus `major.minor`, and the relationship to Semantic Versioning — is under discussion in [#102](https://github.com/zarr-developers/geozarr-spec/issues/102) and [zarr-conventions-spec#29](https://github.com/zarr-conventions/zarr-conventions-spec/issues/29). A convention's UUID is permanent and MUST NOT change across versions.
+
+### The GeoZarr specification
+
+The GeoZarr specification is a document that **references** a set of conventions at pinned versions. It is versioned independently of those conventions, on its own editorial cadence: a new GeoZarr release may update prose or re-point a reference without any convention changing, and a convention may release a new version without forcing an immediate GeoZarr release.
+
+Each GeoZarr release records the exact convention versions it references (in the release notes and the specification's normative references), so that a given GeoZarr version resolves to a specific, reproducible set of conventions.
+
+**Release gate.** GeoZarr SHALL NOT release an initial stable version until every convention in the v1 suite — spatial, geo-proj, and multiscales — has reached **Candidate** maturity (per [§6](#6-implementation-criteria-for-candidate-maturity)). This makes a stable GeoZarr release a guarantee that its referenced conventions are individually mature, rather than an independent assertion.
+
+**OGC lifecycle precedence.** If GeoZarr enters the OGC Full Standards track before the release gate is met, OGC lifecycle rules govern the document's version number — under which a Standards document "shall start at 1.0" ([OGC TC Policies and Procedures §7.2](https://docs.ogc.org/pol/05-020r29/05-020r29.html#standards)) — and take precedence over the gate above.
+
+### Out of scope (tracked in [#102](https://github.com/zarr-developers/geozarr-spec/issues/102))
+
+- The version-numbering scheme for conventions and for GeoZarr (integer vs. `major.minor` vs. Semantic Versioning).
+- How GeoZarr versions after its initial stable release (e.g. when a referenced convention later issues a breaking change).
+- Whether conventions added after the v1 suite (e.g. CF, DGGS, TileMatrixSet) participate in the release gate.
 
 ## 8. Roadmap
 
