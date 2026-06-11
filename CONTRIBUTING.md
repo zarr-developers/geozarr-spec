@@ -12,8 +12,8 @@ The conventions themselves are developed in their own repositories:
 
 | Convention | Repo |
 |------------|------|
-| **geo-proj** (`proj:`) | [zarr-conventions/geo-proj](https://github.com/zarr-conventions/geo-proj) |
-| **spatial** (`spatial:`) | [zarr-conventions/spatial](https://github.com/zarr-conventions/spatial) |
+| **proj** | [zarr-conventions/proj](https://github.com/zarr-conventions/proj) |
+| **spatial** | [zarr-conventions/spatial](https://github.com/zarr-conventions/spatial) |
 | **multiscales** | [zarr-conventions/multiscales](https://github.com/zarr-conventions/multiscales) |
 
 The [Editor’s Draft](https://zarr.dev/geozarr-spec/documents/standard/template/geozarr-spec.html) is the formal OGC spec document. It may lag behind the convention repos as it is updated periodically.
