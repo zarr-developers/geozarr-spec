@@ -62,7 +62,7 @@ The [Zarr Conventions Framework](https://github.com/zarr-conventions/.github/blo
 
 ### Definitions
 
-An **implementation** is a software library, tool, or application that reads or writes Zarr data conforming to one or more GeoZarr conventions (geo-proj, spatial, multiscales).
+An **implementation** is a software library, tool, or application that reads or writes Zarr data conforming to one or more GeoZarr conventions (proj, spatial, multiscales).
 
 A **qualifying implementation** is one that meets all of the criteria below.
 
@@ -74,7 +74,7 @@ Independence ensures that conventions are interpretable from the specification a
 
 ### Convention coverage
 
-Each qualifying implementation MUST support at least one complete GeoZarr convention (geo-proj, spatial, or multiscales), including all required fields defined by the convention's JSON Schema.
+Each qualifying implementation MUST support at least one complete GeoZarr convention (proj, spatial, or multiscales), including all required fields defined by the convention's JSON Schema.
 
 Partial support does not count toward the 3-implementation threshold for that convention.
 
@@ -118,7 +118,87 @@ Qualifying implementations are tracked in the [implementation matrix](https://ge
 
 ## 7. Versioning and releases
 
-The group follows semantic versioning for official releases. Minor editorial or encoding improvements may occur between major releases when consensus allows.
+## 7. Versioning and releases
+
+### 7.1 How conventions are versioned
+
+Each constituent convention (proj, spatial, multiscales, and any future GeoZarr
+conventions) is versioned in its own repository and released via git tags, tied
+to its maturity level in the [Zarr Conventions
+Framework](https://github.com/zarr-conventions/.github/blob/main/profile/README.md).
+Every release publishes an **immutable, versioned artifact**: the specification
+text and JSON Schema for version `X.Y` are addressable at a URL that embeds the
+version and whose content never changes after release. Normative references
+MUST point at a versioned artifact, never at `main`, `latest`, or another
+mutable target. This applies to references in data, in tooling, and in the
+GeoZarr specification.
+
+A convention's identity and its version are separate axes:
+
+- The **UUID** identifies the convention itself. It is permanent and MUST NOT
+  change across versions. If all URLs were lost, the UUID plus the conventions
+  registry would still resolve data to the correct specification.
+- The **version** identifies a specific released contract of that convention.
+
+The semantics of the `zarr_conventions` attribute are framework-level policy:
+how versions are carried in Zarr metadata, the rule that each declaration is
+self-contained (one convention at one version, via the versioned spec/schema
+URL alongside the UUID), and how declarations compose and resolve across a
+hierarchy. These semantics are defined in the [Zarr Conventions
+Framework
+specification](https://github.com/zarr-conventions/zarr-conventions-spec), not
+in this document, so that it applies uniformly to all conventions, geospatial
+or not. The operative consequences for GeoZarr: there is no store-wide or
+hierarchy-wide convention version attribute, and each declaration resolves
+independently at the node where it applies, so different nodes may reference
+different conventions without conflict.
+
+### 7.2 Release expectations by maturity
+
+- A convention SHOULD tag a pre-stable release (e.g. `v0.x`) once it reaches
+  **Pilot** maturity (examples, a JSON Schema, and at least one
+  implementation).
+- A convention SHOULD release an initial stable version once it reaches
+  **Candidate** maturity, as defined by the implementation criteria in
+  [§6](#6-implementation-criteria-for-candidate-maturity).
+
+### 7.3 Permanence of released versions
+
+Once released, a convention version is **permanently published**:
+
+- Every released version remains resolvable at its versioned URL indefinitely,
+  regardless of the convention's current maturity, the existence of newer
+  versions, or whether the GeoZarr specification still recommends it.
+- **Deprecation is a status, never a removal.** A deprecated or superseded
+  version is marked as such, with a pointer to its successor, but its text and
+  schema remain available so that data written against it decades ago remains
+  interpretable.
+- A later change in what the GeoZarr specification recommends affects only what
+  **newly written** data should do. It has no effect on the validity or
+  interpretability of existing data, which remains valid against the convention
+  version it declares, permanently.
+
+To make this durable beyond any single hosting platform, each stable release
+SHOULD additionally be archived in a platform-independent location (for
+example, a snapshot on a project-controlled domain, a Zenodo DOI, or Software
+Heritage), and the conventions registry maintains the permanent UUID → versions
+mapping as the layer of last resort.
+
+### 7.4 Out of scope (tracked in [#102](https://github.com/zarr-developers/geozarr-spec/issues/102))
+
+- The version-numbering scheme for conventions and for GeoZarr (integer vs.
+  `major.minor` vs. Semantic Versioning), including reader/writer compatibility
+  rules such as tolerance of unrecognized members. This is framework-level
+  policy and should be defined once in
+  [zarr-conventions-spec](https://github.com/zarr-conventions/zarr-conventions-spec)
+  (see
+  [zarr-conventions-spec#29](https://github.com/zarr-conventions/zarr-conventions-spec/issues/29))
+  so that validators and tooling resolve versions uniformly across all
+  conventions, rather than per convention or in this document.
+- How the GeoZarr specification references and versions against its constituent
+  conventions (follow-up PR).
+- The release gate for a stable GeoZarr release and its sequencing with the OGC
+  process (follow-up PR).
 
 ## 8. Roadmap
 
