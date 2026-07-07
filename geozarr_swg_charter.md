@@ -1,5 +1,5 @@
 <!--
-Title: OGC (add title text)
+Title: OGC GeoZarr Standards Working Group Charter
 doctype: book
 encoding: utf-8
 lang: en
@@ -163,7 +163,7 @@ If processing a draft submission of a specification developed outside the OGC pr
 
 GeoZarr builds directly on several elements of the OGC Standards baseline: the Zarr community standard (OGC 21-050r1, endorsed June 2022); the netCDF encoding standard (OGC 10-090r3) together with the CF (Climate and Forecast) Metadata Conventions, whose standardization is being advanced by the NetCDF CF SWG; GeoTIFF (OGC 19-008r4) and Cloud Optimized GeoTIFF (OGC 21-026); the OGC Two Dimensional Tile Matrix Set standard; and OGC Abstract Specification Topic 21 (Discrete Global Grid Systems). GeoZarr duplicates none of these; it standardizes how the concepts they encode are expressed as composable, safely-ignorable Zarr conventions, so that data now published in netCDF/CF or GeoTIFF/COG can carry the same semantics in Zarr.
 
-Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the anticipated convention set; the GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same conventions. The organizing test comes from the Zarr Conventions framework's safely-ignorable contract: if a low-level Zarr implementation ignores a convention, it still obtains the correct array element values. Features that fail this test change how data is encoded rather than how it is interpreted; they belong in the Zarr codec and data-type layer rather than in GeoZarr conventions and are out of scope (see Section 3.2).
+Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the anticipated convention set; the GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same conventions. The organizing test comes from the Zarr Conventions Framework's safely-ignorable contract: if a low-level Zarr implementation ignores a convention, it still obtains the correct array element values. Features that fail this test change how data is encoded rather than how it is interpreted; they belong in the Zarr codec and data-type layer rather than in GeoZarr conventions and are out of scope (see Section 3.2).
 
 The following notes map each convention in the Section 3 table to the prior standards and specifications it draws on:
 
@@ -195,10 +195,10 @@ The following notes map each convention in the Section 3 table to the prior stan
 A short description of any activities that will be out of scope for the SWG. For example, a SWG may limit consideration of CRPs after a specified date or milestone.
 -->
 
-Several components of the CF encoding model fit better as core zarr extensions rather than GeoZarr conventions, because they are domain agnostic and/or must be understood by core Zarr implementations (e.g., Zarr-Python, tensorstore, zarrs). These include:
+Several components of the CF encoding model fit better as core Zarr extensions rather than GeoZarr conventions, because they are domain agnostic and/or must be understood by core Zarr implementations (e.g., Zarr-Python, tensorstore, zarrs). These include:
 
-- Packing (e.g., `scale_factor`,`add_offset`): This CF feature is best represented by a Zarr codec, because this information changes the data types and values of an array.
-- `_FillValue`: This CF feature is redundant with the zarr metadata field `fill_value`, which defines the value to be used for uninitialized portions of the array.
+- Packing (e.g., `scale_factor`, `add_offset`): This CF feature is best represented by a Zarr codec, because this information changes the data types and values of an array.
+- `_FillValue`: This CF feature is redundant with the Zarr metadata field `fill_value`, which defines the value to be used for uninitialized portions of the array.
 
 Also out of scope:
 
@@ -214,7 +214,7 @@ This section provides reference information relevant to the work of the SWG. For
 The SWG starts from work already published or in progress in the Zarr and GeoZarr communities:
 
 - The `spatial`, `proj`, and `multiscales` conventions — the Version 1 suite (https://github.com/zarr-conventions/spatial, https://github.com/zarr-conventions/proj, https://github.com/zarr-conventions/multiscales).
-- The Zarr Conventions framework specification (https://github.com/zarr-conventions/zarr-conventions-spec), which defines the `zarr_conventions` attribute and the safely-ignorable contract.
+- The Zarr Conventions Framework specification (https://github.com/zarr-conventions/zarr-conventions-spec), which defines the `zarr_conventions` attribute and the safely-ignorable contract.
 - The prior GeoZarr editor's draft and issue history (https://github.com/zarr-developers/geozarr-spec), the starting point cited by the 2023 charter (OGC 23-046).
 - The geozarr-toolkit validation tooling and data models (https://github.com/zarr-developers/geozarr-toolkit).
 - geozarr.org, which documents the conventions, roadmap, and implementation matrix.
@@ -370,4 +370,4 @@ Optional list of references.
 - OGC 21-026, Cloud Optimized GeoTIFF Standard
 - CF Metadata Conventions, https://cfconventions.org
 - Zarr specification, version 3, https://zarr-specs.readthedocs.io
-- Zarr Conventions framework specification, https://github.com/zarr-conventions/zarr-conventions-spec
+- Zarr Conventions Framework specification, https://github.com/zarr-conventions/zarr-conventions-spec
