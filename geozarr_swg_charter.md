@@ -117,7 +117,7 @@ Each capability is realized by one or more Zarr conventions. This charter delibe
 
 | Capability | Description | Classification | Prior art |
 |---|---|---|---|
-| Coordinate reference systems | Coordinate reference system description via EPSG code, WKT2, or PROJJSON, including vertical datums. | Geospatial | [§3.1](#note-crs) |
+| Coordinate reference systems | Coordinate reference system description via EPSG code, WKT2, or PROJJSON, including vertical and temporal datums. | Geospatial | [§3.1](#note-crs) |
 | Functional coordinates | Mapping from index space to physical space defined by stored transform parameters (e.g., affine geotransforms), with no stored coordinate arrays. | Geospatial | [§3.1](#note-functional) |
 | Explicit coordinates | Mapping from index space to physical space through stored coordinate arrays: 1-D, scalar, and multidimensional/curvilinear coordinates (including swath geolocation); alternative coordinate sets; discrete/ordinal axes; string-valued labels; and data-less domain descriptions. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-explicit) |
 | Multiresolution pyramids | Resolution levels related by scale/translate transforms over any axis. | Domain-agnostic | [§3.1](#note-multiscale) |
