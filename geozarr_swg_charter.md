@@ -16,7 +16,7 @@ Submission Date: &lt;2026-07-dd&gt;
 
 Approval Date: &lt;2026-07-dd&gt;
 
-Internal reference number of this OGC® document: YY-nnnrx <!-- TODO(ask Scott): request document number for the revised charter (2023 charter was 23-046) -->
+Internal reference number of this OGC® document: YY-nnnrx 
 
 Category: OGC® Standards Working Group Charter
 
@@ -55,9 +55,9 @@ This SWG will operate under the OGC IPR Policy. The eligibility requirements for
 
 Of course, participants also may join the SWG at any time. The OGC and the SWG welcomes all interested parties.
 
-Non-OGC members who wish to participate may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG: the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG's page.
+The eligibility requirements above apply to SWG voting members. The GeoZarr SWG also has participants who are not OGC members, including members of the Zarr community and wider geospatial communities. These non-OGC member participants take part in the SWG's technical work via its public GitHub repositories (Section 8.1). Non-OGC members may attend SWG meetings as Observers under the OGC SWG Observer Agreement. Observers may comment and make recommendations but do not vote on SWG approvals. Non-OGC members who wish to vote may contact us about joining the OGC. In addition, the public may access some of the resources maintained for each SWG, including the SWG public description, the SWG Charter, Change Requests, and public comments, which will be linked from the SWG's page.
 
-Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization; we encourage your feedback.
+Please feel free to forward this announcement to any other appropriate lists. The OGC is an open standards organization and we encourage your feedback.
 
 ## 1. Purpose of the Standards Working Group
 
@@ -68,8 +68,8 @@ Proposers will describe the purpose of the Standards Working Group and its overa
 The GeoZarr Standards Working Group (SWG) is chartered to develop a standard and conformance classes for geospatial data stored in the Zarr data format. Zarr specifies a data format for storing arrays and groups in a hierarchical model. The Zarr Conventions Framework enables communities to define and share metadata standards for Zarr data. The Zarr Conventions Framework is lightweight, decentralized, and composable, with its design informed by the successful approach of STAC extensions. The GeoZarr SWG serves several purposes related to the Zarr data format, Zarr conventions, and geospatial data:
 
 - recommend a minimal set of Zarr conventions required to describe geospatial data (i.e., a minimal GeoZarr)
-- recommend additional Zarr conventions that are composable with the minimal GeoZarr conventions and add functionality needed for real-world applications, rather than hypothetical use cases
-- evaluate the technical merits and maturity (by way of adoption) of Zarr conventions proposed for incorporation into GeoZarr; conventions so incorporated constitute the *GeoZarr Conventions*
+- recommend additional Zarr conventions that are composable with the minimal GeoZarr conventions and add functionality needed for real-world applications (in contrast to supporting hypothetical use cases)
+- evaluate the technical merits and maturity (by way of adoption) of Zarr conventions proposed for incorporation into GeoZarr. Conventions so incorporated constitute the *GeoZarr Conventions*
 - provide conformance classes against which datasets can be tested for conformance to the GeoZarr Conventions
 - evaluate new upstream convention releases for incorporation into future GeoZarr versions, to ensure that the licensing, technical design, and interoperability remain appropriate for inclusion in GeoZarr
 
@@ -83,7 +83,7 @@ The GeoZarr SWG may recommend improvements to upstream communities where appropr
 This section provides a statement describing the value of this standards activity in relation to the OGC Membership, the geospatial community, and the wider IT community. This statement can be in terms of the interoperability problem being solved, processing Change requests to meet market (and Member requirements), a policy requirement and/or some other business value proposition. The proposition described in this section does not have to be in economic terms.
 -->
 
-Zarr is a generic data format for n-dimensional arrays that enables efficient storage and access to data in compressed chunks. Zarr's high performance and portability across local, high-performance computing, and cloud systems has made it increasingly popular across domains, including for geospatial purposes. In June 2022, the OGC endorsed the Zarr storage specification version 2.0 as an OGC community standard (OGC 21-050r1). The purpose of this re-charter is to standardize approaches for encoding geospatial metadata in Zarr. This will enable people and machines to use geospatial Zarr data to its fullest potential.
+Zarr is a generic data format for n-dimensional arrays that enables efficient storage and access to data in compressed chunks. Zarr's high performance and portability across local, high-performance computing, and cloud systems has made it increasingly popular across domains, including for geospatial purposes. In June 2022, the OGC endorsed the Zarr storage specification version 2.0 as an OGC community standard (OGC 21-050r1). In January 2024, the OGC announced the formation of the OGC GeoZarr Standards Working Group, with the goal of developing a Zarr encoding for geospatial gridded data in the form of Zarr conventions. The original charter defined Zarr conventions in the context of a draft Zarr Enhancement Proposal. This re-charter aligns the GeoZarr SWG with the stable direction of the broader Zarr community via the Zarr Conventions Framework.
 
 The business value of the GeoZarr standard includes providing data producers with a single target for encoding geospatial data in Zarr and consumers a single target for implementation, backed by the authority of the OGC. Data producers can adopt GeoZarr to ensure data encoded once is readable across the conforming tool ecosystem and understandable in perpetuity. For users, GeoZarr unlocks widespread visualization, subsetting, GIS services, machine learning, and automated and AI-assisted analysis. As GeoZarr enables browser-based approaches, its adoption lowers costs by reducing dependence on back-end services. In addition to these cost- and capability-driven benefits, GeoZarr will provide a target for contract development and evaluation, to ensure any Zarr-backed data and services delivered are widely useful.
 
@@ -91,99 +91,57 @@ GeoZarr standardization offers particularly great value now. While geospatial da
 
 ## 3. Scope of work
 
-<!--
-This section describes the scope of work (SOW) for the work of the SWG. There are typically at least three (3) cases that justify the formation of a SWG: A group of members decide to develop a new OGC candidate Standard from scratch, there is a draft submission being discussed by OGC members, or there are outstanding Change Requests for an existing OGC Standard and a revision is required.
+### 3.1. General
 
-The following describes the characteristics of a SOW for each of these cases.
+GeoZarr aims to support a wide variety of geospatial data by encoding their semantics through attribute conventions in Zarr groups and arrays. It currently serves two "families" of geospatial data: (1) data encoded using the CF (Climate and Forecast) Metadata Conventions in netCDF (climate and forecast model output, ocean models, in-situ observations, and satellite swaths, among others); and (2) data in GeoTIFF and Cloud Optimized GeoTIFF (imagery and other regularly gridded data with affine georeferencing, coordinate reference system metadata, and overviews). GeoZarr aims to eventually support novel and emerging geospatial applications requiring different encodings, such as discrete global grid systems (DGGS) and vector data cubes. GeoZarr will accomplish this by standardizing a set of mature Zarr conventions that are composable such that they can be used together to fulfill the diverse requirements within the geospatial domain.
 
-For a SWG focused on defining and documenting a new OGC candidate Standard from "scratch," the SOW SHALL include a statement of the requirements and use cases for the candidate Standard being developed. The SOW SHALL also include a justification statement for developing a new candidate OGC Standard. The SOW SHALL also describe how the new candidate Standard is related to the existing OGC Standards baseline and the OGC Reference Model. The final deliverable of a "from scratch" focused SWG SHALL be a candidate Standard ready for submission using the OGC standards process.
-
-For a SWG focused on processing a draft submission such as a specification developed outside the OGC and submitted into the OGC for consideration, the SOW would include evaluation of the submission in terms of the relationship to the existing OGC Standards baseline (see section below). The final deliverable of such a SWG SHALL be a candidate Standard for consideration by the membership for adoption.
-
-For a SWG focused on revisions to an existing adopted Standard, the SOW should include a statement that the SWG will collect all outstanding Change Request Proposals (CRPs), evaluate each of the proposals, and make edits to the Standard based on CRPs and related decisions of the SWG membership. The SWG, at their discretion, may also ask the membership for any additional change requests that have not been previous submitted. Again, the final deliverable of a revision focused SWG SHALL be a revision of the candidate Standard for consideration by the membership for adoption.
-
-In all cases, the SWG Charter shall provide a basic timeline plan for their activities.
--->
-
-GeoZarr serves three families of geospatial data, with Zarr and geospatial representation as the common thread: data served well today by the CF (Climate and Forecast) Metadata Conventions in netCDF (climate and forecast model output, ocean models, in-situ observations, and satellite swaths); data served well today by GeoTIFF and Cloud Optimized GeoTIFF (imagery and other regularly gridded data with affine georeferencing, coordinate reference system metadata, and overviews); and novel geospatial applications not represented well by either lineage, such as discrete global grid systems (DGGS) and vector data cubes. GeoZarr accomplishes this by standardizing a set of Zarr conventions that are well-designed, composable, and mature, such that they can be used together to fulfill those diverse requirements within the geospatial domain.
-
-**Eligibility principle.** A convention is eligible for inclusion in GeoZarr if it describes how geospatial data is interpreted, such as how data relates to a defined coordinate reference frame or the meaning, structure, or provenance of its values. Put another way, we expect all GeoZarr conventions to be safely-ignorable by low-level Zarr implementations; those implementations must be able to ignore the convention while still obtaining correct array element values (Section 3.1). Within that boundary, conventions are evaluated for incorporation against the assessment criteria in Section 1: composability, simplicity, specificity, demonstrated real-world need, and maturity.
+**Eligibility principle.** A convention is eligible for inclusion in GeoZarr if it describes how geospatial data is interpreted, such as how data relates to a defined coordinate reference frame or the meaning, structure, or provenance of its values. Put another way, we expect all GeoZarr conventions to be safely-ignorable by low-level Zarr implementations. Low-level Zarr implementations must be able to ignore the convention while still obtaining correct array element values (Section 3.2). Within that boundary, conventions are evaluated for incorporation against the assessment criteria in Section 1: composability, simplicity, specificity, demonstrated real-world need, and maturity.
 
 **Intended capabilities.**
 
-The table below defines the scope of work for this SWG. The table targets the dominant use cases within the three families above rather than every conceivable one; work on capabilities beyond this scope requires a revision to this charter. Inclusion of a capability in scope does not commit the SWG to delivering it: deliverables are defined in Section 4 and sequenced through the SWG Task approval process defined in the OGC TC Policies and Procedures.
+The table below defines the scope of work for this SWG. The table targets the dominant use cases within the data families above rather than every conceivable one. Work on capabilities beyond this scope does not necessarily require a re-charter, if the direction is agreed upon by the GeoZarr SWG. Inclusion of a capability in scope does not commit the SWG to delivering it. Deliverables are defined in Section 4 and sequenced through the SWG Task approval process defined in the OGC TC Policies and Procedures.
 
-Each capability is realized by one or more Zarr conventions. This charter deliberately does not name the conventions that will realize each capability, nor the order in which capabilities will be addressed: conventions are proposed, evaluated against the assessment criteria in Section 1, and incorporated into GeoZarr deliverables through the processes in Section 4. Where more than one candidate convention addresses a capability, the SWG's evaluation process determines which are incorporated. Each capability is classified as **domain-agnostic** (its concepts apply to any n-dimensional array, so the realizing convention belongs to the broader Zarr Conventions Framework and is reusable outside the geospatial domain), **geospatial** (it encodes Earth-referencing, such as a coordinate reference system, planetary coordinate, or geographic feature), or a **domain-agnostic mechanism carrying a geospatial vocabulary**. The last column cross-references the notes in Section 3.1, which map each capability to the prior standards and specifications it draws on.
+Each capability is realized by one or more Zarr conventions. This charter deliberately does not name the conventions that will realize each capability, nor the order in which capabilities will be addressed. Conventions are proposed, evaluated against the assessment criteria in Section 1, and incorporated into GeoZarr deliverables through the processes in Section 4. Where more than one candidate convention addresses a capability, the SWG's evaluation process determines which are incorporated. Each capability is classified as **domain-agnostic** (its concepts apply to any n-dimensional array, so the realizing convention belongs to the broader Zarr Conventions Framework and is reusable outside the geospatial domain), **geospatial** (it encodes Earth-referencing, such as a coordinate reference system, planetary coordinate, or geographic feature), or a **domain-agnostic mechanism carrying a geospatial vocabulary**.
 
-| Capability | Description | Classification | Prior art |
+The last column records the prior standards and specifications each capability draws on. This prior art is informative only. The prior documents where a capability comes from and is not binding on how GeoZarr realizes it. A GeoZarr convention may depart from the delineations, vocabularies, or encodings of the prior art where the evaluation process finds that appropriate.
+
+| Capability | Description | Classification | Prior art (non-binding) |
 |---|---|---|---|
-| Coordinate reference systems | Coordinate reference system description via EPSG code, WKT2, or PROJJSON, including vertical and temporal datums. | Geospatial | [§3.1](#note-crs) |
-| Functional coordinates | Mapping from index space to physical space defined by stored transform parameters (e.g., affine geotransforms), with no stored coordinate arrays. | Geospatial | [§3.1](#note-functional) |
-| Explicit coordinates | Mapping from index space to physical space through stored coordinate arrays: 1-D, scalar, and multidimensional/curvilinear coordinates (including swath geolocation); alternative coordinate sets; discrete/ordinal axes; string-valued labels; and data-less domain descriptions. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-explicit) |
-| Multiresolution pyramids | Resolution levels related by scale/translate transforms over any axis. | Domain-agnostic | [§3.1](#note-multiscale) |
-| Units of measure | Units attached to the values in an array, including dimensionless units and unit metadata. | Domain-agnostic | [§3.1](#note-units) |
-| Time representation | Reference-time-based decoding, calendars, custom calendars, and leap seconds. | Domain-agnostic | [§3.1](#note-time) |
-| Missing data | Sentinel-value and valid-range masking semantics. | Domain-agnostic | [§3.1](#note-missing-data) |
-| Value interpretation | Value-to-label interpretation of integer arrays, covering enumerations and bitfields. | Domain-agnostic | [§3.1](#note-flags) |
-| Descriptive metadata | Descriptive names, provenance attributes, and a standard-name vocabulary. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-descriptive) |
-| Discrete global grid systems | Mapping between array index space and DGGS zones (cell identifiers and resolution levels). | Geospatial | [§3.1](#note-dggs) |
-| Tile matrix sets | Binding multiresolution levels to registered tile matrix sets for web-tiling clients. | Geospatial | [§3.1](#note-tile-matrix-set) |
-| Vector geometries | Point/line/polygon geometries carried with a coordinate reference system. | Geospatial | [§3.1](#note-geometry) |
-| Discrete sampling geometries | Ragged-array grouping of variable-length features into 1-D arrays, with a feature-type vocabulary. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-dsg) |
-| Unstructured meshes | Node/edge/face connectivity topology for unstructured meshes. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-mesh) |
-| Parametric vertical coordinates | Vertical coordinates derived from stored formula terms (e.g., sigma and hybrid coordinates). | Geospatial | [§3.1](#note-parametric-vertical) |
-| Statistical provenance | Statistical derivation of values (e.g., mean, maximum, or sum over an axis), with climatological statistics layered on top. | Domain-agnostic mechanism; geospatial vocabulary | [§3.1](#note-cell-methods) |
-| Cell measures | Per-cell area or volume measures for weighting and aggregation. | Domain-agnostic | [§3.1](#note-cell-measures) |
-| External linkage | Linkage to external and ancillary variables, including externally stored measures and aggregation. | Domain-agnostic | [§3.1](#note-ref) |
+| Coordinate reference systems | Coordinate reference system description via EPSG code, WKT2, or PROJJSON, including vertical and temporal datums. | Geospatial | Multiple prior implementations, including GeoTIFF GeoKeys (OGC 19-008r4) and CF Appendix F grid mappings ( `grid_mapping` linkage, `crs_wkt`, vertical datums). Both vocabularies become importable aliases for the EPSG, WKT2, and PROJJSON forms. |
+| Functional coordinates | Mapping from index space to physical space defined by stored transform parameters (e.g., affine geotransforms), with no stored coordinate arrays. | Geospatial | The GeoTIFF georeferencing model (OGC 19-008r4): 2-D X/Y affine georeferencing of a regular grid via a geotransform. CF has no functional mechanism (it georeferences through explicit coordinate arrays), which is why this capability stands apart from explicit coordinates. |
+| Explicit coordinates | Mapping from index space to physical space through stored coordinate arrays: 1-D, scalar, and multidimensional/curvilinear coordinates (including swath geolocation); alternative coordinate sets; discrete/ordinal axes; string-valued labels; and data-less domain descriptions. | Domain-agnostic mechanism; geospatial vocabulary | The coordinate association core of CF §4–§6: the `coordinates` attribute linking data to coordinate and auxiliary-coordinate variables; 1-D, scalar, and multidimensional coordinates (including 2-D curvilinear `lat(y,x)` / `lon(y,x)` coordinates, rotated-pole grids, and swath geolocation arrays); alternative coordinate sets; discrete/ordinal axes; string-valued auxiliary coordinates providing per-element axis labels; and the data-less CF domain variable. |
+| Multiresolution pyramids | Resolution levels related by scale/translate transforms over any axis. | Domain-agnostic | Cloud Optimized GeoTIFF overviews (OGC 21-026). |
+| Units of measure | Units attached to the values in an array, including dimensionless units and unit metadata. | Domain-agnostic | CF `units` (UDUNITS strings), dimensionless units, and `units_metadata` (e.g., temperature on-scale vs. difference). |
+| Time representation | Reference-time-based decoding, calendars, custom calendars, and leap seconds. | Domain-agnostic | The CF `"<unit> since <epoch>"` reference-time decoding, the `calendar` attribute, custom calendars (`month_lengths`, `leap_year`, `leap_month`), and leap-second handling (CF Appendix M). Stored time numbers are unchanged; only the number-to-datetime mapping is conventional. |
+| Missing data | Sentinel-value and valid-range masking semantics. | Domain-agnostic | CF `missing_value`, `valid_range` / `valid_min` / `valid_max`, `actual_range`, and treat-sentinel-as-masked semantics; GeoTIFF/COG nodata values share the same sentinel model. `_FillValue` itself is covered by the core Zarr `fill_value` field (see Section 3.3). |
+| Value interpretation | Value-to-label interpretation of integer arrays, covering enumerations and bitfields. | Domain-agnostic | CF `flag_values` (enumerations), `flag_masks` (bitfields), and `flag_meanings`. |
+| Descriptive metadata | Descriptive names and provenance attributes, and identification of the observed property that the values describe (for example, air temperature at 2 m above the surface) through a controlled vocabulary. | Domain-agnostic mechanism; geospatial vocabulary | The domain-agnostic mechanism declares unprefixed CF attributes in use (e.g., `long_name` and provenance attributes such as `title`, `history`, `source`). The CF `standard_name` table is one observed-property vocabulary; it aggregates property, medium, and sometimes method into a single term, whereas OMS and the I-ADOPT framework describe the observed property from disaggregated components. |
+| Observation metadata | How the values were obtained: the observing procedure or method, the observer (sensor, instrument, or model), the feature of interest and any sampling feature the values relate to, and the distinction between phenomenon, result, and valid times. | Domain-agnostic mechanism; geospatial vocabulary | OGC Abstract Specification Topic 20 / ISO 19156:2023, Observations, Measurements and Samples (OMS), and its realizations in the OGC SensorThings API and in CoverageJSON parameter metadata (observed property, observing procedure, and device links). CF covers this only partially, through qualifiers folded into `standard_name`, `cell_methods`, and free-text provenance attributes; GeoTIFF does not represent it. |
+| Discrete global grid systems | Mapping between array index space and DGGS zones (cell identifiers and resolution levels). | Geospatial | OGC Abstract Specification Topic 21 (Discrete Global Grid Systems). Not represented in CF or GeoTIFF; a Zarr convention proposal and the xdggs community library are the current prior art. |
+| Tile matrix sets | Binding multiresolution levels to registered tile matrix sets for web-tiling clients. | Geospatial | The OGC Two Dimensional Tile Matrix Set standard. Complements the domain-agnostic multiresolution capability by binding resolution levels to registered tile matrix sets for web-tiling clients. |
+| Vector geometries | Point/line/polygon geometries carried with a coordinate reference system. | Geospatial | CF §7.5 geometries: `geometry_container`, `node_coordinates`, `node_count`, `part_node_count`, and `interior_ring`, carried with a coordinate reference system. |
+| Discrete sampling geometries | Ragged-array grouping of variable-length features into 1-D arrays, with a feature-type vocabulary. | Domain-agnostic mechanism; geospatial vocabulary | The domain-agnostic mechanism covers CF §9 ragged arrays (`count` / `index` variables); the geospatial vocabulary is the `featureType` taxonomy (trajectory, profile, timeSeries, and so forth). |
+| Unstructured meshes | Node/edge/face connectivity topology for unstructured meshes. | Domain-agnostic mechanism; geospatial vocabulary | The domain-agnostic mechanism covers UGRID-style node/edge/face connectivity arrays (CF Appendix K); node coordinates are typically supplied via the explicit-coordinates capability. |
+| Parametric vertical coordinates | Vertical coordinates derived from stored formula terms (e.g., sigma and hybrid coordinates). | Geospatial | CF `formula_terms`, `computed_standard_name`, and the Appendix D parametric vertical coordinate formulas. The derived vertical coordinate is virtual; every stored term array is independently correct, which is why this is a convention rather than a codec. |
+| Statistical provenance | Statistical derivation of values (e.g., mean, maximum, or sum over an axis), with climatological statistics layered on top. | Domain-agnostic mechanism; geospatial vocabulary | The domain-agnostic mechanism covers CF `cell_methods` and the Appendix E vocabulary; the geospatial vocabulary is climatological statistics (`within` / `over` years or days, `climatology` bounds). |
+| Cell measures | Per-cell area or volume measures for weighting and aggregation. | Domain-agnostic | The CF `cell_measures` per-cell area/volume association. |
+| External linkage | Linkage to external and ancillary variables, including externally stored measures and aggregation. | Domain-agnostic | CF `external_variables`, externally stored `cell_measures`, and `ancillary_variables` linkage; also the natural home for aggregation mechanisms. |
 
-**Integration and interoperability rules.** Beyond the individual capabilities, the SWG defines the rules needed to make conventions work together as consistent, interoperable GeoZarr datasets: integration rules for combining conventions within a store, and store-level expectations such as hierarchy layout and metadata consolidation. These rules are expressed in the GeoZarr specification and its conformance classes (Section 4).
+**Integration and interoperability rules.** Beyond the individual capabilities, the SWG defines the rules needed to make conventions work together as consistent, interoperable GeoZarr datasets. This includes integration rules for combining conventions within a store and store-level expectations such as hierarchy layout and metadata consolidation. These rules are expressed in the GeoZarr specification and its conformance classes (Section 4).
 
-**Convention versioning.** Each GeoZarr deliverable normatively references specific, pinned versions of its constituent conventions, consistent with OGC practice for external normative references. The conventions themselves are versioned by their maintainers and are pre-stable (v0.x, with breaking changes permitted) until they reach v1; evolution of a convention after adoption does not alter an adopted GeoZarr Standard, which continues to reference the pinned versions.
+**Convention versioning.** Each GeoZarr deliverable normatively references specific, pinned versions of its constituent conventions, consistent with OGC practice for external normative references. The conventions themselves are versioned by their maintainers and are pre-stable (v0.x, with breaking changes permitted) until they reach v1. Evolution of a convention after adoption does not alter an adopted GeoZarr Standard, which continues to reference the pinned versions.
 
-**Division of change control.** The conventions remain the authoritative source of truth in their respective repositories, governed within the Zarr Conventions Framework community. The GeoZarr SWG owns the selection of conventions, the integration rules, and the conformance classes; it does not fork or independently amend convention content. Technical changes arising from OGC review (including OGC Architecture Board review and public comment) that affect convention content are proposed upstream as issues or pull requests to the relevant convention repository, and are taken up by GeoZarr through a subsequent pinned convention version, not by editing the OGC document alone.
+**Division of change control.** The conventions remain the authoritative source of truth in their respective repositories, governed within the Zarr Conventions Framework community. The GeoZarr SWG owns the selection of conventions, the integration rules, and the conformance classes. It does not fork or independently amend convention content. Technical changes arising from OGC review (including OGC Architecture Board review and public comment) that affect convention content are proposed upstream as issues or pull requests to the relevant convention repository, and are taken up by GeoZarr through a subsequent pinned convention version, not by editing the OGC document alone.
 
 
-### 3.1. Statement of relationship of planned work to the current OGC Standards baseline
+### 3.2. Statement of relationship of planned work to the current OGC Standards baseline
 
-<!--
-This section describes the relationship of the proposed standards activity to the existing Standards baseline. For the 3 cases:
-If defining a new Standard, a statement of the relationship to the existing Standards baseline including statements related to overlap (if any) with existing OGC Standards functionality, harmonization issues, and so forth.
+GeoZarr builds directly on several elements of the OGC Standards baseline, including the Zarr community standard (OGC 21-050r1, endorsed June 2022); the netCDF encoding standard (OGC 10-090r3) together with the CF (Climate and Forecast) Metadata Conventions, whose standardization is being advanced by the NetCDF CF SWG; GeoTIFF (OGC 19-008r4) and Cloud Optimized GeoTIFF (OGC 21-026); the OGC Two Dimensional Tile Matrix Set standard; OGC Abstract Specification Topic 21 (Discrete Global Grid Systems); and OGC Abstract Specification Topic 20 / ISO 19156:2023, Observations, Measurements and Samples (OMS), for the semantics of how observed values are obtained. GeoZarr duplicates none of these. Instead, GeoZarr standardizes how the concepts they encode are expressed as composable, safely-ignorable Zarr conventions, so that data now published in netCDF/CF or GeoTIFF/COG can carry the same semantics in Zarr.
 
-If processing change requests and performing a revision to an existing Standard, a simple statement to this effect shall be made.
+Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the scope table in Section 3.1. The GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same capabilities. OMS contributes the observation-metadata capability. The prior-art column of the table in Section 3.1 records the specific constructs each capability draws on. As stated there, that prior art in non-binding for GeoZarr conventions. OGC baseline standards that control how data is encoded rather than how it is interpreted belong in the Zarr codec and data type layers rather than the GeoZarr conventions and are out of scope (see Section 3.3).
 
-If processing a draft submission of a specification developed outside the OGC process, a clear statement of the relationship to the existing Standards baseline including statements related to overlap (if any) with existing OGC Standards functionality, harmonization issues, and so forth. This information is provided to allow a focus of the discussion on criteria for considering any new solution that may be incompatible with older ones, overlaps existing functionality in the current baseline, and criteria for either deprecating older solutions, or simultaneously endorsing more than one option.
--->
+### 3.3. What is out of scope?
 
-GeoZarr builds directly on several elements of the OGC Standards baseline: the Zarr community standard (OGC 21-050r1, endorsed June 2022); the netCDF encoding standard (OGC 10-090r3) together with the CF (Climate and Forecast) Metadata Conventions, whose standardization is being advanced by the NetCDF CF SWG; GeoTIFF (OGC 19-008r4) and Cloud Optimized GeoTIFF (OGC 21-026); the OGC Two Dimensional Tile Matrix Set standard; and OGC Abstract Specification Topic 21 (Discrete Global Grid Systems). GeoZarr duplicates none of these; it standardizes how the concepts they encode are expressed as composable, safely-ignorable Zarr conventions, so that data now published in netCDF/CF or GeoTIFF/COG can carry the same semantics in Zarr.
-
-Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the scope table in Section 3; the GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same capabilities. The organizing test comes from the Zarr Conventions Framework's safely-ignorable contract: if a low-level Zarr implementation ignores a convention, it still obtains the correct array element values. Features that fail this test change how data is encoded rather than how it is interpreted; they belong in the Zarr codec and data-type layer rather than in GeoZarr conventions and are out of scope (see Section 3.2).
-
-The following notes map each capability in the Section 3 table to the prior standards and specifications it draws on:
-
-- <a id="note-crs"></a>**Coordinate reference systems** — Dual heritage: GeoTIFF GeoKeys (OGC 19-008r4) and CF Appendix F grid mappings (the `grid_mapping` linkage, `crs_wkt`, vertical datums). Both vocabularies become importable aliases for the EPSG, WKT2, and PROJJSON forms.
-- <a id="note-functional"></a>**Functional coordinates** — The GeoTIFF georeferencing model (OGC 19-008r4): 2-D X/Y affine georeferencing of a regular grid via a geotransform. CF has no functional mechanism — it georeferences through explicit coordinate arrays — which is why this capability stands apart from explicit coordinates.
-- <a id="note-explicit"></a>**Explicit coordinates** — The coordinate association core of CF §4–§6: the `coordinates` attribute linking data to coordinate and auxiliary-coordinate variables; 1-D, scalar, and multidimensional coordinates; alternative coordinate sets; discrete/ordinal axes; string-valued auxiliary coordinates providing per-element axis labels; and the data-less CF domain variable. The multidimensional case covers CF 2-D curvilinear `lat(y,x)` / `lon(y,x)` coordinates, rotated-pole grids, and swath geolocation arrays.
-- <a id="note-multiscale"></a>**Multiresolution pyramids** — Cloud Optimized GeoTIFF overviews are the primary prior art. Not a CF feature, but provides the per-level coordinate composition that any CF-derived multiresolution pyramid needs.
-- <a id="note-units"></a>**Units of measure** — CF `units` (UDUNITS strings), dimensionless units, and `units_metadata` (e.g., temperature on-scale vs. difference).
-- <a id="note-time"></a>**Time representation** — The CF `"<unit> since <epoch>"` reference-time decoding, the `calendar` attribute, custom calendars (`month_lengths`, `leap_year`, `leap_month`), and leap-second handling (CF Appendix M). Stored time numbers are unchanged; only the number-to-datetime mapping is conventional.
-- <a id="note-missing-data"></a>**Missing data** — CF `missing_value`, `valid_range` / `valid_min` / `valid_max`, `actual_range`, and treat-sentinel-as-masked semantics; GeoTIFF/COG nodata values share the same sentinel model. `_FillValue` itself is covered by the core Zarr `fill_value` field (see Section 3.2).
-- <a id="note-flags"></a>**Value interpretation** — CF `flag_values` (enumerations), `flag_masks` (bitfields), and `flag_meanings`.
-- <a id="note-descriptive"></a>**Descriptive metadata** — The domain-agnostic mechanism declares unprefixed CF attributes in use (e.g., `long_name` and provenance attributes such as `title`, `history`, `source`); the geospatial vocabulary is the `standard_name` table.
-- <a id="note-dggs"></a>**Discrete global grid systems** — OGC Abstract Specification Topic 21 (Discrete Global Grid Systems). Not represented in CF or GeoTIFF; a Zarr convention proposal and the xdggs community library are the current prior art.
-- <a id="note-tile-matrix-set"></a>**Tile matrix sets** — The OGC Two Dimensional Tile Matrix Set standard. Complements the domain-agnostic multiresolution capability by binding resolution levels to registered tile matrix sets for web-tiling clients.
-- <a id="note-geometry"></a>**Vector geometries** — CF §7.5 geometries: `geometry_container`, `node_coordinates`, `node_count`, `part_node_count`, and `interior_ring`, carried with a coordinate reference system.
-- <a id="note-dsg"></a>**Discrete sampling geometries** — The domain-agnostic mechanism covers CF §9 ragged arrays (`count` / `index` variables); the geospatial vocabulary is the `featureType` taxonomy (trajectory, profile, timeSeries, and so forth).
-- <a id="note-mesh"></a>**Unstructured meshes** — The domain-agnostic mechanism covers UGRID-style node/edge/face connectivity arrays (CF Appendix K); node coordinates are typically supplied via the explicit-coordinates capability.
-- <a id="note-parametric-vertical"></a>**Parametric vertical coordinates** — CF `formula_terms`, `computed_standard_name`, and the Appendix D parametric vertical coordinate formulas. The derived vertical coordinate is virtual; every stored term array is independently correct, which is why this is a convention rather than a codec.
-- <a id="note-cell-methods"></a>**Statistical provenance** — The domain-agnostic mechanism covers CF `cell_methods` and the Appendix E vocabulary; the geospatial vocabulary is climatological statistics (`within` / `over` years or days, `climatology` bounds).
-- <a id="note-cell-measures"></a>**Cell measures** — The CF `cell_measures` per-cell area/volume association.
-- <a id="note-ref"></a>**External linkage** — CF `external_variables`, externally stored `cell_measures`, and `ancillary_variables` linkage; also the natural home for aggregation mechanisms.
-
-### 3.2. What is out of scope?
-
-<!--
-A short description of any activities that will be out of scope for the SWG. For example, a SWG may limit consideration of CRPs after a specified date or milestone.
--->
 
 Several components of the CF encoding model fit better as core Zarr extensions rather than GeoZarr conventions, because they are domain agnostic and/or must be understood by core Zarr implementations (e.g., Zarr-Python, tensorstore, zarrs). These include:
 
@@ -192,30 +150,26 @@ Several components of the CF encoding model fit better as core Zarr extensions r
 
 Also out of scope:
 
-- Development of Zarr core, codecs, and data types: these belong to the Zarr community's specification and extension processes (e.g., Zarr Enhancement Proposals), which the SWG tracks but does not govern.
-- Blocking on upstream changes: where the SWG proposes improvements to the CF conventions or the Zarr Conventions Framework, GeoZarr deliverables do not wait on the acceptance of those proposals.
+- Development of Zarr core, codecs, and data types. These belong to the Zarr community's specification and extension processes (e.g., Zarr Enhancement Proposals), which the SWG tracks but does not govern.
+- Blocking upstream changes. Where the SWG proposes improvements to the CF conventions or the Zarr Conventions Framework, GeoZarr deliverables should not wait on the acceptance of those proposals.
 
-### 3.3. Specific existing work used as starting point
-
-<!--
-This section provides reference information relevant to the work of the SWG. For example, a document reference for a draft submission or a list of CRPs for a SWG focused on revision to an adopted specification.
--->
+### 3.4. Specific existing work used as starting point
 
 The SWG starts from work already published or in progress in the Zarr and GeoZarr communities:
 
-- The `spatial`, `proj`, and `multiscales` conventions (https://github.com/zarr-conventions/spatial, https://github.com/zarr-conventions/proj, https://github.com/zarr-conventions/multiscales), published in the zarr-conventions organization and implemented by multiple independent libraries; the implementation matrix at geozarr.org documents current support.
-- Candidate conventions for the explicit-coordinates capability: the `cs` convention (https://github.com/R-CF/zarr_conventions_cs), at Pilot maturity in the Zarr Conventions Framework with two released implementations by the convention author, and the `coords` convention (https://github.com/christophenoel/zarr-coords), a proposal with no implementations listed at the time of writing.
-- The Zarr Conventions Framework specification (https://github.com/zarr-conventions/zarr-conventions-spec), which defines the `zarr_conventions` attribute and the safely-ignorable contract.
+- The `spatial`, `proj`, and `multiscales` conventions (https://github.com/zarr-conventions/spatial, https://github.com/zarr-conventions/proj, https://github.com/zarr-conventions/multiscales), published in the zarr-conventions organization and implemented by multiple independent libraries. The implementation matrix at geozarr.org documents current support.
+- Candidate conventions for the explicit-coordinates capability: the `cs` convention (https://github.com/R-CF/zarr_conventions_cs), at Pilot maturity in the Zarr Conventions Framework with two released implementations by the convention author, and the `coords` convention (https://github.com/christophenoel/zarr-coords), a proposal with one released implementation by an independent developer.
+- The Zarr Conventions Framework specification (https://github.com/zarr-conventions/zarr-conventions-spec), which defines the `zarr_conventions` attribute.
 - The prior GeoZarr editor's draft and issue history (https://github.com/zarr-developers/geozarr-spec), the starting point cited by the 2023 charter (OGC 23-046).
 - The geozarr-toolkit validation tooling and data models (https://github.com/zarr-developers/geozarr-toolkit).
 - geozarr.org, which documents the conventions, roadmap, and implementation matrix.
 
-### 3.4. Is this a persistent SWG
+### 3.5. Is this a persistent SWG
 
 - [x] YES
 - [ ] NO
 
-### 3.5. When can the SWG be inactivated
+### 3.6. When can the SWG be inactivated
 
 <!--
 If this is not a persistent SWG, please define the criteria for determining when the SWG can be inactivated and the project archived. Please note that completion and archiving ensures that all files, wikis, emails, and so forth are archived and available for future viewing and use.
@@ -237,27 +191,32 @@ This section also includes a preliminary schedule of activities. For example, an
 Describe the initial Standard(s) to be developed by the SWG.
 -->
 
-The initial deliverable (primary delivery) is **GeoZarr Version 1**, a candidate Standard comprising:
+The initial deliverable (primary delivery) is **GeoZarr Version 1**. Of the capabilities in scope (Section 3.1), Version 1 targets:
 
-- **The GeoZarr specification** — a profile document that selects the Version 1 convention suite (`spatial`, `proj`, and `multiscales`; see Section 3.3), defines the integration rules for using the conventions together, and defines conformance classes against the suite — anticipated as one conformance class per selected convention plus a core class governing their integration, so that conformance can be claimed and tested per convention. The subset of classes the specification designates as required constitutes the minimal GeoZarr identified in Section 1. Normative statements about how to encode a given concern remain in the referenced conventions; the specification references them at pinned versions rather than duplicating them.
+- coordinate reference systems
+- functional coordinates
+- multiresolution pyramids
+
+Together with what core Zarr already provides (chunked storage, compression, and `fill_value`), these are the capabilities needed for the GeoTIFF and Cloud Optimized GeoTIFF family of data, and they are realized by the `spatial`, `proj`, and `multiscales` conventions (Section 3.4). Explicit coordinates are the first additional capability anticipated for a subsequent version. Explicit coordinates are left for a subsequent version because the SWG has not yet converged on a candidate convention. Yet, the GeoZarr SWG recognizes the urgency of explicit coordinate support and will proceed towards consensus simultaneously with finalizing version 1. The Version 1 candidate Standard comprises:
+
+- **The GeoZarr specification** — a profile document that selects the Version 1 convention suite (`spatial`, `proj`, and `multiscales`; see Section 3.4), defines the integration rules for using the conventions together, and defines conformance classes against the suite. This will likely include one conformance class per selected convention plus a core class governing their integration, so that conformance can be claimed and tested per convention. The subset of classes the specification designates as required constitutes the minimal GeoZarr identified in Section 1. Normative statements about how to encode a given concern remain in the referenced conventions. The specification references them at pinned versions rather than duplicating them. The specification also carries informative guidance that maps common application domains (for example, georeferenced imagery) to the recommended combination of conventions, so that data producers can select conventions without evaluating each one in isolation.
 - **An abstract test suite** for the conformance classes, accompanied by executable test scripts contributed toward the OGC compliance program.
 
 Preliminary schedule, to be refined by the SWG:
 
 | Milestone | Target |
 |---|---|
-| Release candidate of the Version 1 convention suite | 2026 Q3 |
-| OGC Architecture Board review | 2026 Q3 |
-| Public comment period and comment resolution | 2026 Q4 |
-| SWG vote to recommend adoption; TC adoption vote | 2026 Q4 |
+| Re-charter approval | Novembver 2026 |
+| Release candidate of the Version 1 convention suite | December 2026 |
+| OGC Architecture Board review | January 2026 |
+| Public comment period and comment resolution | February - March 2026 |
+| SWG vote to recommend adoption; TC adoption vote | April 2026 |
+| Evaluating explicit coordinates approaches and suggesting upstream changes | November 2026 - February 2027
 
 ### 4.2. Additional SWG tasks
 
-<!--
-Describe each additional Standard to be developed by the SWG as an additional task after the deliverables from the initial charter have been completed. This section is blank in a new charter, then is populated with each task approval request per the OGC TC Policies and Procedures.
--->
 
-No additional tasks are chartered at this time. Subsequent GeoZarr versions, addressing further capabilities within the Section 3 scope, will each be proposed through the SWG Task approval process defined in the OGC TC Policies and Procedures; approved Tasks will be added to this charter. Each Task proposal will include the evidence of real-world need described in Section 1, which also serves as the technical justification the Task approval process presents to the TC.
+Additional tasks following the V1 release will include supporting the development of conventions for capabilities such as those listed in Section 3.1, evaluating conventions for incorporation into GeoZarr, and developing conformance classes for incorporated GeoZarr conventions.
 
 ## 5. IPR Policy for this SWG
 
@@ -266,52 +225,30 @@ No additional tasks are chartered at this time. Subsequent GeoZarr versions, add
 
 ## 6. Anticipated audience / participants
 
-<!--
-Description of the target participants in this SWG. For example, if the SWG were focused on a candidate spatial query language standard: Those involved in the design, development, implementation, or use of elements listed above in "Scope of the Work". This includes search service providers, prospective users of search services exposed as XML, information architects and bibliographic, metadata, and content provider.
-
-This is not meant as a limiting statement but instead is intended to provide guidance to interested potential participants as to whether they wish to participate in this SWG.
--->
-
-This SWG develops a Standard for general use in the geospatial community and for data exchange beyond it. Anticipated participants include: geospatial data providers publishing gridded and multidimensional products to cloud object storage, including Earth observation agencies and programs producing analysis-ready satellite data; implementers of geospatial software and libraries, such as GDAL, xarray and rioxarray, QGIS, web visualization toolkits, and tiling services; operators of cloud data platforms and catalogs; and organizations that procure or contract for geospatial data delivery and need conformance classes to cite as evaluation criteria.
+This SWG develops a Standard for general use in the geospatial community and for data exchange beyond it. Anticipated participants include geospatial data providers publishing gridded and multidimensional products to cloud object storage, including Earth observation agencies and programs producing analysis-ready satellite data; implementers of geospatial software and libraries, such as GDAL, xarray and rioxarray, QGIS, web visualization toolkits, and tiling services; operators of cloud data platforms and catalogs; and organizations that procure or contract for geospatial data delivery and need conformance classes to cite as evaluation criteria.
 
 ## 7. Domain Working Group endorsement
 
-<!--
-The SWG will list all Domain Working Groups (DWGs) in which the SWG formation was discussed and/or chartered. If a DWG has specifically endorsed the formation of the SWG, then a statement of endorsement should be included.
--->
 
-<!-- TODO(blocking): Identify the home DWG and obtain its approval vote BEFORE this charter goes to vote (TC PnP §4.13.1 requires the home DWG to approve the relationship and be identified here prior to charter approval). Confirm current parent-DWG status with Scott Simmons. -->
-
-&lt;Home DWG to be identified; the home DWG's approval of the relationship is required prior to approval of this charter.&gt;
+The SWG convenors will discuss the charter with potentially interested Domain Working Groups (DWGs) at the first opportunity.
 
 ## 8. Other informative information about the work of this SWG
 
 ### 8.1. Collaboration
 
-<!--
-Describe the work environment of the SWG, including the use of GitHub or GitLab.
--->
+All work of the SWG is public. Standard development takes place in public GitHub repositories under the `zarr-conventions` and `zarr-developers` organizations, using issues and pull requests as the record of technical discussion and decisions. Discussions are mirrored between the OGC Agora platform and GitHub so that OGC members and public contributors see the same material. Non-members are encouraged to comment, while votes are limited to SWG voting members.
 
-All work of the SWG is public. Standard development takes place in public GitHub repositories under the `zarr-conventions` and `zarr-developers` organizations, using issues and pull requests as the record of technical discussion and decisions. Discussions are mirrored between the OGC Agora platform and GitHub so that OGC members and public contributors see the same material; non-members are encouraged to comment, while votes are limited to SWG voting members.
-
-Repository content is permissively licensed (e.g., CC-BY 4.0); the compiled Standard published by OGC carries the OGC document license and IPR statement, with referenced permissively licensed content acknowledged on the document cover. A contribution statement in the repository governs contributions, and participants in SWG meetings contribute under that statement.
+Repository content is permissively licensed (e.g., CC-BY 4.0). The compiled Standard published by OGC carries the OGC document license and IPR statement, with referenced permissively licensed content acknowledged on the document cover. A contribution statement in the repository governs contributions, and participants in SWG meetings contribute under that statement.
 
 ### 8.2. Similar or applicable standards work (OGC and elsewhere)
 
-<!--
-The following Standards and projects may be relevant to the SWG's planned work, although none currently provide the functionality anticipated by this committee's deliverables:
 
-OASIS BPEL
-IETF HTTP
-
-The SWG intends to seek and if possible maintain liaison with each of the organizations maintaining the above works.
--->
-
-- The OGC NetCDF CF SWG, which is advancing standardization of the CF Metadata Conventions; the GeoZarr SWG maintains a liaison with this group given the shared metadata model (see Section 3.1).
+- The OGC NetCDF CF SWG, which is advancing standardization of the CF Metadata Conventions; the GeoZarr SWG maintains a liaison with this group given the shared metadata model (see Section 3.2).
 - The OGC GeoDataCube SWG: GeoDataCube specifies service APIs, while GeoZarr defines a cloud-native encoding that such services can serve; coordination between the groups continues.
 - The Zarr community's specification and conventions governance (Zarr Enhancement Proposals and the Zarr Conventions Framework), where the core format and the domain-agnostic conventions are governed.
 - The STAC (SpatioTemporal Asset Catalog) specification, commonly used for discovery of the assets that GeoZarr encodes.
 - The xdggs community library and related DGGS activities, prior art for the prospective dggs convention.
+- OGC Abstract Specification Topic 20 / ISO 19156:2023, Observations, Measurements and Samples (OMS), with the OGC SensorThings API and the I-ADOPT framework for observable properties: prior art for the observation-metadata and descriptive-metadata capabilities (Section 3.1). The SWG anticipates that OMS semantics will be realized as a separate, composable convention developed with the OMS community and proposed to the SWG for evaluation, rather than by changes to the GeoZarr core.
 
 The SWG intends to seek and, where possible, maintain liaison with each of the organizations maintaining the above works.
 
@@ -339,13 +276,10 @@ The following people support this proposal and are committed to the Charter and 
 
 | Name | Organization |
 |------|--------------|
-|      |              |
+| Max Jones | Development Seed |
 
 ### 8.6. Conveners
 
-<!--
-Name of individual(s) who started the SWG process. Could be the lead for an RFC submission, an OGC staff person, or an individual who believes it is time for a revision to an adopted Standard.
--->
 
 Max Jones (Development Seed), GeoZarr SWG chair, convener of this re-chartering.
 
