@@ -95,7 +95,7 @@ GeoZarr standardization offers particularly great value now. While geospatial da
 
 GeoZarr aims to support a wide variety of geospatial data by encoding their semantics through attribute conventions in Zarr groups and arrays. It currently serves two broad categories of geospatial data: (1) data encoded using the CF (Climate and Forecast) Metadata Conventions in netCDF (climate and forecast model output, ocean models, in-situ observations, and satellite swaths, among others); and (2) data in GeoTIFF and Cloud Optimized GeoTIFF (imagery and other regularly gridded data with affine georeferencing, coordinate reference system metadata, and overviews). GeoZarr aims to eventually support novel and emerging geospatial applications requiring different encodings, such as discrete global grid systems (DGGS) and vector data cubes. GeoZarr will accomplish this by standardizing a set of mature Zarr conventions that are composable such that they can be used together to fulfill the diverse requirements within the geospatial domain.
 
-**Eligibility principle.** A convention is eligible for inclusion in GeoZarr if it describes how geospatial data is interpreted, such as how data relates to a defined coordinate reference frame or the meaning, structure, or provenance of its values. Put another way, we expect all GeoZarr conventions to be safely-ignorable by low-level Zarr implementations. Low-level Zarr implementations must be able to ignore the convention while still obtaining correct array element values (Section 3.2). Within that boundary, conventions are evaluated for incorporation against the assessment criteria in Section 1: composability, simplicity, specificity, demonstrated real-world need, and maturity.
+**Eligibility principle.** A convention is eligible for inclusion in GeoZarr if it describes how geospatial data is interpreted, such as how data relates to a defined coordinate reference frame or the meaning, structure, or provenance of its values. Put another way, we expect all GeoZarr conventions to be safely-ignorable by low-level Zarr implementations. Low-level Zarr implementations must be able to ignore the convention while still obtaining correct array element values. Within that boundary, conventions are evaluated for incorporation against the assessment criteria in Section 1: composability, simplicity, specificity, demonstrated real-world need, and maturity.
 
 **Intended capabilities.**
 
@@ -103,7 +103,7 @@ The table below defines the scope of work for this SWG. The table targets the do
 
 Each capability is realized by one or more Zarr conventions. The table below deliberately does not name the conventions that will realize each capability, nor the order in which capabilities will be addressed. Conventions are proposed, evaluated against the assessment criteria in Section 1, and incorporated into GeoZarr deliverables through the processes in Section 4. Where more than one candidate convention addresses a capability, the SWG's evaluation process determines which are incorporated. Each capability is classified as **domain-agnostic** (its concepts apply to any n-dimensional array, so the realizing convention belongs to the broader Zarr Conventions Framework and is reusable outside the geospatial domain), **geospatial** (it encodes Earth-referencing, such as a coordinate reference system, planetary coordinate, or geographic feature), or a **domain-agnostic mechanism carrying a geospatial vocabulary**.
 
-The last column records the prior standards and specifications each capability draws on. This prior art is informative only. The prior documents where a capability comes from and is not binding on how GeoZarr realizes it. A GeoZarr convention may depart from the delineations, vocabularies, or encodings of the prior art where the evaluation process finds that appropriate.
+The last column records the prior standards and specifications each capability draws on. This prior art is informative only. The prior art documents where a capability comes from and is not binding on how GeoZarr realizes it. A GeoZarr convention may depart from the delineations, vocabularies, or encodings of the prior art where the evaluation process finds that appropriate.
 
 | Capability | Description | Classification | Prior art (non-binding) |
 |---|---|---|---|
@@ -138,7 +138,7 @@ The last column records the prior standards and specifications each capability d
 
 GeoZarr builds directly on several elements of the OGC Standards baseline, including the Zarr community standard (OGC 21-050r1, endorsed June 2022); the netCDF encoding standard (OGC 10-090r3) together with the CF (Climate and Forecast) Metadata Conventions, whose standardization is being advanced by the NetCDF CF SWG; GeoTIFF (OGC 19-008r4) and Cloud Optimized GeoTIFF (OGC 21-026); the OGC Two Dimensional Tile Matrix Set standard; OGC Abstract Specification Topic 21 (Discrete Global Grid Systems); and OGC Abstract Specification Topic 20 / ISO 19156:2023, Observations, Measurements and Samples (OMS), for the semantics of how observed values are obtained. GeoZarr duplicates none of these. Instead, GeoZarr standardizes how the concepts they encode are expressed as composable, safely-ignorable Zarr conventions, so that data now published in netCDF/CF or GeoTIFF/COG can carry the same semantics in Zarr.
 
-Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the scope table in Section 3.1. The GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same capabilities. OMS contributes the observation-metadata capability. The prior-art column of the table in Section 3.1 records the specific constructs each capability draws on. As stated there, that prior art in non-binding for GeoZarr conventions. OGC baseline standards that control how data is encoded rather than how it is interpreted belong in the Zarr codec and data type layers rather than the GeoZarr conventions and are out of scope (see Section 3.3).
+Among these prior standards, CF is the most comprehensive metadata model for n-dimensional geospatial arrays, so the SWG uses a systematic decomposition of CF capabilities as the completeness test for the scope table in Section 3.1. The GeoTIFF/COG capability set (affine georeferencing, coordinate reference system metadata, overviews, and sentinel nodata values) maps onto a small subset of the same capabilities. OMS contributes the observation-metadata capability. The prior-art column of the table in Section 3.1 records the specific constructs each capability draws on. As stated there, that prior art is non-binding for GeoZarr conventions. OGC baseline standards that control how data is encoded rather than how it is interpreted belong in the Zarr codec and data type layers rather than the GeoZarr conventions and are out of scope (see Section 3.3).
 
 ### 3.3. What is out of scope?
 
@@ -151,7 +151,7 @@ Several components of the CF encoding model fit better as core Zarr extensions r
 Also out of scope:
 
 - Development of Zarr core, codecs, and data types. These belong to the Zarr community's specification and extension processes (e.g., Zarr Enhancement Proposals), which the SWG tracks but does not govern.
-- Blocking upstream changes. Where the SWG proposes improvements to the CF conventions or the Zarr Conventions Framework, GeoZarr deliverables should not wait on the acceptance of those proposals.
+- Waiting on upstream changes. Where the SWG proposes improvements to the CF conventions or the Zarr Conventions Framework, GeoZarr deliverables should not wait on the acceptance of those proposals.
 
 ### 3.4. Specific existing work used as starting point
 
@@ -206,12 +206,12 @@ Preliminary schedule, to be refined by the SWG:
 
 | Milestone | Target |
 |---|---|
-| Re-charter approval | Novembver 2026 |
+| Re-charter approval | November 2026 |
 | Release candidate of the Version 1 convention suite | December 2026 |
-| OGC Architecture Board review | January 2026 |
-| Public comment period and comment resolution | February - March 2026 |
-| SWG vote to recommend adoption; TC adoption vote | April 2026 |
-| Evaluating explicit coordinates approaches and suggesting upstream changes | November 2026 - February 2027
+| OGC Architecture Board review | January 2027 |
+| Public comment period and comment resolution | February - March 2027 |
+| SWG vote to recommend adoption; TC adoption vote | April 2027 |
+| Evaluating explicit coordinates approaches and suggesting upstream changes | November 2026 - February 2027 |
 
 ### 4.2. Additional SWG tasks
 
