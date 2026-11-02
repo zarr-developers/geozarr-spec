@@ -99,7 +99,7 @@ GeoZarr aims to support a wide variety of geospatial data by encoding their sema
 
 **Intended capabilities.**
 
-The table below defines the scope of work for this SWG. The table targets the dominant use cases within the data categories above rather than every conceivable one. Work on capabilities beyond this scope does not necessarily require a re-charter, if the direction is agreed upon by the GeoZarr SWG. Inclusion of a capability in scope does not commit the SWG to delivering it. Deliverables are defined in Section 4 and sequenced through the SWG Task approval process defined in the OGC TC Policies and Procedures.
+The table below defines the scope of work for this SWG. The table targets the dominant use cases within the data categories above rather than every conceivable one. Work on any capability in the table after the initial deliverable does not require a revision of this charter; each new deliverable is proposed through the SWG Task approval process (Section 4.2). Evaluating candidate conventions and proposing upstream changes are ongoing SWG activities under Section 1 and require no approval step. Capabilities beyond the table require a charter revision. Inclusion of a capability in scope does not commit the SWG to delivering it. Deliverables are defined in Section 4 and sequenced through the SWG Task approval process defined in the OGC TC Policies and Procedures.
 
 Each capability is realized by one or more Zarr conventions. The table below deliberately does not name the conventions that will realize each capability, nor the order in which capabilities will be addressed. Conventions are proposed, evaluated against the assessment criteria in Section 1, and incorporated into GeoZarr deliverables through the processes in Section 4. Where more than one candidate convention addresses a capability, the SWG's evaluation process determines which are incorporated. Each capability is classified as **domain-agnostic** (its concepts apply to any n-dimensional array, so the realizing convention belongs to the broader Zarr Conventions Framework and is reusable outside the geospatial domain), **geospatial** (it encodes Earth-referencing, such as a coordinate reference system, planetary coordinate, or geographic feature), or a **domain-agnostic mechanism carrying a geospatial vocabulary**.
 
@@ -216,7 +216,7 @@ Preliminary schedule, to be refined by the SWG:
 ### 4.2. Additional SWG tasks
 
 
-Additional tasks following the V1 release will include supporting the development of conventions for capabilities such as those listed in Section 3.1, evaluating conventions for incorporation into GeoZarr, and developing conformance classes for incorporated GeoZarr conventions.
+Additional tasks following the Version 1 release are expected to include conventions for the capabilities in Section 3.1 (explicit coordinates first), their evaluation for incorporation into GeoZarr, and conformance classes for each incorporated convention. Each is proposed through the SWG Task approval process and recorded here on approval; no re-charter is required for work within the Section 3.1 scope.
 
 ## 5. IPR Policy for this SWG
 
