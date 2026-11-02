@@ -230,7 +230,7 @@ This SWG develops a Standard for general use in the geospatial community and for
 ## 7. Domain Working Group endorsement
 
 
-The SWG convenors will discuss the charter with potentially interested Domain Working Groups (DWGs) at the first opportunity.
+The home DWG for this SWG is being identified in consultation with the OGC TC Chair; its approval of the relationship will be recorded here.
 
 ## 8. Other informative information about the work of this SWG
 
