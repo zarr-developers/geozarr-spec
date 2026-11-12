@@ -277,6 +277,7 @@ The following people support this proposal and are committed to the Charter and 
 | Name | Organization |
 |------|--------------|
 | Max Jones | Development Seed |
+| Christophe Noël | Spacebel |
 
 ### 8.6. Conveners
 
