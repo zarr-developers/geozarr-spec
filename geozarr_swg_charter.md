@@ -278,6 +278,7 @@ The following people support this proposal and are committed to the Charter and 
 |------|--------------|
 | Max Jones | Development Seed |
 | Christophe Noël | Spacebel |
+| Chris Little | Met Office |
 
 ### 8.6. Conveners
 
